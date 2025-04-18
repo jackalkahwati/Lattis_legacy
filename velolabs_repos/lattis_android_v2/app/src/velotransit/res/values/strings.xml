@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_enter_location">Locker location</string>
+    <string name="bike_detail_label_trip_costs">Bike Parking Cost</string>
+    <string name="iot_hint_locked">Use this button to unlock the door during rental</string>
+</resources>

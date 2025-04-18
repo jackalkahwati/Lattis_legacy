@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        >
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/thanks"
+        android:padding="16dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_text_color_grey"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        android:text="@string/damage_report_success_description"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_text_color_grey"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea" />
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:id="@+id/tv_continue"
+        android:text="@string/damage_report_success_continue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_accent_color"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:id="@+id/tv_find_bike"
+            android:text="@string/damage_report_success_find_bike"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:id="@+id/tv_end_ride"
+            android:text="@string/damage_report_success_end_my_ride"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+
+
+
+    </LinearLayout>
+</RelativeLayout>

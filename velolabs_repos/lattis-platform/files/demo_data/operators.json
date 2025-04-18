@@ -1,0 +1,25 @@
+[
+  {
+    "first_name": "Andre",
+    "last_name": "Green",
+    "title":"Mr",
+    "country_code": "1",
+    "phone_number":"5555555550",
+    "email":"andre@lattis.io",
+    "username": "andre@lattis.io",
+    "password": "andre",
+    "date_created": 1473630768839,
+    "user_state": "active"
+  },
+  {
+    "first_name": "Jeremy",
+    "last_name": "Ricard",
+    "country_code": "1",
+    "phone_number":"5555555551",
+    "email":"jeremy@lattis.io",
+    "username": "jeremy@lattis.io",
+    "password": "jeremy",
+    "date_created": 1472630767839,
+    "user_state": "active"
+  }
+]

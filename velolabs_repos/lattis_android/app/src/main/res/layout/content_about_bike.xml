@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f4f5f6"
+        android:orientation="vertical"
+        android:descendantFocusability="blocksDescendants">
+
+        <LinearLayout
+            android:id="@+id/view_ride_free"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:descendantFocusability="blocksDescendants">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/ride_cost_label_lowercase"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#818181"
+                    android:textStyle="bold" />
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/lattis_text_color_blue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#eaeaea" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_ride_tariff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:descendantFocusability="blocksDescendants">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/ride_cost_label_lowercase"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#818181"
+                    android:textStyle="bold" />
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/lattis_text_color_blue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_ride_exceeding_divider"
+                android:background="#eaeaea" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_exceeding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/ride_cost_status_label"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ACB1BB"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <LinearLayout
+                android:id="@+id/rl_deposit_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/label_ride_deposit"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#818181"
+                    android:textStyle="bold" />
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_deposit_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/lattis_text_color_blue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eaeaea" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_deposit_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ACB1BB"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_about_bike"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_header_color"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#eaeaea" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_bike_name"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ACB1BB"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:id="@+id/tv_bike_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/lattis_header_color"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_bike_type"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ACB1BB"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:id="@+id/tv_bike_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/lattis_header_color"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_batter_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_bike_charge"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ACB1BB"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                    <com.lattis.ellipse.presentation.view.CustomTextView
+                        android:id="@+id/tv_bike_charge_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="75%"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/lattis_header_color"
+                        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_bike_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_header_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <ImageView
+                android:id="@+id/iv_bike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ll_direction"
+            android:visibility="gone"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/tv_start_end_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/start_end_points"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_header_color"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#eaeaea" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_label_pick_up_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/pick_up_location"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ACB1BB"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_pick_up_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_text_color_grey"
+                android:textSize="15sp"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_distances"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ACB1BB"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#ACB1BB"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_timing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ACB1BB"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            </LinearLayout>
+
+            <!--<com.lattis.ellipse.presentation.view.CustomTextView-->
+            <!--android:id="@+id/tv_label_current_location"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:text="@string/your_destination"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="#ACB1BB"-->
+            <!--custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />-->
+
+            <!--<com.lattis.ellipse.presentation.view.CustomTextView-->
+            <!--android:id="@+id/tv_current_location"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/lattis_text_color_grey"-->
+            <!--android:textSize="15sp"-->
+            <!--custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />-->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_network"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_network"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/network"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_header_color"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#eaeaea" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_fleet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#868586"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_fleet_tc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_accent_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+                android:textSize="12sp" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_label_fleet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:text="@string/fleet_description"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_text_color_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_fleet_bikes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ACB1BB"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#ACB1BB"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/tv_parking_spots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ACB1BB"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            </LinearLayout>
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_parking_zones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/parking_zones"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_accent_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:id="@+id/ll_payment_card"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:text="@string/ride_payment_methods"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#818181"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="#eaeaea" />
+
+            <include layout="@layout/content_payment_info" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

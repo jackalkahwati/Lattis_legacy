@@ -1,0 +1,9 @@
+use_frameworks!
+platform :ios, '10.0'
+target 'BLEService' do
+    pod 'SwiftyTimer'
+    pod 'RestService', :git => 'git@github.com:velolabs/RestService.git', :branch => 'lattis'
+    pod 'RestService/Oval', :git => 'git@github.com:velolabs/RestService.git', :branch => 'lattis'
+    pod 'Fabric'
+    pod 'Crashlytics'
+end

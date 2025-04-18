@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="nav-center" activetab="listView">
+            <ul class="nav nav-tabs dashtabs" id="navtabs analytics_Tab"">
+                <li ng-repeat="tab in analyticsTabs" ng-class="{active: isActiveTab(tab.url)}">
+                    <a class="ft-12 pull-right tabl" style="font-size:12px;" ng-click="onClickTab(tab)">{{tab.title}}</a>
+                </li>
+                <div class="input-group right-side-btn" ng-show="fleetshow">
+                    <button class="btn" ng-click="orderNewEllipse()" ui-sref="order-new-ellipse">Order new Ellipses</button>
+                </div>
+            </ul>
+        </div><!-- End tab section--->
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+</div>

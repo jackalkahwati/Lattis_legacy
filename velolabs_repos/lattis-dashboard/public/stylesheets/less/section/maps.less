@@ -1,0 +1,229 @@
+.mapview {
+  width: 100%;
+  height: 550px;
+}
+
+.map-polygon {
+  width: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  .pointer;
+}
+
+.map-geofenceclear {
+  font-size: 12px;
+  padding: 0px 50px;
+  position: relative;
+  vertical-align: middle;
+  .pointer;
+}
+
+.map-header {
+  background: @colorlightsteelblue;
+  color: @color_4;
+  padding: 15px 20px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  letter-spacing: 0.8px;
+}
+
+#map-help{
+  background: @color_29;
+  padding: 10px 15px;
+  margin: 10px 0;
+  .fa{
+    margin: 4px 10px 4px 0;
+    font-size: 40px;
+  }
+  h6{
+    margin: 3px 0;
+    font-size: 16px;
+  }
+  a:hover{
+    color: inherit;
+  }
+}
+.zeroHeight {
+  /* Initially we don't want any height, and we want the contents to be hidden */
+  max-height: 75px;
+  overflow: hidden;
+  transition: all 2s  ease-out ;
+}
+.animateHeight {
+  /* On hover, set the max-height to something large. In this case there's an obvious limit. */
+  max-height: 100%;
+  overflow: hidden;
+  -webkit-transition: max-height 2s cubic-bezier(0, 1.05, 0, 1);
+  -moz-transition: max-height 2s cubic-bezier(0, 1.05, 0, 1);
+  transition: max-height 2s cubic-bezier(0, 1.05, 0, 1);
+}
+.map-legend-container{
+  position: absolute;
+  bottom: 30px;
+  left: 5px;
+  z-index: 1;
+  .legend{
+    background: @color_4;
+    width: 275px;
+    .border-radius(6px);
+    margin: 10px 15px;
+    padding: 5px 15px;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.1);
+    border: 1px solid @colorghostwhite;
+    h6{
+      span{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.show-mapheader {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  .checkboxstyle1 {
+    display: inline-block;
+    background: @color_4;
+    color: #777;
+    padding: 5px 10px 5px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
+    .checkbox {
+      margin: 0;
+      float: left;
+      .grey {
+        background: @color_4;
+        .ft-13;
+      }
+    }
+    label {
+      font-size: 10px;
+      margin: 0px;
+      float: left;
+      line-height: 2.3em;
+      .pointer;
+      letter-spacing: 0.8px;
+      color: #9b9b9b;
+      font-weight: 500;
+    }
+  }
+}
+
+.map-hub {
+  width: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.mapboxgl-popup-content {
+  text-align: left;
+  height: 100%;
+  padding: 20px;
+  font-family: SanFransisco;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#search-addon {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  height: 30px;
+  text-align: center;
+  padding: 7px 5px 2px 0px;
+  border: 0;
+  width: 30px;
+  .noborder;
+  z-index: 5;
+  line-height: 1.4;
+  .pointer;
+}
+
+.mapboxgl-ctrl-geocoder {
+  height: 33px;
+  border-radius: 0px;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 180px !important;
+}
+
+.mapboxgl-ctrl-geocoder input[type='text'] {
+  height: 33px;
+  width: 90%;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  margin: 32px -6px 0 0;
+  float: none;
+}
+
+.mapboxgl-ctrl-geocoder .geocoder-pin-right * {
+  top: 7px;
+}
+
+.mapboxgl-ctrl-geocoder .geocoder-icon-search {
+  top: 6px;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  -webkit-align-self: center;
+  align-self: center;
+  margin-left: 5px;
+  border-top: none;
+  border-bottom-color: #4A5060;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  -webkit-align-self: center;
+  align-self: center;
+  margin-left: 5px;
+  border-bottom: none;
+  border-top-color: #4A5060;
+}
+
+.mapboxgl-ctrl-group {
+  display: inline-flex !important;
+  background: white !important;
+  border-radius: 0px !important;
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in {
+  border-right: 1px solid #DCDCDC;
+  .fleet_icon;
+  .fleet_icon.plus;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out {
+  .fleet_icon;
+  .fleet_icon.minus;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+  display: none;
+}
+
+.mapboxgl-ctrl-top-right {
+  z-index: 0;
+}
+
+.map-zones{
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all .2s ease-in;
+  padding: 5px;
+}
+.map-line{
+  width: 45px;
+  height: 45px;
+}
+
+
+
+

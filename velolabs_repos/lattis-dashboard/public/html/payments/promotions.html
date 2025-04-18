@@ -1,0 +1,131 @@
+<div class="row" ng-show="loadingPaymentInfo || promotionsLoading">
+  <div ng-init="showLoader=true" ng-show="showLoader">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex; flex-direction: column;" ng-show="!(loadingPaymentInfo || promotionsLoading)">
+  <div
+    class="alert alert-danger alert-dismissible"
+    role="alert"
+    ng-if="promoError"
+    style="margin-top: 1em"
+  >
+    <button
+      ng-click="dismissPromoError()"
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{promoError}}
+  </div>
+  <div class="customtable">
+    <table
+      class="table table-hover table-striped tablestyle"
+      style="table-layout: fixed; margin-top: 1em"
+    >
+      <thead>
+        <tr>
+          <th class="text-white">Promo Code</th>
+          <th class="text-white">Percentage Discount</th>
+          <th class="text-white">Usage</th>
+          <th class="text-white">Status</th>
+          <th class="text-white" style="padding-left: 15px">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          ng-repeat="promotion in promotions"
+          ng-if="promotions.length > 0"
+          style="cursor: initial"
+        >
+          <td>
+            <code>{{ promotion.promotion_code }}</code>
+          </td>
+          <td>{{ formatPromotionDiscount(promotion) }}%</td>
+          <td>{{ formatPromotionUsage(promotion) }}</td>
+          <td>{{ promotion.deactivated_at ? 'Deactivated' : 'Active' }}</td>
+          <td ng-if="!promotion.deactivated_at">
+            <span>
+              <button
+                class="btn btn-xs btn-primary"
+                ng-disabled="deactivatingPromotionId === promotion.promotion_id"
+                ng-click="deactivatePromotion(promotion)"
+                style="background-color: #58718e; border-color: #58718e"
+              >
+                {{ deactivatingPromotionId === promotion.promotion_id ?
+                'Deactivating...' : 'Deactivate' }}
+              </button>
+            </span>
+          </td>
+          <td ng-if="promotion.deactivated_at"></td>
+        </tr>
+        <tr ng-if="promotions.length === 0">
+          <td colspan="4" class="text-center">
+            No promotions found for this fleet.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <form name="newPromotionForm" style="display: flex; margin-top: 1em">
+    <fieldset
+      ng-disabled="creatingPromotion"
+      style="display: flex; flex-basis: 75%"
+    >
+      <div style="display: inline-flex; align-items: center; flex-basis: 50%">
+        <span style="margin: 0 0.5rem">Percentage Discount </span>
+        <input
+          style="width: 65%"
+          class="inline-block form-control"
+          step="1"
+          style="border: 1px solid #e5e8ed; padding: 4px 10px"
+          ng-model="newPromotion.amount"
+          min="0"
+          max="100"
+          ng-required="true"
+          type="number"
+          name="promotion_amount"
+          placeholder="% Discount"
+        />
+      </div>
+      <div style="display: inline-flex; align-items: center; flex-basis: 50%">
+        <span style="margin: 0 0.5rem">Usage </span>
+        <select
+          name="promotion_usage"
+          id="promotion-usage"
+          ng-model="newPromotion.usage"
+          ng-required="true"
+          style="width: 85%"
+          class="inline-block form-control"
+        >
+          <option value="">--Select Usage--</option>
+          <option value="single">Single (redeemable by just one user)</option>
+          <option value="multiple">
+            Multiple (redeemable by any user with the code)
+          </option>
+          <option value="multiple_unlimited">
+            Unlimited (redeemable multiple times by any user with the code until deactivated)
+          </option>
+        </select>
+      </div>
+    </fieldset>
+    <div style="display: flex; flex-grow: 1" class="m-l-15">
+      <button
+        class="btn btn-primary text-uppercase p-lr-20 m-r-10"
+        ng-click="createPromotion()"
+        ng-disabled="newPromotionForm.$invalid || newPromotionForm.$pristine"
+      >
+        {{ creatingPromotion ? 'Creating...' : 'Create' }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+CREATE TABLE `shopify_order` (
+  order_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  shopify_order_id BIGINT UNSIGNED,
+  shopify_customer_id BIGINT(60) UNSIGNED,
+  `name` VARCHAR(128),
+  variant_title VARCHAR(64),
+  quantity INT,
+  sku VARCHAR(64),
+  shopify_address_id BIGINT(20) UNSIGNED,
+  product_id BIGINT UNSIGNED,
+  gift_card TINYINT,
+  taxable TINYINT,
+  vendor VARCHAR(64),
+  total_discount FLOAT,
+  price FLOAT,
+  financial_status VARCHAR(64),
+  title VARCHAR(128),
+  variant_id INT,
+  requires_shipping TINYINT
+);

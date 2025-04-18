@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="lattis_accent_color">@android:color/black</color>
+    <color name="lattis_profile_accent">#00AAD1</color>
+    <color name="lattis_header_color">@android:color/black</color>
+    <color name="lattis_text_color_grey">#818181</color>
+
+
+    //// pop up
+    <color name="pop_up_card_background">@android:color/white</color>
+    <color name="pop_up_text">@android:color/black</color>
+    <color name="pop_up_btn_background">@color/black</color>
+    <color name="pop_up_divider">#DDDDDD</color>
+    <color name="pop_up_positive_text">@android:color/white</color>
+    <color name="pop_up_background">#4D000000</color>
+
+    //toolbar
+    <color name="clickable_toolbar_title_background">#DDDDDD</color>
+
+
+    /// no internet
+    <color name="no_internet_text">@android:color/black</color>
+    <color name="no_internet_background">@android:color/white</color>
+    <color name="no_internet_semitransparent_background">#80000000</color>
+
+    //// loading //
+    <color name="loading_background">#00FFFFFF</color>
+    <color name="loading_text">@android:color/black</color>
+
+
+    //// Splash / Launch activity
+    <color name="launch_background">@android:color/white</color>
+
+
+    ///signin//////////
+    <color name="sign_in_background">@android:color/white</color>
+    <color name="sign_in_text">@android:color/black</color>
+    <color name="sign_in_log_in_unselected_text">#B6B6B6</color>
+    <color name="sign_in_log_in_unselected_border">#B6B6B6</color>
+    <color name="sign_in_log_in_selected_background">@android:color/black</color>
+    <color name="sign_in_log_in_selected_text">@android:color/white</color>
+    <color name="sign_in_log_in_unselected_background">@android:color/white</color>
+    <color name="sign_in_right_password">#000000</color>
+    <color name="sign_in_wrong_password">#FF0000</color>
+    <color name="sign_in_divider">#DDDDDD</color>
+    <color name="sign_up_wrong_password">#FF0000</color>
+    
+    
+    //home
+    <color name="home_text">@android:color/black</color>
+    <color name="home_background">@android:color/white</color>
+    <color name="home_fleet_title_text">@android:color/black</color>
+    <color name="home_fleet_sub_title_text">#00AAD1</color>
+    <color name="home_fleet_in_divider">#DDDDDD</color>
+
+    //
+    ticket
+    <color name="create_ticket_background">@android:color/black</color>
+    <color name="create_ticket_text">@android:color/white</color>
+    <color name="ticket_list_text">@android:color/black</color>
+
+    //vehicle
+    <color name="scan_qr_background">@android:color/black</color>
+    <color name="scan_qr_text">@android:color/white</color>
+    <color name="vehicle_list_text">@android:color/black</color>
+    <color name="change_status_background">@android:color/black</color>
+    <color name="change_status_text">@android:color/white</color>
+
+    //// qr code
+    <color name="qr_code_background">@android:color/white</color>
+    <color name="qr_code_text">@android:color/black</color>
+    <color name="qr_code_progress_for_scanning">@android:color/white</color>
+
+
+    //vehicle details
+    <color name="vehicle_detail_background">#DDDDDD</color>
+    <color name="vehicle_detail_text">@android:color/black</color>
+
+    //vehicle info
+    <color name="vehicle_box_divider">#DDDDDD</color>
+    <color name="vehicle_box_background">@android:color/white</color>
+    <color name="vehicle_box_text">@android:color/black</color>
+
+    //ticket details
+    <color name="ticket_detail_background">#DDDDDD</color>
+    <color name="ticket_detail_text">@android:color/black</color>
+
+    //ticket info
+    <color name="ticket_box_divider">#DDDDDD</color>
+    <color name="ticket_box_background">@android:color/white</color>
+    <color name="ticket_box_text">@android:color/black</color>
+
+    <color name="resolve_ticket_background">@android:color/black</color>
+
+
+
+
+
+</resources>

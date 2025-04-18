@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_vehicle_detail_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_vendor_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/vendor"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_vendor_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_equipment_vendor_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_equipment_vendor_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_equipment_vendor_value" />
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_key_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/key"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_key_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_equipment_key_label"
+        app:layout_constraintStart_toEndOf="@+id/ct_equipment_key_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="right"
+        app:layout_constraintTop_toTopOf="@+id/ct_equipment_key_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_equipment_key_value" />
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_device_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/device_type"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_device_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_equipment_device_type_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_equipment_device_type_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_equipment_device_type_value" />
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_battery_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/battery_level"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_3"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_equipment_battery_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_equipment_battery_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_equipment_battery_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_equipment_battery_value" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4"
+        android:paddingBottom="15dp"
+        >
+        <io.lattis.operator.presentation.customview.CustomTextView
+            android:id="@+id/ct_equipment_connection_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/connection"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+        <io.lattis.operator.presentation.customview.CustomTextView
+            android:id="@+id/ct_equipment_connection_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textColor="@color/vehicle_box_text"
+            app:layout_constraintBottom_toBottomOf="@+id/ct_equipment_connection_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ct_equipment_connection_label"
+            custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+        <io.lattis.operator.presentation.customview.CustomTextView
+            android:id="@+id/ct_equipment_connection_refresh_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/refresh"
+            android:textColor="@color/lattis_profile_accent"
+            android:textSize="15dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/ct_equipment_connection_label"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/pb_equipment_connection_progress"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

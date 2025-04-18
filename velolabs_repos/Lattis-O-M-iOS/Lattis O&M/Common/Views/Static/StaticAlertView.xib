@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StaticAlertView" customModule="Lattis_O_M" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMB-Y4-yml">
+                    <rect key="frame" x="179" y="329.5" width="16" height="8"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH2-Ju-AMn">
+                            <rect key="frame" x="8" y="4" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.32156862745098036" green="0.3411764705882353" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="BH2-Ju-AMn" secondAttribute="bottom" constant="4" id="HXV-B0-3GH"/>
+                        <constraint firstItem="BH2-Ju-AMn" firstAttribute="top" secondItem="tMB-Y4-yml" secondAttribute="top" constant="4" id="LAh-9v-xeH"/>
+                        <constraint firstItem="BH2-Ju-AMn" firstAttribute="leading" secondItem="tMB-Y4-yml" secondAttribute="leading" constant="8" id="uAC-08-xSl"/>
+                        <constraint firstAttribute="trailing" secondItem="BH2-Ju-AMn" secondAttribute="trailing" constant="8" id="xVy-n9-VdR"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tMB-Y4-yml" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0cb-bq-l5V"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tMB-Y4-yml" secondAttribute="trailing" priority="750" constant="116" id="Fyh-6b-cdW"/>
+                <constraint firstItem="tMB-Y4-yml" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X2Y-lD-f6T"/>
+                <constraint firstItem="tMB-Y4-yml" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" priority="750" constant="16" id="gpd-1q-bJT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="textLabel" destination="BH2-Ju-AMn" id="uKs-1v-tta"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

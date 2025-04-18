@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>468171248353-sdbi07c4le1oiecis29tugverv8qb5o1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.468171248353-sdbi07c4le1oiecis29tugverv8qb5o1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBtsoRXZktSuzEx6u_VAqWLN7LbUn8n3hU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>468171248353</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mountlocks.bikeshare</string>
+	<key>PROJECT_ID</key>
+	<string>mountlock-bikeshare</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mountlock-bikeshare.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:468171248353:ios:5575ede74c04045672dda0</string>
+</dict>
+</plist>

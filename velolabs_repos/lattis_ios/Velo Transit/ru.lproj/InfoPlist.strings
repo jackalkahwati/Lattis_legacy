@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "Vélo-Transit необходимо разрешение на использование вашей камеры чтобы делать снимки при завершении вашей поездки";
+"NSPhotoLibraryUsageDescription" = "Vélo-Transit использует только те фотографии который вы выберете сами";
+"privacy_location" = "Нажимая \"Разрешить\" вы активируете возможность искать и показывать вам поездки радом с вами";
+"privacy_location_alert_title" = "Внимание";
+"NSLocationWhenInUseUsageDescription" = "Нажимая \"Разрешить\" вы активируете возможность искать и показывать вам поездки радом с вами";
+"privacy_location_explanation" = "Внимание";
+"privacy_location_submit_button" = "Разрешить";
+"NSBluetoothPeripheralUsageDescription" = "Приложение Vélo-Transit испоьлзует Bluetooth для соединения с замком Ellipse.";

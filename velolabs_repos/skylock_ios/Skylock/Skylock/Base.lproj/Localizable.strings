@@ -1,0 +1,118 @@
+// !!!: General
+"general_error_no_network_title" = "NO NETWORK";
+"general_error_no_network_text" = "Please connect to the internet (Wifi or Cellular)";
+"general_btn_ok" = "OK";
+
+"fw_update_avaliable_title" = "FW update";
+"fw_update_avaliable_text" = "A new FW is available for your Ellipse";
+"fw_update_avaliable_cancel" = "Later";
+"fw_update_avaliable_action" = "Update now";
+
+
+"app_update_avaliable_title" = "Ellipse app update";
+"app_update_avaliable_text" = "A new version of the Ellipse app is available.";
+"app_update_avaliable_cancel" = "Later";
+"app_update_avaliable_action" = "Update now";
+
+
+
+
+
+
+
+
+// !!!: Lock screen
+"lock_screen_auto_lock_on" = "AUTO \nLOCK\nON";
+"lock_screen_auto_lock_off" = "AUTO \nLOCK\nOFF";
+"lock_screen_auto_unlock_on" = "AUTO \nUNLOCK\nON";
+"lock_screen_auto_unlock_off" = "AUTO \nUNLOCK\nOFF";
+"lock_screen_crash_detect_on" = "CRASH \nDETECTION\nON";
+"lock_screen_crash_detect_off" = "CRASH \nDETECTION\nOFF";
+"lock_screen_theft_detect_on" = "THEFT\nDETECTION\nON";
+"lock_screen_theft_detect_off" = "THEFT\nDETECTION\nOFF";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

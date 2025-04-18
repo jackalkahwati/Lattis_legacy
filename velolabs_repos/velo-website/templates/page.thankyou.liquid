@@ -1,0 +1,91 @@
+
+ <script src="{{'jquery.min.js' | asset_url}}"></script>
+    <script type="text/javascript" src="{{'bootstrap.js'| asset_url}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{'bootstrap.css'| asset_url}}">
+
+<h1 class="page-title">Thank You!</h1><br>
+
+<div class="container">
+  <p>Your information has been saved. Keep an eye on your inbox - we’ll let you know when your order is ready to be shipped!</p><br>
+  <p>Click <a href="/">here</a>&nbsp;to visit  our page.
+</div>
+<style>
+
+  .container{
+  
+    color:#8a8a8a;
+    margin-bottom :10%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: proxima_novalight;
+  } 
+  
+    .template-page .page-title{
+  
+      font-family: proxima_nova_rgregular;
+  
+  }
+  
+    footer {
+      
+      font-size:13px;
+        
+      }
+  
+  .footer-wrapper {
+    margin-top: -22px;
+}
+  
+    @media (max-width: 520px) {
+    
+      
+    .container{
+   
+    margin: 5% 0% 61% 9%;
+    width: 84%;
+    
+  }
+      
+        }
+      
+    @media (max-width: 767px) and (min-width: 521px) {
+        
+   .container{
+   
+    width: 84%;
+     margin: 5% 0% 61% 24%;
+    
+  }
+        
+        }
+      
+
+      
+  
+  
+
+</style>
+        
+
+<script>
+  
+     $(document).on("scroll", onScroll);
+      $('.template-page .main-header-wrapper').css({'background-color':'transparent'}); 
+    var scrollPosition = $(document).scrollTop();
+  
+    function onScroll(event){
+      
+       if ($(this).scrollTop() > 100) {
+			 $('.template-page .main-header-wrapper').css({'background-color':'white'});
+            console.log(scrollPosition);
+		} else {
+			$('.template-page .main-header-wrapper').css({'background-color':'transparent'});
+             console.log(scrollPosition);
+
+	}
+    }
+    
+  
+  
+</script>

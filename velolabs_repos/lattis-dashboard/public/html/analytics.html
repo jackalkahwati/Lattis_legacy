@@ -1,0 +1,330 @@
+
+<section ng-controller="analyticsController" class="animated fadeIn" style="background-color: #f6f6f7;">
+
+
+    <div class="panel bg-transp">
+        <div class="panel-body p-rel" style="margin:15px;">
+            <div class = "p-rel">
+                <!--<div class="row">-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_tripbarchart.png" ng-show="monthchartsettingView">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_settingtool.png" ng-hide="monthchartsettingView">-->
+                <!--<span ng-click="settingRidechart('monthchart')" style="width: 20px;height: 10px;position: absolute;top: 22px;right: 32px;cursor: pointer;padding: 5px;"></span>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_tripbarchart.png" ng-show="daychartView">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_daysetting.png" ng-hide="daychartView">-->
+                <!--<span ng-click="settingRidechart('daychart')" style="width: 20px;height: 10px;position: absolute;top: 22px;right: 32px;cursor: pointer;padding: 5px;"></span>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_tripbarchart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+                <div class="row m-t-15">
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="padding-right: 8px;">
+                        <div class="fullwid pull-left">
+                            <div class="panel nomarg card">
+                                <div class="panel-heading bg-white inline-flex">
+                                    <p class="p-tb-10 ft-11 ft-smbold nomarg">FLEET UTLIZATION <p class="p-10 ft-11 textlighthash">Total Number of Rentals <br/> vs Last Six Months</p>
+                                        <!--<span class="pull-right"><em class="fa fa-ellipsis-h ft-18" ng-click="showSetting('totaltrip')"></em> </span> -->
+                                    </p>
+                                </div>
+                                <div class="panel-body" ng-show="totaltripsettingView">
+                                    <canvas height="220px" id="myChart" class="chart chart-bar " chart-data="totalTrips"
+                                            chart-dataset-override ="fleetChartOverride" chart-labels="monthsArray"
+                                            chart-options="totalTripsOptions" ></canvas>
+                                </div>
+                                <div class="panel-body h-260"ng-hide="totaltripsettingView">
+                                    <span class="pull-left m-t-7"> X- Axis </span>
+                                    <!--<select class="form-control h-33 m-l-30 pull-left" ng-model="analyticsdata.price_type" required style="width:153px">-->
+                                    <!--<option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>-->
+                                    <!--</select>-->
+
+                                    <!--<div class="pull-left fullwid m-tb-20">-->
+                                    <!--<span class="pull-left m-t-7"> Interval </span>-->
+                                    <!--<div class="pull-left p-l-30" style="width:260px;">-->
+                                    <!--<span class="text-hash ft-10">2017</span>{{$scope.selectmonths}}-->
+                                    <!--<ul class="list-inline">-->
+                                    <!--<li ng-class="{'custom-btn' : i.index == $index }" ng-click = "setmonth($index)" style="margin:4px; padding:3px 10px; border-radius: 5px;" ng-repeat="i in months track by $index" class="pointer list-group-item ft-12"><span>{{i.val}}</span></li>-->
+                                    <!--</ul>-->
+                                    <!--<p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <analytic-filter></analytic-filter>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="padding-right: 8px;padding-left: 8px;">
+                        <div class="fullwid pull-left">
+                            <div class="panel nomarg card">
+                                <div class="panel-heading bg-white inline-flex">
+                                    <p class="p-tb-10 ft-11 nomarg ft-smbold">FLEET UTLIZATION
+                                        <p class="p-10 ft-11 textlighthash"> Average Rental Duration (Mins) <br/> vs Last Six Month</p>
+                                        <!--<span class="pull-right" ng-click="showSetting('averagetrip')"><em class="fa fa-ellipsis-h ft-18"></em> </span>-->
+                                    </p>
+                                </div>
+                                <div class="panel-body" ng-show="averageTripsettingView">
+                                    <canvas height="220px" id="myChart" class="chart chart-bar" chart-data="avgDuration"
+                                            chart-dataset-override ="fleetChartDurationOverride" chart-labels="monthsArray"
+                                            chart-options="avgtripOptions"></canvas>
+                                </div>
+                                <div class="panel-body"ng-hide="averageTripsettingView">
+                                    <span class="pull-left m-t-7"> X- Axis </span>
+                                    <select class="form-control h-33 m-l-30 pull-left" ng-model="analyticsdata.price_type" required style="width:153px">
+                                        <option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>
+                                    </select>
+
+                                    <div class="pull-left fullwid m-tb-20">
+                                        <span class="pull-left m-t-7"> Interval </span>
+                                        <div class="pull-left p-l-30" style="width:260px;">
+                                            <div id="time-range" class="wid-204">
+                                                <div class="sliders_step1 m-tb-20">
+                                                    <div id="hours-range"></div>
+                                                </div>
+                                                <div class="m-t-10"><span class="slider-time bor-hash p-5" style="border-radius: 7px;">10:00 AM</span> <em class="p-lr-10"> to</em> <span style="border-radius: 7px;" class="slider-time2 bor-hash p-5">8:00 PM</span></div>
+                                            </div>
+                                            <p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="padding-left: 8px;">
+                        <div class="fullwid pull-left">
+                            <div class="panel nomarg card">
+                                <div class="panel-heading bg-white inline-flex">
+                                    <p class="p-tb-10 nomarg ft-11 ft-smbold">FLEET UTLIZATION <p class="p-10 ft-11 textlighthash">Average Rental Distance ({{distancePreference}}) <br/> vs Last Six Month</p>
+                                        <!--<span class="pull-right" ng-click="showSetting('totalride')"><em class="fa fa-ellipsis-h ft-18"></em> </span>-->
+                                    </p>
+                                </div>
+                                <div class="panel-body" ng-show="totalridesettingsView">
+                                    <canvas height="220px" id="myChart"  class="chart chart-bar"
+                                            chart-dataset-override ="fleetChartDistanceOverride" chart-data="totalDistance"
+                                            chart-labels="monthsArray" chart-options="totalDistanceOptions"></canvas>
+                                </div>
+                                <div class="panel-body p-tb10-lr20" ng-hide="totalridesettingsView">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <span class="pull-left m-t-7"> X- Axis </span></div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control h-33 m-l-30 pull-left" ng-model="analyticsdata.price_type" required style="width:153px">
+                                                <option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-7">
+                                        <div class="col-sm-2"><span class="v-m"> Interval </span></div>
+                                        <div class="col-sm-10"><div id="datetimepickerRide" class="ft-11 custom-datpicker"></div>
+                                            <p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p></div>
+                                        <!--<span class="pull-left m-t-7"> Interval </span>-->
+                                        <!--<div class="pull-left p-l-30" style="width:260px;">-->
+                                        <!--<div id="datetimepickerRide"></div>-->
+                                        <!--&lt;!&ndash;<input id='datetimepickerRide' type='text'style='text-overflow: ellipsis;width:120px;' class="text-center ft-14 form-control" placeholder="MM/DD/YYYY" ng-model="date1"/>&ndash;&gt;-->
+                                        <!--<p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-t-15">
+                    <div class="col-sm-12">
+                        <div class="fullwid pull-left">
+                            <div class="panel nomarg card h-320">
+                                <div class="panel-heading bg-white clearfix">
+                                    <p class="pull-left p-tb-10 nomarg ft-11 ft-smbold">FLEET UTLIZATION <span class="p-lr-10 textlighthash">Usage per day</span>
+                                        <!--<span class="pull-right" ng-click="showSetting('totalride')"><em class="fa fa-ellipsis-h ft-18"></em> </span> -->
+                                    </p>
+                                    <div class="pull-right">
+                                        <ul class="nav navbar-nav">
+                                            <li ng-repeat="(key, value) in usageFilters" class="innertab m-r-5">
+                                                <a
+                                                    href="javascript:void(0);"
+                                                    ng-click="$parent.filterUsage(key)"
+                                                    ng-class="{'inneractivetab': usageFilter === key}"
+                                                >{{value.label}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel-body p-rel p-t-10">
+                                    <div id="cal-heatmap-labels"> </div>
+                                    <div id="cal-heatmap" height="220px"></div>
+                                    <div class ="heat-mapLeagend h-200 ft-12" style="width:10px;position: absolute;top:40px;right:45px;"><span style="position: absolute;top: 3px;left: -34px;">High</span><span style="position: absolute;bottom: 3px;left: -32px;">Low</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-t-15">
+                    <div class="col-sm-12">
+                        <div class=" fullwid pull-left h-320">
+                            <div class="panel nomarg card">
+                                <div class="panel-heading bg-white">
+                                    <p class="p-tb-10 nomarg ft-11 ft-smbold">FLEET UTLIZATION <span class="p-lr-10 textlighthash">Total Number of Rentals vs Day</span>
+                                        <!--<span class="pull-right" ng-click="showSetting('totalride')"><em class="fa fa-ellipsis-h ft-18"></em> </span> -->
+                                    </p>
+                                </div>
+                                <div class="panel-body" ng-show="totalridesettingsView">
+                                    <!--<span style="position:absolute;top: 45px;right: 30px;" ><span class="required-dot" style="top:-5px;left:-15px;color: #1D78B5;">●</span> Legend 1</span>-->
+                                    <!--<canvas height="220px" id="line" class="chart chart-line" chart-labels="utilizationLabels"-->
+                                            <!--chart-options="utilizationChartOptions" chart-data="utilizationData"-->
+                                            <!--chart-dataset-override="utilizationOverride"> </canvas>-->
+                                    <highchart style="height:230px;" id="chart1" config="chartConfig" class="span10"></highchart>
+                                </div>
+                                <div class="panel-body p-tb10-lr20" style="height:220px;" ng-hide="totalridesettingsView">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <span class="pull-left m-t-7"> X- Axis </span></div>
+                                        <div class="col-sm-8">
+                                            <select class="form-control h-33 m-l-30 pull-left" ng-model="analyticsdata.price_type" required style="width:153px">
+                                                <option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-7">
+                                        <div class="col-sm-2"><span class="v-m"> Interval </span></div>
+                                        <div class="col-sm-10"><div id="datetimepickerRide" class="ft-11 custom-datpicker"></div>
+                                            <p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p></div>
+                                        <!--<span class="pull-left m-t-7"> Interval </span>-->
+                                        <!--<div class="pull-left p-l-30" style="width:260px;">-->
+                                        <!--<div id="datetimepickerRide"></div>-->
+                                        <!--&lt;!&ndash;<input id='datetimepickerRide' type='text'style='text-overflow: ellipsis;width:120px;' class="text-center ft-14 form-control" placeholder="MM/DD/YYYY" ng-model="date1"/>&ndash;&gt;-->
+                                        <!--<p class="text-center text-bbb m-t-10 l-s ft-12">( Max 6 month increments )</p>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_manitenance_barchart.png">-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_Hbarchart.png">-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_Hbarchart2.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-12">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_linechart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_piechart1.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_piechart2.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_doughnut.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-12">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_wavechart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-12">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_graph1.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-6">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_areachart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_bubblechart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-12">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_Vbarchart.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-6">-->
+                <!--<div class="">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_progressbar.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6">-->
+                <!--<div class="bg-white pull-left bor-rad-3 p-20 fullwid" style="opacity: 0.6;">-->
+                <!--<img class="img-responsive fullwid" src="images/lattis_listview.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="row m-t-15">-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="panel h-260">-->
+                <!--<div class="panel-heading bg-white">-->
+                <!--<p class="p-tb-10 ft-12 m-b-10">FLEET UTLIZATION <span class="p-lr-10 text-hash"> Total Trips vs Time</span><span class="pull-right"><em class="fa fa-ellipsis-h" ></em> </span> </p>-->
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                <!--<canvas ng-hide="settingChart" style="height: 175px;" class="chart chart-bar" chart-dataset-override ="fleetchartOverride" chart-data="fleetchartdata"-->
+                <!--chart-labels="fleetbarlabels" chart-options="fleetChartOptions" chart-series="fleetChartSeries"></canvas>-->
+                <!--</div>-->
+                <!--<div class="panel-body" ng-if="settingChart">-->
+                <!--<span> X- Axis </span>-->
+                <!--<select ng-model="analyticsdata.price_type" required style="width:153px">-->
+                <!--<option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="bg-white fullwid pull-left h-260">-->
+                <!--<div class="panel">-->
+                <!--<div class="panel-heading bg-white">-->
+                <!--<p class="p-tb-10 ft-12">FLEET UTLIZATION <span class="p-lr-10 text-hash"> Average Trip Duration vs Time</span><span class="pull-right"><em class="fa fa-ellipsis-h"></em> </span> </p>-->
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                <!--<canvas style="height: 175px;" class="chart chart-bar" chart-dataset-override ="fleetchartOverride" chart-data="fleetchartdata"-->
+                <!--chart-labels="fleetbarlabels" chart-options="fleetChartOptions" chart-series="fleetChartSeries"></canvas>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4">-->
+                <!--<div class="bg-white fullwid pull-left h-260">-->
+                <!--<div class="panel">-->
+                <!--<div class="panel-heading bg-white">-->
+                <!--<p class="p-tb-10 ft-12">FLEET UTLIZATION <span class="p-lr-10 text-hash"> Total Ride Distance vs Time</span><span class="pull-right"><em class="fa fa-ellipsis-h"></em> </span> </p>-->
+                <!--<canvas style="height: 175px;" class="chart chart-bar" chart-dataset-override ="fleetchartOverride" chart-data="fleetchartdata"-->
+                <!--chart-labels="fleetbarlabels" chart-options="fleetChartOptions" chart-series="fleetChartSeries"></canvas>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--<highchart id="chart1" config="chartConfig" class="span10"></highchart>-->
+        </div>
+    </div>
+</section>
+
+
+

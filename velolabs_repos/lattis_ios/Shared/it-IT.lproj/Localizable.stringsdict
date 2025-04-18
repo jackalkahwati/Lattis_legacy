@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"> 
+<!--
+ Loco ios export: iOS plural rules
+ Project: Lattis
+ Release: Working copy
+ Locale: it, Italian
+ Exported by: Ravil Khusainov
+ Exported at: Wed, 30 Mar 2022 17:33:41 +0300 
+--> 
+<plist version="1.0">
+    <dict> 
+        <key>hours</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 ora</string> 
+                <key>other</key>
+                <string>%d ore</string> 
+            </dict>
+        </dict> 
+        <key>mins</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 minuto</string> 
+                <key>other</key>
+                <string>%d minuti</string> 
+            </dict>
+        </dict> 
+        <key>days</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 giorno</string> 
+                <key>other</key>
+                <string>%d giorni</string> 
+            </dict>
+        </dict> 
+        <key>weeks</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 settimana</string> 
+                <key>other</key>
+                <string>%d settimane</string> 
+            </dict>
+        </dict> 
+        <key>months</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 mese</string> 
+                <key>other</key>
+                <string>%d mesi</string> 
+            </dict>
+        </dict> 
+        <key>minutes</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 minuto</string> 
+                <key>other</key>
+                <string>%d minuti</string> 
+            </dict>
+        </dict> 
+    </dict>
+</plist>

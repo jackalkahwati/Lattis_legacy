@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lattis</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow"/>
+
+    <!--Sentry-->
+    <script src="libs/raven-js/dist/raven.js"></script>
+    <script src="libs/raven-js/dist/plugins/angular.js"></script>
+
+    <!--jQuery-->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/jquery-ui-dist/jquery-ui.js"></script>
+    <script src="libs/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+
+    <!--Angular-->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <script src="libs/angular-aria/angular-aria.min.js"></script>
+    <script src="libs/angular-messages/angular-messages.min.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="libs/angular-cookies/angular-cookies.min.js"></script>
+    <script src="libs/angular-translate/dist/angular-translate.js"></script>
+    <script src="libs/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/j-i-c/src/JIC.js"></script>
+
+    <!--Libraries-->
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/underscore/underscore-min.js"></script>
+    <script src="libs/mapbox-gl/dist/mapbox-gl.js"></script>
+    <script src="libs/socket.io-client/dist/socket.io.js"></script>
+    <script src='libs/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.min.js'></script>
+    <script src='libs/@turf/turf/turf.min.js'></script>
+    <script src="libs/chart.js/dist/Chart.min.js"></script>
+    <script src="libs/moment/min/moment.min.js"></script>
+    <script src="libs/moment-duration-format/lib/moment-duration-format.js"></script>
+    <script type="text/javascript" src='libs/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'></script>
+    <script src="libs/@cgross/angular-notify/dist/angular-notify.min.js"></script>
+    <script type="text/javascript" src="libs/d3/d3.min.js"></script>
+    <script src="libs/cal-heatmap/cal-heatmap.min.js"></script>
+    <script src="libs/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+
+    <!--3rd Party Directives-->
+    <script src="js/directives/angular-count-to-directive.js"></script>
+    <script src="libs/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="libs/ngstorage/ngStorage.min.js"></script>
+    <script src="libs/angular-rangeslider/angular.rangeSlider.js"></script>
+    <script src="libs/ang-accordion/js/ang-accordion.js"></script>
+    <script src="libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="libs/ng-intl-tel-input/ng-intl-tel-input.module.js"></script>
+    <script src="libs/ng-intl-tel-input/ng-intl-tel-input.provider.js"></script>
+    <script src="libs/ng-intl-tel-input/ng-intl-tel-input.directive.js"></script>
+    <script src="libs/ng-caps-lock/ng-caps-lock.min.js"></script>
+    <script src="libs/angularjs-scope.safeapply/src/Scope.SafeApply.js"></script>
+    <script src="libs/ng-dialog/js/ngDialog.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.src.js"></script>
+    <script src="https://rawgithub.com/pablojim/highcharts-ng/master/src/highcharts-ng.js"></script>
+
+    <!-- Routes-->
+    <script src="js/app.js"></script>
+
+    <!--Controllers-->
+    <script src="js/controllers/login-controller.js"></script>
+    <script src="js/controllers/menu-controller.js"></script>
+    <script src="js/controllers/header-controller.js"></script>
+    <script src="js/controllers/add-fleet-controller.js"></script>
+    <script src="js/controllers/order-new-ellipse-controller.js"></script>
+    <script src="js/controllers/profile-settings-controller.js"></script>
+    <script src="js/controllers/account-settings-controller.js"></script>
+    <script src="js/controllers/real-time-map-controller.js"></script>
+    <script src="js/controllers/fleetmap-controller.js"></script>
+    <script src="js/controllers/live-bikes-status-controller.js"></script>
+    <script src="js/controllers/staged-bikes-status-controller.js"></script>
+    <script src="js/controllers/out-of-service-bikes-status-controller.js"></script>
+    <script src="js/controllers/archive-bikes-status-controller.js"></script>
+    <script src="js/controllers/bike-details-menu-controller.js"></script>
+    <script src="js/controllers/bike-details-controller.js"></script>
+    <script src="js/controllers/bike-live-status-controller.js"></script>
+    <script src="js/controllers/home-controller.js"></script>
+    <script src="js/controllers/modal-controller.js"></script>
+    <script src="js/controllers/report-controller.js"></script>
+    <script src="js/controllers/activity-feed-controller.js"></script>
+    <script src="js/controllers/add-bikes-controller.js"></script>
+    <script src="js/controllers/member-list-controller.js"></script>
+    <script src="js/controllers/member-header-controller.js"></script>
+    <script src="js/controllers/member-trip-history-controller.js"></script>
+    <script src="js/controllers/membership-subscriptions-controller.js"></script>
+    <script src="js/controllers/member-profile-controller.js"></script>
+    <script src="js/controllers/bike-locator-controller.js"></script>
+    <script src="js/controllers/parking-controller.js"></script>
+    <script src="js/controllers/geofencing-controller.js"></script>
+    <script src="js/controllers/password-reset-controller.js"></script>
+    <script src="js/controllers/payments/payment-controller.js"></script>
+    <script src="js/controllers/payments/payment-gateway.controller.js"></script>
+    <script src="js/controllers/payments/pricing-options.controller.js"></script>
+    <script src="js/controllers/bike-activity-log-controller.js"></script>
+    <script src="js/controllers/bike-reservations-controller.js"></script>
+    <script src="js/controllers/analytics-chart-controller.js"></script>
+    <script src="js/controllers/add-customer-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-live-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-service-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-archive-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-staging-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-staging-modal-controller-options.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-live-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/send-to-live-modal-controller-options.js"></script>
+    <script src="js/controllers/modal-controllers/create-ticket-controller.js"></script>
+    <script src="js/controllers/modal-controllers/select-existing-bike-image-controller.js"></script>
+    <script src="js/controllers/modal-controllers/select-existing-bike-description-controller.js"></script>
+    <script src="js/controllers/modal-controllers/upload-image-controller.js"></script>
+    <script src="js/controllers/modal-controllers/assign-ticket-controller.js"></script>
+    <script src="js/controllers/modal-controllers/add-user-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/change-fleet-type-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/delete-equipment-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/enable-reservations-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/add-member-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/damage-report-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/end-ride-modal-controller.js"></script>
+    <script src="js/controllers/modal-controllers/issue-refund-modal-controller.js"></script>
+    <script src="js/controllers/hubs/staging.controller.js"></script>
+    <script src="js/controllers/hubs/live.controller.js"></script>
+    <script src="js/controllers/hubs/add-hub.controller.js"></script>
+    <script src="js/controllers/hubs/edit-hub.controller.js"></script>
+    <script src="js/controllers/hubs/hub-details.controller.js"></script>
+    <script src="js/controllers/hubs/port-details.controller.js"></script>
+    <script src="js/controllers/user-promotions-controller.js"></script>
+
+    <!-- Factories-->
+    <script src="js/factories/analytic-point-factory.js"></script>
+    <script src="js/factories/auth-factory.js"></script>
+    <script src="js/factories/session-factory.js"></script>
+    <script src="js/factories/map-factory.js"></script>
+    <script src="js/factories/map-shape-factory.js"></script>
+    <script src="js/factories/map-circle-factory.js"></script>
+    <script src="js/factories/map-polygon-factory.js"></script>
+    <script src="js/factories/map-rectangle-factory.js"></script>
+    <script src="js/factories/scoket-factory.js"></script>
+    <script src="js/factories/trip-animation-factory.js"></script>
+    <script src="js/factories/my-fleet-factory.js"></script>
+    <script src="js/factories/utils-factory.js"></script>
+    <script src="js/factories/users-factory.js"></script>
+    <script src="js/factories/profile-settings-factory.js"></script>
+    <script src="js/factories/add-fleet-factory.js"></script>
+    <script src="js/factories/bike-fleet-factory.js"></script>
+    <script src="js/factories/root-scope-factory.js"></script>
+    <script src="js/factories/dashboard-alerts-factory.js"></script>
+    <script src="js/factories/edit-parking-zone-factory.js"></script>
+    <script src='js/factories/asset-fetch-factory.js'></script>
+    <script src='js/factories/parking-factory.js'></script>
+    <script src='js/factories/report-factory.js'></script>
+    <script src='js/factories/payment-factory.js'></script>
+    <script src='js/factories/membership-factory.js'></script>
+    <script src='js/factories/promotions-factory.js'></script>
+    <script src='js/factories/hubs.factory.js'></script>
+    <script src='js/factories/promotions-factory.js'></script>
+    <script src='js/factories/pricing-options-factory.js'></script>
+
+
+    <!--Directives-->
+    <script src="js/directives/header-directives.js"></script>
+    <script src="js/directives/footer-directives.js"></script>
+    <script src="js/directives/uploadfile-directives.js"></script>
+    <script src="js/directives/custom-directives.js"></script>
+    <script src="js/directives/draw-parking-zone-directive.js"></script>
+    <script src="js/directives/autocomplete-directive.js"></script>
+    <script src="js/directives/fleetname-check.js"></script>
+    <script src="js/directives/customize-bikefleet-table-directive.js"></script>
+    <script src="js/directives/angular-nicescroll.js"></script>
+    <script src="js/directives/hubs/table.js"></script>
+    <script src="js/directives/hubs/simple-file-select.js"></script>
+
+    <!--Filters-->
+    <script src="js/filter/custom-filters.js"></script>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="libs/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="libs/ng-dialog/css/ngDialog-theme-default.min.css">
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="libs/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet" type="text/css">
+    <link href='libs/mapbox-gl/dist/mapbox-gl.css' rel='stylesheet' type="text/css"/>
+    <link href='libs/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+    <link href="libs/jquery-ui-dist/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="libs/ang-accordion/css/ang-accordion.css" rel="stylesheet" type="text/css">
+    <link href="libs/angular-rangeslider/angular.rangeSlider.css" rel="stylesheet" type="text/css">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="libs/cal-heatmap/cal-heatmap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="libs/@cgross/angular-notify/dist/angular-notify.min.css">
+    <link rel="stylesheet" href="libs/animate.css/animate.min.css">
+    <link href="stylesheets/less/main.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="libs/highcharts-ng/dist/highcharts-ng.css">
+
+    <!-- intl tel input resources  -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput-jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"></script>
+
+</head>
+<body ng-app="skyfleet" ng-nicescroll nice-option="{cursorcolor: '#bbb', cursorwidth: '12px', background: '#F4F5F6', cursorborderradius: '0', oneaxismousemode: 'false' }" nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()" >
+<div ng-init="showLoader=true" ng-show="showLoader"
+     style="z-index:999;position: fixed;top: 0;right: 0;bottom: 0;text-align: center;height: 100%;width: 100%;background: rgba(255,255,255,0.5);">
+    <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+        </div>
+    </div>
+</div>
+<div class="wrapper animated fadeIn"  ng-init="session()" ng-show="!preLoader"
+     ng-style=" ($state.$current.name === 'login' || $state.$current.name === 'password-reset') ? {'background': '#f4f5f6'} : ''">
+
+    <!--  slidenav-bar section-->
+    <slidebar-nav style='z-index: 8 !important' class="slidebar" ng-init="showAfterLoad=false"
+                  ng-if="showAfterLoad || ($state.$current.name !== 'login' && $state.$current.name !== 'password-reset')"></slidebar-nav>
+    <!--  slidenav-bar section-->
+
+    <section class="slide-content"
+             ng-style='($state.$current.name === "login" || $state.$current.name === "password-reset") ? {"margin" : "0"} : ""'>
+
+        <div class="container-fluid animated fadeIn">
+            <!--Header-->
+            <div class="row max-h-70" ng-style='($state.$current.name === "analytics") ? {"background-color" : "#f6f6f7"} : ""'>
+                <div class="col-sm-12">
+                    <fleet-header
+                            ng-if='showAfterLoad'></fleet-header>
+                </div>
+            </div>
+            <!--End-Header-->
+            <div class="row">
+                <div class="col-sm-12 nopadd" ui-view autoscroll="true">
+                </div>
+            </div>
+        </div>
+    </section>
+    <fleet-footer
+            ng-if='!($state.$current.name === "login" || $state.$current.name === "password-reset" )'></fleet-footer>
+</div>
+</body>
+</html>

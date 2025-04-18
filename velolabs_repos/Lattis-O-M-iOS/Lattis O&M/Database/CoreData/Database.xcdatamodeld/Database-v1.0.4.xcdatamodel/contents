@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDEllipse" representedClassName="CDEllipse" syncable="YES" codeGenerationType="category">
+        <attribute name="bikeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bikeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fleetId" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fleetKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockId" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="macId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fleet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDFleet" inverseName="locks" inverseEntity="CDFleet" syncable="YES"/>
+        <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTicket" inverseName="lock" inverseEntity="CDTicket" syncable="YES"/>
+    </entity>
+    <entity name="CDFleet" representedClassName="CDFleet" syncable="YES" codeGenerationType="category">
+        <attribute name="fleetId" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isCurrent" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="locks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDEllipse" inverseName="fleet" inverseEntity="CDEllipse" syncable="YES"/>
+        <relationship name="operators" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDOperator" inverseName="fleets" inverseEntity="CDOperator" syncable="YES"/>
+        <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTicket" inverseName="fleet" inverseEntity="CDTicket" syncable="YES"/>
+    </entity>
+    <entity name="CDOperator" representedClassName="CDOperator" syncable="YES" codeGenerationType="category">
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="operatorId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="assigned" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTicket" inverseName="assignee" inverseEntity="CDTicket" syncable="YES"/>
+        <relationship name="fleets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDFleet" inverseName="operators" inverseEntity="CDFleet" syncable="YES"/>
+        <relationship name="owned" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTicket" inverseName="oper" inverseEntity="CDTicket" syncable="YES"/>
+    </entity>
+    <entity name="CDTicket" representedClassName="CDTicket" syncable="YES" codeGenerationType="category">
+        <attribute name="assigneeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bikeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bikeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bikeStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="currentStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fleetId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isNew" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maintenanceNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="operatorId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="operatorNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="operatorPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resolved" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="riderNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ticketStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="assignee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDOperator" inverseName="assigned" inverseEntity="CDOperator" syncable="YES"/>
+        <relationship name="fleet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDFleet" inverseName="tickets" inverseEntity="CDFleet" syncable="YES"/>
+        <relationship name="lock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDEllipse" inverseName="tickets" inverseEntity="CDEllipse" syncable="YES"/>
+        <relationship name="oper" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDOperator" inverseName="owned" inverseEntity="CDOperator" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDEllipse" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="CDFleet" positionX="-63" positionY="36" width="128" height="150"/>
+        <element name="CDOperator" positionX="-45" positionY="126" width="128" height="180"/>
+        <element name="CDTicket" positionX="-54" positionY="54" width="128" height="495"/>
+    </elements>
+</model>

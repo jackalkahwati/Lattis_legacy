@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_accent_color">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toTopOf="@+id/ll_signup_fields"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            android:src="@drawable/company_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toTopOf="@+id/cv_tv_already_account"
+        android:orientation="vertical"
+        android:paddingLeft="32dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/ll_signup_fields"
+        android:visibility="visible"
+        android:paddingRight="32dp">
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:text="@string/onboarding_sign_up_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <io.bikes.sandypedals.presentation.view.CustomEditText
+            android:id="@+id/et_firstname"
+            style="@style/whiteButtonStyle.rect.edit.view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="left|center"
+            android:hint="@string/hint_firstName"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <io.bikes.sandypedals.presentation.view.CustomEditText
+            android:id="@+id/et_lastname"
+            style="@style/whiteButtonStyle.rect.edit.view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="left|center"
+            android:hint="@string/hint_lastName"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <io.bikes.sandypedals.presentation.view.CustomEditText
+            android:id="@+id/et_email"
+            style="@style/whiteButtonStyle.rect.edit.view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="left|center"
+            android:hint="@string/hint_emailaddress"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <io.bikes.sandypedals.presentation.view.CustomEditText
+                style="@style/whiteButtonStyle.rect.edit.view"
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:background="@android:color/transparent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:paddingRight="8dp"
+                android:text="@string/label_show"
+                android:tag="@string/label_show"
+                android:id="@+id/tv_show_hide"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_accent_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_blue_arrow"
+            app:backgroundTint="@android:color/white"
+            app:fabSize="normal"
+            android:elevation="0dp"
+            android:scaleType="centerInside"
+
+            />
+
+    </LinearLayout>
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/cv_tv_already_account"
+            android:text="@string/onboarding_log_in_question"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    <include layout="@layout/no_internal_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

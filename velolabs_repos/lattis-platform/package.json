@@ -1,0 +1,30 @@
+{
+  "name": "@velo-labs/platform",
+  "version": "1.1.5",
+  "description": "A library where common nodejs code for lattis projects resides.",
+  "repository": "https://github.com/velolabs/lattis-platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "async": "2.0.0",
+    "aws-param-store": "^3.2.0",
+    "aws-sdk": "2.7.21",
+    "body-parser": "1.15.2",
+    "elliptic": "6.4.0",
+    "express": "4.14.0",
+    "fs": "0.0.2",
+    "jsonfile": "3.0.0",
+    "mandrill-api": "1.0.45",
+    "moment": "2.16.0",
+    "morgan": "1.7.0",
+    "mysql": "2.12.0",
+    "node-geocoder": "3.20.1",
+    "serve-favicon": "2.3.2",
+    "twilio": "3.0.0",
+    "underscore": "1.8.3"
+  },
+  "author": "lattis",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    >
+
+    <fragment
+        android:id="@+id/verification_code_fragment"
+        android:name="io.bikes.sandypedals.presentation.ui.authentication.verification.fragment.EnterSecretCodeActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_enter_secret_code" />
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</RelativeLayout>

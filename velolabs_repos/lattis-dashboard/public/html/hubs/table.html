@@ -1,0 +1,63 @@
+<table class="table table-hover hubs-table">
+  <thead>
+    <tr>
+      <th class="text-white" ng-repeat="(field, value) in allFields">
+        {{ value.title }}
+      </th>
+      <th class="text-white">Actions</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="hub in hubs" ng-if="hubs.length > 0">
+      <td>
+        <a ui-sref="hub.details({uuid: hub.hubUUID})">{{hub['hubName']}}</a>
+      </td>
+      <td>
+        <span class="content"> {{ types[hub.type] }} </span>
+      </td>
+      <td ng-repeat="(field, _) in fields">
+        <span class="content"> {{ hub[field] }} </span>
+      </td>
+      <td>
+        <a href="" ui-sref="hub.ports({uuid: hub.hubUUID})">
+          <span class="content"> {{ (hub.ports || []).length }} </span> - ({{
+          availableSpots(hub).length }} available)
+        </a>
+      </td>
+      <td ng-if="status === 'live'">
+        <span class="content">
+          <button ng-disabled="changingStatus === hub.hubUUID" class="btn btn-xs btn-primary"
+            ng-click="changeStatus(hub)">
+            {{ changingStatus === hub.hubUUID ? 'Loading...' : 'Send to Staging' }}
+          </button>
+        </span>
+      </td>
+      <td ng-if="status === 'staging'">
+        <span class="content">
+          <a class="btn btn-xs btn-primary" ui-sref="hub.details({uuid: hub.hubUUID})">
+            View
+          </a>
+        </span>
+        <span class="content">
+          <a class="btn btn-xs btn-primary" ui-sref="hub-edit({uuid: hub.hubUUID})">
+            Edit
+          </a>
+        </span>
+        <span class="content" ng-if="hub.remoteHubStatus === 'Available'">
+          <button ng-disabled="changingStatus === hub.hubUUID" class="btn btn-xs btn-success"
+            ng-click="changeStatus(hub)">
+            {{ changingStatus === hub.hubUUID ? 'Loading...' : 'Send to Live' }}
+          </button>
+        </span>
+      </td>
+      <td>
+        <a ui-sref="hub.details({ uuid: hub.hubUUID })" class="pointer pull-right pointer"></a>
+      </td>
+    </tr>
+
+    <tr ng-if="hubs.length === 0">
+      <td colspan="7" class="text-center">No {{status}} hubs available.</td>
+    </tr>
+  </tbody>
+</table>

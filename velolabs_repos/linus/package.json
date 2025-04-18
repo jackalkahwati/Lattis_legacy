@@ -1,0 +1,25 @@
+{
+  "name": "linus",
+  "version": "1.0.0",
+  "description": "Suggestion generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velolabs/linus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velolabs/linus/issues"
+  },
+  "homepage": "https://github.com/velolabs/linus#readme",
+  "dependencies": {
+    "@velo-labs/platform": "0.0.24",
+    "async": "^2.2.0",
+    "moment": "^2.18.1",
+    "underscore": "^1.8.3"
+  }
+}

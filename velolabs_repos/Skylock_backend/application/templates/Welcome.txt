@@ -1,0 +1,1 @@
+Welcome to Ellipse! Your Ellipse Login Verification code is:  {{ code }}. Please enter this code to verify your account.

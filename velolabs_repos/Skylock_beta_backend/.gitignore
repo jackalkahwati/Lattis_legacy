@@ -1,0 +1,11 @@
+venv
+beta
+*.pyc
+locustio
+pyzmq
+locustfile.py
+test_push.py
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

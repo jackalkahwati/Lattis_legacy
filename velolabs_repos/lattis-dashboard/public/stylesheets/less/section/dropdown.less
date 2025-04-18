@@ -1,0 +1,236 @@
+.dropdown-selection{
+  &:hover{
+    color: @colorskyblue !important;
+    background: none !important;
+  }
+}
+
+.fleetSearchdropdown {
+  left: 0px !important;
+  right: 44px !important;
+  max-height: 200px;
+  overflow: auto;
+  padding: 15px 0px;
+  li {
+    a {
+      border: 0px;
+      padding: 3px 14px;
+    }
+  }
+}
+
+.user-dropdownlist {
+  ul {
+    > li {
+      padding: 0px;
+    }
+  }
+}
+
+.menu-dropdown {
+  margin-top: 9px;
+  float: left;
+  margin-right: 5px;
+}
+
+.checkboxcheck > li {
+  .pointer;
+}
+
+.tabledropdown {
+  > div {
+    float: right;
+    > div.dropdown-display {
+      float: right;
+      width: 64px;
+      position: relative;
+      z-index: 3;
+      border: none;
+      > div {
+        padding: 0px 10px;
+        font-size: 20px;
+        color: @color_5;
+        border: 1px solid @color_2;
+        transition: transform ease 2s;
+        span {
+          margin-right: 8px;
+          margin-top: 4px;
+          float: left;
+          .fleet_icon;
+          .fleet_icon.gear;
+        }
+        > i {
+          float: left;
+          margin-top: 6px;
+          color: #ddd;
+        }
+        width: 100%;
+        padding: 0 8px;
+        font-size: 20px;
+      }
+    }
+    > div.dropdown-list {
+      width: 233px;
+      float: right;
+      position: relative;
+      z-index: 4 !important;
+      > div {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .19), 0 -1px 5px 0 rgba(0, 0, 0, .19);
+        border: none;
+        border-radius: 0px;
+        > div {
+          padding: 5px 0px;
+          > span {
+            padding: 0px 15px;
+            color: @color_22;
+            font-family: SanFransiscoThin;
+          }
+        }
+      }
+    }
+  }
+  > div.show > div.dropdown-display {
+    z-index: 5;
+    > div {
+      width: 100%;
+      color: @colorskyblue;
+      border: 1px solid #D8D8D8;
+      border-bottom: 0px;
+      box-shadow: 0 -3px 4px -2px rgba(0, 0, 0, .19), 3px 0px 3px -2px rgba(0, 0, 0, .19), -4px 0px 3px -3px rgba(0, 0, 0, .19)
+
+    }
+  }
+}
+
+dropdown {
+  float: left;
+  display: block;
+  width: 160px;
+
+  > div {
+    float: left;
+    width: 100%;
+
+    > div.dropdown-display {
+      float: left;
+      width: 100%;
+      background: white;
+      height: @height;
+      .pointer;
+      border: solid 1px @colorghostwhite;
+      box-sizing: border-box;
+
+      @icon-width: 14px;
+      > * {
+        float: left;
+        height: 100%;
+        .vertical-centre(@height);
+      }
+
+      > span {
+        .ft-14;
+        position: relative;
+        box-sizing: border-box;
+        //padding-right: @icon-width+@spacing*2;
+        padding-left: @spacing;
+        margin: 0px;
+
+        &.placeholder {
+          color: @placeholder-colour;
+        }
+        label {
+          .ft-12;
+        }
+      }
+      > i {
+        float: right;
+        position: relative;
+        width: @icon-width;
+        font-size: 1.125em;
+        padding-right: 20px;
+        top: -3px;
+      }
+    }
+
+    > div.dropdown-list {
+      float: left;
+      width: 100%;
+      position: relative;
+      width: 100%;
+      transform: scale(1, 0);
+      transition: transform ease 250ms;
+
+      > div {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        .pointer;
+        background: white;
+
+        > div {
+          float: left;
+          width: 100%;
+          padding: 0 @spacing;
+          box-sizing: border-box;
+          border-top: none;
+          .ft-12;
+          @icon-width: 20px;
+
+          &:hover {
+            background: #F0F0F0;
+          }
+
+          > * {
+            .vertical-centre(@height);
+          }
+
+          > span {
+            float: left;
+            width: 100%;
+            position: relative;
+            //padding-right: @icon-width+@spacing;
+            box-sizing: border-box;
+            color: inherit;
+            margin: 0px;
+          }
+
+          > i {
+            float: left;
+            width: @icon-width;
+            margin-left: @icon-width*-1;
+            display: none;
+          }
+
+          &.selected > i {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    :not(.show) {
+      > div.dropdown-list {
+        transform: scale(1, 0);
+        background: red;
+      }
+    }
+  }
+  div.show {
+    .dropdown-display {
+      border-bottom: 0px;
+    }
+    > div.dropdown-list {
+      transform: scale(1, 1);
+      z-index: 1;
+      > div {
+        border: 1px solid @colorghostwhite;
+        border-top: 0px;
+        padding-top: 5px;
+      }
+    }
+
+  }
+}
+
+.dropdown-arrow{
+  position: absolute;right: 8px;top: 8px;background: #f8f8f8;pointer-events: none;
+}

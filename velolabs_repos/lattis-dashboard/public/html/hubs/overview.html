@@ -1,0 +1,68 @@
+<section class="container" ng-controller="hubDetailsController">
+  <div class="row" ng-show="loading">
+    <div ng-init="showLoader=true" ng-show="showLoader">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" ng-hide="loading">
+    <div class="panel-heading bg-white box m-b-20">
+      <div class="nomarg bg-white noborder p-t-15">
+        <button class="btn custom-btn bg-HeaderToolbar text-uppercase text-left ft-12" ng-click="goToHubsList()">
+          <i class="fa fa-angle-left p-r-5"></i>
+          {{ hub.localHubStatus ? 'Back to ' + hub.localHubStatus + ' hubs' : 'Back' }}
+        </button>
+        <span class="ft-18 v-m m-l-35 ft-proLight ng-binding">Hub name: {{hub.hubName}}</span>
+        <div class="pull-right">
+          <ul class="list-unstyled" style="display: flex; flex-direction: column; align-items: flex-start;">
+            <li class="details-status">
+              <span>Status: </span><span class="text-statusHighlight text-uppercase">{{ hub.localHubStatus }}</span>
+            </li>
+            <li class="details-status" ng-if="hub.remoteHubStatus && hub.integration !== 'custom'">
+              <span>Remote Status: </span><span
+                class="text-statusHighlight text-uppercase">{{ hub.remoteHubStatus }}</span>
+            </li>
+            <li class="details-status">
+              <span>{{hub.ports.length}} ports</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body box">
+      <div class="nav-center">
+        <ul class="nav nav-tabs dashtabs text-uppercase">
+          <li ui-sref-active="active">
+            <a ui-sref="hub.details({uuid: hub.hubUUID})"> Details </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="hub.ports({uuid: hub.hubUUID})"> Ports </a>
+          </li>
+        </ul>
+      </div>
+      <div class="pull-left fullwid m-t-10 m-b-30 bor-b-hash">
+        <ul class="nav navbar-nav m-tb-10 checkboxcheck ft-12 animated flipInX">
+          <li class="item text-uppercase">
+            <button class="btn action_btn text-center" ng-if="changingStatus" disabled>
+              Loading...
+            </button>
+            <button class="btn action_btn text-center" ng-click="changeStatus(hub)" ng-if="!changingStatus">
+              SEND TO {{ hub.localHubStatus === 'staging' ? 'LIVE' : 'STAGING' }}
+            </button>
+          </li>
+          <li class="item m-l-10 text-uppercase">
+            <button class="btn action_btn text-center" ng-click="editHub()" ng-disabled="changingStatus">
+              EDIT
+            </button>
+          </li>
+        </ul>
+      </div>
+      <ui-view></ui-view>
+    </div>
+  </div>
+</section>

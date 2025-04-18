@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_parking_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_parking_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/tv_parking_name">
+
+        <ImageView
+            android:id="@+id/iv_parking_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_parking_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_parking_img"
+            android:layout_alignTop="@+id/iv_parking_img"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/iv_parking_img"
+            android:gravity="center_vertical"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_parking_layout_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        android:src="@drawable/delete_icon_dark"
+        android:tint="#3C5377" />
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+
+        android:id="@+id/tv_get_parking_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/get_parking_route_text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_accent_color"
+        android:layout_below="@+id/rl_parking_sub"
+        />
+
+</RelativeLayout>

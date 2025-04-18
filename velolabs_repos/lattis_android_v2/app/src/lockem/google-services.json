@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "665924283234",
+    "project_id": "lockem-lattis",
+    "storage_bucket": "lockem-lattis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665924283234:android:8c0d1322aa6f007106da3b",
+        "android_client_info": {
+          "package_name": "io.bikes.lockem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQdZlORE7VRDW3z1q8CBeJMVOb-Twd5_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "665924283234-9rtjadgc4cl8l4rkiaq8nmngblp5ok18.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lockem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665924283234:android:518329cefb8029bf06da3b",
+        "android_client_info": {
+          "package_name": "io.bikes.lockem.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQdZlORE7VRDW3z1q8CBeJMVOb-Twd5_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "665924283234-9rtjadgc4cl8l4rkiaq8nmngblp5ok18.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lockem"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665924283234:android:243383dc67d215ad06da3b",
+        "android_client_info": {
+          "package_name": "io.bikes.lockem.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQdZlORE7VRDW3z1q8CBeJMVOb-Twd5_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665924283234-tmnran5ri9cpppoph9kv85ospu9qclsh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "665924283234-9rtjadgc4cl8l4rkiaq8nmngblp5ok18.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lockem"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

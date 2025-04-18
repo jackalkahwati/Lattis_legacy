@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/bleConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="BLE Connection Status"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_connectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/bleConnection"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/red" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:keepScreenOn="true"
+            android:text="SKYLOCK TESTING"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#33b5e5"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textView_loading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullscreen_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal"
+            android:text="waiting for command..."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#7a7a7a"
+            android:textSize="23sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loading_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/textView_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressbar"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal"
+            android:text="Connecting..."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#7a7a7a"
+            android:textSize="23sp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:mySwitch="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iv_select_parking_fragment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_unselected_parking" />
+
+
+    <fragment
+        android:id="@+id/end_ride_fragment"
+        class="com.lattis.ellipse.presentation.ui.ride.EndRideFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/end_ride_fragment" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_ride_walkthrough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/pop_up_border"
+        android:visibility="gone">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/viewPager"
+            custom:ci_drawable="@drawable/circle_indicator_pageviewer" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/cv_ride_walkthrough_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="@string/ride_walkthough_skip_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/no_internet_active_ride_layout" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_lock_unlock_with_tooltip"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/end_ride_fragment"
+        android:layout_marginBottom="30dp"
+        >
+
+        <com.cpiz.android.bubbleview.BubbleTextView
+            android:id="@+id/tv_tooTipForLockUnlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            app:bb_fillColor="@color/tooltip_background"
+            android:padding="6dp"
+            android:text="Pulse aquí para desbloquear"
+            android:background="@color/tooltip_background"
+            android:textColor="@android:color/white"
+            app:bb_arrowDirection="Down"
+            app:bb_cornerRadius="2dp"
+            android:textSize="12dp"
+            android:visibility="visible"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_lock_unlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tooTipForLockUnlock"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_background"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/blue_circle"
+                android:visibility="visible" />
+
+
+            <ProgressBar
+                android:id="@+id/pb_locking_unlocking"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/progress_bar_drawable"
+                android:indeterminateDuration="1000"
+                android:indeterminateTint="#ffffff"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_lock"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_lock_locked"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_unlock"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_lock_unlocked"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lock_connecting"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_lock_disconnect"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lock_disconnected"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_lock_disconnect"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_lock_connected"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_lock_unlocked"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_lock_position_error_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/pop_up_border"
+        android:visibility="gone">
+
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_lock_position_error_popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/lock_position_error_pop_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#818181"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_lock_position_error_popup_subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ct_lock_position_error_popup_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/lock_position_error_pop_subtitle1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#4A4A4A"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_lock_position_error_popup_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ct_lock_position_error_popup_subtitle1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="@string/lock_position_error_pop_ok"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

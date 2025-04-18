@@ -1,0 +1,125 @@
+<div class="row" ng-show="loadingPaymentInfo">
+  <div ng-init="showLoader=true" ng-show="showLoader">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="!loadingPaymentInfo">
+  <div ng-if="!connectingToPaymentGateway">
+    <div
+      class="m-tb-20"
+      style="display: flex; align-items: center"
+      ng-if="!connectedTo(GATEWAYS.mercadopago)"
+    >
+      <span
+        ng-if="connectedTo(GATEWAYS.stripe)"
+        style="
+          font-size: 3rem;
+          color: #008000;
+          vertical-align: middle;
+          margin-right: 0.2em;
+        "
+      >
+        &check;
+      </span>
+      <a
+        href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id={{connect_stripe_id}}&scope=read_write&redirect_uri={{stripeRedirectURI()}}"
+        style="flex-basis: 20%"
+      >
+        <button class="btn custom-btn p-tb-10 p-lr-15 ft-12" style="width: 85%">
+          {{connectedTo(GATEWAYS.stripe) ? 'Modify' : 'Connect To Stripe'}}
+        </button>
+      </a>
+      <span class="ft-12 p-lr-5" ng-show="connectedTo(GATEWAYS.stripe)">
+        Your bikeshare network accepts payments with Stripe. View the
+        <span class="pointer" style="text-decoration: underline"
+          >terms of service</span
+        >
+      </span>
+      <span class="ft-12 p-lr-5" ng-show="!connectedTo(GATEWAYS.stripe)">
+        Connect your bikeshare network with Stripe to start accepting payments.
+      </span>
+    </div>
+
+    <div
+      class="m-tb-20"
+      style="display: flex; align-items: center"
+      ng-if="!connectedTo(GATEWAYS.stripe)"
+    >
+      <span
+        ng-if="connectedTo(GATEWAYS.mercadopago)"
+        style="
+          font-size: 3rem;
+          color: #008000;
+          vertical-align: middle;
+          margin-right: 0.2em;
+        "
+      >
+        &check;
+      </span>
+      <span style="flex-basis: 20%">
+        <button
+          class="btn custom-btn p-tb-10 p-lr-15 ft-12"
+          style="width: 85%"
+          ng-click="connectPaymentGateway()"
+        >
+          {{connectedTo(GATEWAYS.mercadopago) ? 'Modify' : 'Connect To Mercado
+          Pago'}}
+        </button>
+      </span>
+      <span class="ft-12 p-lr-5" ng-show="connectedTo(GATEWAYS.mercadopago)">
+        Your bikeshare network accepts payments with Mercado Pago. View the
+        <span class="pointer" style="text-decoration: underline">
+          <a href="">terms of service</a>
+        </span>
+      </span>
+      <span class="ft-12 p-lr-5" ng-show="!connectedTo(GATEWAYS.mercadopago)">
+        Connect your bikeshare network with Mercado Pago to start accepting
+        payments.
+      </span>
+    </div>
+  </div>
+  <div ng-show="connectingToPaymentGateway">
+    <div class="row" style="margin-left: 0">
+      <div class="col-xs-12 col-sm-4">
+        <form name="mpConnectForm">
+          <div class="form-group">
+            <label for="mp-public-key"> Public Key </label>
+            <input
+              type="text"
+              id="mp-public-key"
+              ng-model="mercadoPago.publicKey"
+              class="form-control"
+              required
+              name="publicKey"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mp-private-key">Access Token</label>
+            <input
+              name="privateKey"
+              type="text"
+              id="mp-private-key"
+              ng-model="mercadoPago.privateKey"
+              class="form-control"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            ng-click="connectMercadoPago()"
+            class="btn custom-btn text-uppercase"
+            ng-disabled="mpConnectForm.$pristine || connectingToPaymentGateway === GATEWAYS.mercadopago"
+          >
+            Connect
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<section>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <img ng-src="{{ hub.image }}" alt="" class="h-260">
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="row m-b-20">
+        <div class="col-sm-3">
+          <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d;">Type</span>
+        </div>
+        <div class="col-sm-9">
+          <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d;">{{types[hub.type]}}</span>
+        </div>
+      </div>
+      <div class="row m-b-20" ng-repeat="field in fields">
+        <div class="col-sm-3">
+          <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d;">{{field.title}}</span>
+        </div>
+        <div class="col-sm-9">
+          <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d; text-transform: capitalize;">{{hub[field.key]}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,418 @@
+*{ overflow-x: hidden!important;}
+.home-brands .home-full-width-feature.home-module {
+  display: table;
+  margin: 0 auto;
+  max-width: 1453px;
+  padding: 48px 50px;
+  width: 100%;
+}
+
+.brands-ul {
+  width: 100%;
+  min-height: 80px;
+}
+.brand-li {
+    float: left;
+    vertical-align: middle !important;
+    width: 14.286% !important;
+  height:80px;
+}
+.home-keyless .home-keyless-image .image-left {
+  display: inline-block;
+  float: left;
+  margin-top: 16.8%;
+  vertical-align: top;
+  width: 68%;
+}
+.home-keyless .home-keyless-image .image-mobile {
+  display: inline-block;
+  float: left;
+  margin-bottom: -7.741%;
+  margin-right: 5.09259%;
+  width: 26.3889%;
+}
+
+
+
+ @font-face {
+    font-family: 'helvetica_neueregular';
+    src: url('helveticaneue-thin-webfont.eot');
+    src: url('helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneue-thin-webfont.woff2') format('woff2'),
+         url('helveticaneue-thin-webfont.woff') format('woff'),
+         url('helveticaneue-thin-webfont.ttf') format('truetype'),
+         url('helveticaneue-thin-webfont.svg#helvetica_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/***************************** CSS  FOR I. E. ****************************/
+
+
+.moview {
+    display: none;
+    }
+  main .home-module-wrapper.home-brands {
+    background: #3b4343 none repeat scroll 0 0;
+}
+.home-brands .home-full-width-feature.home-module {
+    display: table;
+    margin: 0 auto;
+    max-width: 1453px;
+    padding: 48px 50px;
+    width: 100%;
+}
+  .mobileheaderimage {
+    display: none;
+}
+  
+.main-content > video#background {
+    width: 100%;
+  margin: 0 0 -9px 0;
+}
+  audio, canvas, video {
+    display: inline-block;
+}
+  
+#video-above.home-top-section {
+    max-width: 100%;
+    position: absolute;
+    top: 26%;
+}
+.home-top-section {
+    display: table;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 50px 50px;
+    width: 100%;
+}
+  .main-content {
+  padding-top: 0;
+  }
+  .home-top-section-wrapper p span.sky-lock {
+    color: #fff;
+     font-family: "helvetica_neueregular"; 
+    font-size: 150px;
+    letter-spacing: 44px;
+}
+  .vedio-tagline {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+}
+  
+.home-top-section p.video {
+    margin-bottom: 20px;
+  	margin-top: -50px;
+}
+.home-top-section p {
+     font-family: "helvetica_neueregular"; 
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+}
+  
+.home-top-section-wrapper .button.preorder.clicked-preorder.slider-prebutton {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+   box-shadow: none;
+}
+.button.preorder.clicked-preorder.slider-prebutton {
+    font-size: 15px;
+    font-weight: normal;
+    height: 42px;
+    line-height: 42px;
+    width: 220px;
+}
+  
+.home-top-section-wrapper .button.preorder.clicked-preorder.slider-prebutton span.pre-order {
+    color: rgb(226, 226, 226);
+     font-family: "helvetica_neueregular"; 
+    font-weight: bold;
+    margin-left: 15px;
+    text-transform: none;
+}
+a span.pre-order {
+    padding-left: 2px;
+}
+  
+.home-top-section .button.videobutton {
+    padding-left: 50px;
+}
+.home-top-section .button.videobutton {
+    background-color: transparent;
+/*     border: 2px solid #e2e2e2; */
+    border-radius: 0;
+  border: none;
+    color: #e2e2e2;
+    display: inline-block !important;
+    font-size: 15px;
+    font-weight: normal;
+    height: 42px;
+    letter-spacing: 0;
+    margin-left: 30px;
+    padding: 0 !important;
+    text-align: center;
+    vertical-align: middle !important;
+    width: 220px;
+}
+.home-top-section a {
+    width: 195px !important;
+}
+  .button.videobutton:hover {
+    color: gray !important;
+}
+  #play-button > span:hover {
+    color: gray;
+}
+  .button.preorder.clicked-preorder.slider-prebutton:hover {
+/*   background: #fff !important; */
+  }
+  .button.videobutton:hover {
+/*   background: #fff !important; */
+  }
+  .button.preorder.clicked-preorder.slider-prebutton:hover .pre-order {
+    color: gray !important;
+}
+  .slider-prebutton:hover {
+    color: gray !important;
+}
+  
+span.cartbutton-icon {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("https://cdn.shopify.com/s/files/1/0727/8385/t/23/assets/11.png?9994729333229820742");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: inline-block;
+    height: 38px;
+    margin-top: -4px;
+    text-align: center;
+    vertical-align: middle;
+    width: 19px;
+}
+  span.videobutton-icon {
+    background-color: transparent;
+    background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/23/assets/white.png?15317839792497259408");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: inline-block;
+/*     height: 38px; */
+    text-align: center;
+    vertical-align: middle;
+    width: 20px;
+}
+  #play-button:hover span.videobutton-icon {
+     background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/23/assets/gray.png?15317839792497259408"); 
+/* background-image: url({{ "gray.png" | asset_url }}); */
+  }
+  .button.preorder.clicked-preorder.slider-prebutton:hover span.cartbutton-icon {
+    background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/23/assets/graycart.png?15317839792497259408");
+}
+  .pre-orderimage {
+    background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/21/assets/sprecart.png?8088920975892129844");
+  	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: inline-block;
+    height: 43px;
+    margin-top: -4px;
+    text-align: center;
+    vertical-align: middle;
+    width: 186px;
+  }
+.pre-orderimage:hover {
+background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/21/assets/sprecarthover.png?11592931553135713303");
+}
+.videobuttonimag {
+  
+   background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/21/assets/svideo.png?16997617567998826162");
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    display: inline-block;
+    height: 43px;
+    margin-top: -4px;
+    text-align: center;
+    vertical-align: middle;
+    width: 186px;
+  	margin: -2px 5px !important;
+}
+.videobuttonimag:hover {
+background-image: url("//cdn.shopify.com/s/files/1/0727/8385/t/21/assets/svideohover.png?12714266924324333950");
+}
+  .main-header-wrapper.collapsed-navigation.sticky-header-bg {
+    display: block;
+}
+  .footer-wrapper {
+    background-color: #3b4343;
+}
+  .main-header-wrapper.collapsed-navigation {
+  display: none;
+  }
+  .template-page .main-header-wrapper {
+    background-color: #fff;
+  }
+  .home-top-section .contentpart {
+     margin-top: 0px; 
+  }
+  .desktopvw {
+    display: block;
+    }
+    
+  
+a.button.preorder.head_button_mobile {
+    background-color: #d0021b;
+    border-radius: 0;
+    bottom: 0px;
+    height: 45px;
+    line-height: 46px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 90;
+}
+  @media only screen and (min-width:320px) and (max-width: 480px)  {
+    .home-full-width-feature {
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+    .home-full-width-feature img, .home-full-width-feature .home-full-width-video {
+    margin-top: 15px;
+}
+    .desktopvw {
+    display: none;
+    }
+    .moview {
+    display: block;
+       margin-top: -10px;
+    }
+    .home-brands .home-full-width-feature.home-module {
+    padding: 48px 10px;
+}
+    .home-top-section .button.videobutton span {
+    line-height: 28px;
+    }
+    .home-top-section-wrapper p span.sky-lock {
+    font-size: 50px;
+ 	 letter-spacing: 10px; 
+    }
+    .vedio-tagline {
+    font-size: 18px;
+    }
+ 
+  .main-content > video#background {
+  background-image: url({{ "bgnew.png" | asset_url }});
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  display: none;
+    
+}
+  .mobileheaderimage {
+  display: block;
+  }
+    .template-page .main-header-wrapper {
+    position: relative;
+    }
+    
+#video-above.home-top-section {
+    top: 8%;
+}
+    main .home-module-wrapper.home-brands {
+    margin-top: -8px;
+    }
+    
+.home-top-section .button.videobutton {
+    border-radius: 0;
+    line-height: 28px;
+}
+.home-top-section .button.videobutton {
+    background-position: 15px center;
+    font-size: 11px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0;
+    width: 130px !important;
+}
+    .home-brands .brands .brands-ul .brand-li {
+    width:15%;
+    }
+    .home-top-section {
+    padding: 0 15px 50px;
+    }
+    .main-header-wrapper.collapsed-navigation.sticky-header-bg {
+    display: none;
+    }
+    .videobuttonimag {
+    margin: -2px auto !important;
+      width: 140px;
+    }
+}
+@media only screen and (min-width:481px) and (max-width: 568px)  {
+  .vedio-tagline {
+    font-size: 30px;
+}
+  #video-above.home-top-section {
+    top: 15%;
+}
+  .home-top-section-wrapper p span.sky-lock {
+  font-size: 36px;
+  }
+  .home-top-section-wrapper .button.preorder.clicked-preorder.slider-prebutton {
+  display: none;
+  }
+}
+  @media only screen and (min-width:569px) and (max-width: 768px)  {
+    
+   #video-above.home-top-section {
+    top: 20%;
+}  
+    .home-top-section-wrapper .button.preorder.clicked-preorder.slider-prebutton {
+  display: none;
+  }
+    .home-top-section-wrapper p span.sky-lock {
+    font-size: 60px;
+    }
+}
+     @media only screen and (min-width:769px) and (max-width: 980px)  {
+    
+  #video-above.home-top-section {
+    top: 8%;
+} 
+       .home-top-section-wrapper p span.sky-lock {
+    font-size: 90px;
+    }
+   
+}
+    @media only screen and (min-width:981px) and (max-width: 1100px)  {
+    
+  #video-above.home-top-section {
+    top: 8%;
+} 
+        .home-top-section-wrapper p span.sky-lock {
+    font-size: 90px;
+    }
+   
+} 
+ @media only screen and (min-width:1101px) and (max-width: 1300px)  {
+    
+  #video-above.home-top-section {
+    top:8%;
+} 
+   
+}
+    @media only screen and (min-width:1920) and (max-width: 2000px)  { 
+    
+  #video-above.home-top-section {
+    top: 50%;
+}  
+   
+}
+
+
+
+

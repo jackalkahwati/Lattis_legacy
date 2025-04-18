@@ -1,0 +1,179 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:47
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\VeloLabs\SkyLock
+#        Project\SDK_7_2_0\components\libraries\util\app_error.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock
+#        Project\SDK_7_2_0\components\libraries\util\app_error.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\app_error.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\app_error.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\SDK_7_2_0\components\libraries\util\app_error.c
+      1          /* Copyright (c) 2014 Nordic Semiconductor. All Rights Reserved.
+      2           *
+      3           * The information contained herein is property of Nordic Semiconductor ASA.
+      4           * Terms and conditions of usage are described in detail in NORDIC
+      5           * SEMICONDUCTOR STANDARD SOFTWARE LICENSE AGREEMENT.
+      6           *
+      7           * Licensees are granted free, non-transferable use of the information. NO
+      8           * WARRANTY of ANY KIND is provided. This heading must NOT be removed from
+      9           * the file.
+     10           *
+     11           */
+     12          
+     13          /** @file
+     14           *
+     15           * @defgroup app_error Common application error handler
+     16           * @{
+     17           * @ingroup app_common
+     18           *
+     19           * @brief Common application error handler.
+     20           */
+     21          
+     22          #include "nrf.h"
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_SystemReset(void)
+   \                     NVIC_SystemReset: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xF3BF 0x8F4F      DSB      
+   \   00000006   0x....             LDR      R0,??DataTable0  ;; 0x5fa0004
+   \   00000008   0x....             LDR      R1,??DataTable0_1  ;; 0xe000ed0c
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+   \   0000000C   0xF3BF 0x8F4F      DSB      
+   \                     ??NVIC_SystemReset_0: (+1)
+   \   00000010   0xE7FE             B        ??NVIC_SystemReset_0
+     23          #include "app_error.h"
+     24          #include "compiler_abstraction.h"
+     25          #include "nordic_common.h"
+     26          #ifdef DEBUG
+     27          #include "bsp.h"
+     28          
+     29          /* global error variables - in order to prevent removal by optimizers */
+     30          uint32_t m_error_code;
+     31          uint32_t m_line_num;
+     32          const uint8_t * m_p_file_name;
+     33          #endif
+     34          
+     35          /**@brief Function for error handling, which is called when an error has occurred.
+     36           *
+     37           * @warning This handler is an example only and does not fit a final product. You need to analyze
+     38           *          how your product is supposed to react in case of error.
+     39           *
+     40           * @param[in] error_code  Error code supplied to the handler.
+     41           * @param[in] line_num    Line number where the handler is called.
+     42           * @param[in] p_file_name Pointer to the file name.
+     43           *
+     44           * Function is implemented as weak so that it can be overwritten by custom application error handler
+     45           * when needed.
+     46           */
+     47          
+     48          /*lint -save -e14 */
+
+   \                                 In section .text, align 2, keep-with-next
+     49          __WEAK void app_error_handler(uint32_t error_code, uint32_t line_num, const uint8_t * p_file_name)
+     50          {
+   \                     app_error_handler: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     51              // On assert, the system can only recover with a reset.
+     52          #ifndef DEBUG
+     53              NVIC_SystemReset();
+   \   00000002   0x.... 0x....      BL       NVIC_SystemReset
+     54          #else
+     55              
+     56          #ifdef BSP_DEFINES_ONLY
+     57              LEDS_ON(LEDS_MASK);
+     58          #else
+     59              UNUSED_VARIABLE(bsp_indication_set(BSP_INDICATE_FATAL_ERROR));
+     60              // This call can be used for debug purposes during application development.
+     61              // @note CAUTION: Activating this code will write the stack to flash on an error.
+     62              //                This function should NOT be used in a final product.
+     63              //                It is intended STRICTLY for development/debugging purposes.
+     64              //                The flash write will happen EVEN if the radio is active, thus interrupting
+     65              //                any communication.
+     66              //                Use with care. Uncomment the line below to use.
+     67              //ble_debug_assert_handler(error_code, line_num, p_file_name);
+     68          #endif // BSP_DEFINES_ONLY
+     69          
+     70              m_error_code = error_code;
+     71              m_line_num = line_num;
+     72              m_p_file_name = p_file_name;
+     73          
+     74              UNUSED_VARIABLE(m_error_code);
+     75              UNUSED_VARIABLE(m_line_num);
+     76              UNUSED_VARIABLE(m_p_file_name);
+     77              __disable_irq();
+     78              while(1) ;
+     79          #endif // DEBUG
+     80          }
+   \   00000006   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x05FA0004         DC32     0x5fa0004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   0xE000ED0C         DC32     0xe000ed0c
+     81          /*lint -restore */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   NVIC_SystemReset
+       8   app_error_handler
+         8   -> NVIC_SystemReset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+       4  ??DataTable0_1
+      18  NVIC_SystemReset
+       8  app_error_handler
+
+ 
+ 34 bytes in section .text
+ 
+ 34 bytes of CODE memory
+
+Errors: none
+Warnings: none

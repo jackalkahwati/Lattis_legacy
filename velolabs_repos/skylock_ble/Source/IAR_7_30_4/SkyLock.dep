@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>376426730</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_error.c</file>
+      <file>$PROJ_DIR$\..\accelerometer.c</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.c</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\timer\app_timer.c</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_advdata.c</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_util_platform.c</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_conn_params.c</file>
+      <file>$PROJ_DIR$\..\ble_interface.c</file>
+      <file>$PROJ_DIR$\..\debuguart.c</file>
+      <file>$PROJ_DIR$\..\i2c.c</file>
+      <file>$PROJ_DIR$\..\magnet.c</file>
+      <file>$PROJ_DIR$\..\mfginterface.c</file>
+      <file>$PROJ_DIR$\..\motor.c</file>
+      <file>$PROJ_DIR$\..\nRF51822_vector.s</file>
+      <file>$PROJ_DIR$\..\skylock_softdevice.c</file>
+      <file>$PROJ_DIR$\..\startup.c</file>
+      <file>$PROJ_DIR$\..\timers.c</file>
+      <file>$PROJ_DIR$\..\touch_sensor.c</file>
+      <file>$PROJ_DIR$\..\utils.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_error.c</file>
+      <file>$PROJ_DIR$\..\Source\accelerometer.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\timer\app_timer.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_advdata.c</file>
+      <file>$PROJ_DIR$\..\Source\ble_interface.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_conn_params.c</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_util_platform.c</file>
+      <file>$PROJ_DIR$\..\Source\debuguart.c</file>
+      <file>$PROJ_DIR$\..\Source\i2c.c</file>
+      <file>$PROJ_DIR$\..\Source\magnet.c</file>
+      <file>$PROJ_DIR$\..\Source\mfginterface.c</file>
+      <file>$PROJ_DIR$\..\Source\motor.c</file>
+      <file>$PROJ_DIR$\..\Source\nRF51822_vector.s</file>
+      <file>$PROJ_DIR$\..\Source\skylock_softdevice.c</file>
+      <file>$PROJ_DIR$\..\Source\startup.c</file>
+      <file>$PROJ_DIR$\..\Source\timers.c</file>
+      <file>$PROJ_DIR$\..\Source\touch_sensor.c</file>
+      <file>$PROJ_DIR$\..\Source\utils.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_util_platform.pbi</file>
+      <file>$PROJ_DIR$\..\Source\ble_lbs.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.o</file>
+      <file>$PROJ_DIR$\Debug\List\utils.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\Debug\List\ble_interface.lst</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_err.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_util_platform.o</file>
+      <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_util_platform.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\SkyLock.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\magnet.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\nrf_delay.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_interface.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_soc.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\toolchain\system_nrf51.h</file>
+      <file>$PROJ_DIR$\Debug\List\skylock_softdevice.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\mfginterface.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51_bitfields.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_scheduler.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\softdevice_handler.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_ranges.h</file>
+      <file>$PROJ_DIR$\..\Include\timers.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\timers.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\timers.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_sdm.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble.h</file>
+      <file>$PROJ_DIR$\..\Include\utils.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_lbs.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mfginterface.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\compiler_abstraction.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.o</file>
+      <file>$PROJ_DIR$\..\Include\ARMFiles\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\..\Include\uart.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_advdata.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_error.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_types.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\softdevice_handler.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\touch_sensor.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\softdevice_handler.lst</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_util.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_advdata.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_srv_common.h</file>
+      <file>$PROJ_DIR$\SkyLock.icf</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gap.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\accelerometer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_lbs.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\ble_lbs.lst</file>
+      <file>$PROJ_DIR$\Debug\List\i2c.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\skylock_softdevice.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\skylock_softdevice.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\nrf_assert.h</file>
+      <file>$PROJ_DIR$\Debug\List\debuguart.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_timer.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\ble_conn_params.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_timer.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gatt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\touch_sensor.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\softdevice_handler.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_conn_params.h</file>
+      <file>$PROJ_DIR$\..\Include\hardware.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_error.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_hci.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_conn_params.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_conn_params.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\magnet.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error_soc.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_svc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\Include\ARMFiles\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51_deprecated.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_scheduler.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\debuguart.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\SkyLock.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\utils.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error_sdm.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\motor.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_advdata.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\List\startup.lst</file>
+      <file>$PROJ_DIR$\..\Include\master.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\List\motor.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\utils.o</file>
+      <file>$PROJ_DIR$\Debug\List\ble_advdata.lst</file>
+      <file>$PROJ_DIR$\Debug\List\magnet.lst</file>
+      <file>$PROJ_DIR$\Debug\List\app_error.lst</file>
+      <file>$PROJ_DIR$\Debug\List\accelerometer.lst</file>
+      <file>$PROJ_DIR$\Debug\List\app_scheduler.lst</file>
+      <file>$PROJ_DIR$\..\Include\ble_lbs.h</file>
+      <file>$PROJ_DIR$\Debug\List\mfginterface.lst</file>
+      <file>$PROJ_DIR$\Debug\List\touch_sensor.lst</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\app_error.o</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\timer\app_timer.h</file>
+      <file>$PROJ_DIR$\Debug\List\app_util_platform.lst</file>
+      <file>$PROJ_DIR$\Debug\List\SkyLock.map</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\Include\i2c.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\debuguart.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\softdevice_handler.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\accelerometer.o</file>
+      <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\nRF51822_vector.o</file>
+      <file>$PROJ_DIR$\..\Include\ble_skylock.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gatts.h</file>
+      <file>$PROJ_DIR$\..\Include\ARMFiles\core_cm0.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gattc.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\s110\headers\ble_l2cap.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ble_interface.o</file>
+      <file>$PROJ_DIR$\Debug\List\timers.lst</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\drivers_nrf\hal\nrf.h</file>
+      <file>$PROJ_DIR$\Debug\List\app_timer.lst</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h</file>
+      <file>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\nordic_common.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gap.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_types.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gatt.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gattc.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_l2cap.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_gatts.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_conn_params.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_hci.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\nrf_assert.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error_soc.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_soc.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\timer\app_timer.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_error.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_util.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_util_platform.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_svc.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\nrf_delay.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\ant_stack_handler_types.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\nordic_common.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\ble_stack_handler_types.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_error_sdm.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\softdevice_handler.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\nrf_sdm.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51_bitfields.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\compiler_abstraction.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\nrf.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\toolchain\system_nrf51.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\drivers_nrf\hal\nrf51_deprecated.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_advdata.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_srv_common.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_ranges.h</file>
+      <file>$PROJ_DIR$\..\..\SDK_7_2_0\components\softdevice\s110\headers\ble_err.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_error.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 140 147</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79 42 203 162 146 73 127 85 52 199 200 122 121 151 94 190 185 193 198 202 84 201 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 201 200 162 52 42 121 84 94 127 146 151 122 85 79 73 202 198 203 199 185 54 190 193</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\accelerometer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 141 156</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 52 121 199 68 202 112 84 198 135 152 79 201 146 151 94 127 200 203 162 122 73 85 108 134 78 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 152 54 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 142 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 151 42 52 54 73 183 94 108 198 162 186 146 127 153 200 182 122 132 74 181 185 84 190 189 202 188 187 85 79 199</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 188 52 42 121 84 94 127 146 151 185 54 190 132 108 74 153 183 189 200 162 122 85 79 73 202 198 182 181 199 186 187</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\timer\app_timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170 106</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 54 146 187 185 42 198 199 183 84 52 200 191 188 78 162 122 132 186 135 151 94 127 108 190 202 73 182 184 85 79 189 201 203</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 184 52 42 121 84 94 127 146 151 54 135 108 78 185 190 186 199 188 132 200 162 122 85 79 73 202 198 183 189 182 191 201 203 187</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_advdata.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 208 204 207 206 205 146 42 108 173 174 199 186 190 54 153 175 52 189 193 74 84 151 94 127 177 176 178</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 205 52 42 121 84 94 127 146 151 54 74 108 153 204 207 174 173 189 177 208 190 175 176 178 186 199 193 206</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\libraries\util\app_util_platform.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 149 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 200 52 84 42 162 199 187 146 151 94 127 202 122 73 85 79</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 187 52 42 121 84 94 127 146 151 199 200 162 122 85 79 73 202</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\SDK_7_2_0\components\ble\common\ble_conn_params.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 115</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 105 116</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 189 207 185 42 121 94 184 206 84 151 175 52 174 193 186 127 173 190 199 132 180 204 146 177 176 178 208 54 108 188 78 179 135</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 179 52 42 121 84 94 127 146 151 204 207 174 173 189 177 208 190 175 176 178 206 54 186 199 132 108 193 180 184 135 78 185 188</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\ble_interface.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43 167</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52 151 174 78 184 135 63 42 84 199 185 112 94 121 189 200 197 177 196 68 180 127 198 162 79 192 108 190 176 207 186 134 74 173 159 205 179 152 75 201 146 203 202 122 73 85 193 183 54 132 188 178 208 175 206 153 194 195 182 204</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 74 153 112 173 174 207 189 196 132 193 197 183 54 182 190 195 185 188 186 194 204 177 208 175 176 178 192 159 184 205 68 179 206 152 180 75 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\debuguart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 154</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 201 146 122 127 200 85 78 112 79 42 151 94 121 203 162 73 52 135 75 84 198 199 202 134 108</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\i2c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 202 73 68 52 42 121 199 112 84 198 135 152 79 201 146 151 94 127 200 203 162 122 85 108 134 78 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 152 54 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\magnet.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84 42 198 112 52 121 199 202 85 79 135 152 201 146 151 94 127 200 203 162 122 73 108 134 78 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 152 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\mfginterface.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 52 151 152 42 84 199 134 94 108 74 68 127 198 162 79 135 112 75 63 201 146 200 203 202 122 73 85 78 153 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 74 153 112 152 54 75 68 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\motor.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 198 84 52 63 112 121 199 202 73 135 152 68 79 201 146 151 94 127 200 203 162 122 85 108 134 78 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 152 54 63 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\nRF51822_vector.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\skylock_softdevice.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57 100</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 162 42 202 190 146 85 54 198 174 186 79 203 122 121 189 195 204 207 112 197 201 200 73 52 173 175 135 183 159 84 151 94 127 199 78 182 177 134 108 176 178 208</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 175 174 207 186 54 183 189 182 190 197 195 159 204 173 177 208 176 178</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\startup.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 133 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85 79 173 203 122 174 75 146 42 202 162 78 112 63 201 200 73 52 54 204 207 190 175 135 152 68 159 121 84 151 94 127 198 199 189 177 134 108 176 178 208</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 152 54 75 68 63 159 204 207 174 173 189 177 208 190 175 176 178</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\timers.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 168 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73 151 79 42 94 121 203 162 52 112 201 146 127 200 122 85 78 135 84 198 199 202 134 108</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\touch_sensor.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 145 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 127 200 121 152 201 146 122 54 74 79 42 151 94 203 162 85 108 135 112 52 84 198 199 202 73 153 134 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 74 153 112 152 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 49 150</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\utils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 128</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41 137</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73 151 79 42 94 121 203 162 52 112 201 146 127 200 122 85 78 135 84 198 199 202 134 68 108</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 201 200 162 122 85 73 202 198 203 199 135 108 78 112 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_error.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\accelerometer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 52 121 71 68 56 112 84 59 135 152 79 169 146 151 94 127 81 123 162 122 73 85 108 134 78 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 142 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 165 52 42 121 84 94 127 146 151 77 54 118 132 108 74 153 55 120 81 162 122 85 79 73 56 59 119 102 71 89 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\timer\app_timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170 106</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 148 52 42 121 84 94 127 146 151 54 135 108 78 77 118 89 71 165 132 81 162 122 85 79 73 56 59 55 120 119 51 169 123 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_advdata.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 138 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 131 52 42 121 84 94 127 146 151 54 74 108 153 67 62 82 93 120 166 44 118 107 164 161 89 71 172 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ble_interface.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43 167</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 74 153 112 93 82 62 120 86 132 172 66 55 54 119 118 129 77 165 89 171 67 166 44 107 164 161 95 159 148 131 68 111 91 152 114 75 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_conn_params.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 115</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 105 116</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111 52 42 121 84 94 127 146 151 67 62 82 93 120 166 44 118 107 164 161 91 54 89 71 132 108 172 114 148 135 78 77 165</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_util_platform.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 149 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48 52 42 121 84 94 127 146 151 71 81 162 122 85 79 73 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\debuguart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 154</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\i2c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 152 54 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\magnet.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 50</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 152 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\mfginterface.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 144 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 74 153 112 152 54 75 68 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\motor.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 152 54 63 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\nRF51822_vector.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 158</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\skylock_softdevice.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57 100</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 107 82 62 89 54 55 120 119 118 66 129 159 67 93 166 44 164 161</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\startup.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 133 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 152 54 75 68 63 159 67 62 82 93 120 166 44 118 107 164 161</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\timers.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 168 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\touch_sensor.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 145 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 74 153 112 152 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\utils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 128</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41 137</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 134 79 42 52 121 84 94 127 146 151 169 81 162 122 85 73 56 59 123 71 135 108 78 112 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\ble_lbs.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 98 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 151 89 42 84 161 166 120 94 172 62 107 52 127 44 82 54 93 74 91 143 121 146 67 118 108 153 71 164</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 161 82 52 42 121 84 94 127 146 151 62 166 44 118 120 93 107 74 108 153 172 91 54 89 71 143 67 164</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\SkyLock.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 150</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 92 156 147 60 106 46 90 116 167 125 72 50 70 83 158 100 40 65 109 137 163 45 157 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\softdevice_handler.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 110</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172 121 118 119 54 89 42 120 52 62 55 77 95 108 146 162 79 59 93 82 107 132 102 67 66 165 171 84 151 94 127 81 129 56 122 73 85 86 71 166 164 161 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86 132 42 121 84 94 127 146 151 108 172 66 120 81 162 52 122 85 79 73 56 55 54 59 119 118 129 77 165 89 71 171 67 62 82 93 166 44 107 164 161 95 102</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_error.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\scheduler\app_scheduler.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\timer\app_timer.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_advdata.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\ble_interface.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\ble\common\ble_conn_params.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\SDK_7_2_0\components\libraries\util\app_util_platform.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\debuguart.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\i2c.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\magnet.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\mfginterface.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\motor.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\skylock_softdevice.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\startup.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\timers.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\touch_sensor.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\Source\utils.c</name>
+      <tool>ICCARM</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

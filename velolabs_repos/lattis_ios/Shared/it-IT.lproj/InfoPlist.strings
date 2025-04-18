@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSPhotoLibraryUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSLocationWhenInUseUsageDescription" = "Utilizzeremo la tua posizione per sapere dove stai iniziando una corsa e durante la corsa per tracciare il veicolo se non ha alcuna capacità di tracciamento a bordo";
+"NSLocationAlwaysUsageDescription" = "Utilizzeremo la tua posizione per sapere dove stai iniziando una corsa e durante la corsa per tracciare il veicolo se non ha alcuna capacità di tracciamento a bordo";
+"NSBluetoothPeripheralUsageDescription" = "L'applicazione richiede l'uso del Bluetooth per connettersi al lucchetto. Assicurati di aver attivato il Bluetooth";
+"NSBluetoothAlwaysUsageDescription" = "L'applicazione richiede l'uso del Bluetooth per connettersi al lucchetto. Assicurati di aver attivato il Bluetooth";

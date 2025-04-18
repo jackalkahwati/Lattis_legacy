@@ -1,0 +1,731 @@
+{
+  "project_info": {
+    "project_number": "907340690079",
+    "firebase_url": "https://lattis-app.firebaseio.com",
+    "project_id": "lattis-app",
+    "storage_bucket": "lattis-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:b1e89f689e9b6d56ba68aa",
+        "android_client_info": {
+          "package_name": "com.velotransit.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:301f1423224e06f9ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.giraff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:85600e065c9e8203ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.giraff.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:52819fe43a4364aaba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.giraff.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:b5287f9d1bac958aba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.goscoot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:13cf14b4b39625ceba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.goscoot.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:eb26eea473b9e3d5ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.goscoot.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:cc3233ae9d29ee24ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.greenriders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:b6d97cabf053a3fdba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.greenriders.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:549634596668c422ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.greenriders.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:4b0a87045dc5a97bba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.grin.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:465e392ae8f7b3d8ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.hooba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:410b1e48f00a53e8ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.hooba.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:5989b2f3a84342c7ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.hooba.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:dfe63531b4575a4dba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.sandypedals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:f695e52c75cd7d09ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.sandypedals.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:1d84d51878eef568ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.sandypedals.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:72ed90e1564999c5",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:1d6962d03de82093",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:42f696bc43e608c6",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-6nm7t26fp94bptln8auk2nhgl26o5b5h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.giraff.bikeshare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

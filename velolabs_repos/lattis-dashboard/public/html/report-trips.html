@@ -1,0 +1,142 @@
+<!--Start report trip Screen-->
+<section class="animated fadeIn" ng-controller="reportTripController">
+    <div class="panel" ng-show="tripreport">
+        <div class="panel-heading bg-white box ">
+            <div class="p-tb-20 nomarg bg-white noborder ">
+                <a ui-sref="reports.details" class="btn custombtn-default wid-200 text-left ft-12 text-muted"><i
+                        class="fa fa-angle-left p-r-5"></i> BACK TO ALL Report</a>
+                <span class="ft-22 text-muted v-b m-l-35">Trip report</span>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <div class="row rider-searchbar bg-hash nomarg">
+                <div class="col-sm-3 col-xs-3">
+                    <h6 class="text-alert-medium">DATE RANGE:</h6>
+                    <div class="dropdown pull-left styleSelect">
+                        <select class="form-control new-dd-box" ng-model="dateRangeModel" ng-options="item for item in daterange">
+                            <option value="" selected="selected">Select date range</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <h6 class="text-alert-medium">FLEETS / CUSTOMERS:</h6>
+                    <dropdown style="width:100%;" list="fleetlist" class="fullwid" filter="statusFilter" selected="colour" property="name" template="dropdown"></dropdown>
+                </div>
+                <div class="col-sm-3 col-xs-3 col-sm-offset-2">
+                    <button ng-click="riderupdate()" class="btn custom-btn text-uppercase text-white ft-14 pull-right">CREATE UPDATE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel" ng-show="!tripreport">
+        <div class="panel-heading bg-white box bor-b-hash">
+            <div class="p-tb-20 nomarg bg-white noborder ">
+                <a ui-sref="reports.details" class="btn custombtn-default wid-200 text-left ft-12 text-muted"><i
+                        class="fa fa-angle-left p-r-5"></i> BACK TO ALL Report</a>
+                <span class="ft-22 text-muted v-b m-l-35">Trip report</span>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <p class="p-tb-10"> Trip report from 01 June 2016 - 01 July 2016 for the following fleets: University of Illinois, University ofChicago, University of Los Angeles, City of
+                Westminster, City of Berlin, Rockwell Hotel, City of Adelaide, IBM New Hampshire, Anaheim Pharmaceuticals, Fidelity Investments Surrey.</p>
+            <cumulative-State class="container-fluid pull-left fullwid " cumulativetitle="title"
+                              cumulativedata="cummulativetrip"></cumulative-State>
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <div class="fullwid pull-left tripchart">
+                        <span>Number of trips - members vs casual riders</span>
+                        <canvas id="line" class="chart chart-bar" chart-data="data"
+                                chart-labels="labels" chart-series="series" chart-options="options"
+                                chart-dataset-override="datasetOverride" chart-click="onClick">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 trip-table">
+                    <div class="headerbox3 p-tb5-lr10 bg-HeaderToolbar">
+                        <h5 class="text-white">TOP TEN PICK UP HUBS</h5>
+                    </div>
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                <th>HUB #</th>
+                                <th>HUB name</th>
+                                <th>No. of pick ups</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-6 trip-table">
+                    <div class="headerbox3">
+                        <h5 class="text-white">TOP TEN DROP OFF HUBS</h5>
+                    </div>
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                        <tr>
+                            <th>HUB #</th>
+                            <th>HUB name</th>
+                            <th>No. of pick ups</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <td>042</td>
+                            <td>Main street</td>
+                            <td>128</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm-12 trip-table">
+                        <div class="headerbox3 p-tb5-lr10 bg-HeaderToolbar">
+                            <h5 class="text-white">TRIP FREQUENCY BY TIME OF DAY</h5>
+                        </div>
+                    <div id="trip-heatmap" class=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End report trip Screen-->
+

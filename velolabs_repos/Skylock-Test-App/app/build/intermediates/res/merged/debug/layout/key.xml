@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.velolabs.skylock_crypto_test.MainActivity" >
+
+
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200"
+        android:layout_below="@+id/textView1">
+
+        <Button
+            android:id="@+id/bPub"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="100"
+            android:text="Provision" />
+
+        <Button
+            android:id="@+id/bMsg"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="100"
+            android:text="Reconnect" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_below="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="300">
+        <Button
+            android:id="@+id/bChallengeKey"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="100"
+            android:text="Challenge key" />
+
+        <Button
+            android:id="@+id/bReadChallenge"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="100"
+            android:text="Read Challenge" />
+
+        <Button
+            android:id="@+id/bChallengeData"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_weight="100"
+            android:text="Challenge Data" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll8"
+        android:layout_below="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200">
+        <Button
+            android:id="@+id/bReadVerify"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_weight="100"
+            android:text="ReadVerify" />
+
+        <TextView
+            android:id="@+id/tvReadVerify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="100"
+            android:text="ReadVerify" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll9"
+        android:layout_below="@+id/ll8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200">
+        <Button
+            android:id="@+id/bTestDialog"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_weight="100"
+            android:text="TEST" />
+        <Button
+            android:id="@+id/bTestChallenge"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="27dp"
+            android:layout_weight="100"
+            android:text="TEST Challenge" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/Users/alexvijayraj/work/Android/SkylockTestApp/app/src/main/res/layout/key.xml -->

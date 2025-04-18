@@ -1,0 +1,34 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar">
+        <h4 class="modal-title text-white">Choose an existing bike description</h4>
+    </div>
+    <div class="modal-body p-30">
+
+        <table class="fullwid" style="border-collapse: collapse">
+            <tr style='border-collapse: collapse;' ng-repeat='desc in bikeDescriptionList track by $index'>
+                <td class="relative" style="top:20px;width:60px;vertical-align: middle;">
+                    <div>
+                        <input type="radio" name="descriptradio" id="descriptionradio{{$index}}"
+                               value="{{desc.description}}" ng-model="dataInfo.selectedBikeDescription"
+                               style="top:20px"/>
+                        <label for="descriptionradio{{$index}}"></label>
+                    </div>
+                </td>
+                <td style="padding:10px 0">
+                    <label class="fw-300">Created {{desc.date}}</label>
+                    <div class="p-20 bor-hash" style="background: #F4F5F6;">{{desc.description}}</div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="modal-footer">
+            <div class="text-left fullwid m-tb-10 p-tb-10">
+                <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                </button>
+                <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="selectDesc()">
+                    USE THIS DESCRIPTION
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

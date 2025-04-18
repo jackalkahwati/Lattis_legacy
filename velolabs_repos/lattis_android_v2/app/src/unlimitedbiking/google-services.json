@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "737462147882",
+    "project_id": "unlimited-biking-micromobility",
+    "storage_bucket": "unlimited-biking-micromobility.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737462147882:android:4d13ba24dd489412c65c53",
+        "android_client_info": {
+          "package_name": "io.bikes.unlimitedbiking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nt7Z7436kBx7rENw1wZHPRxDav32Ti4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737462147882:android:96161e6d20052d90c65c53",
+        "android_client_info": {
+          "package_name": "io.bikes.unlimitedbiking.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nt7Z7436kBx7rENw1wZHPRxDav32Ti4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737462147882:android:e031ce4ba94f6f2dc65c53",
+        "android_client_info": {
+          "package_name": "io.bikes.unlimitedbiking.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4nt7Z7436kBx7rENw1wZHPRxDav32Ti4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737462147882-hs90fktjfl0su3hnngm4ckdcgjbbdure.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

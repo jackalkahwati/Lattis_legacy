@@ -1,0 +1,93 @@
+<section ng-controller="geofencesController" class="animated fadeIn">
+    <div class="panel">
+        <div class="panel-body box">
+            <div id="map" class="parking_map pull-left" style="position:relative;">
+                <div class="show-mapheader">
+                    <div class="map-over-box" ng-controller="geofencesController">
+                        <div class="m-tb-10">
+                            <i id='zone' ng-click="toggleHint()"
+                                class="fa fa-question-circle parking-inquiry"></i>
+                            MY GEOFENCES
+                            <span class="add-geofence_icon" ng-click="toggleShapeSelector()">
+                                <i class="fa fa-plus-circle" ng-hide="showShapeSelector"></i>
+                                <i class="fa fa-minus-circle" ng-show="showShapeSelector"></i>
+                            </span>
+                            <span class="pull-right" style='margin-top:-5px;margin-right:5px'>
+                                <label class="switch">
+                                    <input type="checkbox" ng-model="showGeofences" ng-click='toggleGeofences($event)'>
+                                    <div class="slider round">
+                                        <span class='locator-span parking_margin'
+                                                style="position:relative;top:-2px;">OFF</span>
+                                        <span class='locator-span parking_margin'
+                                                style="position:relative;top:-2px;">ON</span>
+                                    </div>
+                                </label>
+                            </span>
+                        </div>
+                        <div ng-show="showShapeSelector" class="m-t-20 map_spot_view"
+                                ng-class="{ showani : showShapeSelector == true }">
+                            <h6>CHOOSE SHAPE</h6>
+                            <div>
+                                <img
+                                    ng-src="images/Line.png"
+                                    class="map-zones map-line inline-block"
+                                    ng-class="{ maptool_select: selectedShape === 'polygon' }"
+                                    ng-click="setSelectedShape('polygon')"
+                                />
+                                <img
+                                    ng-src="images/square.png"
+                                    class="map-zones inline-block"
+                                    ng-class="{ maptool_select: selectedShape === 'rectangle' }"
+                                    ng-click="setSelectedShape('rectangle')"
+                                />
+                                <img
+                                    ng-src="images/circle.png"
+                                    class="map-zones inline-block"
+                                    ng-class="{ maptool_select: selectedShape == 'circle' }"
+                                    ng-click="setSelectedShape('circle')"
+                                />
+                            </div>
+                        </div>
+                        <div ng-show='showHint' class='model-notification'>
+                            <p>You can configure geofences and require members to use bikes within of
+                                these zones.</p>
+                        </div>
+                        <div ng-show='showEmptyMessage' class='model-notification'>
+                            <p>Currently, there are geofences configured. At least one geofence is
+                                required in order to activate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class='map-legend-container p-rel'>
+                    <div class='legend m-t-20' ng-class="showMapLegend ? 'animateHeight' : 'zeroHeight'">
+                        <h6>MAP LEGEND
+                            <span class="pull-right ft-14" ng-click="toggleMapLegend()">
+                                    <i class="fa fa-plus " ng-show="!showMapLegend"></i>
+                                    <i class="fa fa-chevron-down" ng-show="showMapLegend"></i>
+                            </span>
+                        </h6>
+                        <div class="bor-t-hash p-tb-5" ng-if="showMapLegend">
+                            <div class="fullwid">
+                                <img src="../images/legend_geofence.png" style="padding:5px;height:45px;">
+                                <span>GEOFENCE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="pull-right noborder relative text-white bg-skyblue p-tb10-lr20 m-b-35"
+                    ng-click="saveParking()" ng-if="publicCsv">SAVE
+            </button>
+        </div>
+    </div>
+</section>
+<style>
+    .mapboxgl-ctrl-top-left {
+        top: 85px;
+        left: 12px;
+    }
+
+    .mapboxgl-popup-content {
+        width: 400px;
+    }
+</style>

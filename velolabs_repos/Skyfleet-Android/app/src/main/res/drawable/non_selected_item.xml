@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape
+            android:dither="true"
+            android:shape="oval"
+            android:useLevel="true">
+
+            <size
+                android:width="8dip"
+                android:height="8dip" />
+
+            <solid android:color="@color/non_selected_circle_icon" />
+        </shape>
+    </item>
+</layer-list>

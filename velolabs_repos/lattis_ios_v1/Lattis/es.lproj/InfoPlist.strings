@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "Lattis requiere el uso de su cámara para tomar una foto cuando finalice su viaje.";
+"NSPhotoLibraryUsageDescription" = "Lattis solo cargará y compartirá las fotos que elija.";
+"privacy_location" = "Al tocar \"Permitir\", podremos encontrar su ubicación y mostrarle las bicicletas más cercanas.";
+"privacy_location_alert_title" = "NOTA";
+"NSLocationWhenInUseUsageDescription" = "Permita que Lattis acceda a la ubicación. Esto es obligatorio al usar la aplicación";
+"privacy_location_explanation" = "NOTA";
+"privacy_location_submit_button" = "Lattis necesita permiso para usar su ubicación para mostrar las bicicletas más cercanas";
+"NSBluetoothPeripheralUsageDescription" = "La aplicación Lattis usa Bluetooth para conectarse con el candado Elipse.";

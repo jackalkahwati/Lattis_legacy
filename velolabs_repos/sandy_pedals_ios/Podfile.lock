@@ -1,0 +1,258 @@
+PODS:
+  - Cartography (4.0.0)
+  - CreditCardValidator (0.4)
+  - EasyTipView (2.0.4)
+  - Firebase/Analytics (6.25.0):
+    - Firebase/Core
+  - Firebase/Core (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.5.1)
+  - Firebase/CoreOnly (6.25.0):
+    - FirebaseCore (= 6.7.1)
+  - Firebase/Crashlytics (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.1.0)
+  - FirebaseAnalytics (6.5.1):
+    - FirebaseCore (~> 6.7)
+    - FirebaseInstallations (~> 1.2)
+    - GoogleAppMeasurement (= 6.5.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 1.30905.0)
+  - FirebaseAnalyticsInterop (1.5.0)
+  - FirebaseCore (6.7.1):
+    - FirebaseCoreDiagnostics (~> 1.3)
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.3.0):
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 1.30905.0)
+  - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseCrashlytics (4.1.0):
+    - FirebaseAnalyticsInterop (~> 1.2)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransport (~> 6.1)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - nanopb (~> 1.30905.0)
+    - PromisesObjC (~> 1.2)
+  - FirebaseInstallations (1.2.0):
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/Environment (~> 6.6)
+    - GoogleUtilities/UserDefaults (~> 6.6)
+    - PromisesObjC (~> 1.2)
+  - GoogleAppMeasurement (6.5.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 1.30905.0)
+  - GoogleDataTransport (6.1.1)
+  - GoogleDataTransportCCTSupport (3.1.0):
+    - GoogleDataTransport (~> 6.1)
+    - nanopb (~> 1.30905.0)
+  - GoogleMaps/Base (3.9.0)
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.6.0):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.6.0)"
+  - GoogleUtilities/Reachability (6.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.6.0):
+    - GoogleUtilities/Logger
+  - GTProgressBar (0.3.3)
+  - iCarousel (1.8.3)
+  - JTMaterialSpinner (3.0.5)
+  - KDCircularProgress (1.5.4)
+  - KeychainSwift (19.0.0)
+  - LattisSDK (2.2.4):
+    - KeychainSwift
+    - Oval
+  - LGSideMenuController (2.1.1)
+  - Localize-Swift (3.1.0)
+  - Mapbox-iOS-SDK (3.7.8)
+  - MapboxStatic.swift (0.10.0):
+    - Polyline (~> 4.2)
+  - nanopb (1.30905.0):
+    - nanopb/decode (= 1.30905.0)
+    - nanopb/encode (= 1.30905.0)
+  - nanopb/decode (1.30905.0)
+  - nanopb/encode (1.30905.0)
+  - Oval (2.1.2)
+  - Pageboy (3.6.1)
+  - PhoneNumberKit (2.6.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.6.0)
+    - PhoneNumberKit/UIKit (= 2.6.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.6.0)
+  - PhoneNumberKit/UIKit (2.6.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - Polyline (4.2.1)
+  - PromisesObjC (1.2.8)
+  - QRCodeReader.swift (10.1.0)
+  - ReachabilitySwift (5.0.0)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
+  - Stripe (19.2.0)
+  - SwiftyTimer (2.1.0)
+  - TPKeyboardAvoiding (1.3.3)
+
+DEPENDENCIES:
+  - Cartography
+  - CreditCardValidator
+  - EasyTipView
+  - Firebase/Analytics
+  - Firebase/Core
+  - Firebase/Crashlytics
+  - GooglePlaces
+  - GTProgressBar
+  - iCarousel (~> 1.8.3)
+  - "JTMaterialSpinner (from `git@github.com:kabanishe23/JTMaterialSpinner.git`)"
+  - "KDCircularProgress (from `git@github.com:kaandedeoglu/KDCircularProgress.git`)"
+  - KeychainSwift
+  - "LattisSDK (from `git@github.com:velolabs/lattis_sdk_ios.git`, branch `develop`)"
+  - LGSideMenuController
+  - Localize-Swift
+  - Mapbox-iOS-SDK (~> 3.5)
+  - "MapboxStatic.swift (from `git@github.com:velolabs/MapboxStatic.swift.git`)"
+  - "Oval (from `git@github.com:velolabs/oval_ios.git`, branch `develop`)"
+  - Pageboy
+  - PhoneNumberKit (~> 2.0)
+  - QRCodeReader.swift
+  - ReachabilitySwift
+  - SDWebImage (~> 4.0)
+  - Stripe
+  - SwiftyTimer
+  - TPKeyboardAvoiding
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Cartography
+    - CreditCardValidator
+    - EasyTipView
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseCrashlytics
+    - FirebaseInstallations
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleMaps
+    - GooglePlaces
+    - GoogleUtilities
+    - GTProgressBar
+    - iCarousel
+    - KeychainSwift
+    - LGSideMenuController
+    - Localize-Swift
+    - Mapbox-iOS-SDK
+    - nanopb
+    - Pageboy
+    - PhoneNumberKit
+    - Polyline
+    - PromisesObjC
+    - QRCodeReader.swift
+    - ReachabilitySwift
+    - SDWebImage
+    - Stripe
+    - SwiftyTimer
+    - TPKeyboardAvoiding
+
+EXTERNAL SOURCES:
+  JTMaterialSpinner:
+    :git: "git@github.com:kabanishe23/JTMaterialSpinner.git"
+  KDCircularProgress:
+    :git: "git@github.com:kaandedeoglu/KDCircularProgress.git"
+  LattisSDK:
+    :branch: develop
+    :git: "git@github.com:velolabs/lattis_sdk_ios.git"
+  MapboxStatic.swift:
+    :git: "git@github.com:velolabs/MapboxStatic.swift.git"
+  Oval:
+    :branch: develop
+    :git: "git@github.com:velolabs/oval_ios.git"
+
+CHECKOUT OPTIONS:
+  JTMaterialSpinner:
+    :commit: 5e898b3f20036ad707e516488c5b98fc43b0e674
+    :git: "git@github.com:kabanishe23/JTMaterialSpinner.git"
+  KDCircularProgress:
+    :commit: ccac563a6df07aca40609c88cb2b4dd959a999bb
+    :git: "git@github.com:kaandedeoglu/KDCircularProgress.git"
+  LattisSDK:
+    :commit: d0a573f1b720e76c1db980845219821b6b219cbf
+    :git: "git@github.com:velolabs/lattis_sdk_ios.git"
+  MapboxStatic.swift:
+    :commit: d30f94c16cc74ebdab9606c3a2d57164181b51ae
+    :git: "git@github.com:velolabs/MapboxStatic.swift.git"
+  Oval:
+    :commit: a8f1d4cd68c6b338dd4c4f67c260388f37a432ff
+    :git: "git@github.com:velolabs/oval_ios.git"
+
+SPEC CHECKSUMS:
+  Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  CreditCardValidator: 9f0814dd61682c004071a250d89327ca83514a48
+  EasyTipView: 4f8beae0a82db2ca4a9b5fd658785fc5f61d296b
+  Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
+  FirebaseAnalytics: 93565f3f0f0f50a5d8770850bfe6a82eaba5db27
+  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
+  FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
+  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
+  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseCrashlytics: fff345f16a07f0b23cb342d8de5a42cec6de3492
+  FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
+  GoogleAppMeasurement: 137afe68bfa406c3f4221b9395253d9e5d4654cf
+  GoogleDataTransport: ad884314b81cdb808fb1d23787b367ff8da4e28a
+  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  GTProgressBar: a480283ecb0ada50de16c71e634892826928f640
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  JTMaterialSpinner: 9b05dc959d215845f4c3aaf69753e9356eae578d
+  KDCircularProgress: 98200c6b8e85d22bc04eb644721d3b1e12b0686b
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  LattisSDK: ccd821ebfca5b46a17a2580467e867d0f4e32d80
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+  Localize-Swift: 4bed4f0ccac8be2ec3517ee359da80ba2adb0fae
+  Mapbox-iOS-SDK: a8b55533ef5c5e91b5a26533bd4fb0ec88a3b994
+  MapboxStatic.swift: 404c0c7501a89f4a0b11829b40cd621e6e0bbc2f
+  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  Oval: 3646fd316f95c1c29cad9eee2202704891d70482
+  Pageboy: 29a2d474ad99404b4d77f325e0ab6d705930a4fb
+  PhoneNumberKit: 167ee1f0bbb6efce7c62559e620eae745595532f
+  Polyline: 0e9890790292741c8186201a536b6bb6a78d02dd
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
+  TPKeyboardAvoiding: 6dd3fe3268b8f2627beb7ff3d82a3cacbdf66a36
+
+PODFILE CHECKSUM: 5acc3065e99bbc67037f6f336d7a10cbf11f97c1
+
+COCOAPODS: 1.9.2

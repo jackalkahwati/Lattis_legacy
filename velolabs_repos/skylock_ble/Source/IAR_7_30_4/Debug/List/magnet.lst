@@ -1,0 +1,126 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:49
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  C:\VeloLabs\SkyLock Project\Source\magnet.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock Project\Source\magnet.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\magnet.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\magnet.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\Source\magnet.c
+      1          /*
+      2          ** Proprietary Rights Notice
+      3          **
+      4          ** This material contains the valuable properties and trade secrets of:
+      5          **
+      6          **    Velo Labs
+      7          **    San Francisco, CA, USA
+      8          **
+      9          ** All rights reserved. No part of this work may be reproduced, distributed, or
+     10          ** transmitted in any form or by any means, including photocopying, recording,
+     11          ** or other electronic or mechanical methods, without the prior written permission
+     12          ** of Velo Labs.
+     13          **
+     14          ** Copyright (c) 2015, Velo Labs
+     15          ** Contains Confidential and Trade Secret Information
+     16          */
+     17          
+     18          /*
+     19          ** File Name:  magnet.c
+     20          **
+     21          ** Purpose:    Routines to manage the magnetometer
+     22          */
+     23          
+     24          #include "master.h"
+     25          #include "stdio.h"
+     26          #include "hardware.h"
+     27          #include "i2c.h"
+     28          
+     29          #define  MAG_WHO_AM_I      (0x0F)
+     30          
+     31          /*
+     32          */
+
+   \                                 In section .text, align 2, keep-with-next
+     33          void
+     34          Magnet_Setup (void)
+     35          {
+   \                     Magnet_Setup: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+     36             uint8_t data_byte[6];
+     37          
+     38             data_byte[0] = MAG_WHO_AM_I;
+   \   00000004   0x200F             MOVS     R0,#+15
+   \   00000006   0x4669             MOV      R1,SP
+   \   00000008   0x7008             STRB     R0,[R1, #+0]
+     39             I2C_Write (I2C_ADDR_MAGNET, data_byte, 1, FALSE);
+   \   0000000A   0x2300             MOVS     R3,#+0
+   \   0000000C   0x2201             MOVS     R2,#+1
+   \   0000000E   0x4669             MOV      R1,SP
+   \   00000010   0x201C             MOVS     R0,#+28
+   \   00000012   0x.... 0x....      BL       I2C_Write
+     40             I2C_Read (I2C_ADDR_MAGNET, data_byte, 1);
+   \   00000016   0x2201             MOVS     R2,#+1
+   \   00000018   0x4669             MOV      R1,SP
+   \   0000001A   0x201C             MOVS     R0,#+28
+   \   0000001C   0x.... 0x....      BL       I2C_Read
+     41          }
+   \   00000020   0xBD07             POP      {R0-R2,PC}       ;; return
+     42          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   Magnet_Setup
+        16   -> I2C_Read
+        16   -> I2C_Write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      34  Magnet_Setup
+
+ 
+ 34 bytes in section .text
+ 
+ 34 bytes of CODE memory
+
+Errors: none
+Warnings: none

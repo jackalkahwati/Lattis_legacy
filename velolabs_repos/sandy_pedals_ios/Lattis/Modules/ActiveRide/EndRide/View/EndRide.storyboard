@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--End Ride View Controller-->
+        <scene sceneID="cO8-i7-OHc">
+            <objects>
+                <viewController storyboardIdentifier="EndRideViewController" id="8p0-zi-9h4" customClass="EndRideViewController" customModule="SandyPedals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4b-uZ-m70"/>
+                        <viewControllerLayoutGuide type="bottom" id="rR3-uU-2B0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p4S-kQ-FaL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="end_ride_checklist" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1n-Xp-0iA" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="34" y="44" width="252" height="23"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="18"/>
+                                <color key="textColor" red="0.086274509803921567" green="0.2196078431372549" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_checklist_park" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8c-dc-ox8" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="44" y="97" width="242" height="18"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r77-oS-n1i">
+                                <rect key="frame" x="16" y="514" width="288" height="44"/>
+                                <color key="backgroundColor" red="0.64313725489999995" green="0.2003454268" blue="0.21174937490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YcM-Hy-GHJ"/>
+                                </constraints>
+                                <state key="normal" image="icon_ride_camera_white">
+                                    <color key="titleColor" red="0.0" green="0.66666666666666663" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmAction:" destination="8p0-zi-9h4" eventType="touchUpInside" id="u3M-n7-lOB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_checklist_lock" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqp-3g-UkS" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="44" y="145" width="242" height="18"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_checklist_photo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-wy-7Kp" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="44" y="193" width="242" height="18"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="end_ride_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-E3-GOw">
+                                <rect key="frame" x="26" y="198" width="10" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="end_ride_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-Kq-4x1">
+                                <rect key="frame" x="26" y="150" width="10" height="8"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="end_ride_checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="Hgi-SG-uCZ">
+                                <rect key="frame" x="26" y="102" width="10" height="8"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Raz-wy-7Kp" firstAttribute="leading" secondItem="p4S-kQ-FaL" secondAttribute="leading" constant="44" id="027-ZD-uZv"/>
+                            <constraint firstItem="jqp-3g-UkS" firstAttribute="top" secondItem="c8c-dc-ox8" secondAttribute="bottom" constant="30" id="1Jm-MM-F6G"/>
+                            <constraint firstItem="G1n-Xp-0iA" firstAttribute="top" secondItem="p4S-kQ-FaL" secondAttribute="top" constant="44" id="3ws-7d-ozA"/>
+                            <constraint firstItem="rR3-uU-2B0" firstAttribute="top" secondItem="r77-oS-n1i" secondAttribute="bottom" constant="10" id="6Wa-c6-hn3"/>
+                            <constraint firstItem="FiT-E3-GOw" firstAttribute="centerY" secondItem="Raz-wy-7Kp" secondAttribute="centerY" id="8Wv-9T-m4Z"/>
+                            <constraint firstItem="Raz-wy-7Kp" firstAttribute="top" secondItem="jqp-3g-UkS" secondAttribute="bottom" constant="30" id="9Wb-f7-iuM"/>
+                            <constraint firstItem="G1n-Xp-0iA" firstAttribute="leading" secondItem="p4S-kQ-FaL" secondAttribute="leading" constant="34" id="F2t-Xp-OGd"/>
+                            <constraint firstItem="Hgi-SG-uCZ" firstAttribute="centerY" secondItem="c8c-dc-ox8" secondAttribute="centerY" id="FzD-yV-9Fc"/>
+                            <constraint firstAttribute="trailing" secondItem="G1n-Xp-0iA" secondAttribute="trailing" constant="34" id="IQ7-qB-kSF"/>
+                            <constraint firstItem="Wej-Kq-4x1" firstAttribute="centerY" secondItem="jqp-3g-UkS" secondAttribute="centerY" id="IvF-a7-Ru0"/>
+                            <constraint firstItem="Raz-wy-7Kp" firstAttribute="leading" secondItem="FiT-E3-GOw" secondAttribute="trailing" constant="8" id="IwI-VC-ZfX"/>
+                            <constraint firstAttribute="trailing" secondItem="jqp-3g-UkS" secondAttribute="trailing" constant="34" id="T98-me-Q3T"/>
+                            <constraint firstAttribute="trailing" secondItem="c8c-dc-ox8" secondAttribute="trailing" constant="34" id="XQG-jk-i8G"/>
+                            <constraint firstItem="jqp-3g-UkS" firstAttribute="leading" secondItem="p4S-kQ-FaL" secondAttribute="leading" constant="44" id="fP2-pP-Kgl"/>
+                            <constraint firstItem="r77-oS-n1i" firstAttribute="leading" secondItem="p4S-kQ-FaL" secondAttribute="leading" constant="16" id="oJ6-SG-ywm"/>
+                            <constraint firstItem="jqp-3g-UkS" firstAttribute="leading" secondItem="Wej-Kq-4x1" secondAttribute="trailing" constant="8" id="oV1-vF-Hin"/>
+                            <constraint firstItem="c8c-dc-ox8" firstAttribute="top" secondItem="G1n-Xp-0iA" secondAttribute="bottom" constant="30" id="qOP-gL-ITb"/>
+                            <constraint firstAttribute="trailing" secondItem="Raz-wy-7Kp" secondAttribute="trailing" constant="34" id="rQV-6q-NLk"/>
+                            <constraint firstAttribute="trailing" secondItem="r77-oS-n1i" secondAttribute="trailing" constant="16" id="rku-br-gKq"/>
+                            <constraint firstItem="c8c-dc-ox8" firstAttribute="leading" secondItem="Hgi-SG-uCZ" secondAttribute="trailing" constant="8" id="u57-Sg-Dab"/>
+                            <constraint firstItem="c8c-dc-ox8" firstAttribute="leading" secondItem="p4S-kQ-FaL" secondAttribute="leading" constant="44" id="uvk-c4-M07"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="olt-lf-tT7"/>
+                    <connections>
+                        <outlet property="nextButton" destination="r77-oS-n1i" id="vK1-2i-ztw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m72-d6-pdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="166.90140845070422"/>
+        </scene>
+        <!--End Ride Action View Controller-->
+        <scene sceneID="Q29-QR-KmP">
+            <objects>
+                <viewController storyboardIdentifier="EndRideActionViewController" id="376-CW-iyi" customClass="EndRideActionViewController" customModule="SandyPedals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fc8-Ra-GIM"/>
+                        <viewControllerLayoutGuide type="bottom" id="j6T-IJ-h08"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oY1-cV-fK3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZBi-2G-H73">
+                                <rect key="frame" x="0.0" y="46" width="320" height="288.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-ZS-JBE">
+                                <rect key="frame" x="20" y="0.0" width="280" height="46"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 5.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NH-5x-vvQ">
+                                <rect key="frame" x="168" y="372" width="124" height="35.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="28"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.51764705882352935" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y46-ki-qD5" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="28" y="356.5" width="124" height="15.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                <color key="textColor" red="0.67450980392156867" green="0.69411764705882351" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-xd-z4e" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="168" y="356.5" width="124" height="15.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                <color key="textColor" red="0.67450980390000004" green="0.69411764710000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01:17:36" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGq-CW-cGc">
+                                <rect key="frame" x="28" y="372" width="124" height="35.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="28"/>
+                                <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hj-uo-tlb">
+                                <rect key="frame" x="81.5" y="464" width="157" height="25"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy3-fP-sEu">
+                                        <rect key="frame" x="33" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="icon_star_unselected"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="376-CW-iyi" eventType="touchUpInside" id="nKs-Tj-iEH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-c7-aQo">
+                                        <rect key="frame" x="66" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="icon_star_unselected"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="376-CW-iyi" eventType="touchUpInside" id="u2E-Mn-Xwu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4O-ob-Shs">
+                                        <rect key="frame" x="99" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="icon_star_unselected"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="376-CW-iyi" eventType="touchUpInside" id="vSU-Ze-Wiy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztN-f4-Sqd">
+                                        <rect key="frame" x="132" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="icon_star_unselected"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="376-CW-iyi" eventType="touchUpInside" id="akC-nh-QPa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcs-jG-cq4">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="icon_star_unselected"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="376-CW-iyi" eventType="touchUpInside" id="a1p-JC-1ax"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ztN-f4-Sqd" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="top" id="5j6-hT-uNW"/>
+                                    <constraint firstItem="ztN-f4-Sqd" firstAttribute="leading" secondItem="t4O-ob-Shs" secondAttribute="trailing" constant="8" id="9ND-qt-u8N"/>
+                                    <constraint firstAttribute="bottom" secondItem="t4O-ob-Shs" secondAttribute="bottom" id="B0U-Hb-xuS"/>
+                                    <constraint firstItem="Bcs-jG-cq4" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="top" id="DNo-88-0Zv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cy3-fP-sEu" secondAttribute="bottom" id="EOb-1v-9Lv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mo5-c7-aQo" secondAttribute="bottom" id="Epv-LQ-H9A"/>
+                                    <constraint firstItem="Mo5-c7-aQo" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="top" id="G2J-2F-Cxf"/>
+                                    <constraint firstItem="Bcs-jG-cq4" firstAttribute="leading" secondItem="7hj-uo-tlb" secondAttribute="leading" id="II7-9D-bCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="ztN-f4-Sqd" secondAttribute="trailing" id="N0b-eP-gEI"/>
+                                    <constraint firstItem="Cy3-fP-sEu" firstAttribute="leading" secondItem="Bcs-jG-cq4" secondAttribute="trailing" constant="8" id="Nmj-Pk-985"/>
+                                    <constraint firstItem="Cy3-fP-sEu" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="top" id="gcn-YG-IRJ"/>
+                                    <constraint firstItem="t4O-ob-Shs" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="top" id="jOC-qu-nGv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bcs-jG-cq4" secondAttribute="bottom" id="lZh-j7-vKV"/>
+                                    <constraint firstAttribute="bottom" secondItem="ztN-f4-Sqd" secondAttribute="bottom" id="mqE-Aa-wEv"/>
+                                    <constraint firstItem="Mo5-c7-aQo" firstAttribute="leading" secondItem="Cy3-fP-sEu" secondAttribute="trailing" constant="8" id="sKa-Ba-e0k"/>
+                                    <constraint firstItem="t4O-ob-Shs" firstAttribute="leading" secondItem="Mo5-c7-aQo" secondAttribute="trailing" constant="8" id="vdh-pn-wat"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_ride_rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPW-b3-T79" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="122" y="432.5" width="76" height="15.5"/>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsc-yT-TAL">
+                                <rect key="frame" x="16" y="415.5" width="288" height="1"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.88235294119999996" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="QhE-v1-Hv5"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVe-Rd-aut" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="16" y="514" width="288" height="44"/>
+                                <color key="backgroundColor" red="0.64313725490196072" green="0.20392156862745098" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xvM-go-njW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                                <state key="normal" title="end_ride_submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishAction:" destination="376-CW-iyi" eventType="touchUpInside" id="XqI-5x-A2K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y35-xd-z4e" firstAttribute="top" secondItem="y46-ki-qD5" secondAttribute="top" id="1EU-Dw-1iT"/>
+                            <constraint firstItem="y46-ki-qD5" firstAttribute="top" secondItem="ZBi-2G-H73" secondAttribute="bottom" constant="22" id="1aW-e2-Uef"/>
+                            <constraint firstItem="YPW-b3-T79" firstAttribute="top" secondItem="Tsc-yT-TAL" secondAttribute="bottom" constant="16" id="2bM-we-TgU"/>
+                            <constraint firstAttribute="trailing" secondItem="QGq-CW-cGc" secondAttribute="trailing" priority="750" constant="28" id="3HP-MK-2OW"/>
+                            <constraint firstItem="Tsc-yT-TAL" firstAttribute="leading" secondItem="oY1-cV-fK3" secondAttribute="leading" constant="16" id="85Y-mW-V8i"/>
+                            <constraint firstItem="fVe-Rd-aut" firstAttribute="leading" secondItem="oY1-cV-fK3" secondAttribute="leading" constant="16" id="AqB-8F-Fm3"/>
+                            <constraint firstItem="QGq-CW-cGc" firstAttribute="top" secondItem="y46-ki-qD5" secondAttribute="bottom" id="HdE-J3-D1d"/>
+                            <constraint firstItem="dzn-ZS-JBE" firstAttribute="leading" secondItem="oY1-cV-fK3" secondAttribute="leading" constant="20" id="Hgg-rr-vlE"/>
+                            <constraint firstItem="5NH-5x-vvQ" firstAttribute="width" secondItem="QGq-CW-cGc" secondAttribute="width" priority="800" id="ITt-Ze-46i"/>
+                            <constraint firstAttribute="trailing" secondItem="dzn-ZS-JBE" secondAttribute="trailing" constant="20" id="Ib3-RM-xLD"/>
+                            <constraint firstItem="QGq-CW-cGc" firstAttribute="trailing" secondItem="y46-ki-qD5" secondAttribute="trailing" id="LMo-Rp-4gu"/>
+                            <constraint firstItem="QGq-CW-cGc" firstAttribute="leading" secondItem="y46-ki-qD5" secondAttribute="leading" id="LP8-Js-BKG"/>
+                            <constraint firstItem="Y35-xd-z4e" firstAttribute="leading" secondItem="5NH-5x-vvQ" secondAttribute="leading" id="Mzt-N0-u0O"/>
+                            <constraint firstAttribute="trailing" secondItem="5NH-5x-vvQ" secondAttribute="trailing" priority="800" constant="28" id="P6e-vd-hei"/>
+                            <constraint firstItem="Tsc-yT-TAL" firstAttribute="top" secondItem="QGq-CW-cGc" secondAttribute="bottom" constant="8" id="PmE-pa-1ZH"/>
+                            <constraint firstItem="5NH-5x-vvQ" firstAttribute="top" secondItem="Y35-xd-z4e" secondAttribute="bottom" id="QMJ-9N-Od8"/>
+                            <constraint firstAttribute="trailing" secondItem="fVe-Rd-aut" secondAttribute="trailing" constant="16" id="Uu9-dL-4YG"/>
+                            <constraint firstItem="ZBi-2G-H73" firstAttribute="top" secondItem="dzn-ZS-JBE" secondAttribute="bottom" id="Xum-5q-LNX"/>
+                            <constraint firstItem="y46-ki-qD5" firstAttribute="leading" secondItem="oY1-cV-fK3" secondAttribute="leading" constant="28" id="Yb2-Sk-ai1"/>
+                            <constraint firstItem="fVe-Rd-aut" firstAttribute="top" secondItem="7hj-uo-tlb" secondAttribute="bottom" constant="25" id="arB-vN-qia"/>
+                            <constraint firstItem="j6T-IJ-h08" firstAttribute="top" secondItem="fVe-Rd-aut" secondAttribute="bottom" constant="10" id="b4e-i1-5BH"/>
+                            <constraint firstAttribute="trailing" secondItem="Y35-xd-z4e" secondAttribute="trailing" constant="28" id="b9d-3k-d5h"/>
+                            <constraint firstItem="7hj-uo-tlb" firstAttribute="top" secondItem="YPW-b3-T79" secondAttribute="bottom" constant="16" id="esF-4N-V9f"/>
+                            <constraint firstAttribute="trailing" secondItem="Tsc-yT-TAL" secondAttribute="trailing" constant="16" id="gDZ-58-vIb"/>
+                            <constraint firstItem="ZBi-2G-H73" firstAttribute="top" secondItem="fc8-Ra-GIM" secondAttribute="bottom" constant="46" id="gwq-sp-AbU"/>
+                            <constraint firstItem="dzn-ZS-JBE" firstAttribute="top" secondItem="fc8-Ra-GIM" secondAttribute="bottom" id="hmZ-RA-3kI"/>
+                            <constraint firstAttribute="trailing" secondItem="ZBi-2G-H73" secondAttribute="trailing" id="lHm-HD-Tkn"/>
+                            <constraint firstItem="YPW-b3-T79" firstAttribute="centerX" secondItem="oY1-cV-fK3" secondAttribute="centerX" id="obe-FD-vxc"/>
+                            <constraint firstItem="ZBi-2G-H73" firstAttribute="leading" secondItem="oY1-cV-fK3" secondAttribute="leading" id="uQK-tO-Iea"/>
+                            <constraint firstItem="5NH-5x-vvQ" firstAttribute="leading" secondItem="QGq-CW-cGc" secondAttribute="trailing" priority="800" constant="16" id="y4d-pW-ake"/>
+                            <constraint firstItem="7hj-uo-tlb" firstAttribute="centerX" secondItem="oY1-cV-fK3" secondAttribute="centerX" id="yGY-es-RJe"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="dzn-ZS-JBE" id="irn-yj-kxe"/>
+                        <outlet property="durationLabel" destination="QGq-CW-cGc" id="Zhd-KD-iR8"/>
+                        <outlet property="durationRightConstraint" destination="3HP-MK-2OW" id="FFq-8P-deT"/>
+                        <outlet property="durationTitleLabel" destination="y46-ki-qD5" id="gVz-Cw-iA6"/>
+                        <outlet property="priceLabel" destination="5NH-5x-vvQ" id="5cS-Ov-xB1"/>
+                        <outlet property="ratingContainer" destination="7hj-uo-tlb" id="aTs-fW-qJh"/>
+                        <outlet property="ratingLabel" destination="YPW-b3-T79" id="svU-BI-daY"/>
+                        <outlet property="snapshotImageView" destination="ZBi-2G-H73" id="yyi-Hq-43h"/>
+                        <outlet property="submitButton" destination="fVe-Rd-aut" id="jL2-MK-AEU"/>
+                        <outlet property="totalLabel" destination="Y35-xd-z4e" id="nA7-oD-xuZ"/>
+                        <outletCollection property="rateButtons" destination="Bcs-jG-cq4" collectionClass="NSMutableArray" id="eD4-lg-FR1"/>
+                        <outletCollection property="rateButtons" destination="Cy3-fP-sEu" collectionClass="NSMutableArray" id="Wyf-AG-iQl"/>
+                        <outletCollection property="rateButtons" destination="Mo5-c7-aQo" collectionClass="NSMutableArray" id="O0v-Nx-vQw"/>
+                        <outletCollection property="rateButtons" destination="t4O-ob-Shs" collectionClass="NSMutableArray" id="ghN-HH-msJ"/>
+                        <outletCollection property="rateButtons" destination="ztN-f4-Sqd" collectionClass="NSMutableArray" id="eCu-Kd-CXv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WB-iv-g6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.25" y="166.90140845070422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="end_ride_checkmark" width="10" height="8"/>
+        <image name="icon_ride_camera_white" width="38" height="28"/>
+        <image name="icon_star_unselected" width="25.5" height="25"/>
+    </resources>
+</document>

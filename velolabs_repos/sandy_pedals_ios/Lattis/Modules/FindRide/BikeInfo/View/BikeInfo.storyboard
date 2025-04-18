@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+        <array key="CircularStd-Medium.ttf">
+            <string>CircularStd-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Bike Info View Controller-->
+        <scene sceneID="UPm-VG-qwe">
+            <objects>
+                <viewController storyboardIdentifier="bikeInfo" id="g72-qr-n3G" customClass="BikeInfoViewController" customModule="SandyPedals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Km8-jV-Z3v"/>
+                        <viewControllerLayoutGuide type="bottom" id="qoo-tR-eRm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fSZ-gQ-Uji" customClass="BikeInfoView" customModule="SandyPedals" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-ja-adI">
+                                <rect key="frame" x="0.0" y="30" width="375" height="814"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="text" rowHeight="62" id="OZ9-aU-lwN" customClass="BikeInfoTextCell" customModule="SandyPedals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZ9-aU-lwN" id="xM0-V3-63b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="bike_info_section_title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-8U-5Rb" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="16" width="343" height="30"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                                                    <color key="textColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Iy7-8U-5Rb" firstAttribute="top" secondItem="xM0-V3-63b" secondAttribute="top" constant="16" id="5t2-aq-6Ua"/>
+                                                <constraint firstAttribute="trailing" secondItem="Iy7-8U-5Rb" secondAttribute="trailing" constant="16" id="cUI-aM-aSf"/>
+                                                <constraint firstItem="Iy7-8U-5Rb" firstAttribute="leading" secondItem="xM0-V3-63b" secondAttribute="leading" constant="16" id="ejc-AJ-O9W"/>
+                                                <constraint firstAttribute="bottom" secondItem="Iy7-8U-5Rb" secondAttribute="bottom" constant="16" id="q2i-2U-yOr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="Iy7-8U-5Rb" id="zpS-cp-0RY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="main" rowHeight="293" id="4ny-eG-JIZ" customClass="BikeInfoMainCell" customModule="SandyPedals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="293"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ny-eG-JIZ" id="oCw-Sc-CpM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-R5-MGc">
+                                                    <rect key="frame" x="16" y="112" width="343" height="165"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="165" id="EEs-Pt-IPK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyp-gu-elg">
+                                                    <rect key="frame" x="16" y="78" width="343" height="18"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                                                    <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ok-E7-8WA">
+                                                    <rect key="frame" x="16" y="16" width="109" height="31.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bike_info_bike_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kba-tA-b0p" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="15.5"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                                            <color key="textColor" red="0.67450980392156867" green="0.69411764705882351" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Clam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-Id-LTP">
+                                                            <rect key="frame" x="0.0" y="15.5" width="109" height="16"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="13"/>
+                                                            <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Kba-tA-b0p" secondAttribute="trailing" id="5kj-6n-y1c"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VmA-Id-LTP" secondAttribute="trailing" id="Cig-j2-cp1"/>
+                                                        <constraint firstItem="Kba-tA-b0p" firstAttribute="top" secondItem="6ok-E7-8WA" secondAttribute="top" id="OW5-3h-gf9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="VmA-Id-LTP" secondAttribute="bottom" id="Rd8-UZ-o3k"/>
+                                                        <constraint firstItem="Kba-tA-b0p" firstAttribute="leading" secondItem="6ok-E7-8WA" secondAttribute="leading" id="mxj-Iu-5lp"/>
+                                                        <constraint firstItem="VmA-Id-LTP" firstAttribute="top" secondItem="Kba-tA-b0p" secondAttribute="bottom" id="r5f-mo-OFD"/>
+                                                        <constraint firstItem="VmA-Id-LTP" firstAttribute="leading" secondItem="6ok-E7-8WA" secondAttribute="leading" id="tNz-ff-srh"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-Vb-cYS">
+                                                    <rect key="frame" x="133" y="16" width="109" height="31.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bike_info_bike_type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFx-8H-p72" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="15.5"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                                            <color key="textColor" red="0.67450980390000004" green="0.69411764710000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eem-aX-NZu">
+                                                            <rect key="frame" x="0.0" y="15.5" width="109" height="16"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="13"/>
+                                                            <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="zFx-8H-p72" secondAttribute="trailing" id="L5R-s6-rBa"/>
+                                                        <constraint firstItem="eem-aX-NZu" firstAttribute="leading" secondItem="tSC-Vb-cYS" secondAttribute="leading" id="XAp-6g-E7D"/>
+                                                        <constraint firstItem="zFx-8H-p72" firstAttribute="leading" secondItem="tSC-Vb-cYS" secondAttribute="leading" id="aQ6-Hq-OUo"/>
+                                                        <constraint firstItem="zFx-8H-p72" firstAttribute="top" secondItem="tSC-Vb-cYS" secondAttribute="top" id="ae4-pC-941"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eem-aX-NZu" secondAttribute="bottom" id="mn5-Z7-Lff"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eem-aX-NZu" secondAttribute="trailing" id="vYg-Fl-9Er"/>
+                                                        <constraint firstItem="eem-aX-NZu" firstAttribute="top" secondItem="zFx-8H-p72" secondAttribute="bottom" id="yAi-HN-Jp6"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFR-Q4-vpF">
+                                                    <rect key="frame" x="250" y="16" width="109" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bike_info_charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXw-Mq-5na" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="15.5"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                                            <color key="textColor" red="0.67450980390000004" green="0.69411764710000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="75%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frs-Zh-dQv">
+                                                            <rect key="frame" x="0.0" y="15.5" width="109" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="13"/>
+                                                            <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="frs-Zh-dQv" secondAttribute="bottom" id="6t5-JH-vtH"/>
+                                                        <constraint firstItem="zXw-Mq-5na" firstAttribute="leading" secondItem="vFR-Q4-vpF" secondAttribute="leading" id="h2b-hl-u1e"/>
+                                                        <constraint firstAttribute="trailing" secondItem="frs-Zh-dQv" secondAttribute="trailing" id="jVO-ow-WMf"/>
+                                                        <constraint firstItem="zXw-Mq-5na" firstAttribute="top" secondItem="vFR-Q4-vpF" secondAttribute="top" id="o4D-lG-NDF"/>
+                                                        <constraint firstItem="frs-Zh-dQv" firstAttribute="top" secondItem="zXw-Mq-5na" secondAttribute="bottom" id="vSR-aX-NMC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zXw-Mq-5na" secondAttribute="trailing" id="wer-Tv-I9d"/>
+                                                        <constraint firstItem="frs-Zh-dQv" firstAttribute="leading" secondItem="vFR-Q4-vpF" secondAttribute="leading" id="x2Y-Xd-aYW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6ok-E7-8WA" firstAttribute="leading" secondItem="oCw-Sc-CpM" secondAttribute="leading" constant="16" id="Daw-Ha-iBV"/>
+                                                <constraint firstItem="tSC-Vb-cYS" firstAttribute="leading" secondItem="6ok-E7-8WA" secondAttribute="trailing" constant="8" id="HxS-dJ-qzh"/>
+                                                <constraint firstItem="vFR-Q4-vpF" firstAttribute="width" secondItem="6ok-E7-8WA" secondAttribute="width" id="IUY-8f-59a"/>
+                                                <constraint firstItem="fyp-gu-elg" firstAttribute="leading" secondItem="oCw-Sc-CpM" secondAttribute="leading" constant="16" id="Jxs-Zc-RVC"/>
+                                                <constraint firstAttribute="trailing" secondItem="fyp-gu-elg" secondAttribute="trailing" constant="16" id="LXA-p7-PEx"/>
+                                                <constraint firstItem="Wd6-R5-MGc" firstAttribute="top" secondItem="fyp-gu-elg" secondAttribute="bottom" constant="16" id="PIc-5c-QZc"/>
+                                                <constraint firstItem="tSC-Vb-cYS" firstAttribute="top" secondItem="oCw-Sc-CpM" secondAttribute="top" constant="16" id="QDu-zz-RKE"/>
+                                                <constraint firstItem="fyp-gu-elg" firstAttribute="top" secondItem="vFR-Q4-vpF" secondAttribute="bottom" constant="30" id="QZF-3Z-OQw"/>
+                                                <constraint firstItem="Wd6-R5-MGc" firstAttribute="leading" secondItem="oCw-Sc-CpM" secondAttribute="leading" constant="16" id="Tgg-01-vL5"/>
+                                                <constraint firstItem="tSC-Vb-cYS" firstAttribute="width" secondItem="6ok-E7-8WA" secondAttribute="width" id="eik-KD-X1d"/>
+                                                <constraint firstItem="vFR-Q4-vpF" firstAttribute="top" secondItem="oCw-Sc-CpM" secondAttribute="top" constant="16" id="gTs-fT-Edn"/>
+                                                <constraint firstItem="6ok-E7-8WA" firstAttribute="top" secondItem="oCw-Sc-CpM" secondAttribute="top" constant="16" id="giM-7s-26T"/>
+                                                <constraint firstItem="vFR-Q4-vpF" firstAttribute="leading" secondItem="tSC-Vb-cYS" secondAttribute="trailing" constant="8" id="hI1-AG-KQ7"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wd6-R5-MGc" secondAttribute="trailing" constant="16" id="hbW-Ka-gIQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="vFR-Q4-vpF" secondAttribute="trailing" constant="16" id="m4F-H1-jLi"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wd6-R5-MGc" secondAttribute="bottom" constant="16" id="tlq-Rf-WHi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bikeImageView" destination="Wd6-R5-MGc" id="Tj6-uu-tGE"/>
+                                            <outlet property="chargeLevelLabel" destination="frs-Zh-dQv" id="289-Kd-Jfn"/>
+                                            <outlet property="descriptionLabel" destination="fyp-gu-elg" id="koO-A1-xIL"/>
+                                            <outlet property="nameLabel" destination="VmA-Id-LTP" id="7ma-Lj-Hzo"/>
+                                            <outlet property="typeLabel" destination="eem-aX-NZu" id="ZeD-bG-wvZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="location" rowHeight="102" id="XgJ-1m-Ob9" customClass="BikeInfoLocationCell" customModule="SandyPedals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="383" width="375" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XgJ-1m-Ob9" id="Sxc-BB-Bfk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="bike_info_pick_up_location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elw-M5-OfF" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="10" width="342" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                                                    <color key="textColor" red="0.67450980390000004" green="0.69411764710000001" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building C, Ainsley Complex, Apple…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwn-Ch-orp">
+                                                    <rect key="frame" x="16" y="30.5" width="343" height="50.5"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="13"/>
+                                                    <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320m | 3 mins walk from your current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8i-Ng-Gx8">
+                                                    <rect key="frame" x="16" y="44" width="343" height="14"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="11"/>
+                                                    <color key="textColor" red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-kV-D6O" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="58" width="123" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="hO8-bw-5tK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="11"/>
+                                                    <state key="normal" title="bike_info_show_on_map">
+                                                        <color key="titleColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R8i-Ng-Gx8" firstAttribute="leading" secondItem="Sxc-BB-Bfk" secondAttribute="leading" constant="16" id="7g2-rz-n3Z"/>
+                                                <constraint firstItem="zwn-Ch-orp" firstAttribute="top" secondItem="Elw-M5-OfF" secondAttribute="bottom" constant="5" id="Nhk-JH-qy3"/>
+                                                <constraint firstItem="1cb-kV-D6O" firstAttribute="top" secondItem="R8i-Ng-Gx8" secondAttribute="bottom" id="YC1-Um-jhy"/>
+                                                <constraint firstItem="Elw-M5-OfF" firstAttribute="leading" secondItem="Sxc-BB-Bfk" secondAttribute="leading" constant="16" id="czJ-Mx-9KA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zwn-Ch-orp" secondAttribute="bottom" constant="10" id="hWQ-JX-jb7"/>
+                                                <constraint firstAttribute="trailing" secondItem="zwn-Ch-orp" secondAttribute="trailing" constant="16" id="keM-zI-de7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1cb-kV-D6O" secondAttribute="bottom" constant="10" id="pML-N1-Se4"/>
+                                                <constraint firstItem="1cb-kV-D6O" firstAttribute="leading" secondItem="Sxc-BB-Bfk" secondAttribute="leading" constant="16" id="s3s-wh-Ls5"/>
+                                                <constraint firstAttribute="trailing" secondItem="R8i-Ng-Gx8" secondAttribute="trailing" constant="16" id="wJ3-ia-wL9"/>
+                                                <constraint firstItem="zwn-Ch-orp" firstAttribute="leading" secondItem="Sxc-BB-Bfk" secondAttribute="leading" constant="16" id="xs0-cC-awd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Elw-M5-OfF" secondAttribute="trailing" constant="17" id="ycs-IO-EMx"/>
+                                                <constraint firstItem="Elw-M5-OfF" firstAttribute="top" secondItem="Sxc-BB-Bfk" secondAttribute="top" constant="10" id="zS1-mO-U4g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="zwn-Ch-orp" id="CwB-HB-DXu"/>
+                                            <outlet property="distanceLabel" destination="R8i-Ng-Gx8" id="GSv-Ab-9Qj"/>
+                                            <outlet property="titleLabel" destination="Elw-M5-OfF" id="Gh5-5T-PG8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="network" rowHeight="107" id="Y4u-Us-b5m" customClass="BikeInfoNetworkCell" customModule="SandyPedals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="485" width="375" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y4u-Us-b5m" id="XSq-Jx-GSQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Apple Inc. Bikeshare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4G-hD-Xsx">
+                                                    <rect key="frame" x="16" y="10" width="342" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="16"/>
+                                                    <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-SP-uch" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="63" width="246" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="87k-gd-3G4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                                                    <state key="normal" title="bike_info_parking_zones_and_spots">
+                                                        <color key="titleColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="showZones:" destination="Y4u-Us-b5m" eventType="touchUpInside" id="qbV-pz-Huf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Euo-h4-zkX" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="30" width="220" height="28"/>
+                                                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                                                    <state key="normal" title="bike_info_terms_and_conditions">
+                                                        <color key="titleColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="openTerms:" destination="Y4u-Us-b5m" eventType="touchUpInside" id="lot-kt-m1s"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Euo-h4-zkX" firstAttribute="leading" secondItem="XSq-Jx-GSQ" secondAttribute="leading" constant="16" id="42a-yH-vBN"/>
+                                                <constraint firstItem="i4G-hD-Xsx" firstAttribute="leading" secondItem="XSq-Jx-GSQ" secondAttribute="leading" constant="16" id="4CO-Nk-Iqh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Hg3-SP-uch" secondAttribute="bottom" constant="10" id="8Gw-Jc-IZ4"/>
+                                                <constraint firstItem="i4G-hD-Xsx" firstAttribute="top" secondItem="XSq-Jx-GSQ" secondAttribute="top" constant="10" id="CTX-Be-8Cg"/>
+                                                <constraint firstItem="Hg3-SP-uch" firstAttribute="leading" secondItem="XSq-Jx-GSQ" secondAttribute="leading" constant="16" id="Uwb-Ma-LqZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="i4G-hD-Xsx" secondAttribute="trailing" constant="17" id="iQL-qh-gnS"/>
+                                                <constraint firstItem="Hg3-SP-uch" firstAttribute="top" secondItem="Euo-h4-zkX" secondAttribute="bottom" constant="5" id="jTe-Xu-Ls9"/>
+                                                <constraint firstItem="Euo-h4-zkX" firstAttribute="top" secondItem="XSq-Jx-GSQ" secondAttribute="top" constant="30" id="zMe-rr-Kjo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="termsButton" destination="Euo-h4-zkX" id="1LO-XR-57t"/>
+                                            <outlet property="titleLabel" destination="i4G-hD-Xsx" id="Vml-Mu-EnF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-nS-BZy" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                                <rect key="frame" x="16" y="740" width="343" height="44"/>
+                                <color key="backgroundColor" red="0.64313725489999995" green="0.20000000000000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eOD-hZ-OrY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                                <state key="normal" title="find_ride_reserve">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookAction:" destination="g72-qr-n3G" eventType="touchUpInside" id="aKp-uD-9CX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Nwx-ja-adI" secondAttribute="trailing" id="DAz-Dm-QUI"/>
+                            <constraint firstItem="Nwx-ja-adI" firstAttribute="leading" secondItem="fSZ-gQ-Uji" secondAttribute="leading" id="E5I-j6-znL"/>
+                            <constraint firstItem="Sh8-nS-BZy" firstAttribute="leading" secondItem="fSZ-gQ-Uji" secondAttribute="leading" constant="16" id="GuM-Zn-9qv"/>
+                            <constraint firstItem="qoo-tR-eRm" firstAttribute="top" secondItem="Sh8-nS-BZy" secondAttribute="bottom" constant="16" id="LgV-BV-iSa"/>
+                            <constraint firstAttribute="trailing" secondItem="Sh8-nS-BZy" secondAttribute="trailing" constant="16" id="RdJ-hF-AVd"/>
+                            <constraint firstItem="Nwx-ja-adI" firstAttribute="top" secondItem="Km8-jV-Z3v" secondAttribute="bottom" constant="30" id="bXR-j4-e17"/>
+                            <constraint firstItem="qoo-tR-eRm" firstAttribute="top" secondItem="Nwx-ja-adI" secondAttribute="bottom" constant="-44" id="tEm-g8-WL3"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="reserveButton" destination="Sh8-nS-BZy" id="zgp-Z5-eDM"/>
+                            <outlet property="tableView" destination="Nwx-ja-adI" id="asE-6M-x54"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="rza-cL-mzo"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="infoView" destination="fSZ-gQ-Uji" id="RwE-pn-bXO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiw-UO-xTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.2" y="301.34932533733138"/>
+        </scene>
+    </scenes>
+</document>

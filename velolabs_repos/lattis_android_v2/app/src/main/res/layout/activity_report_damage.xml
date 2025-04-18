@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent_report_damage_details"
+    android:background="@color/report_damage_background"
+    tools:context="com.lattis.lattis.presentation.damage.ReportDamageActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_report_damage_details"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_report_damage_details"
+        android:id="@+id/ct_title_in_report_damage_details"
+        android:layout_marginLeft="20dp"
+        android:text="@string/report_damage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/report_damage_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_report_damage_details"
+        android:id="@+id/ct_notes_label_in_report_damage"
+        android:text="@string/damage_report_notes"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/report_damage_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf"
+        />
+
+
+    <com.lattis.lattis.presentation.customview.CustomEditText
+        android:id="@+id/et_notes_value_in_report_damage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:focusableInTouchMode="true"
+        android:hint="@string/tap_to_enter_notes"
+        android:textColorHint="@color/report_damage_note_hint_text"
+        android:textColor="@color/report_damage_text"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="3"
+        custom:layout_constraintStart_toEndOf="@+id/iv_sign_in_email"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        custom:layout_constraintBottom_toTopOf="@+id/divier1_sign_in"
+        android:nextFocusDown="@id/et_sign_in_password"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_notes_label_in_report_damage"
+        android:textSize="16dp"
+        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+    <View
+        android:id="@+id/divider_report_damage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/report_damage_divider"
+        android:layout_marginTop="10dp"
+        custom:layout_constraintTop_toBottomOf="@id/et_notes_value_in_report_damage" />
+
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/divider_report_damage"
+        android:id="@+id/ct_photo_of_damage_label_in_report_damage"
+        android:text="@string/damage_report_photo"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/report_damage_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_photo_of_damage_label_in_report_damage"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_btn_take_photo_submit_in_report_damage"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/no_photo"
+        android:textSize="16dp"
+        android:textColor="@color/report_damage_no_photo_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_photo_of_damage_label_in_report_damage"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_btn_take_photo_submit_in_report_damage"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/iv_damage_photo_preview_in_report_damage"
+        android:scaleType="centerInside"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/cl_btn_take_photo_submit_in_report_damage">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_take_photo_in_report_damage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="visible"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_end_ride_take_photo_button"
+            android:textColor="@color/reserve_button_text"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/take_photo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_submit_in_report_damage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/damage_report_title"
+        android:textSize="16dp"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:background="@drawable/round_take_photo_in_report_damage"
+        android:textColor="@color/report_damage_take_photo_text"
+        app:typefaceAsset="GothamSSm-Medium.otf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include layout="@layout/activity_loading"
+        android:id="@+id/report_damage_loading"
+        android:visibility="gone"/>
+
+
+    <include layout="@layout/no_internal_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

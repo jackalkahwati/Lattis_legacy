@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/active_ride_connect_to_lock_popup_background" />
+    <corners android:topLeftRadius="13dp"
+        android:topRightRadius="13dp"/>
+</shape>

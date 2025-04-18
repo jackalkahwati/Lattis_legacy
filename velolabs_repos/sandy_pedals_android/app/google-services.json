@@ -1,0 +1,227 @@
+{
+  "project_info": {
+    "project_number": "907340690079",
+    "firebase_url": "https://lattis-app.firebaseio.com",
+    "project_id": "lattis-app",
+    "storage_bucket": "lattis-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:997d77ac77133b48ba68aa",
+        "android_client_info": {
+          "package_name": "io.bikes.sandypedals.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:72ed90e1564999c5",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:1d6962d03de82093",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:42f696bc43e608c6",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:a39755334d2f728bba68aa",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.v2.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907340690079:android:21cea5b6880bcb1eba68aa",
+        "android_client_info": {
+          "package_name": "io.lattis.lattis.v2.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubp59yj55h3vmMr78YmiLdFd8ct6bViM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907340690079-pqqt7723j4lq7ubji18145krrv12ps1o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "907340690079-bmoikdeaa3oq1neuoeosbr7hnds3ohhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.prototype"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

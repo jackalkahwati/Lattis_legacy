@@ -1,0 +1,253 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.velolabs.skylock_led.MainActivity" >
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="340">
+        	<Button
+        	android:layout_weight="120"
+        	android:id="@+id/button1"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:text="Connect new" />
+        	
+        	<TextView
+        	android:layout_weight="100"
+        	android:id="@+id/textView2"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:text="Connection_Status" />
+        	
+       	 	<Button
+       	 	android:layout_weight="120"
+       	 	android:id="@+id/button2"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	
+       		android:text="Disconnect" />
+    </LinearLayout>
+    
+    
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="400">
+        	<Button
+        	android:layout_weight="100"
+        	android:id="@+id/button3"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="37dp"
+        	android:text="LED_ON" />
+        	
+        	       	
+       	 	<Button
+       	 	android:layout_weight="100"
+       	 	android:id="@+id/button4"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="37dp"
+       		android:text="LED_OFF" />
+       	 	
+       	 	<Button
+        	android:layout_weight="100"
+        	android:id="@+id/button5"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="37dp"
+        	android:text="LOCK" />
+        	
+        	       	
+       	 	<Button
+       	 	android:layout_weight="100"
+       	 	android:id="@+id/button6"
+        	style="?android:attr/buttonStyleSmall"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="37dp"
+       		android:text="UNLOCK" />
+    </LinearLayout>
+
+            
+        
+
+       
+    
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_below="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200">
+
+        	<Button
+        	    android:id="@+id/button9"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="60"
+        	    android:text="Get LED state" />
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:id="@+id/tvLEDState"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="140"
+        	    android:text="LED State" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_below="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="300">
+
+        	<Button
+        	    android:id="@+id/bBattVolt"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Get Values" />
+
+
+        	<Button
+        	    android:id="@+id/bReset"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Reset" />
+        	
+        	<Button
+        	    android:id="@+id/bTxPower"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Tx Power" />
+        	
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_below="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="300">
+
+        	<TextView
+        	    android:id="@+id/tvBattVolt"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="BattVolt: " />
+
+
+        	<TextView
+        	    android:id="@+id/tvTemp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Temp: " />
+        	
+        	<TextView
+        	    android:id="@+id/tvRssi"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Rssi: " />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_below="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200">
+
+    <Switch
+        android:id="@+id/swAutoLock"
+        android:layout_weight="100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:text="Auto LOCK/ UNLOCK" />
+    
+    <TextView
+        	    android:id="@+id/tvLockState"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Lock State" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_below="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="200">
+
+	<Button
+        	    android:id="@+id/bMag"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="50"
+        	    android:text="MAG" />
+	<Button
+        	    android:id="@+id/bACC"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="50"
+        	    android:text="ACC" />
+        
+    </LinearLayout>
+
+</RelativeLayout>

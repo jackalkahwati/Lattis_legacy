@@ -1,0 +1,237 @@
+<section ng-controller="portDetailsController">
+  <div class="row" ng-show="loading">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>
+  </div>
+  <div class="row" ng-show="!loading">
+    <div class="col-xs-12 col-sm-6 col-m-6">
+      <form action="post" name="formData">
+        <div class="panel">
+          <div class="panel-body box">
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Port ID</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.port_id}} {{(port.equipment && port.equipment.vendor === 'dck-mob-e') ? (port.online ? '🟢' : '🔴') : ''}}</span>
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Status</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{ isPortAvailable(port) ? "Available": "Unavailable" }}</span>
+              </div>
+            </div>
+            <div class="row m-b-20" ng-if="port.hub.type === 'parking_station'">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Current/Trip Status</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{tripStatus}}</span>
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Port Number</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.number}}</span>
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Port QR Code</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" ng-if="port.port_qr_code && !updatingPort"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.port_qr_code}}</span>
+                <span class="fw-300" ng-if="!port.port_qr_code && !updatingPort"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">Not Set</span>
+                <input type="text" class="form-control" ng-if="updatingPort" ng-model="formData.portQrCode" />
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Hub Name</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.hub.name}}</span>
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Port Hub Status</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.hub.status}}</span>
+              </div>
+            </div>
+            <div class="row m-b-20">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Hub Model</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.hub.model}}</span>
+              </div>
+            </div>
+
+            <div class="row m-b-20" ng-if="port.bike">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Locked/Docked Bike</span>
+              </div>
+              <div class="col-sm-8">
+                <a ng-href="#/bike-details/{{port.bike.bike_id}}">{{port.bike.bike_name || port.bike.bike_id}}</a>
+              </div>
+            </div>
+
+            <div class="row m-b-20" ng-if="hubType !== 'closed'">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Equipment Vendor</span>
+              </div>
+              <div class="col-sm-8" ng-if="editingEquipment || addingEquipment">
+                <select aria-label="Selected Vendor" aria-describedby="helpBlock" name="selectedVendor"
+                  id="selected-vendor" class="form-control" ng-model="formData.equipmentVendor" ng-required="true"
+                  ng-options="vendor as vendor.name  for vendor in vendors track by vendor.value"
+                  ng-disabled="listingHubs">
+                  <option value="">--Select a vendor--</option>
+                  <span id="helpBlock"
+                    ng-show="formData.equipmentVendor.$error.required && formData.equipmentVendor.$touched"
+                    class="help-block">
+                    Please select an equipment vendor.
+                  </span>
+                </select>
+              </div>
+              <div class="col-sm-8" ng-if="port.equipment && !(editingEquipment || addingEquipment)">
+                <span class="fw-300"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.equipment.vendor}}</span>
+              </div>
+
+              <div class="col-sm-8" ng-if="!port.equipment && !(editingEquipment || addingEquipment)">
+                <span class="fw-300" ng-if="!port.equipment"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">No Equipment Assigned</span>
+              </div>
+            </div>
+            <div class="row m-b-20" ng-if="hubType !== 'closed' && formData.equipmentVendor.value === 'ParcelHive'">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Locker Id</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" ng-if="port.equipment && !editingEquipment"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.equipment.lockerId}}</span>
+                <span class="fw-300" ng-if="!port.equipment && !(editingEquipment || addingEquipment)"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">No Equipment Assigned</span>
+                <input type="text" class="form-control" ng-model="formData.lockerId"
+                  ng-if="addingEquipment || editingEquipment" />
+              </div>
+            </div>
+            <div class="row m-b-20" ng-if="hubType !== 'closed' && formData.equipmentVendor.value === 'ParcelHive'">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Box Id</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" ng-if="port.equipment && !editingEquipment"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.equipment.boxId}}</span>
+                <span class="fw-300" ng-if="!port.equipment && !(editingEquipment || addingEquipment)"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">No Equipment Assigned</span>
+                <input type="text" class="form-control" ng-model="formData.boxId"
+                  ng-if="addingEquipment || editingEquipment" />
+              </div>
+            </div>
+            <div class="row m-b-20" ng-if="hubType !== 'closed'">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Equipment Key</span>
+              </div>
+              <div class="col-sm-8">
+                <span class="fw-300" ng-if="port.equipment && !editingEquipment"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">{{port.equipment.key}}</span>
+                <span class="fw-300" ng-if="!port.equipment && !(editingEquipment || addingEquipment)"
+                  style="max-width: 300px; font-size: 13px; color: #6d6d6d">No Equipment Assigned</span>
+                <input type="text" class="form-control" ng-model="formData.equipmentKey"
+                  ng-if="addingEquipment || editingEquipment"
+                  ng-disabled="formData.equipmentVendor.value === 'ParcelHive'" />
+              </div>
+            </div>
+            <div class="row m-b-20" ng-if="addingEquipment && showPasswordField">
+              <div class="col-sm-4">
+                <span class="text-uppercase fw-300" style="font-size: 13px; color: #6d6d6d">Password</span>
+              </div>
+              <div class="col-sm-8">
+                <input type="text" ng-required="addingEquipment" class="form-control" ng-model="formData.password" />
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row" style="margin-left: 0;">
+              <div class="row">
+                <div class="col-sm-3" ng-hide="updatingPort || addingEquipment || editingEquipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="editPort()">
+                    EDIT PORT INFO
+                  </button>
+                </div>
+                <div class="col-sm-3" style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="unlockPort()">
+                    {{unlockingPort ? 'ULOCKING PORT...' : 'UNLOCK PORT'}}
+                  </button>
+                </div>
+                <div class="col-sm-3" ng-hide="updatingPort || addingEquipment"
+                  ng-if="!port.equipment && hubType !== 'closed'" style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="addEquipment()">
+                    ADD EQUIPMENT
+                  </button>
+                </div>
+                <div class="col-sm-3" ng-hide="updatingPort || addingEquipment || editingEquipment || !port.equipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="editEquipment()">
+                    EDIT EQUIPMENT
+                  </button>
+                </div>
+              </div>
+
+              <div class="row" style="padding-top: 10px" ng-if="port.equipment.vendor === 'dck-mob-e'">
+                <div class="col-sm-3" ng-if="port.equipment && port.equipment.vendor === 'dck-mob-e'"
+                  ng-hide="updatingPort || addingEquipment || editingEquipment || !port.equipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="administerGreenRiders('reset', port.equipment.vendor, port.equipment.key)">
+                    RESET
+                  </button>
+                </div>
+
+                <div class="col-sm-3" ng-if="port.equipment && port.equipment.vendor === 'dck-mob-e'"
+                  ng-hide="updatingPort || addingEquipment || editingEquipment || !port.equipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" type="button" ng-click="administerGreenRiders('reload', port.equipment.vendor, port.equipment.key)">
+                    {{adminsteringGR ? 'RELOADING...': 'RELOAD'}}
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4" ng-if="addingEquipment || updatingPort || editingEquipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" ng-click="save()" type="button"
+                    ng-disabled="formData.$invalid">
+                    SAVE
+                  </button>
+                </div>
+                <div class="col-sm-4" ng-if="addingEquipment || updatingPort || editingEquipment"
+                  style="width: max-content">
+                  <button class="btn action_btn text-center" ng-click="cancel()" type="button">
+                    CANCEL
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

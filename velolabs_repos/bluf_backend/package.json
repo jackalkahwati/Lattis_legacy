@@ -1,0 +1,52 @@
+{
+  "name": "bluf",
+  "version": "1.0.0",
+  "description": "Lattis BLUF backend",
+  "main": "build/app.js",
+  "scripts": {
+    "start": "node build/app.js",
+    "dev": "nodemon",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "npm run typeorm migration:generate -- -n",
+    "migration:run": "npm run typeorm migration:run",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "author": "Ravil Khusainov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "typeorm": "^0.3.17",
+    "mysql2": "^3.6.1",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.0.0",
+    "cors": "^2.8.5",
+    "winston": "^3.10.0",
+    "express-rate-limit": "^7.0.1",
+    "reflect-metadata": "^0.1.13",
+    "class-validator": "^0.14.0",
+    "class-transformer": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.6.3",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

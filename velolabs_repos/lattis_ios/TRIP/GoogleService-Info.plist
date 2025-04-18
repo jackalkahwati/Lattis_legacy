@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>817175374070-r5smhorbmalil2lsoed09iam5i4aqkrq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.817175374070-r5smhorbmalil2lsoed09iam5i4aqkrq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC3D0T4RuM7wm7x5Tt7_vKmqHzTSL6zJUM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>817175374070</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.roadbikes.trip</string>
+	<key>PROJECT_ID</key>
+	<string>roam-bikes</string>
+	<key>STORAGE_BUCKET</key>
+	<string>roam-bikes.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:817175374070:ios:64ec6ed60592420b5ba4d7</string>
+</dict>
+</plist>

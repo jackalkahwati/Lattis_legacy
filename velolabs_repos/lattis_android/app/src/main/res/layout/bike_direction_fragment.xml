@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:id="@+id/iv_cancel_ride"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_close_blue" />
+
+        <LinearLayout
+            android:id="@+id/ll_ui_before_trip_starting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_close">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_bike_booking_timer"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_bikeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#80848C"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_ui_after_trip_starting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/iv_close">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_reservation_en_routed_to_label"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#A7A8AB"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_bikeName_trip_starting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4A4A4A"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </LinearLayout>
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/cv_see_ride_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_ui_after_trip_starting"
+            android:layout_marginTop="10dp"
+            android:text="@string/bike_reservation_see_bike_info_label"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/mb_blue"
+            android:visibility="gone"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/cv_bike_booking_timer_text_payment_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_ui_before_trip_starting"
+            android:layout_marginTop="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/lattis_header_color"
+            android:visibility="visible"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/rl_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#44979797"></RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bike_reservation_timer_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_margin="8dp">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_bike_reservation_begin_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#B7C1CD"
+            android:layout_marginRight="8dp">
+
+            <View
+                android:id="@+id/view_animating_begin_trip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/text_view_begin_trip"
+                android:layout_alignRight="@+id/text_view_begin_trip"
+                android:layout_alignTop="@+id/text_view_begin_trip"
+                android:layout_alignBottom="@+id/text_view_begin_trip"
+                />
+
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/progress_bar_begin_trip_1"-->
+                <!--style="?android:attr/progressBarStyleHorizontal"-->
+                <!--android:layout_width="70dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignTop="@+id/text_view_begin_trip"-->
+                <!--android:layout_alignBottom="@+id/text_view_begin_trip"-->
+                <!--android:indeterminate="false"-->
+                <!--android:progress="100"-->
+                <!--android:progressDrawable="@drawable/progress_bar_begin_trip" />-->
+
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/progress_bar_begin_trip_2"-->
+                <!--style="?android:attr/progressBarStyleHorizontal"-->
+                <!--android:layout_width="70dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignTop="@+id/text_view_begin_trip"-->
+                <!--android:layout_alignBottom="@+id/text_view_begin_trip"-->
+                <!--android:indeterminate="false"-->
+                <!--android:progress="100"-->
+                <!--android:progressDrawable="@drawable/progress_bar_begin_trip" />-->
+
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/text_view_begin_trip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:tag="NOT_CONNECTED"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/bike_booking_begin_trip"
+                android:textColor="@android:color/white"
+                />
+
+        </RelativeLayout>
+
+
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/cv_begin_trip_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:lines="2"
+                android:visibility="gone"
+                android:layout_toLeftOf="@+id/rl_bike_reservation_begin_trip"
+                android:text="@string/bike_booking_desctiption"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#818181"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_trip_timer_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_bike_reservation_begin_trip"
+            android:layout_alignTop="@+id/rl_bike_reservation_begin_trip"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/rl_bike_reservation_begin_trip"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_trip_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp">
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/cv_trip_timer_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/bike_reservation_time_label"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#818181"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/cv_trip_timer_value_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cv_trip_timer_label"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#818181"
+                    android:textSize="25dp"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_trip_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp">
+
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/cv_trip_cost_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/bike_reservation_fare_label"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#818181"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/cv_trip_cost_value_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cv_trip_cost_label"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@+id/cv_trip_cost_currency_unit_label"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#818181"
+                    android:textSize="25dp"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+                <com.lattis.ellipse.presentation.view.CustomTextView
+                    android:id="@+id/cv_trip_cost_currency_unit_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/cv_trip_cost_value_label"
+                    android:layout_marginTop="6dp"
+                    android:text=""
+                    android:textColor="#818181"
+                    android:textSize="14dp"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

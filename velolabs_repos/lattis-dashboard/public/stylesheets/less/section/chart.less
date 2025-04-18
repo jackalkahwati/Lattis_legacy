@@ -1,0 +1,129 @@
+//Angular Chart Customized
+.chart-box {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+  ul {
+    li {
+      border: 0px;
+      color: @colorskyblue;
+      .pointer;
+    }
+  }
+}
+
+.tripchart {
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+  margin: 30px 0px;
+  span {
+    color: @color_7;
+    font-size: 20px;
+    padding: 0px 15px 20px;
+    float: left;
+  }
+  canvas {
+    height: 280px !important;
+  }
+}
+
+#trip-heatmap {
+  border: 1px solid #ddd;
+  padding: 20px 0px;
+}
+
+.q1 {
+  background: #eeeeee !important;
+  fill: #eeeeee !important;
+}
+
+.q2 {
+  background: #D2E9F7 !important;
+  fill: #D2E9F7 !important;
+}
+
+.q3 {
+  background: #92C7EB !important;
+  fill: #92C7EB !important;
+}
+
+.q4 {
+  background: #69ADDA !important;
+  fill: #69ADDA !important;
+}
+.q5 {
+  background: #4394CB !important;
+  fill: #4394CB !important;
+}
+.q6 {
+  background: #196ba2 !important;
+  fill: #196ba2 !important;
+}
+
+.circle {
+  padding: 10px 15px;
+  background: #66B1E3;
+  color: @color_4;
+  border-radius: 50%;
+  background: #eee;
+  color: @color_8;
+}
+
+.circle-active {
+  padding: 10px 15px;
+  background: #66B1E3;
+  color: @color_4;
+  border-radius: 50%;
+}
+
+.circle-done {
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+#cal-heatmap-labels
+{
+  .cal-heatmap-container .graph-rect{
+    fill : #fff;
+  }
+}
+
+.heat-mapLeagend{
+  background: rgb(245,246,246); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(29,120,181,1) 0%, rgba(210,232,247,1) 77%, rgba(238,238,238,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(245,246,246,1) 0%,rgba(29,120,181,1) 0%,rgba(210,232,247,1) 77%,rgba(238,238,238,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(245,246,246,1) 0%,rgba(29,120,181,1) 0%,rgba(210,232,247,1) 77%,rgba(238,238,238,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#eeeeee',GradientType=0 );
+}
+.cal-heatmap-container {
+  //margin:0px 4%;
+  .graph-subdomain-group rect:hover {
+    stroke: transparent;
+  }
+}
+.cal-heatmap-container .subdomain-text, .cal-heatmap-container .graph-label{
+  fill: #9b9b9b;
+  font-size: 12px;
+  font-family: @font-family_1;
+}
+
+.graph-subdomain-group{
+  .subdomain-text{
+    text-transform: lowercase;
+  }
+}
+
+.ch-tooltip{
+  background: #58718e;
+  color: #fff!important;
+  border-radius: 1.5px!important;
+  font-size: 12px!important;
+  letter-spacing: .5px;
+  opacity: 0.6;
+  &:after{
+    border-top-color: #58718e !important;
+  }
+}
+

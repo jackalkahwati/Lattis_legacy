@@ -1,0 +1,279 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/tapkey/TapkeyCocoaPods'
+source 'https://github.com/CocoaPods/Specs.git'
+
+def shared_pods
+  pod 'ClusterKit/Mapbox' , :git => 'git@github.com:hulab/ClusterKit.git'
+end
+
+target 'Lattis' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Velo-Transit' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Sandy Pedals' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Guestbike' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'GoScoot' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Giraff' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'WAWE' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Wave' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Grin' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'GrinSantiago' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Unlimited Biking Micromobility' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Mount Locks' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Monkey Donkey' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'BandWagon' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Lockem' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'OurBike' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Fin' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Hooba' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'YRyde' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Blade' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Pacific Rides' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'TRIP' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Green-Riders' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'FalcoSmart' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Robyn Scooters' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'RockVelo' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'TWR' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'Thrive Ryde' do
+  platform :ios, '14.0'
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis
+  shared_pods
+end
+
+target 'LattisCore' do
+  platform :ios, '14.0'
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
+
+  pod 'JTMaterialSpinner', :git => 'git@github.com:kabanishe23/JTMaterialSpinner.git'
+  pod 'FlagPhoneNumber'
+  pod 'TapkeyMobileLib', '2.21.2.2'
+end
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+          config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+      end
+    end
+  end
+end

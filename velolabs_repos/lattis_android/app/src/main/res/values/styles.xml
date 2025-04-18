@@ -1,0 +1,491 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/lattis_accent_color</item>
+        <item name="colorPrimaryDark">@color/lattis_accent_color</item>
+        <item name="colorAccent">@color/lattis_profile_accent</item>
+        <item name="colorControlNormal">@color/lattis_profile_accent</item>
+        <item name="colorControlActivated">@color/lattis_profile_accent</item>
+        <item name="colorControlHighlight">@color/lattis_profile_accent</item>
+
+    </style>
+
+    <style name="AppTheme.Fullscreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.Authentication" parent="AppTheme.Fullscreen">
+        <item name="android:windowBackground">@color/lattis_accent_color</item>
+        <item name="android:textViewStyle">@style/AppTheme.Authentication.TextViewStyle</item>
+        <item name="android:editTextStyle">@style/AppTheme.Authentication.EditTextStyle</item>
+        <item name="editTextStyle">@style/AppTheme.Authentication.EditTextStyle</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="AppTheme.Fullscreen">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/lattis_transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="AppTheme.Authentication.TextViewStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Authentication.EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@color/lattis_menu_color</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="BlueButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_dark_color</item>
+        <item name="android:background">@drawable/button_oval_blue</item>
+    </style>
+
+    <style name="BlueButtonStyle.Inversed" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_accent_color</item>
+        <item name="android:background">@drawable/button_oval_white</item>
+    </style>
+
+    <style name="BlueButtonStyle.Rounded.White" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_oval_blue</item>
+    </style>
+
+    <style name="BlueButtonStyle.Rounded" parent="BlueButtonStyle">
+        <item name="android:background">@drawable/background_blue_btn_rounded</item>
+    </style>
+
+
+    <style name="GreyButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">#BCBBBB</item>
+        <item name="android:background">#E7E7E9</item>
+    </style>
+
+    <style name="FbButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/background_fb_btn</item>
+        <item name="android:drawableLeft">@mipmap/fb_logo</item>
+    </style>
+
+    <style name="FbButtonStyle.Rounded" parent="@style/FbButtonStyle">
+        <item name="android:background">@drawable/background_fb_btn_rounded</item>
+    </style>
+
+    <style name="GreyButtonStyle.Inversed" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_header_color</item>
+        <item name="android:background">@drawable/background_grey_view_inversed</item>
+    </style>
+
+    <style name="blueButtonStyle.rect" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/lattis_accent_color</item>
+    </style>
+
+    <style name="TripBeginButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">#B7C1CD</item>
+    </style>
+
+    <style name="whiteButtonStyle.rect" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_accent_color</item>
+        <item name="android:background">@drawable/background_blue_btn_inversed</item>
+    </style>
+
+    <style name="whiteButtonStyle.rect.edit.view" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_header_color</item>
+        <item name="android:background">@drawable/background_blue_btn_inversed</item>
+    </style>
+
+    <style name="GreyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimarylightdark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="WhiteAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="AppTheme_menu" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionMenuTextAppearance">@style/MyMenuTextAppearance</item>
+    </style>
+
+    <style name="MyMenuTextAppearance" parent="android:TextAppearance.Holo.Widget.ActionBar.Menu">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        textSize
+    </style>
+
+    <style name="NoActionBar" parent="AppTheme.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/lattis_accent_color</item>
+        <item name="android:textColorSecondary">@color/lattis_accent_color</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="splashScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/app_background_theme</item>
+    </style>
+
+
+    <style name="NavigationDrawerStyle">
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">17sp</item><!-- text size in menu-->
+        <item name="android:listPreferredItemHeightSmall">50dp</item><!-- item size in menu-->
+        <item name="android:listDivider">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget" />
+
+    <style name="Widget.ProgressBar.CircularProgressBar" parent="Widget">
+
+        <item name="android:indeterminateOnly">false</item>
+
+        <item name="android:adjustViewBounds">true</item>
+
+        <item name="cpb_progressColor">@color/circular_progress_default_progress</item>
+
+        <item name="cpb_hasShadow">true</item>
+
+        <item name="cpb_strokeWidth">20</item>
+
+        <item name="cpb_titleColor">@color/circular_progress_default_title</item>
+
+        <item name="cpb_subtitleColor">@color/circular_progress_default_subtitle</item>
+
+    </style>
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/lattis_header_color</item>
+        <item name="android:textColorSecondary">@color/lattis_text_color_grey</item>
+        <item name="actionMenuTextColor">@color/lattis_text_color_grey</item>
+    </style>
+
+    <style name="ToolBarStyle_white" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+
+    <style name="Widget.ProgressBar.Holo.CircularProgressBar" parent="Widget.ProgressBar.CircularProgressBar">
+
+        <item name="cpb_hasShadow">false</item>
+
+        <item name="cpb_strokeWidth">10</item>
+
+    </style>
+
+    <style name="MY.DIALOG" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert"> 
+        <item name="windowNoTitle">true</item> 
+    </style>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base"></style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/lattis_view_loction_bg</item>
+        <item name="colorAccent">@color/lattis_accent_color</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="toolbarStyle">@style/ToolBarStyle</item>
+    </style>
+
+    <style name="Profile_theme" parent="Profile_Theme.Base"></style>
+
+    <style name="Profile_Theme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/lattis_view_loction_bg</item>
+        <item name="colorAccent">@color/lattis_accent_color</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="toolbarStyle">@style/ToolBarStyle_white</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/lattis_header_color</item>
+    </style>
+
+    <style name="ActionBar" parent="Theme.AppCompat">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="ActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/lattis_header_color</item>
+    </style>
+
+    <style name="ThemeFullscreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="mySwitchStyle">
+        <item name="track">@drawable/switch_track</item>
+        <item name="thumb">@drawable/background_fenced</item>
+        <item name="switchTextAppearanceAttrib">@style/mySwitchTextAppearance</item>
+        <item name="textOn">ON</item>
+        <item name="textOff">OFF</item>
+        <item name="pushStyle">false</item>
+        <item name="textOnThumb">true</item>
+        <item name="thumbExtraMovement">0dp</item>
+        <item name="thumbTextPadding">8dp</item>
+        <item name="trackTextPadding">8dp</item>
+        <item name="switchMinWidth">150dp</item>
+        <item name="switchMinHeight">36dp</item>
+        <item name="switchPadding">8dp</item>
+    </style>
+
+    <style name="mySwitchTextAppearance">
+        <item name="textColor">#80848c</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="textStyle">normal</item>
+    </style>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <style name="bt_card_form_icon">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">top|center_horizontal</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">@dimen/bt_margin</item>
+    </style>
+
+    <style name="bt_field_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:baselineAligned">false</item>
+    </style>
+
+    <style name="bt_base_textview">
+        <item name="android:textSize">@dimen/bt_input_text_size</item>
+    </style>
+
+    <style name="bt_text_input_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:accessibilityLiveRegion" tools:targetApi="kitkat">polite</item>
+    </style>
+
+    <style name="bt_card_form_field" parent="bt_base_textview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:paddingTop">@dimen/bt_margin</item>
+        <item name="android:textColorHint">@color/bt_light_gray</item>
+        <item name="android:textCursorDrawable" tools:ignore="NewApi">@null</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_sheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/bt_expiration_date_dialog_sheet_animation
+        </item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_light" parent="bt_expiration_date_dialog_sheet">
+        <item name="bt_expiration_date_sheet_background">
+            @color/bt_expiration_date_sheet_background_light
+        </item>
+        <item name="bt_expiration_date_dialog_label">@color/bt_black_54</item>
+        <item name="bt_expiration_date_dialog_divider">@color/bt_black_12</item>
+        <item name="bt_expiration_date_scrollbar_thumb_vertical">@color/bt_black_54</item>
+        <item name="bt_expiration_date_scrollbar_track_vertical">@color/bt_black_12</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_dark" parent="bt_expiration_date_dialog_sheet">
+        <item name="bt_expiration_date_sheet_background">
+            @color/bt_expiration_date_sheet_background_dark
+        </item>
+        <item name="bt_expiration_date_dialog_label">@color/bt_white_54</item>
+        <item name="bt_expiration_date_dialog_divider">@color/bt_white_12</item>
+        <item name="bt_expiration_date_scrollbar_thumb_vertical">@color/bt_white_54</item>
+        <item name="bt_expiration_date_scrollbar_track_vertical">@color/bt_white_12</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_sheet_animation">
+        <item name="android:windowEnterAnimation">@anim/bt_expiration_date_dialog_open</item>
+        <item name="android:windowExitAnimation">@anim/bt_expiration_date_dialog_close</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/bt_expiration_date_sheet_label_padding_top</item>
+        <item name="android:paddingBottom">@dimen/bt_expiration_date_sheet_label_padding_bottom
+        </item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?attr/bt_expiration_date_dialog_label</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_grid_view">
+        <item name="android:layout_marginLeft">@dimen/bt_expiration_date_sheet_left_right_margin
+        </item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">
+            @dimen/bt_expiration_date_sheet_left_right_margin
+        </item>
+        <item name="android:layout_marginRight">@dimen/bt_expiration_date_sheet_left_right_margin
+        </item>
+        <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">
+            @dimen/bt_expiration_date_sheet_left_right_margin
+        </item>
+        <item name="android:layout_marginBottom">@dimen/bt_expiration_date_sheet_top_bottom_margin
+        </item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:choiceMode">singleChoice</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:columnWidth">72dp</item>
+    </style>
+
+    <style name="bt_expiration_date_dialog_year_grid_view" parent="bt_expiration_date_dialog_grid_view">
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingEnd" tools:targetApi="jelly_bean_mr1">8dp</item>
+        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">0dp</item>
+        <item name="android:scrollbarSize">3dp</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+    </style>
+
+    <style name="blueCheck">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Tooltip">
+        <item name="android:textSize">15sp</item>
+        <item name="backgroundColor">@color/color_semi_transparent</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+
+
+    </style>
+
+
+
+<!--    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">-->
+<!--        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>-->
+<!--        <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Neutral</item>-->
+<!--        <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>-->
+<!--    </style>-->
+
+<!--    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">-->
+<!--        <item name="backgroundTint">@color/lattis_transparent</item>-->
+<!--        <item name="rippleColor">@color/colorAccent</item>-->
+<!--        <item name="android:textColor">@color/colorPrimary</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:textAllCaps">false</item>-->
+<!--    </style>-->
+
+<!--    <style name="Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">-->
+<!--        <item name="backgroundTint">@color/lattis_transparent</item>-->
+<!--        <item name="rippleColor">@color/colorAccent</item>-->
+<!--        <item name="android:textColor">@color/gray_dark</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--    </style>-->
+
+
+    <style name="AlertDialogTheme">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/colorPrimaryDark</item>
+        <item name="rippleColor">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="rippleColor">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
+
+</resources>

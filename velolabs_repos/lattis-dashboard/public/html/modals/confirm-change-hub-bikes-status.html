@@ -1,0 +1,27 @@
+<div class="modal-content">
+  <div class="modal-header bg-HeaderToolbar ">
+    <h3 class="text-center modal-title text-white" ng-if="ngDialogData.status !== 'staging'">Move {{ngDialogData.type === 'ports' ? 'Parking Spots': 'docked vehicles'}} to "{{ ngDialogData.status }}"?</h3>
+
+    <h3 class="text-center modal-title text-white" ng-if="ngDialogData.status === 'staging'">Docked vehicles will be moved to "staging".</h3>
+  </div>
+  <div class="text-center modal-body p-30 ">
+    <p>This hub has some {{ngDialogData.type === 'ports' ? 'parking spots': 'vehicles docked'}}.</p>
+    <p ng-if="ngDialogData.status !== 'staging'">Would you like to send all of them to "{{ ngDialogData.status }}"?</p>
+    <p ng-if="ngDialogData.status === 'staging'">All of these {{ngDialogData.type === 'ports' ? 'parking spots': 'vehicles'}} will be sent to staging.</p>
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-left fullwid">
+      <button ng-click="confirm(true)" class="btn custom-btn bg-HeaderToolbar" data-dismiss="modal">
+        {{ ngDialogData.status === 'staging' ? 'I understand' : ngDialogData.type === 'ports' ? 'Change Ports Status': 'Change Vehicles Status' }}
+      </button>
+      <button class="btn pull-right custom-btn text-uppercase" ng-click="closeThisDialog(true)" data-dismiss="modal" ng-if="ngDialogData.status === 'staging'">
+        Cancel
+      </button>
+
+      <button class="btn pull-right custom-btn text-uppercase" ng-click="closeThisDialog(false)" data-dismiss="modal" ng-if="ngDialogData.status !== 'staging'">
+        Maintain {{ngDialogData.type === 'ports' ? 'Port': 'Vehicles'}} Status
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_home"
+        app:itemIconTint="@color/lattis_accent_color"
+        app:itemTextColor="@drawable/menu_selector"
+        app:theme="@style/NavigationDrawerStyle">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/navigation_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:background="@android:color/transparent"></androidx.recyclerview.widget.RecyclerView >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/lattis_toolbar_bg"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/nav_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_logout" />
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/action_login_out"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/lattis_menu_color"
+                    android:textStyle="bold"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nav_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:tint="@color/lattis_accent_color"
+                    android:src="@mipmap/ic_help" />
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/action_help"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/lattis_menu_color"
+                    android:textStyle="bold"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+</merge>

@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skylock Order Details & Shipping</title> 
+    <script src="{{'jquery.min.js' | asset_url}}"></script>
+    <script type="text/javascript" src="{{'bootstrap.js'| asset_url}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{'bootstrap.css'| asset_url}}">
+    <link href="{{'theme-default.min.css' | asset_url}}" rel="stylesheet" type="text/css" />
+    <style>
+        .form-control{
+            width: 50%;;
+        }
+        input{
+            border-color: #027cd5;
+            background-color:rgba(0, 0, 0, 0);
+        }
+        body {
+              overflow: hidden;
+             overflow-y: auto;
+        }
+      
+      select{
+      
+            margin: 27px 0px 0px 0px;
+      
+      }
+      
+      
+      .footer-wrapper {
+       margin-top: -22px;
+      }
+     
+      footer {
+      
+      font-size:13px;
+        
+      }
+
+        ul{
+
+            list-style-type: none;
+
+        }
+
+        h3,label {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .btn-primary{
+
+            background-image: -webkit-linear-gradient( 113deg, rgb(15,61,101) 0%, rgb(30,108,176) 100%);
+            background-image: -ms-linear-gradient( 113deg, rgb(15,61,101) 0%, rgb(30,108,176) 100%);
+            box-shadow: 0px 0px 11.18px 1.82px rgba(255, 255, 255, 0.54);
+            font-size: 22px;
+            font-family: proxima_nova_rgregular;
+            width: 150px;
+            margin: 13px 0px 44px 486px;
+            border-radius: 5px;
+        }
+      
+      .main-header-wrapper collapsed-navigation{
+      
+          background-color: transparent;
+      
+      }
+      
+      h2{
+      
+      text-align: center; 
+      font-weight: 600;
+      }
+      
+      h2,h3,label{
+      
+      font-family: proxima_nova_rgregular;
+      
+      }
+      
+      h4{
+      
+      font-family: proxima_novalight;
+      
+      }
+      
+      th {
+      
+      color: black;
+      background-color: transparent;
+      border-top : 1;
+      text-align: center;
+      font-family: proxima_nova_rgregular;
+      font-weight:700;
+      font-size: 24px;
+      border: 1px solid #ddd;
+      }
+      
+      td{
+      
+        color: black;
+        font-weight:700;
+        font-family: proxima_nova_rgregular;
+        text-align: center;
+        font-size: 24px;
+        
+      }
+      
+      thead{
+      
+         background-color: transparent;
+         border-top: 1px solid #ddd;
+      
+      }
+      
+      .radio-inline{
+       
+        font-family: proxima_novalight;
+      
+      }
+      
+      input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="telephone"], input[type="tel"], input[type="number"]{
+      
+      
+      color:black;
+      
+      }
+      
+      #entry_1427740831_other_option_response{
+      
+    margin-left: 15px;
+    width: 173px;
+    height: 40px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+      
+      }
+      
+      #entry_1423238887_other_option_response{
+    margin-left: 15px;
+    width: 150px;
+    height: 40px;
+    margin-top: 0px;
+        
+      }
+      
+      .form-control{
+        
+    background-color: white;
+    color: #8A8A86;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #d7dcde;  
+     width: 350px;
+    font-size: 17px;           
+
+      }
+      
+      
+          
+      
+      @media (max-width: 520px) {
+        
+         h2,h3,label{
+      
+         font-size: 20px;
+      
+      }
+        
+         input[type='radio']:checked:before {
+        background:black;
+       }
+        
+        input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;    
+    border-radius:50%;    
+}
+       
+        
+        
+        
+        
+        tbody text{
+        
+        text-align: center;
+        
+        
+        }
+        
+        .table-responsive > .table > thead > tr > th{
+        
+           white-space: normal;
+          
+        }
+        
+        table{
+        
+        margin-top:0px;
+        }
+        
+        table tr{
+        
+          margin-bottom: 0px;
+   		display:inline;
+     
+        }
+        
+        table thead{
+        
+        display:inline;
+         
+        }
+        
+        table td {
+         display: inline-block;
+         width: 23.92%;
+         text-align: center;
+        }
+        
+        th{
+        
+            font-size: 10px;
+              white-space: normal;
+              width: 25.1%;
+        }
+        
+        
+        table input[type="radio"]{
+        
+        float:left;
+        
+        }
+        
+       
+        
+    
+    
+        
+        h4{
+        font-size: 15px;
+        }
+        
+        body{
+        
+            background-size: 100%;
+         -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+        
+        
+        .table.no-border tr td, .table.no-border tr th {
+        border-width: 0;
+       }
+        
+        .radio-inline{
+        
+ 
+                margin-left: 9px;
+              width: 100%;
+        
+        }
+      
+        #entry_1427740831_other_option_response{
+        
+        
+              margin: -29px 0px 0px 76px;
+              width: 140px;
+              height: 35px;
+          
+        }
+      
+        #entry_1423238887_other_option_response{
+        
+        margin: -30px 0px 0px 93px;
+        }
+        
+        .btn-primary{
+        
+            margin: 13px 0px 94px 115px;
+        
+        }
+        
+        
+        input {
+        
+            margin: 0px 0px 0px -7px;
+        
+        }
+        
+        .form-control{
+        
+            margin: 0px 0px 0px -4px;
+            font-size: 16px;
+        }
+      
+      }
+      
+       @media (min-width: 520px) and (max-width: 710px) {
+      
+        #entry.1423238887.other_option_response{
+        
+            margin: -31px 0px 0px 102px;
+        
+        }
+        
+        #entry.1427740831.other_option_response{
+        
+                margin: -34px -16px -3px 278px;
+
+        
+        } 
+        -
+        #group_1427740831_2{
+        
+            margin: 0px 0px 0px 186px;
+        
+        
+        }
+        
+        .btn-primary{
+        
+        margin: 25px 0px 49px 207px;
+       
+        }
+        
+    
+      
+      
+      
+      }
+      
+        
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2>Skylock Order Details & Shipping</h2><br><br>
+    <h3>Purchase Details</h3><br>
+    <h4>We'll use this information to locate and verify your purchase. Please use the name and email address you used to buy your Skylock.</h4>
+     <div id="error_messages"> 
+       </div>  
+  <form class="form-horizontal" novalidate="novalidate" name="customer" method="POST" action="https://docs.google.com/forms/d/1VAckNjTIMsf5HRw54M8bjjndhBe1cUwgcBWJAgFSNNE/formResponse" id="ss-form" target="_self">
+        <div class="form-group">
+            <label for="email"></label>
+            <input type="email" name="entry.915520894" class="form-control" placeholder="Email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="entry_362320378"></label>
+            <input type="text"  name="entry.362320378" class="form-control" placeholder="First Name" id="entry_362320378">
+        </div>
+        <div class="form-group">
+            <label for="lname"></label>
+
+            <input type="text" name="entry.537718080" class="form-control" placeholder="Last Name" id="lname"  >
+        </div>
+        <div class="form-group">
+  			 <label for="sel1">How Many Skylocks Did You Order?</label><br>
+ 				<select class="form-control" name="entry.924253330" id="entry_924253330" aria-label="How many Skylocks did you order? *  ">
+				<option value="">How Many Skylocks Did You Order?</option>
+                <option value="1">1</option> 
+                <option value="2">2</option> 
+                <option value="3">3</option> 
+                <option value="4">4</option> 
+                <option value="5">5</option> 
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option> 
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option> 
+                <option value="14">14</option>
+                <option value="15">15</option>
+          		</select>
+		</div>
+
+        <br><h3>Shipping Instructions</h3><br>
+        <h4>This will be where we plan to ship your Skylock (and not your billing address). Depending on how you paid or when you paid, we may not have current information.</h4><br>
+        <div class="form-inline">
+            <label>Receipents Name:</label>
+            <label class="radio-inline">
+                <input type="radio" name="entry.1427740831" value="Same as above" id="group_1427740831_1" role="radio" class="ss-q-radio" aria-label="Same as above">&nbsp;Same as above
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="entry.1427740831" value="__other_option__" id="group_1427740831_2" role="radio" class="ss-q-radio ss-q-other-toggle">
+                Other
+                <input type="text" name="entry.1427740831.other_option_response" value="" class="form-control" id="entry_1427740831_other_option_response" dir="auto" aria-label="Other" disabled>
+                <!--<input type="radio" id="group_1427740831_2" name="entry.1427740831">!-->
+
+            </label><br><br>
+            <!--<input name="entry.1427740831"  type="text" style="margin-left: 10px;" class="form-control" data-validation="alphabet" placeholder="Recipients Name" disabled>!-->
+        </div>
+        <div class="form-group">
+            <label for="addr1">Address:</label><br>
+            <input id="addr1" name="entry.354136222"  class="form-control"  type="text" placeholder="Street Address 1"><br>
+            <input  id="addr2"class="form-control" name="entry.937963374"  type="text" placeholder="Street Address 2"><br>
+            <input id="city" class="form-control"  name="entry.1315581876" type="text" placeholder="City"><br>
+            <input  id="state"class="form-control"  name="entry.1102089821" type="text" placeholder="State / Province"><br>
+            <input id="zip" class="form-control"   name="entry.143160676" type="text" placeholder="Zip / Postal Code"><br>
+        </div>
+    
+    
+        <div class="form-group" id="country-dropdown">
+            <label for="group_1423238887">Country:</label>
+            <select name="entry.1423238887" id="entry_1423238887" aria-label="Country" class="form-control">
+                      <option value="">Select a Country</option>
+                      <option value="United States of America">United States of America</option>
+                      <option value="Afganistan">Afghanistan</option>
+                      <option value="Albania">Albania</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="American Samoa">American Samoa</option>
+                      <option value="Andorra">Andorra</option>
+                      <option value="Angola">Angola</option>
+                      <option value="Anguilla">Anguilla</option>
+                      <option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Armenia">Armenia</option>
+                      <option value="Aruba">Aruba</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Azerbaijan">Azerbaijan</option>
+                      <option value="Bahamas">Bahamas</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Barbados">Barbados</option>
+                      <option value="Belarus">Belarus</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Belize">Belize</option>
+                      <option value="Benin">Benin</option>
+                      <option value="Bermuda">Bermuda</option>
+                      <option value="Bhutan">Bhutan</option>
+                      <option value="Bolivia">Bolivia</option>
+                      <option value="Bonaire">Bonaire</option>
+                      <option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
+                      <option value="Botswana">Botswana</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                      <option value="Brunei">Brunei</option>
+                      <option value="Bulgaria">Bulgaria</option>
+                      <option value="Burkina Faso">Burkina Faso</option>
+                      <option value="Burundi">Burundi</option>
+                      <option value="Cambodia">Cambodia</option>
+                      <option value="Cameroon">Cameroon</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Canary Islands">Canary Islands</option>
+                      <option value="Cape Verde">Cape Verde</option>
+                      <option value="Cayman Islands">Cayman Islands</option>
+                      <option value="Central African Republic">Central African Republic</option>
+                      <option value="Chad">Chad</option>
+                      <option value="Channel Islands">Channel Islands</option>
+                      <option value="Chile">Chile</option>
+                      <option value="China">China</option>
+                      <option value="Christmas Island">Christmas Island</option>
+                      <option value="Cocos Island">Cocos Island</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Comoros">Comoros</option>
+                      <option value="Congo">Congo</option>
+                      <option value="Cook Islands">Cook Islands</option>
+                      <option value="Costa Rica">Costa Rica</option>
+                      <option value="Cote DIvoire">Cote D'Ivoire</option>
+                      <option value="Croatia">Croatia</option>
+                      <option value="Cuba">Cuba</option>
+                      <option value="Curaco">Curacao</option>
+                      <option value="Cyprus">Cyprus</option>
+                      <option value="Czech Republic">Czech Republic</option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="Djibouti">Djibouti</option>
+                      <option value="Dominica">Dominica</option>
+                      <option value="Dominican Republic">Dominican Republic</option>
+                      <option value="East Timor">East Timor</option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="Egypt">Egypt</option>
+                      <option value="El Salvador">El Salvador</option>
+                      <option value="Equatorial Guinea">Equatorial Guinea</option>
+                      <option value="Eritrea">Eritrea</option>
+                      <option value="Estonia">Estonia</option>
+                      <option value="Ethiopia">Ethiopia</option>
+                      <option value="Falkland Islands">Falkland Islands</option>
+                      <option value="Faroe Islands">Faroe Islands</option>
+                      <option value="Fiji">Fiji</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="French Guiana">French Guiana</option>
+                      <option value="French Polynesia">French Polynesia</option>
+                      <option value="French Southern Ter">French Southern Ter</option>
+                      <option value="Gabon">Gabon</option>
+                      <option value="Gambia">Gambia</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Ghana">Ghana</option>
+                      <option value="Gibraltar">Gibraltar</option>
+                      <option value="Great Britain">Great Britain</option>
+                      <option value="Greece">Greece</option>
+                      <option value="Greenland">Greenland</option>
+                      <option value="Grenada">Grenada</option>
+                      <option value="Guadeloupe">Guadeloupe</option>
+                      <option value="Guam">Guam</option>
+                      <option value="Guatemala">Guatemala</option>
+                      <option value="Guinea">Guinea</option>
+                      <option value="Guyana">Guyana</option>
+                      <option value="Haiti">Haiti</option>
+                      <option value="Hawaii">Hawaii</option>
+                      <option value="Honduras">Honduras</option>
+                      <option value="Hong Kong">Hong Kong</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="Iceland">Iceland</option>
+                      <option value="India">India</option>
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Iran">Iran</option>
+                      <option value="Iraq">Iraq</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Isle of Man">Isle of Man</option>
+                      <option value="Israel">Israel</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Jamaica">Jamaica</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Jordan">Jordan</option>
+                      <option value="Kazakhstan">Kazakhstan</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Kiribati">Kiribati</option>
+                      <option value="Korea North">Korea North</option>
+                      <option value="Korea Sout">Korea South</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Kyrgyzstan">Kyrgyzstan</option>
+                      <option value="Laos">Laos</option>
+                      <option value="Latvia">Latvia</option>
+                      <option value="Lebanon">Lebanon</option>
+                      <option value="Lesotho">Lesotho</option>
+                      <option value="Liberia">Liberia</option>
+                      <option value="Libya">Libya</option>
+                      <option value="Liechtenstein">Liechtenstein</option>
+                      <option value="Lithuania">Lithuania</option>
+                      <option value="Luxembourg">Luxembourg</option>
+                      <option value="Macau">Macau</option>
+                      <option value="Macedonia">Macedonia</option>
+                      <option value="Madagascar">Madagascar</option>
+                      <option value="Malaysia">Malaysia</option>
+                      <option value="Malawi">Malawi</option>
+                      <option value="Maldives">Maldives</option>
+                      <option value="Mali">Mali</option>
+                      <option value="Malta">Malta</option>
+                      <option value="Marshall Islands">Marshall Islands</option>
+                      <option value="Martinique">Martinique</option>
+                      <option value="Mauritania">Mauritania</option>
+                      <option value="Mauritius">Mauritius</option>
+                      <option value="Mayotte">Mayotte</option>
+                      <option value="Mexico">Mexico</option>
+                      <option value="Midway Islands">Midway Islands</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Monaco">Monaco</option>
+                      <option value="Mongolia">Mongolia</option>
+                      <option value="Montserrat">Montserrat</option>
+                      <option value="Morocco">Morocco</option>
+                      <option value="Mozambique">Mozambique</option>
+                      <option value="Myanmar">Myanmar</option>
+                      <option value="Nambia">Nambia</option>
+                      <option value="Nauru">Nauru</option>
+                      <option value="Nepal">Nepal</option>
+                      <option value="Netherland Antilles">Netherland Antilles</option>
+                      <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                      <option value="Nevis">Nevis</option>
+                      <option value="New Caledonia">New Caledonia</option>
+                      <option value="New Zealand">New Zealand</option>
+                      <option value="Nicaragua">Nicaragua</option>
+                      <option value="Niger">Niger</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="Niue">Niue</option>
+                      <option value="Norfolk Island">Norfolk Island</option>
+                      <option value="Norway">Norway</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Pakistan">Pakistan</option>
+                      <option value="Palau Island">Palau Island</option>
+                      <option value="Palestine">Palestine</option>
+                      <option value="Panama">Panama</option>
+                      <option value="Papua New Guinea">Papua New Guinea</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Peru">Peru</option>
+                      <option value="Phillipines">Philippines</option>
+                      <option value="Pitcairn Island">Pitcairn Island</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Portugal">Portugal</option>
+                      <option value="Puerto Rico">Puerto Rico</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Republic of Montenegro">Republic of Montenegro</option>
+                      <option value="Republic of Serbia">Republic of Serbia</option>
+                      <option value="Reunion">Reunion</option>
+                      <option value="Romania">Romania</option>
+                      <option value="Russia">Russia</option>
+                      <option value="Rwanda">Rwanda</option>
+                      <option value="St Barthelemy">St Barthelemy</option>
+                      <option value="St Eustatius">St Eustatius</option>
+                      <option value="St Helena">St Helena</option>
+                      <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                      <option value="St Lucia">St Lucia</option>
+                      <option value="St Maarten">St Maarten</option>
+                      <option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
+                      <option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
+                      <option value="Saipan">Saipan</option>
+                      <option value="Samoa">Samoa</option>
+                      <option value="Samoa American">Samoa American</option>
+                      <option value="San Marino">San Marino</option>
+                      <option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Senegal">Senegal</option>
+                      <option value="Serbia">Serbia</option>
+                      <option value="Seychelles">Seychelles</option>
+                      <option value="Sierra Leone">Sierra Leone</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Slovakia">Slovakia</option>
+                      <option value="Slovenia">Slovenia</option>
+                      <option value="Solomon Islands">Solomon Islands</option>
+                      <option value="Somalia">Somalia</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Sri Lanka">Sri Lanka</option>
+                      <option value="Sudan">Sudan</option>
+                      <option value="Suriname">Suriname</option>
+                      <option value="Swaziland">Swaziland</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Syria">Syria</option>
+                      <option value="Tahiti">Tahiti</option>
+                      <option value="Taiwan">Taiwan</option>
+                      <option value="Tajikistan">Tajikistan</option>
+                      <option value="Tanzania">Tanzania</option>
+                      <option value="Thailand">Thailand</option>
+                      <option value="Togo">Togo</option>
+                      <option value="Tokelau">Tokelau</option>
+                      <option value="Tonga">Tonga</option>
+                      <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                      <option value="Tunisia">Tunisia</option>
+                      <option value="Turkey">Turkey</option>
+                      <option value="Turkmenistan">Turkmenistan</option>
+                      <option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
+                      <option value="Tuvalu">Tuvalu</option>
+                      <option value="Uganda">Uganda</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="United Arab Erimates">United Arab Emirates</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Uraguay">Uruguay</option>
+                      <option value="Uzbekistan">Uzbekistan</option>
+                      <option value="Vanuatu">Vanuatu</option>
+                      <option value="Vatican City State">Vatican City State</option>
+                      <option value="Venezuela">Venezuela</option>
+                      <option value="Vietnam">Vietnam</option>
+                      <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                      <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                      <option value="Wake Island">Wake Island</option>
+                      <option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
+                      <option value="Yemen">Yemen</option>
+                      <option value="Zaire">Zaire</option>
+                      <option value="Zambia">Zambia</option>
+                      <option value="Zimbabwe">Zimbabwe</option>
+                      </select>
+
+          <!--  <input  type="text" class="form-control" nname="entry.1423238887.other_option_response" id="countyname" data-validation="alphabet" placeholder="Country" style="margin-left: 10px;" disabled>-->
+        </div>
+        <div class="form-inline">
+            <br><h3>Skylock Color Preferences</h3>
+            <p><h4>We continue to offer black and white Skylocks, and recently introduced a Special Edition Skylock in navy blue, which is available to our Pre-Order customers only.<br><br>
+
+            Please let us know which color you prefer, and feel free to mix 'n match colors if you ordered multiple Skylocks.</h4></p>
+       <div class="table-responsive">
+      <table id="color-table" class="table">
+                <thead>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        Pearl White
+                    </th>
+                    <th>
+                       Charcoal Grey
+                    </th>
+                    <th>
+                        Blue(Special Edition)
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        Skylock 1
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.1390402842"  value="White" id="group_1390402842_1" role="radio" class="ss-q-radio" aria-label="White" type="radio">
+                            <!--<input type="radio" name="entry.1390402842" id="white1">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.1390402842"   value="Black" id="group_1390402842_2" role="radio" class="ss-q-radio" aria-label="Black" type="radio">
+                          <!--  <input type="radio" name="entry.1390402842" id="black1">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.1390402842"  value="Blue (Special Edition)" id="group_1390402842_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)" type="radio">
+                            <!--<input type="radio" name="entry.1390402842" id="blue1">-->
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skylock 2
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.509295956"  value="White" id="group_509295956_1" role="radio" class="ss-q-radio" aria-label="White" type="radio">
+                         <!--   <input type="radio" name="entry.509295956" id="white2">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.509295956"  value="Black" id="group_509295956_2" role="radio" class="ss-q-radio" aria-label="Black" type="radio">
+                           <!-- <input type="radio" name="entry.509295956" id="black2">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.509295956" value="Blue (Special Edition)" id="group_509295956_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)" type="radio">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skylock 3
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.1185827910"  value="White" id="group_1185827910_1" role="radio" class="ss-q-radio" aria-label="White" type="radio">
+                            <!-- <input type="radio" name="entry.1185827910" id="white3">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1185827910" id="black3">-->
+                            <input name="entry.1185827910"  value="Black" id="group_1185827910_2" role="radio" class="ss-q-radio" aria-label="Black" type="radio">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1185827910" id="blue3">-->
+                            <input name="entry.1185827910" value="Blue (Special Edition)" id="group_1185827910_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)" type="radio">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skylock 4
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input name="entry.995289525" value="White" id="group_995289525_1" role="radio" class="ss-q-radio" aria-label="White" type="radio">
+                           <!-- <input type="radio" name="entry.995289525" id="white4">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.995289525" id="black4">-->
+                            <input name="entry.995289525" value="Black" id="group_995289525_2" role="radio" class="ss-q-radio" aria-label="Black" type="radio">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.995289525" id="blue4">-->
+                            <input name="entry.995289525"  value="Blue (Special Edition)" id="group_995289525_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)" type="radio">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skylock 5
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                            <input name="entry.1192442598" value="White" id="group_1192442598_1" role="radio" class="ss-q-radio" aria-label="White" type="radio">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                            <input name="entry.1192442598" value="Black" id="group_1192442598_2" role="radio" class="ss-q-radio" aria-label="Black" type="radio">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                            <input name="entry.1192442598" value="Blue (Special Edition)" id="group_1192442598_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)" type="radio">
+                        </label>
+                    </td>
+                </tr>
+                  
+                    <tr>
+                    <td>
+                        Skylock 6
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                           <input type="radio" name="entry.1059347034" value="White" id="group_1059347034_1" role="radio" class="ss-q-radio" aria-label="White">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                            <input type="radio" name="entry.1059347034" value="Black" id="group_1059347034_2" role="radio" class="ss-q-radio" aria-label="Black">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                            <input type="radio" name="entry.1059347034" value="Blue (Special Edition)" id="group_1059347034_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Skylock 7
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                           <input type="radio" name="entry.887568338" value="White" id="group_887568338_1" role="radio" class="ss-q-radio" aria-label="White">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                            <input type="radio" name="entry.887568338" value="Black" id="group_887568338_2" role="radio" class="ss-q-radio" aria-label="Black">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                            <input type="radio" name="entry.887568338" value="Blue (Special Edition)" id="group_887568338_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Skylock 8
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                            <input type="radio" name="entry.2043339697" value="White" id="group_2043339697_1" role="radio" class="ss-q-radio" aria-label="White">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                            <input type="radio" name="entry.2043339697" value="Black" id="group_2043339697_2" role="radio" class="ss-q-radio" aria-label="Black">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                            <input type="radio" name="entry.2043339697" value="Blue (Special Edition)" id="group_2043339697_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Skylock 9
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                            <input type="radio" name="entry.314808287" value="White" id="group_314808287_1" role="radio" class="ss-q-radio" aria-label="White">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                           <input type="radio" name="entry.314808287" value="Black" id="group_314808287_2" role="radio" class="ss-q-radio" aria-label="Black">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                            <input type="radio" name="entry.314808287" value="Blue (Special Edition)" id="group_314808287_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Skylock 10
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="white5">-->
+                            <input type="radio" name="entry.357803816" value="White" id="group_357803816_1" role="radio" class="ss-q-radio" aria-label="White">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="black5">-->
+                            <input type="radio" name="entry.357803816" value="Black" id="group_357803816_2" role="radio" class="ss-q-radio" aria-label="Black">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1192442598" id="blue5">-->
+                           <input type="radio" name="entry.357803816" value="Blue (Special Edition)" id="group_357803816_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Other (10+)
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="entry.1509701975"  value="White" id="group_1509701975_1" role="radio" class="ss-q-radio" aria-label="White">
+                            <!--<input type="radio" name="entry.1059347034" id="white6">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <input type="radio" name="entry.1509701975" value="Black" id="group_1509701975_2" role="radio" class="ss-q-radio" aria-label="Black">
+                            <!--<input type="radio" name="entry.1059347034" id="black6">-->
+                        </label>
+                    </td>
+                    <td>
+                        <label class="radio-inline">
+                            <!--<input type="radio" name="entry.1059347034" id="blue6">-->
+                            <input type="radio" name="entry.1509701975" value="Blue (Special Edition)" id="group_1509701975_3" role="radio" class="ss-q-radio" aria-label="Blue (Special Edition)">
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+       
+            </table>
+       </div>
+       
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+  <script type="text/javascript">var urlRedirection=false;</script>
+   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+onload="if(urlRedirection) {window.location='thankyou';}"></iframe>
+<script>
+
+
+  $(document).ready(function(){
+    
+    $(document).on("scroll", onScroll);
+      $('.template-page .main-header-wrapper').css({'background-color':'transparent'}); 
+    var scrollPosition = $(document).scrollTop();
+  
+    function onScroll(event){
+      
+       if ($(this).scrollTop() > 100) {
+			 $('.template-page .main-header-wrapper').css({'background-color':'white'});
+
+		} else {
+			$('.template-page .main-header-wrapper').css({'background-color':'transparent'});
+
+	}
+    }
+    
+    
+  
+   var firstname= document.getElementById("firstname");
+  
+    $("#group_1427740831_1").click(function(){ 
+      ''
+        $("#entry_1427740831_other_option_response" ).val("");
+      
+      
+       $( "#entry_1427740831_other_option_response" ).prop( "disabled",true);
+      
+    var firstNameValue = $("#entry_362320378").val();
+     
+      console.log(firstNameValue);
+
+
+       $("#entry_1427740831_other_option_response" ).val(firstNameValue);
+    });
+  
+   $("#group_1427740831_2").click(function(){ 
+
+        $( "#entry_1427740831_other_option_response" ).prop( "disabled", false );
+       $("#entry_1427740831_other_option_response" ).val("");
+
+     
+     
+   });
+ 
+ 
+
+    $("#entry_924253330").on('change', function() {
+          
+     $('table tr').css({'display': 'normal'});
+      var value = parseInt($('#entry_924253330').val());
+      var tableValue = value +1;
+      $('table tr:nth-child(n + '+tableValue+')').css({'display': 'none'});
+      $('table tr:nth-child(n + '+tableValue+') input[type="radio"]' ).prop('required',false);
+    });
+    
+    
+   function validateEmail(email){
+          
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+   }
+    
+    
+    
+    
+    
+    $('#ss-form').submit(function() {
+        // DO STUFF
+    var sendModalForm = true;
+          $("#error_messages").empty();
+          $('#error_messages').removeClass("alert alert-danger");
+        
+           $('form input').css({'border-color': 'none'});
+   
+           $("html, body").animate({ scrollTop: 0 }, "slow");
+      
+           $('#error_messages').addClass("alert alert-danger");
+
+          
+ 
+          if($('#email').val() == ''){
+            var div=document.createElement("div");
+            $(div).html("<strong>Please enter an Email Id!</strong>");
+            $('#error_messages').last().append(div);
+            $('#email').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+   
+        else if(!validateEmail($('#email').val())){
+   
+           var div=document.createElement("div");
+           $(div).html("<strong>Please enter a valid Email Id!</strong>");
+           $('#error_messages').last().append(div);
+           $('#email').css({'border-color': '#66afe9'});
+          sendModalForm = false;
+   
+          }
+   
+          if($('#entry_362320378').val() == ''){
+            var div=document.createElement("div");
+           $(div).html("<strong>Please enter a First Name!</strong>");
+              $('#error_messages').last().append(div);
+            $('#entry_362320378').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+   
+   
+          if($('#lname').val() == ''){
+            var div=document.createElement("div");
+           $(div).html("<strong>Please enter a last Name!</strong>");
+              $('#error_messages').last().append(div);
+             $('#lname').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+   
+   
+          if($('#entry_924253330').val() == ''){
+            var div=document.createElement("div");
+           $(div).html("<strong>Please select How many you have ordered!</strong>");
+              $('#error_messages').last().append(div);
+             $('#entry_924253330').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+           
+   			var sameAsAbove = $("input[id='group_1427740831_1']:checked").val();
+   			var others1 = $("input[id='group_1427740831_2']:checked").val();
+
+   
+   
+          if(sameAsAbove == undefined && others1== undefined){
+            var div=document.createElement("div");
+            $(div).html("<strong>Please select the Receipents Name!</strong>");
+              $('#error_messages').last().append(div);
+            $('#group_1427740831_1').css({'border-color': '#66afe9'});
+           $('#error_messages').addClass("alert alert-danger");
+           sendModalForm = false;
+        }
+   
+   		  else if(others1){
+   
+            if($('#entry_1427740831_other_option_response').val() == ''){
+            var div=document.createElement("div");
+            $(div).html("<strong>Please Fill the Other Options Receipents Name!</strong>");
+            $('#error_messages').last().append(div);
+            $('#group_1427740831_2').css({'border-color': '#66afe9'});
+            $('#error_messages').addClass("alert alert-danger");
+              sendModalForm = false;
+            }
+   
+   		}
+          
+          if($('#addr1').val() == ''){
+           var div=document.createElement("div");
+            $(div).html("<strong>Please enter a Street Address!</strong>");
+              $('#error_messages').last().append(div);
+             $('#addr1').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+   
+          if($('#city').val() == ''){
+           var div=document.createElement("div");
+            $(div).html("<strong>Please enter a City!</strong>");
+              $('#error_messages').last().append(div);
+             $('#city').css({'border-color': '#66afe9'});
+            sendModalForm = false;
+          }
+           if($('#state').val() == ''){
+			var div=document.createElement("div");          
+             $(div).html("<strong>Please enter a State!</strong>");
+               $('#error_messages').last().append(div);
+             $('#state').css({'border-color': '#66afe9'})
+             sendModalForm = false;
+          }
+           if($('#zip').val() == ''){
+           var div=document.createElement("div");
+             $(div).html("<strong>Please enter a Zip/Postal Code!</strong>");
+               $('#error_messages').last().append(div);
+            $('#zip').css({'border-color': '#66afe9'});
+             sendModalForm = false;
+          }
+      
+           else if(!$.isNumeric($("#zip").val())){
+              
+              var div=document.createElement("div");
+             $(div).html("<strong>Please enter only Numbers Zip/Postal Code!</strong>");
+               $('#error_messages').last().append(div);
+            $('#zip').css({'border-color': '#66afe9'});
+             sendModalForm = false;
+              
+              }
+
+      
+      
+   
+      	    var unitedStates =  $("input[id='group_1423238887_1']:checked").val();
+   			var others2 =$("input[id='group_1423238887_2']:checked").val();
+      
+   
+           if($('#entry_1423238887').val() == ''){
+           var div=document.createElement("div");
+             $(div).html("<strong>Please select a Country!</strong>");
+               $('#error_messages').last().append(div);
+              $('#entry_1423238887').css({'border-color': '#66afe9'});
+             $('#error_messages').addClass("alert alert-danger");
+           sendModalForm = false;
+          }
+             
+             if(parseInt($('#entry_924253330').val())){
+               
+               var values =parseInt($('#entry_924253330').val());
+               values = values * 4;
+                  var checked = 0;
+               
+               for(i=0;i<values;i++){
+                 
+                 var increment = i;
+                 
+                 var radioButton = $('#color-table td:eq(' + increment + ')').find('input:radio')[0];
+                 
+              
+                if($('#color-table td:eq(' + increment + ')').find('input:radio').length == 0){
+                 
+                 
+                 }  
+                 
+                else if(!$('#color-table td:eq(' + increment + ')').find('input:radio')[0].checked){
+                 
+                 checked++;
+                   
+                 }
+                 
+                 
+                 if(i%4 == 0 && checked==2){
+                 
+                 checked = 0;
+                 }
+          
+                 
+                  if(checked == 3){
+                 
+                 sendModalForm = false;
+                 
+                 }
+                                
+
+             }
+               
+                if(!sendModalForm){   
+                  var div=document.createElement("div"); 
+                  $(div).html('<strong>Please select the all the color Preferences!</strong>');
+                  $('#error_messages').last().append(div);
+                  $('#group_1427740831_2').css({'border-color': '#66afe9'});
+                  $('#error_messages').addClass("alert alert-danger");
+                  checked==0;
+                  
+                  }
+               
+             }
+
+         
+
+
+    if (sendModalForm) {
+  	  $('#error_messages').removeClass("alert alert-danger");
+    
+      $('#ss-form').attr('target','hidden_iframe');
+            console.log($('#entry_1423238887').val());
+     	urlRedirection = true;
+       return true;
+    }
+      
+   else{      
+
+   
+   return false;
+   }
+      
+    });
+
+
+    
+
+  
+
+  });
+
+</script>
+</body>
+</html>

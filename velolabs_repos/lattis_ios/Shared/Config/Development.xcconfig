@@ -1,0 +1,15 @@
+//
+//  Development.xcconfig
+//  Lattis
+//
+//  Created by Ravil Khusainov on 16.08.2021.
+//  Copyright © 2021 Lattis inc. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OVAL_ENDPOINT = http:/$()/lattisapp-development.lattisapi.io/api
+CIRCLE_ENDPOINT = https:/$()/dev.api.lattis.io
+OVAL_BASE_URL = http:/$()/lattisapp-development.lattisapi.io
+CIRCLE_BASE_URL = https:/$()/dev.api.lattis.io

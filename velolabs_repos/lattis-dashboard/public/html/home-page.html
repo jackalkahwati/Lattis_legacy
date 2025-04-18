@@ -1,0 +1,52 @@
+<section ng-controller="homeController" class="p-rel">
+    <div class="fullwid p-tb20-lr40 animated fadeIn">
+        <div class="panel home-panel">
+            <div class="panel-header text-center home-title p-b-50">
+                <h1>Good {{greeting}}, {{name}}</h1>
+                <p class="ft-proReg fw-600">Have any question? <a class="menuactive pointer" href="https://lattis-platform.helpscoutdocs.com/" target="_blank">Visit the Lattis Help Center</a>
+                </p>
+            </div>
+            <div ng-if="!technicianACL" class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="bor-b-hash">
+                            <div class="inner-content m-b-50">
+                                <h4>ADD FLEET </h4>
+                                <p><span
+                                        style="color: #92969E;">Welcome to Lattis.  Click here to add your first fleet.</span>
+                                    <button class="pull-right btn custom-btn text-uppercase text-white bg-HeaderToolbar
+                                home-add-fleet-btn" ui-sref="add-fleet">
+                                        LET'S GET STARTED
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row p-lr-15">-->
+                <!--<div class="col-sm-12 col-md-12 bor-b-hash m-t-50 m-b-20">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                <!--<div class="col-sm-6 col-md-6">-->
+                <!--<h3 class="text-center m-b-20">Explore Analytics</h3>-->
+                <!--<div class="inner-content">-->
+                <!--<h4 class="m-b-20">Analytics Increase insights </h4>-->
+                <!--<p>Click here to read more about the new analytics package and how it can lower your operating costs and-->
+                <!--increase revenues..</p>-->
+                <!--<img class="pull-right wid-30" src="../images/arrow.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 col-md-6">-->
+                <!--<h3 class="text-center m-b-20">Things to do</h3>-->
+                <!--<div class="inner-content">-->
+                <!--<h4  class="m-b-20">Third Party Integration Tools </h4>-->
+                <!--<p>Add Slack integration to make communicating with your operations team easier.</p>-->
+                <!--<img class="pull-right wid-30" src="../images/arrow.png">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</section>

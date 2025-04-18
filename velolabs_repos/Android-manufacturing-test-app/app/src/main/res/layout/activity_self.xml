@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_connection"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bleConnection"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="BLE Connection State"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_connectionStatus"
+            android:src="@drawable/red"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_toRightOf="@+id/bleConnection"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_connection"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/b_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SELF TEST"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tv_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/b_title"
+            android:text="Connection = "
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_macaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_connection"
+            android:text="Mac address = "
+            android:visibility="gone"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_Rssi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_macaddress"
+            android:text="RSSI = "
+            android:visibility="gone"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_Rssi"
+            android:text="Battery = "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/I2C_ACCE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_battery"
+            android:text="I2C_ACCE ="
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/I2C_MAG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/I2C_ACCE"
+            android:text="I2C_MAG = "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/I2C_CAP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/I2C_MAG"
+            android:text="I2C_CAP = "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/I2C_MOTOR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/I2C_CAP"
+            android:text="I2C_MOTOR ="
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/opt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/I2C_MOTOR"
+            android:text="Acceleration = "
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/bCapTouchNext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:text="NEXT TEST"
+            android:textSize="30sp" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/progressbar_load"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

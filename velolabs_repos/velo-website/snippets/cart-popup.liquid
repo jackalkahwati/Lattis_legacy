@@ -1,0 +1,201 @@
+<div id="order-popup">
+  <div id="order-popup-scrim"></div>
+  <div class="center">
+    <div class="popup-header">Get Yours First</div>
+    <span class="order-poup-close">x</span>	
+    <div class="popup-container">
+      <div class="popup-row">
+        <div class="popup-12 price">
+          <span class="popup-6 buy-one">1 Skylock for <b>$199</b></span>
+          <span class="popup-6 buy-two">2 for <b>$189 each</b></span>
+        
+        </div>
+      </div>
+      <div class="popup-row color-select">
+        <div class="popup-12 color-head">
+          <span class="popup-lable-color">Choose color &amp; quantity</span>
+        </div>
+        <div class="popup-4 white" style="display: none;">
+          <span class="popup-12 white color-label">Pearl White</span>
+          <div class="popup-12 white color-image">
+            <img class="image" src="{{'white.png' | asset_url}}" />
+          </div>
+          <div class="popup-12 white color-image">
+            <span style='font-size: 11px;font-family: proxima_novalight;'>No Longer Availaible</span>
+            <!--<span class="popup-2 white minus noselect">-</span>
+            <span class="popup-4 white quantity noselect" product-id="1040212157" product-ids="1175886957">0</span>
+            <span class="popup-2 white plus noselect">+</span>-->
+          </div>
+        </div>
+        <div class="popup-4 blue">
+          <span class="popup-12 blue color-label">Midnight Blue</span>
+          <div class="popup-12 blue color-image">
+            <img class="image" src="{{'Skylock_MidnightBlue.png' | asset_url}}" />
+          </div>
+          <div class="popup-12 blue color-image">
+            <span class="popup-2 blue minus noselect">-</span>
+            <span class="popup-4 blue quantity noselect" product-id="22336909761" product-ids="22336853697">0</span>
+            <span class="popup-2 blue plus noselect">+</span>
+          </div>
+        </div>
+        <div class="popup-4 black">
+          <span class="popup-12 black color-label">Charcoal Grey</span>
+          <div class="popup-12 black color-image">
+            <img class="image" src="{{'Skylock_CharcoalGrey.png' | asset_url}}" />
+          </div>
+          <div class="popup-12 black color-image">
+            <span class="popup-2 black minus noselect">-</span>
+            <span class="popup-4 black quantity noselect" product-id="22336909633" product-ids="22336853569">0</span>
+            <span class="popup-2 black plus noselect">+</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="popup-row last-row">
+        <span class="popup-12">
+          <label class="noselect">
+            <input id="tos-checkbox" type="checkbox" name="tos" value="tos-agree" />
+            <p align="center" class="text-label letter-space6">By placing this pre-order, you agree to Skylock's <a href="http://skylock-2.myshopify.com/pages/terms-of-sale" target="_blank">terms of sale</a>. <span id="vat">Excludes VAT.</span> <br /><span>Pre-orders placed today will ship in October 2016.</span></p>
+          </label>
+        </span>
+        <button id="checkout" class="checkout-button"  disabled>CHECKOUT</button>
+
+      </div>       
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  	var product_count = 0, cart = {};
+    jQuery(".plus").on("click", function() {
+      	var qty = parseInt(jQuery(this).parent('.color-image').children('.quantity').text());
+      	qty = qty + 1;
+      	jQuery(this).parent('.color-image').children('.quantity').text(qty);
+      	product_count += 1;
+        checkoutStatus();
+    });
+    jQuery(".minus").on("click", function() {
+      	var qty = parseInt(jQuery(this).parent('.color-image').children('.quantity').text());
+      	if (qty > 0) {
+        	qty = qty - 1;
+      	  	jQuery(this).parent('.color-image').children('.quantity').text(qty); 
+          	product_count -= 1;
+      	}
+      	checkoutStatus();
+    });	
+  	jQuery("#tos-checkbox").on("change", function(e) {
+      	checkoutStatus();
+    });
+  	
+  	Shopify.queue = [];
+    jQuery("button#checkout").on("click", function() {
+        var updates = {}, count = 0;
+        jQuery(".quantity").each(function() {
+            var obj = jQuery(this);
+            count += parseInt(obj.text());
+        });
+        jQuery(".quantity").each(function() {
+            var obj = jQuery(this);
+            var qty = parseInt(obj.text());
+            var product_id = obj.attr("product-id");
+            var product_ids = obj.attr("product-ids");
+            updates[product_id] = count <= 1 ? qty : 0;
+            updates[product_ids] = count > 1 ? qty : 0;
+        });
+        jQuery.ajax({
+            url:"/cart/update.js",
+            type:"POST",
+            dataType:"json",
+            data:{updates:updates},
+            success:function() {
+                document.location.href = '/checkout';
+            }
+        });
+    });
+  
+  	Shopify.getCart(function(data) {
+        for (var i in data.items) {
+            var item = data.items[i];
+            cart[item.id] = item.quantity;
+        }
+        checkoutStatus();
+    });
+  
+  	jQuery("#order-popup-scrim,.order-poup-close").on("click", function() {
+        jQuery("#order-popup").fadeOut(400);
+        //jQuery("#order-popup .box").css("transform", "rotateY(180deg)");
+    });
+  
+  	jQuery(".clicked-preorder").on("click", function(e) {
+      	e.preventDefault();
+        jQuery("#order-popup").fadeIn(200);
+      	var windowH = jQuery( window ).height();
+      	var popupH = jQuery("#order-popup .center").height();
+      	var diff = windowH - popupH;
+      	if(diff > 1){
+          	diff = diff / 2;
+          	jQuery("#order-popup .center").css('margin-top', diff+'px');
+          	jQuery("#order-popup .center").css('margin-bottom', diff+'px');
+          	jQuery("#order-popup .center").css('position', 'fixed');
+        } else {
+          	var scroll = jQuery( window ).scrollTop();
+          	var scrollDiff = popupH - windowH + 30;
+          	jQuery("#order-popup .center").css('position', 'absolute');
+          	if(scroll >= scrollDiff && popupH != 0){
+            	jQuery( window ).scrollTop(scrollDiff);
+            }
+          	jQuery("#order-popup .center").css('margin-top', '10px');
+          	jQuery("#order-popup .center").css('margin-bottom', '10px');
+        }
+        //jQuery("#order-popup .box").css("transform", "rotateY(0deg)");
+        product_count = 0;
+        jQuery(".quantity").each(function() {
+            var obj = $(this);
+            var product_id = obj.attr("product-id");
+            var product_ids = obj.attr("product-ids");
+            if (product_id in cart) {
+                obj.text(cart[product_id]);
+                product_count += cart[product_id];
+            }
+            if (product_ids in cart) {
+                obj.text(cart[product_ids]);
+                product_count += cart[product_ids];
+            }
+        });
+        checkoutStatus();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Google Code for Started Checkout - 30 Days - NEW -->
+<!-- Remarketing tags may not be associated with personally identifiable information or
+placed on pages related to sensitive categories. For instructions on adding this tag and
+more information on the above requirements, read the setup guide:
+google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 978103455;
+  var google_conversion_label = "6a7sCPyv-mAQn9my0gM";
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt=""
+         src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978103455/?
+
+              value=1.00&amp;currency_code=USD&amp;label=6a7sCPyv-
+              mAQn9my0gM&amp;guid=ON&amp;script=0"/>
+
+  </div>
+</noscript>

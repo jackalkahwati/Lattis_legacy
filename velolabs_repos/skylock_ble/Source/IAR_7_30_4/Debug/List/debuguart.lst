@@ -1,0 +1,959 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:49
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  C:\VeloLabs\SkyLock Project\Source\debuguart.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock Project\Source\debuguart.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\debuguart.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\debuguart.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\Source\debuguart.c
+      1          /*
+      2          ** Proprietary Rights Notice
+      3          **
+      4          ** This material contains the valuable properties and trade secrets of:
+      5          **
+      6          **    Velo Labs
+      7          **    San Francisco, CA, USA
+      8          **
+      9          ** All rights reserved. No part of this work may be reproduced, distributed, or
+     10          ** transmitted in any form or by any means, including photocopying, recording,
+     11          ** or other electronic or mechanical methods, without the prior written permission
+     12          ** of Velo Labs.
+     13          **
+     14          ** Copyright (c) 2015, Velo Labs
+     15          ** Contains Confidential and Trade Secret Information
+     16          */
+     17          
+     18          /*
+     19          ** File Name:  debuguart.c
+     20          **
+     21          ** Purpose:    Routines to manage a debug and manufacturing UART
+     22          */
+     23          
+     24          #include "master.h"
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_EnableIRQ(IRQn_Type)
+   \                     NVIC_EnableIRQ: (+1)
+   \   00000000   0x2101             MOVS     R1,#+1
+   \   00000002   0x06C0             LSLS     R0,R0,#+27       ;; ZeroExtS R0,R0,#+27,#+27
+   \   00000004   0x0EC0             LSRS     R0,R0,#+27
+   \   00000006   0x4081             LSLS     R1,R1,R0
+   \   00000008   0x....             LDR      R0,??DataTable8  ;; 0xe000e100
+   \   0000000A   0x6001             STR      R1,[R0, #+0]
+   \   0000000C   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_ClearPendingIRQ(IRQn_Type)
+   \                     NVIC_ClearPendingIRQ: (+1)
+   \   00000000   0x2101             MOVS     R1,#+1
+   \   00000002   0x06C0             LSLS     R0,R0,#+27       ;; ZeroExtS R0,R0,#+27,#+27
+   \   00000004   0x0EC0             LSRS     R0,R0,#+27
+   \   00000006   0x4081             LSLS     R1,R1,R0
+   \   00000008   0x....             LDR      R0,??DataTable8_1  ;; 0xe000e280
+   \   0000000A   0x6001             STR      R1,[R0, #+0]
+   \   0000000C   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_SetPriority(IRQn_Type, uint32_t)
+   \                     NVIC_SetPriority: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB240             SXTB     R0,R0
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD521             BPL      ??NVIC_SetPriority_0
+   \   00000008   0x....             LDR      R3,??DataTable7  ;; 0xe000ed1c
+   \   0000000A   0xB240             SXTB     R0,R0
+   \   0000000C   0x0702             LSLS     R2,R0,#+28       ;; ZeroExtS R2,R0,#+28,#+28
+   \   0000000E   0x0F12             LSRS     R2,R2,#+28
+   \   00000010   0x3A08             SUBS     R2,R2,#+8
+   \   00000012   0x0892             LSRS     R2,R2,#+2
+   \   00000014   0x2404             MOVS     R4,#+4
+   \   00000016   0x4362             MULS     R2,R4,R2
+   \   00000018   0x....             LDR      R4,??DataTable7  ;; 0xe000ed1c
+   \   0000001A   0xB240             SXTB     R0,R0
+   \   0000001C   0x0705             LSLS     R5,R0,#+28       ;; ZeroExtS R5,R0,#+28,#+28
+   \   0000001E   0x0F2D             LSRS     R5,R5,#+28
+   \   00000020   0x3D08             SUBS     R5,R5,#+8
+   \   00000022   0x08AD             LSRS     R5,R5,#+2
+   \   00000024   0x2604             MOVS     R6,#+4
+   \   00000026   0x4375             MULS     R5,R6,R5
+   \   00000028   0x5964             LDR      R4,[R4, R5]
+   \   0000002A   0x25FF             MOVS     R5,#+255
+   \   0000002C   0x0786             LSLS     R6,R0,#+30       ;; ZeroExtS R6,R0,#+30,#+30
+   \   0000002E   0x0FB6             LSRS     R6,R6,#+30
+   \   00000030   0x2708             MOVS     R7,#+8
+   \   00000032   0x437E             MULS     R6,R7,R6
+   \   00000034   0x40B5             LSLS     R5,R5,R6
+   \   00000036   0x43AC             BICS     R4,R4,R5
+   \   00000038   0x0189             LSLS     R1,R1,#+6
+   \   0000003A   0xB2C9             UXTB     R1,R1
+   \   0000003C   0x0780             LSLS     R0,R0,#+30       ;; ZeroExtS R0,R0,#+30,#+30
+   \   0000003E   0x0F80             LSRS     R0,R0,#+30
+   \   00000040   0x2508             MOVS     R5,#+8
+   \   00000042   0x4368             MULS     R0,R5,R0
+   \   00000044   0x4081             LSLS     R1,R1,R0
+   \   00000046   0x4321             ORRS     R1,R1,R4
+   \   00000048   0x5099             STR      R1,[R3, R2]
+   \   0000004A   0xE01B             B        ??NVIC_SetPriority_1
+   \                     ??NVIC_SetPriority_0: (+1)
+   \   0000004C   0x....             LDR      R2,??DataTable8_2  ;; 0xe000e400
+   \   0000004E   0xB240             SXTB     R0,R0
+   \   00000050   0x0003             MOVS     R3,R0
+   \   00000052   0x089B             LSRS     R3,R3,#+2
+   \   00000054   0x2404             MOVS     R4,#+4
+   \   00000056   0x4363             MULS     R3,R4,R3
+   \   00000058   0x58D2             LDR      R2,[R2, R3]
+   \   0000005A   0x23FF             MOVS     R3,#+255
+   \   0000005C   0x0784             LSLS     R4,R0,#+30       ;; ZeroExtS R4,R0,#+30,#+30
+   \   0000005E   0x0FA4             LSRS     R4,R4,#+30
+   \   00000060   0x2508             MOVS     R5,#+8
+   \   00000062   0x436C             MULS     R4,R5,R4
+   \   00000064   0x40A3             LSLS     R3,R3,R4
+   \   00000066   0x439A             BICS     R2,R2,R3
+   \   00000068   0x0189             LSLS     R1,R1,#+6
+   \   0000006A   0xB2C9             UXTB     R1,R1
+   \   0000006C   0x0783             LSLS     R3,R0,#+30       ;; ZeroExtS R3,R0,#+30,#+30
+   \   0000006E   0x0F9B             LSRS     R3,R3,#+30
+   \   00000070   0x2408             MOVS     R4,#+8
+   \   00000072   0x4363             MULS     R3,R4,R3
+   \   00000074   0x4099             LSLS     R1,R1,R3
+   \   00000076   0x4311             ORRS     R1,R1,R2
+   \   00000078   0x....             LDR      R2,??DataTable8_2  ;; 0xe000e400
+   \   0000007A   0xB240             SXTB     R0,R0
+   \   0000007C   0x0880             LSRS     R0,R0,#+2
+   \   0000007E   0x2304             MOVS     R3,#+4
+   \   00000080   0x4358             MULS     R0,R3,R0
+   \   00000082   0x5011             STR      R1,[R2, R0]
+   \                     ??NVIC_SetPriority_1: (+1)
+   \   00000084   0xBDF0             POP      {R4-R7,PC}       ;; return
+     25          #include "stdio.h"
+     26          #include "hardware.h"
+     27          #include "uart.h"
+     28          
+     29          /*
+     30          ** UART buffers and variables
+     31          **
+     32          ** Note we will only use the UART for debugging and manufacturing. So we don't need to commit that
+     33          ** many resources to this interface. If it turns out we need more RAM for other things, then these
+     34          ** buffers should get reduced. We will start the transmit at 256 bytes so that hopefully transmit
+     35          ** doesn't hold things up too much. Since we only have to receive simple commands and data there isn't
+     36          ** any reason for the receive buffer to be very big.
+     37          **
+     38          ** Note the receiver has a 6-byte FIFO but I'm not sure we really care for this application
+     39          **
+     40          ** Keep the buffers as a power of 2, that makes managing the pointers easier (just increment and mask)
+     41          */
+     42          #define  UART_TX_BUFFER_SIZE           (256)
+     43          #define  UART_RX_BUFFER_SIZE           (64)
+     44          
+
+   \                                 In section .bss, align 4
+     45          unsigned char  UARTTxBuffer[UART_TX_BUFFER_SIZE];
+   \                     UARTTxBuffer:
+   \   00000000                      DS8 256
+
+   \                                 In section .bss, align 4
+     46          unsigned char  UARTRxBuffer[UART_RX_BUFFER_SIZE];
+   \                     UARTRxBuffer:
+   \   00000000                      DS8 64
+
+   \                                 In section .bss, align 1
+     47          uint8_t  UARTTxHeadIndex;
+   \                     UARTTxHeadIndex:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     48          uint8_t  UARTTxTailIndex;
+   \                     UARTTxTailIndex:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     49          uint8_t  UARTRxHeadIndex;
+   \                     UARTRxHeadIndex:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     50          uint8_t  UARTRxTailIndex;
+   \                     UARTRxTailIndex:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     51          uint8_t  UARTTxEnabled;
+   \                     UARTTxEnabled:
+   \   00000000                      DS8 1
+     52          
+     53          /*
+     54          */
+
+   \                                 In section .text, align 2, keep-with-next
+     55          void
+     56          UART_Setup (void)
+     57          {
+   \                     UART_Setup: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     58          #if 0
+     59             NRF_GPIO->PIN_CNF[MAG_SW] =
+     60                      (GPIO_PIN_CNF_DIR_Output     << GPIO_PIN_CNF_DIR_Pos)
+     61                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+     62                    | (GPIO_PIN_CNF_PULL_Disabled  << GPIO_PIN_CNF_PULL_Pos)
+     63                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+     64                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+     65          
+     66                /*
+     67                ** Currently MAG_SW needs to be low to enable the motor and to enable the I2C. It appears if MAG_SW is high
+     68                ** that the motor chip is now trying to power itself through the SDA and SCL connector.
+     69                */
+     70             NRF_GPIO->OUTCLR = (1UL << MAG_SW);
+     71          #endif
+     72          
+     73             NRF_GPIO->PIN_CNF[UART_RX] =
+     74                      (GPIO_PIN_CNF_DIR_Input      << GPIO_PIN_CNF_DIR_Pos)
+     75                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+     76                    | (GPIO_PIN_CNF_PULL_Pullup    << GPIO_PIN_CNF_PULL_Pos)
+     77                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+     78                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+   \   00000002   0x....             LDR      R0,??DataTable7_1  ;; 0x60c
+   \   00000004   0x....             LDR      R1,??DataTable7_2  ;; 0x50000748
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+     79          
+     80             NRF_GPIO->PIN_CNF[UART_TX] =
+     81                      (GPIO_PIN_CNF_DIR_Output     << GPIO_PIN_CNF_DIR_Pos)
+     82                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+     83                    | (GPIO_PIN_CNF_PULL_Disabled  << GPIO_PIN_CNF_PULL_Pos)
+     84                    | (GPIO_PIN_CNF_DRIVE_S0S1     << GPIO_PIN_CNF_DRIVE_Pos)
+     85                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x....             LDR      R1,??DataTable7_3  ;; 0x50000744
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     86          
+     87             NRF_GPIO->OUTSET = (1UL << UART_TX);
+   \   0000000E   0x2080             MOVS     R0,#+128
+   \   00000010   0x0280             LSLS     R0,R0,#+10       ;; #+131072
+   \   00000012   0x....             LDR      R1,??DataTable7_4  ;; 0x50000508
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+     88             NRF_UART0->PSELTXD = UART_TX;
+   \   00000016   0x2011             MOVS     R0,#+17
+   \   00000018   0x....             LDR      R1,??DataTable8_3  ;; 0x4000250c
+   \   0000001A   0x6008             STR      R0,[R1, #+0]
+     89             NRF_UART0->PSELRXD = UART_RX;
+   \   0000001C   0x2012             MOVS     R0,#+18
+   \   0000001E   0x....             LDR      R1,??DataTable8_4  ;; 0x40002514
+   \   00000020   0x6008             STR      R0,[R1, #+0]
+     90             NRF_UART0->BAUDRATE      = (UART_BAUDRATE_BAUDRATE_Baud115200 << UART_BAUDRATE_BAUDRATE_Pos);
+   \   00000022   0x....             LDR      R0,??DataTable8_5  ;; 0x1d7e000
+   \   00000024   0x....             LDR      R1,??DataTable8_6  ;; 0x40002524
+   \   00000026   0x6008             STR      R0,[R1, #+0]
+     91             NRF_UART0->ENABLE        = (UART_ENABLE_ENABLE_Enabled << UART_ENABLE_ENABLE_Pos);
+   \   00000028   0x2004             MOVS     R0,#+4
+   \   0000002A   0x....             LDR      R1,??DataTable8_7  ;; 0x40002500
+   \   0000002C   0x6008             STR      R0,[R1, #+0]
+     92             NRF_UART0->TASKS_STARTTX = 1;
+   \   0000002E   0x2001             MOVS     R0,#+1
+   \   00000030   0x....             LDR      R1,??DataTable8_8  ;; 0x40002008
+   \   00000032   0x6008             STR      R0,[R1, #+0]
+     93             NRF_UART0->TASKS_STARTRX = 1;
+   \   00000034   0x2001             MOVS     R0,#+1
+   \   00000036   0x....             LDR      R1,??DataTable8_9  ;; 0x40002000
+   \   00000038   0x6008             STR      R0,[R1, #+0]
+     94          
+     95                // Enable UART interrupt
+     96             NRF_UART0->INTENCLR = 0xffffffffUL;
+   \   0000003A   0x2000             MOVS     R0,#+0
+   \   0000003C   0x43C0             MVNS     R0,R0            ;; #-1
+   \   0000003E   0x....             LDR      R1,??DataTable8_10  ;; 0x40002308
+   \   00000040   0x6008             STR      R0,[R1, #+0]
+     97             NRF_UART0->INTENSET =   (UART_INTENSET_RXDRDY_Set << UART_INTENSET_RXDRDY_Pos)
+     98                                   | (UART_INTENSET_TXDRDY_Set << UART_INTENSET_TXDRDY_Pos)
+     99                                   | (UART_INTENSET_ERROR_Set << UART_INTENSET_ERROR_Pos);
+   \   00000042   0x20A1             MOVS     R0,#+161
+   \   00000044   0x0080             LSLS     R0,R0,#+2        ;; #+644
+   \   00000046   0x....             LDR      R1,??DataTable8_11  ;; 0x40002304
+   \   00000048   0x6008             STR      R0,[R1, #+0]
+    100          
+    101             NVIC_ClearPendingIRQ (UART0_IRQn);
+   \   0000004A   0x2002             MOVS     R0,#+2
+   \   0000004C   0x.... 0x....      BL       NVIC_ClearPendingIRQ
+    102             NVIC_SetPriority(UART0_IRQn, SKYLOCK_PRIORITY);
+   \   00000050   0x2103             MOVS     R1,#+3
+   \   00000052   0x2002             MOVS     R0,#+2
+   \   00000054   0x.... 0x....      BL       NVIC_SetPriority
+    103             NVIC_EnableIRQ (UART0_IRQn);
+   \   00000058   0x2002             MOVS     R0,#+2
+   \   0000005A   0x.... 0x....      BL       NVIC_EnableIRQ
+    104          }
+   \   0000005E   0xBD01             POP      {R0,PC}          ;; return
+    105          
+
+   \                                 In section .text, align 2, keep-with-next
+    106          int
+    107          putchar (int c)
+    108          {
+   \                     putchar: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    109             if (c == '\n')
+   \   00000004   0x2C0A             CMP      R4,#+10
+   \   00000006   0xD102             BNE      ??putchar_0
+    110                putchar ('\r');
+   \   00000008   0x200D             MOVS     R0,#+13
+   \   0000000A   0xF7FF 0xFFF9      BL       putchar
+    111          
+    112                /*
+    113                ** If tail catches up to head then wait. I don't believe we have any reason
+    114                ** to run this product with interrupts disabled so waiting forever should be
+    115                ** fine. Also we will have a watchdog setup so that will take care of any
+    116                ** stuck conditions.
+    117                */
+    118             while (((UARTTxHeadIndex + 1) & (UART_TX_BUFFER_SIZE - 1)) == UARTTxTailIndex);
+   \                     ??putchar_0: (+1)
+   \   0000000E   0x....             LDR      R0,??DataTable8_12
+   \   00000010   0x7800             LDRB     R0,[R0, #+0]
+   \   00000012   0x1C40             ADDS     R0,R0,#+1
+   \   00000014   0xB2C0             UXTB     R0,R0
+   \   00000016   0x....             LDR      R1,??DataTable8_13
+   \   00000018   0x7809             LDRB     R1,[R1, #+0]
+   \   0000001A   0x4288             CMP      R0,R1
+   \   0000001C   0xD0F7             BEQ      ??putchar_0
+    119          
+    120             disableInterrupt();
+   \   0000001E   0xB672             CPSID    I
+    121             UARTTxBuffer[UARTTxHeadIndex++] = c;
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0x....             LDR      R1,??DataTable8_14
+   \   00000024   0x....             LDR      R2,??DataTable8_12
+   \   00000026   0x7812             LDRB     R2,[R2, #+0]
+   \   00000028   0x5488             STRB     R0,[R1, R2]
+   \   0000002A   0x....             LDR      R0,??DataTable8_12
+   \   0000002C   0x7800             LDRB     R0,[R0, #+0]
+   \   0000002E   0x1C40             ADDS     R0,R0,#+1
+   \   00000030   0x....             LDR      R1,??DataTable8_12
+   \   00000032   0x7008             STRB     R0,[R1, #+0]
+    122             if (!UARTTxEnabled)
+   \   00000034   0x....             LDR      R0,??DataTable8_15
+   \   00000036   0x7800             LDRB     R0,[R0, #+0]
+   \   00000038   0x2800             CMP      R0,#+0
+   \   0000003A   0xD111             BNE      ??putchar_1
+    123                {
+    124                UARTTxEnabled = TRUE;
+   \   0000003C   0x2001             MOVS     R0,#+1
+   \   0000003E   0x....             LDR      R1,??DataTable8_15
+   \   00000040   0x7008             STRB     R0,[R1, #+0]
+    125                NRF_UART0->TXD = UARTTxBuffer[UARTTxTailIndex++];
+   \   00000042   0x....             LDR      R0,??DataTable8_14
+   \   00000044   0x....             LDR      R1,??DataTable8_13
+   \   00000046   0x7809             LDRB     R1,[R1, #+0]
+   \   00000048   0x5C40             LDRB     R0,[R0, R1]
+   \   0000004A   0x....             LDR      R1,??DataTable8_16  ;; 0x4000251c
+   \   0000004C   0x6008             STR      R0,[R1, #+0]
+   \   0000004E   0x....             LDR      R0,??DataTable8_13
+   \   00000050   0x7800             LDRB     R0,[R0, #+0]
+   \   00000052   0x1C40             ADDS     R0,R0,#+1
+   \   00000054   0x....             LDR      R1,??DataTable8_13
+   \   00000056   0x7008             STRB     R0,[R1, #+0]
+    126                UARTTxTailIndex &= (UART_TX_BUFFER_SIZE - 1);
+   \   00000058   0x....             LDR      R0,??DataTable8_13
+   \   0000005A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000005C   0x....             LDR      R1,??DataTable8_13
+   \   0000005E   0x7008             STRB     R0,[R1, #+0]
+    127                }
+    128             enableInterrupt();
+   \                     ??putchar_1: (+1)
+   \   00000060   0xB662             CPSIE    I
+    129          
+    130             return(c);
+   \   00000062   0x0020             MOVS     R0,R4
+   \   00000064   0xBD10             POP      {R4,PC}          ;; return
+    131          }
+    132          
+    133          /*
+    134          ** __write
+    135          **
+    136          ** This is called by printf when built with IAR. If built with GCC there likley
+    137          ** will be a different function call I'm guessing. Once we know that, just setup
+    138          ** a conditional compile to flip between the options.
+    139          */
+
+   \                                 In section .text, align 2, keep-with-next
+    140          size_t __write(int handle, const unsigned char * buffer, size_t size)
+    141          {
+   \                     __write: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x0015             MOVS     R5,R2
+    142             size_t nChars = 0;
+   \   00000006   0x2600             MOVS     R6,#+0
+    143          
+    144             if (buffer == 0)
+   \   00000008   0x2C00             CMP      R4,#+0
+   \   0000000A   0xD101             BNE      ??__write_0
+    145                {
+    146                   /*
+    147                   ** Don't believe this will happen, but should always watchout for a NULL pointer
+    148                   */
+    149                return 0;
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0xE009             B        ??__write_1
+    150                }
+    151          
+    152             for (nChars = 0; nChars < size; ++nChars)
+   \                     ??__write_0: (+1)
+   \   00000010   0x2600             MOVS     R6,#+0
+   \   00000012   0xE004             B        ??__write_2
+    153                {
+    154                putchar (*buffer++);
+   \                     ??__write_3: (+1)
+   \   00000014   0x7820             LDRB     R0,[R4, #+0]
+   \   00000016   0x.... 0x....      BL       putchar
+   \   0000001A   0x1C64             ADDS     R4,R4,#+1
+    155                }
+   \   0000001C   0x1C76             ADDS     R6,R6,#+1
+   \                     ??__write_2: (+1)
+   \   0000001E   0x42AE             CMP      R6,R5
+   \   00000020   0xD3F8             BCC      ??__write_3
+    156          
+    157            return (nChars);
+   \   00000022   0x0030             MOVS     R0,R6
+   \                     ??__write_1: (+1)
+   \   00000024   0xBD70             POP      {R4-R6,PC}       ;; return
+    158          }
+    159          
+
+   \                                 In section .text, align 2, keep-with-next
+    160          void
+    161          UART0_Handler (void)
+    162          {
+   \                     UART0_Handler: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+    163             if (NRF_UART0->EVENTS_RXDRDY)
+   \   00000002   0x....             LDR      R0,??DataTable8_17  ;; 0x40002108
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD013             BEQ      ??UART0_Handler_0
+    164                {
+    165                   /* This will actually clear the RX interrupt */
+    166                NRF_UART0->EVENTS_RXDRDY = 0;
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0x....             LDR      R1,??DataTable8_17  ;; 0x40002108
+   \   0000000E   0x6008             STR      R0,[R1, #+0]
+    167          
+    168                   /*
+    169                   ** This is a really simple device, just grab the byte and stuff it in the buffer. If for some reason
+    170                   ** we haven't emptied the buffer, oh well. Based on what this device should be doing though, that should
+    171                   ** never even be an option to happen.
+    172                   */
+    173                UARTRxBuffer[UARTRxHeadIndex++] = NRF_UART0->RXD;
+   \   00000010   0x....             LDR      R0,??DataTable8_18  ;; 0x40002518
+   \   00000012   0x6800             LDR      R0,[R0, #+0]
+   \   00000014   0x....             LDR      R1,??DataTable8_19
+   \   00000016   0x....             LDR      R2,??DataTable8_20
+   \   00000018   0x7812             LDRB     R2,[R2, #+0]
+   \   0000001A   0x5488             STRB     R0,[R1, R2]
+   \   0000001C   0x....             LDR      R0,??DataTable8_20
+   \   0000001E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000020   0x1C40             ADDS     R0,R0,#+1
+   \   00000022   0x....             LDR      R1,??DataTable8_20
+   \   00000024   0x7008             STRB     R0,[R1, #+0]
+    174                UARTRxHeadIndex &= (UART_RX_BUFFER_SIZE - 1);
+   \   00000026   0x....             LDR      R0,??DataTable8_20
+   \   00000028   0x7800             LDRB     R0,[R0, #+0]
+   \   0000002A   0x0680             LSLS     R0,R0,#+26       ;; ZeroExtS R0,R0,#+26,#+26
+   \   0000002C   0x0E80             LSRS     R0,R0,#+26
+   \   0000002E   0x....             LDR      R1,??DataTable8_20
+   \   00000030   0x7008             STRB     R0,[R1, #+0]
+    175                }
+    176          
+    177                /* Check for transmit activity */
+    178             if (NRF_UART0->EVENTS_TXDRDY)
+   \                     ??UART0_Handler_0: (+1)
+   \   00000032   0x....             LDR      R0,??DataTable8_21  ;; 0x4000211c
+   \   00000034   0x6800             LDR      R0,[R0, #+0]
+   \   00000036   0x2800             CMP      R0,#+0
+   \   00000038   0xD01B             BEQ      ??UART0_Handler_1
+    179                {
+    180                   /* This will actually clear the TX interrupt */
+    181                NRF_UART0->EVENTS_TXDRDY = 0;
+   \   0000003A   0x2000             MOVS     R0,#+0
+   \   0000003C   0x....             LDR      R1,??DataTable8_21  ;; 0x4000211c
+   \   0000003E   0x6008             STR      R0,[R1, #+0]
+    182          
+    183                if (UARTTxTailIndex != UARTTxHeadIndex)
+   \   00000040   0x....             LDR      R0,??DataTable8_13
+   \   00000042   0x7800             LDRB     R0,[R0, #+0]
+   \   00000044   0x....             LDR      R1,??DataTable8_12
+   \   00000046   0x7809             LDRB     R1,[R1, #+0]
+   \   00000048   0x4288             CMP      R0,R1
+   \   0000004A   0xD00F             BEQ      ??UART0_Handler_2
+    184                   {
+    185                   NRF_UART0->TXD = UARTTxBuffer[UARTTxTailIndex++];
+   \   0000004C   0x....             LDR      R0,??DataTable8_14
+   \   0000004E   0x....             LDR      R1,??DataTable8_13
+   \   00000050   0x7809             LDRB     R1,[R1, #+0]
+   \   00000052   0x5C40             LDRB     R0,[R0, R1]
+   \   00000054   0x....             LDR      R1,??DataTable8_16  ;; 0x4000251c
+   \   00000056   0x6008             STR      R0,[R1, #+0]
+   \   00000058   0x....             LDR      R0,??DataTable8_13
+   \   0000005A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000005C   0x1C40             ADDS     R0,R0,#+1
+   \   0000005E   0x....             LDR      R1,??DataTable8_13
+   \   00000060   0x7008             STRB     R0,[R1, #+0]
+    186                   UARTTxTailIndex &= (UART_TX_BUFFER_SIZE - 1);
+   \   00000062   0x....             LDR      R0,??DataTable8_13
+   \   00000064   0x7800             LDRB     R0,[R0, #+0]
+   \   00000066   0x....             LDR      R1,??DataTable8_13
+   \   00000068   0x7008             STRB     R0,[R1, #+0]
+   \   0000006A   0xE002             B        ??UART0_Handler_1
+    187                   }
+    188                else
+    189                   {
+    190                      /* If no more bytes, disable TX for now */
+    191                   UARTTxEnabled = FALSE;
+   \                     ??UART0_Handler_2: (+1)
+   \   0000006C   0x2000             MOVS     R0,#+0
+   \   0000006E   0x....             LDR      R1,??DataTable8_15
+   \   00000070   0x7008             STRB     R0,[R1, #+0]
+    192                   }
+    193                }
+    194          
+    195                /*
+    196                ** Check for receive errors. Again we are a simple device so right now we really don't care about
+    197                ** any of these. Just clear an error if it happens.
+    198                */
+    199             if (NRF_UART0->EVENTS_ERROR)
+   \                     ??UART0_Handler_1: (+1)
+   \   00000072   0x....             LDR      R0,??DataTable8_22  ;; 0x40002124
+   \   00000074   0x6800             LDR      R0,[R0, #+0]
+   \   00000076   0x2800             CMP      R0,#+0
+   \   00000078   0xD005             BEQ      ??UART0_Handler_3
+    200                {
+    201                   /* Need to clear the event to clear the interrupt */
+    202                NRF_UART0->EVENTS_ERROR = 0;
+   \   0000007A   0x2000             MOVS     R0,#+0
+   \   0000007C   0x....             LDR      R1,??DataTable8_22  ;; 0x40002124
+   \   0000007E   0x6008             STR      R0,[R1, #+0]
+    203          
+    204                   /*
+    205                   ** For errors you also have to clear the error. Since we don't care right now, just
+    206                   ** clear all the error bits
+    207                   */
+    208                NRF_UART0->ERRORSRC = 0x0F;
+   \   00000080   0x200F             MOVS     R0,#+15
+   \   00000082   0x....             LDR      R1,??DataTable8_23  ;; 0x40002480
+   \   00000084   0x6008             STR      R0,[R1, #+0]
+    209                }
+    210          }
+   \                     ??UART0_Handler_3: (+1)
+   \   00000086   0xBD00             POP      {PC}             ;; return
+    211          
+
+   \                                 In section .text, align 2, keep-with-next
+    212          int
+    213          getchar (void)
+    214          {
+   \                     getchar: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+    215             int c;
+    216          
+    217                /* If no character then just spin and wait */
+    218             while (UARTRxTailIndex == UARTRxHeadIndex);
+   \                     ??getchar_0: (+1)
+   \   00000002   0x....             LDR      R0,??DataTable8_24
+   \   00000004   0x7800             LDRB     R0,[R0, #+0]
+   \   00000006   0x....             LDR      R1,??DataTable8_20
+   \   00000008   0x7809             LDRB     R1,[R1, #+0]
+   \   0000000A   0x4288             CMP      R0,R1
+   \   0000000C   0xD0F9             BEQ      ??getchar_0
+    219          
+    220             c = UARTRxBuffer[UARTRxTailIndex++];
+   \   0000000E   0x....             LDR      R0,??DataTable8_19
+   \   00000010   0x....             LDR      R1,??DataTable8_24
+   \   00000012   0x7809             LDRB     R1,[R1, #+0]
+   \   00000014   0x5C40             LDRB     R0,[R0, R1]
+   \   00000016   0x....             LDR      R1,??DataTable8_24
+   \   00000018   0x7809             LDRB     R1,[R1, #+0]
+   \   0000001A   0x1C49             ADDS     R1,R1,#+1
+   \   0000001C   0x....             LDR      R2,??DataTable8_24
+   \   0000001E   0x7011             STRB     R1,[R2, #+0]
+    221             UARTRxTailIndex &= (UART_RX_BUFFER_SIZE - 1);
+   \   00000020   0x....             LDR      R1,??DataTable8_24
+   \   00000022   0x7809             LDRB     R1,[R1, #+0]
+   \   00000024   0x0689             LSLS     R1,R1,#+26       ;; ZeroExtS R1,R1,#+26,#+26
+   \   00000026   0x0E89             LSRS     R1,R1,#+26
+   \   00000028   0x....             LDR      R2,??DataTable8_24
+   \   0000002A   0x7011             STRB     R1,[R2, #+0]
+    222          
+    223             return (c);
+   \   0000002C   0xBD00             POP      {PC}             ;; return
+    224          }
+    225          
+    226          /*
+    227          ** Return the number of characters sitting in the buffer.
+    228          */
+
+   \                                 In section .text, align 2, keep-with-next
+    229          int
+    230          UART0_RxWaiting (void)
+    231          {
+   \                     UART0_RxWaiting: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+    232             unsigned int count;
+    233          
+    234             count = UARTRxHeadIndex - UARTRxTailIndex;
+   \   00000002   0x....             LDR      R0,??DataTable8_20
+   \   00000004   0x7800             LDRB     R0,[R0, #+0]
+   \   00000006   0x....             LDR      R1,??DataTable8_24
+   \   00000008   0x7809             LDRB     R1,[R1, #+0]
+   \   0000000A   0x1A40             SUBS     R0,R0,R1
+    235             if (count > UART_RX_BUFFER_SIZE)
+   \   0000000C   0x2841             CMP      R0,#+65
+   \   0000000E   0xD300             BCC      ??UART0_RxWaiting_0
+    236                count += UART_RX_BUFFER_SIZE;
+   \   00000010   0x3040             ADDS     R0,R0,#+64
+    237          
+    238             return (count);
+   \                     ??UART0_RxWaiting_0: (+1)
+   \   00000012   0xBD00             POP      {PC}             ;; return
+    239          }
+    240          
+    241          /*
+    242          ** Sit and spin until the transmit buffer is empty. At the moment interrupts should
+    243          ** not be disabled, but that being said we may crash inside a handler. So in that case
+    244          ** they would be disabled. So need to look at the interrupt state to see if we can
+    245          ** just spin and watch the pointers or if we need to feed the UART ourselves.
+    246          **
+    247          ** It should be safe to spin here because there is always a hardware watchdog that will
+    248          ** kill us if we get stuck.
+    249          */
+
+   \                                 In section .text, align 2, keep-with-next
+    250          void
+    251          UART0_TxFlush (void)
+    252          {
+   \                     UART0_TxFlush: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    253             if (!ASM_GetIPSR())
+   \   00000002   0x.... 0x....      BL       ASM_GetIPSR
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD106             BNE      ??UART0_TxFlush_0
+    254                {
+    255                while (UARTTxTailIndex != UARTTxHeadIndex);
+   \                     ??UART0_TxFlush_1: (+1)
+   \   0000000A   0x....             LDR      R0,??DataTable8_13
+   \   0000000C   0x7800             LDRB     R0,[R0, #+0]
+   \   0000000E   0x....             LDR      R1,??DataTable8_12
+   \   00000010   0x7809             LDRB     R1,[R1, #+0]
+   \   00000012   0x4288             CMP      R0,R1
+   \   00000014   0xD032             BEQ      ??UART0_TxFlush_2
+   \   00000016   0xE7F8             B        ??UART0_TxFlush_1
+    256                }
+    257             else
+    258                {
+    259                if (!UARTTxEnabled)
+   \                     ??UART0_TxFlush_0: (+1)
+   \   00000018   0x....             LDR      R0,??DataTable8_15
+   \   0000001A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD111             BNE      ??UART0_TxFlush_3
+    260                   {
+    261                   UARTTxEnabled = TRUE;
+   \   00000020   0x2001             MOVS     R0,#+1
+   \   00000022   0x....             LDR      R1,??DataTable8_15
+   \   00000024   0x7008             STRB     R0,[R1, #+0]
+    262                   NRF_UART0->TXD = UARTTxBuffer[UARTTxTailIndex++];
+   \   00000026   0x....             LDR      R0,??DataTable8_14
+   \   00000028   0x....             LDR      R1,??DataTable8_13
+   \   0000002A   0x7809             LDRB     R1,[R1, #+0]
+   \   0000002C   0x5C40             LDRB     R0,[R0, R1]
+   \   0000002E   0x....             LDR      R1,??DataTable8_16  ;; 0x4000251c
+   \   00000030   0x6008             STR      R0,[R1, #+0]
+   \   00000032   0x....             LDR      R0,??DataTable8_13
+   \   00000034   0x7800             LDRB     R0,[R0, #+0]
+   \   00000036   0x1C40             ADDS     R0,R0,#+1
+   \   00000038   0x....             LDR      R1,??DataTable8_13
+   \   0000003A   0x7008             STRB     R0,[R1, #+0]
+    263                   UARTTxTailIndex &= (UART_TX_BUFFER_SIZE - 1);
+   \   0000003C   0x....             LDR      R0,??DataTable8_13
+   \   0000003E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000040   0x....             LDR      R1,??DataTable8_13
+   \   00000042   0x7008             STRB     R0,[R1, #+0]
+    264                   }
+    265          
+    266                while (UARTTxTailIndex != UARTTxHeadIndex);
+   \                     ??UART0_TxFlush_3: (+1)
+   \   00000044   0x....             LDR      R0,??DataTable8_13
+   \   00000046   0x7800             LDRB     R0,[R0, #+0]
+   \   00000048   0x....             LDR      R1,??DataTable8_12
+   \   0000004A   0x7809             LDRB     R1,[R1, #+0]
+   \   0000004C   0x4288             CMP      R0,R1
+   \   0000004E   0xD1F9             BNE      ??UART0_TxFlush_3
+    267                   {
+    268                   if (NRF_UART0->EVENTS_TXDRDY)
+   \   00000050   0x....             LDR      R0,??DataTable8_21  ;; 0x4000211c
+   \   00000052   0x6800             LDR      R0,[R0, #+0]
+   \   00000054   0x2800             CMP      R0,#+0
+   \   00000056   0xD011             BEQ      ??UART0_TxFlush_2
+    269                      {
+    270                      NRF_UART0->EVENTS_TXDRDY = 0;
+   \   00000058   0x2000             MOVS     R0,#+0
+   \   0000005A   0x....             LDR      R1,??DataTable8_21  ;; 0x4000211c
+   \   0000005C   0x6008             STR      R0,[R1, #+0]
+    271                      NRF_UART0->TXD = UARTTxBuffer[UARTTxTailIndex++];
+   \   0000005E   0x....             LDR      R0,??DataTable8_14
+   \   00000060   0x....             LDR      R1,??DataTable8_13
+   \   00000062   0x7809             LDRB     R1,[R1, #+0]
+   \   00000064   0x5C40             LDRB     R0,[R0, R1]
+   \   00000066   0x....             LDR      R1,??DataTable8_16  ;; 0x4000251c
+   \   00000068   0x6008             STR      R0,[R1, #+0]
+   \   0000006A   0x....             LDR      R0,??DataTable8_13
+   \   0000006C   0x7800             LDRB     R0,[R0, #+0]
+   \   0000006E   0x1C40             ADDS     R0,R0,#+1
+   \   00000070   0x....             LDR      R1,??DataTable8_13
+   \   00000072   0x7008             STRB     R0,[R1, #+0]
+    272                      UARTTxTailIndex &= (UART_TX_BUFFER_SIZE - 1);
+   \   00000074   0x....             LDR      R0,??DataTable8_13
+   \   00000076   0x7800             LDRB     R0,[R0, #+0]
+   \   00000078   0x....             LDR      R1,??DataTable8_13
+   \   0000007A   0x7008             STRB     R0,[R1, #+0]
+    273                      }
+    274                   }
+    275                }
+    276          }
+   \                     ??UART0_TxFlush_2: (+1)
+   \   0000007C   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7:
+   \   00000000   0xE000ED1C         DC32     0xe000ed1c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_1:
+   \   00000000   0x0000060C         DC32     0x60c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_2:
+   \   00000000   0x50000748         DC32     0x50000748
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_3:
+   \   00000000   0x50000744         DC32     0x50000744
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_4:
+   \   00000000   0x50000508         DC32     0x50000508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8:
+   \   00000000   0xE000E100         DC32     0xe000e100
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_1:
+   \   00000000   0xE000E280         DC32     0xe000e280
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_2:
+   \   00000000   0xE000E400         DC32     0xe000e400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_3:
+   \   00000000   0x4000250C         DC32     0x4000250c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_4:
+   \   00000000   0x40002514         DC32     0x40002514
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_5:
+   \   00000000   0x01D7E000         DC32     0x1d7e000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_6:
+   \   00000000   0x40002524         DC32     0x40002524
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_7:
+   \   00000000   0x40002500         DC32     0x40002500
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_8:
+   \   00000000   0x40002008         DC32     0x40002008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_9:
+   \   00000000   0x40002000         DC32     0x40002000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_10:
+   \   00000000   0x40002308         DC32     0x40002308
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_11:
+   \   00000000   0x40002304         DC32     0x40002304
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_12:
+   \   00000000   0x........         DC32     UARTTxHeadIndex
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_13:
+   \   00000000   0x........         DC32     UARTTxTailIndex
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_14:
+   \   00000000   0x........         DC32     UARTTxBuffer
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_15:
+   \   00000000   0x........         DC32     UARTTxEnabled
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_16:
+   \   00000000   0x4000251C         DC32     0x4000251c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_17:
+   \   00000000   0x40002108         DC32     0x40002108
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_18:
+   \   00000000   0x40002518         DC32     0x40002518
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_19:
+   \   00000000   0x........         DC32     UARTRxBuffer
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_20:
+   \   00000000   0x........         DC32     UARTRxHeadIndex
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_21:
+   \   00000000   0x4000211C         DC32     0x4000211c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_22:
+   \   00000000   0x40002124         DC32     0x40002124
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_23:
+   \   00000000   0x40002480         DC32     0x40002480
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8_24:
+   \   00000000   0x........         DC32     UARTRxTailIndex
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   NVIC_ClearPendingIRQ
+       0   NVIC_EnableIRQ
+      20   NVIC_SetPriority
+       4   UART0_Handler
+       4   UART0_RxWaiting
+       8   UART0_TxFlush
+         8   -> ASM_GetIPSR
+       8   UART_Setup
+         8   -> NVIC_ClearPendingIRQ
+         8   -> NVIC_EnableIRQ
+         8   -> NVIC_SetPriority
+      16   __write
+        16   -> putchar
+       4   getchar
+       8   putchar
+         8   -> putchar
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_2
+       4  ??DataTable7_3
+       4  ??DataTable7_4
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_10
+       4  ??DataTable8_11
+       4  ??DataTable8_12
+       4  ??DataTable8_13
+       4  ??DataTable8_14
+       4  ??DataTable8_15
+       4  ??DataTable8_16
+       4  ??DataTable8_17
+       4  ??DataTable8_18
+       4  ??DataTable8_19
+       4  ??DataTable8_2
+       4  ??DataTable8_20
+       4  ??DataTable8_21
+       4  ??DataTable8_22
+       4  ??DataTable8_23
+       4  ??DataTable8_24
+       4  ??DataTable8_3
+       4  ??DataTable8_4
+       4  ??DataTable8_5
+       4  ??DataTable8_6
+       4  ??DataTable8_7
+       4  ??DataTable8_8
+       4  ??DataTable8_9
+      14  NVIC_ClearPendingIRQ
+      14  NVIC_EnableIRQ
+     134  NVIC_SetPriority
+     136  UART0_Handler
+      20  UART0_RxWaiting
+     126  UART0_TxFlush
+      64  UARTRxBuffer
+       1  UARTRxHeadIndex
+       1  UARTRxTailIndex
+     256  UARTTxBuffer
+       1  UARTTxEnabled
+       1  UARTTxHeadIndex
+       1  UARTTxTailIndex
+      96  UART_Setup
+      38  __write
+      46  getchar
+     102  putchar
+
+ 
+ 325 bytes in section .bss
+ 846 bytes in section .text
+ 
+ 846 bytes of CODE memory
+ 325 bytes of DATA memory
+
+Errors: none
+Warnings: none

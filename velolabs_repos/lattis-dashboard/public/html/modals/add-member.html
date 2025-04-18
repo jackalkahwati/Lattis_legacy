@@ -1,0 +1,83 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar ">
+        <h3 class="modal-title text-white">MANAGE USERS</h3>
+    </div>
+    <div class="modal-body p-30 ">
+        <p>In this section, you’ll be able to manage your fleet access either through domain or by email
+            address, or both simultaneously. Individual users have their access revoked in the users
+            page.</p>
+        <form method='post' name="domain.memberform">
+            <div class="row m-t-30 member-add">
+                <div class="col-sm-12">
+                    <h3 class="m-t-3 ft-20">Create User List with Domain</h3>
+                    <p class="ft-14">
+                        Anyone with this domain will have access to the private network.
+                    </p>
+                    <div class="row m-tb-10">
+                        <div class="col-sm-8 new-fleet-box nopadd">
+                            <div class="set-placeholder">
+                                <input class="form-control new-txt-box" type="text"
+                                       ng-class="{err:!domain.memberform.domain.$valid && !domain.memberform.domain.$pristine}"
+                                       ng-model="domain.id"
+                                       ng-pattern="/^@[-.a-zA-Z0-9]+(\.[-.a-zA-Z0-9]+)*\.([a-zA-Z]{2,})$/"
+                                       data-ng-required="true" name="domain" placeholder="@google.com">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <span ng-click="addDomain()"
+                                  class="btn custom-btn ft-12 text-uppercase">ADD
+                            </span>
+                        </div>
+                    </div>
+                    <div ng-if="domainList.length" class="border-gray relative"
+                         style="width: 66.6666%;top:-12px;padding:5px;">
+                        <div class="inline-block m-r-10 m-b-3 bg-skyblue" style="border-radius: 50px;"
+                             ng-repeat="domain in domainList">
+                            <span class="text-white ft-bold inline-block m-l-15">{{domain.domain_name}}</span>
+                            <button ng-click="delDomain(domain.domain_id)"
+                                    class="ft-bold relative bg-transp noborder text-steel-blue">x
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 m-t-30">
+                    <h3 class="m-t-3 ft-20">Add User by Email</h3>
+                    <p class="ft-14">
+                        A CSV file upload must include only email addresses. Every email in this list will have
+                        access to the network. If you upload a new file, it will overwrite your last file. <br>
+                        <a style='text-decoration: underline;'
+                           href="https://s3-us-west-1.amazonaws.com/fleetassets/csv_templates/member_csv.csv"
+                           download="member_csv.csv">Download template here</a>
+                    </p>
+                    <div class="row m-tb-10">
+                        <div class="col-sm-8 new-fleet-box nopadd">
+                            <div class="relative new-txt-box p-tb5-lr10">
+                                <p class="text-gray inline-block nomarg">{{membercsv.name}}</p>
+                                <img src="../images/paperclip.png" class="pull-right relative"
+                                     style="width:20px;" alt="upload-member-csv">
+                            </div>
+                            <p class="m-t-10 text-alert-dark text-right" ng-if="csvFile"><span
+                                    class="pull-left fw-600">{{csvFile}}</span> <a href="{{CSVFile}}"><i
+                                    class="fa fa-download p-r-5"></i></a> <i ng-if="false" ng-click="delCsv()"
+                                                                             class="fa fa-times ft-16"></i></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <fileupload accept=".csv"
+                                        name="UPLOAD" file="membercsv"></fileupload>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="text-left fullwid m-b-30">
+            <button ng-click="memberCancel()" class="btn custom-btn bg-HeaderToolbar wid-100"
+                    data-dismiss="modal">CANCEL
+            </button>
+            <a class="btn pull-right custom-btn text-uppercase wid-153" ng-click="memberNext()">SAVE CHANGES</a>
+        </div>
+    </div>
+</div>

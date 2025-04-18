@@ -1,0 +1,38 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar">
+        <h4 class="modal-title text-white">Damage report</h4>
+    </div>
+    <div class="modal-body p-30 m-t-15">
+        <p>A member submitted the following damage report</p>
+        <div class="row m-b-20 p-tb-10">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img ng-src="{{damageData[0].damagePhoto}}" class="img-responsive">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <!--                        <label class="text-bbb fw-200">
+                                        MEMBER
+                                    </label>
+                                        <p class="text-hash">John Smith</p>-->
+                <label class="text-bbb fw-200">
+                    DATE AND TIME
+                </label>
+                <p class="text-hash">{{damageData[0].createdOn}}</p>
+                <!--                        <label class="text-bbb fw-200">
+                                            DAMAGE TYPE
+                                        </label>
+                                        <p class="text-hash">Damaged wheel</p>-->
+                <label class="text-bbb fw-200">
+                    NOTES
+                </label>
+                <p class="text-hash">{{damageData[0].damageNotes}}.</p>
+            </div>
+            <div class="col-xs-12 text-left fullwid m-t-15">
+                <button class="btn custom-btn bg-HeaderToolbar p-tb-10 wid-130 ft-12" ng-click="closeModal()">CANCEL
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

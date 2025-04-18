@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:innerRadius="65dp"
+        android:innerRadiusRatio="3"
+        android:shape="ring"
+        android:thickness="20dp"
+        android:thicknessRatio="8"
+        android:useLevel="false">
+
+        <size
+            android:width="170dip"
+            android:height="170dip" />
+        <gradient
+            android:angle="0"
+            android:endColor="@color/circular_progress_default_progress"
+            android:startColor="@color/circular_progress_default_progress"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>

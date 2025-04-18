@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ellipse-sdk</string>
+
+    <string name="firmware_update">Firmware update</string>
+    <string name="firmware_update_in_progress">Update in progress</string>
+    <string name="firmware_update_fail">Update fail</string>
+    <string name="firmware_update_succeed">Update succeed</string>
+
+    <string name="crash_alert">Crash alert</string>
+    <string name="theft_alert">Theft alert</string>
+
+    <string name="stop_alert">Stop alert</string>
+</resources>

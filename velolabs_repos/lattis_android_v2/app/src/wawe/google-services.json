@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "161499003767",
+    "project_id": "arizona-slr-wawe",
+    "storage_bucket": "arizona-slr-wawe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161499003767:android:89a934ba26cd395fa53f72",
+        "android_client_info": {
+          "package_name": "io.bikes.wawe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHXKdeMwGz24A8T19yOPGY-_Q4Ti2Svlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161499003767-02l7iskpam4lh6pr0ajilag3uaroec71.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wawemobility",
+                "app_store_id": "1557480885"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161499003767:android:6cb25c32dea01c30a53f72",
+        "android_client_info": {
+          "package_name": "io.bikes.wawe.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHXKdeMwGz24A8T19yOPGY-_Q4Ti2Svlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161499003767-02l7iskpam4lh6pr0ajilag3uaroec71.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wawemobility",
+                "app_store_id": "1557480885"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161499003767:android:30ac611086eecc20a53f72",
+        "android_client_info": {
+          "package_name": "io.bikes.wawe.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHXKdeMwGz24A8T19yOPGY-_Q4Ti2Svlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161499003767-5carha9p49rj2t317dls94erobdpuqnj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161499003767-02l7iskpam4lh6pr0ajilag3uaroec71.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wawemobility",
+                "app_store_id": "1557480885"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

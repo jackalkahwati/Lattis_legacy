@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:custom="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/color_semi_transparent"
+    >
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="32dp"
+    android:layout_marginTop="32dp"
+    android:src="@drawable/ic_close_white"
+    android:id="@+id/iv_close"
+    />
+
+<io.bikes.sandypedals.presentation.view.CustomTextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/label"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="50dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:gravity="center"
+    android:text="@string/are_you_sure_you_want_to_log_out"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textColor="@color/lattis_toolbar_bg"
+    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+<io.bikes.sandypedals.presentation.view.CustomTextView
+    android:id="@+id/label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/line"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="50dp"
+    android:text="@string/route_to_bike_cancel_text"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textColor="@color/lattis_toolbar_bg"
+    android:visibility="gone"
+    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+<RelativeLayout
+    android:id="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_centerInParent="true"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:background="@android:color/white"></RelativeLayout>
+
+<io.bikes.sandypedals.presentation.view.CustomButton
+    android:id="@+id/btn_logout"
+    style="@style/BlueButtonStyle.Inversed"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/line"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="50dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:text="@string/log_out"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textStyle="bold"
+    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+<io.bikes.sandypedals.presentation.view.CustomTextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/btn_logout"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"
+    android:id="@+id/btn_cancel"
+    android:text="@string/cancel"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textColor="@color/lattis_accent_color"
+    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    <include layout="@layout/no_internal_layout"/>
+
+</RelativeLayout>

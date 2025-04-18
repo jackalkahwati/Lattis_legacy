@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/lattis_toolbar_bg"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_trip_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textAppearance="@style/TextView.Grey.Medium"
+            android:textColor="@color/lattis_text_color_grey"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_fleet_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:gravity="left|bottom"
+            android:textColor="#ACB1BB"
+            android:textAppearance="@style/TextView.Grey.Medium"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_trip_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textAppearance="@style/TextView.Grey.Medium"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginTop="4dp">
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_trip_cost_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="15dp"
+                android:layout_toLeftOf="@+id/tv_trip_cost"
+                android:layout_alignBottom="@+id/tv_trip_cost"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/TextView.Grey.Large"
+                 />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_trip_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#80848C"
+                android:textSize="25dp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

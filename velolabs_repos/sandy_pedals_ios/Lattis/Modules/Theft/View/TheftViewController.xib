@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TheftViewController" customModule="SandyPedals" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="c8T-vJ-y04"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-ph-TrU">
+                    <rect key="frame" x="24" y="222.5" width="327" height="142.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="theft_report_description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-ee-vcr" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="327" height="25.5"/>
+                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="20"/>
+                            <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="theft_report_subdescription" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZu-j5-Eaf" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="41.5" width="327" height="19"/>
+                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                            <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azC-4N-MgZ" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="98.5" width="327" height="44"/>
+                            <color key="backgroundColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="6Ai-xb-yYZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="15"/>
+                            <state key="normal" title="theft_report_title">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="reportAction:" destination="-1" eventType="touchUpInside" id="IBu-wE-ilk"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="azC-4N-MgZ" firstAttribute="top" secondItem="cZu-j5-Eaf" secondAttribute="bottom" constant="38" id="0cb-8W-8eA"/>
+                        <constraint firstAttribute="trailing" secondItem="azC-4N-MgZ" secondAttribute="trailing" id="2v1-i3-IvV"/>
+                        <constraint firstItem="76Z-ee-vcr" firstAttribute="top" secondItem="CWg-ph-TrU" secondAttribute="top" id="EOW-yh-Euh"/>
+                        <constraint firstAttribute="trailing" secondItem="76Z-ee-vcr" secondAttribute="trailing" id="G2c-jd-EKu"/>
+                        <constraint firstItem="cZu-j5-Eaf" firstAttribute="leading" secondItem="CWg-ph-TrU" secondAttribute="leading" id="GkU-sS-rYR"/>
+                        <constraint firstItem="76Z-ee-vcr" firstAttribute="leading" secondItem="CWg-ph-TrU" secondAttribute="leading" id="Nc1-h1-4W4"/>
+                        <constraint firstItem="azC-4N-MgZ" firstAttribute="leading" secondItem="CWg-ph-TrU" secondAttribute="leading" id="PIL-4O-miZ"/>
+                        <constraint firstAttribute="trailing" secondItem="cZu-j5-Eaf" secondAttribute="trailing" id="atb-DC-hpO"/>
+                        <constraint firstAttribute="bottom" secondItem="azC-4N-MgZ" secondAttribute="bottom" id="hye-V5-yaZ"/>
+                        <constraint firstItem="cZu-j5-Eaf" firstAttribute="top" secondItem="76Z-ee-vcr" secondAttribute="bottom" constant="16" id="tZR-nS-btE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CWg-ph-TrU" secondAttribute="trailing" constant="24" id="1eh-Uj-DSL"/>
+                <constraint firstItem="CWg-ph-TrU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="FG0-2l-ba9"/>
+                <constraint firstItem="CWg-ph-TrU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="Vgf-yz-Bzr"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="154"/>
+        </view>
+    </objects>
+</document>

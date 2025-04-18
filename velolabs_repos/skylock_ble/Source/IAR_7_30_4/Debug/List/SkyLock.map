@@ -1,0 +1,655 @@
+###############################################################################
+#
+# IAR ELF Linker V7.30.4.8167/W32 for ARM                 16/Apr/2015  21:19:51
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Exe\SkyLock.out
+#    Map file     =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\SkyLock.map
+#    Command line =  
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\accelerometer.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\app_error.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\app_scheduler.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\app_timer.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\app_util_platform.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\ble_advdata.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\ble_conn_params.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\ble_interface.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\debuguart.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\i2c.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\magnet.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\mfginterface.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\motor.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\nRF51822_vector.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\skylock_softdevice.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\startup.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\timers.o"
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\touch_sensor.o"
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\utils.o" -o
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Exe\SkyLock.out"
+#        --map "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\SkyLock.map" --config
+#        "C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\SkyLock.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00016000 { ro section .intvec };
+"P1":  place in [from 0x00016000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20002000 to 0x20003fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x100
+  .intvec            ro code  0x00016000    0xc0  nRF51822_vector.o [1]
+  .intvec            ro code  0x000160c0    0x40  vector_table_M.o [4]
+                            - 0x00016100   0x100
+
+"P1":                                     0x4cc8
+  .text              ro code  0x00016100   0xb34  app_timer.o [1]
+  .text              ro code  0x00016c34    0x24  app_error.o [1]
+  .text              ro code  0x00016c58   0x8b4  ble_interface.o [1]
+  .text              ro code  0x0001750c   0x1a2  app_scheduler.o [1]
+  .text              ro code  0x000176ae    0x2a  zero_init3.o [4]
+  .text              ro code  0x000176d8    0x54  ABImemset.o [4]
+  .text              ro code  0x0001772c    0x5c  ABImemcpy.o [4]
+  .text              ro code  0x00017788    0x24  printf.o [3]
+  .text              ro code  0x000177ac   0x32c  debuguart.o [1]
+  .text              ro code  0x00017ad8   0x2d0  ble_conn_params.o [1]
+  .text              ro code  0x00017da8   0x30c  touch_sensor.o [1]
+  .text              ro code  0x000180b4   0x194  timers.o [1]
+  .text              ro code  0x00018248   0x40c  motor.o [1]
+  .text              ro code  0x00018654    0x38  sprintf.o [3]
+  .text              ro code  0x0001868c    0x10  strlen.o [4]
+  .text              ro code  0x0001869c    0xb8  skylock_softdevice.o [1]
+  .text              ro code  0x00018754   0x5b2  ble_advdata.o [1]
+  .text              ro code  0x00018d06     0xa  xsprout.o [3]
+  .text              ro code  0x00018d10    0x2c  app_util_platform.o [1]
+  .text              ro code  0x00018d3c   0x524  xprintfsmall_nomb.o [3]
+  .text              ro code  0x00019260     0xa  nRF51822_vector.o [1]
+  .text              ro code  0x0001926a     0x2  vector_table_M.o [4]
+  .text              ro code  0x0001926c   0x3f8  i2c.o [1]
+  .text              ro code  0x00019664    0x28  memcmp.o [4]
+  .text              ro code  0x0001968c    0xe0  I32DivModFast.o [4]
+  .text              ro code  0x0001976c    0x98  startup.o [1]
+  .text              ro code  0x00019804    0x14  strchr.o [4]
+  .text              ro code  0x00019818    0x18  memchr.o [4]
+  .text              ro code  0x00019830    0x22  utils.o [1]
+  .text              ro code  0x00019854   0x274  accelerometer.o [1]
+  .text              ro code  0x00019ac8     0x2  IntDivZer.o [4]
+  .text              ro code  0x00019aca    0x22  magnet.o [1]
+  .text              ro code  0x00019aec   0x820  mfginterface.o [1]
+  .rodata            const    0x0001a30c    0xe8  mfginterface.o [1]
+  .rodata            const    0x0001a3f4    0xcc  mfginterface.o [1]
+  .rodata            const    0x0001a4c0    0xa4  mfginterface.o [1]
+  .rodata            const    0x0001a564    0x88  mfginterface.o [1]
+  .rodata            const    0x0001a5ec    0x68  ble_interface.o [1]
+  .rodata            const    0x0001a654    0x3c  mfginterface.o [1]
+  .rodata            const    0x0001a690    0x38  mfginterface.o [1]
+  .rodata            const    0x0001a6c8    0x38  mfginterface.o [1]
+  .rodata            const    0x0001a700    0x34  ble_interface.o [1]
+  .text              ro code  0x0001a734    0x30  copy_init3.o [4]
+  .rodata            const    0x0001a764    0x2c  mfginterface.o [1]
+  .rodata            const    0x0001a790    0x2c  mfginterface.o [1]
+  .rodata            const    0x0001a7bc    0x2c  motor.o [1]
+  .rodata            const    0x0001a7e8    0x28  mfginterface.o [1]
+  .rodata            const    0x0001a810    0x28  motor.o [1]
+  .text              ro code  0x0001a838    0x28  data_init.o [4]
+  .rodata            const    0x0001a860    0x24  ble_interface.o [1]
+  .rodata            const    0x0001a884    0x24  mfginterface.o [1]
+  .rodata            const    0x0001a8a8    0x24  mfginterface.o [1]
+  .rodata            const    0x0001a8cc    0x24  mfginterface.o [1]
+  .rodata            const    0x0001a8f0    0x24  mfginterface.o [1]
+  .rodata            const    0x0001a914    0x24  skylock_softdevice.o [1]
+  .iar.init_table    const    0x0001a938    0x24  - Linker created -
+  .rodata            const    0x0001a95c    0x20  ble_conn_params.o [1]
+  .rodata            const    0x0001a97c    0x20  ble_interface.o [1]
+  .rodata            const    0x0001a99c    0x20  mfginterface.o [1]
+  .rodata            const    0x0001a9bc    0x20  motor.o [1]
+  .rodata            const    0x0001a9dc    0x1c  ble_conn_params.o [1]
+  .rodata            const    0x0001a9f8    0x1c  ble_interface.o [1]
+  .rodata            const    0x0001aa14    0x1c  ble_interface.o [1]
+  .text              ro code  0x0001aa30    0x1a  cmain.o [4]
+  .text              ro code  0x0001aa4a     0x4  low_level_init.o [3]
+  .text              ro code  0x0001aa4e     0x8  exit.o [3]
+  .text              ro code  0x0001aa58     0xa  cexit.o [4]
+  .text              ro code  0x0001aa64    0x14  exit.o [5]
+  .rodata            const    0x0001aa78    0x18  ble_conn_params.o [1]
+  .rodata            const    0x0001aa90    0x18  ble_interface.o [1]
+  .rodata            const    0x0001aaa8    0x18  ble_interface.o [1]
+  .rodata            const    0x0001aac0    0x18  ble_interface.o [1]
+  .rodata            const    0x0001aad8    0x18  ble_interface.o [1]
+  .rodata            const    0x0001aaf0    0x18  ble_interface.o [1]
+  .rodata            const    0x0001ab08    0x18  ble_interface.o [1]
+  .rodata            const    0x0001ab20    0x18  ble_interface.o [1]
+  .rodata            const    0x0001ab38    0x18  mfginterface.o [1]
+  .rodata            const    0x0001ab50    0x18  mfginterface.o [1]
+  .rodata            const    0x0001ab68    0x18  mfginterface.o [1]
+  .rodata            const    0x0001ab80    0x18  mfginterface.o [1]
+  .rodata            const    0x0001ab98    0x18  motor.o [1]
+  .rodata            const    0x0001abb0    0x18  motor.o [1]
+  .rodata            const    0x0001abc8    0x18  motor.o [1]
+  .rodata            const    0x0001abe0    0x18  skylock_softdevice.o [1]
+  .rodata            const    0x0001abf8    0x18  startup.o [1]
+  .rodata            const    0x0001ac10    0x18  touch_sensor.o [1]
+  .text              ro code  0x0001ac28    0x16  xprout.o [3]
+  .rodata            const    0x0001ac40    0x14  ble_conn_params.o [1]
+  .rodata            const    0x0001ac54    0x14  motor.o [1]
+  .rodata            const    0x0001ac68    0x14  startup.o [1]
+  .rodata            const    0x0001ac7c    0x10  ble_interface.o [1]
+  .rodata            const    0x0001ac8c    0x10  ble_interface.o [1]
+  .rodata            const    0x0001ac9c    0x10  ble_interface.o [1]
+  .rodata            const    0x0001acac    0x10  startup.o [1]
+  .rodata            const    0x0001acbc    0x10  touch_sensor.o [1]
+  .rodata            const    0x0001accc     0xc  ble_conn_params.o [1]
+  .rodata            const    0x0001acd8     0xc  ble_conn_params.o [1]
+  .rodata            const    0x0001ace4     0xc  ble_interface.o [1]
+  .rodata            const    0x0001acf0     0xc  ble_interface.o [1]
+  .rodata            const    0x0001acfc     0xc  ble_interface.o [1]
+  .rodata            const    0x0001ad08     0xc  ble_interface.o [1]
+  .rodata            const    0x0001ad14     0xc  ble_interface.o [1]
+  .rodata            const    0x0001ad20     0xc  ble_interface.o [1]
+  .rodata            const    0x0001ad2c     0xc  mfginterface.o [1]
+  .rodata            const    0x0001ad38     0xc  mfginterface.o [1]
+  .rodata            const    0x0001ad44     0xc  mfginterface.o [1]
+  .rodata            const    0x0001ad50     0xc  startup.o [1]
+  .rodata            const    0x0001ad5c     0xc  touch_sensor.o [1]
+  .text              ro code  0x0001ad68     0xc  cstartup_M.o [4]
+  .rodata            const    0x0001ad74     0x8  ble_interface.o [1]
+  .rodata            const    0x0001ad7c     0x8  ble_interface.o [1]
+  .rodata            const    0x0001ad84     0x8  mfginterface.o [1]
+  .rodata            const    0x0001ad8c     0x8  mfginterface.o [1]
+  .rodata            const    0x0001ad94     0x8  mfginterface.o [1]
+  .rodata            const    0x0001ad9c     0x8  mfginterface.o [1]
+  .rodata            const    0x0001ada4     0x8  mfginterface.o [1]
+  .rodata            const    0x0001adac     0x8  startup.o [1]
+  .rodata            const    0x0001adb4     0x8  touch_sensor.o [1]
+  .rodata            const    0x0001adbc     0x4  ble_interface.o [1]
+  .rodata            const    0x0001adc0     0x4  touch_sensor.o [1]
+  .rodata            const    0x0001adc4     0x0  zero_init3.o [4]
+  .rodata            const    0x0001adc4     0x0  copy_init3.o [4]
+  Initializer bytes  const    0x0001adc4     0x4  <for P2 s0>
+                            - 0x0001adc8  0x4cc8
+
+"P2":                                     0x13c8
+  CSTACK             rw data  0x20002000     0x0  nRF51822_vector.o [1]
+  CSTACK                      0x20002000   0xc00  <Block>
+    CSTACK           uninit   0x20002000   0xc00  <Block tail>
+  P2 s0                       0x20002c00     0x4  <Init block>
+    .data            inited   0x20002c00     0x2  ble_interface.o [1]
+    .data            inited   0x20002c02     0x1  touch_sensor.o [1]
+  .bss               zero     0x20002c04   0x268  ble_interface.o [1]
+  .bss               zero     0x20002e6c   0x1a0  ble_interface.o [1]
+  .bss               zero     0x2000300c   0x100  debuguart.o [1]
+  .bss               zero     0x2000310c    0x84  mfginterface.o [1]
+  .bss               zero     0x20003190    0x80  utils.o [1]
+  .bss               zero     0x20003210    0x50  skylock_softdevice.o [1]
+  .bss               zero     0x20003260    0x40  debuguart.o [1]
+  .bss               zero     0x200032a0    0x34  ble_interface.o [1]
+  .bss               zero     0x200032d4    0x30  ble_interface.o [1]
+  .bss               zero     0x20003304    0x20  ble_interface.o [1]
+  .bss               zero     0x20003324    0x1c  ble_conn_params.o [1]
+  .bss               zero     0x20003340     0x8  app_timer.o [1]
+  .bss               zero     0x20003348     0x8  ble_conn_params.o [1]
+  .bss               zero     0x20003350     0x8  ble_conn_params.o [1]
+  .bss               zero     0x20003358     0x8  ble_interface.o [1]
+  .bss               zero     0x20003360     0x8  touch_sensor.o [1]
+  .bss               zero     0x20003368     0x4  app_scheduler.o [1]
+  .bss               zero     0x2000336c     0x4  app_scheduler.o [1]
+  .bss               zero     0x20003370     0x4  app_timer.o [1]
+  .bss               zero     0x20003374     0x4  app_timer.o [1]
+  .bss               zero     0x20003378     0x4  app_timer.o [1]
+  .bss               zero     0x2000337c     0x4  app_timer.o [1]
+  .bss               zero     0x20003380     0x4  app_timer.o [1]
+  .bss               zero     0x20003384     0x4  app_util_platform.o [1]
+  .bss               zero     0x20003388     0x4  ble_conn_params.o [1]
+  .bss               zero     0x2000338c     0x4  i2c.o [1]
+  .bss               zero     0x20003390     0x4  i2c.o [1]
+  .bss               zero     0x20003394     0x4  i2c.o [1]
+  .bss               zero     0x20003398     0x4  i2c.o [1]
+  .bss               zero     0x2000339c     0x4  motor.o [1]
+  .bss               zero     0x200033a0     0x4  motor.o [1]
+  .bss               zero     0x200033a4     0x4  timers.o [1]
+  .bss               zero     0x200033a8     0x2  app_scheduler.o [1]
+  .bss               zero     0x200033aa     0x2  app_scheduler.o [1]
+  .bss               zero     0x200033ac     0x2  ble_conn_params.o [1]
+  .bss               zero     0x200033ae     0x2  ble_interface.o [1]
+  .bss               zero     0x200033b0     0x1  app_scheduler.o [1]
+  .bss               zero     0x200033b1     0x1  app_scheduler.o [1]
+  .bss               zero     0x200033b2     0x1  app_timer.o [1]
+  .bss               zero     0x200033b3     0x1  app_timer.o [1]
+  .bss               zero     0x200033b4     0x1  app_timer.o [1]
+  .bss               zero     0x200033b5     0x1  app_timer.o [1]
+  .bss               zero     0x200033b6     0x1  app_timer.o [1]
+  .bss               zero     0x200033b7     0x1  app_timer.o [1]
+  .bss               zero     0x200033b8     0x1  ble_conn_params.o [1]
+  .bss               zero     0x200033b9     0x1  ble_conn_params.o [1]
+  .bss               zero     0x200033ba     0x1  ble_interface.o [1]
+  .bss               zero     0x200033bb     0x1  ble_interface.o [1]
+  .bss               zero     0x200033bc     0x1  ble_interface.o [1]
+  .bss               zero     0x200033bd     0x1  ble_interface.o [1]
+  .bss               zero     0x200033be     0x1  ble_interface.o [1]
+  .bss               zero     0x200033bf     0x1  ble_interface.o [1]
+  .bss               zero     0x200033c0     0x1  debuguart.o [1]
+  .bss               zero     0x200033c1     0x1  debuguart.o [1]
+  .bss               zero     0x200033c2     0x1  debuguart.o [1]
+  .bss               zero     0x200033c3     0x1  debuguart.o [1]
+  .bss               zero     0x200033c4     0x1  debuguart.o [1]
+  .bss               zero     0x200033c5     0x1  skylock_softdevice.o [1]
+  .bss               zero     0x200033c6     0x1  touch_sensor.o [1]
+  .bss               zero     0x200033c7     0x1  touch_sensor.o [1]
+                            - 0x200033c8  0x13c8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x7c4:
+          0x20002c04  0x7c4
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4 (133% of destination):
+          0x0001adc4    0x4
+    1 destination range, total size 0x3:
+          0x20002c00    0x3
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj: [1]
+    accelerometer.o           628
+    app_error.o                36
+    app_scheduler.o           418                14
+    app_timer.o             2 868                34
+    app_util_platform.o        44                 4
+    ble_advdata.o           1 458
+    ble_conn_params.o         720      128       52
+    ble_interface.o         2 228      590    1 182
+    debuguart.o               812               325
+    i2c.o                   1 016                16
+    magnet.o                   34
+    mfginterface.o          2 080    1 384      132
+    motor.o                 1 036      208        8
+    nRF51822_vector.o         202
+    skylock_softdevice.o      184       60       81
+    startup.o                 152       80
+    timers.o                  404                 4
+    touch_sensor.o            780       65       11
+    utils.o                    34               128
+    -----------------------------------------------
+    Total:                 15 134    2 515    1 991
+
+command line: [2]
+    -----------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                      8
+    low_level_init.o            4
+    printf.o                   36
+    sprintf.o                  56
+    xprintfsmall_nomb.o     1 316
+    xprout.o                   22
+    xsprout.o                  10
+    -----------------------------------------------
+    Total:                  1 452
+
+rt6M_tl.a: [4]
+    ABImemcpy.o                92
+    ABImemset.o                84
+    I32DivModFast.o           224
+    IntDivZer.o                 2
+    cexit.o                    10
+    cmain.o                    26
+    copy_init3.o               48
+    cstartup_M.o               12
+    data_init.o                40
+    memchr.o                   24
+    memcmp.o                   40
+    strchr.o                   20
+    strlen.o                   16
+    vector_table_M.o           66
+    zero_init3.o               42
+    -----------------------------------------------
+    Total:                    746
+
+shb_l.a: [5]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                        6        2
+    Linker created                      37    3 072
+---------------------------------------------------
+    Grand Total:           17 358    2 554    5 063
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x0001a938          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0001a95c          --   Gb  - Linker created -
+?main                   0x0001aa31         Code  Gb  cmain.o [4]
+ACC_Read                0x0001990d   0xe6  Code  Gb  accelerometer.o [1]
+ACC_Write               0x00019855   0xb8  Code  Gb  accelerometer.o [1]
+APP_SCHED_BUF           0x20002e6c  0x1a0  Data  Gb  ble_interface.o [1]
+ASM_GetIPSR             0x00019265         Code  Gb  nRF51822_vector.o [1]
+Accelerometer_Setup     0x000199f3   0x68  Code  Gb  accelerometer.o [1]
+BLE_EVT_BUFFER          0x20003210   0x50  Data  Gb  skylock_softdevice.o [1]
+BLE_Setup               0x000173c5   0xbc  Code  Gb  ble_interface.o [1]
+BLE_addCharacteristic   0x00017081  0x11c  Code  Gb  ble_interface.o [1]
+CSTACK$$Base            0x20002000          --   Gb  - Linker created -
+CSTACK$$Limit           0x20002c00          --   Gb  - Linker created -
+FaultExit               0x000197b7   0x18  Code  Gb  startup.o [1]
+ForceRestart            0x000197a7   0x10  Code  Gb  startup.o [1]
+GPIOTE_Handler          0x000185b5   0x60  Code  Gb  motor.o [1]
+GetStackPointer         0x00019261         Code  Gb  nRF51822_vector.o [1]
+HardFault_Handler       0x000197d9    0xa  Code  Gb  startup.o [1]
+I2C_Abort               0x000192bb   0x86  Code  Gb  i2c.o [1]
+I2C_FullRead            0x00019635   0x30  Code  Gb  i2c.o [1]
+I2C_Read                0x000194a5  0x146  Code  Gb  i2c.o [1]
+I2C_Setup               0x0001926d   0x4e  Code  Gb  i2c.o [1]
+I2C_Write               0x00019341  0x11c  Code  Gb  i2c.o [1]
+LoadInt                 0x000190ed   0x4c  Code  Lc  xprintfsmall_nomb.o [3]
+MFG_Accel               0x00019d39   0x82  Code  Gb  mfginterface.o [1]
+MFG_I2C_Read            0x00019cc3   0x2a  Code  Gb  mfginterface.o [1]
+MFG_I2C_ReadBuffer      0x00019c9b   0x28  Code  Gb  mfginterface.o [1]
+MFG_I2C_Write           0x00019ced   0x4c  Code  Gb  mfginterface.o [1]
+MFG_Magnet              0x00019dd5   0x9c  Code  Gb  mfginterface.o [1]
+MFG_Mode                0x0001a1e9   0xe4  Code  Gb  mfginterface.o [1]
+MFG_Motor               0x00019ead  0x1dc  Code  Gb  mfginterface.o [1]
+MFG_Touch               0x0001a099  0x12e  Code  Gb  mfginterface.o [1]
+MOTOR_Enc01Events       0x2000339c    0x4  Data  Gb  motor.o [1]
+MOTOR_Enc02Events       0x200033a0    0x4  Data  Gb  motor.o [1]
+Magnet_Setup            0x00019acb   0x22  Code  Gb  magnet.o [1]
+Motor_Lock              0x00018499  0x10a  Code  Gb  motor.o [1]
+Motor_Setup             0x000182eb   0x52  Code  Gb  motor.o [1]
+Motor_Start             0x0001833d   0x58  Code  Gb  motor.o [1]
+Motor_Stop              0x00018395   0xe0  Code  Gb  motor.o [1]
+NMI_Handler             0x000197cf    0xa  Code  Gb  startup.o [1]
+NVIC_ClearPendingIRQ    0x0001613b    0xe  Code  Lc  app_timer.o [1]
+NVIC_ClearPendingIRQ    0x000177bb    0xe  Code  Lc  debuguart.o [1]
+NVIC_ClearPendingIRQ    0x00018257    0xe  Code  Lc  motor.o [1]
+NVIC_DisableIRQ         0x0001611f    0xe  Code  Lc  app_timer.o [1]
+NVIC_EnableIRQ          0x00016111    0xe  Code  Lc  app_timer.o [1]
+NVIC_EnableIRQ          0x000177ad    0xe  Code  Lc  debuguart.o [1]
+NVIC_EnableIRQ          0x00018249    0xe  Code  Lc  motor.o [1]
+NVIC_EnableIRQ          0x000180b5    0xe  Code  Lc  timers.o [1]
+NVIC_GetPriority        0x000161cf   0x50  Code  Lc  app_timer.o [1]
+NVIC_SetPendingIRQ      0x0001612d    0xe  Code  Lc  app_timer.o [1]
+NVIC_SetPriority        0x00016149   0x86  Code  Lc  app_timer.o [1]
+NVIC_SetPriority        0x000177c9   0x86  Code  Lc  debuguart.o [1]
+NVIC_SetPriority        0x00018265   0x86  Code  Lc  motor.o [1]
+NVIC_SetPriority        0x000180c3   0x86  Code  Lc  timers.o [1]
+NVIC_SystemReset        0x00016c35   0x12  Code  Lc  app_error.o [1]
+PartNumber              0x0001ad50    0xc  Data  Gb  startup.o [1]
+RTC1_Handler            0x000181cd   0x26  Code  Gb  timers.o [1]
+RTC1_IRQHandler         0x000169c1   0x2c  Code  Gb  app_timer.o [1]
+Region$$Table$$Base     0x0001a938          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0001a95c          --   Gb  - Linker created -
+SKY_check_error         0x0001869d   0x12  Code  Gb  skylock_softdevice.o [1]
+SKY_sd_event_waiting    0x200033c5    0x1  Data  Gb  skylock_softdevice.o [1]
+SKY_softdevice_assertion_handler
+                        0x000186af   0x18  Code  Gb  skylock_softdevice.o [1]
+SKY_softdevice_events_execute
+                        0x000186d9   0x60  Code  Gb  skylock_softdevice.o [1]
+SKY_softdevice_handler_init
+                        0x000186c7   0x12  Code  Gb  skylock_softdevice.o [1]
+SWI0_IRQHandler         0x000169fd    0x8  Code  Gb  app_timer.o [1]
+SWI2_IRQHandler         0x00018739    0x8  Code  Gb  skylock_softdevice.o [1]
+TIMER2_Handler          0x000181cb    0x2  Code  Gb  timers.o [1]
+TS_IRQCounter           0x200033c6    0x1  Data  Gb  touch_sensor.o [1]
+TS_SetLED               0x00017f45   0x38  Code  Gb  touch_sensor.o [1]
+TS_Setup                0x00017da9   0xf2  Code  Gb  touch_sensor.o [1]
+TS_ToggleLED            0x00017ee3   0x62  Code  Gb  touch_sensor.o [1]
+TS_ToggleTestLED        0x00017e9b   0x48  Code  Gb  touch_sensor.o [1]
+TS_TouchLED             0x00017f7d  0x106  Code  Gb  touch_sensor.o [1]
+Timer2_Count            0x000181bd    0xe  Code  Gb  timers.o [1]
+Timer2_Start            0x000181a7    0x8  Code  Gb  timers.o [1]
+Timer2_Stop             0x000181af    0xe  Code  Gb  timers.o [1]
+Timer_Setup             0x00018149   0x5e  Code  Gb  timers.o [1]
+UART0_Handler           0x00017915   0x88  Code  Gb  debuguart.o [1]
+UART0_RxWaiting         0x000179cb   0x14  Code  Gb  debuguart.o [1]
+UART0_TxFlush           0x000179f5   0x7e  Code  Gb  debuguart.o [1]
+UARTRxBuffer            0x20003260   0x40  Data  Gb  debuguart.o [1]
+UARTRxHeadIndex         0x200033c2    0x1  Data  Gb  debuguart.o [1]
+UARTRxTailIndex         0x200033c3    0x1  Data  Gb  debuguart.o [1]
+UARTTxBuffer            0x2000300c  0x100  Data  Gb  debuguart.o [1]
+UARTTxEnabled           0x200033c4    0x1  Data  Gb  debuguart.o [1]
+UARTTxHeadIndex         0x200033c0    0x1  Data  Gb  debuguart.o [1]
+UARTTxTailIndex         0x200033c1    0x1  Data  Gb  debuguart.o [1]
+UART_Setup              0x0001784f   0x60  Code  Gb  debuguart.o [1]
+UTIL_DelayUsec          0x00019831   0x22  Code  Gb  utils.o [1]
+UTIL_tmpBuffer          0x20003190   0x80  Data  Gb  utils.o [1]
+_LitobSmallNoMb         0x00019139   0xf2  Code  Lc  xprintfsmall_nomb.o [3]
+_PrintfSmallNoMb        0x00018d3d  0x3a4  Code  Gb  xprintfsmall_nomb.o [3]
+_Prout                  0x0001ac29   0x16  Code  Gb  xprout.o [3]
+_PutcharsSmallNoMb      0x00019231   0x30  Code  Lc  xprintfsmall_nomb.o [3]
+_SProut                 0x00018d07    0xa  Code  Gb  xsprout.o [3]
+__aeabi_idiv            0x000196b9         Code  Gb  I32DivModFast.o [4]
+__aeabi_idiv0           0x00019ac9         Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x000196b9         Code  Gb  I32DivModFast.o [4]
+__aeabi_memcpy          0x0001772d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x00017755         Code  Wk  ABImemcpy.o [4]
+__aeabi_memset          0x000176d9         Code  Gb  ABImemset.o [4]
+__aeabi_uidiv           0x000196bf         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x000196bf         Code  Gb  I32DivModFast.o [4]
+__cmain                 0x0001aa31         Code  Gb  cmain.o [4]
+__exit                  0x0001aa65   0x14  Code  Gb  exit.o [5]
+__iar_Memchr            0x00019819   0x18  Code  Gb  memchr.o [4]
+__iar_Memset4_word      0x000176f9         Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x000176e5         Code  Gb  ABImemset.o [4]
+__iar_Strchr            0x00019805   0x14  Code  Gb  strchr.o [4]
+__iar_copy_init3        0x0001a735   0x30  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x0001a839   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x0001ad69         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x000176af   0x2a  Code  Gb  zero_init3.o [4]
+__low_level_init        0x0001aa4b    0x4  Code  Gb  low_level_init.o [3]
+__vector                0x00016001         Code  Gb  nRF51822_vector.o [1]
+__vector_table          0x000160c0         Data  Gb  vector_table_M.o [4]
+_call_main              0x0001aa3d         Code  Gb  cmain.o [4]
+_exit                   0x0001aa59         Code  Gb  cexit.o [4]
+_main                   0x0001aa47         Code  Gb  cmain.o [4]
+adv_data_encode         0x00018b7b   0xf4  Code  Lc  ble_advdata.o [1]
+advdata_check           0x00018c6f   0x1e  Code  Lc  ble_advdata.o [1]
+advertising_init        0x00016fe1   0x62  Code  Gb  ble_interface.o [1]
+advertising_start       0x00016c97   0x40  Code  Lc  ble_interface.o [1]
+app_error_handler       0x00016c51    0x8  Code  Wk  app_error.o [1]
+app_sched_event_get     0x0001761b   0x5a  Code  Lc  app_scheduler.o [1]
+app_sched_event_put     0x0001757b   0xa0  Code  Gb  app_scheduler.o [1]
+app_sched_execute       0x00017691   0x1e  Code  Gb  app_scheduler.o [1]
+app_sched_init          0x00017537   0x44  Code  Gb  app_scheduler.o [1]
+app_timer_create        0x00016ad3   0x6a  Code  Gb  app_timer.o [1]
+app_timer_evt_get       0x00016c59   0x2a  Code  Lc  ble_interface.o [1]
+app_timer_evt_schedule  0x00016c83   0x14  Code  Lc  ble_interface.o [1]
+app_timer_init          0x00016a05   0xce  Code  Gb  app_timer.o [1]
+app_timer_start         0x00016b5d   0x5e  Code  Gb  app_timer.o [1]
+app_timer_stop          0x00016bbb   0x3a  Code  Gb  app_timer.o [1]
+appearance_encode       0x000187e9   0x4e  Code  Lc  ble_advdata.o [1]
+asciitohex              0x00019b1f   0x12  Code  Gb  mfginterface.o [1]
+ble_advdata_set         0x00018c9d   0x6a  Code  Gb  ble_advdata.o [1]
+ble_conn_params_init    0x00017ba1   0x4e  Code  Gb  ble_conn_params.o [1]
+ble_conn_params_on_ble_evt
+                        0x00017d59   0x30  Code  Gb  ble_conn_params.o [1]
+ble_evt_dispatch        0x00016d89  0x1c2  Code  Gb  ble_interface.o [1]
+ble_srv_is_notification_enabled
+                        0x00017ae5   0x10  Code  Lc  ble_conn_params.o [1]
+compare_reg_update      0x00016829   0x7c  Code  Lc  app_timer.o [1]
+configAC                0x0001adb4    0x8  Data  Gb  touch_sensor.o [1]
+configELE0              0x0001acbc   0x10  Data  Gb  touch_sensor.o [1]
+configMHD               0x0001ad5c    0xc  Data  Gb  touch_sensor.o [1]
+conn_int_check          0x000189b9   0x56  Code  Lc  ble_advdata.o [1]
+conn_int_encode         0x00018a19   0x5e  Code  Lc  ble_advdata.o [1]
+conn_params_error_handler
+                        0x00017325   0x1a  Code  Lc  ble_interface.o [1]
+conn_params_init        0x00017345   0x48  Code  Lc  ble_interface.o [1]
+conn_params_negotiation
+                        0x00017bef   0xa6  Code  Lc  ble_conn_params.o [1]
+critical_region_enter   0x00018d11    0xe  Code  Gb  app_util_platform.o [1]
+critical_region_exit    0x00018d1f   0x18  Code  Gb  app_util_platform.o [1]
+current_int_priority_get
+                        0x0001623f   0x1e  Code  Lc  app_timer.o [1]
+debugErrorCount         0x20003394    0x4  Data  Gb  i2c.o [1]
+debugMaxI2CReadWait     0x20003398    0x4  Data  Gb  i2c.o [1]
+debugMaxI2CStopTime     0x20003390    0x4  Data  Gb  i2c.o [1]
+debugMaxI2CWaitTime     0x2000338c    0x4  Data  Gb  i2c.o [1]
+dumpRegData             0x00019b31   0x86  Code  Gb  mfginterface.o [1]
+elapsed_ticks_acquire   0x00016581   0x58  Code  Lc  app_timer.o [1]
+exit                    0x0001aa4f    0x8  Code  Gb  exit.o [3]
+expired_timers_handler  0x00016695   0x60  Code  Lc  app_timer.o [1]
+gap_params_init         0x00016f71   0x66  Code  Gb  ble_interface.o [1]
+getHexByte              0x00019bb7   0xe4  Code  Gb  mfginterface.o [1]
+getchar                 0x0001799d   0x2e  Code  Gb  debuguart.o [1]
+intvec_NotSupported     0x000197e3    0xa  Code  Gb  startup.o [1]
+is_conn_params_ok       0x00017af5   0x1e  Code  Lc  ble_conn_params.o [1]
+is_word_aligned         0x0001750d   0x10  Code  Lc  app_scheduler.o [1]
+is_word_aligned         0x00016101   0x10  Code  Lc  app_timer.o [1]
+list_deletions_handler  0x000165ed   0xa8  Code  Lc  app_timer.o [1]
+list_insertions_handler
+                        0x00016701  0x11a  Code  Lc  app_timer.o [1]
+localLockState          0x200033bd    0x1  Data  Gb  ble_interface.o [1]
+m_change_param          0x200033b9    0x1  Data  Lc  ble_conn_params.o [1]
+m_conn_handle           0x200033ac    0x2  Data  Lc  ble_conn_params.o [1]
+m_conn_handle           0x20002c00    0x2  Data  Lc  ble_interface.o [1]
+m_conn_params_config    0x20003324   0x1c  Data  Lc  ble_conn_params.o [1]
+m_conn_params_timer_id  0x20003388    0x4  Data  Lc  ble_conn_params.o [1]
+m_current_conn_params   0x20003350    0x8  Data  Lc  ble_conn_params.o [1]
+m_evt_schedule_func     0x20003380    0x4  Data  Lc  app_timer.o [1]
+m_in_critical_region    0x20003384    0x4  Data  Lc  app_util_platform.o [1]
+m_node_array_size       0x200033b2    0x1  Data  Lc  app_timer.o [1]
+m_preferred_conn_params
+                        0x20003348    0x8  Data  Lc  ble_conn_params.o [1]
+m_queue_end_index       0x200033b1    0x1  Data  Lc  app_scheduler.o [1]
+m_queue_event_data      0x2000336c    0x4  Data  Lc  app_scheduler.o [1]
+m_queue_event_headers   0x20003368    0x4  Data  Lc  app_scheduler.o [1]
+m_queue_event_size      0x200033a8    0x2  Data  Lc  app_scheduler.o [1]
+m_queue_size            0x200033aa    0x2  Data  Lc  app_scheduler.o [1]
+m_queue_start_index     0x200033b0    0x1  Data  Lc  app_scheduler.o [1]
+m_rtc1_reset            0x200033b7    0x1  Data  Lc  app_timer.o [1]
+m_rtc1_running          0x200033b6    0x1  Data  Lc  app_timer.o [1]
+m_sec_params            0x20003358    0x8  Data  Lc  ble_interface.o [1]
+m_ticks_elapsed         0x20003340    0x8  Data  Lc  app_timer.o [1]
+m_ticks_elapsed_q_read_ind
+                        0x200033b4    0x1  Data  Lc  app_timer.o [1]
+m_ticks_elapsed_q_write_ind
+                        0x200033b5    0x1  Data  Lc  app_timer.o [1]
+m_ticks_latest          0x2000337c    0x4  Data  Lc  app_timer.o [1]
+m_timer_id_head         0x20003378    0x4  Data  Lc  app_timer.o [1]
+m_update_count          0x200033b8    0x1  Data  Lc  ble_conn_params.o [1]
+m_user_array_size       0x200033b3    0x1  Data  Lc  app_timer.o [1]
+main                    0x0001976d   0x3a  Code  Gb  startup.o [1]
+makeUpperCase           0x00019aed   0x16  Code  Gb  mfginterface.o [1]
+manuf_specific_data_encode
+                        0x00018a77   0x72  Code  Lc  ble_advdata.o [1]
+memcmp                  0x00019665   0x28  Code  Gb  memcmp.o [4]
+mfgBuffer               0x2000310c   0x84  Data  Gb  mfginterface.o [1]
+mp_nodes                0x20003370    0x4  Data  Lc  app_timer.o [1]
+mp_users                0x20003374    0x4  Data  Lc  app_timer.o [1]
+name_encode             0x00018763   0x86  Code  Lc  ble_advdata.o [1]
+next_index              0x0001751d   0x1a  Code  Lc  app_scheduler.o [1]
+nrf_delay_us            0x00016221   0x1e  Code  Lc  app_timer.o [1]
+on_ble_evt              0x00016cd7   0xb2  Code  Lc  ble_interface.o [1]
+on_conn_params_evt      0x000172f9   0x2c  Code  Lc  ble_interface.o [1]
+on_conn_params_update   0x00017d2d   0x14  Code  Lc  ble_conn_params.o [1]
+on_connect              0x00017c95   0x28  Code  Lc  ble_conn_params.o [1]
+on_disconnect           0x00017cbd   0x2a  Code  Lc  ble_conn_params.o [1]
+on_write                0x00017ce7   0x40  Code  Lc  ble_conn_params.o [1]
+printf                  0x00017789   0x24  Code  Gb  printf.o [3]
+putchar                 0x000178af   0x66  Code  Gb  debuguart.o [1]
+rtc1_compare0_set       0x000162eb    0x6  Code  Lc  app_timer.o [1]
+rtc1_counter_get        0x000162dd    0x6  Code  Lc  app_timer.o [1]
+rtc1_init               0x0001625d   0x10  Code  Lc  app_timer.o [1]
+rtc1_start              0x0001626d   0x32  Code  Lc  app_timer.o [1]
+rtc1_stop               0x0001629f   0x3e  Code  Lc  app_timer.o [1]
+runtimeSeconds          0x200033a4    0x4  Data  Gb  timers.o [1]
+serviceLED              0x200032d4   0x30  Data  Gb  ble_interface.o [1]
+serviceLEDState         0x200033ba    0x1  Data  Gb  ble_interface.o [1]
+serviceLEDWrite         0x200033bb    0x1  Data  Gb  ble_interface.o [1]
+serviceLock             0x20003304   0x20  Data  Gb  ble_interface.o [1]
+serviceLockInvert       0x200033bf    0x1  Data  Gb  ble_interface.o [1]
+serviceLockShift        0x200033be    0x1  Data  Gb  ble_interface.o [1]
+serviceLockState        0x200033bc    0x1  Data  Gb  ble_interface.o [1]
+service_data_encode     0x00018ae9   0x92  Code  Lc  ble_advdata.o [1]
+services_init           0x0001719d  0x154  Code  Gb  ble_interface.o [1]
+sprintf                 0x00018655   0x38  Code  Gb  sprintf.o [3]
+srdata_check            0x00018c8d   0x10  Code  Lc  ble_advdata.o [1]
+strlen                  0x0001868d   0x10  Code  Gb  strlen.o [4]
+sys_evt_dispatch        0x00016f4b    0xe  Code  Gb  ble_interface.o [1]
+ticks_diff_get          0x000162e3    0x8  Code  Lc  app_timer.o [1]
+timeout_handler_exec    0x000164a9   0x2c  Code  Lc  app_timer.o [1]
+timer_list_handler      0x000168ad   0x52  Code  Lc  app_timer.o [1]
+timer_list_handler_sched
+                        0x0001649f    0xa  Code  Lc  app_timer.o [1]
+timer_list_insert       0x000162f1   0xd8  Code  Lc  app_timer.o [1]
+timer_list_remove       0x000163d9   0xb6  Code  Lc  app_timer.o [1]
+timer_start_op_schedule
+                        0x00016933   0x52  Code  Lc  app_timer.o [1]
+timer_stop_op_schedule  0x00016985   0x3c  Code  Lc  app_timer.o [1]
+timer_timeouts_check    0x000164dd   0x80  Code  Lc  app_timer.o [1]
+timer_timeouts_check_sched
+                        0x00016495    0xa  Code  Lc  app_timer.o [1]
+tx_power_level_encode   0x0001888f   0x3a  Code  Lc  ble_advdata.o [1]
+txpower                 0x200033ae    0x2  Data  Gb  ble_interface.o [1]
+uint16_decode           0x00017ad9    0xc  Code  Lc  ble_conn_params.o [1]
+uint16_encode           0x00018755    0xe  Code  Lc  ble_advdata.o [1]
+uint8_array_encode      0x00018837   0x58  Code  Lc  ble_advdata.o [1]
+update_timeout_handler  0x00017b13   0x8e  Code  Lc  ble_conn_params.o [1]
+userNVPIN               0x0001adc0    0x4  Data  Gb  touch_sensor.o [1]
+userNVPINCount          0x20002c02    0x1  Data  Gb  touch_sensor.o [1]
+userPIN                 0x20003360    0x8  Data  Gb  touch_sensor.o [1]
+userPINCount            0x200033c7    0x1  Data  Gb  touch_sensor.o [1]
+user_id_get             0x00016b41   0x1c  Code  Lc  app_timer.o [1]
+user_op_alloc           0x0001690d   0x26  Code  Lc  app_timer.o [1]
+user_op_enque           0x00016909    0x4  Code  Lc  app_timer.o [1]
+uuid_list_encode        0x00018985   0x34  Code  Lc  ble_advdata.o [1]
+uuid_list_sized_encode  0x000188c9   0xbc  Code  Lc  ble_advdata.o [1]
+validHexChar            0x00019b03   0x1c  Code  Gb  mfginterface.o [1]
+
+
+[1] = C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  17 358 bytes of readonly  code memory
+   2 554 bytes of readonly  data memory
+   5 063 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

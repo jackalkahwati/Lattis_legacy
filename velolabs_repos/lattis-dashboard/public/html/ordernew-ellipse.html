@@ -1,0 +1,56 @@
+<section ng-controller="orderNewEllipseController">
+    <div class="panel">
+        <div class="panel-body box">
+            <div class="row p-b-50 p-t-20">
+                <div class="col-sm-12 new-fleet-box">
+                    <div class="row p-t-20">
+                        <div class="col-sm-8 ft-13 col-sm-offset-1">
+                            <div class="bg-alert p-30 l-h-md">
+                                <p class="m-b-20">
+                                    The system will automatically create Ride IDs for this new
+
+                                    batch of rides. These new rides can be found in the tab
+
+                                    ‘Inactive Rides’ in your Ride Fleet.
+                                </p>
+                                <p class="m-b-20">
+                                    You will receive a shipment from Velo Labs containing your
+
+                                    new Ellipses and a set of stickers of each Bike ID. When you
+
+                                    receive the order, place one sticker on each bike and attach an
+
+                                    Ellipse. Then follow the instructions to activate each Ellipse.
+                                </p>
+                                <p class="m-b-20">
+                                    As soon as an Ellipse and bike have been paired and
+
+                                    activated, they are ready to be deployed. Once you’ve
+
+                                    physically moved them to a hub, you can deploy them to the
+
+                                    active fleet.
+                                </p>
+                            </div>
+
+                            <div class="nomarg bg-white noborder pull-left fullwid p-t-20">
+                                <span class="ft-13 text-muted">How many new bikes are you adding to the fleet?</span>
+                                <div class="pull-left fullwid  p-t-20 m-b-30">
+                                    <input class="form-control new-txt-box wid-75" ng-model="bikeCount" value="100" type="text">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="panel-footer bg-white nopadd bor-tb-hash">
+                                <div class="text-leftt fullwid m-tb-10">
+                                    <a ui-sref="myfleetdashboard.bikefleet" class="btn custombtn-default pbtn-tb11-lr20 wid-130 text-muted"> CANCEL</a>
+                                    <a class="btn pull-right custom-btn pbtn-tb11-lr20 wid-100" ng-click="placeOrder()">NEXT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

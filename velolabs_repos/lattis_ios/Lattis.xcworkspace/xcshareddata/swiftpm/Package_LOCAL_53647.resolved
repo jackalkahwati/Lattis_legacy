@@ -1,0 +1,169 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Atributika",
+        "repositoryURL": "git@github.com:psharanda/Atributika.git",
+        "state": {
+          "branch": null,
+          "revision": "d018897afbd55d9065ef859650585bac890ada7e",
+          "version": "4.10.1"
+        }
+      },
+      {
+        "package": "AXALock",
+        "repositoryURL": "git@github.com:velolabs/axalock_ios.git",
+        "state": {
+          "branch": "develop",
+          "revision": "d22c541b734743a4d0196af175566ef6ed8e80ca",
+          "version": null
+        }
+      },
+      {
+        "package": "Cartography",
+        "repositoryURL": "git@github.com:robb/Cartography.git",
+        "state": {
+          "branch": null,
+          "revision": "b75197ea134f42b5feafb04b526b37eb1a41034b",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "EllipseLock",
+        "repositoryURL": "git@github.com:velolabs/ellipse_lock_apple.git",
+        "state": {
+          "branch": "master",
+          "revision": "7fb7c22fb42b07274d12d8956f5a75a87f15fc86",
+          "version": null
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "e538f8bb0434c70d27b25ca72bec96735183c037",
+          "version": null
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "git@github.com:onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "2a10bf41da75599a9f8e872dbd44fe0155a2e00c",
+          "version": "5.15.8"
+        }
+      },
+      {
+        "package": "Localize_Swift",
+        "repositoryURL": "git@github.com:marmelroy/Localize-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "0aa221fed0512772eaad04171d966b8d77b15212",
+          "version": "3.2.0"
+        }
+      },
+      {
+        "package": "MapboxGeocoder",
+        "repositoryURL": "https://github.com/mapbox/MapboxGeocoder.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "91fb908bb57c0fcddc0062b5d64ea2002e0ea789",
+          "version": "0.14.0"
+        }
+      },
+      {
+        "package": "MapboxStatic",
+        "repositoryURL": "https://github.com/mapbox/MapboxStatic.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "886e17c242fe9f573ab6c27871a26c0795400017",
+          "version": "0.12.0"
+        }
+      },
+      {
+        "package": "NokeMobileLibrary",
+        "repositoryURL": "git@github.com:noke-inc/noke-mobile-library-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "e4dc8454feeaba04f0f4c0f9e2c6c89c98392ca7",
+          "version": "0.7.8"
+        }
+      },
+      {
+        "package": "Polyline",
+        "repositoryURL": "https://github.com/raphaelmor/Polyline.git",
+        "state": {
+          "branch": null,
+          "revision": "36f7b1222aaf8fa741d0d179c12e186998d97f42",
+          "version": "5.0.2"
+        }
+      },
+      {
+        "package": "QRCodeView",
+        "repositoryURL": "git@github.com:kabanishe23/QRCodeView.git",
+        "state": {
+          "branch": "master",
+          "revision": "5256a480da216cbdeb906cc26b897cc0ef1bd0ef",
+          "version": null
+        }
+      },
+      {
+        "package": "Reachability",
+        "repositoryURL": "https://github.com/ashleymills/Reachability.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "SideMenu",
+        "repositoryURL": "git@github.com:kukushi/SideMenu.git",
+        "state": {
+          "branch": null,
+          "revision": "33932e6a42e259d5cf3dd98089090e447fdf780a",
+          "version": "2.0.7"
+        }
+      },
+      {
+        "package": "Stripe",
+        "repositoryURL": "https://github.com/stripe/stripe-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "d52a5d00f941f2f26c52ea7c1848bdc6ceace64f",
+          "version": "21.5.1"
+        }
+      },
+      {
+        "package": "SwiftHEXColors",
+        "repositoryURL": "git@github.com:thii/SwiftHEXColors.git",
+        "state": {
+          "branch": null,
+          "revision": "1f886cb20fedda14a5ac75efd09bc99c95b43a18",
+          "version": "1.4.1"
+        }
+      },
+      {
+        "package": "UICircularProgressRing",
+        "repositoryURL": "git@github.com:luispadron/UICircularProgressRing.git",
+        "state": {
+          "branch": null,
+          "revision": "4a1fd4a77bcc27f8b3714aae3ea35835251dcef3",
+          "version": "6.5.0"
+        }
+      },
+      {
+        "package": "Wrappers",
+        "repositoryURL": "git@github.com:kabanishe23/Wrappers.git",
+        "state": {
+          "branch": "master",
+          "revision": "076f5a4f7db39f08cf3f334ad6d696cc015ecacd",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

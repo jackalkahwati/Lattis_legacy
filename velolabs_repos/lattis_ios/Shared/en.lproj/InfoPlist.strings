@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSPhotoLibraryUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSLocationWhenInUseUsageDescription" = "We will use your position to know where you are starting a ride and during the ride to track the vehicle if it does not have any onboard tracking ability";
+"NSLocationAlwaysUsageDescription" = "We will use your position to know where you are starting a ride and during the ride to track the vehicle if it does not have any onboard tracking ability";
+"NSBluetoothPeripheralUsageDescription" = "The application requires use of Bluetooth to connect to the lock. Make sure your Bluetooth is turned on.";
+"NSBluetoothAlwaysUsageDescription" = "The application requires use of Bluetooth to connect to the lock. Make sure your Bluetooth is turned on.";

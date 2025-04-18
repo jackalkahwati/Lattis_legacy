@@ -1,0 +1,315 @@
+<div class="row" ng-show="loadingPaymentInfo">
+  <div ng-init="showLoader=true" ng-show="showLoader">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>
+  </div>
+</div>
+
+<form name="myForm" novalidate class="pull-left fullwid m-t-15" ng-show="!loadingPaymentInfo">
+  <div class="col-sm-12 m-t-20">
+    <p class="ft-16">1. Base Fare</p>
+    <ul class="nopadd fullwid p-lr-20" style="padding-left: 15px !important">
+      <li class="wid-75 inline-block ft-b">Price</li>
+      <li class="inline-block">
+        <div class="">
+          <span>{{currencyMap[fleetCurrency]}} </span>
+          <input
+            class="wid-100"
+            step=".01"
+            style="border: 1px solid #e5e8ed; padding: 4px 10px"
+            ng-model="pricingdata.price_for_membership"
+            min="0"
+            ng-required="true"
+            type="text"
+            ng-pattern="/^(?:\d*\.)?\d+$/"
+            name="price_for_membership"
+            ng-class="{err:!myForm.price_for_membership.$valid && !myForm.price_for_membership.$pristine}"
+            ng-blur="validateFields(myForm.price_for_membership)"
+          />
+          <span class="ft-b m-l-10"
+            >Per
+            <input
+              class="m-lr-5 wid-75"
+              style="border: 1px solid #e5e8ed; padding: 4px 10px"
+              min="0"
+              ng-model="pricingdata.price_type_value"
+              ng-required="true"
+              type="text"
+              ng-pattern="/^(?:\d*\.)?\d+$/"
+              name="price_type_value"
+              ng-class="{err:!myForm.price_type_value.$valid && !myForm.price_type_value.$pristine}"
+              ng-blur="validateFields(myForm.price_type_value)"
+          /></span>
+          <div
+            class="dropdown styleSelect nomarg t-10 inline-block"
+            style="border: 1px solid #e5e8ed !important; width: 153px"
+          >
+            <select
+              ng-model="pricingdata.price_type"
+              required
+              style="width: 153px"
+            >
+              <option
+                ng-repeat="session in dropdownlist"
+                value="{{session.name}}"
+                style="min-width: 153px"
+              >
+                {{session.id}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-12 m-t-50">
+    <p class="ft-16">2. Surcharge fee</p>
+    <div class="p-lr-20" style="padding-left: 15px !important">
+      <p class="m-tb-10 ft-12 text-gray">
+        You can select to have an extra pay per use fee that will start after a
+        defined amount of time.
+      </p>
+      <div class="p-t-10">
+        <input
+          type="radio"
+          id="radio1"
+          ng-init="pricingdata.usage_surcharge = 'No'"
+          name="usage"
+          value="No"
+          ng-model="pricingdata.usage_surcharge"
+        />
+        <label for="radio1">No surcharges</label>
+      </div>
+      <div class="">
+        <ul class="nopadd">
+          <li class="inline-block p-tb-20">
+            <input
+              type="radio"
+              id="radio2"
+              name="usage"
+              value="Yes"
+              ng-model="pricingdata.usage_surcharge"
+            />
+            <label for="radio2">Excess usage fees</label>
+          </li>
+          <li class="inline-block" ng-if="pricingdata.usage_surcharge == 'Yes'">
+            <span>{{currencyMap[fleetCurrency]}} </span>
+            <input
+              class="wid-100"
+              style="border: 1px solid #e5e8ed; padding: 4px 10px"
+              min="0.01"
+              ng-model="pricingdata.excess_usage_fees"
+              type="text"
+              ng-required="true"
+              ng-pattern="/^(?:\d*\.)?\d+$/"
+              name="excess_usage_fees"
+              ng-class="{err:!myForm.excess_usage_fees.$valid && !myForm.excess_usage_fees.$pristine}"
+              ng-blur="validateFields(myForm.excess_usage_fees)"
+            />
+
+            <span class="ft-b m-l-10"
+              >Per
+              <input
+                class="m-lr-5 wid-75"
+                style="border: 1px solid #e5e8ed; padding: 4px 10px"
+                min="0"
+                ng-model="pricingdata.excess_usage_type_value"
+                ng-model-options="{ updateOn: 'blur' }"
+                type="text"
+                ng-pattern="/^(?:\d*\.)?\d+$/"
+                name="excess_usage_type_value"
+                ng-class="{err:!myForm.excess_usage_type_value.$valid && !myForm.excess_usage_type_value.$pristine}"
+                ng-blur="validateFields(myForm.excess_usage_type_value)"
+                data-ng-required="true"
+            /></span>
+            <div
+              class="dropdown styleSelect nomarg t-10 inline-block"
+              style="border: 1px solid #e5e8ed !important; width: 153px"
+            >
+              <select
+                ng-model="pricingdata.excess_usage_type"
+                required
+                style="width: 153px"
+              >
+                <option
+                  ng-repeat="session in dropdownlist"
+                  value="{{session.name}}"
+                  style="min-width: 153px"
+                >
+                  {{session.id}}
+                </option>
+              </select>
+            </div>
+            <span class="ft-b m-l-10"
+              >After
+              <input
+                class="m-lr-5 wid-75"
+                style="border: 1px solid #e5e8ed; padding: 4px 10px"
+                ng-model="pricingdata.excess_usage_type_after_value"
+                ng-model-options="{ updateOn: 'blur' }"
+                type="text"
+                ng-pattern="/^(?:\d*\.)?\d+$/"
+                name="excess_usage_type_after_value"
+                ng-class="{err:!myForm.excess_usage_type_after_value.$valid && !myForm.excess_usage_type_after_value.$pristine}"
+                ng-blur="validateFields(myForm.excess_usage_type_after_value)"
+                data-ng-required="true"
+              />
+            </span>
+            <div
+              class="dropdown styleSelect nomarg t-10 inline-block"
+              style="border: 1px solid #e5e8ed !important; width: 153px"
+            >
+              <select
+                ng-model="pricingdata.excess_usage_type_after_type"
+                required
+                style="width: 153px"
+              >
+                <option
+                  ng-repeat="session in dropdownlist"
+                  value="{{session.name}}"
+                  style="min-width: 153px"
+                >
+                  {{session.id}}
+                </option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 m-t-30">
+    <p class="ft-16">3. Penalty fees</p>
+    <div>
+      <div class="col-sm-7 m-tb-10">
+        <h5 class="ft-b">Ride returned outside parking spot / zone</h5>
+      </div>
+      <div class="col-sm-5 m-tb-10">
+        <span>{{currencyMap[fleetCurrency]}} </span>
+        <input
+          class="wid-100"
+          step=".01"
+          style="border: 1px solid #e5e8ed; padding: 4px 10px"
+          ng-model="pricingdata.price_for_penalty_outside_parking"
+          ng-required="true"
+          ng-model-options="{ updateOn: 'blur' }"
+          type="text"
+          ng-pattern="/^(?:\d*\.)?\d+$/"
+          name="price_for_penalty_outside_parking"
+          ng-class="{err:!myForm.price_for_penalty_outside_parking.$valid && !myForm.price_for_penalty_outside_parking.$pristine}"
+          ng-blur="validateFields(myForm.price_for_penalty_outside_parking)"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="col-sm-7 m-tb-10">
+        <h5 class="ft-b">
+          Ride returned late while it has a pending reservation
+        </h5>
+      </div>
+      <div class="col-sm-5 m-tb-10">
+        <span>{{currencyMap[fleetCurrency]}} </span>
+        <input
+          class="wid-100"
+          step=".01"
+          style="border: 1px solid #e5e8ed; padding: 4px 10px"
+          ng-model="pricingdata.price_for_reservation_late_return"
+          ng-model-options="{ updateOn: 'blur' }"
+          type="number"
+          ng-pattern="/^(?:\d*\.)?\d+$/"
+          name="price_for_reservation_late_return"
+          ng-class="{err:!myForm.price_for_reservation_late_return.$valid && !myForm.price_for_reservation_late_return.$pristine}"
+          ng-blur="validateFields(myForm.price_for_reservation_late_return)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 m-t-30">
+    <p class="ft-16">4. Unlock Fee</p>
+    <div>
+      <div class="col-sm-7 m-tb-10">
+        <h5 class="ft-b">Fee to start using the ride</h5>
+      </div>
+      <div class="col-sm-5 m-tb-10">
+        <span>{{currencyMap[fleetCurrency]}} </span>
+        <input
+          class="wid-100"
+          step=".01"
+          style="border: 1px solid #e5e8ed; padding: 4px 10px"
+          ng-model="pricingdata.price_for_bike_unlock"
+          ng-model-options="{ updateOn: 'blur' }"
+          type="text"
+          ng-pattern="/^(?:\d*\.)?\d+$/"
+          name="price_for_bike_unlock"
+          ng-class="{err:!myForm.price_for_bike_unlock.$valid && !myForm.price_for_bike_unlock.$pristine}"
+          ng-blur="validateFields(myForm.price_for_bike_unlock)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 m-t-50">
+    <p class="ft-16">5. Pre-authorization</p>
+    <div class="p-lr-20" style="padding-left: 15px !important">
+      <p class="m-tb-10 ft-12 text-gray">
+        You can choose to pre-authorize an amount on the user's credit card before they take a ride.
+      </p>
+      <div class="p-t-10">
+        <input
+          type="radio"
+          id="disable_preauth"
+          ng-init="pricingdata.enable_preauth = false"
+          name="disable_preauth"
+          value="false"
+          ng-model="pricingdata.enable_preauth"
+          ng-checked="pricingdata.enable_preauth === 'false'"
+        />
+        <label for="disable_preauth">Disable Pre-authorization</label>
+      </div>
+      <div class="">
+        <ul class="nopadd">
+          <li class="inline-block p-tb-20">
+            <input
+              type="radio"
+              id="enable_preauth"
+              name="enable_preauth"
+              value="true"
+              ng-model="pricingdata.enable_preauth"
+              ng-checked="pricingdata.enable_preauth === 'true'"
+            />
+            <label for="enable_preauth">Enable Pre-authorization</label>
+          </li>
+          <li class="inline-block" ng-if="pricingdata.enable_preauth == 'true'">
+            <span>{{currencyMap[fleetCurrency]}} </span>
+            <input
+              style="border: 1px solid #e5e8ed; padding: 4px 10px"
+              min="3"
+              ng-model="pricingdata.preauth_amount"
+              ng-required="true"
+              type="number"
+              name="preauth_amount"
+              placeholder="Pre-auth Amount"
+              ng-class="{err:!myForm.preauth_amount.$valid && !myForm.preauth_amount.$pristine}"
+              ng-blur="validateFields(myForm.preauth_amount)"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-right fullwid m-t-20 m-b-50 p-tb-10">
+    <button class="btn custom-btn p-tb-10 wid-100 ft-12 bg-HeaderToolbar">
+      CANCEL
+    </button>
+    <button
+      class="btn custom-btn p-tb-10 p-lr-15 wid-100 ft-12"
+      ng-disabled="myForm.$pristine || myForm.$invalid"
+      ng-click="savePricing()"
+    >
+      SAVE
+    </button>
+  </div>
+</form>

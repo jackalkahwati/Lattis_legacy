@@ -1,0 +1,342 @@
+<style type="text/css">
+  	.text-aligned-left .slide-text {
+      	left: 60%;
+      	margin: 0 auto;
+      	padding-left: 0;
+      	padding-right: 0;
+      	right: 0;
+      	width: 50%;
+   	 	max-width: 100%;
+    	position: absolute;
+    	top: 45%;
+    	transform: translate(-50%, -50%);
+  	}
+  	.half50 {
+    	display: inline-block;
+    	margin: 0;
+    	max-width: 70%;
+    	vertical-align: top;
+    	width: auto;
+  	}
+  	.slide-text h2, .slide-text h3 {
+    	font-size: 40px;
+    	font-family: proxima_nova_rgregular;
+    	margin-bottom: 45px;
+    	margin-top: 0;
+  	}
+  	.slide-text p {
+      	font-size: 18px;
+      	font-weight: bold;
+      	line-height: 20px;
+  	}
+  	.slide-text p.price-par {
+        font-size: 30px;
+    	margin-bottom: 45px;
+    	margin-top: 60px;
+  	}
+  	.button.preorder.clicked-preorder.slider-prebutton {
+    	font-size: 15px;
+    	font-weight: normal;
+    	height: 42px;
+    	line-height: 42px;
+    	width: 220px;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0;
+      padding: 0 40px;
+      width: auto !important;
+      margin-left: 0;
+	}
+
+  	.slide-text .text-note {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 10px;
+    }
+  	.slide-text p.first-par {
+      	margin-bottom: 25px;
+  	}
+  	.slide-text p.second-par {
+    	margin-bottom: 25px;
+  	}
+  /***********************************************************************/
+
+  .column-2.imgpart {
+    text-align: center;
+  }
+  .clear {
+    clear: both;
+  }
+
+  	@media (min-width: 1345px) and (max-width: 1370px) {
+    	.text-aligned-left .slide-text {
+            left: 60%;
+        }
+        .half50 {
+            max-width: 77%;
+        }
+  	}
+  	@media (min-width: 1150px) and (max-width: 1344px) {
+    	.text-aligned-left .slide-text {
+            left: 53%;
+          	top: 48%;
+        }
+        .half50 {
+            max-width: 88%;
+        }
+    }
+
+  	@media (min-width: 768px) and (max-width: 1149px) {
+    	.text-aligned-left .slide-text {
+            left: 55%;
+          	width: 70%;
+          	top: 55%;
+        }
+        .half50 {
+			max-width: 100%;
+        }
+        .slide-text h2, .slide-text h3 {
+            font-size: 35px;
+          	margin-bottom: 20px;
+        }
+        .slide-text p {
+            font-size: 15px;
+            line-height: 18px;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 10px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 10px;
+        }
+        .slide-text p.price-par {
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            font-weight: normal;
+            height: 42px;
+            line-height: 42px;
+            width: 220px;
+        }
+  	}
+  
+  	@media (max-width: 767px) and (min-width: 521px) {
+      	.home-slideshow-wrapper .slide-text {
+            left: 0 !important;
+            margin: 0 auto !important;
+            padding: 0 10px !important;
+            right: 0 !important;
+            text-align: center !important;
+            top: 20% !important;
+            transform: translate(0px, 0px) !important;
+            width: 100% !important;
+        }
+        .half50 {
+            max-width: 96%;
+        }
+        .slide-text h2, .slide-text h3, .contentpart h2, .contentpart h3 {
+          
+        }
+        .slide-text p, .contentpart p {
+           
+        }
+        .slide-text p.price-par, .contentpart p.price-par {
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+        .button.preorder.clicked-preorder.slider-prebutton {
+            height: 40px;
+            line-height: 40px;
+        }
+        .button.videobutton {
+            height: 40px;
+            line-height: 40px;
+        }
+        .slide-text .text-note, .contentpart .text-note {
+            font-size: 10px;
+            line-height: 10px;
+            margin-top: 5px;
+        }
+        .slide-text p.first-par, .contentpart p.first-par {
+            margin-bottom: 10px;
+        }
+        .slide-text p.second-par, .contentpart p.second-par {
+            margin-bottom: 10px;
+        }
+  	}
+  	@media (max-width: 520px) and (min-width: 320px) {
+      	.home-slideshow-wrapper .slide-text {
+            left: 0 !important;
+            margin: 0 auto !important;
+            padding: 0 10px !important;
+            right: 0 !important;
+            text-align: center !important;
+            top: 5% !important;
+            transform: translate(0px, 0px) !important;
+            width: 100% !important;
+        }
+    	.half50 {
+            max-width: 96%;
+        }
+        .slide-text h2, .slide-text h3, .contentpart h2, .contentpart h3 {
+           
+        }
+        .slide-text p, .contentpart p {
+            font-size: 10px;
+            font-weight: normal;
+            line-height: 9px;
+        }
+        .slide-text p.price-par, .contentpart p.price-par  {
+            font-size: 15px;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        .button.videobutton {
+            height: 32px;
+            line-height: 32px;
+          	margin: 5px 0;
+        }
+        .slide-text .text-note, .contentpart .text-note {
+            font-size: 10px;
+            line-height: 10px;
+            margin-top: 5px;
+        }
+        .slide-text p.first-par, .contentpart p.first-par {
+            margin-bottom: 5px;
+        }
+        .slide-text p.second-par, .contentpart p.second-par {
+            margin-bottom: 5px;
+        }
+      .slider-prebutton, .hidespce {
+        display: none;
+      }
+      .button.videobutton {
+        padding: 0 10px;
+        width: inherit !important;
+      }
+  	}
+</style>
+{% capture themeSettingsLink %}
+	<a href="{{ shop.url }}/admin/themes">{{ 'onboarding.theme_settings_link' | t | downcase }}</a>
+{% endcapture %}
+{% comment %}
+<div class="home-slideshow-wrapper {{ settings.slideshow-layout }} {{ settings.slideshow-transition }}">
+  <div class="home-slideshow-loader"></div>
+
+  {% assign slideCount = 0 %}
+  {% if settings.show-slide-1 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-2 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-3 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-4 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-5 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+
+  {% if settings.show-slideshow-navigation and slideCount > 1 %}
+  <div class="home-slideshow-navigation home-slideshow-previous icon">&#57352;</div>
+  <div class="home-slideshow-navigation home-slideshow-next icon">&#57353;</div>
+  {% endif %}
+  <div class="home-slideshow">
+
+    {% if settings.show-slide-1 %}
+    <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-left" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-1-image.jpg' | asset_url }});"{% endif %}>
+
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+      <img class="slide-image" alt="{{ settings.slide-1-title | strip_html | escape }}" src="{{ 'slide-1-image.jpg' | asset_url }}">
+      <div class="slide-image-overlay">&nbsp</div>
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+
+      {% if settings.slide-1-title.size > 0 or settings.slide-1-subtitle.size > 0 or settings.slide-1-small-text.size > 0 or settings.slide-1-cta.size > 0 %}
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+      <div class="slide-text {% if settings.slide-1-shadows %}slide-text-use-shadows{% endif %}">
+
+        <div class="half50">
+          <h2>A Gift Worth Waiting For!</h2><p></p>
+          <p class="first-par">Meet Skylock, the world’s first solar-powered smart bike lock that connects to your smartphone to provide keyless entry, theft detection, crash alerts and more.</p><p></p>
+          <p class="second-par">Pre-order Skylock today and save $70!</p><p></p>
+          <span class="price-par"><strike>$249</strike> $179 <span class="na-shipping">+ Free Shipping to North America*</span></span>
+          <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NO</a><a class="hidespce">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a class="button videobutton" id="play-button">Watch Video</a>
+          <p class="text-note">*Add $15 for international ground shipping. Additional sales tax may apply. Offer ends 12/27/2015.</p>
+          <p id="link-certificate">Click<a href="/pages/gift-certificate"> here</a>to download the Skylock gift certificate</p>
+        </div>
+      </div>
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+      {% endif %}
+
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endcomment %}
+
+
+<div class="home-top-section">
+    <div class="column-4 imgpart">
+    <img src="{{ 'homenew.png' | asset_url }}" alt="Skylock bike lock - special edition" />
+  </div>
+  
+  <div class="column-4 contentpart">
+    <div class="home-top-section-wrapper">
+      <span class="price-par">$199 <span class="na-shipping">+ Free Shipping to North America*</span></span>
+      {% comment %}
+      <p class="na-shipping" style="font-family: Gotham-Medium;color: #000;font-size: 16px;margin-bottom: 15px;">Pre-order offer ends on July 25, 2016.</p>{% endcomment %}
+      <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock-1">PRE-ORDER NOW</a>
+      <a class="button videobutton" id="play-button"><span class="videobutton-icon"></span><span>Watch Video</span></a>
+      <p class="text-note">*Add $15 for international shipping. Additional sales tax may apply. Pre-orders placed today will ship in October 2016.</p>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+{% if settings.home-show-hero %}
+{% include 'home-hero' %}
+{% endif %}
+{% include 'home-brands' %}
+
+{% if settings.home-sections-order != blank %}
+{% assign sections = settings.home-sections-order | split: "-" %}
+
+{% for section in sections %}
+{% case section %}
+{% when 'A' %}
+{% include 'home-full-width' %}
+
+
+{% when 'E' %}
+{% include 'home-order-now' %}
+{% when 'F' %}
+{% include 'home-featured-collections' %}
+{% when 'G' %}
+{% include 'home-featured-products' %}
+{% when 'H' %}
+{% include 'home-featured-blog' %}
+{% when 'I' %}
+{% include 'home-as-seen-on' %}
+{% when 'J' %}
+{% include 'home-instagram' %}
+{% endcase %}
+{% endfor %}
+
+{% endif %}
+
+{% include 'home-keyless' %}
+
+{% include 'home-cash-alert' %}
+
+{% include 'home-theft-alert' %}
+
+{% include 'home-share-access' %}
+
+{% include 'home-simple-to-use-gift' %}
+
+{% include 'home-skylock-mount' %}
+
+{% include 'home-images-section' %}
+
+{% include 'home-convinced-gift' %}
+
+{% include 'home-techspec' %}

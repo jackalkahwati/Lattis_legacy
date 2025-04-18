@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>${APP_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>${BUNDLE_IDENTIFIER}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${APP_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>${BUNDLE_IDENTIFIER}</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>${URL_SCHEME}</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>2a7c173f04d3a790e6717f79ae91223089986b40</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiamVyZW15cmljYXJkIiwiYSI6ImNrMTk4dnJtdjF6aDczcHRrZ250bTh0YmoifQ.nOLWdq-JtlSl62lncP6IpQ</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>The Lattis app uses Bluetooth to communicate with your Ellipse Lock.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>The Lattis app uses Bluetooth to communicate with your Ellipse Lock.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Lattis requires use of your camera to take a picture when you end your ride.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Tapping "Allow" will enable us to find your location and show you nearest bikes.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Tapping "Allow" will enable us to find your location and show you nearest bikes.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The Lattis app uses microphone for bug reporting.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Lattis will only upload and share photos you choose.</string>
+	<key>OvalApiEndpoint</key>
+	<string>${OVAL_ENDPOINT}</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Antonio-Regular.ttf</string>
+		<string>CircularStd-Medium.ttf</string>
+		<string>CircularStd-Bold.ttf</string>
+		<string>CircularStd-Book.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,1 @@
+include ':app',':libs:MapNavigator',':libs:Ranger',':libs:ImageCrop'

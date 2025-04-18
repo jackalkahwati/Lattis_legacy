@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/add_lock_bg_4">
+
+    <RelativeLayout
+        android:id="@+id/rlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llButtons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp">
+
+        <TextView
+            android:id="@+id/tvBluetooth1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Did your Skylock Blink?"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:layout_above="@+id/ivPagination">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibYes"
+            android:background="@null"
+            android:src="@drawable/yes"
+            android:layout_marginBottom="10dp"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibNo"
+            android:background="@null"
+            android:src="@drawable/no"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivPagination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pagination_addlock_4"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/tvSwipe"
+        />
+    <TextView
+        android:id="@+id/tvSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swipe to go back or forward"
+        android:textSize="10dp"
+        android:textColor="#D8D8D8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
+
+
+

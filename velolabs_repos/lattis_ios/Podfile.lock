@@ -1,0 +1,68 @@
+PODS:
+  - ClusterKit/Core (0.5.0)
+  - ClusterKit/Mapbox (0.5.0):
+    - ClusterKit/Core
+    - Mapbox-iOS-SDK (~> 5.0)
+  - FlagPhoneNumber (0.8.0):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - GsonJ2ObjC-Light (2.8.6.2):
+    - JRE-Slim (= 2.8.1.2-tk)
+  - JRE-Slim (2.8.1.2-tk)
+  - JTMaterialSpinner (3.0.5)
+  - Mapbox-iOS-SDK (5.9.0):
+    - MapboxMobileEvents (= 0.10.2)
+  - MapboxMobileEvents (0.10.2)
+  - SocketRocket (0.5.1)
+  - TapkeyMobileLib (2.21.2.2):
+    - TapkeyMobileLib/Core (= 2.21.2.2)
+  - TapkeyMobileLib/Core (2.21.2.2):
+    - GsonJ2ObjC-Light (= 2.8.6.2)
+    - JRE-Slim (= 2.8.1.2-tk)
+    - SocketRocket (= 0.5.1)
+
+DEPENDENCIES:
+  - "ClusterKit/Mapbox (from `git@github.com:hulab/ClusterKit.git`)"
+  - FlagPhoneNumber
+  - "JTMaterialSpinner (from `git@github.com:kabanishe23/JTMaterialSpinner.git`)"
+  - TapkeyMobileLib (= 2.21.2.2)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FlagPhoneNumber
+    - Mapbox-iOS-SDK
+    - MapboxMobileEvents
+    - SocketRocket
+  https://github.com/tapkey/TapkeyCocoaPods:
+    - GsonJ2ObjC-Light
+    - JRE-Slim
+    - TapkeyMobileLib
+
+EXTERNAL SOURCES:
+  ClusterKit:
+    :git: "git@github.com:hulab/ClusterKit.git"
+  JTMaterialSpinner:
+    :git: "git@github.com:kabanishe23/JTMaterialSpinner.git"
+
+CHECKOUT OPTIONS:
+  ClusterKit:
+    :commit: 039721c0fb7812399c9ca38712b85332e370c9a9
+    :git: "git@github.com:hulab/ClusterKit.git"
+  JTMaterialSpinner:
+    :commit: 5e898b3f20036ad707e516488c5b98fc43b0e674
+    :git: "git@github.com:kabanishe23/JTMaterialSpinner.git"
+
+SPEC CHECKSUMS:
+  ClusterKit: 6d4b2fdfdd2a74a386fd67dd60a29a69851745e0
+  FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  GsonJ2ObjC-Light: 00ce1a4c53e4f17d1284a1f0c184c6a24c7a76a6
+  JRE-Slim: d65cc65cdf1d46644656bf0889d65d7d8c254c49
+  JTMaterialSpinner: 9b05dc959d215845f4c3aaf69753e9356eae578d
+  Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
+  MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  TapkeyMobileLib: 42db27f41597d5e847845ac1d7c564bdee63fa5a
+
+PODFILE CHECKSUM: 71d9a8b0956a578e9449ed90a7e26aeaa2487299
+
+COCOAPODS: 1.11.2

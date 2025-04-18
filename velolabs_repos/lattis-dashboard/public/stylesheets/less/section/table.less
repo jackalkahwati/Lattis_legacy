@@ -1,0 +1,272 @@
+
+.tablestyle {
+  width: 100%;
+  float: left;
+  margin-bottom: 0px;
+  thead {
+    background: #eee;
+    tr {
+      th {
+        text-align: left;
+        padding: 16px;
+        a {
+          color: @colordarkgrey;
+        }
+        &:first-child {
+          text-align: left;
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        text-align: left;
+        padding: 15px;
+        color: @color_17;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        &:first-child {
+          text-align: left;
+          padding-left: 30px;
+        }
+        &:last-child {
+          padding-left: 25px;
+          width: 70px;
+        }
+      }
+      position: relative;
+      /*transform: scale(1, 1);*/
+      .pointer;
+    }
+    &:hover {
+      .fleet-table {
+        &:not(:hover) {
+          /*          -webkit-filter: grayscale(1);
+                    filter: grayscale(1);
+                    opacity: 0.5;*/
+          background: #FAFAFA;
+        }
+      }
+    }
+  }
+}
+
+.fleet-table {
+  td {
+    .move-mapview {
+      width: 24px;
+      height: 24px;
+      display: block;
+      .fleet_icon;
+      .fleet_icon.arrow;
+    }
+  }
+  &:hover {
+    td {
+      .move-mapview {
+        .fleet_icon;
+        .fleet_icon.arrow-selected;
+      }
+    }
+  }
+}
+
+.customtable {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  table {
+    thead {
+      background: @colorlightsteelblue;
+      .ft-14;
+    }
+  }
+}
+
+.rowhover {
+  &:hover {
+    background-color: @color_4;
+  }
+  td {
+    img {
+      .statistics-table {
+        background: #eee;
+      }
+    }
+  }
+}
+
+.table-borderless {
+  tbody {
+    tr {
+      td {
+        border: none;
+        letter-spacing: 0.7px;
+        text-align: right;
+        color: @color_20;
+      }
+      th {
+        border: none;
+        letter-spacing: 0.7px;
+        text-align: right;
+        color: @color_20;
+      }
+    }
+  }
+  thead {
+    tr {
+      th {
+        border: none;
+        letter-spacing: 0.7px;
+        text-align: right;
+        color: @color_20;
+      }
+    }
+  }
+}
+
+.statistics-table {
+  .table {
+    tbody {
+      tr {
+        td {
+          color: @color_20;
+          font-size: 16px;
+          &:first-child {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bikeflt-tbl {
+
+  tr {
+    th {
+      padding: 8px 15px !important;
+      vertical-align: middle !important;
+      font-family: ProximanovaLight;
+      letter-spacing: 0.5px;
+      border-bottom: 0px;
+
+      &:first-child {
+        width: 60px;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  tbody {
+    tr.fleet-table {
+      .pointer;
+      td {
+        padding: 15px;
+        vertical-align: middle;
+        border: 0px;
+        &:first-child {
+          padding: 0px;
+        }
+        &:last-child {
+          width: 200px;
+          a {
+            margin-top: 5px;
+          }
+          dropdown {
+            width: 65px;
+            margin-right: 10px;
+          }
+
+        }
+      }
+    }
+    &:hover {
+      .fleet-table {
+        &:not(:hover) {
+          -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+          opacity: 0.5;
+          background: #FAFAFA;
+        }
+      }
+    }
+  }
+}
+
+.increasewidth {
+  table {
+    tbody {
+      font-family: ProximanovaLight;
+      letter-spacing: 0.5px;
+      border-bottom: 0px;
+    }
+    table {
+      tr {
+        th {
+          padding: 6px 15px !important;
+        }
+        td {
+          padding: 2px 15px !important;
+        }
+      }
+    }
+  }
+}
+
+.table.table-parking {
+  th, td {
+    vertical-align: middle;
+  }
+}
+
+.hubs-table {
+  thead tr {
+    th {
+      padding: 1em;
+      font-family: ProximanovaLight;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+  }
+  tbody tr {
+    color: @color_21;
+    font-size: 13px;
+    letter-spacing: 0.35px;
+    box-shadow: rgb(221, 221, 221) 0px 3px 3px -2px;
+    height: 4em;
+
+    td {
+      vertical-align: middle;
+
+      .content {
+        font-size: 13px;
+        color: #92969E;
+        font-weight: 700;
+      }
+
+      .pointer {
+        width: 24px;
+        height: 24px;
+        display: block;
+        .fleet_icon;
+        .fleet_icon.arrow;
+      }
+    }
+
+    &:hover {
+      td {
+        .pointer {
+          .fleet_icon;
+          .fleet_icon.arrow-selected;
+        }
+      }
+    }
+  }
+}

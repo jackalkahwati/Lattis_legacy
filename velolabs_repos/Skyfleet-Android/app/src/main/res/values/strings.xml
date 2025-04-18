@@ -1,0 +1,525 @@
+<resources>
+    <string name="app_name">Ellipse</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyBV_3wwnYsxs_1DXBSfMN6LEGRd9AE2Sn8</string>
+    <!-- <string name="fb_app_id">931235146941403</string>-->
+    <string name="fb_app_id">1057259287662727</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="label_show">SHOW</string>
+    <string name="hint_mobilenumber">Mobile number</string>
+    <string name="hint_emailaddress">Email address</string>
+    <string name="label_or">- OR -</string>
+    <string name="hint_enter_code">Enter code</string>
+    <string name="label_resend_code">RESEND CODE</string>
+    <string name="label_forgot_password">FORGOT PASSWORD</string>
+    <string name="hint_password">Password</string>
+    <string name="label_signup_content">We’ll send you a verification code via SMS to validate your phone number.</string>
+    <string name="network_error">No network</string>
+    <string name="toast_message_no_network">No network connection</string>
+    <string name="toast_message_facebook_login_failed">Facebook login failed</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign up</string>
+    <string name="action_sign_in_short">SIGN UP</string>
+    <string name="action_order_ellipse">ORDER YOUR ELLIPSE NOW</string>
+    <string name="action_terms_conditions">TERMS AND CONDITIONS</string>
+    <string name="action_invite_ellipse">INVITE FRIENDS &amp; EARN CREDITS </string>
+    <string name="action_profile_settings">PROFILE &amp; SETTINGS</string>
+    <string name="action_emergency_contacts">EMERGENCY CONTACTS</string>
+    <string name="action_help">HELP</string>
+    <string name="action_rate_the_app">RATE THE APP</string>
+    <string name="action_login_in_short">LOG IN</string>
+    <string name="action_login_in">Log in</string>
+    <string name="action_facebook_log_in_short">LOG IN WITH FACEBOOK</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_mobilenumber">This mobile number is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="label_delete_lock">You are permanently deleting this Ellipse from your account. If you are not paired to your Ellipse you will not be able to put the lock into factory reset. For security reasons, you need to reset your lock before you can transfer it. Please find the reset code, and further instructions in the help section.</string>
+    <string name="action_header_delete_ellipse">DELETE THIS ELLIPSE</string>
+    <string name="action_label_delete_ellipse">DELETE ELLIPSE</string>
+    <string name="share_submit_code">SUBMIT CODE</string>
+    <string name="share_connect_now">CONNECT NOW</string>
+    <string name="share_connect_later">CONNECT LATER</string>
+    <string name="status_notconnect">NOT CONNECTED</string>
+    <string name="status_lockunlock">Tap to unlock</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">0e9355c82c76377d4edb845d1d8a6bf1</string>
+    <string name="invalid_code">Invalid code</string>
+    <string name="invalid_code_message">Please check your invitation code and try again.If you have not received an invitation, ask the
+        Ellipse owner to try again.
+    </string>
+    <string-array name="walkthrough_title">
+        <item>Theft alerts</item>
+        <item>Crash alerts</item>
+        <item>Tap to unlock</item>
+        <item>Easily locate your bike</item>
+    </string-array>
+    <string-array name="walkthrough_description">
+        <item>Ellipse can detect if someone’s tampering with your bike, and send you an alert so you can take action.</item>
+        <item>Ellipse’s built in accelerometer can detect if you’ve been in a crash, and alert your loved ones.</item>
+        <item>Using your smartphone, just one click safely locks or unlocks your Ellipse. No more fumbling with bulky chains.</item>
+        <item>Can’t remember where you parked? Use the map tool and get walking directions.</item>
+    </string-array>
+
+    <string name="get_started_btn">GET STARTED</string>
+    <string name="walkthrough_image_content_desc">Walkthrough Images</string>
+    <string name="locksetting_theftandcrash_title">THEFT  &amp; CRASH DETECTION</string>
+    <string name="locksetting_devicesetting_title">DEVICE SETTINGS</string>
+    <string name="locksetting_toolbar_title">ELLIPSES SETTINGS</string>
+    <string name="deletemyaccount">DELETE ACCOUNT</string>
+    <string name="myprofile">MY PROFILE</string>
+    <string name="addlock1_toolbar_title">WELCOME ON BOARD :)</string>
+    <string name="addlock1_title">Press the middle button on your Ellipse.</string>
+    <string name="addlock1_description1">Make sure your Ellipse is switched on and within range of your phone.</string>
+    <string name="addlock2_description3">Recieved an invitation to share\?</string>
+    <string name="addlock2_toolbar_title">SEARCHING FOR AN ELLIPSE</string>
+    <string name="addlock2_title">We\'ve found the following Ellipse</string>
+    <string name="addlock2_description1">Make sure your Ellipse is switched on and within range of your phone</string>
+    <string name="addlock2_description2">Get help</string>
+    <string name="addlock2_connect_btn">CONNECT</string>
+    <string name="text_verIfication_code">SEND VERIFICATION CODE</string>
+    <string name="title_activity_signup">Sign in</string>
+    <string name="addlock_home_button_onboard">SET UP MY OWN ELLIPSE</string>
+    <string name="addlock_home_description_2">To get the most out of this app you’ll need to set up at least one Ellipse.</string>
+    <string name="addlock_home_description_1">Let\'s get you started.</string>
+    <string name="addlock_home_description_3">I have received an invitation code to borrow a friend’s Ellipse</string>
+    <string name="addlock_home_button_share">ADD A FRIEND’S ELLIPSE</string>
+    <string name="title_activity_profileand_settings">ProfileandSettingsActivity</string>
+    <string name="title_activity_lock_settings">LockSettingsActivity</string>
+    <string name="action_settings_detection_content_first">Either theft or crash detection may be activated, but not both at the same time.  Both require that you are connected to your Ellipse with bluetooth.</string>
+    <string name="action_settings_detection_content_next">Learn more</string>
+    <string name="action_label_sharingHome_start_button">START SHARING MY ELLIPSE</string>
+    <string name="action_sharing_home_content_1">You don\’t need to keep it to yourself either, share with up to 5 friends and help out the people you care most about.</string>
+    <string name="action_sharing_home_content_2">Share with friends</string>
+    <string name="action_sharing_locklist_header">Select an Ellipse to share</string>
+    <string name="action_sharing_locklist_content1">You can share your Ellipse with up to 5 of your friends</string>
+    <string name="action_sharing_locklist_content2">Learn more about sharing.</string>
+    <string name="action_sharing_locklist_content3">Received an invitation to share a friend\'s Ellipse</string>
+    <string name="action_sharing_locklist_content4">Enter an invitation code now</string>
+    <string name="title_activity_alert_notification">AlertNotificationActivity</string>
+    <string name="title_activity_update_mobile_number">UpdateMobileNumberActivity</string>
+    <string name="action_label_theft_description2">Theft detected! </string>
+    <string name="action_label_theft_description1">We think someone may be tampering with your bike.</string>
+    <string name="action_label_crash_description2">Crash detected!</string>
+    <string name="action_label_crash_description1">Your emergency contacts will be alerted in</string>
+    <string name="action_label_theft_got_button">OK, GOT IT</string>
+    <string name="action_label_updatenumber_title">You can change your phone number but we’ll need to send you an SMS to verify your new number. You cannot undo this.</string>
+    <string name="title_activity_delete_account">Deleting your account will permanently remove your profile information, login details, and any Ellipses you have registered to your profile.\n\n
+It will also remove any sharing on your own Ellipses and you will not be able to borrow any friend’s bikes.
+</string>
+    <string name="action_textView_label_delete_account">DELETE MY ACCOUNT
+</string>
+    <string name="title_activity_add_lock">ELLIPSES</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="ec_contact_description">Nominate up to 3 close friends or family members as your emergency contacts. In the event of a crash, they will be alerted.
+</string>
+    <string name="ec_conatct_title">Ellipse can detect if you’ve been in an accident and alert your chosen emergency contacts by SMS. You can switch this feature on or oﬀ at any time.</string>
+    <string name="title_activity_crash_and_theft">CrashAndTheftActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_password_reset">PasswordResetActivity</string>
+    <string name="title_activity_sharing">SharingActivity</string>
+    <string name="notification_error_ssl_cert_invalid">SSL error occurred. Would you like to proceed?</string>
+    <string name="verificationcode_error">The verification code you have entered is incorrect</string>
+    <string name="action_loginfailed">Login Failed</string>
+    <string name="action_loginfailed_description">Sorry. We couldn\'t log you in right now. Please check your info and try again.You can also sign up using your Facebook account.</string>
+    <string-array name="DialingCountryCode">
+        <item>32,BE</item>
+        <item>501,BZ</item>
+        <item>229,BJ</item>
+        <item>975,BT</item>
+        <item>591,BO</item>
+        <item>387,BA</item>
+        <item>267,BW</item>
+        <item>55,BR</item>
+        <item>673,BN</item>
+        <item>359,BG</item>
+        <item>226,BF</item>
+        <item>95,MM</item>
+        <item>257,BI</item>
+        <item>855,KH</item>
+        <item>237,CM</item>
+        <item>1,CA</item>
+        <item>238,CV</item>
+        <item>236,CF</item>
+        <item>235,TD</item>
+        <item>56,CL</item>
+        <item>86,CN</item>
+        <item>61,CX</item>
+        <item>61,CC</item>
+        <item>57,CO</item>
+        <item>269,KM</item>
+        <item>242,CG</item>
+        <item>243,CD</item>
+        <item>682,CK</item>
+        <item>506,CR</item>
+        <item>385,HR</item>
+        <item>53,CU</item>
+        <item>357,CY</item>
+        <item>93,AF</item>
+        <item>355,AL</item>
+        <item>213,DZ</item>
+        <item>376,AD</item>
+        <item>244,AO</item>
+        <item>672,AQ</item>
+        <item>54,AR</item>
+        <item>374,AM</item>
+        <item>297,AW</item>
+        <item>61,AU</item>
+        <item>43,AT</item>
+        <item>994,AZ</item>
+        <item>973,BH</item>
+        <item>880,BD</item>
+        <item>375,BY</item>
+        <item>420,CZ</item>
+        <item>45,DK</item>
+        <item>253,DJ</item>
+        <item>670,TL</item>
+        <item>593,EC</item>
+        <item>20,EG</item>
+        <item>503,SV</item>
+        <item>240,GQ</item>
+        <item>358,FI</item>
+        <item>33,FR</item>
+        <item>291,ER</item>
+        <item>372,EE</item>
+        <item>251,ET</item>
+        <item>500,FK</item>
+        <item>298,FO</item>
+        <item>679,FJ</item>
+        <item>689,PF</item>
+        <item>241,GA</item>
+        <item>220,GM</item>
+        <item>995,GE</item>
+        <item>49,DE</item>
+        <item>233,GH</item>
+        <item>350,GI</item>
+        <item>30,GR</item>
+        <item>299,GL</item>
+        <item>502,GT</item>
+        <item>224,GN</item>
+        <item>245,GW</item>
+        <item>592,GY</item>
+        <item>509,HT</item>
+        <item>504,HN</item>
+        <item>852,HK</item>
+        <item>36,HU</item>
+        <item>91,IN</item>
+        <item>62,ID</item>
+        <item>98,IR</item>
+        <item>964,IQ</item>
+        <item>353,IE</item>
+        <item>44,IM</item>
+        <item>972,IL</item>
+        <item>39,IT</item>
+        <item>225,CI</item>
+        <item>81,JP</item>
+        <item>962,JO</item>
+        <item>7,KZ</item>
+        <item>254,KE</item>
+        <item>686,KI</item>
+        <item>965,KW</item>
+        <item>996,KG</item>
+        <item>856,LA</item>
+        <item>371,LV</item>
+        <item>961,LB</item>
+        <item>266,LS</item>
+        <item>231,LR</item>
+        <item>218,LY</item>
+        <item>423,LI</item>
+        <item>370,LT</item>
+        <item>352,LU</item>
+        <item>853,MO</item>
+        <item>389,MK</item>
+        <item>261,MG</item>
+        <item>265,MW</item>
+        <item>60,MY</item>
+        <item>960,MV</item>
+        <item>223,ML</item>
+        <item>356,MT</item>
+        <item>692,MH</item>
+        <item>222,MR</item>
+        <item>230,MU</item>
+        <item>262,YT</item>
+        <item>52,MX</item>
+        <item>691,FM</item>
+        <item>373,MD</item>
+        <item>377,MC</item>
+        <item>976,MN</item>
+        <item>382,ME</item>
+        <item>212,MA</item>
+        <item>258,MZ</item>
+        <item>264,NA</item>
+        <item>674,NR</item>
+        <item>977,NP</item>
+        <item>31,NL</item>
+        <item>599,AN</item>
+        <item>687,NC</item>
+        <item>64,NZ</item>
+        <item>505,NI</item>
+        <item>227,NE</item>
+        <item>234,NG</item>
+        <item>683,NU</item>
+        <item>850,KP</item>
+        <item>47,NO</item>
+        <item>968,OM</item>
+        <item>92,PK</item>
+        <item>680,PW</item>
+        <item>507,PA</item>
+        <item>675,PG</item>
+        <item>595,PY</item>
+        <item>51,PE</item>
+        <item>63,PH</item>
+        <item>870,PN</item>
+        <item>48,PL</item>
+        <item>351,PT</item>
+        <item>1,PR</item>
+        <item>974,QA</item>
+        <item>40,RO</item>
+        <item>7,RU</item>
+        <item>250,RW</item>
+        <item>590,BL</item>
+        <item>685,WS</item>
+        <item>378,SM</item>
+        <item>239,ST</item>
+        <item>966,SA</item>
+        <item>221,SN</item>
+        <item>381,RS</item>
+        <item>248,SC</item>
+        <item>232,SL</item>
+        <item>65,SG</item>
+        <item>421,SK</item>
+        <item>386,SI</item>
+        <item>677,SB</item>
+        <item>252,SO</item>
+        <item>27,ZA</item>
+        <item>82,KR</item>
+        <item>34,ES</item>
+        <item>94,LK</item>
+        <item>290,SH</item>
+        <item>508,PM</item>
+        <item>249,SD</item>
+        <item>597,SR</item>
+        <item>268,SZ</item>
+        <item>46,SE</item>
+        <item>41,CH</item>
+        <item>963,SY</item>
+        <item>886,TW</item>
+        <item>992,TJ</item>
+        <item>255,TZ</item>
+        <item>66,TH</item>
+        <item>228,TG</item>
+        <item>690,TK</item>
+        <item>676,TO</item>
+        <item>216,TN</item>
+        <item>90,TR</item>
+        <item>993,TM</item>
+        <item>688,TV</item>
+        <item>971,AE</item>
+        <item>256,UG</item>
+        <item>44,GB</item>
+        <item>380,UA</item>
+        <item>598,UY</item>
+        <item>1,US</item>
+        <item>998,UZ</item>
+        <item>678,VU</item>
+        <item>39,VA</item>
+        <item>58,VE</item>
+        <item>84,VN</item>
+        <item>681,WF</item>
+        <item>967,YE</item>
+        <item>260,ZM</item>
+        <item>263,ZW</item>
+    </string-array>
+    <string name="action_failure_verfication_messgae">Registration code is invalid</string>
+    <string name="title_activity_crash_theft_settings">CrashTheftSettingsActivity</string>
+    <string name="action_scanning">Scanning \n ...</string>
+    <string name="action_connecting">Connecting \n ...</string>
+    <string name="action_connected">CONNECTED</string>
+    <string name="action_locked">LOCKED</string>
+    <string name="action_unlocked">UNLOCKED</string>
+    <string name="action_locking">Locking</string>
+    <string name="action_unlocking">Unlocking</string>
+    <string name="action_notconnected">NOT \n CONNECTED</string>
+    <string name="action_tap_lock">Tap to lock</string>
+    <string name="action_tap_unlock">Tap to unlock</string>
+    <string name="ellipses">ELLIPSES</string>
+    <string name="finished">FINISHED</string>
+    <string name="updating">UPDATING...</string>
+    <string name="done">Done</string>
+    <string name="share_invitation_sent">Share invitation sent</string>
+    <string name="refresh">Refresh</string>
+    <string name="add_new">Add new</string>
+    <string name="find_my_ellipse">FIND MY ELLIPSE</string>
+    <string name="are_you_sure_you_want_to_log_out">Are you sure you want to log out?</string>
+    <string name="sharing">SHARING</string>
+    <string name="warning">Warning!</string>
+    <string name="sorry">Sorry!</string>
+    <string name="success">Success</string>
+    <string name="login_fail">Login failed!"</string>
+    <string name="security_sensitivity">SECURITY SENSITIVITY</string>
+    <string name="success_symbol">Success!</string>
+    <string name="currently_connected">CURRENTLY CONNECTED</string>
+    <string name="theft_detection_settings">Theft Detection Settings</string>
+    <string name="sharing_activity">Sharing Activity</string>
+    <string name="ellipse_not_connected">Ellipse Not Connected</string>
+    <string name="lock">Lock</string>
+    <string name="theft_detection">Theft detection</string>
+    <string name="alert_my_contacts">ALERT MY CONTACTS</string>
+    <string name="enter_your_new_phone_number">Enter your new phone number</string>
+    <string name="enter_your_lock_name">Enter your Ellipse\'s Name</string>
+    <string name="when_a_theft_has_been_detected">When a theft has been detected</string>
+    <string name="search">Search</string>
+    <string name="success_your_ellipse_has_been_paired">Success,Your Ellipse has been paired!</string>
+    <string name="locate_my_bike">LOCATE MY BIKE</string>
+    <string name="update">Update</string>
+    <string name="update_now">UPDATE NOW</string>
+    <string name="lock_details">LOCK DETAILS</string>
+    <string name="password">Password</string>
+    <string name="send_share_invitation">SEND SHARE INVITATION</string>
+    <string name="cancel">CANCEL</string>
+    <string name="delete">DELETE</string>
+    <string name="unshare">UNSHARE</string>
+    <string name="ok_got_it">OK, GOT IT</string>
+    <string name="blink_this_ellipse">Blink this Ellipse</string>
+    <string name="not_connected">Not Connected</string>
+    <string name="plus">+</string>
+    <string name="share_now">SHARE NOW</string>
+    <string name="share_stop">STOP SHARING</string>
+    <string name="later">LATER</string>
+    <string name="firmware_update_available">A Firmware update is available </string>
+    <string name="firmware_update_progress">A Firmware update in progress </string>
+    <string name="firmware_update_completed">A Firmware update is complete </string>
+    <string name="low">Low</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="cc">cc</string>
+    <string name="submit_code">SUBMIT CODE</string>
+    <string name="choose_a_name_for_your_ellipse">Choose a name for your Ellipse</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="lockname">Lock Name</string>
+    <string name="show">SHOW</string>
+    <string name="this_ellipse_isn_t_shared_to_anyone">This Ellipse isnʼt shared to anyone</string>
+    <string name="medium">Medium</string>
+    <string name="ok">OK</string>
+    <string name="personal_details">PERSONAL DETAILS</string>
+    <string name="high">High</string>
+    <string name="max_40_characters">(max 40 characters)</string>
+    <string name="connect">CONNECT</string>
+    <string name="crash">CRASH</string>
+    <string name="add_emergency_contacts">ADD EMERGENCY CONTACTS</string>
+    <string name="add_emergency_with_one_contacts">You can add 2 more contact</string>
+    <string name="add_emergency_with_two_contacts">You can add 1 more contact</string>
+    <string name="add_emergency_with_zero_contacts">You can add no more contact</string>
+    <string name="ok_touch_pad_is_on">OK, TOUCH PAD IS ON</string>
+    <string name="choose_conatcts">CHOOSE CONATCTS</string>
+    <string name="my_contacts">My contacts</string>
+    <string name="first_name">First name</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="lock_name">Lock Name</string>
+    <string name="enter_your_invitation_code">Enter your invitation code</string>
+    <string name="detection">DETECTION</string>
+    <string name="save_password">SAVE PASSWORD</string>
+    <string name="seconds">seconds</string>
+    <string name="registered_owner">Registered owner</string>
+    <string name="share_my_ellipse">SHARE MY ELLIPSE</string>
+    <string name="settings">SETTINGS</string>
+    <string name="save_changes">SAVE CHANGES</string>
+    <string name="theft">THEFT</string>
+    <string name="save_pin">SAVE PIN</string>
+    <string name="in_progress">In Progress...</string>
+    <string name="last_name">Last name</string>
+    <string name="serial_number">Serial number</string>
+    <string name="walking_directions">Walking directions</string>
+    <string name="cancel_i_m_ok">CANCEL, I’M OK</string>
+    <string name="on">ON</string>
+    <string name="no">NO</string>
+    <string name="firmware">Firmware</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="yes">YES</string>
+    <string name="next">NEXT</string>
+    <string name="you_are_not_connected_to_any_locks">You are not connected to any locks.</string>
+    <string name="previous_connections">PREVIOUS CONNECTIONS</string>
+    <string name="find_an_ellipse_to_connect_to">Find an Ellipse to connect to.</string>
+    <string name="continue_lable">CONTINUE</string>
+    <string name="email">Email</string>
+    <string name="tap_to_unlock">Tap to unlock</string>
+    <string name="scanning">Scanning</string>
+    <string name="account_settings">ACCOUNT SETTINGS</string>
+    <string name="get_directions">GET DIRECTIONS</string>
+    <string name="crash_detection">Crash detection</string>
+    <string name="crash_detection_settings">Crash detection settings</string>
+    <string name="auto_proximity_lock">Auto proximity lock</string>
+    <string name="auto_proximity_unlock">Auto proximity unlock</string>
+    <string name="pin_code">PIN code</string>
+    <string name="delete_lock">DELETE LOCK</string>
+    <string name="searching_for_ellipses">SEARCHING FOR ELLIPSES...</string>
+    <string name="enter_a_pin_code">Enter PIN code</string>
+    <string name="walk">" walk"</string>
+    <string name="tap_to_lock">Tap to lock</string>
+    <string name="no_ellipse_connected">No Ellipse connected</string>
+    <string name="connectiing">Connecting...</string>
+    <string name="rebooting">Rebooting...</string>
+    <string name="ellipse_not_found">Ellipse not found</string>
+    <string name="connected">Connected</string>
+    <string name="hide">HIDE</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="accept">Accept</string>
+    <string name="decline">DON\'T ACCEPT</string>
+    <string name="save">Save</string>
+    <string name="termcondition">Terms &amp; condition</string>
+    <!-- Start of Alerts & Notification -->
+    <string name="incorrect_verification_code_alert">The verification code you have entered is incorrect</string>
+    <string name="no_internet_alert">Please connect to the internet (Wifi or Cellular)</string>
+    <string name="battery_low_alert">Your battery has reached a low level. Please put your Ellipse under the sun or charge through USB</string>
+    <string name="delete_lock_alert">You are permanently deleting this Ellipse from your account. If you are not paired to your Ellipse you will not be able to put the lock into factory reset. For security reasons, you need to reset your lock before you can transfer it.  Please find the reset code, and further instructions in the help section.</string>
+    <string name="lock_belongs_another_user_alert">This Ellipse belongs to another user</string>
+    <string name="not_in_reset_mode_alert">This Ellipse has not been put into reset mode. Please find reset code in the Help Section. Note: The reset code can only be entered in the unlocked position.</string>
+    <string name="firmware_update_available_alert">A Firmware update is available for your Ellipse</string>
+    <string name="firmware_update_completed_alert">Firmware update is complete</string>
+    <string name="out_of_range_alert">Your Ellipse is out of range</string>
+    <string name="first_last_name_missing_alert">Please fill out your First and Last name in the Profile and Settings section</string>
+    <string name="request_bluetooth_alert">Please turn On Bluetooth in order to pair to your Ellipse</string>
+    <string name="login_failed_alert_title">Log in failed!</string>
+    <string name="login_failed_alert">You have entered the wrong password or User doesn\'t exist. Please try again.</string>
+    <string name="email_already_used_alert">The email address you have entered is already being used</string>
+    <string name="phone_number_already_used">This phone number you have entered is already being used</string>
+    <!-- End of Alerts & Notification -->
+    <!-- Start of Sharing -->
+    <string name="invalid_invitation_code_alert">"Invalid Code. Please check your invitation code and try again. If you have not received an invitation, ask the Ellipse owner to try again."</string>
+    <string name="sharing_revoked_1">Your access to</string>
+    <string name="sharing_revoked_2">Ellipse has been revoked</string>
+    <string name="confirm_action">"Confirm action."</string>
+    <string name="reshare_warning"> access to your Ellipse needs to be revoked before you can share this Ellipse with another friend"</string>
+    <string name="shared_lock_timed_out">Your connection has timed out. Your shared Ellipse is either not in range, or connected to someone else</string>
+    <string name="borrower_lock_remove_warning">If you remove this Ellipse from your account, you will not be able to re-connect to it again unless the owner grants you permission again</string>
+    <string name="sharing_failure_message">This ellipse has been shared the maximum amount</string>
+    <string name="sharing_nolocks_found">You have no Ellipse \n to share</string>
+    <string name="title_activity_profile_password_reset">ProfilePasswordResetActivity</string>
+    <string name="title_activity_password_reset_profile">PasswordResetProfile</string>
+    <string name="info">Info!</string>
+    <string name="mobile_exist">This number is already linked to another account</string>
+    <string name="title_activity_pofile_password">PofilePasswordActivity</string>
+    <string name="lock_malfunction">Your shackle isn\'t properly inserted.  Please remove and re-insert the shackle into the lock bar.</string>
+    <string name="lock_registered_failure">This lock has already been registered</string>
+    <string name="decline_text">If you disagree with the new Terms, you can contact customer support at
+            support@lattis.io for assistance in cancelling your account.</string>
+    <string name="title_activity_update_lock_name">updateLockNameActivity</string>
+    <string name="enter_lock_name_message">Enter your lock name"</string>
+    <!-- End of Sharing -->
+
+    <string name="locked_by_firstname" formatted="false">Locked by %s at %s</string>
+    <string name="locked_by" formatted="false">Locked at %s</string>
+</resources>

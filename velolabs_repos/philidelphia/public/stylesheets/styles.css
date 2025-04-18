@@ -1,0 +1,224 @@
+.link {
+  color: #3b5377;
+}
+.chosen_color_grey {
+  background: #474747;
+  border: 1px solid #474747;
+}
+.chosen_color_blue {
+  background: #1e6ab0;
+  border: 1px solid #474747;
+}
+.chosen_color_white {
+  background: #FFFFFF;
+  border: 1px solid #474747;
+}
+.ng-enter {
+  animation: fadeIn 0.5s both ease-in;
+  z-index: 8888;
+}
+.transition {
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body {
+  font-family: 'Maven Pro', sans-serif;
+}
+body .logo {
+  width: 20%;
+}
+body #login_container {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+}
+body #login_container .login_box {
+  width: 85%;
+  display: block;
+  margin: 20px auto;
+  padding: 5px;
+}
+body #login_container .login_box .icon {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+body #login_container .login_box .loc_icon {
+  width: 2px solid black;
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+body #login_container .login_box .confirm_icon {
+  width: 35%;
+  display: block;
+  margin: 0 auto;
+}
+body #login_container .login_box #p_update .divider {
+  margin-top: 15px;
+}
+body #login_container .login_box #p_update .divider h1 {
+  font-size: 2vw;
+}
+body #login_container .login_box #p_update .divider .invalidField {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+body #login_container .login_box #p_update .divider #order_number {
+  margin: 0;
+  text-align: center;
+}
+body #login_container .login_box #p_update .divider .order_container {
+  padding: 0;
+  display: block;
+  margin: 20px auto;
+  width: 75%;
+}
+body #login_container .login_box #p_update .divider .order_container .orderimage_container {
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+  border-radius: 10px;
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+body #login_container .login_box #p_update .divider .order_container .orderimage_container .order_icon {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container #color_choice {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container ul {
+  padding: 0;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container ul li {
+  border-radius: 5px;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 3px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container ul .order_black {
+  background: #474747 !important;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container ul .order_blue {
+  background: #1e6ab0 !important;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container ul .order_white {
+  background: #FFFFFF !important;
+}
+body #login_container .login_box #p_update .divider .order_container .ordercolor_container .orderShippingUpdate {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 12px;
+}
+body #login_container .login_box #p_update .field {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 55px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 22px;
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body #login_container .login_box #p_update .field:focus {
+  outline: 0;
+}
+body #login_container .login_box #p_update .field.ng-dirty {
+  border-bottom: 2px solid red !important;
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body #login_container .login_box #p_update .field.ng-valid {
+  border-bottom: 2px solid black !important;
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body #login_container .login_box #p_update h1,
+body #login_container .login_box #p_update h3 {
+  text-align: center;
+}
+body #login_container .login_box #p_update h2 {
+  margin-left: 25px;
+}
+body #login_container .login_box #p_update h3 {
+  color: red;
+}
+body #login_container .login_box #p_update a {
+  text-decoration: none;
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body #login_container .login_box #p_update a button {
+  display: block;
+  margin: 40px auto;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background: #1e6ab0;
+  border: 2px solid #1e6ab0;
+  color: white;
+  font-size: 18px;
+  -webkit-transition: .2s all;
+  -moz-transition: .2s all;
+  transition: .2s all;
+}
+body #login_container .login_box #p_update a button.ng-hide-remove {
+  transition: .3s all !important;
+  -webkit-transition: .3s all !important;
+  -moz-transition: .3s all !important;
+}
+body #login_container .login_box #p_update a button:hover {
+  background: white;
+  color: #1e6ab0;
+}
+@media screen and (max-width: 1000px) {
+  #login_container .login_box {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 580px) {
+  .logo {
+    width: 40% !important;
+  }
+  #login_container {
+    top: 80px !important;
+  }
+  #login_container .login_box {
+    width: 99% !important;
+  }
+  #login_container .login_box .icon {
+    width: 60% !important;
+  }
+  #login_container .login_box #p_update .divider h1 {
+    font-size: 4.5vw !important;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

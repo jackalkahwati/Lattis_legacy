@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:text="Add Lock"
+        android:textColor="#616464"
+        android:id="@+id/tvLockName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="13.25dp"
+         />
+
+    <ImageView
+        android:id="@+id/ivRightArrow"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="21dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/add_lock"
+        android:background="@null" />
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bike_booked_or_active_ride_parent"
+    android:background="@android:color/transparent">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hamburger_in_bike_booked_or_active_ride"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/hamburger"
+
+        />
+
+
+   <include layout="@layout/fragment_bike_booked_or_active_ride_content"
+       custom:layout_constraintBottom_toBottomOf="parent"
+       android:id="@+id/layout_fragment_bike_booked_or_active_ride_content"/>
+
+
+    <include layout="@layout/activity_loading"
+        android:id="@+id/bike_booked_or_active_trip_loading"
+        android:visibility="gone"
+        />
+
+    <include layout="@layout/axa_lock_layout"
+        android:id="@+id/layout_axa_lock_popup_in_bike_booked_or_active_ride"
+        android:visibility="gone"/>
+
+    <include layout="@layout/sentinel_lock_layout"
+        android:id="@+id/layout_sentinel_lock_layout_in_bike_booked_or_active_ride"
+        android:visibility="gone"/>
+
+    <include layout="@layout/layout_image_slider_parent"
+        android:id="@+id/bike_booked_or_active_ride_image_slider_parent"
+        android:visibility="gone"/>
+
+
+    <include layout="@layout/popup_manual_lock"
+        android:id="@+id/popup_manual_lock"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

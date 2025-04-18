@@ -1,0 +1,21 @@
+<vector android:height="24dp" android:viewportHeight="17.0"
+    android:viewportWidth="25.0" android:width="20dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M23.124,0.855C23.712,0.855 24.191,1.318 24.191,1.887L24.191,15.179C24.191,15.748 23.712,16.21 23.124,16.21L1.962,16.21C1.374,16.21 0.896,15.748 0.896,15.179L0.896,1.887C0.896,1.318 1.374,0.855 1.962,0.855L23.124,0.855M22.689,0.09L2.368,0.09C1.241,0.09 0.327,0.98 0.327,2.077L0.327,14.933C0.327,16.03 1.241,16.92 2.368,16.92L22.689,16.92C23.815,16.92 24.73,16.03 24.73,14.933L24.73,2.077C24.73,0.98 23.815,0.09 22.689,0.09"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M0.836,3.776l23.385,0l0,0.99l-23.385,0z"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M0.568,3.839h23.864v3.839h-23.864z"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M0.836,7.34l23.385,0l0,0.99l-23.385,0z"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M14.943,10.754L3.648,10.754C3.367,10.754 3.139,10.655 3.139,10.532C3.139,10.409 3.367,10.31 3.648,10.31L14.943,10.31C15.224,10.31 15.451,10.409 15.451,10.532C15.451,10.655 15.224,10.754 14.943,10.754"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+    <path android:fillColor="@color/lattis_accent_color"
+        android:pathData="M9.295,12.765L3.648,12.765C3.367,12.765 3.139,12.665 3.139,12.542C3.139,12.42 3.367,12.32 3.648,12.32L9.295,12.32C9.576,12.32 9.804,12.42 9.804,12.542C9.804,12.665 9.576,12.765 9.295,12.765"
+        android:strokeColor="#00000000" android:strokeWidth="1"/>
+</vector>

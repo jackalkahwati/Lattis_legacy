@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/ellipses_text_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/tv_share_lockName"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="Alison lock"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/ellipses_text_color"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_contentlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_share_lockName"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_share_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_share_user"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/em_contacts" />
+
+                <TextView
+                    android:id="@+id/tv_shared_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_share_user"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toEndOf="@+id/iv_share_user"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/text_hint_color" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_stop_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_share_user"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toEndOf="@+id/iv_share_user"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="visible"
+                    card_view:cardBackgroundColor="@color/colorPrimaryDark"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_stop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="12dp"
+                        android:text="@string/share_stop"
+                        android:textAlignment="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@android:color/white"
+
+                        />
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_share_content"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/this_ellipse_isn_t_shared_to_anyone"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/non_selected_circle_icon"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_share_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_contentlayout"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:visibility="visible"
+            card_view:cardBackgroundColor="@color/colorAccent"
+            card_view:cardCornerRadius="1dp"
+            card_view:cardElevation="2dp">
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="18dp"
+                android:text="@string/share_now"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/white"
+
+                />
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ellipses_text_color" />
+</RelativeLayout>

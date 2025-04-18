@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>319818839743-o6dhfmkv8m11npothv5u8du5p97unrtk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.319818839743-o6dhfmkv8m11npothv5u8du5p97unrtk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDBCI96SQOOzYXyzCzZVwVWDgoyodqNcHs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>319818839743</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>co.findafin.bikeshare</string>
+	<key>PROJECT_ID</key>
+	<string>fin-paddleshare</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fin-paddleshare.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:319818839743:ios:37a33b5d86cd6ca913b80a</string>
+</dict>
+</plist>

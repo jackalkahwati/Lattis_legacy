@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "266472358858",
+    "project_id": "pacific-rides",
+    "storage_bucket": "pacific-rides.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266472358858:android:eb78b2b155f7713a710533",
+        "android_client_info": {
+          "package_name": "io.bikes.pacific"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV-rqPcmA2otolvS9fEJ0BEytHzJ7r53w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "266472358858-i9cqpl79lb4ahud6t1rsmdeme837t6jd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.pacificrides.share"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266472358858:android:a6573d171be05796710533",
+        "android_client_info": {
+          "package_name": "io.bikes.pacific.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV-rqPcmA2otolvS9fEJ0BEytHzJ7r53w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "266472358858-i9cqpl79lb4ahud6t1rsmdeme837t6jd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.pacificrides.share"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266472358858:android:617bbf43d8b62a0f710533",
+        "android_client_info": {
+          "package_name": "io.bikes.pacific.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV-rqPcmA2otolvS9fEJ0BEytHzJ7r53w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266472358858-38fnl4jd7tbf9laeuln5v8l4iqcv67d4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "266472358858-i9cqpl79lb4ahud6t1rsmdeme837t6jd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.pacificrides.share"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

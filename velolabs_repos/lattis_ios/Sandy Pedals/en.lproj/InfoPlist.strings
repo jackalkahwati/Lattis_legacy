@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "Sandy Pedals requiert l'utilisation de votre APN afin de prendre une photo à la fin de votre course";
+"NSPhotoLibraryUsageDescription" = "Sandy Pedals n'enverra et ne partagera que les photos choisies";
+"privacy_location" = "En cliquant \"Autoriser\" nous vous localiserons et afficherons les vélos les plus proches";
+"privacy_location_alert_title" = "NOTE";
+"NSLocationWhenInUseUsageDescription" = "Veuillez autoriser Lattis à accéder à votre position. Cela est nécessaire pour l'utilisation de l'application";
+"privacy_location_explanation" = "Note";
+"privacy_location_submit_button" = "Sandy Pedals a besoin de votre permission afin d'utiliser votre position et afficher les vélos les plus proches";
+"NSBluetoothPeripheralUsageDescription" = "Sandy Pedals utilises le Bluetooth pour communiquer avec le cadenas Ellipse.";

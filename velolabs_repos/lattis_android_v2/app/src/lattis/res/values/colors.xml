@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#829CB2</color>
+    <color name="colorPrimaryDark">@android:color/black</color>
+    <color name="colorAccent">#57D8FF</color>
+    <color name="colorPrimarylightdark">#687c8e</color>
+    <color name="app_background">#3C5377</color>
+    <color name="app_background_theme">#3C5377</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="ellipses_text_color">#9B9B9B</color>
+    <color name="text_hint_color">#A0C8E0</color>
+    <color name="circular_progress_default_progress">#57D8FF</color>
+    <color name="circular_progress_default_title">#FFFFFF</color>
+    <color name="circular_progress_default_subtitle">#FFFFFF</color>
+<!--    <color name="lattis_accent_color">#00AAD1</color>-->
+    <color name="lattis_accent_color">@android:color/black</color>
+    <color name="lattis_ride_in_progress_color">#50E3C2</color>
+    <color name="lattis_dark_color">#00647C</color>
+    <color name="lattis_dark_title_color">#163850</color>
+    <color name="lattis_text_color_blue">#57D8FF</color>
+    <color name="lattis_header_color">#80848C</color>
+    <color name="lattis_toolbar_title">#ACB1BB</color>
+    <color name="lattis_light_grey">#868686</color>
+    <color name="lattis_primary_dark_color">#FFFFFF</color>
+    <color name="lattis_view_border_color">#979797</color>
+    <color name="lattis_view_loction_bg">#f9f9f9</color>
+    <color name="lattis_text_color_grey">#818181</color>
+    <color name="lattis_text_color_grey_dark">#D8D8D8</color>
+    <color name="lattis_toolbar_bg">#F9F9F9</color>
+    <color name="lattis_transparent">#80000000</color>
+    <color name="divider_settings">#DDDDDD</color>
+    <color name="color_tc_text">#818181</color>
+    <color name="headerBackground">#eeeeee</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="text_color">#9B9B9B</color>
+    <color name="non_selected_circle_icon">#669B9B9B</color>
+    <color name="lattis_profile_accent">#d2d2d2</color>
+    <color name="alert_background_color">#22000000</color>
+
+    <color name="alert_logout_background">#A0C8E0</color>
+
+    <color name="color_semi_transparent">#CF000000</color>
+    <color name="color_transparent">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="mb_gray">#ffdedede</color>
+    <color name="mb_blue">#ff0099cc</color>
+    <color name="mb_blue_dark">#ff00719b</color>
+    <color name="bt_white">#ffffff</color>
+    <color name="bt_black">#001129</color>
+    <color name="bt_blue">#009bde</color>
+    <color name="bt_light_gray">#6d6d6d</color>
+    <color name="bt_expiration_date_sheet_background_light">#eceff0</color>
+    <color name="bt_expiration_date_sheet_background_dark">#20272b</color>
+    <color name="bt_black_12">#1e000000</color>
+    <color name="bt_white_12">#1effffff</color>
+    <color name="bt_black_38">#61000000</color>
+    <color name="bt_white_38">#61ffffff</color>
+    <color name="bt_black_54">#8a000000</color>
+    <color name="bt_white_54">#8affffff</color>
+    <color name="bt_black_87">#de000000</color>
+    <color name="bt_white_87">#deffffff</color>
+
+
+    <color name="tooltip_background">#525760</color>
+
+    <color name="active_ride_label_color">#00AAD1</color>
+
+
+    //////////// start /////////
+
+    //// Splash / Launch activity
+    <color name="launch_background">@android:color/black</color>
+
+
+    //// drawer ////
+    <color name="drawer_background">@android:color/white</color>
+    <color name="drawer_section_text">@android:color/black</color>
+    <color name="drawer_item_text">@android:color/black</color>
+    <color name="drawer_divider">#F0F0F0</color>
+    <color name="drawer_header_background">@android:color/white</color>
+    <color name="drawer_header_text">@android:color/black</color>
+    <color name="drawer_reservation_background">@android:color/white</color>
+
+
+    ///Authentication//////////
+    <color name="sign_in_background">@android:color/white</color>
+    <color name="sign_in_round_background">@android:color/white</color>
+    <color name="sign_in_terms_policy">@android:color/black</color>
+    <color name="sign_in_create_account">@android:color/black</color>
+    <color name="sign_in_forgot_password">@android:color/black</color>
+    <color name="sign_in_log_in_unselected_background">@android:color/white</color>
+    <color name="sign_in_log_in_unselected_text">#B6B6B6</color>
+    <color name="sign_in_log_in_unselected_border">#B6B6B6</color>
+    <color name="sign_in_log_in_selected_background">@android:color/black</color>
+    <color name="sign_in_log_in_selected_text">@android:color/white</color>
+    <color name="sign_in_email_password_box">#DDDDDD</color>
+    <color name="sign_in_welcome">@android:color/black</color>
+    <color name="sign_in_right_password">#000000</color>
+    <color name="sign_in_wrong_password">#FF0000</color>
+    <color name="sign_in_divider">#DDDDDD</color>
+    <color name="sign_in_link_color">@android:color/black</color>
+
+    <color name="sign_up_background">@android:color/white</color>
+    <color name="sign_up_round_background">@android:color/white</color>
+    <color name="sign_up_already_have_account">@android:color/black</color>
+    <color name="sign_up_sign_in">#0075FF</color>
+    <color name="sign_up_submit_unselected_background">@android:color/white</color>
+    <color name="sign_up_submit_unselected_text">#B6B6B6</color>
+    <color name="sign_up_submit_unselected_border">#B6B6B6</color>
+    <color name="sign_up_submit_selected_background">@android:color/black</color>
+    <color name="sign_up_submit_selected_text">@android:color/white</color>
+    <color name="sign_up_create_account">@android:color/black</color>
+    <color name="sign_up_right_password">#000000</color>
+    <color name="sign_up_wrong_password">#FF0000</color>
+    <color name="sign_up_divider">#DDDDDD</color>
+    <color name="sign_up_hint">#B6B6B6</color>
+    <color name="sign_up_text">@android:color/black</color>
+
+
+
+    <color name="auth_signup_login_bar_background">@color/lattis_toolbar_title</color>
+    <color name="auth_signup_login_bar_text">@color/lattis_transparent</color>
+    <color name="welcome_legal_warning_button_sign_up_background">@color/colorAccent</color>
+    <color name="welcome_legal_warning_button_sign_up_text">@color/black_overlay</color>
+    <color name="welcome_legal_warning_button_log_in_text">@color/black_overlay</color>
+    <color name="welcome_legal_warning_button_log_in_background">@color/colorAccent</color>
+    <color name="forgot_password_text">@color/lattis_accent_color</color>
+    <color name="forgot_password_background">@android:color/transparent</color>
+
+
+    ///Verify code 
+    <color name="verify_code_background">@android:color/white</color>
+    <color name="verify_email_text">@android:color/black</color>
+    <color name="verify_resend_text">#0075FF</color>
+    <color name="verify_submit_selected_text">#B6B6B6</color>
+    <color name="verify_submit_unselected_text">#B6B6B6</color>
+    <color name="verify_sign_in">#0075FF</color>
+
+
+    ///Bike List//////////
+    <color name="search_bar_hint">@android:color/black</color>
+    <color name="search_bar_text">@android:color/black</color>
+    <color name="search_bar_background">@android:color/white</color>
+    <color name="reserve_button_text">@android:color/white</color>
+    <color name="reserve_button_background">@android:color/black</color>
+    <color name="scan_button_background">#F5F5F5</color>
+    <color name="find_bike_background">@android:color/white</color>
+    <color name="bike_card_background">@android:color/white</color>
+    <color name="find_bike_button_background">@android:color/black</color>
+    <color name="name_in_find_bike_text">@android:color/black</color>
+    <color name="find_bike_label_in_find_bike">@android:color/black</color>
+    <color name="find_bike_scan_text">@android:color/white</color>
+    <color name="bike_card_header_text">@android:color/black</color>
+    <color name="bike_card_rates_background">#F5F5F5</color>
+    <color name="bike_fleet_company_name">#909090</color>
+
+    <color name="bike_card_slider_drag_divider_line">#44818181</color>
+    <color name="bike_slider_background">@android:color/white</color>
+    <color name="bike_slider_divider">#F0F0F0</color>
+    <color name="bike_slider_title">#888888</color>
+    <color name="bike_slider_detail_text">@android:color/black</color>
+
+    <color name="confirm_reserve_background">@android:color/white</color>
+    <color name="confirm_reserve_title">@android:color/black</color>
+    <color name="confirm_reserve_text">@android:color/black</color>
+    <color name="confirm_button_background">@android:color/black</color>
+    <color name="confirm_button_text">@android:color/white</color>
+    <color name="confirm_reserve_semi_transparent_background">#4D000000</color>
+    <color name="confirm_terms_policy_text">@android:color/black</color>
+    <color name="confirm_reserve_cancel">#727272</color>
+    <color name="bike_card_membership_popup_background">#A6000000</color>
+
+    ////Bike booked or active trip/////
+    <color name="booking_timer_in_bike_booked_background">@android:color/black</color>
+    <color name="booking_timer_in_bike_booked_text">@android:color/white</color>
+    <color name="booking_timer_in_bike_booked_dot">@android:color/white</color>
+    <color name="begin_trip_grey_in_bike_booked_background">#F8F8F8</color>
+    <color name="begin_trip_connected_bike_booked_background">@android:color/black</color>
+    <color name="begin_trip_grey_in_bike_booked_text">#C2C2C2</color>
+    <color name="begin_trip_white_in_bike_booked_text">@android:color/white</color>
+    <color name="cancel_in_bike_booked_text">#727272</color>
+    <color name="trip_timer_in_trip_background">@android:color/black</color>
+    <color name="trip_timer_in_trip_text">@android:color/white</color>
+    <color name="divider_in_trip">#4DFFFFFF</color>
+    <color name="end_ride_unselected_text">#909090</color>
+    <color name="end_ride_unselected_background">#F8F8F8</color>
+    <color name="end_ride_selected_text">@android:color/white</color>
+    <color name="end_ride_selected_background">@android:color/black</color>
+    <color name="booking_timer_running_message_background">#2F89F3</color>
+    <color name="booking_timer_expired_message_background">#F32F2F</color>
+    <color name="booking_timer_expired_message_text">@android:color/white</color>
+    <color name="active_ride_connecting_text">#AAAAAA</color>
+    <color name="active_ride_connecting_background">#F8F8F8</color>
+    <color name="active_ride_connect_to_lock_text">@android:color/white</color>
+    <color name="active_ride_connect_to_lock_background">@android:color/black</color>
+    <color name="active_ride_connect_to_lock_popup_text">@android:color/white</color>
+    <color name="active_ride_connect_to_lock_popup_background">#2F89F3</color>
+    <color name="scan_iot_or_adapter_background">@android:color/black</color>
+    <color name="manual_lock_begin_trip_background">@android:color/black</color>
+
+
+
+
+    //// lock unlock //
+    <color name="lock">#FF1F00</color>
+    <color name="unlock">@android:color/black</color>
+    <color name="lock_disabled">#CECDCD</color>
+
+    //// parking //
+    <color name="parking_notice_background">@android:color/black</color>
+    <color name="parking_notice_text">@android:color/white</color>
+    <color name="parking_detail_text">@android:color/white</color>
+    <color name="parking_detail_background">#0084FF</color>
+    <color name="parking_detail_get_direction_text">@android:color/white</color>
+    <color name="parking_detail_get_direction_background">#33000000</color>
+    <color name="parking_detail_image_background">#33000000</color>
+    <color name="parking_zone_out_line_color">#33FF0000</color>
+    <color name="parking_zone_fille_color">#33FF0000</color>
+
+
+
+
+    //// end ride //
+    <color name="end_ride_title">@android:color/black</color>
+    <color name="end_ride_sub_title">@android:color/black</color>
+    <color name="end_ride_take_photo_background">@android:color/black</color>
+
+
+    //// loading //
+    <color name="loading_background">@android:color/white</color>
+    <color name="loading_text">@android:color/black</color>
+
+
+    //// pop up
+    <color name="pop_up_card_background">@android:color/white</color>
+    <color name="pop_up_text">@android:color/black</color>
+    <color name="pop_up_btn_background">@android:color/black</color>
+    <color name="pop_up_divider">#DDDDDD</color>
+    <color name="pop_up_positive_text">@android:color/white</color>
+
+    //// ride summary
+    <color name="ride_summary_text">@android:color/black</color>
+    <color name="ride_summary_background">@android:color/white</color>
+    <color name="ride_summary_next_background">@android:color/black</color>
+    <color name="ride_summary_next_text">@android:color/white</color>
+    <color name="ride_summary_start_background">@android:color/white</color>
+    <color name="ride_summary_rate_your_trip_text">#909090</color>
+    <color name="ride_summary_rate_your_trip_background">@android:color/white</color>
+    <color name="ride_summary_divider">#F0F0F0</color>
+    <color name="ride_summary_duration_strip_background">@android:color/black</color>
+    <color name="ride_summary_duration_strip_text">@android:color/white</color>
+    <color name="ride_summary_semi_transparent_background">#4D000000</color>
+    <color name="ride_summary_star_selected">@android:color/black</color>
+    <color name="ride_summary_star_unselected">#DADADA</color>
+
+
+    //// qr code
+    <color name="qr_code_flash_light_background">#F5F5F5</color>
+    <color name="qr_code_background">@android:color/white</color>
+    <color name="qr_code_text">@android:color/black</color>
+    <color name="qr_code_progress_for_scanning">@android:color/white</color>
+    <color name="qr_code_semi_transparent_background">#80000000</color>
+    <color name="viewfinder_border">@android:color/holo_red_dark</color>
+    
+    //// profile and settings
+    <color name="profile_settings_background">@android:color/white</color>
+    <color name="profile_settings_text">@android:color/black</color>
+    <color name="profile_settings_divider">#F0F0F0</color>
+
+    //// help
+    <color name="help_background">@android:color/white</color>
+    <color name="help_text">@android:color/black</color>
+    <color name="help_open_image_slider_background">@android:color/black</color>
+    <color name="help_open_image_slider_text">@android:color/white</color>
+
+
+    //// logout
+    <color name="logout_background">@android:color/white</color>
+    <color name="logout_text">@android:color/black</color>
+
+
+    //// payment
+    <color name="payment_background">@android:color/white</color>
+    <color name="payment_text">@android:color/black</color>
+    <color name="payment_divider">#F0F0F0</color>
+    <color name="payment_add_credit_card_background">@android:color/black</color>
+    <color name="payment_add_credit_card_text">@android:color/white</color>
+    <color name="payment_save_credit_card_background">@android:color/black</color>
+    <color name="payment_save_credit_card_text">@android:color/white</color>
+    <color name="payment_delete_credit_card_background">@android:color/black</color>
+    <color name="payment_delete_credit_card_text">@android:color/white</color>
+    <color name="payment_save_edit_credit_card_background">#F5F5F5</color>
+    <color name="payment_save_edit_credit_card_text">@android:color/black</color>
+
+
+    //// private fleets
+    <color name="private_fleets_background">@android:color/white</color>
+    <color name="private_fleets_text">@android:color/black</color>
+    <color name="private_fleets_divider">#F0F0F0</color>
+    <color name="private_fleets_add_private_fleets_background">@android:color/black</color>
+    <color name="private_fleets_add_private_fleets_text">@android:color/white</color>
+
+    //// email secret
+    <color name="email_secret_background">@android:color/white</color>
+    <color name="email_secret_text">@android:color/black</color>
+    <color name="email_secret_divider">#F0F0F0</color>
+    <color name="email_secret_hint_color">#B6B6B6</color>
+    <color name="email_secret_send_verification_code_background">@android:color/black</color>
+    <color name="email_secret_send_verification_code_text">@android:color/white</color>
+
+
+    //// search places
+    <color name="search_places_background">@android:color/white</color>
+    <color name="search_places_text">@android:color/black</color>
+    <color name="search_places_hint_color">#B6B6B6</color>
+    <color name="search_places_divider">#F0F0F0</color>
+    <color name="search_places_address2">#ADADAD</color>
+
+
+    //// Report theft
+    <color name="report_theft_background">@android:color/white</color>
+    <color name="report_theft_text">@android:color/black</color>
+    <color name="report_damage_background">@android:color/white</color>
+    <color name="report_damage_text">@android:color/black</color>
+    <color name="report_damage_divider">#DDDDDD</color>
+    <color name="report_damage_note_hint_text">#9D9D9D</color>
+    <color name="report_damage_no_photo_text">#9D9D9D</color>
+    <color name="report_damage_take_photo_background">@android:color/black</color>
+    <color name="report_damage_take_photo_text">@android:color/white</color>
+    <color name="report_damage_submit_background">@android:color/black</color>
+    <color name="report_damage_submit_text">@android:color/white</color>
+
+
+    //// Ride history
+    <color name="ride_history_background">@android:color/white</color>
+    <color name="ride_history_text">@android:color/black</color>
+    <color name="ride_history_divider">#F0F0F0</color>
+
+
+    //// forgot password
+    <color name="forgot_password_log_in">#0075FF</color>
+    <color name="forgot_password_change">#0075FF</color>
+
+    // parking
+    <color name="parking_text">@android:color/black</color>
+    <color name="parking_background">@android:color/white</color>
+
+    // webview
+    <color name="webview_text">@android:color/black</color>
+    <color name="webview_background">@android:color/white</color>
+
+    /// reservation
+    <color name="reservation_text">@android:color/black</color>
+    <color name="reservation_background_semitransparent">#80000000</color>
+    <color name="reservation_background">@android:color/white</color>
+    <color name="reservation_date_time_label_text">#909090</color>
+    <color name="reservation_confirm_unselected_background">#919191</color>
+    <color name="reservation_confirm_unselected_text">@android:color/white</color>
+    <color name="reservation_confirm_selected_background">@android:color/black</color>
+    <color name="reservation_confirm_selected_text">@android:color/white</color>
+    <color name="reservation_back_background">#F5F5F5</color>
+    <color name="reservation_back_text">@android:color/black</color>
+    <color name="reservation_done_background">@android:color/black</color>
+    <color name="reservation_done_text">@android:color/white</color>
+    <color name="reservation_vehicles_divider">#F0F0F0</color>
+    <color name="reservation_vehicles_select_background">#F5F5F5</color>
+    <color name="reservation_vehicles_select_text">@android:color/black</color>
+    <color name="reservation_confirm_background">@android:color/black</color>
+    <color name="reservation_confirm_text">@android:color/white</color>
+    <color name="reservation_disabled_section">#979797</color>
+    <color name="reservation_edit_divider">#F0F0F0</color>
+    <color name="reservation_cancel_background">@android:color/black</color>
+    <color name="reservation_cancel_text">@android:color/white</color>
+    <color name="reservation_confirm_trip_cost_background">#F5F5F5</color>
+    <color name="reservation_list_today_background">#308AF4</color>
+    <color name="reservation_list_today_text">@android:color/white</color>
+    <color name="reservation_list_item_divider">#F0F0F0</color>
+    <color name="reservation_list_item_today_text">@android:color/white</color>
+    <color name="reservation_list_create_reservation_button_background">@android:color/black</color>
+    <color name="reservation_list_create_reservation_button_text">@android:color/white</color>
+    <color name="reservation_list_info_map_background">#F5F5F5</color>
+    <color name="reservation_list_available_timer_background">@android:color/black</color>
+    <color name="reservation_list_available_timer_text">@android:color/white</color>
+    <color name="reservation_divider">#F0F0F0</color>
+    <color name="reservation_fleet_search_background">#F5F5F5</color>
+
+
+    // membership
+    <color name="membership_backgroud">@android:color/white</color>
+    <color name="membership_text">@android:color/black</color>
+    <color name="membership_price_background">@android:color/black</color>
+    <color name="membership_price_text">@android:color/white</color>
+    <color name="membership_divider">#F5F5F5</color>
+    <color name="membership_round_button_background">@android:color/black</color>
+    <color name="membership_round_button_text">@android:color/white</color>
+
+
+    /// no internet
+    <color name="no_internet_text">@android:color/black</color>
+    <color name="no_internet_background">@android:color/white</color>
+    <color name="no_internet_semitransparent_background">#80000000</color>
+
+    /// hub dock color
+    <color name="hub_dock_parking">#0085FF</color>
+    <color name="hub_dock_bike">@android:color/black</color>
+    <color name="dock_hub_bike_list_background">@android:color/white</color>
+    <color name="dock_hub_bike_list_text">@android:color/black</color>
+    <color name="dock_hub_vehicles_select_background">#F5F5F5</color>
+    <color name="dock_hub_vehicles_select_text">@android:color/black</color>
+    <color name="dock_hub_vehicles_divider">#F0F0F0</color>
+
+
+
+    /// reservation menu
+    <color name="reservation_count_text">@android:color/white</color>
+    <color name="reservation_count_background">#308AF4</color>
+
+
+    /// tutorial
+    <color name="image_slider_selected_dot">@android:color/black</color>
+    <color name="image_slider_unselected_dot">#C4C4C4</color>
+    <color name="image_slider_divider">#DDDDDD</color>
+    <color name="image_slider_text">@android:color/black</color>
+    <color name="image_slider_background">#80000000</color>
+
+
+    /// promotion
+    <color name="promotion_text">@android:color/black</color>
+    <color name="promotion_background">@android:color/white</color>
+    <color name="promotion_divider">#DDDDDD</color>
+    <color name="promotion_add_promo_code_background">@android:color/black</color>
+    <color name="promotion_add_promo_code_text">@android:color/white</color>
+    <color name="promotion_add_promo_code_link_background">@android:color/white</color>
+    <color name="promotion_add_promo_code_link_text">#308AF4</color>
+    <color name="promotion_description_background">@android:color/black</color>
+    <color name="promotion_description_text">@android:color/white</color>
+
+
+    /// geo fence
+    <color name="geofence_out_line_color">#CC308AF4</color>
+    <color name="geofence_fill_color">#33308AF4</color>
+
+
+    /// manual lock
+    <color name="manual_lock_popup_transparent_background">#4D000000</color>
+    <color name="manual_lock_popup_visible_background">@android:color/white</color>
+    <color name="manual_lock_popup_text">@android:color/black</color>
+    <color name="manual_lock_popup_code_background">#F5F5F5</color>
+    <color name="manual_lock_popup_btn_background">@android:color/black</color>
+    <color name="manual_lock_popup_btn_text">@android:color/white</color>
+
+    //// lock unlock pop up
+    <color name="lock_unlock_popup_visible_background">@android:color/white</color>
+    <color name="lock_unlock_popup_visible_text">@android:color/black</color>
+
+    //// rental fare
+    <color name="rental_fare_semi_transparent_background">#4D000000</color>
+    <color name="rental_fare_background">@android:color/white</color>
+    <color name="rental_fare_text">@android:color/black</color>
+    <color name="rental_fare_divider">#EBEBEB</color>
+    <color name="rental_fare_confirm_text">@android:color/white</color>
+    <color name="rental_fare_confirm_background">@android:color/black</color>
+
+    //// strict tc
+    <color name="strict_tc_transparent_background">#4D000000</color>
+    <color name="strict_tc_background">@android:color/white</color>
+    <color name="strict_tc_text">@android:color/black</color>
+
+    <color name="strict_tc_cancel_text">#727272</color>
+
+    <color name="strict_tc_accept_unselected_text">#F5F5F5</color>
+    <color name="strict_tc_accept_unselected_border">#F5F5F5</color>
+    <color name="strict_tc_accept_unselected_background">@android:color/white</color>
+
+    <color name="strict_tc_accept_selected_text">@android:color/white</color>
+    <color name="strict_tc_accept_selected_background">@android:color/black</color>
+
+    <color name="strict_tc_switch_selected">@android:color/black</color>
+    <color name="strict_tc_switch_unselected">@android:color/white</color>
+
+
+</resources>

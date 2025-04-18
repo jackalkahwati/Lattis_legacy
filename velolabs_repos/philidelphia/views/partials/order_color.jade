@@ -1,0 +1,17 @@
+div(id='p_update', ng-init='init()')
+	div(class='divider')
+		h2(id='order_number') {{conformationTitle()}}
+		div(class='order_container' ng-repeat='color in ellipseColors() track by $index')
+
+			div(class='orderimage_container', ng-style="loc", ng-class='displayColors[$index].className')
+				img(src='./images/icons/white_outline_icon.png' class = 'order_icon')
+
+			div(class='ordercolor_container')
+				h2(id='color_choice') {{displayColors[$index].color}}
+				ul
+					li(class='order_black', ng-click='chooseColor("grey", $index)') &nbsp;
+					li(class='order_blue', ng-click='chooseColor("blue", $index)') &nbsp;
+					li(class='order_white', ng-click='chooseColor("white", $index)') &nbsp;
+
+	a(ui-sref='confirmed', ng-click='submitColor()')
+		button Confirmed!

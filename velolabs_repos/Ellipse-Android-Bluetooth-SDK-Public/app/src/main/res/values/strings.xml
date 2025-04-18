@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">EllipseSDKDemo</string>
+    <string name="app_title">Ellipse SDK Demo</string>
+    <string name="action_settings">Settings</string>
+    <string name="connect_lock_label">Connect Lock</string>
+    <string name="scan_lock_label">Scan Ellipse(s)</string>
+    <string name="hint_lock_name">Ellipse\'s name or Mac ID</string>
+    <string name="hint_token_label">Authorization Token</string>
+    <string name="scan_ellipse_instruction">Scan Ellilpse (click):</string>
+
+    <string name="ellipse_lock_label">Click to Lock</string>
+    <string name="ellipse_unlock_label">Click to UnLock</string>
+
+    <string name="ellipse_touch_cap_off_label">Click to turn off touch cap</string>
+    <string name="ellipse_touch_cap_on_label">Click to turn on touch cap</string>
+
+    <string name="ellipse_auto_lock_on_shackle_off_label">Click to turn off magnetic auto Lock</string>
+    <string name="ellipse_auto_lock_on_shackle_on_label">Click to turn on magnetic auto Lock</string>
+
+    <string name="tv_disconnect_label">Click here to disconnect</string>
+
+    <string name="tv_set_auto_lock_on_label">Click to turn on auto lock</string>
+    <string name="tv_set_auto_lock_off_label">Click to turn off auto lock</string>
+
+    <string name="ellipse_disconnect_toast_label">Ellipse disconnected. Please try again!</string>
+
+    <string name="shackle_position_label">Shackle inserted: </string>
+
+    <string name="set_pin_label"> Set Pin to UP, DOWN, RIGHT, LEFT </string>
+
+    <string name="disconnecte_label">Disconnect</string>
+
+    <string name="reset_label">Reset</string>
+
+    <string name="upgrade_fw_label">upgrade</string>
+
+    <string name="upgrade_fw_success_label">Firmware upgraded successfully</string>
+
+    <string name="upgrade_fw_failure_label">Firmware upgraded successfully</string>
+
+
+</resources>

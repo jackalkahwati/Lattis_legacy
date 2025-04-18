@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"> 
+<!--
+ Loco ios export: iOS plural rules
+ Project: Lattis
+ Release: Working copy
+ Locale: ru, Russian
+ Exported by: Ravil Khusainov
+ Exported at: Wed, 30 Mar 2022 17:33:41 +0300 
+--> 
+<plist version="1.0">
+    <dict> 
+        <key>hours</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 час</string> 
+                <key>few</key>
+                <string>% часа</string> 
+                <key>other</key>
+                <string>%d часов</string> 
+            </dict>
+        </dict> 
+        <key>mins</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 мин.</string> 
+                <key>few</key>
+                <string>%d мин.</string> 
+                <key>other</key>
+                <string>%d мин.</string> 
+            </dict>
+        </dict> 
+        <key>days</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 день</string> 
+                <key>few</key>
+                <string>%d дня</string> 
+                <key>other</key>
+                <string>%d дней</string> 
+            </dict>
+        </dict> 
+        <key>weeks</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 неделя</string> 
+                <key>few</key>
+                <string>%d недели</string> 
+                <key>other</key>
+                <string>%d недель</string> 
+            </dict>
+        </dict> 
+        <key>months</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 месяц</string> 
+                <key>few</key>
+                <string>%d месяца</string> 
+                <key>other</key>
+                <string>% месяцев</string> 
+            </dict>
+        </dict> 
+        <key>minutes</key>
+        <dict> 
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@items@</string>
+            <key>items</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string> 
+                <key>one</key>
+                <string>1 минута</string> 
+                <key>few</key>
+                <string>%d минуты</string> 
+                <key>other</key>
+                <string>%d минут</string> 
+            </dict>
+        </dict> 
+    </dict>
+</plist>

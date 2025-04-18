@@ -1,0 +1,251 @@
+<section ng-controller="addbikeController">
+    <div class="panel">
+        <div class="panel-heading bg-white p-tb20-lr40" ng-if="addDetails">
+            <div class="p-t-20 nomarg bg-white noborder ">
+                <span class="ft-22 text-muted v-b">Ride details</span>
+            </div>
+        </div>
+
+        <div ng-if="addBikes" class="panel-body box m-tb-50">
+            <div class="bg-hash" style="margin: 0 auto; width: 700px; height: 300px">
+                <p class="p-tb15-lr20 m-t-20" style="padding-top:30px">
+                    On the following screen you will be able to add rides to the system. Rides correspond to vehicles in your fleet. As the system is very flexible you can select various types of rides (bikes, E-bikes, kick scooters etc…) but you can also customize each of them with a description and an image that will be seen by the riders when they select a vehicle to rent.
+                </p>
+                <p class="p-tb15-lr20">
+                    You can create rides one by one or by batch by entering a number greater than one down below. Please note that once you have created a ride, all the details will be saved if you need to add more to the fleet at a later time.
+                </p>
+                <p class="p-tb15-lr20">
+                    Once you have created all your rides they should all have a QR code sticker on them and they will be ready to be paired with an Ellipse before they can be sent to LIVE to be rented.
+                </p>
+            </div>
+            <div style="width:700px; margin:40px auto">
+                <p class="m-tb-10">How many new rides are you adding to the fleet?</p>
+                <p>Note: if you enter a number greater than one you can create a batch of the exact same type of vehicles. If you have different types of vehicles in your fleet you will have to add them separately.</p>
+                <input ng-model="bike.no" class="p-5" type="text">
+            </div>
+            <div class="m-t-20 p-tb10-lr20 bor-t-hash bor-b-hash" style="width:700px; margin:0 auto">
+                <button class="btn custom-btn wid-100 bg-HeaderToolbar text-white" ng-click="backtoStagingClick()">CANCEL
+                </button>
+                <button ui-sref="add-bikes" ng-click="nextBikes()"
+                        class="btn pull-right custom-btn wid-100 text-uppercase wid-130">
+                    NEXT
+                </button>
+            </div>
+        </div>
+
+        <div ng-show="addDetails" class="panel-body box">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6">
+                    <form method='post' novalidate ng-submit="submitForm()" name='form'>
+                        <div class="help-block" ng-messages="form.$error">
+                            <div ng-messages-include="html/templates/formError.html"></div>
+                        </div>
+                        <div class="row new-fleet-box">
+                            <div class="col-sm-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">SELECT A PREVIOUSLY DEFINED RIDE MODEL</label>
+                                <div class="row m-t-10 m-b-35">
+                                    <div class="col-sm-6 col-xs-6">
+                                        <select name="mySelect" id="mySelect" style="width: 100%; height: 30px"
+                                                ng-options="option.pre_defined_bike for option in predifinedBikes.pre_defined_bikes track by option.pre_defined_bike"
+                                                ng-model="selectedOption" ng-change="bikeSelected()">
+                                            <option value="">Select a predefined ride</option>
+                                        </select><br><br> {{option}}
+                                        <span>OR CREATE A NEW MODEL</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">MAKE AND MODEL</label>
+                                <div class="row m-t-10 m-b-35">
+                                    <div class="col-sm-6 col-xs-6 set-placeholder inline-block">
+                                        <em class="required-dot" style="top:0px;margin-right: 20px;">&#9679;</em>
+                                        <input class="form-control new-txt-box " id="make" type="text"
+                                               name="make" ng-model-options="{ updateOn: 'blur' }" ng-model="bikeMake"
+                                               ng-pattern="/^[\w -._]*$/" data-ng-required="true"
+                                               ng-class="{err:!form.make.$valid && !form.make.$pristine}"
+                                               ng-blur='validateFields(form.make)'
+                                               type="text">
+                                        <p ng-if="!form.make.$pristine && form.make.$error.pattern"
+                                           class="error-alert">Make not valid</p>
+                                        <p ng-if="!form.make.$pristine && form.make.$error.required"
+                                           class="error-alert">Make is required</p>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-6">
+                                        <em class="required-dot" style="top:0px;margin-right: 20px;">&#9679;</em>
+                                        <input class="form-control new-txt-box " id="model" type="text"
+                                               name="model" ng-model-options="{ updateOn: 'blur' }" ng-model="bikeModel"
+                                               ng-pattern="/^[\w -._]*$/" data-ng-required="true"
+                                               ng-blur='validateFields(form.model)'
+                                               ng-class="{err:!form.model.$valid && !form.model.$pristine}"
+                                               type="text">
+                                        <p ng-if="!form.model.$pristine && form.model.$error.pattern"
+                                           class="error-alert">Model name not valid</p>
+                                        <p ng-if="!form.model.$pristine && form.model.$error.required"
+                                           class="error-alert">Model name is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-mid-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">RIDE TYPE</label>
+                                <div class="row m-t-10 m-b-35">
+                                    <div class="col-sm-4 col-xs-4">
+                                        <input type="radio" ng-init="bikeType='regular'" name="radio" id="radio1"
+                                               value="regular" ng-model="bikeType"/>
+                                        <label for="radio1">Bike</label>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                        <input type="radio" name="radio" id="radio2" value="electric" ng-model="bikeType"/>
+                                        <label for="radio2">Electric Bike</label>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                            <input type="radio" name="radio" id="radio3" value="Kick Scooter" ng-model="bikeType"/>
+                                            <label for="radio3">Kick Scooter</label>
+                                        </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                      <input type="radio" name="radio" id="radio4" value="locker" ng-model="bikeType"/>
+                                      <label for="radio4">Locker</label>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                      <input type="radio" name="radio" id="radio5" value="cart" ng-model="bikeType"/>
+                                      <label for="radio5">Golf Cart</label>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                      <input type="radio" name="radio" id="radio6" value="kayak" ng-model="bikeType"/>
+                                      <label for="radio6">Kayak</label>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                      <input type="radio" name="radio" id="radio8" value="moped" ng-model="bikeType"/>
+                                      <label for="radio8">Moped</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">CONTROLLER MODULE TYPE(IoT or Tracker)</label>
+                                <div class="row m-t-10 m-b-35">
+                                    <div class="col-sm-6 col-xs-6">
+                                        <select name="iotModuleSelect" id="iotModuleSelect" style="width: 100%; height: 30px" ng-model="iotModuleType">
+                                            <option value="">None</option>
+                                            <option value="Segway">Segway</option>
+                                            <option value="Segway IoT EU">Segway IoT EU</option>
+                                            <option value="COMODULE Ninebot ES4">COMODOULE Ninebot ES4</option>
+                                            <option value="ACTON">ACTON</option>
+                                            <option value="Nimbelink">Nimbelink</option>
+                                            <option value="ScoutIOT">Scout IOT</option>
+                                            <option value="Geotab IOT">Geotab</option>
+                                            <option value="Grow">Grow</option>
+                                            <option value="Manual lock">Manual Lock</option>
+                                            <option value="Linka IoT">Linka</option>
+                                            <option value="Omni">Omni(Lock)</option>
+                                            <option value="Omni IoT">Omni IoT</option>
+                                            <option value="Teltonika">Teltonika</option>
+                                            <option value="Okai">Okai</option>
+                                            <option value="Tap Key">Tapkey</option>
+                                            <option value="Duckt">DuckT</option>
+                                            <option value="Kisi">Kisi</option>
+                                            <option value="Sas">Sas</option>
+                                            <option value="Sentinel">Sentinel</option>
+                                            <option value="Edge">Edge</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">RIDE DESCRIPTION</label>
+                            </div>
+                            <div class="col-sm-12 ">
+                                <div class="row m-t-10 m-b-35">
+                                    <div class="col-sm-12 col-xs-12">
+                                        <em class="required-dot" style="top:32px;margin-right: 20px;">&#9679;</em>
+                                        <textarea ng-model="selectedBikeDescription" data-ng-required="true"
+                                                  style="width: 100%;resize: none;"
+                                                  name="description" ng-pattern="/[A-Za-z0-9]{1,300}/"
+                                                  ng-blur='validateFields(form.description)'
+                                                  rows="4" class="form-control nobor-rad" placeholder="Max 400 characters"
+                                                  ng-model-options="{ updateOn: 'blur'}"
+                                                  ng-maxlength="descriptionMaxLength"
+                                                  ng-class="{err:!form.description.$valid && !form.description.$pristine}"></textarea>
+                                        <p ng-if="!form.description.$pristine && form.description.$error.pattern"
+                                           class="error-alert">Description not valid</p>
+                                      <p ng-if="form.description.$error.maxlength"
+                                         class="error-alert">Maximum description length is {{ descriptionMaxLength }} characters</p>
+                                        <p ng-if="!form.description.$pristine && form.description.$error.required"
+                                           class="error-alert">Description is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 m-b-35">
+                                <label class="bor-b-hash fullwid fw-300 l-s">RIDE PHOTO</label>
+                                <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" haspreview="false" name="Browse..." file="bikeImage" text="* Default ride image will be used"></custom-Fileupload>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="bor-b-hash fullwid fw-300 l-s">MAINTENANCE SCHEDULE</label>
+                                <div class="row m-t-10 m-b-10">
+                                    <p class="p-tb5-lr20 table-text">This function allows you to customize your maintenance
+                                        schedule. Please indicate the maintenance interval you would like (per mile or kilometer) for
+                                        each make and model per fleet. NOTE: This setting can be changed in the Profile
+                                        section. </p>
+                                    </div>
+                                </div>
+                            <div class="col-sm-12 m-b-35">
+                                <ul class="m-lr-5 nopadd nomarg inline-block">
+                                    <li class="inline-block">
+                                        <span class="m-r-5 table-text">{{distancePreference === 'miles' ?  'Mileage' : 'Kilometrage'}} Frequency </span>
+                                        <input ng-model="mainSchedule" type="text" style="width:35px; text-align:center; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                    </li>
+                                    <li class=" m-lr-5 inline-block">
+                                        {{distancePreference}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 responsive-btn">
+                                <div class="text-left fullwid m-tb-10 p-tb-10 bor-tb-hash">
+                                    <button class="btn custom-btn pbtn-tb11-lr20 bg-HeaderToolbar " ng-click="backorderBikes()"><em
+                                            class="fa fa-angle-left p-r-5"> </em>BACK
+                                    </button>
+                                    <button class="btn pull-right custom-btn pbtn-tb11-lr20" ng-disabled="form.description.$error.maxlength" ng-click="saveProfile()">
+                                        UPDATE RIDE DETAILS
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-5 col-sm-offset-1 col-xs-offset-1 col-xs-5" style="padding: 25px;">
+                    <p class="text-alert-dark ft-13 ">Use the image below as a guide to see how the rides will
+                        appear to members in the app:</p>
+                    <button class="btn custom-btn ft-12 m-tb-10" ng-click="updatePreview()">UPDATE APP PREVIEW
+                    </button>
+
+                    <div class="row">
+                        <div class="col-sm-12 p-rel">
+                            <img src="../images/Bikefleet.png" class="p-20 wid-400"/>
+                            <div class="absolute wid-285" style="top:300px;left:85px">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <p class="ft-12 text-gray">RIDE NAME</p>
+                                    <p class="ft-12">Happy Clam</p>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <p class="ft-12 text-gray">BIKE TYPE</p>
+                                    <p class="ft-12 text-dark-blue">{{mobile.bikeType}}</p>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <p class="ft-12 text-gray">CHARGE</p>
+                                    <p class="ft-12">75%</p>
+                                </div>
+                                <div class="m-t-30 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <p class="text-dark-blue ft-12">{{mobile.bikeDesc}}</p>
+                                </div>
+                                <div class="m-t-30 col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    <img ng-src="{{mobile.bikeImageSRC}}" class="h-150" alt="bike-placholder">
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

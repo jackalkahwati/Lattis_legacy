@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "git@github.com:velolabs/keychain-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "7ccfba13ca6637f25feb6a4eb7076568523c0b69",
+          "version": null
+        }
+      },
+      {
+        "package": "oval-api",
+        "repositoryURL": "git@github.com:velolabs/oval-ios.git",
+        "state": {
+          "branch": "master",
+          "revision": "7dd5d24989707e9f01ed716202a29254324cc042",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

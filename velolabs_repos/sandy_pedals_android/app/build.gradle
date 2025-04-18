@@ -1,0 +1,197 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+android {
+
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+
+
+    defaultConfig {
+        applicationId "io.bikes.sandypedals"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+
+
+
+        resValue 'string', 'app_name', 'Lattis'
+        resValue 'string', 'account_type', 'io.bikes.sandypedals'
+        resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess'
+
+    }
+
+    flavorDimensions "sandyPedals"
+
+    buildTypes {
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            debuggable true
+            buildConfigField('boolean', 'USE_MOCK', 'false')
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField('boolean', 'USE_MOCK', 'false')
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //flavorDimensions "ellipse", "lattis"
+
+    productFlavors {
+
+        sandyPedals {
+            applicationId "io.bikes.sandypedals"
+            resValue 'string', 'app_name', 'Sandy Pedals'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        sandyPedalsDev {
+            applicationId "io.bikes.sandypedals.dev"
+            resValue 'string', 'app_name', 'Sandy Pedals Dev'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+
+        }
+
+        sandyPedalsBeta {
+            applicationId "io.bikes.sandypedals.beta"
+            resValue 'string', 'app_name', 'Sandy Pedals Beta'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+    }
+
+    dependencies {
+        // Add the Firebase Crashlytics Gradle plugin.
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta02'
+    }
+}
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    google()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Provides backward compatibility.
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.2.0-alpha01'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    // RxBinding, for wrapping widget actions with Rx concepts.
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxbinding_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-design:$rxbinding_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rxbinding_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit-mock:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
+
+    // Dependency Injection.
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    compileOnly "javax.annotation:jsr250-api:$javax_annotation_version"
+
+    // Bind Android views and callbacks to fields and methods.
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    implementation('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta01'
+
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.37.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v8:0.9.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.37.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:7.3.2'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v7:0.2.0'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v7:0.6.0'
+
+    implementation project(path: ':Ellipse-Android-Bluetooth-SDK')
+
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'com.google.code.gson:gson:2.6.2'
+//    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
+    implementation ("com.google.android.libraries.places:places:2.0.0") {
+        exclude group: "com.github.bumptech.glide"
+    }
+
+
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+//    implementation 'com.akexorcist:googledirectionlibrary:1.0.4'
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'me.tankery.lib:circularSeekBar:1.1.3'
+    implementation 'org.permissionsdispatcher:permissionsdispatcher:4.5.0'
+    annotationProcessor 'org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0'
+    implementation 'com.sandrios.android:sandriosCamera:1.2.6'
+    implementation 'com.mapzen.android:lost:1.1.1'
+    implementation 'com.stripe:stripe-android:10.4.2'
+    implementation 'io.card:android-sdk:5.5.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
+    implementation 'com.cpiz.bubbleview:bubbleview:1.0.2'
+
+    implementation 'com.github.jkwiecien:EasyImage:2.1.0'
+
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    implementation 'com.google.android.play:core:1.6.3'
+
+}

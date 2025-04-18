@@ -1,0 +1,306 @@
+{
+  "pins" : [
+    {
+      "identity" : "abseil-cpp-swiftpm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/abseil-cpp-SwiftPM.git",
+      "state" : {
+        "revision" : "583de9bd60f66b40e78d08599cc92036c2e7e4e1",
+        "version" : "0.20220203.2"
+      }
+    },
+    {
+      "identity" : "atributika",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:psharanda/Atributika.git",
+      "state" : {
+        "revision" : "d018897afbd55d9065ef859650585bac890ada7e",
+        "version" : "4.10.1"
+      }
+    },
+    {
+      "identity" : "axalock_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:velolabs/axalock_ios.git",
+      "state" : {
+        "revision" : "ada3675ad6dcfadcfbfa61229a861bd0c8fe7004"
+      }
+    },
+    {
+      "identity" : "boringssl-swiftpm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
+      "state" : {
+        "revision" : "dd3eda2b05a3f459fc3073695ad1b28659066eab",
+        "version" : "0.9.1"
+      }
+    },
+    {
+      "identity" : "cartography",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:robb/Cartography.git",
+      "state" : {
+        "revision" : "b75197ea134f42b5feafb04b526b37eb1a41034b",
+        "version" : "4.0.0"
+      }
+    },
+    {
+      "identity" : "ellipse_lock_apple",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:velolabs/ellipse_lock_apple.git",
+      "state" : {
+        "revision" : "7fb7c22fb42b07274d12d8956f5a75a87f15fc86"
+      }
+    },
+    {
+      "identity" : "firebase-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/firebase-ios-sdk.git",
+      "state" : {
+        "revision" : "7e80c25b51c2ffa238879b07fbfc5baa54bb3050",
+        "version" : "9.6.0"
+      }
+    },
+    {
+      "identity" : "googleappmeasurement",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleAppMeasurement.git",
+      "state" : {
+        "revision" : "c1cfde8067668027b23a42c29d11c246152fe046",
+        "version" : "9.6.0"
+      }
+    },
+    {
+      "identity" : "googledatatransport",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleDataTransport.git",
+      "state" : {
+        "revision" : "5056b15c5acbb90cd214fe4d6138bdf5a740e5a8",
+        "version" : "9.2.0"
+      }
+    },
+    {
+      "identity" : "googleutilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleUtilities.git",
+      "state" : {
+        "revision" : "68ea347bdb1a69e2d2ae2e25cd085b6ef92f64cb",
+        "version" : "7.9.0"
+      }
+    },
+    {
+      "identity" : "grpc-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/grpc/grpc-ios.git",
+      "state" : {
+        "revision" : "8440b914756e0d26d4f4d054a1c1581daedfc5b6",
+        "version" : "1.44.3-grpc"
+      }
+    },
+    {
+      "identity" : "gtm-session-fetcher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/gtm-session-fetcher.git",
+      "state" : {
+        "revision" : "d4289da23e978f37c344ea6a386e5546e2466294",
+        "version" : "2.1.0"
+      }
+    },
+    {
+      "identity" : "http-client-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:rawillk/http-client-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "71ceaf98c675d423b186ae84791a0375341395d3"
+      }
+    },
+    {
+      "identity" : "ihkeyboardavoiding",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:rawillk/IHKeyboardAvoiding.git",
+      "state" : {
+        "revision" : "ad335b7878857326997103f9d53f006d57df589d"
+      }
+    },
+    {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "32a99b537d1c6f3529a08257c28a5feb70c0c5af"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "017f94ccfdacabb1ae7f45b75b4217b24c06e6ac",
+        "version" : "7.4.0"
+      }
+    },
+    {
+      "identity" : "leveldb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/leveldb.git",
+      "state" : {
+        "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
+        "version" : "1.22.2"
+      }
+    },
+    {
+      "identity" : "localize-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:marmelroy/Localize-Swift.git",
+      "state" : {
+        "revision" : "0aa221fed0512772eaad04171d966b8d77b15212",
+        "version" : "3.2.0"
+      }
+    },
+    {
+      "identity" : "mapboxgeocoder.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mapbox/MapboxGeocoder.swift.git",
+      "state" : {
+        "revision" : "10c497840c9e1142194563f402ddc903310a935d",
+        "version" : "0.15.0"
+      }
+    },
+    {
+      "identity" : "mapboxstatic.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mapbox/MapboxStatic.swift.git",
+      "state" : {
+        "revision" : "886e17c242fe9f573ab6c27871a26c0795400017",
+        "version" : "0.12.0"
+      }
+    },
+    {
+      "identity" : "nanopb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/nanopb.git",
+      "state" : {
+        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
+        "version" : "2.30909.0"
+      }
+    },
+    {
+      "identity" : "noke-mobile-library-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:noke-inc/noke-mobile-library-ios.git",
+      "state" : {
+        "revision" : "b2ba82eb17c46f24533f68a1d4625314574b2a1a",
+        "version" : "0.9.2"
+      }
+    },
+    {
+      "identity" : "platform-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:velolabs/platform-swift.git",
+      "state" : {
+        "revision" : "6f396d99fe8220ab717d1e50324a676af050a477"
+      }
+    },
+    {
+      "identity" : "polyline",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raphaelmor/Polyline.git",
+      "state" : {
+        "revision" : "353f80378dcd8f17eefe8550090c6b1ae3c9da23",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "promises",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/promises.git",
+      "state" : {
+        "revision" : "3e4e743631e86c8c70dbc6efdc7beaa6e90fd3bb",
+        "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "qrcodeview",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:rawillk/QRCodeView.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5256a480da216cbdeb906cc26b897cc0ef1bd0ef"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift.git",
+      "state" : {
+        "revision" : "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "sas-ble-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:velolabs/sas-ble-swift.git",
+      "state" : {
+        "revision" : "66022d291bbc9314f0da12e4bff6b74c151780bb"
+      }
+    },
+    {
+      "identity" : "sidemenu",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:kukushi/SideMenu.git",
+      "state" : {
+        "revision" : "c168c143a1acb690ebb992406d9a03ce8791f47c",
+        "version" : "2.0.9"
+      }
+    },
+    {
+      "identity" : "stripe-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stripe/stripe-ios.git",
+      "state" : {
+        "revision" : "c227c238ab171081366c97c398789cfbb79ae3b9",
+        "version" : "22.8.3"
+      }
+    },
+    {
+      "identity" : "swift-protobuf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-protobuf.git",
+      "state" : {
+        "revision" : "88c7d15e1242fdb6ecbafbc7926426a19be1e98a",
+        "version" : "1.20.2"
+      }
+    },
+    {
+      "identity" : "swifthexcolors",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:thii/SwiftHEXColors.git",
+      "state" : {
+        "revision" : "1f886cb20fedda14a5ac75efd09bc99c95b43a18",
+        "version" : "1.4.1"
+      }
+    },
+    {
+      "identity" : "uicircularprogressring",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:luispadron/UICircularProgressRing.git",
+      "state" : {
+        "revision" : "4a1fd4a77bcc27f8b3714aae3ea35835251dcef3",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "wrappers",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:rawillk/Wrappers.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "076f5a4f7db39f08cf3f334ad6d696cc015ecacd"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.releaseVersionCode
+        versionName Versions.releaseVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+configurations.all {
+    resolutionStrategy.force "${ProjectDependencies.loggingInterceptor}"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(ProjectModules.domain)
+
+    implementation project(path: ':Ellipse-Android-Bluetooth-SDK')
+
+    // retrofit
+    implementation ProjectDependencies.retrofit
+    implementation ProjectDependencies.rxJava2Adapter
+    implementation ProjectDependencies.gson
+    implementation ProjectDependencies.loggingInterceptor
+
+    // rxjava
+    implementation ProjectDependencies.rxKotlin
+    implementation ProjectDependencies.rxandroid
+
+    implementation ProjectDependencies.javaxAnnotation
+    implementation ProjectDependencies.javaxInject
+
+    implementation ProjectDependencies.daggerSupport
+
+    // google play services
+    implementation (ProjectDependencies.googleLibPlaces){
+        exclude group: "com.github.bumptech.glide"
+    }
+
+    // tests
+    testImplementation ProjectTestDependencies.junit
+    testImplementation ProjectTestDependencies.assertJ
+    testImplementation ProjectTestDependencies.mockito
+    testImplementation ProjectTestDependencies.mockitoInline
+    testImplementation ProjectTestDependencies.mockitoKotlin
+}

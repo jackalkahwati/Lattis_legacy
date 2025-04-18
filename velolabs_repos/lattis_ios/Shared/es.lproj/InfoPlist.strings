@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSPhotoLibraryUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSLocationWhenInUseUsageDescription" = "Usaremos su posición para saber dónde está comenzando un viaje y durante el viaje para rastrear el vehículo si no tiene ninguna capacidad de rastreo a bordo.";
+"NSLocationAlwaysUsageDescription" = "Usaremos su posición para saber dónde está comenzando un viaje y durante el viaje para rastrear el vehículo si no tiene ninguna capacidad de rastreo a bordo.";
+"NSBluetoothPeripheralUsageDescription" = "La aplicación Necesita usar conexión Bluetooth para conectar el candado . Asegure que tiene Bluetooth encendido.";
+"NSBluetoothAlwaysUsageDescription" = "La aplicación Necesita usar conexión Bluetooth para conectar el candado . Asegure que tiene Bluetooth encendido.";

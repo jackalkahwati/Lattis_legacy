@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:padding="15dp" >
+
+    <ImageView
+        android:id="@+id/ivCrashAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/crash_alert_inactive"/>
+
+    <TextView
+        android:id="@+id/tvCrashAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skylock Crash Alert"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_toRightOf="@+id/ivCrashAlert"/>
+
+    <TextView
+        android:id="@+id/tvCrashLevel"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency contacts notified."
+        android:textSize="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/ivCrashAlert"/>
+
+    <TextView
+        android:id="@+id/tvTimeCrashAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="03:00 PM"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBaseline="@+id/tvCrashAlert"
+        android:layout_alignBottom="@+id/tvCrashAlert"
+        android:layout_toEndOf="@+id/tvCrashAlert"
+        android:layout_marginStart="13dp" />
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+Dear {{ emguser }},
+
+{{ user }} might have meet With an Accident, Please Contact them.
+Last know location was https://maps.google.com/?q={{ lat }},{{ long }}

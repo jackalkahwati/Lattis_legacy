@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_parent_checklist"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp">
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/end_ride_line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/end_ride_checklist_checklist_label"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/lattis_dark_title_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cb_next_active"
+        android:layout_alignEnd="@+id/rl_header"
+        android:layout_alignStart="@+id/rl_header"
+        android:layout_below="@+id/rl_header"
+        android:layout_centerHorizontal="true">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_end_ride_checklist_1"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+                android:id="@+id/iv_end_ride_checklist_mark1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/end_ride_checklist_mark" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/cb_end_ride_checklist_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_end_ride_checklist_mark1"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/end_ride_checklist_line1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_light_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_end_ride_checklist_2"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/rl_end_ride_checklist_1"
+            >
+            <ImageView
+                android:id="@+id/iv_end_ride_checklist_mark2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:src="@drawable/end_ride_checklist_mark" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/cb_end_ride_checklist_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_end_ride_checklist_mark2"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/end_ride_checklist_line2"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_light_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_end_ride_checklist_3"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/rl_end_ride_checklist_2"
+            >
+            <ImageView
+                android:id="@+id/iv_end_ride_checklist_mark3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/end_ride_checklist_mark" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/cb_end_ride_checklist_line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_end_ride_checklist_mark3"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/end_ride_checklist_line3"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_light_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/cb_next_active"
+        android:layout_width="match_parent"
+        android:background="@color/lattis_accent_color"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_camera_white" />
+    </RelativeLayout>
+</RelativeLayout>

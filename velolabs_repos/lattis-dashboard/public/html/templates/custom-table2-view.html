@@ -1,0 +1,50 @@
+<!--Custom table directive -->
+<table class="table table-condensed bikeflt-tbl">
+    <thead>
+    <tr>
+        <th class="text-center" ng-hide="hideCheckbox">
+             <span class="checkbox">
+             <input id="checkbox12" type="checkbox" name="checkbox" ng-disabled="disableCheckbox" ng-model="allSelect" ng-click="selectAllBikes()">
+                <label for="checkbox12"><span><span></span></span></label>
+             </span>
+        </th>
+        <th ng-repeat="col in tblHeader">
+            <span class="text-white"> {{col}} </span></th>
+        <!--action column -->
+        <th>
+            <span class="text-white"> Action </span>
+        </th>
+    </tr>
+    </thead>
+    <tbody class="">
+        <tr class="text-alert-dark fleet-table" style="box-shadow:rgb(221, 221, 221) 0px 3px 3px -2px" ng-repeat="data in pagedItems[currentPage] track by $index">
+            <td class="text-center" ng-hide="hideCheckbox">
+                <span class="checkbox">
+                    <input id="'checkbox'+'{{data.bike_id}}'" type="checkbox" name="checkbox" ng-model="checkbox[data.bike_id]" ng-change="checkBoxChange(data.bike_id)">
+                    <label for="'checkbox'+'{{data.bike_id}}'"><span><span></span></span></label>
+                </span>
+            </td>
+            <td ng-click="tableClick(data)" ng-repeat="col in bikerows">{{data[col]}}</td>
+            <td>
+                <a ng-if="type == 'trip-history'" class="move-mapview pull-right" ng-click="tableClick(data)"></a>
+                <a ng-if="type != 'members' && type != 'trip-history'" class="move-mapview pull-right" ng-click="tableClick(data.bike_id)"></a>
+                <a ng-if="type == 'members'" class="move-mapview pull-right" ng-click="tableClick(data)"></a>
+                <!--<dropdown list="dropdownlist" property="name" filter="maintanenceFilter" template="dropdown2" class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'Being rented' || data.current_status == 'Parked in hub' || data.current_status == 'Parked in geofence' " list="dropdownlist" bikeid='{{data.bike_id}}' property="name" filter="maintanenceFilter" template="dropdown2" class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'Ellipse assigned. Not yet deployed live.' || data.current_status == 'Ellipse assigned'" list="dropdownlist.ellipse_assigned" bikeid='{{data.bike_id}}' property="name" filter="maintanenceFilter" template="dropdown2" class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'No Ellipse assigned yet' || data.current_status == 'No ellipse assigned'" list="dropdownlist.ellipse_not_yet_assigned" bikeid='{{data.bike_id}}' property="name" filter="maintanenceFilter" template="dropdown2" class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'Reported stolen or damaged'" list="dropdownlist.damagereported" property="name" filter="maintanenceFilter" bikeid='{{data.bike_id}}' template="dropdown2" class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'Workshop'" list="dropdownlist.inworkshop" property="name" filter="maintanenceFilter" template="dropdown2" bikeid='{{data.bike_id}}' class="tabledropdown pull-right"></dropdown>-->
+                <!--<dropdown ng-if="data.current_status == 'Reported lost'" list="dropdownlist.reportedlost" property="name" filter="maintanenceFilter" template="dropdown2" bikeid='{{data.bike_id}}' class="tabledropdown pull-right"></dropdown>-->
+
+            </td>
+        </tr>
+        <pre class="hidden">{{data | json}}</pre>
+    </tbody>
+</table>
+<div class='mask text-center ft-16 m-b-30 pointer fadeInUp animated' id="errdata"></div>
+
+<!--pagination for custom-table  -->
+<div>
+    <ul uib-pagination total-items="bikefleetdata.length" items-per-page="10" ng-model="currentPage" max-size="numrowitem" class="pagination-sm pull-right" boundary-links="true" force-ellipses="true"></ul>
+</div>

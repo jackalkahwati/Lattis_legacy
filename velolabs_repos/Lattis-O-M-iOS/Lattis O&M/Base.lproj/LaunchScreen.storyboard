@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="HvA-uF-Z1y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6g-WL-a4k">
+                                <rect key="frame" x="75" y="170" width="224" height="71.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lattis_logo" translatesAutoresizingMaskIntoConstraints="NO" id="uFQ-ae-EKB">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="37"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O&amp;M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLQ-UL-99h">
+                                        <rect key="frame" x="0.0" y="57" width="224" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="MLQ-UL-99h" secondAttribute="bottom" id="CKB-lf-wQr"/>
+                                    <constraint firstItem="uFQ-ae-EKB" firstAttribute="top" secondItem="F6g-WL-a4k" secondAttribute="top" id="XeT-oR-D8v"/>
+                                    <constraint firstItem="MLQ-UL-99h" firstAttribute="top" secondItem="uFQ-ae-EKB" secondAttribute="bottom" constant="20" id="Zou-Ez-DX5"/>
+                                    <constraint firstItem="uFQ-ae-EKB" firstAttribute="leading" secondItem="F6g-WL-a4k" secondAttribute="leading" id="f12-yN-sE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="MLQ-UL-99h" secondAttribute="trailing" id="jFZ-5f-H1b"/>
+                                    <constraint firstAttribute="trailing" secondItem="uFQ-ae-EKB" secondAttribute="trailing" id="nke-8A-yng"/>
+                                    <constraint firstItem="MLQ-UL-99h" firstAttribute="leading" secondItem="F6g-WL-a4k" secondAttribute="leading" id="zQV-rY-dMH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HvA-uF-Z1y" secondAttribute="bottom" id="Ft7-7t-afa"/>
+                            <constraint firstItem="F6g-WL-a4k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MR0-BP-nZC"/>
+                            <constraint firstItem="HvA-uF-Z1y" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="NGa-gE-8H3"/>
+                            <constraint firstItem="F6g-WL-a4k" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="150" id="Nri-Rb-Ycy"/>
+                            <constraint firstItem="HvA-uF-Z1y" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="flN-Ek-0a9"/>
+                            <constraint firstAttribute="trailing" secondItem="HvA-uF-Z1y" secondAttribute="trailing" id="qH6-JY-M4E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="640" height="1138"/>
+        <image name="lattis_logo" width="224" height="37"/>
+    </resources>
+</document>

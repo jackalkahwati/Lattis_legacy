@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:paddingTop="32dp"
+            android:text="@string/label_damage_bike_title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_text_color_grey"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="32dp"
+            android:paddingTop="32dp">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/label_damage_bike_category"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_text_color_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:spinnerMode="dialog"
+                android:theme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="32dp"
+            android:paddingTop="32dp">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="@string/label_damage_bike_notes"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_text_color_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_damage_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:inputType="textPostalAddress"
+                android:hint="@string/label_damage_bike_enter_notes"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#c6c6c6"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="32dp"
+            android:paddingTop="32dp">
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/label_damage_bike_photo_damage"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_text_color_grey"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_photo_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:inputType="textPostalAddress"
+                android:maxLines="1"
+                android:text="@string/label_damage_bike_no_photo"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#c6c6c6"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+    </LinearLayout>
+
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/submit_report_enabled_btn"
+        style="@style/blueButtonStyle.rect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:text="@string/label_submit_damage"
+        android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/submit_report_disabled_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:text="@string/label_submit_damage"
+        android:background="#d2d2d2"
+        android:textColor="#818181"
+        android:visibility="visible"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+</RelativeLayout>

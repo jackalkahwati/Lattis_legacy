@@ -1,0 +1,45 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar ">
+        <h4 class="modal-title text-white">Assign Ticket</h4>
+    </div>
+    <div class="modal-body p-30 cl_grey">
+        <div class="row">
+            <div class="col-sm-12 m-b-10">
+                <p>Select the dropdown menu to choose which user to assign to this ticket.</p>
+            </div>
+            <div class="col-sm-12 create-ticket-box bor-t-hash">
+                <ul class="list-unstyled list-inline m-t-30">
+                    <li class="assignTicket">
+                        <span>Assigned User</span>
+                    </li>
+                    <li>
+                        <div class="set-placeholder inline-block">
+                            <div class="dropdown pull-left">
+                                <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-240"
+                                        type="button" ng-model="category"
+                                        data-toggle="dropdown">{{operatorInfo.first_name}}
+                                </button>
+                                <ul class="dropdown-menu dropdownList-modify" style="width:280px;">
+                                    <li ng-repeat="ticketItem in operatorData"
+                                        ng-click="assignOperator(ticketItem)"><a href="">{{ticketItem.first_name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer noborder m-lr-15">
+        <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+            <button class="btn custom-btn bg-HeaderToolbar pbtn-tb11-lr20 wid-100 ft-12" ng-click="closeModal()">
+                CANCEL
+            </button>
+            <button ng-disabled="!operatorInfo.operator_id"
+                    class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                    ng-click="assignTicket()">ASSIGN TICKET
+            </button>
+        </div>
+    </div>
+</div>

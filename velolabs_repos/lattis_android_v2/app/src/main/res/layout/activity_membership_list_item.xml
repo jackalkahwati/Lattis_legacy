@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/iv_fleet_image_in_membership_list_item"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_fleet_image_in_membership_list_item"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cl_price_next_in_membership_list_item"
+        android:layout_marginRight="5dp"
+        android:id="@+id/cl_name_address_in_membership_list_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/ct_fleet_name_in_membership_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/payment_text"
+            app:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toBottomOf="@+id/ct_fleet_name_in_membership_list_item"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/ct_fleet_address_in_membership_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:textColor="@color/payment_text"
+            app:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:id="@+id/cl_price_next_in_membership_list_item"
+        >
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_next_in_membership_list_item"
+        android:visibility="gone"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/next_arrow"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/ct_price_in_membership_list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/membership_price_text"
+        android:text="$6.66"
+        android:background="@drawable/round_price_in_membership_list_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:typefaceAsset="GothamSSm-Book.otf"
+        android:textSize="12dp"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <View
+        android:id="@+id/divider_in_membership_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/cl_name_address_in_membership_list_item" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

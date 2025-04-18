@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_toolbar_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_user_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_header_height"
+            android:layout_alignParentTop="true"
+            android:background="@color/lattis_toolbar_bg"
+            android:descendantFocusability="blocksDescendants">>
+
+
+            <io.bikes.sandypedals.presentation.view.BannerView
+                android:id="@+id/iv_wallpaper_blur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true" />
+
+            <ImageView
+                android:id="@+id/iv_wallpaper"
+                android:layout_width="188dp"
+                android:layout_height="188dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/image_picker"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/rl_wallpaperforeground"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nav_header_height" />
+
+            <ImageView
+                android:id="@+id/iv_getimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:contentDescription="@null"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_camera_white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_personaldetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_user_image"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white">
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_header_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:text="@string/personal_details"
+                android:textAppearance="@style/TextView.Grey.Large"
+                android:textColor="@color/lattis_header_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_header_label"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/view"
+                android:layout_marginLeft="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/first_name"
+                android:textColor="@color/lattis_toolbar_title"
+                android:textAppearance="@style/TextView.Grey.Medium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <EditText
+                    android:id="@+id/et_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:layout_below="@+id/tv_firstname"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="textNoSuggestions|textPersonName"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/et_last_name"
+                    android:textAppearance="@style/TextView.Accent.Medium"
+                    android:textColor="@color/lattis_accent_color"
+                     />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/et_first_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/view2"
+                android:layout_marginLeft="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/last_name"
+                android:textColor="@color/lattis_toolbar_title"
+                android:textAppearance="@style/TextView.Grey.Medium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <EditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below = "@+id/tv_lastname"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionDone"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingLeft="16dp"
+                    android:nextFocusDown="@+id/et_phone_number"
+                    android:textAppearance="@style/TextView.Accent.Medium"
+                    android:textColor="@color/lattis_accent_color"
+                     />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/et_last_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+
+
+            <RelativeLayout
+                android:id="@+id/rl_emailaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view3"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="10dp"
+                >
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="@string/email"
+                    android:textAppearance="@style/TextView.Grey.Medium"
+                    android:textColor="@color/lattis_toolbar_title"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_email"
+                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/email"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/et_phone_number"
+                        android:textAppearance="@style/TextView.Accent.Medium"
+                        android:textColor="@color/lattis_accent_color"
+                        />
+
+                <ImageView
+                    android:id="@+id/next_change_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_blue" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/view3_5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_emailaddress"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view3_5"
+                android:paddingLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:paddingRight="10dp"
+                >
+
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:id="@+id/tv_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="@string/telephone"
+                    android:textAppearance="@style/TextView.Grey.Medium"
+                    android:textColor="@color/lattis_toolbar_title"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                    <EditText
+                        android:id="@+id/et_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_telephone"
+                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/add_phone_number"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextView.Accent.Medium"
+                        android:textColor="@color/lattis_accent_color"
+                         />
+
+                <ImageView
+                    android:id="@+id/next_add_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_blue" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_phonenumber"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_personaldetails"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/white">
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:text="@string/security"
+                android:textAppearance="@style/TextView.Grey.Large"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_security"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_changepassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view5"
+                android:padding="16dp">
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:id="@+id/tv_changepassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/next_change_password"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:text="@string/change_password"
+                    android:textAppearance="@style/TextView.Accent.Medium"
+                    android:textColor="@color/lattis_accent_color"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <ImageView
+                    android:id="@+id/next_change_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_blue" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_changepassword"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_deleteaccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view6"
+                android:padding="16dp">
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:id="@+id/tv_deleteaccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/next_deleteaccount"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:text="@string/delete_account"
+                    android:textAppearance="@style/TextView.Accent.Medium"
+                    android:textColor="@color/lattis_accent_color"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <ImageView
+                    android:id="@+id/next_deleteaccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_blue" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_deleteaccount"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_controls"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/white">
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_private_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:text="@string/private_network"
+                android:textAppearance="@style/TextView.Grey.Large"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_private_network"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings" />
+
+            <RelativeLayout
+                android:id="@+id/rl_private_network_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view8"
+                android:background="@android:color/white">
+
+                <io.bikes.sandypedals.presentation.view.CustomTextView
+                    android:id="@+id/tv_private_network_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:padding="16dp"
+                    android:text="@string/private_network_content"
+                    android:textAppearance="@style/TextView.Grey.Medium"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_private_network"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_private_network_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider_settings" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_add_private_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view9"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:text="@string/add_private_network"
+                android:textAppearance="@style/TextView.Grey.Large"
+                android:textColor="@color/lattis_accent_color"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

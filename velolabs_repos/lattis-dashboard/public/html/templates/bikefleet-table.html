@@ -1,0 +1,275 @@
+<table class="table table-condensed bikefleet-table">
+    <thead ng-hide="fleetstatus == 'activitylog' || fleetstatus == 'reservations'">
+        <tr>
+            <th class="text-center" ng-hide="hideCheckbox" style="width: 60px;">
+                <span class="checkbox">
+                    <input id="checkbox12" type="checkbox" name="checkbox" ng-disabled="disableCheckbox"
+                        ng-model="allSelect" ng-click="selectAllBikes()">
+                    <label for="checkbox12"><span><span></span></span></label>
+                </span>
+            </th>
+            <th ng-repeat="col in tblHeader"
+                ng-style="fleetstatus == 'members' && { 'background':'#f7f7f7', color:'#585858' }">
+                <span class="text-white" ng-style="fleetstatus == 'trip-history' && { 'padding':'15px 20px' }"
+                    ng-if="fleetstatus != 'members'"> {{col}} </span>
+                <span class="p-tb15-lr20" ng-if="fleetstatus == 'members'"> {{col}} </span>
+                <span ng-if="col == 'Date Activity'"><i ng-click='showInfo()' class="pointer m-l-5 ft-16 text-gray fa fa-info-circle"
+                  aria-hidden="true"></i>
+                </span>
+                <span ng-if="col == 'Date joined'" ng-click="reverseOrder()"><a id="categories-toggle"></a>
+                </span>
+                <span ng-if="col == 'User name'" ng-click="reverseAlphabeticalOrder()"><a id="user-names-toggle"></a>
+                </span>
+                <span ng-if="col == 'Ride name'" ng-click="reverseRideNameOrder()"><a id="ride-names-toggle"></a>
+                </span>
+            </th>
+            <th ng-show="hideCheckbox" ng-class="fleetstatus == 'trip-history' ? 'bg-Headertool' : 'bg-lightgray'"></th>
+        </tr>
+    </thead>
+    <tbody class="" ng-if="!showError">
+        <!--Start Live status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in bikefleetdata.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'live'">
+            <td class="text-center" ng-hide="hideCheckbox">
+                <span class="checkbox">
+                    <input id="'checkboxes'+'{{data.bike_id}}'" type="checkbox" name="checkbox"
+                        ng-model="checkbox[data.bike_id]" ng-change="checkBoxChange(data)">
+                    <label for="'checkboxes'+'{{data.bike_id}}'"><span><span></span></span></label>
+                </span>
+            </td>
+            <td>
+                <div style="text-align: right;float: left;width: 65%;"><span
+                        class="pull-left">{{data.bike_name}}</span><span ng-if=data.has_ticket><img class="h-14"
+                            src="../../images/alert_icon.png"></span>
+                </div>
+            </td>
+            <td>
+                <p class="status_content">{{data.action_date}}</p>
+                <p class="ft-11">{{data.action_time}}</p>
+            </td>
+            <td>
+                <p class="status_content"> {{data.current_status}}</p>
+                <a ng-if="data.current_status == 'IN RIDE'" ng-click="visitProfile(data.trip_data.user_id)"
+                    class="ft-11 pointer ticketactive">{{data.trip_data.first_name}}
+                    {{data.trip_data.last_name}}</a>
+                <a ng-if="data.current_status == 'PARKED' && data.trip_data"
+                    ng-click="visitProfile(data.trip_data.user_id)" class="ft-11 pointer ticketactive">Last
+                    user:{{data.trip_data.first_name}}
+                    {{data.trip_data.last_name}}</a>
+                <p ng-if="crashDetected" class="ft-11">Crash detected</p>
+                <p ng-if="parkedOutSide" class="ft-11">Parked outside parking area</p>
+                <p ng-if="damageReported" class="ft-11">Damage reported</p>
+                <p ng-if="data.current_status === 'COLLECT'" class="ft-11">To be picked by an operator</p>
+            </td>
+            <td>
+                <div class="wid-130">
+                    <p class="ft-11 m-b-3">{{distancePreference === 'miles' ? 'Miles': 'Kms'}} remaining <span
+                            class="pull-right">{{data.distance_until_service}}</span></p>
+                    <miles-remaining-bar class="status_content" schedule="{{data.distance_limit}}"
+                        milesremaining="{{data.distance_until_service}}"></miles-remaining-bar>
+                </div>
+            </td>
+            <td class="ft-11">
+                <div class="l-h2">
+                    <a class="pointer move-mapview pull-right" ng-click="tableClick(data)"></a>
+                </div>
+            </td>
+        </tr>
+        <!--End Live status table-->
+        <!-- Start staged and deleted status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in bikefleetdata.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'staged' || fleetstatus == 'Deleted'">
+            <td class="text-center" ng-hide="hideCheckbox">
+                <span class="checkbox">
+                    <input id="'checkbox'+'{{data.bike_id}}'" type="checkbox" name="checkbox"
+                        ng-model="checkbox[data.bike_id]" ng-change="checkBoxChange(data)">
+                    <label for="'checkbox'+'{{data.bike_id}}'"><span><span></span></span></label>
+                </span>
+            </td>
+            <td>
+                <div>{{data.bike_name}}</div>
+            </td>
+            <td>
+                <div>{{data.date_created}}</div>
+            </td>
+            <td>
+                <p class="status_content"> {{data.current_status.toUpperCase()}} </p>
+                <p ng-if="data.ready_to_deploy && data.current_status !== 'BALANCING'" class="ft-11">Ready to deploy to LIVE</p>
+                <p ng-if="data.ready_to_deploy && data.current_status == 'BALANCING'" class="ft-11">BALANCING</p>
+                <p ng-if="data.current_status == 'NO ELLIPSE'" class="ft-11">Unable to deploy LIVE until Ellipse is
+                    assigned</p>
+                <p ng-if="data.current_status == 'DEFLEETED'" class="ft-11">Bike was decommissioned permanently</p>
+                <p ng-if="data.current_status == 'STOLEN'" class="ft-11">The bike is not expected to be recovered</p>
+                <p ng-if="data.current_status == 'TOTAL LOSS'" class="ft-11">The bike was damaged beyond repair</p>
+                <p ng-if="data.current_status == 'BALANCING'" class="ft-11">The equipment on the bike is being repositioned</p>
+                <p ng-if="data.current_status == 'TRANSPORT'" class="ft-11">The bike is being transported to the warehouse or street</p>
+            </td>
+            <!--todo add the fleet status for the archived bikes-->
+            <td class="ft-11" ng-if="fleetstatus == 'staged'">
+                <div class="l-h2">
+                    <a class="move-mapview pull-right" ng-click="tableClick(data)"></a>
+                </div>
+            </td>
+        </tr>
+        <!-- End staged and deleted status table-->
+        <!-- Start outofservice status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in bikefleetdata.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'outofservice' || fleetstatus == 'archived'">
+            <td class="text-center" ng-hide="hideCheckbox">
+                <span class="checkbox">
+                    <input id="'checkbox'+'{{data.bike_id}}'" type="checkbox" name="checkbox"
+                        ng-model="checkbox[data.bike_id]" ng-change="checkBoxChange(data)">
+                    <label for="'checkbox'+'{{data.bike_id}}'"><span><span></span></span></label>
+                </span>
+            </td>
+            <td>
+                <div style="text-align: right;float: left;width: 65%;"><span
+                        class="pull-left">{{data.bike_name}}</span><span ng-if=data.has_ticket><img class="h-14"
+                            src="../../images/alert_icon.png"></span>
+                </div>
+            </td>
+            <td>
+                <div>{{data.date_created}}</div>
+            </td>
+            <td>
+                <p ng-if="data.has_ticket" class="status_content"> {{data.current_status}} </p>
+                <p ng-if="data.current_status === 'transport'" class="status_content">TRANSPORT</p>
+                <p ng-if="!data.has_ticket && data.status !== 'deleted' && data.current_status !== 'transport'" class="status_content">ALL TICKETS ARE RESOLVED</p>
+                <p ng-if="data.status === 'deleted'" class="status_content"> ARCHIVE </p>
+                <p ng-if="data.has_ticket && data.current_status == 'REPORTED STOLEN'" class="ft-11">User reported
+                    Ride stolen on
+                    {{data.service_date || data.ticket_date_created}}</p>
+                <p ng-if="data.has_ticket && data.current_status == 'MAINTENANCE'" class="ft-11">Ride was sent to
+                    maintenance on
+                    {{data.service_date}}</p>
+                <p ng-if="data.has_ticket && data.current_status == 'DAMAGE REPORTED'" class="ft-11">User reported
+                    damage on {{data.service_date || data.ticket_date_created}}</p>
+                <p ng-if="data.current_status == 'stolen'" class="ft-11">Stolen</p>
+                <p ng-if="data.current_status == 'defleeted'" class="ft-11">Delfleeted</p>
+                <p ng-if="data.current_status == 'total_loss'" class="ft-11">Total Loss</p>
+                <p ng-if="data.current_status == 'transport'" class="ft-11">The bike is being transported to or from the warehouse</p>
+                <p ng-if="!data.has_ticket && !data.status !== 'deleted' && data.current_status !== 'transport'" class="ft-11">Bike is ready to go Live</p>
+            </td>
+            <td class="ft-11">
+                <div class="l-h2">
+                    <a class="move-mapview pull-right pointer" ng-click="tableClick(data)"></a>
+                </div>
+            </td>
+        </tr>
+        <!-- End outofservice status table-->
+        <!-- Start member status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in bikefleetdata.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'members'">
+            <td>
+                <div style="text-align: right;float: left;"><span
+                        class="pull-left p-tb15-lr20">{{data.name}}</span><span ng-if=data.has_ticket><img class="h-14"
+                            src="../../images/alert_icon.png"></span></div>
+            </td>
+            <td>
+                <div class="p-tb15-lr20">{{data.email}}</div>
+            </td>
+            <td>
+                <div class="p-tb15-lr20">{{data.date_created}}</div>
+            </td>
+            <td class="ft-11">
+                <div class="l-h2">
+                    <a class="move-mapview pull-right pointer" ng-click="tableClick(data)"></a>
+                </div>
+            </td>
+        </tr>
+        <!-- End member status table-->
+        <!-- Start member status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in bikefleetdata.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="type == 'trip-history'">
+            <td>
+                <div style="text-align: right;float: left;"><span
+                        class="pull-left p-tb15-lr20">{{data.date_created}}</span><span ng-if=data.has_ticket><img
+                            class="h-14" src="../../images/alert_icon.png"></span></div>
+            </td>
+            <td>
+                <div class="p-tb15-lr20">{{data.trip_type}}</div>
+            </td>
+
+            <td class="ft-11">
+                <div class="l-h2">
+                    <a class="move-mapview pull-right pointer" ng-click="tableClick(data)"></a>
+                </div>
+            </td>
+        </tr>
+        <!-- End member status table-->
+        <!-- Start member status table-->
+        <tr class="fleet-table"
+            ng-repeat="data in nonDuplicatedData.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'activitylog'">
+            <td>
+                <div class="p-tb5-lr20">{{data.time_created}}</div>
+                <div class="p-tb5-lr20">{{data.time_of_log}}</div>
+            </td>
+            <td>
+                <div>
+                    <p class="nomarg ft-14 fw-600 textlighthash">{{data.headline}}</p>
+                    <span class="ft-12 table-text inline-block" ng-if="data.user_full_name && data.type != 'parked'"><a
+                      ui-sref="member-profile({userId: {{data.user_id}}})">User</a>
+                        {{data.summary_part2}}</span>
+                    <span class="ft-12 table-text inline-block" ng-if="data.user_full_name && data.type == 'parked'">
+                        {{data.summary_part1}} by <a
+                            ui-sref="member-profile({userId: {{data.user_id}}})">{{data.user_full_name}}</a></span>
+                    <span class="ft-12 table-text inline-block" ng-if="!data.user_full_name">{{data.summary_part1}}
+                        {{data.summary_part2}}</span>
+                    <span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.category == 'damage_reported'"> |
+                        Assigned to: {{alert.assignee_name}}</span>
+                    <span class="ft-12 table-text inline-block" ng-if="data.type == 'Moved_to_live'">
+                      by {{ fleet.contact_first_name + ' ' +  fleet.contact_last_name }}
+                    </span>
+                    <span class="ft-12 table-text inline-block" ng-if="['Moved_to_live', 'start_trip','end_trip', 'moved_to_staging'].includes(data.type)"> on {{data.time_created}} at {{ data.time_of_log }}
+                    </span>
+                    <!--<span class="pull-left p-tb15-lr20">{{data.date_created}}</span>-->
+                    <!--<span ng-if=data.has_ticket><img class="h-14" src="../../images/alert_icon.png"></span>-->
+                </div>
+            </td>
+            <td class="ft-11">
+            </td>
+        </tr>
+        <!-- End member status table-->
+        <!-- Start reservations table-->
+        <tr class="fleet-table"
+            ng-repeat="data in activeReservations.slice(((pagination.currentPage-1)*itemsPerPage.lable), ((pagination.currentPage)*itemsPerPage.lable)) track by $index"
+            ng-if="fleetstatus == 'reservations'">
+          <td>
+            <div class="p-tb5-lr20">{{formatReservationTime(data, data.reservation_start)}}</div>
+          </td>
+          <td>
+            <div>
+              <span class="ft-12 table-text inline-block" ng-if="data.user_id"><a
+                ui-sref="member-profile({userId: {{data.user_id}}})">User</a>
+                        Reserved ride for {{ data.breakdown[0] }} hours {{data.breakdown[1]}} minutes and {{data.breakdown[2]}} seconds</span>
+            </div>
+          </td>
+          <td class="ft-11">
+          </td>
+        </tr>
+        <!-- End reservations table-->
+        <pre class="hidden">{{data | json}}</pre>
+    </tbody>
+</table>
+<div class='mask text-center ft-16 m-b-30 m-t-30 pointer fadeInUp animated' id="errdata" ng-if="showError">
+    No search results were found. Try removing some of the filters or <span class='menuactive' id='clearFilter' ng-click="removeFilters()"> clear
+        all filters</span>
+    and start again.
+</div>
+<!--pagination for custom-table  -->
+<div class="text-right" ng-if="!showError">
+    <ul uib-pagination total-items="numberOfData" items-per-page="itemsPerPage.lable" ng-model="pagination.currentPage"
+        ng-click="pagechange(pagination.currentPage)" max-size="numrowitem" class="pagination-sm pull-right"
+        boundary-links="true" force-ellipses="true"></ul>
+    <span class="pull-right m-lr-5 m-t-3 p-tb-20">
+        Rows per page:
+        <select class="text-skyblue m-t-3" ng-model="itemsPerPage" ng-change="setItemsPerPage(itemsPerPage)"
+            ng-options="page as page.lable for page in pages track by page.value"></select>
+    </span>
+</div>

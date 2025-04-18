@@ -1,0 +1,74 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar">
+        <h4 class="modal-title text-white">Create A Ticket</h4>
+    </div>
+    <div class="modal-body p-30 cl_grey">
+        <div class="row">
+            <div class="col-sm-12 m-b-10">
+                <p>Create a ticket. Search by Ride name for which youʼd like an alert created.</p>
+            </div>
+            <div class="col-sm-12 new-fleet-box bor-t-hash">
+                <ul class="list-unstyled list-inline m-t-20">
+                    <li>
+                        <span>Name </span>
+                    </li>
+                    <li>
+                        <div class="set-placeholder inline-block">
+                            <input type="text" ng-model="serviceBikeName"
+                                   style="padding: 3px 5px;margin-bottom: 7px;" ng-disabled="true"/>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline m-t-10">
+                    <li class="v-t">
+                        <span class="ft-14 text-muted">Photo</span>
+                    </li>
+                    <li class="fileupload">
+                        <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" hasedit="true"
+                                           haspreview="true" name="Browse.."
+                                           file="serviceImage"></custom-Fileupload>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <span>Category</span>
+                    </li>
+                    <li>
+                        <div class="set-placeholder inline-block">
+                            <div class="dropdown pull-left styleSelect" style="width:250px;">
+                                <select class="form-control new-dd-box"
+                                        ng-options="ticketType.name for ticketType in mainTypes"
+                                        ng-model="serviceCategory">
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <span>Notes</span>
+                    </li>
+                    <li>
+                        <div class="form-group set-placeholder inline-block wid-350">
+                                <textarea id="maintencenotes" ng-model="serviceNotes"
+                                          class="form-control new-txt-box"
+                                          rows="5"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash m-lr-15">
+            <button class="btn custom-btn bg-HeaderToolbar p-tb-10 wid-100 ft-12" ng-click="closeModal()">CANCEL
+            </button>
+            <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                    ng-click="maintenanceTicket()"
+                    ng-disabled="!selectedBike[0].bike_name">
+                Create Ticket
+            </button>
+        </div>
+    </div>
+    <!--<div class="modal-footer noborder">-->
+
+    <!--</div>-->
+</div>

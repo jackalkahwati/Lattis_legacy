@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "955125310757",
+    "project_id": "yeti-rides---scooters",
+    "storage_bucket": "yeti-rides---scooters.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955125310757:android:fd07e96a855a895a98e6cc",
+        "android_client_info": {
+          "package_name": "com.opolislabs.yeti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3BKWnY6EbzQkLqNVn6kx-yOsqaV7D2-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955125310757:android:7495f259f0e22d6498e6cc",
+        "android_client_info": {
+          "package_name": "com.opolislabs.yeti.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3BKWnY6EbzQkLqNVn6kx-yOsqaV7D2-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955125310757:android:72d2061e8177babd98e6cc",
+        "android_client_info": {
+          "package_name": "com.opolislabs.yeti.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3BKWnY6EbzQkLqNVn6kx-yOsqaV7D2-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955125310757-su20o2fsia9eb0403gtd3a7psuklii5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

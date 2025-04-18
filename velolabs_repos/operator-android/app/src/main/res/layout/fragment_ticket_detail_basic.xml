@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_ticket_detail_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_created_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/created"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_created_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/ticket_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_ticket_created_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_ticket_created_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/ticket_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_ticket_created_value" />
+
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/category"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_category_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/ticket_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_ticket_category_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_ticket_category_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/ticket_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_ticket_category_value" />
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_assign_to_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/assign_to"
+        android:textSize="15dp"
+        android:textColor="@color/lattis_profile_accent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_assign_to_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/ticket_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_ticket_assign_to_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_ticket_assign_to_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/ticket_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_ticket_assign_to_value" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

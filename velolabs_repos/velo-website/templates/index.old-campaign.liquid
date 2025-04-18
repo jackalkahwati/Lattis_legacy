@@ -1,0 +1,58 @@
+{% capture themeSettingsLink %}
+  <a href="{{ shop.url }}/admin/themes">{{ 'onboarding.theme_settings_link' | t | downcase }}</a>
+{% endcapture %}
+
+{% if settings.show-slideshow and settings.show-slide-1 or settings.show-slide-2 or settings.show-slide-3 or settings.show-slide-4 or settings.show-slide-5 %}
+  {% unless settings.home-show-hero %}
+    {% include 'home-slideshow' %}
+  {% endunless %}
+{% endif %}
+
+{% if settings.home-show-hero %}
+  {% include 'home-hero' %}
+{% endif %}
+{% include 'home-brands' %}
+
+{% if settings.home-sections-order != blank %}
+  {% assign sections = settings.home-sections-order | split: "-" %}
+
+  {% for section in sections %}
+    {% case section %}
+      {% when 'A' %}
+        {% include 'home-full-width' %}
+  
+      
+      {% when 'E' %}
+        {% include 'home-order-now' %}
+      {% when 'F' %}
+        {% include 'home-featured-collections' %}
+      {% when 'G' %}
+        {% include 'home-featured-products' %}
+      {% when 'H' %}
+        {% include 'home-featured-blog' %}
+      {% when 'I' %}
+        {% include 'home-as-seen-on' %}
+      {% when 'J' %}
+        {% include 'home-instagram' %}
+    {% endcase %}
+  {% endfor %}
+
+{% endif %}
+
+{% include 'home-keyless' %}
+
+{% include 'home-cash-alert' %}
+
+{% include 'home-theft-alert' %}
+
+{% include 'home-share-access' %}
+
+{% include 'home-simple-to-use' %}
+
+{% include 'home-skylock-mount' %}
+
+{% include 'home-images-section' %}
+
+{% include 'home-convinced' %}
+
+{% include 'home-techspec' %}

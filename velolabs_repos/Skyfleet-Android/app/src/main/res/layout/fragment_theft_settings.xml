@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:textColor="#9B9B9B"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Either theft or crash detection may be activated, but not both at the same time.  Both require that you are connected to your Ellipse with bluetooth.  Learn more"/>
+
+<TextView
+    android:id="@+id/tv_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/security_sensitivity"
+    android:layout_centerInParent="true"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:textColor="#8C8C8C"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:padding="16dp"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_bar_states"
+        android:layout_marginTop="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminateOnly="false"
+        android:layout_below="@id/tv_header"
+        />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:id="@+id/seelbar"
+        android:layout_below="@+id/progress_bar"
+        />
+</RelativeLayout>

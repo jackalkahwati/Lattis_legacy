@@ -1,0 +1,1158 @@
+/*
+ * Loco ios export: iOS Localizable.strings
+ * Project: Lattis
+ * Release: Working copy
+ * Locale: sv, Swedish
+ * Exported by: Ravil Khusainov
+ * Exported at: Wed, 11 May 2022 16:03:07 +0300
+ */
+
+/* loco:5d9c5db1ed0cfa73943d8f22 */
+"help_message" = "För hjälp med din åktur, kontakta vårt team.";
+
+/* loco:5d9c5e4fed0cfa737d628b93 */
+"help" = "Hjälp";
+
+/* loco:5d9ca7004d3dd76a620d64c3 */
+"booking_cancel_loading" = "Avslutar åktur...";
+
+/* loco:5d9ca83f4d3dd76ac106cec6 */
+"bookin_cancel_title" = "Är du säker på att du vill avsluta?";
+
+/* loco:5d9ca8854d3dd76ac50285e5 */
+"booking_cancel_message" = "Du kommer inte att bli debiterad";
+
+/* loco:5d9caf4d4d3dd76e2b123c92 */
+"cancel" = "Avsluta";
+
+/* loco:5d9caf994d3dd76e03094fe2 */
+"connecting_loader" = "Ansluter...";
+
+/* loco:5d9cafde4d3dd76e7052be52 */
+"booking_begin_trip" = "Börja";
+
+/* loco:5d9cb00d4d3dd76e2b123ca2 */
+"starting_ride_loader" = "Startar uthyrning";
+
+/* loco:5d9d85b84d3dd72d9f28b572 */
+"reserve" = "Reservera";
+
+/* loco:5d9d868b4d3dd72e3e7b5702 */
+"pickup_location" = "Upphämtningsplats";
+
+/* loco:5d9d99854d3dd73790754405 */
+"private_networks" = "Privata flottor";
+
+/* loco:5d9d9a3c4d3dd73879328403 */
+"payment_methods" = "Betalningsmetoder";
+
+/* loco:5d9d9aad4d3dd73892326e72 */
+"ride_history" = "Uthyrningshistorik";
+
+/* loco:5d9d9b334d3dd738972ac742 */
+"report_damage" = "Anmäl skada";
+
+/* loco:5d9d9bbe4d3dd73892326e74 */
+"log_out" = "Logga ut";
+
+/* loco:5d9d9c6a4d3dd739ed591452 */
+"log_out_title" = "Loggar ut";
+
+/* loco:5d9d9ccc4d3dd739f5722c52 */
+"log_out_message" = "Är du säker på att du vill logga ut?";
+
+/* loco:5d9d9d034d3dd739f9326da3 */
+"confirm" = "Bekräfta";
+
+/* loco:5d9d9d9f4d3dd73a271fa064 */
+"report_theft" = "Anmäl stöld";
+
+/* loco:5d9dbb364d3dd7460a0635e3 */
+"end_ride" = "Avsluta uthyrning";
+
+/* loco:5d9dc3c24d3dd748617f3bd4 */
+"submit" = "Skicka in ";
+
+/* loco:5d9dc4644d3dd7489310efa2 */
+"rate_your_ride" = "Betydsätt din åktur";
+
+/* loco:5d9f10a6ed0cfa2ad00c15c2 */
+"end_ride_loader" = "Avslutar åktur…";
+
+/* loco:5d9f2363ed0cfa32f61b5b55 */
+"payment" = "Betalning ";
+
+/* loco:5d9f3bd8ed0cfa3f7e68b1d2 */
+"theft_report_loader" = "Anmäler stöld";
+
+/* loco:5d9f3cc9ed0cfa3f9d440243 */
+"report_theft_title" = "Kan du inte hitta cykeln?";
+
+/* loco:5d9f3e13ed0cfa403a06c353 */
+"report_theft_message" = "Stöldanmälan kommer att avsluta åkturen";
+
+/* loco:5d9f4c3fed0cfa46a21213b7 */
+"theft_report_success_message" = "Tack för att du kontaktar oss\nVi kommer att kontakta dig om vi behöver mer information";
+
+/* loco:5d9f4cb1ed0cfa47276ad684 */
+"theft_report_success_title" = "Stöld har anmälts";
+
+/* loco:5da443cbed0cfa27ae497494 */
+"damage_report_success_title" = "Tack!";
+
+/* loco:5da44447ed0cfa281f1b0572 */
+"damage_report_loader" = "Skickar in skadeanmälan ";
+
+/* loco:5da44572ed0cfa28b159d3ea */
+"damage_report_success_message" = "Vad vill du göra nu?";
+
+/* loco:5da44907ed0cfa2d557adb42 */
+"damage_report_title" = "Skicka in anmälan";
+
+/* loco:5da46b41c38e0f48d42d1f96 */
+"damage_report_notes" = "Beskrivning av skada";
+
+/* loco:5da46c93c38e0f494d351ec4 */
+"damage_report_photo" = "Bild på skada";
+
+/* loco:5da47136c38e0f4b1e3d1204 */
+"damage_report_success_continue_ride" = "Fortsätt min åktur";
+
+/* loco:5da47b26c38e0f51f71131c4 */
+"damage_report_success_continue_booking" = "Fortsätt";
+
+/* loco:5da47c34c38e0f51fd58c36a */
+"damage_report_success_cancel_booking" = "Avsluta reservation";
+
+/* loco:5db837be4d3dd72fd25bd172 */
+"log_in" = "Logga in";
+
+/* loco:5db838834d3dd730e61374a2 */
+"log_in_loader" = "Loggar in...";
+
+/* loco:5db839184d3dd731366b66a2 */
+"forgot_password" = "Glömt lösenordet?";
+
+/* loco:5db843d54d3dd736bd0d8533 */
+"sign_up_loader" = "Skapar konto...";
+
+/* loco:5db846574d3dd738693049d2 */
+"first_name" = "Förnamn";
+
+/* loco:5db846c64d3dd7386a39d942 */
+"last_name" = "Efternamn";
+
+/* loco:5db8476d4d3dd738693049d7 */
+"email" = "Email";
+
+/* loco:5db84a004d3dd7398a7ffdf3 */
+"email_invalid" = "Emailadressen är ogiltig";
+
+/* loco:5db84adc4d3dd739a3561cc3 */
+"password" = "Lösenord ";
+
+/* loco:5db84b744d3dd739dd5e29a7 */
+"password_invalid" = "Lösenordet måste vara mellan 8 - 16 tecken långt";
+
+/* loco:5dbaa5164d3dd7644b7754f3 */
+"terms_of_service" = "Användarvillkor";
+
+/* loco:5dbaa54b4d3dd764c2266b32 */
+"privacy_policy" = "Integritetspolicy";
+
+/* loco:5dbbfa774d3dd72a137c7972 */
+"password_updated_title" = "Uppdatering av lösenord lyckades";
+
+/* loco:5dbbfac84d3dd72a12237473 */
+"password_updated_message" = "Ditt lösenord har återställts och du kan nu logga in";
+
+/* loco:5dbc15444d3dd72f5c6fe165 */
+"general_error_message" = "Det verkar som att något är fel";
+
+/* loco:5dbc15844d3dd72fb66f5952 */
+"general_error_title" = "Varning";
+
+/* loco:5dbc19854d3dd730327dd852 */
+"no_account_exists_message" = "Det finns inget konto kopplat till denna emailadress";
+
+/* loco:5dbc19b54d3dd7300b023062 */
+"no_account_exists_title" = "Det uppstod ett fel ";
+
+/* loco:5dc3ed6bc38e0f467c363272 */
+"save" = "Spara";
+
+/* loco:5dc3ee22c38e0f46b32aef52 */
+"saving_payment_card_loader" = "Sparar kortinformation...";
+
+/* loco:5dc3f06ec38e0f46ee4bf152 */
+"payment_card_added_message" = "Ditt kort har blivit tillagt! ";
+
+/* loco:5dc40422c38e0f4ac364d754 */
+"delete" = "Ta bort";
+
+/* loco:5dc406ebc38e0f4b8652ff82 */
+"credit_card_invalid_message" = "Kortet du la till verkar vara ogiltigt. Dubbelkolla kortinformationen eller försök med ett annat kort.";
+
+/* loco:5dc40ab0c38e0f4c293fc5b3 */
+"credit_card_delete_message" = "Om du väljer att ta bort kortet kommer kortinformationen försvinna från ditt konto";
+
+/* loco:5dc40b8ec38e0f4c7a55eb91 */
+"credit_card_selecting_loader" = "Ställer in kort som primärval";
+
+/* loco:5dc40ce7c38e0f4ceb721cc3 */
+"removing_payment_method_failed" = "Misslyckades ta bort kortet, försök igen senare";
+
+/* loco:5dc40e0fed0cfa4ddb4898b3 */
+"close" = "Stäng";
+
+/* loco:5dc415c5ed0cfa50186afd56 */
+"removing_payment_method_loader" = "Tar bort kort...";
+
+/* loco:5dc41d88ed0cfa52ab425175 */
+"add_credit_card" = "Lägg till kort";
+
+/* loco:5dc9512aed0cfa6887218652 */
+"add_private_network" = "Lägg till privat flotta";
+
+/* loco:5dc9524bed0cfa68d24ffc22 */
+"sending_confirmation_code" = "Skickar bekräftelsekod";
+
+/* loco:5dca8b19ed0cfa32ca438063 */
+"no_private_networks_for_email" = "Mailadressen har inte behörighet till någon privat flotta";
+
+/* loco:5dca8b3ded0cfa329612e8a4 */
+"use_another_email" = "Använd annan emailadress";
+
+/* loco:5dcd485bc38e0f4b6a3d7dc2 */
+"ride_details" = "Detaljer om åktur";
+
+/* loco:5dcd497cc38e0f4b850d8214 */
+"ride_cost" = "Hyreskostnad";
+
+/* loco:5dcd4b25ed0cfa67ed63d682 */
+"vehicle" = "Cykel";
+
+/* loco:5e68a0424d3dd7355463dae6 */
+"welcome_terms_and_privacy_text" = "Genom att registrera dig och logga in godkänner jag %1$@ <a href=\"%2$@\">Användarvillkor</a>, och <a href=\"%3$@\">Integritetspolicy</a>.";
+
+/* loco:5e6a3b0e4d3dd72a4c14d7b3 */
+"welcome" = "Välkommen";
+
+/* loco:5e6a3b6e4d3dd72a3f087472 */
+"create_an_account" = "Registrera dig";
+
+/* loco:5e6a3bfd4d3dd72ac00a7543 */
+"create_account" = "Skapa konto";
+
+/* loco:5e6a3c234d3dd72a9f678612 */
+"already_have_an_account" = "Har du redan ett konto?";
+
+/* loco:5e6a45644d3dd72d24169974 */
+"verifying" = "Verifierar...";
+
+/* loco:5e6a45a94d3dd72d2568fe72 */
+"verify_email" = "Verifiera email";
+
+/* loco:5e6a45dd4d3dd72d755fcd52 */
+"verification_code_description" = "En verifieringskod har skickats till din email. Skriv in den nedan. Tryck på Skicka igen om du inte fått något email. ";
+
+/* loco:5e6a45fd4d3dd72d260939e2 */
+"change" = "Ändra";
+
+/* loco:5e6a461d4d3dd72d87746c12 */
+"resend" = "Skicka igen";
+
+/* loco:5e6a46984d3dd72d977ca522 */
+"restore_password" = "Återställ lösenord";
+
+/* loco:5e6b13a54d3dd759383a7065 */
+"label_per" = "per";
+
+/* loco:5e6b14204d3dd75a4e059b22 */
+"label_enter_location" = "Upphämtningsplats";
+
+/* loco:5e6b148b4d3dd75a60161f32 */
+"label_find_new_ride" = "Hitta ny cykel";
+
+/* loco:5e6b14d14d3dd75a681af282 */
+"label_scan" = "Skanna";
+
+/* loco:5e6b15b44d3dd75a6c58e7e2 */
+"bike_detail_label_trip_costs" = "Kostnad för åktur";
+
+/* loco:5e6b16124d3dd75a681af284 */
+"bike_detail_label_price" = "Grundkostnad";
+
+/* loco:5e6b16714d3dd75a6e6a93b2 */
+"bike_detail_label_parking_fee" = "Parkeringsavgift";
+
+/* loco:5e6b170b4d3dd75a61054532 */
+"bike_detail_label_about_the_bike" = "Om";
+
+/* loco:5e6b17bc4d3dd75a4f005052 */
+"bike_detail_label_name" = "Namn";
+
+/* loco:5e6b18a84d3dd75a7d486732 */
+"bike_detail_label_model" = "Typ";
+
+/* loco:5e6b19b54d3dd75a6d6684e4 */
+"bike_detail_label_network" = "Flotta";
+
+/* loco:5e6b1ac64d3dd75bd3344872 */
+"bike_detail_label_terms_condition" = "Användarvillkor";
+
+/* loco:5e6b1c8c4d3dd75ba80e9614 */
+"bike_detail_label_parking_zones_spots" = "Parkeringszoner";
+
+/* loco:5e6b1d074d3dd75bd8058812 */
+"bike_detail_label_parking_fee_warning" = "Du kommer att bli debiterad om du parkerar utanför en parkeringszon";
+
+/* loco:5e6b30e94d3dd761d2236622 */
+"bike_detail_bike_cost_free" = "GRATIS";
+
+/* loco:5e6f6df44d3dd725ab04ccc5 */
+"label_good_morning" = "God morgon";
+
+/* loco:5e6f6e134d3dd725c111a956 */
+"label_good_afternoon" = "God eftermiddag";
+
+/* loco:5e6f6e254d3dd725ac566e57 */
+"label_good_evening" = "Godkväll";
+
+/* loco:5e7469674d3dd75ff27cc093 */
+"action_loginfailed_description" = "Lösenordet du angett fungerar inte";
+
+/* loco:5e746a8f4d3dd7602315a4c2 */
+"general_btn_ok" = "OK";
+
+/* loco:5e74985d4d3dd76d47148a06 */
+"error_confirmation_code" = "Fel bekräftelsekod";
+
+/* loco:5e79fafc4d3dd71b0b0e9122 */
+"signup_account_exists_text" = "Det gick inte att skapa ett konto med denna email";
+
+/* loco:5e7b003c4d3dd765a9651e22 */
+"hint_enter_code" = "Ange kod";
+
+/* loco:5e9ea2fbed0cfa590717a3a3 */
+"label_note" = "Observera ";
+
+/* loco:5e9ea4ebed0cfa59b8671b92 */
+"mandatory_phone_text" = "Lägg till ett telefonnummer för att kunna använda flotta";
+
+/* loco:5e9eaa2ded0cfa5b88393c92 */
+"mandatory_phone_action" = "Lägg till telefonnummer";
+
+/* loco:5ea12927ed0cfa0df07f4d72 */
+"add_card_description" = "Ett kreditkort måste läggas till för behörighet till flotta som kräver betalning";
+
+/* loco:5ea129bfed0cfa0d81288352 */
+"add_card" = "LÄGG TILL KORT";
+
+/* loco:5ea12a3eed0cfa0d76420b72 */
+"cancel_capital" = "AVBRYT";
+
+/* loco:5ea131e7ed0cfa100232ee33 */
+"enter_your_new_phone_number" = "Ange ditt nya telefonnummer";
+
+/* loco:5ea14537ed0cfa1a173f6b62 */
+"bike_details_terms_policy" = "Genom att trycka på Bekräfta godkänner du våra <a href=\"%1$@\">användarvillkor</a>.";
+
+/* loco:5ea6c28ded0cfa10f352be93 */
+"reserved_label" = "Reserverad";
+
+/* loco:5ea6c6dced0cfa131355f943 */
+"walk_to_bike_label" = "Gå till cykel";
+
+/* loco:5ea6d25aed0cfa17505985b2 */
+"time_label" = "Tid ";
+
+/* loco:5ea6d914ed0cfa19801cd614 */
+"end_ride_unselected" = "Lås för att avsluta åktur";
+
+/* loco:5eb00c25ed0cfa18a8552822 */
+"booking_timer_expired_label" = "Tiden rann ut! Din uthyrning har börjat. Fortsätt att ta dig till uthyrningsplatsen och tryck på börja hyra.";
+
+/* loco:5eba4c45ed0cfa0a3435eed2 */
+"end_ride_sub_title" = "Glöm inte att fullfölja vår checklista när du avlsutar din åktur.";
+
+/* loco:5eba506bed0cfa0ba5591542 */
+"end_ride_parking_title_authorized" = "Har du parkerat i en parkeringszon?";
+
+/* loco:5eba5286ed0cfa0cdc0b93c2 */
+"end_ride_parking_sub_title_authorized" = "Bekräfta att du parkerade fordonet i ett auktoriserat område.";
+
+/* loco:5eba5503ed0cfa0db8070032 */
+"end_ride_locked_title" = "Är cykeln låst?";
+
+/* loco:5eba5524ed0cfa0dd531a7b2 */
+"end_ride_locked_sub_title" = "Bekräfta att du har låst fordonet ordentligt.";
+
+/* loco:5eba554fed0cfa0dd90d9a92 */
+"end_ride_photo_title" = "Bekräfta med en bild?";
+
+/* loco:5eba5591ed0cfa0e2244acb2 */
+"end_ride_photo_sub_title" = "Ta ett foto av ditt låsta fordon genom att klicka på knappen nedan.";
+
+/* loco:5ebd0eefed0cfa6783469022 */
+"booking_cancel_confirm" = "Ja, avsluta min åktur";
+
+/* loco:5ec4edaced0cfa3d9e173fa5 */
+"parking_restricted_warning_message" = "Du kan inte avsluta din åktur här. Cykla till en parkeringszon. ";
+
+/* loco:5ec4f001ed0cfa3ea32b0972 */
+"active_ride_parking_out_of_bounds_text" = "Du är utanför parkeringszon. Om du väljer att avlsuta din åktur här kommer du bli debiterad en kostnad på %@";
+
+/* loco:5ec4f195ed0cfa3efd29b072 */
+"active_ride_out_of_zones_text" = "Du befinner dig inte i en parkeringszon.";
+
+/* loco:5ec50eaaed0cfa4ead461fe2 */
+"active_ride_out_of_zones_title" = "Utanför parkeringsgränser";
+
+/* loco:5ec51183ed0cfa50060e8982 */
+"ride_find_nearby_zone" = "Hitta närliggande parkeringszoner";
+
+/* loco:5ec51438ed0cfa50e9699489 */
+"general_status_error_text" = "Vi ber om ursäkt, vi kan inte ansluta till Guestbike's server just nu.";
+
+/* loco:5ec51503ed0cfa51715de209 */
+"general_status_error_title" = "Guestbike serverfel";
+
+/* loco:5ec52602ed0cfa5a8020b339 */
+"loading" = "Laddar...";
+
+/* loco:5ec54384ed0cfa665a2de882 */
+"label_next" = "Skicka in";
+
+/* loco:5ec547bded0cfa67e57b1d93 */
+"ride_summary_rate_label" = "Betygsätt din åktur";
+
+/* loco:5ec617b0ed0cfa20d1557d88 */
+"ride_summary_total_label" = "Totalt";
+
+/* loco:5ec617d6ed0cfa20d1557d8a */
+"ride_summary_additional_label" = "Extra";
+
+/* loco:5ec6180ced0cfa20d25c8be5 */
+"ride_summary_duration_label" = "Tid";
+
+/* loco:5ec61839ed0cfa21045000c5 */
+"ride_summary_trip_price_label" = "Pris";
+
+/* loco:5ec61863ed0cfa2121434432 */
+"ride_summary_trip_summary_label" = "Översikt ";
+
+/* loco:5ec68151ed0cfa436557b6b4 */
+"checking_parking_label" = "Letar parkeringszoner";
+
+/* loco:5ec7cfbc4d3dd733e75b4d32 */
+"reservation_timer_hint" = "När timern går ut startar debitering";
+
+/* loco:5ece4b8aed0cfa795052a993 */
+"connect_to_lock" = "Anslut till lås ";
+
+/* loco:5ecf6454ed0cfa48351422f2 */
+"connect_to_lock_popup" = "Du har kopplat ifrån låset. Tryck på knappen nedan för att återkoppla. ";
+
+/* loco:5ed0dc1f4d3dd71f75144042 */
+"account" = "Konto";
+
+/* loco:5ed0e7894d3dd722da030732 */
+"support" = "Support";
+
+/* loco:5ed0e7c04d3dd722963ce272 */
+"membership" = "Medlemskap";
+
+/* loco:5ed7306d4bda04436e64cf42 */
+"parking_title" = "Hitta parkering";
+
+/* loco:5ed734285a287c062a459462 */
+"parking_get_direction" = "Vägbeskrivning";
+
+/* loco:5ed7a771a2c36a7c3b3375d3 */
+"profile" = "Profil ";
+
+/* loco:5ed7a7c7d767bb005258edd7 */
+"personal_info" = "Kontaktinformation";
+
+/* loco:5ed7a7e0d767bb005258edd9 */
+"security" = "Säkerhet";
+
+/* loco:5ed7a82133faab381d4d78a3 */
+"change_password" = "Ändra lösenord";
+
+/* loco:62d7bed8113da80ad62a60a4 */
+"delete_account" = "Radera konto";
+
+/* loco:62d7bebebadcb3425e46ede2 */
+"delete_account_message" = "Om du begär radering av ditt konto kommer ditt konto att raderas permanent när det inte längre är nödvändigt för våra juridiska krav (vanligtvis upp till 20 dagar).";
+
+/* loco:5ed7aa28fd8ee36f4d5e2386 */
+"phone_number" = "Telefonnummer";
+
+/* loco:5ed891c8b61b380dab0e2bd4 */
+"fleet_access_denied_label" = "Du har inte behörighet till denna cykelflotta";
+
+/* loco:5ed892d1a4355b3e0a3b4512 */
+"bike_already_rented_label" = "Detta fordon används av en annan medlem";
+
+/* loco:5ed8936417f2c90ff11b4582 */
+"bike_unavailable_label" = "Fordonet är inte tillgängligt just nu";
+
+/* loco:5ed8942f9573f75ddd1e0722 */
+"qr_code_no_fleet_label" = "Denna QR-kod är inte länkad till något fordon i flottan";
+
+/* loco:5ed895800808024519215553 */
+"ellipse_access_denided_text" = "Vi kan inte ansluta till låset";
+
+/* loco:5ed89602bbc0004ecc37b1c4 */
+"qr_error_ellipse_not_around" = "Låset du försöker ansluta till är inte i närheten";
+
+/* loco:5ed8968f7e67481c8b5dc7a3 */
+"bike_out_of_range_connection_error" = "Det ser ut som att du är utanför fordonets räckvidd. Flytta dig inom räckvidden och tryck på anslutningsknappen för att återansluta.";
+
+/* loco:5ed897859b3ee4646b5b4a82 */
+"scan_qr_code_title" = "Skanna QR-kod";
+
+/* loco:5ed8af64a3b45e6d885e18d3 */
+"scan_qr_code_subtitle" = "Hitta QR-kod på cykeln";
+
+/* loco:630ca2002f08c0731d787c92 */
+"qr_code_not_match" = "Detta är inte rätt QR-kod";
+
+/* loco:5ed924d8b8b29a7d3a117312 */
+"menu_account" = "Konto";
+
+/* loco:5ed925365cfcb92bdd2aac72 */
+"menu_support" = "Support";
+
+/* loco:5ed9c70396844533171d0bf2 */
+"private_fleet" = "Privat flotta";
+
+/* loco:5ed9c782c438da423f70b1f3 */
+"memberships" = "Medlemskap";
+
+/* loco:5ed9c7db92dd1a11010a30e2 */
+"report_an_issue" = "Raportera ett problem";
+
+/* loco:5ed9c8494c15a40e9b4e1852 */
+"logout" = "Logga ut";
+
+/* loco:5edb2d8b9a1d9a0b981796e2 */
+"personal_info_label" = "Kontaktinformation";
+
+/* loco:5edb40099fa9651771531112 */
+"profile_settings_label" = "Profil och inställningar";
+
+/* loco:5eddd3e1726cae385b463572 */
+"logout_ride_error_label" = "Du är fortfarande kopplad till en cykel. Du behöver avlsuta din åktur innan du kan logga ut.";
+
+/* loco:5ede3e0f57382f68ad59e9c9 */
+"no_photo" = "Ingen bild";
+
+/* loco:5ede411641760e3b45351083 */
+"tap_to_enter_notes" = "Klicka för att skriva anteckning";
+
+/* loco:5edf9c123f6da3275603ba72 */
+"add_new_card" = "Lägg till nytt kort";
+
+/* loco:5edf9c581f23c96eb94009f2 */
+"card_number" = "Kortnummer";
+
+/* loco:62fcdf89c148f453ce08db45 */
+"card_exp_date" = "Utgångsdatum";
+
+/* loco:5ee0c4c4ea83df2a19396a22 */
+"card_adding_error" = "Kunde inte lägga till kort";
+
+/* loco:5ee0c8a6c490fe5eae4dbaa2 */
+"error" = "Fel";
+
+/* loco:5ee0c95691022e15635b1b74 */
+"card_details_error" = "Kortdetaljerna verkar vara ogiltiga. Dubbelkolla siffrorna och slå in dem igen, eller försök med ett annat kort. ";
+
+/* loco:5ee0c9fc3aae30126e094b62 */
+"card_already_registered" = "Kortet är redan registrerat för kontot. ";
+
+/* loco:5ee1e7dbf69b8b6eb4189612 */
+"find_ride_search" = "Laddning";
+
+/* loco:5ee21f5358c6fa109d0f5802 */
+"no_private_fleet" = "Du har inte behörighet till privat cykelflotta.";
+
+/* loco:5ee22012f1140a11bf0529c2 */
+"private_fleet_add_email_label" = "Slå in emaildressen som är kopplad till cykelflottan. Vi skickar en verifieringskod på mail och när du bekfräftat kan du reservera en cykel. ";
+
+/* loco:5ee220bade53d41e90563f22 */
+"add_private_fleet" = "Lägg till privat flotta";
+
+/* loco:5ee221077b38bb2c783cdf12 */
+"send_verification_code" = "Skicka verifieringskod";
+
+/* loco:5ee4e46f0fd26a222c1082c2 */
+"private_network_content_has_fleets" = "Du har just nu inte behörighet till någon privat cykelflotta.";
+
+/* loco:5ee4e501a9986274de379be2 */
+"private_network_content_no_access" = "Du har just nu inte behörighet till någon privat cykelflotta.";
+
+/* loco:5ee9ca173e1d9851d4539d12
+ * e.g. $4 / 1 hour */
+"pricing_template" = "%@ / %d %@";
+
+/* loco:5ee9e1e8c213ce3b285b6869
+ * Surcharge will start after 2 hours */
+"surcharge_description" = "Tilläggsavgift påbörjas efter %@";
+
+/* loco:5eea29917a4e7418df3ad262 */
+"surcharge" = "Tilläggsavgift";
+
+/* loco:5eea38b784affc7cdd0b16b2 */
+"unlock_fee" = "Avgift för upplåsning";
+
+/* loco:5eeb1e84bc1f7e76204f1ff4 */
+"metered_charges" = "Uppmätt avgift";
+
+/* loco:5eeb25c7263e4e2fdf75b6c3 */
+"unlock_template" = "%@ för att låsa upp";
+
+/* loco:62a86eb96e986f71311bcfa2 */
+"rental_time_limit" = "Tidsgräns för uthyrning";
+
+/* loco: 62a8710fd64d924d7e24bc52 */
+"rental_time_limit_desc" = "Detta fordon har en väntande reservation. Det måste returneras inom nästa %@";
+
+/* loco:5ef03c8eb8c7a974ab2464c2 */
+"email_update_note" = "Ange din nya email nedan. En verifieringskod kommer att skickas till adressen för att fullborda uppdateringen. ";
+
+/* loco:5ef0422c4b4a2a3efc304032 */
+"email_confirmation_note" = "En kod har skickats till %@. Ange koden nedan för att verifiera";
+
+/* loco:5ef0542e56fd4502307c2e82 */
+"phone_update_note" = "Ändra eller lägg till telefonnummer. Vi skickar ett sms med en kod för att kunna verifiera ditt nummer. ";
+
+/* loco:5ef1072857e6bd1d0f1f5322 */
+"where_can_i_park" = "VAR KAN JAG PARKERA?";
+
+/* loco:5ef1078282d6c86a96573123 */
+"you_can_park_anywhere" = "Du kan parkera var som helst inom våra avsedda parkeringszoner eller platser. \n\nZooma ut för att se avsedda zoner och platser. ";
+
+/* loco:5ef2f542d22a67292101a842 */
+"enter_new_password" = "Ange nytt lösenord";
+
+/* loco:5ef43358c3c1df318f0b8492 */
+"no_parking_restrictions" = "Det finns inga avsedda parkeringsrestriktioner för cykeln. Vi kommenderar att hitta en passande, säker parkeringsplats som ett cykelställ eller liknande. ";
+
+/* loco:5ef98664db0fb57c696c46dc */
+"validate_code_for_phone_number_title" = "Vi har skickat en verifieringskod till %1$s. Ange den nu";
+
+/* loco:5ef9b39c883f8d15476db6c4 */
+"booking_timer_expired_label_free" = "Tiden har gått ut! Hitta en annan cykel i närheten. Om du behöver hjälp, kontakta vår support. ";
+
+/* loco:5ef9c3506f1c7c45212d5852 */
+"current_password" = "Nuvarande lösenord";
+
+/* loco:5ef9cc7906136c21114b7e72 */
+"reservation_timer_hint_free" = "När timern går ut kommer hyran inte längre att hållas för dig.";
+
+/* loco:5ef9e9ff85228a1bf7430792 */
+"internet_is_required" = "Guestbike kräver internetuppslutning";
+
+/* loco:5efa8f3019eefb59b21777f2 */
+"internet_is_required_in_ride" = "Guestbike kräver internetuppslutning. Du kan låsa och låsa upp men inte avsluta åktur. ";
+
+/* loco:5efc55abc925d74469567243 */
+"bluetooth_access_alert_message" = "Guestbike kräver Bluetooth-anslutning för att ansluta till låset. Se till att Bluetooth är på. ";
+
+/* loco:5efc55ca8ee6c3781778eaf3 */
+"bluetooth_access_alert_title" = "Guestbike kräver Bluetooth-anslutning";
+
+/* loco:5efdea4a62d5e378176fe5eb */
+"location_access_hint" = "Ange platstillstånd. Vi kommer att använda din position under uthyrningen";
+
+/* loco:5f02c49b1790313668326ed2 */
+"find_nearby_zones" = "Hitta närliggande zoner";
+
+/* loco:5f02e7cc7bece707b8719635 */
+"reserve_now_title" = "Reservera nu? ";
+
+/* loco:5f02e7f8d424c146271b5452 */
+"reserve_now_message" = "Du kan reservera cykeln nu, eller boka reservation för annan dag och tid. ";
+
+/* loco:5f02e8257bece707b8719638 */
+"reserve_now_button" = "Reservera nu ";
+
+/* loco:5f02e855e92e3c64404c4773 */
+"schedule_reservation" = "Boka reservation";
+
+/* loco:5f0409157928a47ca11943b2 */
+"credit_card_required" = "Det verkar vara ett problem med ditt kort. Slå in sifforrna igen eller försök med annat kort. ";
+
+/* loco:5f040eabb403345c9e2d2c12 */
+"update_payment_details" = "Uppdatera betalningsmetod";
+
+/* loco:5f0552f707b43d006033f582 */
+"reservation" = "Reservation";
+
+/* loco:5f0553af4a14c66a59038ca2 */
+"pickup" = "Börja";
+
+/* loco:5f0553dda49450529141d8c5 */
+"return_label" = "Avsluta";
+
+/* loco:5f0554199fb4b6015a14c7e2 */
+"select_date_time" = "Välj dag och tid";
+
+/* loco:5f055469ac5a88704e1808f3 */
+"available_vehicle" = "Tillgänlig cykel";
+
+/* loco:5f0554bb24090f40433914f4 */
+"see_available_vehicles" = "Se tillgängliga cyklar ";
+
+/* loco:5f05d8ca879b983ee143a392 */
+"done" = "Klar";
+
+/* loco:5f0741085cade6781f0d5782 */
+"confirmation" = "Bekräftelse";
+
+/* loco:5f0741356ca5d32b500696a2 */
+"reservation_confirmed" = "Din reservation är bekräftad. Du kan granska och starta den i menyn.";
+
+/* loco:5f0ed3d99ad4e14df17d62c2 */
+"schedule" = "Reservation";
+
+/* loco:5f0ed41c3a2cb63c0202a532 */
+"reservation_cancel_warning" = "Om du avbokar reservationen återbetalas du inte";
+
+/* loco:5f1185dd407d47385a2933c2 */
+"at_label" = "på";
+
+/* loco:5f118659346df424db4ce5c2 */
+"no_keep_looking" = "Nej, fortsätt kolla";
+
+/* loco:5f130fc4c6951b626e03d665 */
+"select" = "Välj";
+
+/* loco:5f130fdddad77b0bbf07d865 */
+"calculating_cost" = "Beräknar kostnad ";
+
+/* loco:5f15b175d6e0676f9863a664 */
+"start" = "Starta";
+
+/* loco:5f1806f7a1d00f06f43ad415 */
+"axa_lock_hint" = "Lås genom att hålla inne spaken";
+
+/* loco:5f1807dec56279177677e9a2 */
+"lock" = "Lås";
+
+/* loco:5f1d20f70208243d7142ed72 */
+"this_ride_is_free" = "Den här åkturen är helt GRATIS för dig";
+
+/* loco:5f1d377518455b40412c8322 */
+"find_qr_code_on" = "Hitta QR-kod på %@";
+
+/* loco:5f1e7deaff31d8233b4953a2 */
+"iot_hint_locked" = "Använd den här knappen för att låsa eller låsa upp under uthyrning.";
+
+/* loco:5f1fc9ccd8ce80292c315253 */
+"description" = "Beskrivning";
+
+/* loco:5f2017080f0c056a1f78ebe2 */
+"hours" = "1 timme";
+
+/* loco:5f201735dcfd6d50731ef773 */
+"hour" = "Timme";
+
+/* loco:5f20175dbb18d3260d6f05c2 */
+"min" = "Min";
+
+/* loco:5f20178d7f43f06fb162fc52 */
+"mins" = "1 minut";
+
+/* loco:5f2017ce5478860b32695397 */
+"days" = "1 dag";
+
+/* loco:5f2017ed6c791c39483945f3 */
+"day" = "Dag";
+
+/* loco:5f201841bb18d3260d6f05c4 */
+"weeks" = "1 vecka";
+
+/* loco:5f201868bb18d3260d6f05c6 */
+"months" = "1 månad";
+
+/* loco:5f2ad04eb6a5861f8a5213e2 */
+"become_a_member" = "Bli medlem för att låsa upp besparingar på uthyrning";
+
+/* loco:5f2ad095c53bbf43c8516842 */
+"join_today" = "Gå med idag";
+
+/* loco:5f2ad119b6a5861f8a5213e4 */
+"membership_price" = "För bara %@/%@";
+
+/* loco:5f2ad14a7ef8886ef92de152 */
+"membership_perk" = "Bli medlem för att spara %@%% rabatt på varje hyra. Avbryt när som helst.";
+
+/* loco:5f2b8c8d7ed5d945c457a6e2 */
+"nearby" = "Närliggande";
+
+/* loco:5f2b8cb29d793a7cc441b122 */
+"my" = "Min";
+
+/* loco:5f2b9b912d1fd048ea3e2352 */
+"membership_pricing_template" = "%@ / %@";
+
+/* loco:5f2b9cf43647cb78fe0588d2 */
+"cancel_membership" = "Avbryt medlemskap";
+
+/* loco:5f2b9d13d7156f3a780239a2 */
+"perk_template" = "%@%% rabatt på åkattraktioner";
+
+/* loco:5f2b9d218f3df56d300129f2 */
+"perk" = "Perk";
+
+/* loco:5f2b9d3e53d02a411c006d32 */
+"charge" = "Avgift";
+
+/* loco:5f2b9d5a9d321a53ad2d02c2 */
+"billing_cycle" = "Faktureringsperiod";
+
+/* loco:5f2b9d6dc1b0ef61f42a0e82 */
+"membership_start_date" = "Medlemskapets startdatum";
+
+/* loco:5f2b9e51032535452b5e6ee3 */
+"payment_method" = "Betalningsmetod";
+
+/* loco:5f2ba45bd83f6d206d29ae42 */
+"week" = "Vecka";
+
+/* loco:5f2ba46c90055373ba6f9042 */
+"weekly" = "Veckovis";
+
+/* loco:5f2ba477f41b3c4ab6650924 */
+"month" = "Månad";
+
+/* loco:5f2ba48590055373ba6f9044 */
+"monthly" = "Månatlig";
+
+/* loco:5f2bd3fee4c0a472106a4662 */
+"perk_template_bike" = "%@%% av";
+
+/* loco:5f362274314f072f726d4042 */
+"reservations" = "Bokningar";
+
+/* loco:5f3faeb736778c1b125c5008 */
+"duplicated_phone_number" = "Du kan inte använda detta telefonnummer";
+
+/* loco:5f438672432e366c0c04d1e4 */
+"select_fleet" = "Välj flotta";
+
+/* loco:5f4386843cb7f159fd47a4d4 */
+"fleet" = "Flotta";
+
+/* loco:5f4386da8736ce19a3585c94 */
+"create_a_reservation" = "Skapa en reservation";
+
+/* loco:5f43cbf1b8e4a44cfa315527 */
+"price" = "Pris";
+
+/* loco:5f4610715b368f6fa207ba43 */
+"select_vehicle" = "Välj fordon";
+
+/* loco:5f4642c879eab1369c08fa82 */
+"reservations_empty_text" = "För att göra en reservation, klicka på knappen nedan för att börja och välja en flotta som du vill hyra av. Du kan göra flera bokningar.";
+
+/* loco:5f48a9e158bf8b62162bd8f3 */
+"kick_scooter" = "Sparkcykel";
+
+/* loco:5f48aa3826efad263422d9c2 */
+"regular_bike" = "Cykel";
+
+/* loco:5f48aa94fb51224f05413904 */
+"electric_bike" = "Elcykel";
+
+/* loco:5f48aacc5055251f435fc213 */
+"locker_bike" = "Skåp";
+
+/* loco:5f4e5053066e9a5c2266f543 */
+"available_in" = "Tillgänglig i";
+
+/* loco:5f4f939726c8be3a805daa02 */
+"selected" = "Vald";
+
+/* loco:5f5613fb9e5d752a3f6665d3 */
+"turn_your_vehicle_off" = "Stäng av ditt fordon?";
+
+/* loco:5f56143e70a20c111266a153 */
+"we_can_temporarily_turn_off" = "Vi kan tillfälligt stänga av ditt fordon om du vill pausa din resa. Du kan återuppta din resa när du kommer tillbaka.";
+
+/* loco:5f58dd208167b321ff2f93c2 */
+"yes" = "Ja";
+
+/* loco:5f58dd3a7d2d985668266e23 */
+"no" = "Nej";
+
+/* loco:5f5b2dde19e7c0398b7e2392 */
+"free_for_duration" = "Gratis för %@";
+
+/* loco:5f5f0dbb6c194f02de64b682 */
+"shackle_jam" = "Din schackel är inte ordentligt isatt. Ta bort och sätt tillbaka bygeln i låsstången";
+
+/* loco:5f6b3aa4db443d13805e9f23 */
+"up_next" = "Strax:";
+
+/* loco:5f982927ddd9325e46753332 */
+"cart_bike" = "Golfbil";
+
+/* loco:5f9917c66ca54717380d4a96 */
+"your_memberships" = "Dina medlemskap";
+
+/* loco:5f9918139178df0628422ec3 */
+"show_all" = "Visa allt";
+
+/* loco:5fa284d2d7b6e5470d5bb408 */
+"hide" = "Dölj";
+
+/* loco:5faa1a04716b4b5e8a24afc2 */
+"member" = "medlem";
+
+/* loco:5faa1bf67974ba3daf4ea522 */
+"membership_discount_template" = "%@%% rabatt";
+
+/* loco:5fab69dfd19a5a0e5e177cb2 */
+"available_memberships" = "Tillgängliga medlemskap";
+
+/* loco:5fad29f520a12804b0070c22 */
+"search_fleet" = "Sökflotta";
+
+/* loco:5fad2a4f5b5532317d698573 */
+"subscribing" = "Prenumerera ...";
+
+/* loco:5fad2abdd788b632fc04c3d2 */
+"cancelling_subscription" = "Avbryter prenumerationen ...";
+
+/* loco:5fad2b01952cb365f706e272 */
+"subscription_success" = "";
+
+/* loco:5fad2f75096fdd1009302f42
+ * <string name="subscription_success"></string> */
+"cancel_membership_confirmation" = "Avbryta medlemskap?";
+
+/* loco:5fad2f8f5dc4831f8f3502f2 */
+"cancel_membership_success" = "Ditt medlemskap har avslutats";
+
+/* loco:5fad3107d3c4d942c31a7663 */
+"membership_end_date" = "Slutdatum för medlemskap";
+
+/* loco:634d396ac9fa746a6d084842 */
+"membership_next_billing" = "Nästa faktureringsdatum";
+
+/* loco:634d392f8896a74d1f653992 */
+"membership_last_billing" = "Senaste faktureringsdatum";
+
+/* loco:5fb52e4b6f04385872002692 */
+"year" = "År";
+
+/* loco:5fb78b4c9e098c57a764cbd4 */
+"duplicated_membership_alert" = "Du har redan medlemskap i den här flottan";
+
+/* loco:5fd244923534d82636329355 */
+"iot_hint_unlocked" = "Tryck på denna knapp för att låsa cykeln under ett kort stopp. ";
+
+/* loco:5fe45f2cfd5482577107cd82 */
+"credit_card_exists_message" = "Det här kortet är redan tillagt för ditt konto";
+
+/* loco:5fe45f2cfd5482577107cd83 */
+"no_phone_number" = "Lägg till telefonnummer";
+
+/* loco:5fe45f2cfd5482577107cd84 */
+"security_label" = "Säkerhet";
+
+/* loco:5fe45f2cfd5482577107cd85 */
+"phone_number_label" = "Telefonnummer";
+
+/* loco:5fe45f2cfd5482577107cd86 */
+"add_phone_number_title" = "Ändra eller lägg till telefonnummer. Vi skickar ett sms med en kod för att kunna verifiera ditt nummer. ";
+
+/* loco:5ff690154b955805bc444ab2
+ * <string name="credit_card_exists_message"></string>
+<string name="no_phone_number"></string>
+<string name="security_label"></string>
+<string name="phone_number_label"></string>
+<string name="add_phone_number_title"></string> */
+"app_settings_label" = "Applikationen kräver att platstjänster ska vara PÅ. \\n Gå till inställningar";
+
+/* loco:5ffee5ee9d13c3190929bbd2 */
+"add_promo_code" = "Lägg till kampanjkod";
+
+/* loco:5ffee6219d13c3190929bbd4 */
+"promotions" = "Kampanjer";
+
+/* loco:5ffeebe88223b65ff6097592 */
+"enter_promo_code" = "Ange kampanjkod";
+
+/* loco:6007ee2bfeaf9a464c71cb82 */
+"end_your_ride" = "Avsluta din resa?";
+
+/* loco:6007ee6cc7f7214d2f3dca53 */
+"your_vehicle_is_docked" = "Ditt fordon är dockat. Du kan avsluta din resa eller använda upplåsningsknappen nedan om detta bara är ett kort stopp.";
+
+/* loco:6007ef5fc9013c76d22716a2 */
+"unlock" = "Låsa upp";
+
+/* loco:600a674a5906924b884c4c72 */
+"skip_label" = "Hoppa";
+
+/* loco:600a8ab157a9bd65e15e2512 */
+"tutorial_label" = "Handledning";
+
+/* loco:601009e7efc8c24a327384c3 */
+"vehicle_is_docked" = "Fordonet är dockat";
+
+/* loco:60100a170a92724818671b64 */
+"your_trip_was_ended_automatically" = "Din resa avslutades automatiskt. Tack för att du åkte med oss!";
+
+/* loco:6024d6b3c047317d104ed1f2 */
+"faq" = "FAQ";
+
+/* loco:602532b322b550060668a0c4 */
+"invalid_promo_code" = "Den här kampanjkoden är inte giltig";
+
+/* loco:60260f8b81307159157a54b2 */
+"notice" = "Meddelande";
+
+/* loco:60360436bc29bf3cd1485254 */
+"reservation_ending_soon" = "Din bokning slutar snart";
+
+/* loco:60470f713ffa763a225ac572
+ * <string name="reservation_ending_soon"></string> */
+"geo_fence_warning" = "Gå tillbaka in i geofence";
+
+/* loco:604f43c50630f833f20f7ed2 */
+"find_a_station" = "Hitta en station";
+
+/* loco:60782d885b2609233b040934 */
+"code_manual_lock" = "Koda";
+
+/* loco:6078382932c8a2010954a6b2 */
+"enter_code_on_lock" = "Ange koden på låset";
+
+/* loco:60ab98d9d3fb3525ac52cdd4 */
+"removing_single_card_alert" = "Du kan inte ta bort standardbetalningsmetod";
+
+/* loco:60ad112a599ea10dcc5cfd84 */
+"locking" = "Låsning ...";
+
+/* loco:60ad11675d0e11206b5f4833 */
+"unlocking" = "Låsa ...";
+
+/* loco:60b08ecc7fd520109f17b032 */
+"promo_code" = "Rabattkod";
+
+/* loco:60fed34477534224462a7b82 */
+"kayak" = "Kajak";
+
+/* loco:6103ba16aeea051a3c768432 */
+"edit" = "Redigera";
+
+/* loco:6103ba3496ae2b1cfb085f22 */
+"editing_card" = "";
+
+/* loco:6113d4153ba79b17b2744f82 */
+"camera_access_alert_message" = "";
+
+/* loco:6116150bfec0a364c873b3c2 */
+"select_pricing" = "Välj ränta";
+
+/* loco:6116163b1b52ce21ea1bbfe2 */
+"pay_per_use" = "Uppmätt pris";
+
+/* loco:611616497b367a53400d65f2 */
+"rental_fares" = "Hyrespriser";
+
+/* loco:611bb40fee70201a5632af13 */
+"pricing" = "Prissättning";
+
+/* loco:611df5ca3bea7162db5ea082 */
+"preauthorization" = "Förhandsgodkännande";
+
+/* loco:611df64c160d294b134a2763 */
+"preauthorization_description" = "*Detta är ett tillfälligt spärr på ditt kort";
+
+/* loco:612337f7f6d4635654517c53 */
+"preauthorization_warning" = "Ditt kort har inte tillräckligt med medel för att täcka det erforderliga beloppet";
+
+/* loco:614d7529b8aff325852b5bc2 */
+"accept" = "Acceptera";
+
+/* loco:619cbd9db1de991e196df282 */
+"success" = "Framgång";
+
+/* loco:619cd6e13d359064e376ebf3 */
+"unsuccessful" = "";
+
+/* loco:6203d5973ecacb13bf5fb7f3 */
+"minutes" = "1 minut";
+
+/* loco:62040c9c9c3529088b3aaaf4 */
+"minutes-few" = "%d minuter";
+
+/* loco:62040d0c897fe0654f34ca24 */
+"minutes-other" = "";
+
+/* loco:6214d272b0bbe43255794312 */
+"hours-other" = "%d timmar";
+
+/* loco:6214d7d687eb64769977a9e3 */
+"hours_plural_2" = "";
+
+/* loco:6214d86450d40a4ca2540065 */
+"days-plural" = "%d dagar";
+
+/* loco:6214d8af9b5680722c467f53 */
+"days_plural_2" = "";
+
+/* loco:6214d909c0d8193d2b2c43b3 */
+"months-plural" = "%d månader";
+
+/* loco:6214d95c4a6c59745528ca42 */
+"months_plural_2" = "";
+
+/* loco:6214ecfea80af31fbb1f3042 */
+"weeks-plural" = "%d veckor";
+
+/* loco:6214ed21792e743b1925ead3 */
+"weeks_plural_2" = "";
+
+/* loco:621cd3e10e4ec608a97bdab3 */
+"mins-few" = "%d minuter";
+
+/* loco:6228d96e838fc114c70c95f2 */
+"months_plural_3" = "";
+
+/* loco:6228dd2d37998d0f4c264892 */
+"minutes_plural_3" = "";
+
+/* loco:6228ddfecd27f834735aeaf2 */
+"weeks_plural_3" = "";
+
+/* loco:6228de50cd4623656f676604 */
+"days_plural_3" = "";
+
+/* loco:6228de981633a918f822cfb2 */
+"mins_plural_2" = "";
+
+/* loco:6228de981633a918f822cfb3 */
+"mins_plural_3" = "";
+
+/* loco:6228df25f45e8e74871655d2 */
+"hours_plural_3" = "";
+
+/* loco:62454fad5ec7234b01128532 */
+"parking" = "";
+
+/* loco:624ec81cb6ad5d1544028092 */
+"sentinel_tap_lock_label" = "Tryck på låset tills det börjar pipa. Detta kommer att initiera anslutningsprocessen.\\n\\n\\nEfter 20 sekunder bör den låsas upp.";
+
+/* loco:627bb1f15205bb248c485192 */
+"select_port" = "Välj";
+

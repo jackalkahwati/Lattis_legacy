@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>689553489566-6j4fe820q8qq2bjk6s1j3bn726ckg0bc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.689553489566-6j4fe820q8qq2bjk6s1j3bn726ckg0bc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAq8aRAMmviF5p6YVKM26eId0CzX6_Iy3g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>689553489566</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>biz.twowheelrental.twr</string>
+	<key>PROJECT_ID</key>
+	<string>two-wheel-rental</string>
+	<key>STORAGE_BUCKET</key>
+	<string>two-wheel-rental.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:689553489566:ios:8216b0162e278518b8058f</string>
+</dict>
+</plist>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#6EDF9E">
+
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/arrow_left"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Emergency Contacts"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llLockName"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rlLockName">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAddLock"
+        android:layout_below="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></SearchView>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvAddContacts"
+        android:layout_below="@+id/rlAddLock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:layout_centerHorizontal="true">
+
+    </ListView>
+
+
+
+
+</RelativeLayout>

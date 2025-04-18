@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#829CB2</color>
+    <color name="colorPrimaryDark">#30425f</color>
+    <color name="colorAccent">#57D8FF</color>
+    <color name="colorPrimarylightdark">#687c8e</color>
+    <color name="app_background">#3C5377</color>
+    <color name="app_background_theme">#3C5377</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="ellipses_text_color">#9B9B9B</color>
+    <color name="black_alpha_40">#66000000</color>
+    <color name="walkthrough_title">#66B1E3</color>
+    <color name="walkthrough_description">#9B9B9B</color>
+    <color name="non_selected_circle_icon">#669B9B9B</color>
+    <color name="text_color_accent">#57D8FF</color>
+    <color name="text_hint_color">#A0C8E0</color>
+    <color name="circular_progress_default_progress">#57D8FF</color>
+    <color name="circular_progress_default_background">#829CB2</color>
+    <color name="circular_progress_default_title">#FFFFFF</color>
+    <color name="circular_progress_default_subtitle">#FFFFFF</color>
+    <color name="primary">#3C5377</color>
+    <color name="primary_dark">#343356</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#455A64</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="divider_settings">#DDDDDD</color>
+    <color name="headerBackground">#eeeeee</color>
+    <color name="alert_logout_background">#A0C8E0</color>
+    <color name="cardview_savepin_color">#b4d4e7</color>
+    <color name="ripplecolor">#A0C8E0</color>
+</resources>

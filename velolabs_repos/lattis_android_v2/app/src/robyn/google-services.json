@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "102357718166",
+    "project_id": "robyn-scooter",
+    "storage_bucket": "robyn-scooter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102357718166:android:e930739233b97340999eb7",
+        "android_client_info": {
+          "package_name": "io.bikes.robyn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZGyoqOXwUuW2pbYAggeFtjzFJFkLrSSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102357718166:android:4a4a0890fa7f059e999eb7",
+        "android_client_info": {
+          "package_name": "io.bikes.robyn.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZGyoqOXwUuW2pbYAggeFtjzFJFkLrSSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102357718166:android:eb2e0b2f9580be3d999eb7",
+        "android_client_info": {
+          "package_name": "io.bikes.robyn.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZGyoqOXwUuW2pbYAggeFtjzFJFkLrSSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102357718166-gahtpu4bvfth7c29krae5tgs807tl5j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

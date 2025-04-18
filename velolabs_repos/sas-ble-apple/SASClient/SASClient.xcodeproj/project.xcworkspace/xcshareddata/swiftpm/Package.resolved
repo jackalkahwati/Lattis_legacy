@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HTTPClient",
+        "repositoryURL": "git@github.com:rawillk/http-client-swift.git",
+        "state": {
+          "branch": "main",
+          "revision": "57871c66397bbc406a06e590524dd4e7296653d5",
+          "version": null
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "32a99b537d1c6f3529a08257c28a5feb70c0c5af",
+          "version": null
+        }
+      },
+      {
+        "package": "platform-swift",
+        "repositoryURL": "git@github.com:velolabs/platform-swift.git",
+        "state": {
+          "branch": "main",
+          "revision": "154919cc6ee7caa7f81cb5b2fecff1b57fb39b8e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

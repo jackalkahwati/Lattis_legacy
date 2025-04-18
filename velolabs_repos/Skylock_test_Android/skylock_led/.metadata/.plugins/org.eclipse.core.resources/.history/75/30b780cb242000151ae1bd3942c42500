@@ -1,0 +1,479 @@
+package com.velolabs.skylock_led;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattService;
+import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+public class MainActivity extends Activity {
+	
+	Button connectNew, disconnect, LED_ON, LED_OFF, LOCK, UNLOCK,ShiftUp,ShiftDown,scanBluetooth, bLEDState, bTX_0, bTX_4, bResetCap;
+	TextView textView1, textView2, tvLEDState;
+	Context context = this;
+	BluetoothDevice Device;
+	BluetoothAdapter myBluetoothAdapter;
+	ArrayAdapter<String> BTArrayAdapter;
+	ListView listView;
+	Dialog dialog;
+	final MainActivity myContext = this;
+	BluetoothGatt mBluetoothGatt;
+	BluetoothManager manager;
+	BluetoothGattService sLED, sLOCK;
+	BluetoothGattCharacteristic cLED_ON, cLED_OFF, cLOCK, cUNLOCK, cLED_STATE, c_TX, c_Testing;
+	private UUID UUID_LED_SER = UUID.fromString("9c7d1523-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LED_ON = UUID.fromString("9c7d1525-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LED_OFF = UUID.fromString("9c7d1526-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LOCK_SER = UUID.fromString("9c7d1529-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LOCK_STATE = UUID.fromString("9c7d152a-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LOCK_SHIFT = UUID.fromString("9c7d152b-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_LED_STATE = UUID.fromString("9c7d1524-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_TX_PWR = UUID.fromString("9c7d1528-ba74-0bac-bb4b-539d6a70eadd");
+	private UUID UUID_TESTING = UUID.fromString("9c7d152c-ba74-0bac-bb4b-539d6a70eadd");
+	
+	String MacAddress1 = "FB:7D:23:F3:73:B5";
+	String MacAddress2 = "DA:31:F8:C5:1A:F0";
+	int count = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        init();
+        onClickListenerMethod();
+    }
+
+
+    private void init() {
+		// TODO Auto-generated method stub
+    	connectNew = (Button) findViewById(R.id.button1);
+    	disconnect = (Button) findViewById(R.id.button2);
+    	LED_ON = (Button) findViewById(R.id.button3);
+    	LED_OFF = (Button) findViewById(R.id.button4);
+    	LOCK = (Button) findViewById(R.id.button5);
+    	UNLOCK = (Button) findViewById(R.id.button6);
+    	ShiftUp = (Button) findViewById(R.id.button7);
+    	ShiftDown = (Button) findViewById(R.id.button8);
+    	bLEDState = (Button) findViewById(R.id.button9);
+    	bTX_0 = (Button) findViewById(R.id.button10);
+    	bTX_4 = (Button) findViewById(R.id.button11);
+    	bResetCap = (Button) findViewById(R.id.button12);
+    	textView1 = (TextView) findViewById(R.id.textView1);
+    	textView2 = (TextView) findViewById(R.id.textView2);
+    	tvLEDState = (TextView) findViewById(R.id.tvLEDState); 
+    	manager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
+    	myBluetoothAdapter = manager.getAdapter();
+    	BTArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+	      	
+    	
+    }
+    private void onClickListenerMethod() {
+		// TODO Auto-generated method stub
+		connectNew.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			    View view = inflater.inflate(R.layout.bluetooth_list, null);
+		        scanBluetooth = (Button) view.findViewById(R.id.scanBluetooth);
+		        listView = (ListView) view.findViewById(R.id.bluetoothList);
+		        builder.setView(view);
+		        dialog_set();
+				  
+			    dialog = builder.create();
+			    
+			    dialog.getWindow().setGravity(Gravity.BOTTOM);
+			    dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+			    dialog.setCanceledOnTouchOutside(true);
+			    dialog.show();
+			    				
+				//myBluetoothAdapter.startDiscovery();
+				//Device = myBluetoothAdapter.getRemoteDevice(""+MacAddress1);
+				//Toast.makeText(getApplicationContext(),"Connecting to "+MacAddress1 ,
+		        //   		 Toast.LENGTH_LONG).show();
+				//bluetoothConnect();
+				//textView2.setText(""+MacAddress1);
+				//discoverServices();
+			}
+
+
+		});
+		
+
+		disconnect.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				myBluetoothAdapter.stopLeScan(mLeScanCallback);
+				textView2.setText("");
+			    mBluetoothGatt.disconnect();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+				
+				//myBluetoothAdapter.startDiscovery();
+				//Device = myBluetoothAdapter.getRemoteDevice(""+MacAddress2);
+				//Toast.makeText(getApplicationContext(),"Connecting to "+MacAddress2 ,
+		         //  		 Toast.LENGTH_LONG).show();
+				
+				//bluetoothConnect();
+				//textView2.setText(""+MacAddress2);
+				//discoverServices();
+			}
+		});
+		LED_ON.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLED_ON = mBluetoothGatt.getService(UUID_LED_SER).getCharacteristic(UUID_LED_ON);
+				cLED_ON.setValue(new byte[] {0x4F});
+		   		mBluetoothGatt.writeCharacteristic(cLED_ON);
+		   		Toast.makeText(getApplicationContext(),"LED Status = ON",
+			  		 		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+		   	}
+		});
+		LED_OFF.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLED_OFF = mBluetoothGatt.getService(UUID_LED_SER).getCharacteristic(UUID_LED_OFF);
+				cLED_OFF.setValue(new byte[] {0x4F});
+		   		mBluetoothGatt.writeCharacteristic(cLED_OFF);
+	   			Toast.makeText(getApplicationContext(),"LED Status = OFF",
+	   				  		 		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+		   	}
+		});
+		LOCK.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLOCK= mBluetoothGatt.getService(UUID_LOCK_SER).getCharacteristic(UUID_LOCK_STATE);
+				cLOCK.setValue(new byte[] {0x01});
+		   		mBluetoothGatt.writeCharacteristic(cLOCK);
+				Toast.makeText(getApplicationContext(),"LOCKED" ,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		UNLOCK.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+				cUNLOCK= mBluetoothGatt.getService(UUID_LOCK_SER).getCharacteristic(UUID_LOCK_STATE);
+				cUNLOCK.setValue(new byte[] {0x00});
+		   		mBluetoothGatt.writeCharacteristic(cUNLOCK);
+				Toast.makeText(getApplicationContext(),"UNLOCKED" ,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		ShiftDown.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				for(int i = 0; i<=3;i++){
+				cLOCK= mBluetoothGatt.getService(UUID_LOCK_SER).getCharacteristic(UUID_LOCK_SHIFT);
+				cLOCK.setValue(new byte[] {0x01});
+		   		mBluetoothGatt.writeCharacteristic(cLOCK);
+				}
+				Toast.makeText(getApplicationContext(),"shifted down "+count ,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+				
+		});
+		ShiftUp.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				for(int i = 0; i<=3;i++){
+				cUNLOCK= mBluetoothGatt.getService(UUID_LOCK_SER).getCharacteristic(UUID_LOCK_SHIFT);
+				cUNLOCK.setValue(new byte[] {0x00});
+		   		mBluetoothGatt.writeCharacteristic(cUNLOCK);
+				}
+				Toast.makeText(getApplicationContext(),"shifted up "+count,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		bTX_0.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				c_TX = mBluetoothGatt.getService(UUID_LED_SER).getCharacteristic(UUID_TX_PWR);
+				c_TX.setValue(new byte[] {0x00});
+				mBluetoothGatt.writeCharacteristic(c_TX);
+				Toast.makeText(getApplicationContext(),"TX_power set to 0 ",
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		bTX_4.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				c_TX = mBluetoothGatt.getService(UUID_LED_SER).getCharacteristic(UUID_TX_PWR);
+				c_TX.setValue(new byte[] {0x04});
+				mBluetoothGatt.writeCharacteristic(c_TX);
+				Toast.makeText(getApplicationContext(),"TX_power set to 4 ",
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		bResetCap.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				c_Testing = mBluetoothGatt.getService(UUID_LOCK_SER).getCharacteristic(UUID_TESTING);
+				c_Testing.setValue(new byte[] {0x01});
+				mBluetoothGatt.writeCharacteristic(c_Testing);
+				Toast.makeText(getApplicationContext(),"Capactive touch has been reset ",
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		bLEDState.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLED_STATE= mBluetoothGatt.getService(UUID_LED_SER).getCharacteristic(UUID_LED_STATE);
+				mBluetoothGatt.readCharacteristic(cLED_STATE);
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+				try{
+				Integer temp = cLED_STATE.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+				
+				if(temp == 0){
+					tvLEDState.setText("LED is OFF");
+				}else if(temp >= 1) {
+					tvLEDState.setText("LED is ON");
+				}else{
+					tvLEDState.setText("NO State  "+cLED_STATE.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0));
+				}
+				
+				}catch(Exception e){
+					Toast.makeText(getApplicationContext(),""+e.toString(),
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+	}
+    
+    private List<BluetoothDevice> tmpBtChecker = new ArrayList<BluetoothDevice>();
+    
+	protected void discoverServices() {
+		// TODO Auto-generated method stub
+		int count = 10;
+		while(true){
+		mBluetoothGatt.discoverServices();
+	    count = mBluetoothGatt.getServices().size();
+		if(count >= 4){
+		break;
+		}
+		}
+		Toast.makeText(getApplicationContext(),"Services Discovered!!! ",
+			   		 Toast.LENGTH_LONG).show();
+	}
+
+
+	protected void bluetoothConnect() {
+		// TODO Auto-generated method stub
+		while(true){
+			mBluetoothGatt = Device.connectGatt(myContext, false, null);
+			if(mBluetoothGatt.connect()==true){
+				String temp = Device.getAddress();
+				textView2.setText(""+temp);
+				break;
+			}else{
+				mBluetoothGatt.disconnect();
+			}
+		}
+		
+		
+	}
+	
+
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as 9you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    void dialog_set(){
+		scanBluetooth.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				tmpBtChecker.clear();
+				
+				 if (!myBluetoothAdapter.isEnabled()) {
+			         Intent turnOnIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			         startActivityForResult(turnOnIntent, 1);
+			      }
+				 try {
+				
+				if (myBluetoothAdapter.isDiscovering()) {
+					   // the button is pressed when it discovers, so cancel the discovery
+					   myBluetoothAdapter.cancelDiscovery();
+				   }
+				   else {
+						BTArrayAdapter.clear();
+						tmpBtChecker.clear();
+						//myBluetoothAdapter.startDiscovery();
+						myBluetoothAdapter.startLeScan(mLeScanCallback);
+						//registerReceiver(bReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+												
+					} 
+				
+			      BTArrayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
+			      listView.setAdapter(BTArrayAdapter);
+				 } catch(Exception e){
+					 String temp = e.toString();
+					 Toast.makeText(getApplicationContext(),""+temp,
+					   		 Toast.LENGTH_LONG).show();
+					 
+				 }
+			} 
+		});
+		
+		listView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				myBluetoothAdapter.cancelDiscovery();
+				myBluetoothAdapter.stopLeScan(mLeScanCallback);
+				String[] lines = ((String) listView.getItemAtPosition(position)).split("\\n");
+	    		String line2 = lines[1];
+	    		Toast.makeText(getApplicationContext(),"Connecting to "+line2 ,
+	           		 Toast.LENGTH_LONG).show();
+	    		Device = myBluetoothAdapter.getRemoteDevice(""+line2);
+	    		try{
+	    			bluetoothConnect();
+	    			discoverServices();
+	    		} catch(Exception e){
+	    			Toast.makeText(getApplicationContext(),""+e.toString() ,
+	   	           		 Toast.LENGTH_LONG).show();
+	    		}
+				
+	    		dialog.dismiss();
+			}
+		}); 
+    }
+    
+    private BluetoothAdapter.LeScanCallback mLeScanCallback =
+            new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                	if(!tmpBtChecker.contains(device)){
+       	        	tmpBtChecker.add(device);
+                	BTArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+   	        	 	BTArrayAdapter.notifyDataSetChanged();
+                	}
+                }
+            });
+        }
+    };
+}

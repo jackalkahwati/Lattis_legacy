@@ -1,0 +1,212 @@
+<div class="container">
+<h1 class="page-title">Give A Gift That Will be Loved</h1>
+
+  <div id="giftcertificate">
+    <div id="gift-certificate">
+      <a id="link-certificate1" class="nostyle" data-toggle="modal" data-target="#myModal" href="#genric-certificate"><img id="gift-certificate1"  src="{{'Skylock_Thank_You_Certificate.png' | asset_url }}" /></a>
+      <a id="link-certificate2" data-toggle="modal" data-target="#myModal" href="#gift-certificate"><img id="gift-certificate2" src="{{'Skylock_Holiday_Certificate.png' | asset_url }}" /></a>
+    </div>
+    <div id="select-buttons" class="select-button">
+      <button id="select-certificate1" class="btn btn-success">Select Certificate</button>
+      <button id="select-certificate2"  class="btn btn-success">Select Holiday Certificate</button>          
+    </div>
+    
+    
+    </div>
+<div id="sending-gifts" class="sending-buttons">
+  <a href='/'><button id="back-to-home" class="submit secondary">Back to Home</button></a>
+ <button id="Print" class="submit secondary"  onclick="printImg()">Print</button>
+ <button id="Download" class="submit secondary" onclick="download()">Download</button>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" data-target="checkbox-certificate1" aria-label="Close">&times;</button>
+          <h4 class="modal-title">&nbsp;</h4>
+      </div>
+      <div id="img-popup" class="modal-body">
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<head>
+  
+  <script type="text/javascript" src="{{ 'jquery-1.11.3.min.js' | asset_url }}"></script>
+  
+  <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+
+  <script type="text/javascript" src="{{ 'bootstrap.min.js' | asset_url }}"></script>
+  
+</head>
+
+<script type="text/javascript">
+  
+    var certificate1_src=$('#gift-certificate1').attr('src');
+    var certificate2_src=$('#gift-certificate2').attr('src');
+    var chckbxCertificate1=document.getElementById('checkbox-certificate1');
+    var chckbxCertificate2=document.getElementById('checkbox-certificate2');
+  	var selectCertificate1= $('#select-certificate1');
+  	var selectCertificate2= $('#select-certificate2');
+  	var firstSelected= false;
+  	var secondSelected= false; 
+  	
+  
+  function printImg() {
+    
+    if(firstSelected){
+        var originalContents = document.body.innerHTML;
+      
+      	document.body.innerHTML ="<img src="+certificate1_src+" class='printwebpage'>";
+      
+		window.print();
+      
+        document.body.innerHTML = originalContents;
+        
+    }
+    
+    if(secondSelected){
+             
+   		var originalContents = document.body.innerHTML;
+      
+      	document.body.innerHTML = "<img src="+certificate2_src+">";
+      
+		window.print();
+      
+        document.body.innerHTML = originalContents;  
+    }
+    
+    	if(!firstSelected && !secondSelected){
+  
+    	var box=bootbox.alert({
+   				title: 'Error!',
+   				message: 'Please select atleast one Gift !!!',
+		});
+          box.find('.modal-title').css({'font-size': '25px','color':'red'});
+          box.find('.modal-header .close').css({'margin-top': '-12px'});
+          box.find('.btn-primary').css({'background-color': '#5d9de8','width':'86px'}); 
+          box.find('.bootbox-body').css({'color':'red'});
+ 
+    	}
+    
+    
+    }
+  
+  function download(){ 
+
+    if(firstSelected){
+      console.log(document.body);
+       	var a = document.createElement('a');
+   			a.href = certificate1_src;
+			a.download = 'Skylock_Thank_You_Certificate.png';
+            document.body.appendChild(a);
+			a.click();
+      		document.body.removeChild(a);
+			
+    }
+    if(secondSelected){
+    var a = document.createElement('a');
+			a.href = certificate2_src;
+			a.download = "Skylock_Holiday_Certificate.png";
+			document.body.appendChild(a);
+			a.click();  
+      		document.body.removeChild(a);
+    }
+    if(!firstSelected && !secondSelected){
+    
+      var box=bootbox.alert({
+   				title: 'Error!',
+   				message: 'Please select atleast one Gift !!!',
+		});
+          box.find('.modal-title').css({'font-size': '25px','color':'red'});
+          box.find('.modal-header .close').css({'margin-top': '-12px'});
+          box.find('.btn-primary').css({'background-color': '#5d9de8','width':'86px'}); 
+          box.find('.bootbox-body').css({'color':'red'});
+
+      
+    }
+  }      
+  
+/*Image PopUp*/  
+  
+  
+  $('#link-certificate1').click(function(){
+    
+    $('#img-popup').html("");
+    
+    $('#img-popup').append("<img src="+certificate1_src+">");
+  
+  
+  });
+  
+  
+    $('#link-certificate2').click(function(){
+      $('#img-popup').html("");
+    
+    $('#img-popup').append("<img src="+certificate2_src+">");
+  
+  
+  });
+  
+  
+  
+  /*Image Selection*/
+  
+  
+  
+  $('#select-certificate1').click(function(){
+    console.log(selectCertificate1.html());
+    
+    if(selectCertificate1.html()=="Select Certificate"){
+    	firstSelected = true;
+      	var backgroundColor1=selectCertificate1.css("width");
+        $('#gift-certificate1').css({'border':'1px solid #5cb85c'});
+   		selectCertificate1.html("Remove selection");
+    	selectCertificate1.css({'background-color':'#d9534f'});   
+     	selectCertificate1.css('width',backgroundColor1);
+
+    }
+    else if(selectCertificate1.html()=="Remove selection"){
+    
+    
+    	firstSelected = false;
+        $('#gift-certificate1').css({'border':'none'});
+   		selectCertificate1.html("Select Certificate");
+    	selectCertificate1.css({'background-color':'#449d44'});
+    
+    }
+
+  
+  });
+  
+  $('#select-certificate2').click(function(){
+    
+   
+    if(selectCertificate2.html()=="Select Holiday Certificate"){
+    	secondSelected = true;
+      
+      
+      var backgroundColor2=selectCertificate2.css("width");
+      	console.log(backgroundColor2);
+        $('#gift-certificate2').css({'border':'1px solid #5cb85c'});
+   		selectCertificate2.html("Remove selection");
+      selectCertificate2.css({'background-color':'#d9534f'}); 
+      selectCertificate2.css('width',backgroundColor2);
+      	console.log(selectCertificate2);
+    }
+    else if(selectCertificate2.html()=="Remove selection"){
+    
+    
+    	secondSelected = false;
+        $('#gift-certificate2').css({'border':'none'});
+   		selectCertificate2.html("Select Holiday Certificate");
+    	selectCertificate2.css({'background-color':'#449d44'});
+    
+    }
+  
+  });
+ 
+
+</script>

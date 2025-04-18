@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "QRCodeView",
+        "repositoryURL": "git@github.com:rawillk/QRCodeView.git",
+        "state": {
+          "branch": "master",
+          "revision": "5256a480da216cbdeb906cc26b897cc0ef1bd0ef",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

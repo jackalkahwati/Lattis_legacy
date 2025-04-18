@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_fragment_in_fleet_detail_map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <ImageView
+        android:id="@+id/iv_vehicle_filters_in_fleet_detail_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/iv_reposition_in_fleet_detail"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_reposition_in_fleet_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/filter_icon"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/myposition"
+        android:id="@+id/iv_myposition_in_fleet_detail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_vehicle_filters_in_fleet_detail_map"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reposition"
+        android:id="@+id/iv_reposition_in_fleet_detail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_myposition_in_fleet_detail"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:layout_marginRight="20dp"/>
+
+
+
+
+    <include layout="@layout/fragment_fleet_detail_map_vehicle_card" android:id="@+id/fragment_fleet_detail_map_vehicle_card"
+        android:visibility="gone"
+        />
+
+    <include layout="@layout/layout_vehicle_filters" android:id="@+id/layout_vehicle_filters_in_fleet_detail_map"
+        android:visibility="gone"
+        />
+
+    <include layout="@layout/activity_loading" android:id="@+id/fragment_map_loading"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

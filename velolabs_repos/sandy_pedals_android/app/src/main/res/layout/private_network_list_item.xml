@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_private_network_list"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/iv_private_network_icon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerVertical="true"
+            android:tag="0" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_private_network_icon"
+            android:paddingStart="30dp">
+
+            <TextView
+                android:id="@+id/tv_private_network_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_header_color"
+                />
+
+            <TextView
+                android:id="@+id/tv_private_network_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_private_network_name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/lattis_accent_color"
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_private_network_list"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:background="#DEDEDE" />
+</RelativeLayout>

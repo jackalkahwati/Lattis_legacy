@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <!--<com.mapbox.mapboxsdk.maps.MapView-->
+        <!--android:id="@+id/support_map"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <fragment
+        android:id="@+id/support_map"
+        android:name="com.mapbox.mapboxsdk.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <fragment
+        android:id="@+id/find_bike_fragment"
+        class="com.lattis.ellipse.presentation.ui.bike.BikeBaseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/find_bike_layout" />
+
+
+    <fragment
+        android:id="@+id/active_ride_fragment"
+        class="com.lattis.ellipse.presentation.ui.ride.ActiveRideFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/active_ride_fragment" />
+
+    <fragment
+        android:id="@+id/find_parking_fragment"
+        class="com.lattis.ellipse.presentation.ui.parking.FindParkingFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/start_parking_layout" />
+
+    <!--<include layout="@layout/view_loading_fragment" />-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/home_fragment_rl_loading_operation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0.81"
+        android:clickable="true"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/home_fragment_label_operation_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/lattis_toolbar_bg" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/home_fragment_greyline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_fragment_label_operation_name"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:maxHeight="100dip"
+                android:progress="30"
+                android:indeterminateOnly="true"
+                android:minHeight="7dip"
+                android:progressDrawable="@drawable/horizontal_progressbar" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

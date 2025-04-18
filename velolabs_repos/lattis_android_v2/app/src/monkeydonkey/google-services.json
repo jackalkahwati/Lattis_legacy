@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "716708579457",
+    "project_id": "monkey-donkey-bikeshare",
+    "storage_bucket": "monkey-donkey-bikeshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716708579457:android:89db795873386ddddf6580",
+        "android_client_info": {
+          "package_name": "io.bikes.monkeydonkey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ge0u_czVB6_y7BnVmTtzrhwDTWB7eWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716708579457:android:35b9ea81445c4812df6580",
+        "android_client_info": {
+          "package_name": "io.bikes.monkeydonkey.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ge0u_czVB6_y7BnVmTtzrhwDTWB7eWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716708579457:android:e77196723f6f5e0ddf6580",
+        "android_client_info": {
+          "package_name": "io.bikes.monkeydonkey.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ge0u_czVB6_y7BnVmTtzrhwDTWB7eWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716708579457-dsaghjafjir1hmke8986shi2j6f18t95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

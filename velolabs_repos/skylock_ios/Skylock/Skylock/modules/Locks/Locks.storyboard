@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lock Name Reset View Controller-->
+        <scene sceneID="aO5-sz-CvW">
+            <objects>
+                <viewController storyboardIdentifier="lockName" id="qI6-6z-0nz" customClass="LockNameResetViewController" customModule="Ellipse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lI7-Yo-LgY"/>
+                        <viewControllerLayoutGuide type="bottom" id="tSP-X5-lep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="58n-cU-cqj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQb-4h-ccC" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="el5-5z-Vjf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAm-Du-Qug">
+                                                <rect key="frame" x="18" y="132" width="339" height="45"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lock Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="et5-YS-JAq">
+                                                        <rect key="frame" x="8" y="0.0" width="323" height="45"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.62745098040000002" green="0.7843137255" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="0r4-og-RTZ"/>
+                                                    <constraint firstItem="et5-YS-JAq" firstAttribute="leading" secondItem="RAm-Du-Qug" secondAttribute="leading" constant="8" id="5wF-S4-fcb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="et5-YS-JAq" secondAttribute="trailing" constant="8" id="Cg8-Gn-lLY"/>
+                                                    <constraint firstItem="et5-YS-JAq" firstAttribute="top" secondItem="RAm-Du-Qug" secondAttribute="top" id="J5M-g9-RFF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="et5-YS-JAq" secondAttribute="bottom" id="YG7-SP-q4t"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your Ellipses’ Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpj-m5-0NZ">
+                                                <rect key="frame" x="24" y="91" width="327" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.50980392159999999" green="0.61176470589999998" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="RAm-Du-Qug" firstAttribute="top" secondItem="rpj-m5-0NZ" secondAttribute="bottom" constant="21" id="73K-Ta-w18"/>
+                                            <constraint firstItem="RAm-Du-Qug" firstAttribute="leading" secondItem="el5-5z-Vjf" secondAttribute="leading" constant="18" id="81T-24-XS4"/>
+                                            <constraint firstAttribute="trailing" secondItem="RAm-Du-Qug" secondAttribute="trailing" constant="18" id="FSv-Qa-LP8"/>
+                                            <constraint firstItem="rpj-m5-0NZ" firstAttribute="leading" secondItem="el5-5z-Vjf" secondAttribute="leading" constant="24" id="U2T-gI-yjT"/>
+                                            <constraint firstItem="rpj-m5-0NZ" firstAttribute="top" secondItem="el5-5z-Vjf" secondAttribute="top" constant="91" id="UeT-5T-4oq"/>
+                                            <constraint firstAttribute="trailing" secondItem="rpj-m5-0NZ" secondAttribute="trailing" constant="24" id="Xdh-50-RH1"/>
+                                            <constraint firstAttribute="bottom" secondItem="RAm-Du-Qug" secondAttribute="bottom" constant="20" id="oZg-PJ-jgC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="el5-5z-Vjf" firstAttribute="leading" secondItem="uQb-4h-ccC" secondAttribute="leading" id="FwJ-2o-5j0"/>
+                                    <constraint firstAttribute="bottom" secondItem="el5-5z-Vjf" secondAttribute="bottom" id="OYz-00-t6A"/>
+                                    <constraint firstItem="el5-5z-Vjf" firstAttribute="width" secondItem="uQb-4h-ccC" secondAttribute="width" id="goc-1d-WRK"/>
+                                    <constraint firstItem="el5-5z-Vjf" firstAttribute="top" secondItem="uQb-4h-ccC" secondAttribute="top" id="nHw-jD-bvl"/>
+                                    <constraint firstAttribute="trailing" secondItem="el5-5z-Vjf" secondAttribute="trailing" id="vWf-FR-m0u"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uQb-4h-ccC" secondAttribute="trailing" id="7oW-x4-lyE"/>
+                            <constraint firstItem="uQb-4h-ccC" firstAttribute="top" secondItem="lI7-Yo-LgY" secondAttribute="bottom" id="M1a-Vh-9IX"/>
+                            <constraint firstItem="uQb-4h-ccC" firstAttribute="leading" secondItem="58n-cU-cqj" secondAttribute="leading" id="jbU-JB-RmF"/>
+                            <constraint firstItem="tSP-X5-lep" firstAttribute="top" secondItem="uQb-4h-ccC" secondAttribute="bottom" id="yfW-8C-6eA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="et5-YS-JAq" id="dXD-pB-ns5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzD-Lm-AvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="95.802098950524751"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,110 @@
+<nav class="navigation {{ navigation }}">
+  <ul class="primary">
+
+    {% capture mega_nav_text %}
+      {{ settings.mega-nav-trigger | handle }}
+    {% endcapture %}
+    {% assign mega_nav_text = mega_nav_text | strip %}
+
+    {% for link in linklists.main-menu.links %}
+      {% capture link_handle %}{{ link.title | handle | strip }}{% endcapture %}
+
+      {% assign mega-nav = false %}
+      {% if settings.use-mega-nav and settings.mega-nav-trigger != blank and settings.header-navigation-location == 'below-header' %}
+        {% assign mega-nav = true %}
+      {% endif %}
+
+      {% assign mega-nav-trigger = false %}
+      {% if mega_nav_text == link_handle %}
+        {% assign mega-nav-trigger = true %}
+      {% endif %}
+
+      {% assign below-header = false %}
+      {% if navigation == 'below-header' %}
+        {% assign below-header = true %}
+      {% endif %}
+
+      {% assign has-dropdown = false %}
+      {% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}{% assign has-dropdown = true %}{% endif %}
+
+      <li class="{% if has-dropdown %}has-dropdown{% if mega-nav and mega-nav-trigger and below-header %} has-mega-nav{% else %} simple-dropdown{% endif %}{% endif %}">
+        <a class="main-nav-item" href="{{ link.url }}">{{ link.title }}</a>
+
+        {% if has-dropdown %}
+          {% if mega-nav and mega-nav-trigger and below-header %}
+            {% assign megaLinks = linklists[link_handle].links.size %}
+
+            {% if megaLinks < 5 %}
+              {% assign megaNavClass = "showing-less-than-5" %}
+            {% else %}
+              {% assign megaNavClass = "showing-5-or-more" %}
+            {% endif %}
+
+            <div class="mega-nav {{ megaNavClass }}">
+          {% endif %}
+
+          <ul class="{% if below-header %}secondary{% endif %}">
+
+            {% for link in linklists[link_handle].links %}
+
+              {% capture link_handle %}{{ link.title | handle }}{% endcapture %}
+              {% assign has-dropdown = false %}
+              {% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}{% assign has-dropdown = true %}{% endif %}
+
+              <li class="{% if has-dropdown and settings.header-navigation-location == 'below-header' %}has-dropdown{% endif %}{% if mega-nav and mega-nav-trigger == false %} hover-link{% elsif mega-nav == false %} hover-link{% endif %}">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+
+                {% if has-dropdown and settings.header-navigation-location == 'below-header' %}
+                  <ul class="{% if mega-nav and mega-nav-trigger and below-header %}tertiary{% endif %}">
+
+                    {% for link in linklists[link_handle].links %}
+
+                      {% capture link_handle %}{{ link.title | handle }}{% endcapture %}
+                      {% assign has-dropdown = false %}
+                      {% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}{% assign has-dropdown = true %}{% endif %}
+
+                      <li class="{% if has-dropdown and mega-nav %}has-dropdown{% endif %}">
+                        <a data-category="{{ link_handle }}" href="{{ link.url }}">{{ link.title }}</a>
+
+                        {% if has-dropdown and mega-nav %}
+                          {% if mega-nav and mega-nav-trigger and below-header %}
+                            <div class="quarternary-wrapper">
+                          {% endif %}
+
+                          <ul class="{% if mega-nav and mega-nav-trigger and below-header %}quarternary{% endif %}">
+
+                            {% if mega-nav and mega-nav-trigger and below-header %}
+                              <div class="quarternary-breadcrumbs">
+                                <span data-category="{{ link_handle }}" class="close-category">{{ settings.mega-nav-trigger }}</span> / {{ link.title }}
+                              </div>
+                            {% endif %}
+
+                            {% for link in linklists[link_handle].links %}
+                              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                            {% endfor %}
+
+                          </ul>
+                          {% if mega-nav and mega-nav-trigger and below-header %}
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+
+                  </ul>
+                {% endif %}
+
+              </li>
+            {% endfor %}
+
+          </ul>
+          {% if mega-nav and mega-nav-trigger and below-header %}
+            </div>
+          {% endif %}
+        {% endif %}
+      </li>
+
+    {% endfor %}
+
+  </ul>
+</nav>

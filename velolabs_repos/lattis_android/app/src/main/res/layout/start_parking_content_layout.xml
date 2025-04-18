@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_parking_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:layout_alignParentBottom="true"
+    >
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv_where_can_park"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/active_ride_parkings_hint_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color"
+        />
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/iv_cancel_parking_info"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/white_close_icon"
+        />
+
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv_park_parking_spots"
+        android:gravity="center"
+        android:layout_below="@+id/cv_where_can_park"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:lines="2"
+        android:text="@string/active_ride_parkings_hint_text_1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color"
+        />
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zoom_parking_spot"
+        android:gravity="center"
+        android:layout_below="@+id/cv_park_parking_spots"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:lines="2"
+        android:text="@string/active_ride_parkings_hint_text_2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color"
+        />
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/end_ride_btn"
+        style="@style/blueButtonStyle.rect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zoom_parking_spot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/end_trip_button_text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+</RelativeLayout>

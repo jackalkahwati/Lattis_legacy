@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "468171248353",
+    "project_id": "mountlock-bikeshare",
+    "storage_bucket": "mountlock-bikeshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468171248353:android:430b7faf1d9610f372dda0",
+        "android_client_info": {
+          "package_name": "io.bikes.mount"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs_TfK4Kc1XJyx15PZscxPVJnr3fkQdYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468171248353:android:9f42b2f4e84e7c1c72dda0",
+        "android_client_info": {
+          "package_name": "io.bikes.mount.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs_TfK4Kc1XJyx15PZscxPVJnr3fkQdYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468171248353:android:2a9bd7f51bde07c572dda0",
+        "android_client_info": {
+          "package_name": "io.bikes.mount.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs_TfK4Kc1XJyx15PZscxPVJnr3fkQdYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468171248353-b8staerca6l97asbl9dvhphguaogo6bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

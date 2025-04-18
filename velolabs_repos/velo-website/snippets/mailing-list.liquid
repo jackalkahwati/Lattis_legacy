@@ -1,0 +1,59 @@
+{% if template contains 'index' %}
+<div class="home-module-wrapper {{ settings.home-mailing-list-style }}">
+{% endif %}
+
+<div class="mailing-list-signup {% if template contains 'index' %}home-module{% endif %}">
+  {% if settings.mailing-list-title.size > 0 %}
+    <h3 class="section-title">{{ settings.mailing-list-title }}</h3>
+  {% endif %}
+
+  {% if settings.mailing-list-blurb.size > 0 %}
+    <p>{{ settings.mailing-list-blurb }}</p>
+  {% endif %}
+
+  {% if settings.mailing-list-platform == 'mailchimp' or settings.mailing-list-platform == 'campaign-monitor' %}
+  <form action="{{ settings.mailing-list-action-url }}" method="post" name="{% if settings.mailing-list-platform == 'mailchimp' %}mc-embedded-subscribe-form{% endif %}" target="_blank">
+
+    {% if settings.mailing-list-platform == 'mailchimp' %}
+    <input class="mailing-list-email" name="EMAIL" type="email" placeholder="{{ 'general.email_placeholder' | t }}" value="">
+    {% endif %}
+
+    {% if settings.mailing-list-platform == 'campaign-monitor' %}
+    <input id="fieldEmail" class="mailing-list-email" name="{{ settings.campaign-monitor-name }}" type="email" placeholder="{{ 'general.email_placeholder' | t }}" required />
+    {% endif %}
+
+    <div class="mailing-list-submit">
+      <input class="submit secondary" name="subscribe" type="submit" value="{{ 'general.subscribe' | t }}">
+    </div>
+
+  </form>
+  {% else %}
+
+    {% form 'customer' %}
+      <input class="mailing-list-email" name="contact[email]" type="email" placeholder="Email Address for Skylock updates" value="">
+      <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
+      <div class="mailing-list-submit">
+        <input class="submit secondary" name="subscribe" type="submit" value="{{ 'general.subscribe' | t }}">
+      </div>
+    {% endform %}
+
+    <div class="modal-wrapper modal-mailing-list">
+      <div class="modal">
+        {% if settings.mailing-list-modal-title == blank and settings.mailing-list-modal-description == blank and settings.mailing-list-modal-button-text == blank %}
+          <h3 class="section-title">{{ 'onboarding.mailing_list_modal.title' | t }}</h3>
+          <p>{{ 'onboarding.mailing_list_modal.description' | t }}</p>
+          <span class='button dismiss'>{{ 'onboarding.mailing_list_modal.button_text' | t }}</span>
+        {% else %}
+          <h3 class="section-title">{{ settings.mailing-list-modal-title }}</h3>
+          <p>{{ settings.mailing-list-modal-description }}</p>
+          <span class='button dismiss'>{{ settings.mailing-list-modal-button-text }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+  {% endif %}
+</div>
+
+{% if template contains 'index' %}
+</div>
+{% endif %}

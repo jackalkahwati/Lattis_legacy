@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Plot",
+        "repositoryURL": "https://github.com/johnsundell/plot.git",
+        "state": {
+          "branch": null,
+          "revision": "c27f6857deeb4c4623db294172a8ec572790a9be",
+          "version": "0.10.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_accent_color"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/rl_settings"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_navigate"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_navigate"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_theft"
+            android:layout_below="@+id/iv_navigate"
+            android:layout_toStartOf="@+id/iv_navigate"
+            >
+
+            <ImageView
+                android:id="@+id/iv_report_theft_oval"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@null"
+                android:layout_centerInParent="true"
+                android:src="@drawable/oval_theft_damage"
+                />
+            <ImageView
+                android:id="@+id/iv_report_theft_icon"
+                android:layout_margin="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_theft"
+                />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/cv_report_theft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_report_theft"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_report_theft_icon"
+                android:textColor="#ffffff"
+                android:textSize="8dp"
+                android:lines="2"
+                />
+
+        </RelativeLayout>
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_trips_stats"-->
+            <!--android:layout_width="75dp"-->
+            <!--android:layout_height="75dp"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:layout_below="@+id/iv_navigate"-->
+            <!--android:src="@drawable/icon_tirps_stats"-->
+            <!--android:layout_toEndOf="@+id/iv_navigate"-->
+            <!--/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_report_damage"-->
+            <!--android:layout_width="75dp"-->
+            <!--android:layout_height="75dp"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:layout_below="@+id/iv_navigate"-->
+            <!--android:src="@drawable/icon_report_damage"-->
+            <!--android:layout_toEndOf="@+id/iv_navigate"-->
+            <!--/>-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_damage"
+            android:layout_below="@+id/iv_navigate"
+            android:src="@drawable/icon_report_damage"
+            android:layout_toEndOf="@+id/iv_navigate"
+            >
+
+            <ImageView
+                android:id="@+id/iv_report_damage_oval"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@null"
+                android:layout_centerInParent="true"
+                android:src="@drawable/oval_theft_damage"
+                />
+            <ImageView
+                android:id="@+id/iv_report_damage_icon"
+                android:layout_margin="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:src="@drawable/icon_damage"
+                />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/cv_report_damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/active_ride_menu_report_damage"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_report_damage_icon"
+                android:textColor="#ffffff"
+                android:textSize="8dp"
+                android:lines="2"
+                />
+
+        </RelativeLayout>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_report_damage"-->
+            <!--android:layout_width="75dp"-->
+            <!--android:layout_height="75dp"-->
+            <!--android:contentDescription="@null"-->
+            <!--android:src="@drawable/icon_report_damage"-->
+            <!--android:layout_below="@+id/iv_trips_stats"-->
+            <!--android:layout_centerHorizontal="true"/>-->
+
+    </RelativeLayout>
+    />
+    <ImageView
+        android:id="@+id/iv_cross"
+        android:layout_width="25dp"
+        android:layout_margin="25dp"
+        android:layout_height="30dp"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_cross"
+        android:layout_below="@+id/rl_settings"
+        android:layout_centerHorizontal="true"
+        />
+
+    <include layout="@layout/no_internal_layout"/>
+
+</RelativeLayout>

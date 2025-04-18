@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null">
+
+    <ImageView
+        android:id="@+id/imageview_contacts"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@null"
+        android:src="@drawable/contacts_default" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imageview_contacts">
+
+        <TextView
+            android:id="@+id/textview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:text="Android"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#5e5e5e" />
+
+        <TextView
+            android:id="@+id/texview_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textview_name"
+            android:layout_marginTop="2dp"
+            android:text="9840182541"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#757575"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+   <View
+       android:layout_width="fill_parent"
+       android:layout_height="1dp"
+       android:id="@+id/line_view"
+       android:background="#eaeaea"
+       android:layout_alignParentBottom="true"
+       android:layout_marginTop="2dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginLeft="10dp"
+       android:layout_toRightOf="@+id/imageview_contacts"
+       />
+
+</RelativeLayout>

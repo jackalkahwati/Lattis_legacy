@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loading_background"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="24dp"
+                android:textColor="@color/loading_text"
+                android:gravity="center"
+                android:id="@+id/ct_loading_title"
+                custom:typefaceAsset="GothamSSm-Book.otf"/>
+
+
+            <ProgressBar
+
+                android:id="@+id/greyline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ct_loading_title"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:progress="30"
+                android:indeterminate="true"
+                style="@style/progressBarStyle"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

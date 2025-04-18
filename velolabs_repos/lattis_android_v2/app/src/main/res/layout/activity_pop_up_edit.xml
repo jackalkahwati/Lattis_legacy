@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/confirm_reserve_semi_transparent_background"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="20dp"
+        android:background="@drawable/round_pop_up_card">
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:textSize="24dp"
+            android:textColor="@color/pop_up_text"
+            android:gravity="center"
+            android:id="@+id/pop_up_edit_title"
+            custom:typefaceAsset="GothamSSm-Book.otf"/>
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toBottomOf="@id/pop_up_edit_title"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/pop_up_text"
+            android:gravity="center"
+            android:id="@+id/pop_up_edit_sub_title1"
+
+            custom:typefaceAsset="GothamSSm-Book.otf"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            custom:layout_constraintTop_toBottomOf="@id/pop_up_edit_sub_title1"
+            android:id="@+id/cl_pop_up_edit_editing"
+            >
+
+            <ImageView
+                android:id="@+id/iv_pop_up_edit_editing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/user"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <com.lattis.lattis.presentation.customview.CustomEditText
+                custom:layout_constraintStart_toEndOf="@+id/iv_pop_up_edit_editing"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                android:hint="@string/first_name"
+                android:textColorHint="@color/sign_up_hint"
+                android:background="@android:color/transparent"
+                android:id="@+id/et_pop_up_edit_editing"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColor="@color/pop_up_text"
+                custom:typefaceAsset="GothamSSm-Book.otf"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            custom:layout_constraintTop_toBottomOf="@id/cl_pop_up_edit_editing"
+            android:id="@+id/cl_pop_up_2_edit_editing"
+            >
+
+            <ImageView
+                android:id="@+id/iv_pop_up_2_edit_editing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/user"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <com.lattis.lattis.presentation.customview.CustomEditText
+                custom:layout_constraintStart_toEndOf="@+id/iv_pop_up_2_edit_editing"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                android:hint="@string/first_name"
+                android:textColorHint="@color/sign_up_hint"
+                android:background="@android:color/transparent"
+                android:id="@+id/et_pop_up_2_edit_editing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColor="@color/pop_up_text"
+                custom:typefaceAsset="GothamSSm-Book.otf"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/btn_pop_up_edit_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="@+id/btn_pop_up_edit_submit"
+            custom:layout_constraintBottom_toBottomOf="@+id/btn_pop_up_edit_submit"
+            android:gravity="center"
+            custom:layout_constraintHorizontal_weight="1"
+            android:textSize="14dp"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            android:orientation="vertical"
+            android:layout_marginRight="2dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/pop_up_text"
+            android:text="@string/cancel"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_pop_up_edit_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            custom:layout_constraintHorizontal_weight="2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="20dp"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            custom:layout_constraintTop_toBottomOf="@+id/cl_pop_up_2_edit_editing"
+            custom:layout_constraintStart_toEndOf="@+id/btn_pop_up_edit_cancel"
+            android:background="@drawable/round_pop_up_btn"
+            android:textColor="@color/pop_up_positive_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

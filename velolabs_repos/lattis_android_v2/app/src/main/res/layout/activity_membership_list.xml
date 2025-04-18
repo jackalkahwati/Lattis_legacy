@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_membership_list_only"
+        />
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_membership_list_only"
+        android:id="@+id/ct_title_in_membership_list_only"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/memberships"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_membership_list_only"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/sv_in_membership_list_only"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        custom:layout_constraintTop_toBottomOf="@id/sv_in_membership_list_only"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/activity_membership_list_item"
+        android:id="@+id/rv_memberships_in_membership_only"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

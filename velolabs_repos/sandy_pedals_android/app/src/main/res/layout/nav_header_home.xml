@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="@color/lattis_accent_color"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+   <io.bikes.sandypedals.presentation.view.CustomTextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:text="@string/label_account_settings"
+       android:textStyle="bold"
+       android:textAppearance="?android:attr/textAppearanceLarge"
+       android:textColor="@android:color/white"
+       custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+</LinearLayout>

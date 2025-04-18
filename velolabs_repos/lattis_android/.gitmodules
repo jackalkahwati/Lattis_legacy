@@ -1,0 +1,3 @@
+[submodule "Ellipse-Android-Bluetooth-SDK"]
+	path = Ellipse-Android-Bluetooth-SDK
+	url = git@github.com:velolabs/Ellipse-Android-Bluetooth-SDK.git

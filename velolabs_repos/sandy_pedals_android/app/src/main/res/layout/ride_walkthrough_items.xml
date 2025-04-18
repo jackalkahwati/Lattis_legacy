@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_ride_walkthrough_item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    >
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:id="@+id/ride_walkthrough_item_title"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/lock_position_error_pop_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#818181" />
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:id="@+id/ride_walkthrough_item_subtitle"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ct_lock_position_error_popup_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/lock_position_error_pop_subtitle1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#4A4A4A" />
+
+    <ImageView
+        android:id="@+id/ride_walkthrough_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

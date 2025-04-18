@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@color/strict_tc_transparent_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_strict_tc_background"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/company_logo_black"
+            android:id="@+id/iv_company_logo_in_strict_tc"
+            android:layout_marginTop="20dp"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_company_logo_in_strict_tc"
+            app:layout_constraintBottom_toTopOf="@+id/ct_privacy_and_terms_in_strict_tc"
+            android:layout_margin="20dp"
+            android:id="@+id/sv_strict_tc"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/cl_consent_1_in_strict_tc"
+                    >
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/sm_1_in_strict_tc"
+                        android:thumb="@drawable/switch_thumb_selector"
+                        app:track="@drawable/switch_track_selector"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:thumbTint="@color/white"
+                        app:trackTintMode="multiply"
+                        />
+
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ct_consent_1_in_strict_tc"
+                        app:layout_constraintStart_toEndOf="@+id/sm_1_in_strict_tc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="14dp"
+                        android:lineSpacingExtra="2dp"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        android:textColor="@color/strict_tc_text"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_consent_1_in_strict_tc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/cl_consent_2_in_strict_tc"
+                    >
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:id="@+id/sm_2_in_strict_tc"
+                        android:thumb="@drawable/switch_thumb_selector"
+                        app:track="@drawable/switch_track_selector"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:thumbTint="@color/white"
+                        app:trackTintMode="multiply"
+                        />
+
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/sm_2_in_strict_tc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/ct_consent_2_in_strict_tc"
+                        android:textSize="14dp"
+                        android:lineSpacingExtra="2dp"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        android:textColor="@color/strict_tc_text"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_privacy_and_terms_in_strict_tc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:textSize="12dp"
+            android:textColor="@color/confirm_terms_policy_text"
+            android:textColorLink="@color/confirm_terms_policy_text"
+            app:layout_constraintBottom_toTopOf="@+id/cl_accept_cancel_in_strict_tc"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/cl_accept_cancel_in_strict_tc"
+            android:layout_marginBottom="20dp"
+            >
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/btn_cancel_in_strict_tc"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                custom:layout_constraintTop_toTopOf="@id/cl_accept_in_strict_tc"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintBottom_toBottomOf="@id/cl_accept_in_strict_tc"
+                custom:layout_constraintEnd_toStartOf="@+id/cl_accept_in_strict_tc"
+                android:gravity="center"
+                android:textSize="14dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf"
+                android:orientation="vertical"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/strict_tc_cancel_text"
+                android:text="@string/cancel"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintStart_toEndOf="@+id/btn_cancel_in_strict_tc"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="20dp"
+                android:id="@+id/cl_accept_in_strict_tc"
+                >
+
+
+
+                <com.lattis.lattis.presentation.customview.CustomButton
+                    android:id="@+id/btn_accept_selected_in_strict_tc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accept"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="16dp"
+                    android:textAllCaps="false"
+                    android:visibility="gone"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@drawable/round_accept_selected_strict_tc"
+                    android:textColor="@color/strict_tc_accept_selected_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomButton
+                    android:id="@+id/btn_accept_unselected_in_strict_tc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accept"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="16dp"
+                    android:textAllCaps="false"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@drawable/round_accept_unselected_strict_tc"
+                    android:textColor="@color/strict_tc_accept_unselected_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

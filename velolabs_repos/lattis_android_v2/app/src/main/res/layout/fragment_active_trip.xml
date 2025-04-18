@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_active_trip_parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <include layout="@layout/fragment_bike_booked_or_in_active_ride_trip_timer_stripe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_active_trip_timer_stripe"
+        custom:layout_constraintBottom_toTopOf="@+id/fragment_active_trip_bike_card"/>
+
+    <!-- Bike card : start -->
+    <include layout="@layout/fragment_bike_booked_or_active_ride_bike_card"
+        custom:layout_constraintBottom_toTopOf="@+id/fragment_active_trip_space1"
+        android:id="@+id/fragment_active_trip_bike_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- Bike card : end -->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/fragment_active_trip_space1"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:background="@color/bike_card_background"
+        custom:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--    End ride + lock to end ride button : start-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintBottom_toTopOf="@+id/fragment_active_trip_space2"
+        android:background="@color/bike_card_background"
+        android:id="@+id/cl_end_ride_in_active_trip">
+
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_end_ride_find_a_station"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/find_a_station"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_end_ride_unselected"
+            android:textColor="@color/end_ride_unselected_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_end_ride_unselected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/end_ride_unselected"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_end_ride_unselected"
+            android:textColor="@color/end_ride_unselected_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_end_ride_selected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="visible"
+            android:text="@string/end_ride"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_end_ride_selected"
+            android:textColor="@color/end_ride_selected_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    End ride + lock to end ride button : end-->
+
+
+    <!--    connect to lock button : start-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bike_card_background"
+        custom:layout_constraintStart_toStartOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintEnd_toEndOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintTop_toTopOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintBottom_toBottomOf="@+id/cl_end_ride_in_active_trip">
+
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_connect_to_lock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/connect_to_lock"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_connect_to_lock"
+            android:textColor="@color/active_ride_connect_to_lock_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    connect to lock button : end-->
+
+
+    <!--    connecting.... : start-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintStart_toStartOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintEnd_toEndOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintTop_toTopOf="@+id/cl_end_ride_in_active_trip"
+        custom:layout_constraintBottom_toBottomOf="@+id/cl_end_ride_in_active_trip"
+        android:background="@color/bike_card_background">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cl_animating_in_active_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            custom:cardElevation="0dp"
+            android:visibility="visible"
+            android:clickable="true"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:cardCornerRadius="22dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_active_ride_connecting"
+                android:background="@color/active_ride_connecting_background">
+
+
+                <View
+                    android:id="@+id/view_animating_in_active_trip"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    custom:layout_constraintTop_toTopOf="@id/tv_animating_in_active_trip"
+                    custom:layout_constraintBottom_toBottomOf="@id/tv_animating_in_active_trip"
+                    custom:layout_constraintStart_toStartOf="@id/tv_animating_in_active_trip"
+                    custom:layout_constraintEnd_toEndOf="@id/tv_animating_in_active_trip"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/tv_animating_in_active_trip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:textSize="16dp"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/connecting_loader"
+                    android:textColor="@color/active_ride_connecting_text"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    connecting.... : end-->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/fragment_active_trip_space2"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:background="@color/bike_card_background"
+        custom:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

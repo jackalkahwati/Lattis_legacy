@@ -1,0 +1,24 @@
+{
+  "name": "platform-packer",
+  "version": "1.0.0",
+  "description": "Script to package lattis platform code when developing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/velolabs/platform-packer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velolabs/platform-packer/issues"
+  },
+  "homepage": "https://github.com/velolabs/platform-packer#readme",
+  "dependencies": {
+    "async": "^2.1.5",
+    "jsonfile": "^2.4.0",
+    "underscore": "^1.8.3"
+  }
+}

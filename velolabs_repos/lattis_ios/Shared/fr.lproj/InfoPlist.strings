@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSPhotoLibraryUsageDescription" = "We require the use of the camera in order for you to take a picture of the vehicle";
+"NSLocationWhenInUseUsageDescription" = "Nous utiliserons votre position pour connaitre la position de départ de votre course ainsi que pendant la course si le véhicule ne possède pas de moyen de suivi.";
+"NSLocationAlwaysUsageDescription" = "Nous utiliserons votre position pour connaitre la position de départ de votre course ainsi que pendant la course si le véhicule ne possède pas de moyen de suivi.";
+"NSBluetoothPeripheralUsageDescription" = "L'application requiert l'utilisation du Bluetooth afin de se connecter au cadenas. Veuillez-vous assurer que le Bluetooth est en marche.";
+"NSBluetoothAlwaysUsageDescription" = "L'application requiert l'utilisation du Bluetooth afin de se connecter au cadenas. Veuillez-vous assurer que le Bluetooth est en marche.";

@@ -1,0 +1,46 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :beta do |values|
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: "io.lattis.Lattis-SDK-Demo"
+    )
+    gym(
+      scheme: "Lattis SDK Demo",
+      export_method: 'ad-hoc'
+    )
+
+    emails = values[:test_email] ? values[:test_email] : ['ravil@lattis.io'] # You can list more emails here
+    groups = values[:test_email] ? nil : ['lattis-internal'] # You can define groups on the web and reference them here
+    changelog = changelog_from_git_commits
+
+    crashlytics(api_token: '2a7c173f04d3a790e6717f79ae91223089986b40',
+      build_secret: 'b5d39bb00fdb0bfc027b4671fadb82b50c33ac2083b3bf4f08d34585271a4b1f',
+      emails: emails,
+      groups: groups,
+      notes: changelog,
+      notifications: true
+    )
+    upload_symbols_to_crashlytics
+    clean_build_artifacts
+  end
+end

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D34F54C06E395BA062B44F2F06AD7A5C4EC7F542",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B0A06E909AB4D3B958574145E4F8C83A8505AD24" : 9223372036854775807,
+    "D34F54C06E395BA062B44F2F06AD7A5C4EC7F542" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7F122436-733E-42BF-84C0-405F576A43CA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B0A06E909AB4D3B958574145E4F8C83A8505AD24" : "skylock_ios\/Skylock\/SEBLEInterface\/",
+    "D34F54C06E395BA062B44F2F06AD7A5C4EC7F542" : "skylock_ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Ellipse",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Skylock\/Ellipse.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/velolabs\/SEBLEInterface.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B0A06E909AB4D3B958574145E4F8C83A8505AD24"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:velolabs\/skylock_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D34F54C06E395BA062B44F2F06AD7A5C4EC7F542"
+    }
+  ]
+}

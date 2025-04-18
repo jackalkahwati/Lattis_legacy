@@ -1,0 +1,1 @@
+Your Skylock Mobile Verification code is:  {{ code }}

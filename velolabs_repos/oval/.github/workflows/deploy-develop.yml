@@ -1,0 +1,79 @@
+name: Build (Develop)
+env:
+  S3_BUCKET_NAME                : "lattis-artifactory"
+  S3_BUCKET_PATH                : "oval/develop/"
+  S3_BUCKET_FULL_PATH           : "s3://lattis-artifactory/oval/develop/"
+  ARTIFACT_NAME                 : "oval_${{ github.sha }}.zip"
+  PARAMETER_STORE_ARTIFACT_NAME : "/devops/ci_cd/oval/develop/OVAL_ARTIFACT_NAME"
+  CODEPLOY_APP_NAME             : "oval"
+  CODEPLOY_GROUP_NAME           : "oval-dev"
+  
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:         
+      - uses: actions/checkout@v2
+        if: github.event_name == 'push'
+        with:
+          ref: develop
+
+      - uses: actions/checkout@v2
+        if: github.event_name == 'pull_request'
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} 
+
+      - uses: actions/setup-node@v2
+        with:
+           node-version: '16'
+
+      - name: Set NPM Token
+        run: sed -i -e 's/_authToken=.*/_authToken=${{ secrets.NPM_AUTH_TOKEN }}/' .npmrc
+
+      - name: Initialize npm 
+        run: yarn config set registry https://registry.npmjs.org/      
+
+      - name: Build
+        run: yarn
+
+      - uses: "aws-actions/configure-aws-credentials@v1"
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: "ca-central-1"
+
+      - name: Zip build folder
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        run: zip -r ${{ env.ARTIFACT_NAME }} .
+          
+      - name: Upload Files to S3
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        run: aws s3 cp ${{ env.ARTIFACT_NAME }} ${{ env.S3_BUCKET_FULL_PATH }}
+        
+      - name: Update Parameter Store artifact name
+        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+        run: |
+          aws ssm put-parameter --name ${{ env.PARAMETER_STORE_ARTIFACT_NAME }} --value "${{ env.S3_BUCKET_FULL_PATH }}${{ env.ARTIFACT_NAME }}" --type "SecureString" --overwrite
+      #- name: AWS Create Deployment
+      #  if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+      #  run: |
+      #    echo "DEPLOYMENT_ID=$(aws deploy create-deployment --application-name ${{ env.CODEPLOY_APP_NAME }} --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ${{ env.CODEPLOY_GROUP_NAME }} --deployment-group-name ${{ env.CODEPLOY_GROUP_NAME }} --s3-location bucket=${{ env.S3_BUCKET_NAME }},key=${{ env.S3_BUCKET_PATH }}${{ env.ARTIFACT_NAME }},bundleType=zip --file-exists-behavior=OVERWRITE --output text)" >> $GITHUB_ENV
+      #    echo "Codeploy deployment status ID: ${{ env.DEPLOYMENT_ID }}" 
+      #- name: AWS Deployment Status
+      #  if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+      #  run: |
+      #     echo "Verify Deployment status"
+      #     bash codeploy/codeploy_validate.sh ${{ env.DEPLOYMENT_ID }}
+      #- uses: 8398a7/action-slack@v3
+      #  with:
+      #    status: ${{ job.status }}
+      #    fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
+      #  env:
+      #    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+      #  if: always()

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/launch_background"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            >
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/launch_image" />
+
+                <io.lattis.operator.presentation.customview.CustomTextView
+                    android:id="@+id/ct_label"
+                    android:text="@string/operator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintTop_toBottomOf="@+id/imageView"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="5dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="@color/sign_in_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

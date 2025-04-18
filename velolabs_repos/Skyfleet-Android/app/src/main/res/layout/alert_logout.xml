@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/alert_logout_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:layout_centerInParent="true"
+        android:text="@string/are_you_sure_you_want_to_log_out"
+        android:textColor="@android:color/white"
+        android:id="@+id/tv_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_cancel"
+            android:layout_alignParentLeft="true"
+            android:background="#E7E7E9"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/tv_label_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:textColor="#BCBBBB"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/cancel"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_logout"
+            android:layout_alignParentRight="true"
+            android:background="#57D8FF"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp"
+                android:id="@+id/tv_label_logout"
+                android:textColor="@android:color/white"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/log_out"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

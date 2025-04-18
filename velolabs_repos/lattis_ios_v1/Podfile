@@ -1,0 +1,58 @@
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+platform :ios, '10.0'
+
+
+def shared_pods
+    pod 'Cartography'
+    pod 'JTMaterialSpinner', :git => 'git@github.com:kabanishe23/JTMaterialSpinner.git'
+    pod 'Localize-Swift'
+end
+
+target 'Lattis' do
+  shared_pods
+  pod 'Mapbox-iOS-SDK', '~> 3.5'
+  pod 'GooglePlaces'
+  pod 'SwiftyTimer'
+  pod 'KDCircularProgress', :git => 'git@github.com:kaandedeoglu/KDCircularProgress.git'
+  pod 'Oval', :git => 'git@github.com:velolabs/oval_ios.git', :branch => 'develop'
+  #    pod 'Oval', :path => '../oval_ios/'
+#  pod 'LattisSDK', :git => 'git@github.com:velolabs/lattis_sdk_ios.git', :branch => 'develop'
+  pod 'LattisSDK', :path => '../../Lattis SDK Demo/'
+  pod 'TPKeyboardAvoiding'
+  pod 'GTProgressBar'
+  pod 'iCarousel', '~> 1.8.3'
+  pod 'SDWebImage', '~>4.0'
+  pod 'LGSideMenuController'
+  pod 'PhoneNumberKit', '~> 2.0'
+  pod 'Pageboy'
+  pod 'CreditCardValidator'
+  pod 'QRCodeReader.swift'#, :git => 'git@github.com:kabanishe23/QRCodeReader.swift.git'
+  pod 'EasyTipView'
+  pod 'ReachabilitySwift'
+  pod 'KeychainSwift'
+  pod 'MapboxStatic.swift', :git => 'git@github.com:velolabs/MapboxStatic.swift.git'
+  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Stripe'
+end
+
+target 'Today' do
+  shared_pods
+end
+
+swift_4_frameworks = ['GTProgressBar', 'CreditCardValidator']
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if swift_4_frameworks.include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.2'
+            end
+        end
+    end
+end
+

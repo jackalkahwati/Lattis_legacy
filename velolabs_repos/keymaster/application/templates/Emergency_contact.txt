@@ -1,0 +1,3 @@
+Dear {{ emguser }}, 
+
+{{ user }} has added you as an Emergency Contact to send Text Messages at an event of Crash.

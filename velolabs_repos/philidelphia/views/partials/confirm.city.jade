@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 5. City?
+	input(type='text', class='field', name='citystate', ng-model='inputValues.city', placeholder = 'Input city', value='{{inputValues.city}}')
+	p(class='invalidField') {{invalidText}}
+	a(ng-click='nextButtonClicked()')
+		button Next

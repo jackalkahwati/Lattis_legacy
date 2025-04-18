@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "817175374070",
+    "project_id": "roam-bikes",
+    "storage_bucket": "roam-bikes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817175374070:android:6c780d282d5246465ba4d7",
+        "android_client_info": {
+          "package_name": "io.bikes.trip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM5AcLbjajhsjFJe74jjAgmpDsY2jv438"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817175374070-r5smhorbmalil2lsoed09iam5i4aqkrq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.roadbikes.trip"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817175374070:android:037cae1e8a4ed9105ba4d7",
+        "android_client_info": {
+          "package_name": "io.bikes.trip.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM5AcLbjajhsjFJe74jjAgmpDsY2jv438"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817175374070-r5smhorbmalil2lsoed09iam5i4aqkrq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.roadbikes.trip"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817175374070:android:34ee86033c2ab9205ba4d7",
+        "android_client_info": {
+          "package_name": "io.bikes.trip.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM5AcLbjajhsjFJe74jjAgmpDsY2jv438"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817175374070-k6crd26dlcvhq15mtv68t0schj1mqbte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817175374070-r5smhorbmalil2lsoed09iam5i4aqkrq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.roadbikes.trip"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

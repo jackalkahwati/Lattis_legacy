@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_header_color"
+        android:visibility="visible"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/clickable_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:background="@color/clickable_toolbar_title_background"
+        android:visibility="gone"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/menu_profile_settings"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/iv_profile_settings"
+        android:visibility="gone"
+        android:clickable="false"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        />.
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

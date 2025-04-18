@@ -1,0 +1,87 @@
+<section class="animated fadeIn" ng-controller = "reportController">
+    <div class="panel" ng-show = "reportCategory">
+        <div class="panel-body box">
+            <div class="row p-b-50">
+                <div class="col-sm-12 new-fleet-box m-t-50">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5 class="m-b-10 l-s parentmenuactive">FLEET UTILIZATION</h5>
+                            <p class="text-justify h-60 ft-13 textlighthash">Analyse the utilization of the fleet to learn how you can improve performance.</p>
+                            <button ng-click="chooseReport('FLEET UTILIZATION')" class="btn custom-btn h-33 fullwid m-tb-10 ft-13">CREATE REPORT <em class="fa fa-angle-right"></em></button>
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-1 ">
+                            <h5 class="m-b-10 l-s parentmenuactive">RENTALS</h5>
+                            <p class="text-justify h-60 ft-13 textlighthash">Get a list of all the trips and their details. You can select which month to download.</p>
+                            <button ng-click="chooseReport('RENTALS')" class="btn custom-btn h-33 fullwid m-tb-10 ft-13">CREATE REPORT <em class="fa fa-angle-right"></em></button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Don't delete this-->
+    <!--<div class="row">   ng-repeat="item in report_category" -->
+        <!--<div class="col-md-4 col-sm-6 col-xs-4" ng-repeat="item in report_category">-->
+            <!--<h5 class="m-b-10 l-s parentmenuactive">{{item.title}}</h5>-->
+            <!--<p class="text-justify h-60 ft-13 textlighthash">{{item.content}}</p>-->
+            <!--<button ng-click="chooseReport(item.active)" class="btn custom-btn h-33 fullwid m-tb-10 text-uppercase ft-12">CREATE REPORT <em class="fa fa-angle-right" /></button>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="panel m-b-35" ng-show = "!reportCategory">
+        <div class="panel-heading bg-white box">
+            <div class="p-tb-20 m-tb-10 bor-tb-hash">
+                <h5 class="menuactive p-lr-20">{{reportname}}</h5>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <div class="row">
+                <div class="col-sm-12 new-fleet-box m-b-35 p-b-50">
+                    <ul class="list-unstyled list-inline  p-lr-20">
+                        <li>
+                            <span class="inline-block p-t-10">Date range</span>
+                        </li>
+                        <!--<li>-->
+                            <!--<div class="form-group">-->
+                                <!--<div class="dropdown wid-100">-->
+                                    <!--<span class="fa fa-angle-down fa-lg"-->
+                                          <!--style="position: absolute;right: 8px;top: 8px;background: #f8f8f8;"></span>-->
+                                    <!--<select id="reportYear" ng-options="item as item for item in reportDateRange.report_year"-->
+                                            <!--ng-model="select.year" ng-change="yearSelected()"-->
+                                            <!--class="form-control  new-dd-box wid-100 p-lr-10">-->
+                                        <!--<option value="">Year</option>-->
+                                    <!--</select>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <li>
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <button ng-init="select.month = 'Select a Month'" class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-194" type="button" ng-model="select.month"
+                                            data-toggle="dropdown">{{select.month}}
+                                    </button>
+                                    <ul class="dropdown-menu wid-194 dropdownList-modify">
+                                        <li><a href="" ng-click="monthSelected(item)" ng-repeat="item in reportDateRange.report_month">{{item}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="p-lr-20">Report will be exported as a CSV (comma separated values) table.</p>
+            <p ng-if="popupDisabled" class="m-b-20 p-b-20 text-hash bor-b-hash p-lr-20">If the file didn't download automatically use this <a ng-href="{{downloadLink}}">link</a> to download the report</p>
+            <div class="pull-right text-right">
+                <button type="button" class="btn custom-btn p-tb-10 wid-100"
+                        ng-click="exportReport()"><i class="fa fa-files-o"> Export</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

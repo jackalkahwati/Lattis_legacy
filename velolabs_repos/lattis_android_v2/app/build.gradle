@@ -1,0 +1,973 @@
+apply plugin: 'com.android.application'
+
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        applicationId "io.lattis.lattis"
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.releaseVersionCode
+        versionName Versions.releaseVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue 'string', 'app_name', 'Lattis'
+        resValue 'string', 'account_type', 'io.lattis.lattis'
+        resValue 'string', 'account_authentication_token_type', 'io.lattis.lattis.fullAccess'
+    }
+    buildTypes {
+        debug {
+            debuggable true
+//            minifyEnabled true
+//            shrinkResources true
+            buildConfigField('boolean', 'USE_MOCK', 'false')
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField('boolean', 'USE_MOCK', 'false')
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "product", "buildtype"
+
+    productFlavors {
+
+        lattis {
+            dimension "product"
+            applicationId "io.lattis.lattis"
+            manifestPlaceholders["applinkpath"] = "lattis"
+        }
+
+        velotransit {
+            dimension "product"
+            applicationId "com.velotransit.android"
+            manifestPlaceholders["applinkpath"] = "velotransit"
+        }
+
+        sandypedals {
+            dimension "product"
+            applicationId "io.bikes.sandypedals"
+            manifestPlaceholders["applinkpath"] = "sandypedals"
+        }
+
+        guestbike {
+            dimension "product"
+            applicationId "io.bikes.guestbike"
+            manifestPlaceholders["applinkpath"] = "guestbike"
+        }
+
+        giraff {
+            dimension "product"
+            applicationId "io.bikes.giraff"
+            manifestPlaceholders["applinkpath"] = "giraff"
+        }
+
+        goscoot {
+            dimension "product"
+            applicationId "io.bikes.goscoot"
+            manifestPlaceholders["applinkpath"] = "goscoot"
+        }
+
+        grin {
+            dimension "product"
+            applicationId "com.grin"
+            manifestPlaceholders["applinkpath"] = "grinlima"
+        }
+
+        grinsantiago {
+            dimension "product"
+            applicationId "com.grin.santiago"
+            manifestPlaceholders["applinkpath"] = "grinsantiago"
+        }
+
+        wave {
+            dimension "product"
+            applicationId "io.bikes.wave"
+            manifestPlaceholders["applinkpath"] = "wave"
+        }
+
+        wawe {
+            dimension "product"
+            applicationId "io.bikes.wawe"
+            manifestPlaceholders["applinkpath"] = "wawe"
+        }
+
+        mount {
+            dimension "product"
+            applicationId "io.bikes.mount"
+            manifestPlaceholders["applinkpath"] = "mount"
+        }
+
+        monkeydonkey {
+            dimension "product"
+            applicationId "io.bikes.monkeydonkey"
+            manifestPlaceholders["applinkpath"] = "monkeydonkey"
+        }
+
+        unlimitedbiking {
+            dimension "product"
+            applicationId "io.bikes.unlimitedbiking"
+            manifestPlaceholders["applinkpath"] = "unlimitedbiking"
+        }
+
+        bandwagon {
+            dimension "product"
+            applicationId "io.bikes.bandwagon"
+            manifestPlaceholders["applinkpath"] = "bandwagon"
+        }
+
+        ourbike {
+            dimension "product"
+            applicationId "io.bikes.ourbike"
+            manifestPlaceholders["applinkpath"] = "ourbike"
+        }
+
+        fin {
+            dimension "product"
+            applicationId "io.bikes.fin"
+            manifestPlaceholders["applinkpath"] = "fin"
+        }
+
+        hooba {
+            dimension "product"
+            applicationId "io.bikes.hooba"
+            manifestPlaceholders["applinkpath"] = "hooba"
+        }
+
+        pacific {
+            dimension "product"
+            applicationId "io.bikes.pacific"
+            manifestPlaceholders["applinkpath"] = "pacific"
+        }
+
+        blade {
+            dimension "product"
+            applicationId "io.bikes.blade"
+            manifestPlaceholders["applinkpath"] = "blade"
+        }
+
+        trip {
+            dimension "product"
+            applicationId "io.bikes.trip"
+            manifestPlaceholders["applinkpath"] = "trip"
+        }
+
+        greenriders {
+            dimension "product"
+            applicationId "io.bikes.greenriders"
+            manifestPlaceholders["applinkpath"] = "greenriders"
+        }
+
+        twowheelrental {
+            dimension "product"
+            applicationId "io.bikes.twowheelrental"
+            manifestPlaceholders["applinkpath"] = "twowheelrental"
+        }
+
+        rockvelo {
+            dimension "product"
+            applicationId "io.bikes.rockvelo"
+            manifestPlaceholders["applinkpath"] = "rockvelo"
+        }
+
+        falcosmart {
+            dimension "product"
+            applicationId "io.bikes.falcosmart"
+            manifestPlaceholders["applinkpath"] = "falcosmart"
+        }
+
+        thriveryde {
+            dimension "product"
+            applicationId "io.bikes.thriveryde"
+            manifestPlaceholders["applinkpath"] = "thriveryde"
+        }
+
+        lockem {
+            dimension "product"
+            applicationId "io.bikes.lockem"
+            manifestPlaceholders["applinkpath"] = "lockem"
+        }
+
+        robyn {
+            dimension "product"
+            applicationId "io.bikes.robyn"
+            manifestPlaceholders["applinkpath"] = "robyn"
+        }
+
+
+        yeti {
+            dimension "product"
+            applicationId "com.opolislabs.yeti"
+            manifestPlaceholders["applinkpath"] = "yeti"
+        }
+
+        overwatt {
+            dimension "product"
+            applicationId "io.bikes.overwatt"
+            manifestPlaceholders["applinkpath"] = "overwatt"
+        }
+
+        wbs {
+            dimension "product"
+            applicationId "io.bikes.wbs"
+            manifestPlaceholders["applinkpath"] = "wintersteiger"
+        }
+
+        dev {
+            dimension 'buildtype'
+            applicationIdSuffix ".debug"
+        }
+
+        beta {
+            dimension 'buildtype'
+            applicationIdSuffix ".beta"
+        }
+
+        prod {
+            dimension 'buildtype'
+        }
+    }
+    bundle{
+        language{
+            enableSplit=false
+        }
+    }
+
+    applicationVariants.all { variant ->
+
+        def product = variant.productFlavors[0].name
+        def server = variant.productFlavors[1].name
+        def isRelease = variant.buildType.name.equals('release')
+        def isDebug = variant.buildType.name.equals('debug')
+
+        if(product == "lattis" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Lattis'
+            resValue 'string', 'account_type', 'io.lattis.lattis'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.lattis.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "lattis" && server == "dev"){
+            resValue 'string', 'app_name', 'Lattis Dev'
+            resValue 'string', 'account_type', 'io.lattis.lattis.debug'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.lattis.fullAccess.debug'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "lattis" && server == "beta"){
+            resValue 'string', 'app_name', 'Lattis Beta'
+            resValue 'string', 'account_type', 'io.lattis.lattis.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.lattis.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "velotransit" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'VeloTransit'
+            resValue 'string', 'account_type', 'com.velotransit.android'
+            resValue 'string', 'account_authentication_token_type', 'com.velotransit.android.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "velotransit" && server == "dev"){
+            resValue 'string', 'app_name', 'VeloTransit Dev'
+            resValue 'string', 'account_type', 'com.velotransit.android.v2.dev'
+            resValue 'string', 'account_authentication_token_type', 'com.velotransit.android.fullAccess.v2.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "velotransit" && server == "beta"){
+            resValue 'string', 'app_name', 'VeloTransit Beta'
+            resValue 'string', 'account_type', 'com.velotransit.android.v2.beta'
+            resValue 'string', 'account_authentication_token_type', 'com.velotransit.android.fullAccess.v2.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "sandypedals" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Sandy Pedals'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "sandypedals" && server == "dev"){
+            resValue 'string', 'app_name', 'Sandy Pedals Dev'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "sandypedals" && server == "beta"){
+            resValue 'string', 'app_name', 'Sandy Pedals Beta'
+            resValue 'string', 'account_type', 'io.bikes.sandypedals.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.sandypedals.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "guestbike" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Guest Bike'
+            resValue 'string', 'account_type', 'io.bikes.guestbike'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.guestbike.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "guestbike" && server == "dev"){
+            resValue 'string', 'app_name', 'Guest Bike Dev'
+            resValue 'string', 'account_type', 'io.bikes.guestbike.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.guestbike.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "guestbike" && server == "beta"){
+            resValue 'string', 'app_name', 'Guest Bike Beta'
+            resValue 'string', 'account_type', 'io.bikes.guestbike.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.guestbike.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "goscoot" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Go Scoot'
+            resValue 'string', 'account_type', 'io.bikes.goscoot'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.goscoot.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "goscoot" && server == "dev"){
+            resValue 'string', 'app_name', 'Go Scoot Dev'
+            resValue 'string', 'account_type', 'io.bikes.goscoot.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.goscoot.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "goscoot" && server == "beta"){
+            resValue 'string', 'app_name', 'Go Scoot Beta'
+            resValue 'string', 'account_type', 'io.bikes.goscoot.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.goscoot.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "giraff" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Giraff'
+            resValue 'string', 'account_type', 'io.bikes.giraff'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.giraff.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "giraff" && server == "dev"){
+            resValue 'string', 'app_name', 'Giraff Dev'
+            resValue 'string', 'account_type', 'io.bikes.giraff.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.giraff.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "giraff" && server == "beta"){
+            resValue 'string', 'app_name', 'Giraff Beta'
+            resValue 'string', 'account_type', 'io.bikes.giraff.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.giraff.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "grin" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Grin Lima'
+            resValue 'string', 'account_type', 'com.grin'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "grin" && server == "dev"){
+            resValue 'string', 'app_name', 'Grin Lima Dev'
+            resValue 'string', 'account_type', 'com.grin.dev'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "grin" && server == "beta"){
+            resValue 'string', 'app_name', 'Grin Lima Beta'
+            resValue 'string', 'account_type', 'com.grin.beta'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "grinsantiago" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Grin Santiago'
+            resValue 'string', 'account_type', 'com.grin.santiago'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.santiago.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "grinsantiago" && server == "dev"){
+            resValue 'string', 'app_name', 'Grin Santiago Dev'
+            resValue 'string', 'account_type', 'com.grin.santiago.dev'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.santiago.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "grinsantiago" && server == "beta"){
+            resValue 'string', 'app_name', 'Grin Santiago Beta'
+            resValue 'string', 'account_type', 'com.grin.santiago.beta'
+            resValue 'string', 'account_authentication_token_type', 'com.grin.santiago.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "wave" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Wave Co.'
+            resValue 'string', 'account_type', 'io.bikes.wave'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wave.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "wave" && server == "dev"){
+            resValue 'string', 'app_name', 'Wave Co. Dev'
+            resValue 'string', 'account_type', 'io.bikes.wave.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wave.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "wave" && server == "beta"){
+            resValue 'string', 'app_name', 'Wave Co. Beta'
+            resValue 'string', 'account_type', 'io.bikes.wave.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wave.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+
+        else if(product == "wawe" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'WAWE Mobility'
+            resValue 'string', 'account_type', 'io.bikes.wawe'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wawe.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "wawe" && server == "dev"){
+            resValue 'string', 'app_name', 'WAWE Mobility Dev'
+            resValue 'string', 'account_type', 'io.bikes.wawe.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wawe.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "wawe" && server == "beta"){
+            resValue 'string', 'app_name', 'WAWE Mobility Beta'
+            resValue 'string', 'account_type', 'io.bikes.wawe.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wawe.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+
+        else if(product == "mount" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Mount'
+            resValue 'string', 'account_type', 'io.bikes.mount'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.mount.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "mount" && server == "dev"){
+            resValue 'string', 'app_name', 'Mount Dev'
+            resValue 'string', 'account_type', 'io.bikes.mount.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.mount.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "mount" && server == "beta"){
+            resValue 'string', 'app_name', 'Mount Beta'
+            resValue 'string', 'account_type', 'io.bikes.mount.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.mount.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "monkeydonkey" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Monkey Donkey'
+            resValue 'string', 'account_type', 'io.bikes.monkeydonkey'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.monkeydonkey.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "monkeydonkey" && server == "dev"){
+            resValue 'string', 'app_name', 'Monkey Donkey Dev'
+            resValue 'string', 'account_type', 'io.bikes.monkeydonkey.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.monkeydonkey.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "monkeydonkey" && server == "beta"){
+            resValue 'string', 'app_name', 'Monkey Donkey Beta'
+            resValue 'string', 'account_type', 'io.bikes.monkeydonkey.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.monkeydonkey.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "unlimitedbiking" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Unlimited Biking Micromobility'
+            resValue 'string', 'account_type', 'io.bikes.unlimitedbiking'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.unlimitedbiking.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "unlimitedbiking" && server == "dev"){
+            resValue 'string', 'app_name', 'Unlimited Biking Micromobility Dev'
+            resValue 'string', 'account_type', 'io.bikes.unlimitedbiking.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.unlimitedbiking.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "unlimitedbiking" && server == "beta"){
+            resValue 'string', 'app_name', 'Unlimited Biking Micromobility Beta'
+            resValue 'string', 'account_type', 'io.bikes.unlimitedbiking.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.unlimitedbiking.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "bandwagon" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Bandwagon'
+            resValue 'string', 'account_type', 'io.bikes.bandwagon'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.bandwagon.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "bandwagon" && server == "dev"){
+            resValue 'string', 'app_name', 'Bandwagon Dev'
+            resValue 'string', 'account_type', 'io.bikes.bandwagon.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.bandwagon.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "bandwagon" && server == "beta"){
+            resValue 'string', 'app_name', 'Bandwagon Beta'
+            resValue 'string', 'account_type', 'io.bikes.bandwagon.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.bandwagon.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "ourbike" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'OurBike'
+            resValue 'string', 'account_type', 'io.bikes.ourbike'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.ourbike.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "ourbike" && server == "dev"){
+            resValue 'string', 'app_name', 'OurBike Dev'
+            resValue 'string', 'account_type', 'io.bikes.ourbike.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.ourbike.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "ourbike" && server == "beta"){
+            resValue 'string', 'app_name', 'OurBike Beta'
+            resValue 'string', 'account_type', 'io.bikes.ourbike.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.ourbike.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "fin" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Fin'
+            resValue 'string', 'account_type', 'io.bikes.fin'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.fin.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "fin" && server == "dev"){
+            resValue 'string', 'app_name', 'Fin Dev'
+            resValue 'string', 'account_type', 'io.bikes.fin.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.fin.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "fin" && server == "beta"){
+            resValue 'string', 'app_name', 'Fin Beta'
+            resValue 'string', 'account_type', 'io.bikes.fin.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.fin.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "hooba" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'HOOBA'
+            resValue 'string', 'account_type', 'io.bikes.hooba'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.hooba.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "hooba" && server == "dev"){
+            resValue 'string', 'app_name', 'HOOBA Dev'
+            resValue 'string', 'account_type', 'io.bikes.hooba.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.hooba.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "hooba" && server == "beta"){
+            resValue 'string', 'app_name', 'HOOBA Beta'
+            resValue 'string', 'account_type', 'io.bikes.hooba.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.hooba.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "pacific" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Pacific Ride+Share'
+            resValue 'string', 'account_type', 'io.bikes.pacific'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.pacific.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "pacific" && server == "dev"){
+            resValue 'string', 'app_name', 'Pacific Ride+Share Dev'
+            resValue 'string', 'account_type', 'io.bikes.pacific.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.pacific.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "pacific" && server == "beta"){
+            resValue 'string', 'app_name', 'Pacific Ride+Share Beta'
+            resValue 'string', 'account_type', 'io.bikes.pacific.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.pacific.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "blade" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Blade'
+            resValue 'string', 'account_type', 'io.bikes.blade'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.blade.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "blade" && server == "dev"){
+            resValue 'string', 'app_name', 'Blade Dev'
+            resValue 'string', 'account_type', 'io.bikes.blade.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.blade.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "blade" && server == "beta"){
+            resValue 'string', 'app_name', 'Blade Beta'
+            resValue 'string', 'account_type', 'io.bikes.blade.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.blade.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "trip" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'TRIP'
+            resValue 'string', 'account_type', 'io.bikes.trip'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.trip.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "trip" && server == "dev"){
+            resValue 'string', 'app_name', 'TRIP Dev'
+            resValue 'string', 'account_type', 'io.bikes.trip.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.trip.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "trip" && server == "beta"){
+            resValue 'string', 'app_name', 'TRIP Beta'
+            resValue 'string', 'account_type', 'io.bikes.trip.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.trip.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "greenriders" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Green-Riders'
+            resValue 'string', 'account_type', 'io.bikes.greenriders'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.greenriders.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "greenriders" && server == "dev"){
+            resValue 'string', 'app_name', 'Green-Riders Dev'
+            resValue 'string', 'account_type', 'io.bikes.greenriders.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.greenriders.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "greenriders" && server == "beta"){
+            resValue 'string', 'app_name', 'Green-Riders Beta'
+            resValue 'string', 'account_type', 'io.bikes.greenriders.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.greenriders.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "twowheelrental" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'TWR - Serving The Explorer'
+            resValue 'string', 'account_type', 'io.bikes.twowheelrental'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.twowheelrental.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "twowheelrental" && server == "dev"){
+            resValue 'string', 'app_name', 'TWR - Serving The Explorer Dev'
+            resValue 'string', 'account_type', 'io.bikes.twowheelrental.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.twowheelrental.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "twowheelrental" && server == "beta"){
+            resValue 'string', 'app_name', 'TWR - Serving The Explorer Beta'
+            resValue 'string', 'account_type', 'io.bikes.twowheelrental.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.twowheelrental.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "rockvelo" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'RockVelo'
+            resValue 'string', 'account_type', 'io.bikes.rockvelo'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.rockvelo.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "rockvelo" && server == "dev"){
+            resValue 'string', 'app_name', 'RockVelo Dev'
+            resValue 'string', 'account_type', 'io.bikes.rockvelo.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.rockvelo.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "rockvelo" && server == "beta"){
+            resValue 'string', 'app_name', 'RockVelo Beta'
+            resValue 'string', 'account_type', 'io.bikes.rockvelo.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.rockvelo.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "falcosmart" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'FalcoSmart'
+            resValue 'string', 'account_type', 'io.bikes.falcosmart'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.falcosmart.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "falcosmart" && server == "dev"){
+            resValue 'string', 'app_name', 'FalcoSmart Dev'
+            resValue 'string', 'account_type', 'io.bikes.falcosmart.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.falcosmart.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "falcosmart" && server == "beta"){
+            resValue 'string', 'app_name', 'FalcoSmart Beta'
+            resValue 'string', 'account_type', 'io.bikes.falcosmart.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.falcosmart.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+
+        else if(product == "thriveryde" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Thrive Ryde'
+            resValue 'string', 'account_type', 'io.bikes.thriveryde'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.thriveryde.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "thriveryde" && server == "dev"){
+            resValue 'string', 'app_name', 'Thrive Ryde Dev'
+            resValue 'string', 'account_type', 'io.bikes.thriveryde.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.thriveryde.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "thriveryde" && server == "beta"){
+            resValue 'string', 'app_name', 'Thrive Ryde Beta'
+            resValue 'string', 'account_type', 'io.bikes.thriveryde.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.thriveryde.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+
+        else if(product == "lockem" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'LOCKEM'
+            resValue 'string', 'account_type', 'io.bikes.lockem'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.lockem.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "lockem" && server == "dev"){
+            resValue 'string', 'app_name', 'LOCKEM Dev'
+            resValue 'string', 'account_type', 'io.bikes.lockem.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.lockem.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "lockem" && server == "beta"){
+            resValue 'string', 'app_name', 'LOCKEM Beta'
+            resValue 'string', 'account_type', 'io.bikes.lockem.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.lockem.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "robyn" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Robyn Scooters'
+            resValue 'string', 'account_type', 'io.bikes.robyn'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.robyn.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "robyn" && server == "dev"){
+            resValue 'string', 'app_name', 'Robyn Scooters Dev'
+            resValue 'string', 'account_type', 'io.bikes.robyn.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.robyn.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "robyn" && server == "beta"){
+            resValue 'string', 'app_name', 'Robyn Scooters Beta'
+            resValue 'string', 'account_type', 'io.bikes.robyn.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.robyn.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "yeti" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Yeti Rides - Scooters'
+            resValue 'string', 'account_type', 'com.opolislabs.yeti'
+            resValue 'string', 'account_authentication_token_type', 'com.opolislabs.yeti.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "yeti" && server == "dev"){
+            resValue 'string', 'app_name', 'Yeti Rides - Scooters Dev'
+            resValue 'string', 'account_type', 'com.opolislabs.yeti.dev'
+            resValue 'string', 'account_authentication_token_type', 'com.opolislabs.yeti.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "yeti" && server == "beta"){
+            resValue 'string', 'app_name', 'Yeti Rides - Scooters Beta'
+            resValue 'string', 'account_type', 'com.opolislabs.yeti.beta'
+            resValue 'string', 'account_authentication_token_type', 'com.opolislabs.yeti.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+        else if(product == "overwatt" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'Over Watt'
+            resValue 'string', 'account_type', 'io.bikes.overwatt'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.overwatt.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "overwatt" && server == "dev"){
+            resValue 'string', 'app_name', 'Over Watt Dev'
+            resValue 'string', 'account_type', 'io.bikes.overwatt.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.overwatt.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "overwatt" && server == "beta"){
+            resValue 'string', 'app_name', 'Over Watt Beta'
+            resValue 'string', 'account_type', 'io.bikes.overwatt.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.overwatt.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+        else if(product == "wbs" && server =="prod" && isRelease){
+            resValue 'string', 'app_name', 'WINTERSTEIGER'
+            resValue 'string', 'account_type', 'io.bikes.wbs'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wbs.fullAccess'
+            resValue 'string', 'stripe_key', stripe_production_key
+        } else if(product == "wbs" && server == "dev"){
+            resValue 'string', 'app_name', 'WINTERSTEIGER Dev'
+            resValue 'string', 'account_type', 'io.bikes.wbs.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wbs.fullAccess.dev'
+            resValue 'string', 'stripe_key', stripe_dev_key
+        }else if(product == "wbs" && server == "beta"){
+            resValue 'string', 'app_name', 'WINTERSTEIGER Beta'
+            resValue 'string', 'account_type', 'io.bikes.wbs.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.bikes.wbs.fullAccess.beta'
+            resValue 'string', 'stripe_key', stripe_production_key
+        }
+
+
+
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions{
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+        exclude "lib/armeabi/**"
+    }
+    sourceSets {
+        velotransit {
+            res {
+                srcDirs 'src/velotransit/res', 'src/velotransit/res/'
+            }
+        }
+    }
+}
+configurations.all {
+    resolutionStrategy.force "${ProjectDependencies.loggingInterceptor}"
+}
+
+androidExtensions {
+    experimental = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation project(path: ':Ellipse-Android-Bluetooth-SDK')
+
+    // module dependencies
+    implementation project(ProjectModules.data)
+    implementation project(ProjectModules.domain)
+
+    implementation ProjectDependencies.constraintLayout
+    implementation ProjectDependencies.material
+
+    // dagger
+    kapt ProjectDependencies.daggerCompiler
+    implementation ProjectDependencies.daggerSupport
+    implementation ProjectDependencies.daggerAndroid
+    kapt ProjectDependencies.daggerAnnotationProcessor
+
+    // rxjava
+    implementation ProjectDependencies.rxKotlin
+    implementation ProjectDependencies.rxandroid
+
+    // rxbinding
+    implementation ProjectDependencies.rxbinding
+    implementation ProjectDependencies.rxbindingAppCompact
+    implementation ProjectDependencies.materialRxBinding
+//    implementation ProjectDependencies.rxbindingDesign
+    implementation ProjectDependencies.rxbindingRecycler
+
+    //retrofit
+    implementation ProjectDependencies.rxJava2Adapter
+
+
+    implementation ProjectDependencies.appCompact
+    implementation ProjectDependencies.androidx_core
+
+    // Spin Kit
+    implementation ProjectDependencies.spinkit
+
+    //
+    implementation ProjectDependencies.picasso
+
+//    implementation ProjectDependencies.lifecycle
+//    implementation ProjectDependencies.lifecycleViewModel
+//    implementation ProjectDependencies.lifecycleViewLiveData
+
+
+    //ui
+    implementation ProjectDependencies.appCompact
+    implementation ProjectDependencies.material
+//    implementation ProjectDependencies.cardview
+    implementation ProjectDependencies.recyclerView
+
+    //showing red alert in text view
+    implementation (ProjectDependencies.keyboardSurfer){
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+
+    //firebase BOM
+
+    implementation platform(ProjectDependencies.firebaseBom)
+
+    //crashlytics
+    implementation ProjectDependencies.firebaseCrashlytic
+
+    //firebaseAnalytics
+    implementation ProjectDependencies.firebaseAnalytics
+
+    //firebaseMessaging
+    implementation ProjectDependencies.firebaseMessaging
+
+    //mapbox
+    implementation ProjectDependencies.mapbox
+    implementation ProjectDependencies.mapboxTurf
+
+    // google play services
+//    implementation ProjectDependencies.playServicePlaces
+    implementation (ProjectDependencies.googleLibPlaces){
+        exclude group: "com.github.bumptech.glide"
+    }
+    implementation ProjectDependencies.googlePlayCore
+
+
+    //glide
+    implementation ProjectDependencies.glide
+    kapt ProjectDependencies.glideCompiler
+
+    //parceler
+    implementation ProjectDependencies.parceler
+    kapt ProjectDependencies.parcelerCompiler
+
+    //soundcloud crop
+    implementation ProjectDependencies.soundCloudCrop
+
+    // permission dispatcher
+    implementation ProjectDependencies.permissionDispatcher
+    kapt ProjectDependencies.permissionDispatcherCompiler
+
+    // stripe
+    implementation ProjectDependencies.stripe
+
+    //zxing
+    implementation ProjectDependencies.zxing
+
+    //bubble view
+    implementation ProjectDependencies.bubbleView
+
+    //eazyimage
+    implementation ProjectDependencies.eazyImage
+
+
+    //PhoneNumberUtil
+    implementation ProjectDependencies.phoneNumberUtil
+
+    //timber
+    implementation ProjectDependencies.timber
+
+    //preference
+    implementation ProjectDependencies.preference
+
+    //single date time picker
+    implementation ProjectDependencies.singleDateTimePicker
+
+    //paring ISO-8601 durations
+    implementation ProjectDependencies.threeTenAbp
+
+    //image slider
+    implementation ProjectDependencies.imageSlider
+
+    //mercado pago service
+//    implementation ProjectDependencies.mercadoPagoService
+
+
+    // test
+    testImplementation ProjectTestDependencies.junit
+    androidTestImplementation ProjectTestDependencies.androidTestRunner
+    androidTestImplementation ProjectTestDependencies.androidTestRule
+    androidTestImplementation ProjectTestDependencies.espresso
+
+    androidTestImplementation ProjectTestDependencies.mockito
+    androidTestImplementation ProjectTestDependencies.mockitoInline
+    androidTestImplementation ProjectTestDependencies.mockitoKotlin
+    androidTestImplementation ProjectTestDependencies.kakao
+
+    kaptAndroidTest ProjectTestDependencies.daggerCompiler
+
+    testImplementation ProjectTestDependencies.mockito
+    testImplementation ProjectTestDependencies.mockitoInline
+    testImplementation ProjectTestDependencies.mockitoKotlin
+//    testImplementation ProjectTestDependencies.lifecycleTesting
+
+}

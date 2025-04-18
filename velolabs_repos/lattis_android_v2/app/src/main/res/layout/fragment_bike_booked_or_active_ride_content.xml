@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bike_booked_or_active_ride_content_parent"
+    android:background="@android:color/transparent">
+
+
+    <!-- DISABLE LOCK UNLOCK -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_lock_unlock_disabled_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintStart_toStartOf="parent">
+        <com.lattis.lattis.presentation.library.lockunlock.LockUnlockButton
+            android:id="@+id/lock_unlock_disabled_button"
+            android:layout_width="88dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:checkedIcon="@drawable/lock_disabled"
+            custom:checkedBackground="@drawable/lock_unlock_shape_shape_scrolling_view_disabled"
+            custom:uncheckedIcon="@drawable/lock_disabled"
+            custom:uncheckedBackground="@drawable/lock_unlock_shape_shape_scrolling_view_disabled"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            custom:layout_constraintStart_toStartOf="@+id/lock_unlock_disabled_button"
+            custom:layout_constraintEnd_toEndOf="@+id/lock_unlock_disabled_button"
+            custom:layout_constraintTop_toTopOf="@+id/lock_unlock_disabled_button"
+            custom:layout_constraintBottom_toBottomOf="@+id/lock_unlock_disabled_button"
+            android:id="@+id/lock_unlock_disabled_view_for_click"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Manual LOCK UNLOCK -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_lock_unlock_manual_lock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintStart_toStartOf="parent">
+        <com.lattis.lattis.presentation.library.lockunlock.LockUnlockButton
+            android:id="@+id/lock_unlock_manual_lock_button"
+            android:layout_width="100dp"
+            custom:isChecked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_height="wrap_content"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:checkedIcon="@drawable/unlock"
+            custom:checkedBackground="@drawable/lock_unlock_shape_scrolling_view_unchecked"
+            custom:uncheckedIcon="@drawable/unlock"
+            custom:textColorUnChecked="@android:color/white"
+            custom:uncheckedBackground="@drawable/lock_unlock_shape_scrolling_view_unchecked"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            custom:layout_constraintStart_toStartOf="@+id/lock_unlock_manual_lock_button"
+            custom:layout_constraintEnd_toEndOf="@+id/lock_unlock_manual_lock_button"
+            custom:layout_constraintTop_toTopOf="@+id/lock_unlock_manual_lock_button"
+            custom:layout_constraintBottom_toBottomOf="@+id/lock_unlock_manual_lock_button"
+            android:id="@+id/lock_unlock_manual_lock_view_for_click"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reposition_gps"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:src="@drawable/reposition"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parking_unselected"
+        android:visibility="gone"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintEnd_toStartOf="@+id/reposition_gps"
+        android:src="@drawable/parking_unselected"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parking_selected"
+        android:visibility="gone"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintEnd_toStartOf="@+id/reposition_gps"
+        android:src="@drawable/parking_selected"
+        />
+
+    <!-- CONNECT TO POPUP -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        android:translationY="20dp"
+        android:visibility="gone"
+        android:paddingTop="10dp"
+        android:id="@+id/cl_connect_to_popup"
+        android:background="@drawable/active_ride_connect_to_lock_round"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_cancel_connect_to_lock_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/booking_timer_expire_cancel"
+            android:layout_marginRight="10dp"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent" />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/active_ride_connect_to_lock_text"
+            app:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toStartOf="@id/iv_cancel_connect_to_lock_popup"
+            custom:layout_constraintTop_toBottomOf="@+id/iv_cancel_connect_to_lock_popup"
+            custom:layout_constraintBottom_toBottomOf="@+id/iv_cancel_connect_to_lock_popup"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="35dp"
+            android:textStyle="bold"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            android:text="@string/connect_to_lock_popup"
+            android:id="@+id/ct_connect_to_lock_popup"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- IOT HINT -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        custom:layout_constraintTop_toTopOf="@+id/lock_unlock_button"
+        custom:layout_constraintBottom_toBottomOf="@+id/lock_unlock_button"
+        android:visibility="gone"
+        android:id="@+id/cl_iot_hint_popup"
+        android:background="@drawable/active_ride_connect_to_lock_round"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_cancel_iot_hint_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/booking_timer_expire_cancel"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/active_ride_connect_to_lock_text"
+            app:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toStartOf="@id/iv_cancel_iot_hint_popup"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="15dp"
+            android:textStyle="bold"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            android:text="@string/iot_hint_locked"
+            android:id="@+id/ct_iot_hint_popup"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- HERE FLIP VIEW PAGER -->
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"
+        android:measureAllChildren="false"
+        android:id="@+id/view_flipper_in_bike_booked_or_active_trip">
+        <include layout="@layout/fragment_bike_booked" />
+        <include layout="@layout/fragment_bike_booked_with_active_trip"/>
+        <include layout="@layout/fragment_active_trip"/>
+        <include layout="@layout/fragment_parking_spot_zone"/>
+        <include layout="@layout/fragment_parking_detail"/>
+
+    </ViewFlipper>
+
+
+    <include layout="@layout/no_internet_layout_for_active_trip"
+        android:id="@+id/bike_booked_or_active_trip_no_internet"
+        android:visibility="gone"
+        />
+
+    <com.lattis.lattis.presentation.library.lockunlock.LockUnlockButton
+        android:id="@+id/lock_unlock_button"
+        android:layout_width="88dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        custom:layout_constraintBottom_toTopOf="@+id/view_flipper_in_bike_booked_or_active_trip"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--This is slider view: start-->
+    <include layout="@layout/fragment_bikelist_slider"
+        android:id="@+id/bike_slider_in_bike_booked_or_active_trip"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="5dp"
+        android:layout_marginTop="17dp"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="gone"
+        />
+    <!--This is slider view: end-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/lattis_transparent"
+        android:id="@+id/cl_lock_unlock_popup">
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ct_lock_unlock_popup"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        style="?android:attr/borderlessButtonStyle"
+        android:padding="40dp"
+        android:textAllCaps="false"
+        android:background="@drawable/round_lock_unlock_popup"
+        android:textSize="16dp"
+        android:textColor="@color/lock_unlock_popup_visible_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

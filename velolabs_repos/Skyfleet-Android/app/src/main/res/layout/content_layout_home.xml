@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/tools"
+    xmlns:circular="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_theme"
+    android:paddingTop="-78dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_toolslayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_lockName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:paddingTop="2dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:visibility="visible" />
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/iv_battery"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_tower"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_charge_white" />
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/iv_tower"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/iv_battery"
+            android:src="@drawable/icon_tower_white" />
+
+        <View
+            android:id="@+id/view_rl"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_lockName"
+            android:background="#88FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_rl"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp">
+
+
+            <ImageView
+                android:contentDescription="@null"
+                android:id="@+id/iv_crash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:src="@drawable/icon_crash_unselect" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/iv_crash"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="@string/crash"
+                    android:id="@+id/tv_label_crash"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="@string/detection"
+                    android:id="@+id/tv_label_crashdetection"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:text="ON"
+                    android:id="@+id/tv_label_crashon"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/iv_theft"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:text="@string/theft"
+                    android:id="@+id/tv_label_theft"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:text="@string/detection"
+                    android:id="@+id/tv_label_theftdetection"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:text="@string/on"
+                    android:id="@+id/tv_label_thefton"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:contentDescription="@null"
+                android:id="@+id/iv_theft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_theft_unselect" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/you_are_not_connected_to_any_locks"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_content1"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="3dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/find_an_ellipse_to_connect_to"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/resetpwd_textclick_color" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_lockunlocklayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/home_progressBar"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+            android:layout_width="277dp"
+            android:layout_height="277dp"
+            android:layout_centerInParent="true" />
+
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           >
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tap_to_unlock"
+            android:layout_below="@+id/tv_status1"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            />
+        <TextView
+            android:id="@+id/tv_status1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/scanning"
+            android:textSize="26sp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            />
+       </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

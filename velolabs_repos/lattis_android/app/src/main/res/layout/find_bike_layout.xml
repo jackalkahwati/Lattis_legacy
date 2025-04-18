@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bluetooth_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/pop_up_border"
+        android:padding="1dp"
+        android:visibility="gone">
+
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_bluetooth_popup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#eeeeee"
+            android:gravity="center"
+            android:padding="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/find_ride_no_bluettoth_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#818181"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_bluetooth_popup_subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ct_bluetooth_popup_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/blutooth_pop_subtitle1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#4A4A4A"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_bluetooth_popup_subtitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ct_bluetooth_popup_subtitle1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/blutooth_pop_subtitle2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#4A4A4A"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/ct_bluetooth_popup_subtitle2"
+            android:layout_marginTop="40dp"
+            android:background="#EEEEEE" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/ct_bluetooth_popup_will_do"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/blutooth_pop_will_do"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    </RelativeLayout>
+
+
+    <fragment
+        android:id="@+id/bike_direction_fragment"
+        class="com.lattis.ellipse.presentation.ui.bike.BikeDirectionFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/bike_direction_fragment" />
+
+    <fragment
+        android:id="@+id/bike_list_fragment"
+        class="com.lattis.ellipse.presentation.ui.bike.bikeList.BikeListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/show_bike_list_fragment" />
+
+
+
+    <include layout="@layout/view_loading_fragment" />
+
+
+</RelativeLayout>

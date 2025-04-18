@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_bike_details_slide_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lattis.lattis.presentation.home.activity.HomeActivity"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:elevation="2dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cl_header_in_bike_slider"
+        android:background="@drawable/bike_card_view_top_radius"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <View
+            android:layout_width="70dp"
+            android:layout_height="5dp"
+            android:id="@+id/view_divider_in_bike_slider"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/round_slider_drag"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/btn_close_in_slider"
+            android:id="@+id/iv_close_in_bike_slider"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cl_header_in_bike_slider">
+
+        <LinearLayout
+            android:id="@+id/slideView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            android:background="@color/color_transparent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_bike_in_bike_slider"
+                android:background="@color/bike_slider_background"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_bike_fleet_details_in_bike_slider"
+                android:background="@color/bike_slider_background"
+                >
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ct_bike_type_in_bike_slider"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/bike_card_header_text"
+                    custom:typefaceAsset="GothamSSm-Bold.otf"
+                    android:layout_marginTop="10dp" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_type_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_name_in_bike_slider"
+                    android:text="Serpent Eagle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bike_card_header_text"
+                    custom:typefaceAsset="GothamSSm-Bold.otf"
+                    android:layout_marginTop="3dp" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_name_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_fleet_name_in_bike_slider"
+                    android:text="Serpent Eagle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/bike_fleet_company_name"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    android:layout_marginTop="3dp" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_fleet_name_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_battery_bike_slider"
+                    android:text="79%"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:textColor="@color/bike_card_header_text"
+                    custom:typefaceAsset="GothamSSm-Bold.otf"
+                    android:layout_marginTop="3dp" />
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/iv_bike_battery_bike_slider"
+                    android:src="@drawable/ic_battery_75"
+                    android:visibility="gone"
+                    custom:layout_constraintTop_toTopOf="@+id/ct_bike_battery_bike_slider"
+                    custom:layout_constraintBottom_toBottomOf="@+id/ct_bike_battery_bike_slider"
+                    custom:layout_constraintStart_toEndOf="@+id/ct_bike_battery_bike_slider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_bike_trip_costs_in_bike_slider"
+                android:layout_marginTop="15dp"
+                android:background="@color/bike_slider_background"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/divider1"
+                    android:background="@color/bike_slider_divider"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/divider1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_trip_costs_in_bike_slider"
+                    android:text="@string/bike_detail_label_trip_costs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_title"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_price_in_bike_slider"
+                    android:text="@string/bike_detail_label_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_trip_costs_in_bike_slider"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_price_in_bike_slider"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_price_in_bike_slider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/ct_bike_price_value_in_bike_slider"
+                    android:text="@string/bike_detail_label_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_preauth_value_label_in_bike_slider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ct_bike_price_in_bike_slider"
+                android:visibility="gone"
+                >
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_preauth_label_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/preauthorization"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_preauth_value_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/bike_detail_label_price"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_preauth_label_in_bike_slider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_preauth_label_in_bike_slider"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_preauth_description_in_bike_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preauthorization_description"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_bike_preauth_value_in_bike_slider"
+                    custom:typefaceAsset="GothamSSm-Book.otf" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cl_unlock_price_label_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_preauth_value_label_in_bike_slider"
+                    >
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:id="@+id/ct_unlock_price_label_in_bike_slider"
+                        android:text="@string/unlock_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="14dp"
+                        android:visibility="visible"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="@+id/ct_unlock_price_label_in_bike_slider"
+                        app:layout_constraintBottom_toBottomOf="@+id/ct_unlock_price_label_in_bike_slider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/ct_unlock_price_value_in_bike_slider"
+                        android:text="@string/bike_detail_label_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:visibility="visible"
+                        android:textSize="14dp"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cl_surcharge_price_label_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_unlock_price_label_in_bike_slider"
+                    >
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:id="@+id/ct_surcharge_price_in_bike_slider"
+                        android:text="@string/surcharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="14dp"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="@+id/ct_surcharge_price_in_bike_slider"
+                        app:layout_constraintBottom_toBottomOf="@+id/ct_surcharge_price_in_bike_slider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/ct_surcharge_price_value_in_bike_slider"
+                        android:text="@string/bike_detail_label_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:textSize="14dp"
+                        android:visibility="visible"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:id="@+id/ct_surcharge_description_in_bike_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/surcharge_description"
+                        android:textColor="@color/bike_slider_detail_text"
+                        android:textSize="12dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="visible"
+                        custom:layout_constraintTop_toBottomOf="@+id/ct_surcharge_price_in_bike_slider"
+                        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cl_parking_price_label_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_surcharge_price_label_in_bike_slider"
+                    >
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:id="@+id/ct_bike_parking_in_bike_slider"
+                        android:text="@string/bike_detail_label_parking_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="14dp"
+                        android:layout_marginTop="15dp"
+                        android:visibility="visible"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        app:layout_constraintTop_toTopOf="@+id/ct_bike_parking_in_bike_slider"
+                        app:layout_constraintBottom_toBottomOf="@+id/ct_bike_parking_in_bike_slider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/ct_bike_parking_value_in_bike_slider"
+                        android:text="@string/bike_detail_label_price"
+                        android:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:textSize="14dp"
+                        android:textColor="@color/bike_slider_detail_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf"
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:id="@+id/ct_parking_description_in_bike_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bike_detail_label_parking_fee_warning"
+                        android:textColor="@color/bike_slider_detail_text"
+                        android:textSize="12dp"
+                        android:visibility="visible"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        custom:layout_constraintTop_toBottomOf="@+id/ct_bike_parking_in_bike_slider"
+                        custom:typefaceAsset="GothamSSm-Book.otf" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_bike_about_in_bike_slider"
+                android:layout_marginTop="15dp"
+                android:background="@color/bike_slider_background"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/divider2"
+                    android:background="@color/bike_slider_divider"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/divider2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_about_in_bike_slider"
+                    android:text="@string/bike_detail_label_about_the_bike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_title"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_about_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_about_name_in_bike_slider"
+                    android:text="@string/bike_detail_label_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_about_name_in_bike_slider"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_about_name_in_bike_slider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/ct_bike_about_name_value_in_bike_slider"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+
+
+
+
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_about_name_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_about_model_in_bike_slider"
+                    android:text="@string/bike_detail_label_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_about_model_in_bike_slider"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_about_model_in_bike_slider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/ct_bike_about_model_value_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_about_model_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_about_description_in_bike_slider"
+                    android:text="@string/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_about_description_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_about_description_value_in_bike_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="12dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_bike_network_in_bike_slider"
+                android:layout_marginTop="15dp"
+                android:background="@color/bike_slider_background"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/divider3"
+                    android:background="@color/bike_slider_divider"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/divider3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_network_in_bike_slider"
+                    android:text="@string/bike_detail_label_network"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/bike_slider_title"
+                    custom:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_network_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_bike_network_name_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_bike_scoot_network_value_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/next_arrow"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_network_name_in_bike_slider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_network_name_in_bike_slider" />
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_network_name_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/cl_terms_condition_in_bike_slider">
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                   app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_terms_condition_in_bike_slider"
+                    android:text="@string/bike_detail_label_terms_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_terms_condition_value_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next_arrow"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_terms_condition_in_bike_slider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/cl_parking_spot_zone_in_bike_slider">
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                 app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/ct_parking_spot_zone_in_bike_slider"
+                    android:text="@string/bike_detail_label_parking_zones_spots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <ImageView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/iv_parking_spot_zone_value_in_bike_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/next_arrow"
+                    android:padding="10dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--            <View-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="20dp"-->
+                <!--                android:layout_marginLeft="20dp"-->
+                <!--                android:layout_marginRight="20dp"-->
+                <!--                android:id="@+id/divider4"-->
+                <!--                android:background="@android:color/transparent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@+id/iv_parking_spot_zone_value_in_bike_slider"-->
+                <!--                />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

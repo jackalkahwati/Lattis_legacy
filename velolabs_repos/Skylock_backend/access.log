@@ -1,0 +1,1388 @@
+DEBUG 2016-08-31 16:04:21,068 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-08-31 16:04:21,069 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-08-31 16:04:31,936 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-08-31 16:04:31,936 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:09:03,452 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:09:03,453 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:10:18,217 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:10:18,217 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:11:29,393 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:11:29,393 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:11:44,721 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:11:44,721 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:13:16,735 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:13:16,735 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:13:22,141 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:13:22,141 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-02 01:14:09,030 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-02 01:14:09,030 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-20 17:23:41,233 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 17:23:41,234 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-20 17:24:29,657 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 17:24:29,657 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-20 18:20:15,727 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 18:20:15,728 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'12344444', u'country_code': u'US', u'password': u'shivanand', u'email': u'test'}
+DEBUG 2016-09-20 19:09:33,353 new_user 84 Content-Length: 154
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:09:33,354 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:09:43,887 new_user 84 Content-Length: 158
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:09:43,887 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-09-20 19:11:02,708 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:11:02,708 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:12:10,266 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:12:10,266 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:13:19,701 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:13:19,701 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:18:03,597 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:18:03,597 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:20:07,770 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:20:07,771 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:24:11,142 new_user 84 Content-Length: 154
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:24:11,142 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:24:26,711 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:24:26,711 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'ellipse', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:25:55,215 new_user 84 Content-Length: 179
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:25:55,216 new_user 85 {u'first_name': u'shiva', u'last_name': u'aratal', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'1234', u'country_code': u'US', u'password': u'shiva', u'email': u'shiva@velo'}
+DEBUG 2016-09-20 19:26:28,073 new_user 84 Content-Length: 145
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:26:28,073 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'', u'reg_id': u'', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:26:37,779 new_user 84 Content-Length: 152
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:26:37,780 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:26:45,557 new_user 84 Content-Length: 154
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:26:45,558 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:27:49,535 new_user 84 Content-Length: 154
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:27:49,535 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:40:32,315 new_user 84 Content-Length: 154
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:40:32,316 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:40:56,718 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:40:56,718 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:41:07,613 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:41:07,613 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767920', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:41:33,520 new_user 84 Content-Length: 167
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:41:33,520 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767920', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u'shiva@lattis'}
+DEBUG 2016-09-20 19:42:56,037 new_user 84 Content-Length: 167
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:42:56,037 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767920', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u'shiva@lattis'}
+DEBUG 2016-09-20 19:43:00,641 new_user 84 Content-Length: 167
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:43:00,641 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767920', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u'shiva@lattis'}
+DEBUG 2016-09-20 19:43:08,824 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:43:08,824 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767920', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:47:45,224 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:47:45,224 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767923', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-20 19:48:01,767 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 19:48:01,768 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767923', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-09-20 20:18:13,757 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-20 20:18:13,757 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767923', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-22 11:14:45,915 new_user 84 Content-Length: 196
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:14:45,915 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:18:38,722 new_user 84 Content-Length: 196
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:18:38,723 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'1234', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:20:11,386 new_user 84 Content-Length: 197
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:20:11,387 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:21:26,416 new_user 84 Content-Length: 199
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:21:26,416 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123456', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:25:33,868 new_user 84 Content-Length: 196
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:25:33,868 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:33:42,587 new_user 84 Content-Length: 196
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:33:42,587 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:34:21,956 new_user 84 Content-Length: 197
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:34:21,956 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:34:45,698 new_user 84 Content-Length: 196
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:34:45,699 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:35:01,075 new_user 84 Content-Length: 168
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:35:01,075 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-22 11:35:18,077 new_user 84 Content-Length: 197
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:35:18,077 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shivaj', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:35:37,408 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:35:37,408 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u''}
+DEBUG 2016-09-22 11:37:06,859 new_user 84 Content-Length: 197
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:37:06,860 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:38:01,409 new_user 84 Content-Length: 202
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:38:01,409 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123456', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shivanand', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:38:05,588 new_user 84 Content-Length: 202
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:38:05,588 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123456', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shivanand', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 11:41:38,156 new_user 84 Content-Length: 202
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 11:41:38,156 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123456', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shivanand', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-09-22 12:12:00,160 new_user 84 Content-Length: 173
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 12:12:00,160 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123456', u'user_type': u'ellipse', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shiva', u'email': u'fun'}
+DEBUG 2016-09-22 12:14:14,136 new_user 84 Content-Length: 197
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-09-22 12:14:14,137 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'00000000000000000000', u'country_code': u'gb', u'password': u'shivaj', u'email': u'fun@thecyclingrevolution.com'}
+DEBUG 2016-10-02 12:25:38,479 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:25:38,479 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:27:15,558 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:27:15,558 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:28:58,037 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:28:58,038 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:32:13,331 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:32:13,331 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:32:29,751 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:32:29,751 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:35:18,733 new_user 84 Content-Length: 157
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:35:18,733 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u''}
+DEBUG 2016-10-02 12:37:25,434 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:37:25,434 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:39:23,165 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:39:23,165 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u'arun@lattis.io'}
+DEBUG 2016-10-02 12:40:46,988 new_user 84 Content-Length: 157
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:40:46,989 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u''}
+DEBUG 2016-10-02 12:40:56,333 new_user 84 Content-Length: 156
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:40:56,334 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'1234567', u'email': u''}
+DEBUG 2016-10-02 12:46:22,168 new_user 84 Content-Length: 161
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:46:22,168 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'1234567', u'email': u'12345'}
+DEBUG 2016-10-02 12:46:59,347 new_user 84 Content-Length: 161
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:46:59,347 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'1234567', u'email': u'12345'}
+DEBUG 2016-10-02 12:47:21,644 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:47:21,644 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345', u'email': u'12345'}
+DEBUG 2016-10-02 12:48:19,957 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:48:19,958 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345', u'email': u'12345'}
+DEBUG 2016-10-02 12:48:53,791 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:48:53,792 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345', u'email': u'12345'}
+DEBUG 2016-10-02 12:49:07,374 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:49:07,374 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345', u'email': u'12345'}
+DEBUG 2016-10-02 12:49:17,951 new_user 84 Content-Length: 158
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:49:17,952 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'1234', u'email': u'12345'}
+DEBUG 2016-10-02 12:50:14,814 new_user 84 Content-Length: 157
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:50:14,814 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'123', u'email': u'12345'}
+DEBUG 2016-10-02 12:50:24,176 new_user 84 Content-Length: 160
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:50:24,176 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'123456', u'email': u'12345'}
+DEBUG 2016-10-02 12:50:33,322 new_user 84 Content-Length: 158
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-02 12:50:33,322 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9840182541', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'1234', u'email': u'12345'}
+DEBUG 2016-10-06 12:05:06,333 new_user 84 Content-Length: 178
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:05:06,333 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'415676', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'in', u'password': u'415676', u'email': u'shiva@lattis.io'}
+DEBUG 2016-10-06 12:06:29,353 new_user 84 Content-Length: 180
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:06:29,353 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'4156767', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'in', u'password': u'4156767', u'email': u'shiva@lattis.io'}
+DEBUG 2016-10-06 12:21:13,006 new_user 84 Content-Length: 182
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:21:13,006 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'41567678', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'in', u'password': u'41567678', u'email': u'shiva@lattis.io'}
+DEBUG 2016-10-06 12:24:09,053 new_user 84 Content-Length: 184
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:24:09,053 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'415676789', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'in', u'password': u'415676789', u'email': u'shiva@lattis.io'}
+DEBUG 2016-10-06 12:52:48,250 new_user 84 Content-Length: 161
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:52:48,251 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8939785301', u'user_type': u'', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u''}
+DEBUG 2016-10-06 12:52:57,211 new_user 84 Content-Length: 168
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:52:57,211 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8939785301', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'12345678', u'email': u''}
+DEBUG 2016-10-06 12:53:16,448 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-06 12:53:16,448 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8939785301', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'123456789', u'email': u''}
+DEBUG 2016-10-19 00:05:56,902 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:05:56,903 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9739867586', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'9738867586', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:07:08,596 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:07:08,597 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:12:11,957 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:12:11,957 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9739867586', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'9738867586', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:14:40,596 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:14:40,597 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:15:03,631 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:15:03,632 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:17:21,879 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:17:21,879 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:19:01,553 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:19:01,553 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:21:33,725 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:21:33,725 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:23:00,769 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:23:00,769 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:49:01,964 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:49:01,964 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:55:41,785 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:55:41,785 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:57:18,518 new_user 84 Content-Length: 186
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:57:18,518 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u'kencha@gmail.com'}
+DEBUG 2016-10-19 00:57:31,088 new_user 84 Content-Length: 170
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:57:31,088 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u''}
+DEBUG 2016-10-19 00:57:42,434 new_user 84 Content-Length: 166
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:57:42,434 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'hemesh', u'email': u''}
+DEBUG 2016-10-19 00:58:51,799 new_user 84 Content-Length: 166
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:58:51,799 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'hemesh', u'email': u''}
+DEBUG 2016-10-19 00:59:02,709 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:59:02,709 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-10-19 00:59:57,768 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 00:59:57,768 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-10-19 01:00:07,799 new_user 84 Content-Length: 170
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 01:00:07,800 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'8880780933', u'email': u''}
+DEBUG 2016-10-19 01:04:14,694 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-19 01:04:14,694 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'8880780933', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-10-24 19:58:46,222 new_user 84 Content-Length: 181
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-24 19:58:46,222 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9035922120', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'password', u'email': u'mom@gmail.com'}
+DEBUG 2016-10-24 19:59:20,233 new_user 84 Content-Length: 181
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-10-24 19:59:20,234 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9035922120', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'in', u'password': u'password', u'email': u'mom@gmail.com'}
+DEBUG 2016-11-02 13:56:30,137 new_user 84 Content-Length: 170
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 13:56:30,137 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9035922120', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'9035922120', u'email': u''}
+DEBUG 2016-11-02 13:56:41,337 new_user 84 Content-Length: 168
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 13:56:41,337 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'9035922120', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'password', u'email': u''}
+DEBUG 2016-11-02 21:07:40,065 new_user 84 Content-Length: 171
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:07:40,065 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'4156767922', u'email': u''}
+DEBUG 2016-11-02 21:08:23,607 new_user 84 Content-Length: 170
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:08:23,607 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'shivanand', u'email': u''}
+DEBUG 2016-11-02 21:08:42,196 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:08:42,197 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'4156767922', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'password', u'email': u''}
+DEBUG 2016-11-02 21:09:23,964 new_user 84 Content-Length: 167
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:09:23,964 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'12345678', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'12345678', u'email': u''}
+DEBUG 2016-11-02 21:10:25,132 new_user 84 Content-Length: 176
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:10:25,132 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'123', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'123', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-02 21:11:12,367 new_user 84 Content-Length: 178
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:11:12,367 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'0123', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'0123', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-02 21:11:18,346 new_user 84 Content-Length: 178
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:11:18,346 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'0123', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'0123', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-02 21:11:25,434 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-02 21:11:25,434 new_user 85 {u'first_name': u'test', u'last_name': u'account', u'user_id': u'0123', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'IN', u'password': u'0123', u'email': u''}
+DEBUG 2016-11-09 17:57:45,778 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 17:57:45,779 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-09 17:58:04,001 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 17:58:04,001 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo'}
+DEBUG 2016-11-09 17:58:13,982 new_user 84 Content-Length: 169
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 17:58:13,982 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo'}
+DEBUG 2016-11-09 17:58:53,273 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 17:58:53,273 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-09 17:59:24,440 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 17:59:24,441 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-09 18:00:57,230 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 18:00:57,230 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-09 18:02:54,301 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 18:02:54,301 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-09 18:03:38,184 new_user 84 Content-Length: 159
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-09 18:03:38,184 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'12345678912', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-10 12:55:01,663 new_user 84 Content-Length: 155
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-10 12:55:01,666 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva'}
+DEBUG 2016-11-11 12:41:05,167 new_user 84 Content-Length: 150
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-11 12:41:05,167 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-11 12:41:45,819 new_user 84 Content-Length: 150
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-11 12:41:45,820 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}
+DEBUG 2016-11-11 13:35:39,432 new_user 84 Content-Length: 166
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-11 13:35:39,433 new_user 85 {u'first_name': u'shiva', u'last_name': u'aratal', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva'}
+DEBUG 2016-11-11 13:36:55,399 new_user 84 Content-Length: 166
+User-Agent: HTTPie/0.9.6
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json, */*
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-11 13:36:55,399 new_user 85 {u'first_name': u'shiva', u'last_name': u'aratal', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva'}
+DEBUG 2016-11-15 20:24:45,988 new_user 84 Content-Length: 172
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-15 20:24:45,989 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415676', u'user_type': u'facebook', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velolabs.com'}
+DEBUG 2016-11-28 15:11:16,319 new_user 84 Content-Length: 176
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-11-28 15:11:16,319 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-28 15:24:01,838 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 178
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: 04b81b04-2c36-9b56-2c4e-985885aaa85c
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-11-28 15:24:01,838 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-28 15:27:33,570 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 178
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: ce016c44-a1ca-fc7e-c652-47d11503b78d
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-11-28 15:27:33,570 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4156767921', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-11-28 15:31:56,366 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 171
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: 74db749f-a56b-020c-d0df-b165d3078804
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-11-28 15:31:56,367 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-12-08 12:59:16,670 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 169
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: 56705b03-7721-6079-ef40-30b4404fabca
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-12-08 12:59:16,671 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-12-08 13:03:16,760 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 169
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: 6be137e2-4d00-f0c0-5489-0828ea6fb6e4
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-12-08 13:03:16,760 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-12-08 13:04:26,051 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 169
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: d00771f0-4280-3d19-817c-41230ed7d828
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-12-08 13:04:26,052 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-12-08 19:00:40,860 new_user 84 Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Length: 169
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36
+Connection: keep-alive
+Postman-Token: b6284d60-f054-a661-c14a-2feacf4126da
+Host: localhost:5000
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: en-US,en;q=0.8
+Content-Type: application/json
+Accept-Encoding: gzip, deflate, br
+
+
+DEBUG 2016-12-08 19:00:40,861 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'4', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'shiva@velo-labs.com'}
+DEBUG 2016-12-16 12:46:56,788 new_user 84 Content-Length: 174
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-12-16 12:46:56,788 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9176261445', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'IN', u'password': u'password', u'email': u'aravind@lattis.io'}
+DEBUG 2016-12-16 12:47:54,022 new_user 84 Content-Length: 174
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-12-16 12:47:54,023 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'9176261445', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u'aravind@lattis.io'}
+DEBUG 2016-12-22 13:20:09,245 new_user 84 Content-Length: 150
+User-Agent: HTTPie/0.9.2
+Connection: keep-alive
+Host: localhost:5000
+Accept: application/json
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+
+
+DEBUG 2016-12-22 13:20:09,245 new_user 85 {u'first_name': u'', u'last_name': u'', u'user_id': u'415', u'user_type': u'ellipse', u'reg_id': u'', u'country_code': u'US', u'password': u'password', u'email': u''}

@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="47.0"
+    android:viewportWidth="50.0">
+    <path
+        android:fillColor="@color/lattis_accent_color"
+        android:pathData="M27.7,2.12L31.38,13.2C31.8,14.47 33.01,15.32 34.36,15.32L46.31,15.32C49.34,15.32 50.6,19.11 48.15,20.86L38.48,27.76C37.38,28.54 36.92,29.92 37.34,31.18L41.03,42.31C41.97,45.13 38.67,47.48 36.21,45.74L26.56,38.88C25.47,38.1 23.98,38.11 22.88,38.89L13.23,45.75C10.78,47.49 7.48,45.14 8.41,42.32L12.11,31.18C12.52,29.92 12.07,28.54 10.97,27.76L1.29,20.86C-1.16,19.11 0.11,15.32 3.14,15.32L15.08,15.32C16.44,15.32 17.64,14.47 18.06,13.2L21.74,2.12C22.68,-0.71 26.76,-0.71 27.7,2.12"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1" />
+</vector>

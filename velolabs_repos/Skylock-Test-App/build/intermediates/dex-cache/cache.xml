@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/alexvijayraj/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-234959c44e6f8f46a3573aee145b1f055f57f3b1.jar" />
+    </item>
+    <item
+        jar="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-e902e42e943c8a41f296761e57c38009b83fa586.jar" />
+    </item>
+    <item
+        jar="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/pre-dexed/debug/classes-7c2d165f8131c8ec3ec4b151a9c6bf9a554b2c09.jar" />
+    </item>
+    <item
+        jar="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/alexvijayraj/work/Android/SkylockTestApp/app/build/intermediates/pre-dexed/debug/classes-99ff158ba1312430a0aa9a9bc9d58e53d01a3999.jar" />
+    </item>
+
+</items>

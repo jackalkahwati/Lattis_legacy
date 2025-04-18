@@ -1,0 +1,270 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/lattis_accent_color</item>
+        <item name="colorPrimaryDark">@color/lattis_accent_color</item>
+        <item name="colorAccent">@color/lattis_profile_accent</item>
+        <item name="colorControlNormal">@color/lattis_profile_accent</item>
+        <item name="colorControlActivated">@color/lattis_profile_accent</item>
+        <item name="colorControlHighlight">@color/lattis_profile_accent</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="RemoveAppSplashTheme" parent="AppTheme.Fullscreen">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.Authentication" parent="AppTheme.Fullscreen">
+        <item name="android:windowBackground">@color/lattis_accent_color</item>
+        <item name="android:textViewStyle">@style/AppTheme.Authentication.TextViewStyle</item>
+        <item name="android:editTextStyle">@style/AppTheme.Authentication.EditTextStyle</item>
+        <item name="editTextStyle">@style/AppTheme.Authentication.EditTextStyle</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="AppTheme.Fullscreen">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/lattis_transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.Authentication.TextViewStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Authentication.EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">@color/drawer_item_text</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="BlueButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_dark_color</item>
+        <item name="android:background">@drawable/button_oval_blue</item>
+    </style>
+
+    <style name="BlueButtonStyle.Inversed" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/auth_signup_login_bar_text</item>
+        <item name="android:background">@drawable/button_oval_white</item>
+    </style>
+
+    <style name="BlueButtonStyle.Rounded.White" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/button_oval_blue</item>
+    </style>
+
+    <style name="BlueButtonStyle.Rounded" parent="BlueButtonStyle">
+        <item name="android:background">@drawable/background_blue_btn_rounded</item>
+    </style>
+
+
+    <style name="GreyButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">#BCBBBB</item>
+        <item name="android:background">#E7E7E9</item>
+    </style>
+
+    <style name="GreyButtonStyle.Inversed" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_header_color</item>
+        <item name="android:background">@drawable/background_grey_view_inversed</item>
+    </style>
+
+    <style name="blueButtonStyle.rect" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/lattis_accent_color</item>
+    </style>
+
+    <style name="TripBeginButtonStyle" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">#B7C1CD</item>
+    </style>
+
+    <style name="whiteButtonStyle.rect" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_accent_color</item>
+        <item name="android:background">@drawable/background_blue_btn_inversed</item>
+    </style>
+
+    <style name="whiteButtonStyle.rect.edit.view" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/lattis_header_color</item>
+        <item name="android:background">@drawable/background_blue_btn_inversed</item>
+    </style>
+
+    <style name="GreyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimarylightdark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="WhiteAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/BlueButtonStyle.Rounded</item>
+    </style>
+
+    <style name="AppTheme_menu" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionMenuTextAppearance">@style/MyMenuTextAppearance</item>
+    </style>
+
+    <style name="MyMenuTextAppearance" parent="android:TextAppearance.Holo.Widget.ActionBar.Menu">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        textSize
+    </style>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base"></style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@color/lattis_view_loction_bg</item>
+        <item name="colorAccent">@color/lattis_accent_color</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="toolbarStyle">@style/ToolBarStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/lattis_header_color</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/lattis_header_color</item>
+        <item name="android:textColorSecondary">@color/lattis_text_color_grey</item>
+        <item name="actionMenuTextColor">@color/lattis_text_color_grey</item>
+    </style>
+
+    <style name="NavigationDrawerStyle">
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">17sp</item><!-- text size in menu-->
+        <item name="android:listPreferredItemHeightSmall">50dp</item><!-- item size in menu-->
+        <item name="android:listDivider">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/lattis_accent_color</item>
+        <item name="android:textColorSecondary">@color/lattis_accent_color</item>
+    </style>
+
+    <style name="ToolBarStyle_white" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+<!--    <style name="CardWidgetStyle" parent="@android:style/Theme.DeviceDefault">-->
+<!--        <item name="android:background">@android:color/white</item>-->
+<!--        <item name="editTextStyle">@style/EditTextOverride</item>-->
+<!--        <item name="android:editTextStyle">@style/EditTextOverride</item>-->
+<!--    </style>-->
+
+<!--    <style name="EditTextOverride" parent="@android:style/Widget.EditText">-->
+<!--        <item name="android:textColor">@android:color/black</item>-->
+<!--        <item name="android:textColorHint">#B6B6B6</item>-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--    </style>-->
+
+    <style name="StripeDefaultTheme" parent="StripeBaseTheme">
+<!--        &lt;!&ndash; Applied to toolbar background &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/primary</item>-->
+
+<!--        &lt;!&ndash; Applied to status bar &ndash;&gt;-->
+<!--        <item name="colorPrimaryDark">@color/primaryDark</item>-->
+
+<!--        &lt;!&ndash; Applied to inactive Shipping Method name and amount &ndash;&gt;-->
+<!--        <item name="android:textColorPrimary">@color/text</item>-->
+
+<!--        &lt;!&ndash; Applied to inactive Shipping Method description &ndash;&gt;-->
+<!--        <item name="android:textColorSecondary">@color/textPrimary</item>-->
+
+        <!--
+            Applied to Shipping Information drop-down items;
+            add Payment Method footer text color
+        -->
+        <item name="android:textColor">@android:color/black</item>
+
+<!--        &lt;!&ndash; Applied to toolbar foreground/text &ndash;&gt;-->
+<!--        <item name="titleTextColor">@color/title</item>-->
+
+        <!--
+            Applied to selected Payment Method; active field; links;
+            add new Payment Method call-to-action
+        -->
+        <item name="colorAccent">#B6B6B6</item>
+
+        <!-- Applied to: Payment Method icon; inactive form field highlight -->
+        <item name="colorControlNormal">#B6B6B6</item>
+
+        <!-- Applied to form field text -->
+        <item name="android:editTextColor">@android:color/black</item>
+
+        <item name="editTextColor">@android:color/black</item>
+    </style>
+
+
+
+
+    <style name="progressBarStyle" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@drawable/custom_loading</item>
+    </style>
+
+
+    <style name="spinnerTheme" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+        <item name="android:dropDownItemStyle">@style/spinnerItemStyle</item>
+    </style>
+    
+    <style name="spinnerItemStyle">
+        <item name="background">@color/report_damage_background</item>
+        <item name="textColor">@color/report_damage_text</item>
+
+        <item name="android:gravity">center</item>
+        <item name="textSize">16dp</item>
+    </style>
+
+
+
+    <style name="blackCalendar" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="textSize">14dp</item>
+        <item name="fontFamily">fonts/GothamSSm-Medium.otf</item>
+    </style>
+
+    <style name="greyCalendar" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">#909090</item>
+        <item name="textSize">14dp</item>
+        <item name="fontFamily">fonts/GothamSSm-Medium.otf</item>
+    </style>
+</resources>

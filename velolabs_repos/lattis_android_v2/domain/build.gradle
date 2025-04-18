@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.releaseVersionCode
+        versionName Versions.releaseVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // kotlin
+    implementation ProjectDependencies.kotlin
+
+
+    // Rx Kotlin
+    implementation ProjectDependencies.rxKotlin
+    implementation ProjectDependencies.rxandroid
+
+
+    implementation ProjectDependencies.javaxAnnotation
+    implementation ProjectDependencies.javaxInject
+
+
+    //parceler
+    implementation ProjectDependencies.parceler
+    kapt ProjectDependencies.parcelerCompiler
+
+    // google play services
+    implementation (ProjectDependencies.googleLibPlaces){
+        exclude group: "com.github.bumptech.glide"
+    }
+
+
+
+    // test
+    testImplementation ProjectTestDependencies.junit
+    testImplementation ProjectTestDependencies.kotlinJUnit
+    testImplementation ProjectTestDependencies.mockitoKotlin
+    testImplementation ProjectTestDependencies.assertJ
+
+
+}
+
+
+

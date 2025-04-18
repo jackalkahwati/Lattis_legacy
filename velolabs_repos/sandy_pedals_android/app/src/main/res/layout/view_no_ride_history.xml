@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_no_trips"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:id="@+id/tv_no_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:text="@string/no_trip_history_yet"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color"
+        android:textStyle="bold" />
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_no_trip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="@string/no_trip_history_description"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color"
+        android:textStyle="bold"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    <io.bikes.sandypedals.presentation.view.CustomButton
+        android:id="@+id/button_send_code"
+        style="@style/blueButtonStyle.rect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:text="@string/label_find_a_bike"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+</RelativeLayout>

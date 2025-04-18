@@ -1,0 +1,14 @@
+//
+//  Local.xcconfig
+//  Operator
+//
+//  Created by Ravil Khusainov on 09.12.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ROOT_URL = http:/$()/vincent.local:8000
+
+APP_NAME = Operator Local
+APP_BUNDLE_ID = io.lattis.operator.local

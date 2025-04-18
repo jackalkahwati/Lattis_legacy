@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 8. Country?
+	input(type='text', class='field', name='country', ng-model='inputValues.country', placeholder='Input country', value='{{inputValues.country}}')
+	p(class='invalidField') {{invalidText}}	
+	a(ng-click='nextButtonClicked()')
+		button Next

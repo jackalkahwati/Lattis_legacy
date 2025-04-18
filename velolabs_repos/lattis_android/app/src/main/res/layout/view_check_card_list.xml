@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_check_card_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_semi_transparent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/title"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"></RelativeLayout>
+
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/add_credit_card"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_toolbar_bg"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/add_card_description"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_toolbar_bg"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/white"></RelativeLayout>
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/tv_add_card"
+        style="@style/BlueButtonStyle.Inversed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/add_card"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/cancel"
+        style="@style/BlueButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_add_card"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/cancel"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+</RelativeLayout>

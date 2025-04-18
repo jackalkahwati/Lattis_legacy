@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "git@github.com:velolabs/keychain-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "7ccfba13ca6637f25feb6a4eb7076568523c0b69",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

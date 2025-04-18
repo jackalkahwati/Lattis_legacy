@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F106F91027799F8F00B7B8BC /* LeMondApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F90F27799F8F00B7B8BC /* LeMondApp.swift */; };
+		F106F91427799F9000B7B8BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F106F91327799F9000B7B8BC /* Assets.xcassets */; };
+		F106F91727799F9000B7B8BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F106F91627799F9000B7B8BC /* Preview Assets.xcassets */; };
+		F106F92127799F9100B7B8BC /* LeMondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F92027799F9100B7B8BC /* LeMondTests.swift */; };
+		F106F92B27799F9100B7B8BC /* LeMondUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F92A27799F9100B7B8BC /* LeMondUITests.swift */; };
+		F106F92D27799F9100B7B8BC /* LeMondUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F92C27799F9100B7B8BC /* LeMondUITestsLaunchTests.swift */; };
+		F106F93D2779A07300B7B8BC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F93C2779A07300B7B8BC /* HomeView.swift */; };
+		F106F93F2779B44600B7B8BC /* TabViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F93E2779B44600B7B8BC /* TabViewNavigation.swift */; };
+		F106F9412779BDDC00B7B8BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F9402779BDDC00B7B8BC /* SettingsView.swift */; };
+		F106F9432779C0C700B7B8BC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F9422779C0C700B7B8BC /* MapView.swift */; };
+		F106F9452779C0D900B7B8BC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106F9442779C0D900B7B8BC /* ProfileView.swift */; };
+		F1DAC1722780449400A434F3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1712780449400A434F3 /* Color.swift */; };
+		F1DAC174278044C000A434F3 /* ModeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC173278044C000A434F3 /* ModeControlView.swift */; };
+		F1DAC1762780452800A434F3 /* BatteryVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1752780452800A434F3 /* BatteryVew.swift */; };
+		F1DAC1782780455000A434F3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1772780455000A434F3 /* HomeViewModel.swift */; };
+		F1DAC17A278045BB00A434F3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC179278045BB00A434F3 /* AppSettings.swift */; };
+		F1DAC17C27804AF300A434F3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC17B27804AF300A434F3 /* MapViewModel.swift */; };
+		F1DAC1B42783A99500A434F3 /* AddBikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1B32783A99500A434F3 /* AddBikeView.swift */; };
+		F1DAC1B62783A9AC00A434F3 /* AddBikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1B52783A9AC00A434F3 /* AddBikeViewModel.swift */; };
+		F1DAC1B82783AE4A00A434F3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1B72783AE4A00A434F3 /* SettingsViewModel.swift */; };
+		F1DAC1BB27846B1A00A434F3 /* QRCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = F1DAC1BA27846B1A00A434F3 /* QRCodeView */; };
+		F1DAC1BD27846B4700A434F3 /* QRCodeViewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1BC27846B4700A434F3 /* QRCodeViewFinder.swift */; };
+		F1DAC1BF2784A1CB00A434F3 /* NewPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1BE2784A1CB00A434F3 /* NewPersonView.swift */; };
+		F1DAC1C12784A1E100A434F3 /* NewPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DAC1C02784A1E100A434F3 /* NewPersonViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F106F91D27799F9100B7B8BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F106F90427799F8F00B7B8BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F106F90B27799F8F00B7B8BC;
+			remoteInfo = LeMond;
+		};
+		F106F92727799F9100B7B8BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F106F90427799F8F00B7B8BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F106F90B27799F8F00B7B8BC;
+			remoteInfo = LeMond;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F106F90C27799F8F00B7B8BC /* LeMond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeMond.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F106F90F27799F8F00B7B8BC /* LeMondApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeMondApp.swift; sourceTree = "<group>"; };
+		F106F91327799F9000B7B8BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F106F91627799F9000B7B8BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F106F91C27799F9100B7B8BC /* LeMondTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeMondTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F106F92027799F9100B7B8BC /* LeMondTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeMondTests.swift; sourceTree = "<group>"; };
+		F106F92627799F9100B7B8BC /* LeMondUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeMondUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F106F92A27799F9100B7B8BC /* LeMondUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeMondUITests.swift; sourceTree = "<group>"; };
+		F106F92C27799F9100B7B8BC /* LeMondUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeMondUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F106F93C2779A07300B7B8BC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F106F93E2779B44600B7B8BC /* TabViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewNavigation.swift; sourceTree = "<group>"; };
+		F106F9402779BDDC00B7B8BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F106F9422779C0C700B7B8BC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F106F9442779C0D900B7B8BC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F1DAC16F277E4A3900A434F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F1DAC1712780449400A434F3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F1DAC173278044C000A434F3 /* ModeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeControlView.swift; sourceTree = "<group>"; };
+		F1DAC1752780452800A434F3 /* BatteryVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryVew.swift; sourceTree = "<group>"; };
+		F1DAC1772780455000A434F3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F1DAC179278045BB00A434F3 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		F1DAC17B27804AF300A434F3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		F1DAC1B32783A99500A434F3 /* AddBikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBikeView.swift; sourceTree = "<group>"; };
+		F1DAC1B52783A9AC00A434F3 /* AddBikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBikeViewModel.swift; sourceTree = "<group>"; };
+		F1DAC1B72783AE4A00A434F3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F1DAC1BC27846B4700A434F3 /* QRCodeViewFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewFinder.swift; sourceTree = "<group>"; };
+		F1DAC1BE2784A1CB00A434F3 /* NewPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonView.swift; sourceTree = "<group>"; };
+		F1DAC1C02784A1E100A434F3 /* NewPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPersonViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F106F90927799F8F00B7B8BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1DAC1BB27846B1A00A434F3 /* QRCodeView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F91927799F9100B7B8BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F92327799F9100B7B8BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F106F90327799F8F00B7B8BC = {
+			isa = PBXGroup;
+			children = (
+				F106F90E27799F8F00B7B8BC /* LeMond */,
+				F106F91F27799F9100B7B8BC /* LeMondTests */,
+				F106F92927799F9100B7B8BC /* LeMondUITests */,
+				F106F90D27799F8F00B7B8BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F106F90D27799F8F00B7B8BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F106F90C27799F8F00B7B8BC /* LeMond.app */,
+				F106F91C27799F9100B7B8BC /* LeMondTests.xctest */,
+				F106F92627799F9100B7B8BC /* LeMondUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F106F90E27799F8F00B7B8BC /* LeMond */ = {
+			isa = PBXGroup;
+			children = (
+				F1DAC1702780448200A434F3 /* Extensions */,
+				F106F9392779A00A00B7B8BC /* Home */,
+				F106F93E2779B44600B7B8BC /* TabViewNavigation.swift */,
+				F106F9402779BDDC00B7B8BC /* SettingsView.swift */,
+				F1DAC1B72783AE4A00A434F3 /* SettingsViewModel.swift */,
+				F1DAC1BE2784A1CB00A434F3 /* NewPersonView.swift */,
+				F1DAC1C02784A1E100A434F3 /* NewPersonViewModel.swift */,
+				F106F9422779C0C700B7B8BC /* MapView.swift */,
+				F1DAC17B27804AF300A434F3 /* MapViewModel.swift */,
+				F106F9442779C0D900B7B8BC /* ProfileView.swift */,
+				F1DAC1B32783A99500A434F3 /* AddBikeView.swift */,
+				F1DAC1B52783A9AC00A434F3 /* AddBikeViewModel.swift */,
+				F1DAC1BC27846B4700A434F3 /* QRCodeViewFinder.swift */,
+				F1DAC179278045BB00A434F3 /* AppSettings.swift */,
+				F106F90F27799F8F00B7B8BC /* LeMondApp.swift */,
+				F106F91327799F9000B7B8BC /* Assets.xcassets */,
+				F1DAC16F277E4A3900A434F3 /* Info.plist */,
+				F106F91527799F9000B7B8BC /* Preview Content */,
+			);
+			path = LeMond;
+			sourceTree = "<group>";
+		};
+		F106F91527799F9000B7B8BC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F106F91627799F9000B7B8BC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F106F91F27799F9100B7B8BC /* LeMondTests */ = {
+			isa = PBXGroup;
+			children = (
+				F106F92027799F9100B7B8BC /* LeMondTests.swift */,
+			);
+			path = LeMondTests;
+			sourceTree = "<group>";
+		};
+		F106F92927799F9100B7B8BC /* LeMondUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F106F92A27799F9100B7B8BC /* LeMondUITests.swift */,
+				F106F92C27799F9100B7B8BC /* LeMondUITestsLaunchTests.swift */,
+			);
+			path = LeMondUITests;
+			sourceTree = "<group>";
+		};
+		F106F9392779A00A00B7B8BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F106F93C2779A07300B7B8BC /* HomeView.swift */,
+				F1DAC1772780455000A434F3 /* HomeViewModel.swift */,
+				F1DAC173278044C000A434F3 /* ModeControlView.swift */,
+				F1DAC1752780452800A434F3 /* BatteryVew.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F1DAC1702780448200A434F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1DAC1712780449400A434F3 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F106F90B27799F8F00B7B8BC /* LeMond */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F106F93027799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMond" */;
+			buildPhases = (
+				F106F90827799F8F00B7B8BC /* Sources */,
+				F106F90927799F8F00B7B8BC /* Frameworks */,
+				F106F90A27799F8F00B7B8BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeMond;
+			packageProductDependencies = (
+				F1DAC1BA27846B1A00A434F3 /* QRCodeView */,
+			);
+			productName = LeMond;
+			productReference = F106F90C27799F8F00B7B8BC /* LeMond.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F106F91B27799F9100B7B8BC /* LeMondTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F106F93327799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMondTests" */;
+			buildPhases = (
+				F106F91827799F9100B7B8BC /* Sources */,
+				F106F91927799F9100B7B8BC /* Frameworks */,
+				F106F91A27799F9100B7B8BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F106F91E27799F9100B7B8BC /* PBXTargetDependency */,
+			);
+			name = LeMondTests;
+			productName = LeMondTests;
+			productReference = F106F91C27799F9100B7B8BC /* LeMondTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F106F92527799F9100B7B8BC /* LeMondUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F106F93627799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMondUITests" */;
+			buildPhases = (
+				F106F92227799F9100B7B8BC /* Sources */,
+				F106F92327799F9100B7B8BC /* Frameworks */,
+				F106F92427799F9100B7B8BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F106F92827799F9100B7B8BC /* PBXTargetDependency */,
+			);
+			name = LeMondUITests;
+			productName = LeMondUITests;
+			productReference = F106F92627799F9100B7B8BC /* LeMondUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F106F90427799F8F00B7B8BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					F106F90B27799F8F00B7B8BC = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					F106F91B27799F9100B7B8BC = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = F106F90B27799F8F00B7B8BC;
+					};
+					F106F92527799F9100B7B8BC = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = F106F90B27799F8F00B7B8BC;
+					};
+				};
+			};
+			buildConfigurationList = F106F90727799F8F00B7B8BC /* Build configuration list for PBXProject "LeMond" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F106F90327799F8F00B7B8BC;
+			packageReferences = (
+				F1DAC1B927846B1A00A434F3 /* XCRemoteSwiftPackageReference "QRCodeView" */,
+			);
+			productRefGroup = F106F90D27799F8F00B7B8BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F106F90B27799F8F00B7B8BC /* LeMond */,
+				F106F91B27799F9100B7B8BC /* LeMondTests */,
+				F106F92527799F9100B7B8BC /* LeMondUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F106F90A27799F8F00B7B8BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F106F91727799F9000B7B8BC /* Preview Assets.xcassets in Resources */,
+				F106F91427799F9000B7B8BC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F91A27799F9100B7B8BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F92427799F9100B7B8BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F106F90827799F8F00B7B8BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F106F9412779BDDC00B7B8BC /* SettingsView.swift in Sources */,
+				F1DAC174278044C000A434F3 /* ModeControlView.swift in Sources */,
+				F1DAC1BD27846B4700A434F3 /* QRCodeViewFinder.swift in Sources */,
+				F1DAC1762780452800A434F3 /* BatteryVew.swift in Sources */,
+				F1DAC1782780455000A434F3 /* HomeViewModel.swift in Sources */,
+				F106F93F2779B44600B7B8BC /* TabViewNavigation.swift in Sources */,
+				F1DAC1B82783AE4A00A434F3 /* SettingsViewModel.swift in Sources */,
+				F1DAC1722780449400A434F3 /* Color.swift in Sources */,
+				F106F9432779C0C700B7B8BC /* MapView.swift in Sources */,
+				F1DAC17A278045BB00A434F3 /* AppSettings.swift in Sources */,
+				F1DAC1C12784A1E100A434F3 /* NewPersonViewModel.swift in Sources */,
+				F106F93D2779A07300B7B8BC /* HomeView.swift in Sources */,
+				F106F9452779C0D900B7B8BC /* ProfileView.swift in Sources */,
+				F106F91027799F8F00B7B8BC /* LeMondApp.swift in Sources */,
+				F1DAC1B42783A99500A434F3 /* AddBikeView.swift in Sources */,
+				F1DAC17C27804AF300A434F3 /* MapViewModel.swift in Sources */,
+				F1DAC1B62783A9AC00A434F3 /* AddBikeViewModel.swift in Sources */,
+				F1DAC1BF2784A1CB00A434F3 /* NewPersonView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F91827799F9100B7B8BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F106F92127799F9100B7B8BC /* LeMondTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F106F92227799F9100B7B8BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F106F92B27799F9100B7B8BC /* LeMondUITests.swift in Sources */,
+				F106F92D27799F9100B7B8BC /* LeMondUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F106F91E27799F9100B7B8BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F106F90B27799F8F00B7B8BC /* LeMond */;
+			targetProxy = F106F91D27799F9100B7B8BC /* PBXContainerItemProxy */;
+		};
+		F106F92827799F9100B7B8BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F106F90B27799F8F00B7B8BC /* LeMond */;
+			targetProxy = F106F92727799F9100B7B8BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F106F92E27799F9100B7B8BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F106F92F27799F9100B7B8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F106F93127799F9100B7B8BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_ASSET_PATHS = "\"LeMond/Preview Content\"";
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LeMond/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan the QR-code";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.lemond;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F106F93227799F9100B7B8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_ASSET_PATHS = "\"LeMond/Preview Content\"";
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LeMond/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to scan the QR-code";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.lemond;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F106F93427799F9100B7B8BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemond.LeMondTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeMond.app/LeMond";
+			};
+			name = Debug;
+		};
+		F106F93527799F9100B7B8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemond.LeMondTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeMond.app/LeMond";
+			};
+			name = Release;
+		};
+		F106F93727799F9100B7B8BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemond.LeMondUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LeMond;
+			};
+			name = Debug;
+		};
+		F106F93827799F9100B7B8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemond.LeMondUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LeMond;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F106F90727799F8F00B7B8BC /* Build configuration list for PBXProject "LeMond" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F106F92E27799F9100B7B8BC /* Debug */,
+				F106F92F27799F9100B7B8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F106F93027799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMond" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F106F93127799F9100B7B8BC /* Debug */,
+				F106F93227799F9100B7B8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F106F93327799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMondTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F106F93427799F9100B7B8BC /* Debug */,
+				F106F93527799F9100B7B8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F106F93627799F9100B7B8BC /* Build configuration list for PBXNativeTarget "LeMondUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F106F93727799F9100B7B8BC /* Debug */,
+				F106F93827799F9100B7B8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1DAC1B927846B1A00A434F3 /* XCRemoteSwiftPackageReference "QRCodeView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:rawillk/QRCodeView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1DAC1BA27846B1A00A434F3 /* QRCodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1DAC1B927846B1A00A434F3 /* XCRemoteSwiftPackageReference "QRCodeView" */;
+			productName = QRCodeView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F106F90427799F8F00B7B8BC /* Project object */;
+}

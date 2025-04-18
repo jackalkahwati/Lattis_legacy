@@ -1,0 +1,33 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar ">
+        <h4 class="modal-title text-white">Use previously uploaded photo</h4>
+    </div>
+    <div class="modal-body p-30">
+        <div class="row ">
+            <div class="col-sm-6 m-b-20" ng-repeat="photo in bikePhotoList track by $index">
+                <div class="row ">
+                    <div class="col-sm-2">
+                        <div class="radio-aligncenter">
+                            <input type="radio" name="bikeradio{{$index}}" id="bikeradio{{$index}}"
+                                   value="{{photo.image}}" ng-model="dataInfo.selectedphoto"/>
+                            <label for="bikeradio{{$index}}"></label></div>
+                    </div>
+                    <div class="col-sm-10">
+                        <label class="fw-300">Created {{photo.date}}</label>
+                        <div class="">
+                            <img ng-src="{{photo.image}}" class="fullwid p-20 bor-hash">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="text-left fullwid m-b-30">
+                <button class="btn custom-btn bg-HeaderToolbar" ng-click="closeModal()">CANCEL</button>
+                <button class="btn pull-right custom-btn text-uppercase" ng-click="selectPhoto()">USE THIS
+                    PHOTO
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

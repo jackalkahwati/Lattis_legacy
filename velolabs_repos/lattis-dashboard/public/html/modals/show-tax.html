@@ -1,0 +1,32 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar ">
+        <h4 class="modal-title text-white">Show Taxes</h4>
+    </div>
+    <div class="modal-body cl_grey" style="padding: 20px 30px 5px 30px !important">
+        <div class="row" style="padding: 30px 10px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <table class="fullwid" ng-if="ngDialogData.taxTotal!==0">
+                    <tr class="bor-b-hash bg-alert h-33 text-hash">
+                        <th class="ft-14 fw-300 text-center">Tax Name</th>
+                        <th class="ft-14 fw-300 text-center">Tax Percent</th>
+                        <th class="ft-14 fw-300 text-center">Tax Amount</th>
+                        <th class="ft-14 fw-300 text-center">Tax Status</th>
+                    </tr>
+                    <tr class="bor-b-hash h-33 table-text text-center" ng-repeat="taxes in ngDialogData.taxes">
+                        <td>{{taxes.tax_name}}</td>
+                        <td>{{taxes.tax_percent}}%</td>
+                        <td>${{taxes.amount.toFixed(2)}}</td>
+                        <td>{{taxes.status}}</td>
+                    </tr>
+                    <tr class="bor-b-hash h-33 table-text text-center">
+                        <th colspan="1" class=""></th>
+                        <th class="text-center">Tax Total : </th>
+                        <th  class="text-center">${{ngDialogData.taxTotal}}</th>
+                    </tr>
+                </table>
+                <p ng-if="ngDialogData.taxTotal === 0">No Tax Rates Displayed</p>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,825 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"EllipseLock::EllipseLockPackageTests::ProductTarget" /* EllipseLockPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_31 /* Build configuration list for PBXAggregateTarget "EllipseLockPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_34 /* PBXTargetDependency */,
+			);
+			name = EllipseLockPackageTests;
+			productName = EllipseLockPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		F1CB8B36240C151E00D2098D /* FakeEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8B35240C151E00D2098D /* FakeEllipse.swift */; };
+		F1CB8B38240D140300D2098D /* Accelerometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8B37240D140300D2098D /* Accelerometer.swift */; };
+		F1CB8B3A240D299A00D2098D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8B39240D299A00D2098D /* Extensions.swift */; };
+		F1FB7D7D240905E1001BB9B2 /* EllipseBLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D7C240905E1001BB9B2 /* EllipseBLE.swift */; };
+		F1FB7D7F24090604001BB9B2 /* EllipseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D7E24090604001BB9B2 /* EllipseManager.swift */; };
+		F1FB7D8424090C6C001BB9B2 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D8024090C6B001BB9B2 /* Metadata.swift */; };
+		F1FB7D8724090C6C001BB9B2 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D8324090C6C001BB9B2 /* Values.swift */; };
+		F1FB7D8924090E69001BB9B2 /* EllipseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D8824090E69001BB9B2 /* EllipseHandler.swift */; };
+		F1FB7D8B24090E73001BB9B2 /* EllipseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D8A24090E73001BB9B2 /* EllipseProtocol.swift */; };
+		F1FB7D8D24093573001BB9B2 /* EllipseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D8C24093573001BB9B2 /* EllipseError.swift */; };
+		F1FB7D95240BD20D001BB9B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D94240BD20D001BB9B2 /* AppDelegate.swift */; };
+		F1FB7D97240BD20D001BB9B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D96240BD20D001BB9B2 /* SceneDelegate.swift */; };
+		F1FB7D99240BD20D001BB9B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7D98240BD20D001BB9B2 /* ContentView.swift */; };
+		F1FB7D9B240BD210001BB9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FB7D9A240BD210001BB9B2 /* Assets.xcassets */; };
+		F1FB7D9E240BD210001BB9B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FB7D9D240BD210001BB9B2 /* Preview Assets.xcassets */; };
+		F1FB7DA1240BD210001BB9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FB7D9F240BD210001BB9B2 /* LaunchScreen.storyboard */; };
+		F1FB7DA7240BD23F001BB9B2 /* EllipseLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "EllipseLock::EllipseLock::Product" /* EllipseLock.framework */; };
+		F1FB7DA8240BD23F001BB9B2 /* EllipseLock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "EllipseLock::EllipseLock::Product" /* EllipseLock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1FB7DAD240C0184001BB9B2 /* LockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB7DAC240C0184001BB9B2 /* LockDetailView.swift */; };
+		OBJ_22 /* EllipseLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* EllipseLock.swift */; };
+		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_40 /* EllipseLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* EllipseLockTests.swift */; };
+		OBJ_41 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
+		OBJ_43 /* EllipseLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "EllipseLock::EllipseLock::Product" /* EllipseLock.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1885B1323E7D33D00BD4A95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EllipseLock::EllipseLock";
+			remoteInfo = EllipseLock;
+		};
+		F1885B1723E7D35B00BD4A95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EllipseLock::EllipseLockTests";
+			remoteInfo = EllipseLockTests;
+		};
+		F1FB7DA9240BD23F001BB9B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EllipseLock::EllipseLock";
+			remoteInfo = EllipseLock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1FB7DAB240BD240001BB9B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F1FB7DA8240BD23F001BB9B2 /* EllipseLock.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		"EllipseLock::EllipseLock::Product" /* EllipseLock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EllipseLock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"EllipseLock::EllipseLockTests::Product" /* EllipseLockTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = EllipseLockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1CB8B35240C151E00D2098D /* FakeEllipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEllipse.swift; sourceTree = "<group>"; };
+		F1CB8B37240D140300D2098D /* Accelerometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accelerometer.swift; sourceTree = "<group>"; };
+		F1CB8B39240D299A00D2098D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F1FB7D7C240905E1001BB9B2 /* EllipseBLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseBLE.swift; sourceTree = "<group>"; };
+		F1FB7D7E24090604001BB9B2 /* EllipseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseManager.swift; sourceTree = "<group>"; };
+		F1FB7D8024090C6B001BB9B2 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		F1FB7D8324090C6C001BB9B2 /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		F1FB7D8824090E69001BB9B2 /* EllipseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseHandler.swift; sourceTree = "<group>"; };
+		F1FB7D8A24090E73001BB9B2 /* EllipseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseProtocol.swift; sourceTree = "<group>"; };
+		F1FB7D8C24093573001BB9B2 /* EllipseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseError.swift; sourceTree = "<group>"; };
+		F1FB7D92240BD20D001BB9B2 /* EllipseLockUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EllipseLockUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1FB7D94240BD20D001BB9B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1FB7D96240BD20D001BB9B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F1FB7D98240BD20D001BB9B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F1FB7D9A240BD210001BB9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1FB7D9D240BD210001BB9B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1FB7DA0240BD210001BB9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1FB7DA2240BD210001BB9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1FB7DAC240C0184001BB9B2 /* LockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockDetailView.swift; sourceTree = "<group>"; };
+		OBJ_12 /* EllipseLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseLockTests.swift; sourceTree = "<group>"; };
+		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* EllipseLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseLock.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1FB7D8F240BD20D001BB9B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FB7DA7240BD23F001BB9B2 /* EllipseLock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_43 /* EllipseLock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1E0FA2023F916A60054E9E1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F1FB7D8A24090E73001BB9B2 /* EllipseProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F1FB7D93240BD20D001BB9B2 /* EllipseLockUI */ = {
+			isa = PBXGroup;
+			children = (
+				F1FB7D94240BD20D001BB9B2 /* AppDelegate.swift */,
+				F1FB7D96240BD20D001BB9B2 /* SceneDelegate.swift */,
+				F1FB7D98240BD20D001BB9B2 /* ContentView.swift */,
+				F1FB7DAC240C0184001BB9B2 /* LockDetailView.swift */,
+				F1FB7D9A240BD210001BB9B2 /* Assets.xcassets */,
+				F1FB7D9F240BD210001BB9B2 /* LaunchScreen.storyboard */,
+				F1FB7DA2240BD210001BB9B2 /* Info.plist */,
+				F1FB7D9C240BD210001BB9B2 /* Preview Content */,
+				F1CB8B35240C151E00D2098D /* FakeEllipse.swift */,
+			);
+			path = EllipseLockUI;
+			sourceTree = "<group>";
+		};
+		F1FB7D9C240BD210001BB9B2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F1FB7D9D240BD210001BB9B2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1FB7DA6240BD23F001BB9B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* EllipseLockTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* EllipseLockTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* EllipseLockTests.swift */,
+				OBJ_13 /* XCTestManifests.swift */,
+			);
+			name = EllipseLockTests;
+			path = Tests/EllipseLockTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"EllipseLock::EllipseLock::Product" /* EllipseLock.framework */,
+				"EllipseLock::EllipseLockTests::Product" /* EllipseLockTests.xctest */,
+				F1FB7D92240BD20D001BB9B2 /* EllipseLockUI.app */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				F1FB7D93240BD20D001BB9B2 /* EllipseLockUI */,
+				OBJ_14 /* Products */,
+				F1FB7DA6240BD23F001BB9B2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F1E0FA2023F916A60054E9E1 /* Protocols */,
+				OBJ_8 /* EllipseLock */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* EllipseLock */ = {
+			isa = PBXGroup;
+			children = (
+				F1FB7D8024090C6B001BB9B2 /* Metadata.swift */,
+				F1FB7D8324090C6C001BB9B2 /* Values.swift */,
+				OBJ_9 /* EllipseLock.swift */,
+				F1FB7D7C240905E1001BB9B2 /* EllipseBLE.swift */,
+				F1FB7D7E24090604001BB9B2 /* EllipseManager.swift */,
+				F1FB7D8824090E69001BB9B2 /* EllipseHandler.swift */,
+				F1FB7D8C24093573001BB9B2 /* EllipseError.swift */,
+				F1CB8B37240D140300D2098D /* Accelerometer.swift */,
+				F1CB8B39240D299A00D2098D /* Extensions.swift */,
+			);
+			name = EllipseLock;
+			path = Sources/EllipseLock;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"EllipseLock::EllipseLock" /* EllipseLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_18 /* Build configuration list for PBXNativeTarget "EllipseLock" */;
+			buildPhases = (
+				OBJ_21 /* Sources */,
+				OBJ_23 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EllipseLock;
+			packageProductDependencies = (
+			);
+			productName = EllipseLock;
+			productReference = "EllipseLock::EllipseLock::Product" /* EllipseLock.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"EllipseLock::EllipseLockTests" /* EllipseLockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "EllipseLockTests" */;
+			buildPhases = (
+				OBJ_39 /* Sources */,
+				OBJ_42 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_44 /* PBXTargetDependency */,
+			);
+			name = EllipseLockTests;
+			productName = EllipseLockTests;
+			productReference = "EllipseLock::EllipseLockTests::Product" /* EllipseLockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"EllipseLock::SwiftPMPackageDescription" /* EllipseLockPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "EllipseLockPackageDescription" */;
+			buildPhases = (
+				OBJ_28 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EllipseLockPackageDescription;
+			productName = EllipseLockPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		F1FB7D91240BD20D001BB9B2 /* EllipseLockUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1FB7DA5240BD210001BB9B2 /* Build configuration list for PBXNativeTarget "EllipseLockUI" */;
+			buildPhases = (
+				F1FB7D8E240BD20D001BB9B2 /* Sources */,
+				F1FB7D8F240BD20D001BB9B2 /* Frameworks */,
+				F1FB7D90240BD20D001BB9B2 /* Resources */,
+				F1FB7DAB240BD240001BB9B2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1FB7DAA240BD23F001BB9B2 /* PBXTargetDependency */,
+			);
+			name = EllipseLockUI;
+			productName = EllipseLockUI;
+			productReference = F1FB7D92240BD20D001BB9B2 /* EllipseLockUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					F1FB7D91240BD20D001BB9B2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = 4WD59CZ9Z6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "EllipseLock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = OBJ_5;
+			packageReferences = (
+			);
+			productRefGroup = OBJ_14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"EllipseLock::EllipseLock" /* EllipseLock */,
+				"EllipseLock::SwiftPMPackageDescription" /* EllipseLockPackageDescription */,
+				"EllipseLock::EllipseLockPackageTests::ProductTarget" /* EllipseLockPackageTests */,
+				"EllipseLock::EllipseLockTests" /* EllipseLockTests */,
+				F1FB7D91240BD20D001BB9B2 /* EllipseLockUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1FB7D90240BD20D001BB9B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FB7DA1240BD210001BB9B2 /* LaunchScreen.storyboard in Resources */,
+				F1FB7D9E240BD210001BB9B2 /* Preview Assets.xcassets in Resources */,
+				F1FB7D9B240BD210001BB9B2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1FB7D8E240BD20D001BB9B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FB7D95240BD20D001BB9B2 /* AppDelegate.swift in Sources */,
+				F1FB7D97240BD20D001BB9B2 /* SceneDelegate.swift in Sources */,
+				F1FB7DAD240C0184001BB9B2 /* LockDetailView.swift in Sources */,
+				F1CB8B36240C151E00D2098D /* FakeEllipse.swift in Sources */,
+				F1FB7D99240BD20D001BB9B2 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				F1CB8B38240D140300D2098D /* Accelerometer.swift in Sources */,
+				F1FB7D8724090C6C001BB9B2 /* Values.swift in Sources */,
+				F1FB7D7D240905E1001BB9B2 /* EllipseBLE.swift in Sources */,
+				F1FB7D7F24090604001BB9B2 /* EllipseManager.swift in Sources */,
+				F1FB7D8924090E69001BB9B2 /* EllipseHandler.swift in Sources */,
+				F1CB8B3A240D299A00D2098D /* Extensions.swift in Sources */,
+				F1FB7D8424090C6C001BB9B2 /* Metadata.swift in Sources */,
+				F1FB7D8D24093573001BB9B2 /* EllipseError.swift in Sources */,
+				F1FB7D8B24090E73001BB9B2 /* EllipseProtocol.swift in Sources */,
+				OBJ_22 /* EllipseLock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_29 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_40 /* EllipseLockTests.swift in Sources */,
+				OBJ_41 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1FB7DAA240BD23F001BB9B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "EllipseLock::EllipseLock" /* EllipseLock */;
+			targetProxy = F1FB7DA9240BD23F001BB9B2 /* PBXContainerItemProxy */;
+		};
+		OBJ_34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "EllipseLock::EllipseLockTests" /* EllipseLockTests */;
+			targetProxy = F1885B1723E7D35B00BD4A95 /* PBXContainerItemProxy */;
+		};
+		OBJ_44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "EllipseLock::EllipseLock" /* EllipseLock */;
+			targetProxy = F1885B1323E7D33D00BD4A95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F1FB7D9F240BD210001BB9B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1FB7DA0240BD210001BB9B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1FB7DA3240BD210001BB9B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"EllipseLockUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = EllipseLockUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.EllipseLockUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1FB7DA4240BD210001BB9B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"EllipseLockUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = EllipseLockUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.EllipseLockUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		OBJ_19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EllipseLock.xcodeproj/EllipseLock_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = EllipseLock;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EllipseLock;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EllipseLock.xcodeproj/EllipseLock_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = EllipseLock;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EllipseLock;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.1";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.1";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EllipseLock.xcodeproj/EllipseLockTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EllipseLockTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = EllipseLock.xcodeproj/EllipseLockTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = EllipseLockTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1FB7DA5240BD210001BB9B2 /* Build configuration list for PBXNativeTarget "EllipseLockUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1FB7DA3240BD210001BB9B2 /* Debug */,
+				F1FB7DA4240BD210001BB9B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_18 /* Build configuration list for PBXNativeTarget "EllipseLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_19 /* Debug */,
+				OBJ_20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "EllipseLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_25 /* Build configuration list for PBXNativeTarget "EllipseLockPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_26 /* Debug */,
+				OBJ_27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_31 /* Build configuration list for PBXAggregateTarget "EllipseLockPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_32 /* Debug */,
+				OBJ_33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_36 /* Build configuration list for PBXNativeTarget "EllipseLockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_37 /* Debug */,
+				OBJ_38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

@@ -1,0 +1,141 @@
+fastlane_version "2.10.0"
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "wpch-foxo-ocmd-lxol"
+
+default_platform :ios
+
+platform :ios do
+    
+  bage_added = false
+  build_version = get_version_number(target: "Lattis")
+  build_number = get_build_number
+    
+  lane :fabric do |values|
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: values[:app_identifier]
+    )
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: values[:app_identifier]+".Today"
+    )
+    unless bage_added
+        add_badge(shield: "#{build_version}-#{build_number}-orange")
+        bage_added = true
+    end
+    gym(
+      scheme: values[:scheme],
+      export_method: 'ad-hoc'
+    )
+
+    emails = values[:test_email] ? values[:test_email] : 'ravil@lattis.io' # You can list more emails here
+    groups = values[:test_email] ? nil : 'lattis-internal' # You can define groups on the web and reference them here
+    changelog = changelog_from_git_commits
+    
+    firebase_app_distribution(
+        app: values[:app_id],
+        testers: emails,
+        groups: groups,
+        release_notes: changelog
+    )
+
+    name = values[:scheme]
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "#{name} successfully uploaded to the Crashlitics",
+      default_payloads: [:git_author],
+      attachment_properties: {
+        fields: [
+          {
+            title: "Version",
+            value: "#{build_version} (#{build_number})"
+          },
+          {
+            title: "Link",
+            value: values[:link]
+          },
+          {
+            title: "Changelog",
+            value: changelog
+          }
+        ]
+      }
+    )
+    sh("./../Pods/FirebaseCrashlytics/upload-symbols", "-gsp", values[:gsp], "-p", "ios", "../Lattis.app.dSYM.zip")
+    clean_build_artifacts
+    sh("git", "reset", "--hard", "HEAD")
+  end
+
+  desc "Publish Dev build"
+  lane :dev do |values|
+    values[:app_identifier] = "io.lattis.www.Lattis.Dev"
+    values[:scheme] = "Lattis Dev"
+    values[:app_id] = "1:907340690079:ios:87d2c4e38a8c4e7d"
+    values[:link] = 'https://appdistribution.firebase.dev/i/LaY2p6Yv'
+    values[:gsp] = '../Lattis/GoogleService-Info_Dev.plist'
+    fabric values
+  end
+
+  desc "Publish Beta build"
+  lane :beta do |values|
+    values[:app_identifier] = "io.lattis.www.Lattis.Beta"
+    values[:scheme] = "Lattis Beta"
+    values[:app_id] = "1:907340690079:ios:b187e082f23f5a8e"
+    values[:link] = 'https://appdistribution.firebase.dev/i/7GugutoC'
+    values[:gsp] = '../Lattis/GoogleService-Info_Beta.plist'
+    fabric values
+  end
+
+  lane :prod do
+    cert
+    sigh(
+      force: true,
+      app_identifier: "io.lattis.www.Lattis"
+    )
+    sigh(
+      force: true,
+      app_identifier: "io.lattis.www.Lattis.Today"
+    )
+    gym(
+      scheme: "Lattis",
+      configuration: "Release",
+      export_method: 'app-store'
+    )
+    pilot(skip_submission: true, skip_waiting_for_build_processing: true)
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "Lattis successfully uploaded to the TestFlight",
+      default_payloads: [:git_author],
+      attachment_properties: {
+        fields: [
+          {
+            title: "Version",
+            value: "#{build_version} (#{build_number})"
+          }
+        ]
+      }
+    )
+    sh("./../Pods/FirebaseCrashlytics/upload-symbols", "-gsp", '../Lattis/GoogleService-Info.plist', "-p", "ios", "../Lattis.app.dSYM.zip")
+    clean_build_artifacts
+  end
+
+  desc "Publish Dev, Beta and TestFlight (if prod is true)"
+  lane :deploy do |values|
+    dev
+    beta
+    if values[:prod] === true
+      prod
+    end
+  end
+
+  desc "Create and push a new tag according to version number"
+  lane :release do
+    add_git_tag(
+      tag: "v#{build_version}"
+    )
+    push_git_tags
+  end
+end

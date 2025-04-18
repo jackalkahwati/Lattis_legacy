@@ -1,0 +1,75 @@
+<section ng-controller="memberListController" ng-model="userData" ng-init="fetchFleetData()" class="animated fadeIn">
+    <div class="panel">
+        <div class="panel-heading bg-white p-tb20-lr40">
+            <div class="sub-header">
+                <span class="ft-20 text-muted v-b">User database</span>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <div class="row nomarg bg-state1 rider-searchbar p-lr-15">
+                <div class="col-sm-3 col-xs-2">
+                    <h6 class="">SEARCH FOR A USER</h6>
+                    <div class="input-group fullwid">
+                        <input auto-complete source="riderIdList" single="true" id="tags"
+                               class="form-control nobor-rad ng-pristine ng-valid ng-isolate-scope ui-autocomplete-input"
+                               autocomplete="off" placeholder="User name ..." data-ng-model="$parent.riderSearch"
+                               aria-describedby="search-addon">
+                        <span ng-click="riderFilter()" class="input-group-addon nobor-rad fa fa-search bg-white pointer"
+                              style="display: table-cell;" id="search-addon"></span>
+                    </div>
+                    <label class="text-white pointer p-t-5" style="margin-bottom: 0;">
+                        <input type="checkbox" ng-model="subscribersOnly" ng-change="filterSubscribers()" style="opacity: 1;" />
+                        Subscribers Only
+                    </label>
+                </div>
+                <div class="col-sm-4 col-xs-5 trip_selection">
+                    <h6 class="">DATE JOINED</h6>
+                    <div class="form-group nomarg">
+                        <div class='relative input-group date bg-white'>
+                            <div>
+                                <input id='datetimepicker1' type='text'style='text-overflow: ellipsis;width:120px;' class="text-center ft-14 form-control" placeholder="MM/DD/YYYY" ng-model="date1"/>
+                                <span style="position:absolute;z-index:9;font-size:15px;top:6px;left:115px;font-weight:bold;">-</span>
+                            </div>
+                            <div>
+                                <input id = 'datetimepicker2' type='text'style='text-overflow: ellipsis;width:120px;' class="text-center ft-14 form-control" placeholder="MM/DD/YYYY" ng-model="date2"/>
+                            </div>
+                            <span class="input-group-addon">
+                            <span style = 'top: 2px !important; color: #CCC' class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-5 inline-block" style="margin-top: 20px;">
+                    <button ng-click="memberlistupdate()" class="btn custom-btn text-uppercase bg-HeaderToolbar text-white m-r-20">UPDATE
+                    </button>
+                    <button ng-dialog="../html/modals/add-member.html" ng-dialog-controller="addMemberModalController"
+                            class="btn custom-btn text-uppercase text-white" ng-if="!technicianACL && ['private', 'private_no_payment'].includes(fleetType)"
+                            ng-dialog-close-previous>MANAGE USER</button>
+                </div>
+            </div>
+            <div class="row nomarg">
+                <div class="col-sm-12 nopadd">
+                    <div class="fullwid pull-left riders-table">
+                        <bike-table numrowitem="showlistitem" class="p-rel customtable" bikefleetdata='ridersFilterData'
+                                    selectedlist='selectedBikes' fleetstatus="members" bikeoption='hideBikeOptions' filter="showFilterOptions"
+                                    filteroption='showFilterOptions' header='riderheader' type="members"></bike-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="container-fluid" ng-if="memberData == undefined">-->
+    <!--<div class="row text-center">-->
+    <!--<div class="col-sm-12" style="padding: 60px 50px 40px;">-->
+    <!--<img class="wid-153" src="/images/member-logo.png">-->
+    <!--</div>-->
+    <!--<div class="col-sm-12 m-b-20">-->
+    <!--<h5 class=""> No members have been added to this network.</h5>-->
+    <!--</div>-->
+    <!--<button data-toggle="modal" data-target="#addmemberModal1"-->
+    <!--class="btn custom-btn h-33 wid-153 m-tb-10 ft-12 text-uppercase">ADD-->
+    <!--MEMBERS-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+</section>

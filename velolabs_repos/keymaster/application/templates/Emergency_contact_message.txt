@@ -1,0 +1,3 @@
+Dear {{ emguser }},
+You are recieving this message because {{ user }} has listed you as an emergency contact in their Ellipse app. We have received a notification that there has been an impact event. Please contact {{ user }} to check their saftey.
+Their last known location was https://maps.google.com/?q={{ lat }},{{ long }}

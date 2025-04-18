@@ -1,0 +1,39 @@
+//The parametric mixin '.border-radius'
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.vertical-centre (@height) {
+  height: @height;
+  line-height: @height !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.la-animate (@animatename){
+  -webkit-animation: @animatename 0.5s ease;
+  -moz-animation: @animatename 0.5s ease;
+  animation: @animatename 0.5s ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+}
+.transX(@val){
+  -webkit-transform: translateX(@val);
+  -ms-transform: translateX(@val);
+  transform: translateX(@val);
+}
+
+.trans-header(@val){
+  //-webkit-transition:all @val ease-in 0s;
+  //transition: all @val ease-in 0s;
+  -webkit-transition:all @val linear;
+  -moz-transition: all @val linear;
+  -o-transition: all @val linear;
+  transition: all @val linear;
+}
+
+

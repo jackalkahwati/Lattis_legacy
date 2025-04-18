@@ -1,0 +1,7 @@
+<div class="row cumulative-boxes">
+    <div class="col-sm-2 col-xs-2" ng-repeat="item in cumulativedata">
+        <h1>{{item.value}}</h1>
+        <span alt="{{item.title}}" ng-class="{'pointer ticketactive' : item.data_link != ''}" ui-sref="{{item.data_link}}">{{item.title}}</span>
+        <p alt="{{item.lastmonth}}">{{item.lastmonth}} <em class="fa {{item.marker}}"></em></p>
+    </div>
+</div>

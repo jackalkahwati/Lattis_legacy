@@ -1,0 +1,75 @@
+<section class="animated fadeIn" ng-controller="stagedBikesController">
+    <div class="panel">
+        <div class="panel-body box m-t-20">
+
+            <div class="pull-left fullwid">
+                <ul class="nav navbar-nav m-tb-10 checkboxcheck ft-12 animated flipInX">
+                    <li class="item text-uppercase">
+                        <button class="btn action_btn text-center" ng-disabled="optionsEnabled"
+                                ng-dialog="../html/modals/send-to-live-options.html"
+                                ng-dialog-controller="liveOptionsDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO LIVE
+                        </button>
+                    </li>
+                    <li class="item text-uppercase m-lr-5">
+                        <button class="btn action_btn text-center" ng-disabled="optionsEnabled"
+                                ng-dialog="../html/modals/send-to-archive.html"
+                                ng-dialog-controller="archiveDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO ARCHIVE
+                        </button>
+                    </li>
+                    <li class="item text-uppercase">
+                        <button class="btn action_btn text-center" ng-disabled="serviceEnabled"
+                                ng-dialog="../html/modals/send-to-service-options.html"
+                                ng-dialog-controller="serviceDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO SERVICE
+                        </button>
+                    </li>
+                </ul>
+                <button ng-disabled="technicianACL" ui-sref="add-bikes" class="btn custom-btn text-uppercase text-white pull-right m-t-10 ft-12">
+                    <em class="fa fa-plus"></em> Add Rides
+                </button>
+            </div>
+            <div class="fullwid pull-left searchbar" ng-class="{'hidden':showFilterOptions}">
+                <ul class="list-unstyled text-alert-medium">
+                    <li>
+                        <div>
+                            <h6 class="">SEARCH FOR A RIDE</h6>
+                            <div class="input-group pull-left" style="width: 180px;">
+                                <input auto-complete bike="true" source="bikeIdList" single="true"
+                                       class="form-control nobor-rad ng-pristine ng-valid ng-isolate-scope ui-autocomplete-input ng-empty ng-touched"
+                                       autocomplete="off" placeholder="Ride name" ng-model="bikeBox.bikeSearch"
+                                       aria-describedby="search-addon" id="search">
+                                <span ng-click="bikeFilter()" class="input-group-addon nobor-rad fa fa-search bg-white"
+                                      style="display: table-cell;" id="search-addon"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h6 class="">RIDE STATUS</h6>
+                        <dropdown list="dropdownlist" filter="statusFilter" property="name"
+                                  template="dropdown"></dropdown>
+                    </li>
+                    <li>
+                        <button ng-click="update()" class="btn custom-btn text-uppercase text-white bg-HeaderToolbar">
+                            UPDATE
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="row p-b-50">
+                <div class="col-sm-12">
+                    <bike-table numrowitem="showlistitem" class="p-rel customtable m-t-10" bikefleetdata='filterdData'
+                                fleetstatus="staged" selectedlist='selectedBikes' bikeoption='hideBikeOptions'
+                                filter="filterdata" originaldata = 'filterdData'
+                                filteroption='showFilterOptions' header='inactiveheader' type="geojson"
+                                checkbox="checkbox2"></bike-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

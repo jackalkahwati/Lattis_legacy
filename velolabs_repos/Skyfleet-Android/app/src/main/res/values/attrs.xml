@@ -1,0 +1,155 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SwipeLayout">
+
+
+        <attr name="drag_edge">
+
+            <flag name="left" value="1" />
+
+            <flag name="right" value="2" />
+
+            <flag name="top" value="4" />
+
+            <flag name="bottom" value="8" />
+
+        </attr>
+
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+
+        <attr name="show_mode" format="enum" />
+
+        <attr name="clickToClose" format="boolean" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+
+        <attr name="cpb_hasShadow" format="boolean" />
+
+        <attr name="cpb_progressColor" format="string" />
+
+        <attr name="cpb_backgroundColor" format="string" />
+
+        <attr name="cpb_title" format="string" />
+
+        <attr name="cpb_titleColor" format="string" />
+
+        <attr name="cpb_subtitle" format="string" />
+
+        <attr name="cpb_subtitleColor" format="string" />
+
+        <attr name="cpb_strokeWidth" format="integer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <!-- Text-->
+        <attr name="cpv_text" format="string" />
+        <attr name="cpv_unit" format="string" />
+        <attr name="cpv_textColor" format="color" />
+        <attr name="cpv_unitColor" format="color" />
+        <attr name="cpv_showUnit" format="boolean" />
+        <attr name="cpv_autoTextColor" format="boolean" />
+        <attr name="cpv_textTypeface" format="string" />
+        <attr name="cpv_unitTypeface" format="string" />
+        <attr name="cpv_decimalFormat" format="string" />
+
+        <!-- Text sizes-->
+        <attr name="cpv_textSize" format="dimension" />
+        <attr name="cpv_unitSize" format="dimension" />
+        <attr name="cpv_textScale" format="float" />
+        <attr name="cpv_unitScale" format="float" />
+        <attr name="cpv_unitToTextScale" format="float" />
+        <attr name="cpv_autoTextSize" format="boolean" />
+
+
+        <!-- Progress Bar -->
+        <attr name="cpv_direction" format="enum">
+            <enum name="CW" value="0" />
+            <enum name="CCW" value="1" />
+        </attr>
+        <attr name="cpv_value" format="float" />
+        <attr name="cpv_maxValue" format="float" />
+        <attr name="cpv_barWidth" format="dimension" />
+        <attr name="cpv_barColor" format="color" />
+        <attr name="cpv_barColor1" format="color" />
+        <attr name="cpv_barColor2" format="color" />
+        <attr name="cpv_barColor3" format="color" />
+        <attr name="cpv_startAngle" format="integer" />
+        <attr name="cpv_barStrokeCap" format="enum">
+            <enum name="Butt" value="0" />
+            <enum name="Round" value="1" />
+            <enum name="Square" value="2" />
+        </attr>
+
+        <!-- Spinner-->
+        <attr name="cpv_spinColor" format="color" />
+        <attr name="cpv_spinSpeed" format="float" />
+        <attr name="cpv_spinBarLength" format="float" />
+        <attr name="cpv_showTextInSpinningMode" format="boolean" />
+
+        <!-- Rim-->
+        <attr name="cpv_rimColor" format="color" />
+        <attr name="cpv_rimWidth" format="dimension" />
+
+        <!-- Contour-->
+        <attr name="cpv_contourColor" format="color" />
+        <attr name="cpv_contourSize" format="dimension" />
+
+        <!-- Background color-->
+        <attr name="cpv_fillColor" format="color" />
+
+        <!-- Seek mode-->
+        <attr name="cpv_seekMode" format="boolean" />
+
+        <!-- Block -->
+        <attr name="cpv_blockCount" format="integer" />
+        <attr name="cpv_blockScale" format="float" />
+
+        <attr name="cpv_textMode" format="enum">
+            <enum name="Text" value="0" />
+            <enum name="Percent" value="1" />
+            <enum name="Value" value="2" />
+        </attr>
+
+        <attr name="cpv_unitPosition" format="enum">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="left_top" value="2" />
+            <enum name="right_top" value="3" />
+            <enum name="left_bottom" value="2" />
+            <enum name="right_bottom" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>

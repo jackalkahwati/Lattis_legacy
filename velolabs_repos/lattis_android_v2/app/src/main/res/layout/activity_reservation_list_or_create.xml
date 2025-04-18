@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/reservation_background">
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        android:measureAllChildren="false"
+        android:id="@+id/view_flipper_in_reservation_list_or_create">
+        <include layout="@layout/activity_reservation_list" />
+        <include layout="@layout/fragment_bikelist_slider"/>
+        <include layout="@layout/activity_reservation_list_edit"/>
+        <include layout="@layout/activity_reservation_create"/>
+    </ViewFlipper>
+
+
+
+    <include layout="@layout/activity_loading"
+        android:id="@+id/activity_reservation_list_or_create_loading_view"
+        android:visibility="gone"/>
+
+    <include layout="@layout/no_internal_layout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

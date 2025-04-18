@@ -1,0 +1,30 @@
+{
+  "error" : null,
+  "status" : 200,
+  "payload" : {
+    "user_locks":[{
+      "lock_id":15,
+      "mac_id":"EE98457172F0",
+      "user_id":4,
+      "public_key":"04a8822a9d53eff178a15f7c574f117822cb779214111d8110f029957ea5256b68bf513b910d190b8cf01f9bd455546dda5a708870a7fb7657984d75c913d80add",
+      "name":"Arun's Ellipse"}],
+    "shared_locks":{
+      "to_user":[{
+        "lock_id":15,
+        "mac_id":"EE98457172F0",
+        "user_id":4,
+        "users_id":"+919840182541",
+        "public_key":"04a8822a9d53eff178a15f7c574f117822cb779214111d8110f029957ea5256b68bf513b910d190b8cf01f9bd455546dda5a708870a7fb7657984d75c913d80add",
+        "name":"Arun's Ellipse",
+        "shared_to_user_id":269}],
+      "by_user":{
+        "active":[null],
+        "inactive":[{
+          "lock_id":15,
+          "mac_id":"EE98457172F0",
+          "user_id":4,
+          "users_id":"+919840182541",
+          "public_key":"04a8822a9d53eff178a15f7c574f117822cb779214111d8110f029957ea5256b68bf513b910d190b8cf01f9bd455546dda5a708870a7fb7657984d75c913d80add",
+          "name":"Arun's Ellipse"}
+        ,null]}}}
+}

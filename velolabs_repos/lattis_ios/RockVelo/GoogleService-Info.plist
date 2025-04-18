@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>886853935275-jcspg28co1vfpe1mah6pjbfhqinif1nq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.886853935275-jcspg28co1vfpe1mah6pjbfhqinif1nq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBei-OI4HWUw0yZnLKVXpjAkRYOokW9YAw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>886853935275</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rockvelo.rental</string>
+	<key>PROJECT_ID</key>
+	<string>rockvelo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rockvelo.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:886853935275:ios:3b2d7203d66310347957ee</string>
+</dict>
+</plist>

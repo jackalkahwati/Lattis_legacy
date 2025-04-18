@@ -1,0 +1,11 @@
+html(lang='en')
+	head
+		include ./partials/head.jade
+	body(ng-app='EllipseInfoUpdate')
+		image(src='./images/skylock_logo.png' class = 'logo')
+		div(id='login_container')
+			div(class='login_box')
+				div(ui-view='')
+
+
+		include ./partials/defaultjs.jade

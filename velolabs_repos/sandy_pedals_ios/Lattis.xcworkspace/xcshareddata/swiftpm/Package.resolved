@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AXALock",
+        "repositoryURL": "git@github.com:velolabs/axalock_ios.git",
+        "state": {
+          "branch": "develop",
+          "revision": "ff6e60c7b42eb6f8908cc5d08cd226b10fbc09b8",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

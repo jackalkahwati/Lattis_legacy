@@ -1,0 +1,33 @@
+<div class="home-module-wrapper {{ settings.home-featured-blog-style }} rows-of-{{ settings.home-featured-blog-num-posts }}">
+  <div class="home-module home-featured-blog">
+
+    {% if settings.home-featured-blog-title != blank %}
+      <h3 class="section-title">{{ settings.home-featured-blog-title }}</h3>
+    {% endif %}
+
+    {% for article in blogs[settings.home-featured-blog].articles limit: settings.home-featured-blog-num-posts %}
+
+      {% assign src = false %}
+      {% assign img_tag = '<img' %}
+      {% if article.excerpt_or_content contains img_tag %}
+        {% assign src = article.excerpt_or_content | split: 'src="' %}
+        {% assign src = src[1] | split: '"' | first %}
+      {% endif %}
+
+      <article class="home-featured-blog-post">
+        <h4 class="featured-post-title"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+        <p class="featured-post-date"><a href="{{ article.url }}">{{ article.published_at | date: format: 'long_month' }}</a></p>
+        {% if src %}
+          <a class="featured-post-image" href="{{ article.url }}"><img src="{{ src }}"></a>
+        {% endif %}
+
+        {% if article.excerpt != blank %}
+          <p class="featured-post-excerpt">{{ article.excerpt | strip_html }}</p>
+        {% else %}
+          <p class="featured-post-excerpt">{{ article.content | strip_html | truncatewords: 25 }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+    
+  </div>
+</div>

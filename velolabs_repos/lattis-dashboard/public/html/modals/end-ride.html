@@ -1,0 +1,27 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar ">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4 class="modal-title text-white">END RIDE</h4>
+    </div>
+    <div class="modal-body p-30">
+        <p class="p-tb-10 bor-b-hash">This is the last known location of your ride.</p>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 m-t-20">
+                <div id="endridemap" class="fullwid h-320"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer noborder m-b-20">
+        <div class="col-xs-12" style="display: flex; flex-direction: column; gap:10px">
+            <button ng-click="endAndCharge()" class="btn custom-btn text-uppercase" ng-disabled="endingTrip">
+                END AND CHARGE
+            </button>
+            <button ng-click="endToLive()" style="margin:0" class="btn custom-btn text-uppercase" ng-disabled="endingTrip">
+                END WITHOUT CHARGE
+            </button>
+            <button ng-click="endToService()" style="margin:0" class="btn custom-btn text-uppercase" ng-disabled="endingTrip">
+                END WITHOUT CHARGE AND SEND TO SERVICE
+            </button>
+        </div>
+    </div>
+</div>

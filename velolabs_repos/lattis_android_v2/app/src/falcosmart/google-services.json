@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "939454152934",
+    "project_id": "falco-smart",
+    "storage_bucket": "falco-smart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939454152934:android:2ac57820bff0429311bb27",
+        "android_client_info": {
+          "package_name": "io.bikes.falcosmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlnxwR4c9Qb7vvHenpuj0nthn-RIkFtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939454152934:android:03d405f6787ec3cd11bb27",
+        "android_client_info": {
+          "package_name": "io.bikes.falcosmart.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlnxwR4c9Qb7vvHenpuj0nthn-RIkFtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939454152934:android:a311802f6a28bafa11bb27",
+        "android_client_info": {
+          "package_name": "io.bikes.falcosmart.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlnxwR4c9Qb7vvHenpuj0nthn-RIkFtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939454152934-149nim0uiv5ig381k8m37ndqk73dvdin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

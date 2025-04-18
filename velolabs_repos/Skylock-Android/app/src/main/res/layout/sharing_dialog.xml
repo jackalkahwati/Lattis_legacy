@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#6EDF9E">
+
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/arrow_close"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sharing"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llLockName"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rlLockName">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llLockName">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlShare"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#FFFFFF">
+
+                <RelativeLayout
+                    android:id="@+id/rlInviteFriends"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvInviteFriends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Invite friends..."
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_below="@+id/tvInviteFriends"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add friend"
+                        android:layout_toRightOf="@+id/ivSharingAddContacts"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <ImageView
+                        android:layout_below="@+id/tvInviteFriends"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/ivSharingAddContacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/sharing_add_contacts"
+                        />
+                    <Button
+                        android:id="@+id/bAddContacts"
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:background="@null"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlFB"
+                    android:layout_below="@+id/rlInviteFriends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/tvSharedWith"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shared with..."
+                        android:textStyle="bold"
+                        />
+                    <ImageView
+                        android:id="@+id/ivSharing1"
+                        android:layout_below="@+id/tvSharedWith"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/sharing_1"
+                        />
+                    <TextView
+                        android:layout_below="@+id/tvSharedWith"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="You can only share Skylock with your Facebook friends"
+                        android:textAppearance = "?android:attr/textAppearanceSmall"
+                        android:layout_toRightOf="@+id/ivSharing1"
+                        android:layout_marginLeft="10dp"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlFB"
+                    android:orientation="vertical"
+                    >
+                    <ListView
+                        android:id="@+id/lvFBFriends"
+                        android:listSelector="#F2F2F2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp">
+
+                    </ListView>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

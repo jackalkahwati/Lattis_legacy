@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="1.0">
+    <entity name="SLEmergencyContact" representedClassName="SLEmergencyContact" syncable="YES" codeGenerationType="category">
+        <attribute name="contactId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCurrentContact" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SLUser" inverseName="emergencyContacts" inverseEntity="SLUser" syncable="YES"/>
+    </entity>
+    <entity name="SLLock" representedClassName=".SLLock" syncable="YES" codeGenerationType="category">
+        <attribute name="givenName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasConnected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isConnecting" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isCurrentLock" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isInBootMode" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isLocked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isSetForDeletion" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isShared" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isSharingAccepted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastConnected" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastLocked" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lockId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockPosition" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="macId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="onboard" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shareId" optional="YES" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="borrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SLUser" inverseName="borrowedLocks" inverseEntity="SLUser" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SLUser" inverseName="ownedLocks" inverseEntity="SLUser" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SLUser" inverseName="locks" inverseEntity="SLUser" syncable="YES"/>
+    </entity>
+    <entity name="SLLog" representedClassName="SLLog" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="entry" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SLUser" representedClassName=".SLUser" syncable="YES" codeGenerationType="category">
+        <attribute name="areCrashAlertsOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="areTheftAlertsOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crashMessage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="googlePushId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAutoLockOn" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isAutoUnlockOn" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isCurrentUser" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isVerified" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxLocks" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theftSensitivity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usersId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="borrowedLocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SLLock" inverseName="borrower" inverseEntity="SLLock" syncable="YES"/>
+        <relationship name="emergencyContacts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SLEmergencyContact" inverseName="user" inverseEntity="SLEmergencyContact" syncable="YES"/>
+        <relationship name="locks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SLLock" inverseName="user" inverseEntity="SLLock" syncable="YES"/>
+        <relationship name="ownedLocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SLLock" inverseName="owner" inverseEntity="SLLock" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SLEmergencyContact" positionX="-810" positionY="-171" width="128" height="180"/>
+        <element name="SLLock" positionX="-1017" positionY="-333" width="128" height="390"/>
+        <element name="SLLog" positionX="-819" positionY="-189" width="128" height="75"/>
+        <element name="SLUser" positionX="-63" positionY="9" width="128" height="405"/>
+    </elements>
+</model>

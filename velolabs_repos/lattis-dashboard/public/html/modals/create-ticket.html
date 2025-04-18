@@ -1,0 +1,82 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar">
+        <h4 class="modal-title text-white">Create A Ticket</h4>
+    </div>
+    <div class="modal-body p-30 cl_grey">
+        <div class="row">
+            <div class="col-sm-12 m-b-10">
+                <p class="textlighthash">Create a ticket for your fleet. Select your fleet and enter the name member name or ride name
+                    which you’d like to create an alert for.</p>
+            </div>
+            <div class="col-sm-12 new-fleet-box bor-t-hash">
+                <ul class="list-unstyled list-inline m-t-20">
+                    <li>
+                        <span>Name </span>
+                    </li>
+                    <li>
+                        <div class="set-placeholder inline-block">
+                            <input class="form-control new-txt-box inline-block" data-ng-required="true"
+                                   name="title" auto-complete bike="true" single="true" source="bikesIdList"
+                                   type="text" ng-model="ticketBike.bike_name" />
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline m-t-10">
+                    <li class="v-t">
+                        <span class="ft-14 text-muted">Photo</span>
+                    </li>
+                    <li class="fileupload">
+                        <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" hasedit="true"
+                                           haspreview="true" name="Browse.."
+                                           file="serviceImage"></custom-Fileupload>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <span>Category</span>
+                    </li>
+                    <li>
+                        <div class="set-placeholder p-r-10 inline-block">
+                            <div class="dropdown pull-left">
+                                <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box"
+                                        type="button" ng-model="category" style="width:250px;"
+                                        data-toggle="dropdown">{{category.name}}
+                                </button>
+                                <ul class="dropdown-menu dropdownList-modify" style="width:250px;">
+                                    <li ng-repeat="ticketItem in mainTypes"
+                                        ng-click="ticketTypeChanged(ticketItem)"
+                                        ng-class="{'disabled': ticketItem.disabled}"><a href="">{{ticketItem.name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <span>Notes</span>
+                    </li>
+                    <li>
+                        <div class="form-group set-placeholder inline-block wid-350">
+                                <textarea id="maintenanceNotes" ng-model="serviceNotes"
+                                          class="form-control new-txt-box"
+                                          rows="5"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash m-lr-15">
+            <button class="btn custom-btn bg-HeaderToolbar p-tb-10 wid-130 ft-12" ng-click="closeModal()">CANCEL
+            </button>
+            <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                    ng-click="createTicket()"
+                    ng-disabled="!ticketBike">
+                Create Ticket
+            </button>
+        </div>
+    </div>
+    <!--<div class="modal-footer noborder">-->
+        <!---->
+    <!--</div>-->
+</div>

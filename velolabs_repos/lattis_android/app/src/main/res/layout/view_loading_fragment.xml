@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_loading_operation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:alpha="0.81"
+    android:clickable="true"
+    android:visibility="gone">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/label_operation_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_toolbar_bg" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/greyline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_operation_name"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:maxHeight="100dip"
+            android:progress="30"
+            android:indeterminateOnly="true"
+            android:minHeight="7dip"
+            android:progressDrawable="@drawable/horizontal_progressbar" />
+
+    </RelativeLayout>
+</FrameLayout>

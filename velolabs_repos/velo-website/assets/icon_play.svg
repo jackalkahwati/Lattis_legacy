@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Skylock-Desktop" sketch:type="MSArtboardGroup" transform="translate(-666.000000, -279.000000)" fill="#FFFFFF" opacity="0.8">
+            <g id="Hero" sketch:type="MSLayerGroup">
+                <g id="icon_play" transform="translate(666.000000, 279.000000)" sketch:type="MSShapeGroup">
+                    <path d="M54,108 C83.8233765,108 108,83.8233765 108,54 C108,24.1766235 83.8233765,0 54,0 C24.1766235,0 0,24.1766235 0,54 C0,83.8233765 24.1766235,108 54,108 Z M48.5372381,71.0248017 C45.7693175,72.8544441 43.5254745,71.6531103 43.5254745,68.3358781 L43.5254745,39.6641219 C43.5254745,36.349428 45.7629614,35.1413544 48.5372381,36.9751983 L69.2809437,50.6871393 C72.0488643,52.5167818 72.0552205,55.4790167 69.2809437,57.3128607 L48.5372381,71.0248017 Z" id="Oval-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

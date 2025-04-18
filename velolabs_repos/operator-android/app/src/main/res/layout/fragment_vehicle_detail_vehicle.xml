@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vehicle_detail_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_change_status_vehicle"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_info_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+            <include layout="@layout/fragment_vehicle_detail_vehicle_info"
+                android:id="@+id/fragment_vehicle_detail_vehicle_info"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_info_label"/>
+
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/status"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_vehicle_detail_vehicle_info"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+            <include layout="@layout/fragment_vehicle_detail_vehicle_status"
+                android:id="@+id/fragment_vehicle_detail_vehicle_status"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_status_label"/>
+
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_group_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/group"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_vehicle_detail_vehicle_status"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <include layout="@layout/fragment_vehicle_detail_vehicle_group"
+                android:id="@+id/fragment_vehicle_detail_vehicle_group"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_group_label"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <io.lattis.operator.presentation.customview.CustomButton
+        android:id="@+id/btn_change_status_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/change_status"
+        android:textSize="16dp"
+        android:textAllCaps="false"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/round_change_status"
+        android:textColor="@color/change_status_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+    <include layout="@layout/activity_loading" android:id="@+id/fragment_vehicle_detail_vehicle_loading"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

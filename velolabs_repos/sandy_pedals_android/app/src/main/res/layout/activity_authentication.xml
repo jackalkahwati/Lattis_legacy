@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_accent_color"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_buttons"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/company_logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_buttons"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <io.bikes.sandypedals.presentation.view.CustomButton
+                    android:id="@+id/signup_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    style="@style/BlueButtonStyle.Inversed"
+                    android:layout_marginRight="8dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+                <io.bikes.sandypedals.presentation.view.CustomButton
+                    android:id="@+id/signin_button"
+                    style="@style/WhiteSemiTransparentStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/onboarding_log_in_button"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="8dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            </LinearLayout>
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/ct_signup_login_terms_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_login_terms_conditions"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/ll_buttons"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:gravity="center"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</RelativeLayout>

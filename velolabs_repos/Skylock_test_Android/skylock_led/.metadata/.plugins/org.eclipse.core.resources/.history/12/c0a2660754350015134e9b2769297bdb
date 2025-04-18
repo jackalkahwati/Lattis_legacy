@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_weight="100"
+        	    android:text="Magnet Data" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:orientation="horizontal"
+        android:weightSum="300">
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:id="@+id/tvXDisplay"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="X" />
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:id="@+id/tvYDisplay"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Y" />
+        	
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:id="@+id/tvZDisplay"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Z" />
+
+    </LinearLayout>
+    
+
+</RelativeLayout>

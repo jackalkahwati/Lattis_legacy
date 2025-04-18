@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDCard" representedClassName="CDCard" syncable="YES" codeGenerationType="category">
+        <attribute name="cardId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cardStringId" optional="YES" attributeType="String"/>
+        <attribute name="gateway" optional="YES" attributeType="String"/>
+        <attribute name="month" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="system" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDFleet" representedClassName="CDFleet" syncable="YES" codeGenerationType="category">
+        <attribute name="customer" attributeType="String"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="fleetId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="logo" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+    </entity>
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES" codeGenerationType="category">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="userId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CDCard" positionX="-63" positionY="36" width="128" height="134"/>
+        <element name="CDFleet" positionX="-63" positionY="18" width="128" height="120"/>
+        <element name="CDUser" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>

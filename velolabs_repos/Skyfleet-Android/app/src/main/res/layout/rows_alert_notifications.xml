@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/view4"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_row_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/tv_label_alert_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theft_detection"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/ellipses_text_color" />
+
+            <TextView
+                android:id="@+id/tv_label_alert_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/when_a_theft_has_been_detected"
+                android:layout_below="@+id/tv_label_alert_name"
+                android:paddingTop="2dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#BCBBBB" />
+
+        </RelativeLayout>
+
+        <ToggleButton
+            android:id="@+id/toggleButton_alert"
+            android:layout_width="52dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/toggle_selector"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_row_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/divider_settings"
+        android:visibility="visible" />
+</RelativeLayout>

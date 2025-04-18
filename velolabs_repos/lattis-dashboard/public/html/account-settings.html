@@ -1,0 +1,244 @@
+<section>
+    <div class="panel-body box p-t-50">
+        <div class="p-lr-20">
+            <div class="row bor-b-hash p-tb-5">
+                <div class="col-sm-12">
+                    <div class="fullwid pull-left">
+                        <ul class="nav navbar-nav">
+                            <li ng-repeat="item in inner_menu_Items" class="innertab m-t5-r4">
+                                <a href="javascript:void(0);" ng-click="$parent.innertab = item.id"
+                                   ng-class="{'inneractivetab':innertab == item.id}">{{item.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-lr-20">
+          <form name="form" class="pull-left fullwid">
+            <div class="row" ng-show="innertab === 1">
+
+                <div class="panel-body p-tb5-lr20 m-t-10">
+                    <div class="m-t-30">
+                            <div class="col-sm-12 new-fleet-box m-b-35 p-b-50">
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Main contact</span>
+                                    </li>
+                                    <li>
+                                        <div class="set-placeholder inline-block m-r-10">
+                                            <span>First name</span>
+                                            <label for="fName" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box inline-block wid-200" id="fName"
+                                                   ng-model-options="{ updateOn: 'blur' }" ng-model="fName"
+                                                   ng-pattern="/^[a-zA-Z- ]{3,}$/" data-ng-required="true" name="firstname"
+                                                   ng-class="{err:!form.firstname.$valid && !form.firstname.$pristine}"
+                                                   type="text" ng-blur='validateFields(form.firstname)'>
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"
+                                               class="error-alert">First name not valid</p>
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.required"
+                                               class="error-alert">First name is required</p>
+                                        </div>
+                                        <div class="set-placeholder inline-block">
+                                            <span>Last name</span>
+                                            <label for="lName" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box inline-block wid-200" id="lName"
+                                                   ng-model-options="{ updateOn: 'blur' }" ng-model="lName"
+                                                   ng-class="{err:!form.lastname.$valid && !form.lastname.$pristine}"
+                                                   ng-pattern="/^[a-zA-Z- ]{1,}$/" data-ng-required="true" name="lastname"
+                                                   type="text" ng-blur='validateFields(form.lastname)'>
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"
+                                               class="error-alert">Last name not valid</p>
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.required"
+                                               class="error-alert">Last name is required</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Phone Number</span>
+                                    </li>
+                                    <li>
+                                        <div>
+                                          <input class="input-phone new-txt-box p-lr-10 wid-400" type="text" id="phoneNumber" name="phoneNo" ng-model="phoneNumber"
+                                                 data-ng-required="true" ng-class="{err:form.phoneNo.$invalid && !form.phoneNo.$pristine}">
+                                          <div class="set-placeholder">
+                                            <p ng-if="!phoneNumberIsValid && form.phoneNo.$touched" class="error-alert">Invalid number</p>
+                                            <p ng-if="!form.phoneNo.$pristine && form.phoneNo.$error.required" class="error-alert">Phone is required</p>
+                                          </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Email Address</span>
+                                    </li>
+                                    <li>
+                                        <div class="set-placeholder">
+                                            <label for="email" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box wid-314" id="email" ng-model="email"
+                                                   ng-init="profile.email" data-ng-required="true" ng-blur='validateFields(form.email)'
+                                                   ng-pattern="emailRegexPatterns"
+                                                   name="email" ng-class="{err:!form.email.$valid && !form.email.$pristine}"
+                                                   type="email">
+                                            <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                                               class="error-alert">Email ID not valid</p>
+                                            <p ng-if="!form.email.$pristine && form.email.$error.required"
+                                               class="error-alert">Email ID is required</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+<!--                        </form>-->
+                    </div>
+
+                </div>
+                <div class="p-lr-20">
+                    <div class="row p-tb-5">
+                        <div class="col-sm-12">
+                            <div class="fullwid pull-left">
+                                <div class="pull-right text-right halfwid">
+                                    <button class="btn custombtn-default pbtn-tb11-lr20">CANCEL</button>
+                                    <button class="btn custom-btn-noshadow pbtn-tb11-lr20" ng-click="save()">SAVE CHANGES
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" ng-show="innertab === 2">
+
+                <div class="panel-body p-tb5-lr20 m-t-10">
+                    <div class="m-t-30">
+                        <p>Your default notification settings are shown below. Any changes you make here will apply
+                            to this fleet only. The notifications will be sent to the email address in your
+                            account settings in real time. </p>
+                        <p class="m-t-20">NOTIFY ME WHEN:</p>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5" >
+                                <input id="all" type="checkbox" ng-change="checkAll()" name="checkbox" ng-model="all_tickets">
+                                <label class="ft-12" for="all"><span><span></span></span>All tickets</label>
+                            </span>
+                        </div>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5">
+                                <input id="theft" type="checkbox" name="checkbox" ng-model="notification.theft_is_reported">
+                                <label class="ft-12" for="theft"><span><span></span></span>Theft is reported</label>
+                            </span>
+                        </div>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5">
+                                <input id="damage" type="checkbox" name="checkbox" ng-model="notification.damage_is_reported">
+                                <label class="ft-12" for="damage"><span><span></span></span>Damage is reported</label>
+                            </span>
+                        </div>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5">
+                                <input id="maintenance" type="checkbox" name="checkbox" ng-model="notification.maintenance_due">
+                                <label class="ft-12" for="maintenance"><span><span></span></span>Maintenance due</label>
+                            </span>
+                        </div>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5">
+                                <input id="park" type="checkbox" name="checkbox" ng-model="notification.bike_is_parked_outside_zone">
+                                <label class="ft-12" for="park"><span><span></span></span>Bike is parked outside of parking zone/spot</label>
+                            </span>
+                        </div>
+                        <div class="fullwid pull-left">
+                            <span class="checkbox m-tb-5">
+                                <input id="battery" type="checkbox" name="checkbox" ng-model="notification.ellipse_battery_low">
+                                <label class="ft-12" for="battery"><span><span></span></span>Ellipse battery is low</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-lr-20">
+                        <div class="row p-tb-5">
+                            <div class="col-sm-12">
+                                <div class="fullwid pull-left">
+                                    <div class="pull-right text-right halfwid">
+                                        <button class="btn custom-btn-noshadow pbtn-tb11-lr20" ng-click="preferenceSave()">SAVE CHANGES
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="innertab === 3">
+
+            <div class="panel-body p-tb5-lr20 m-t-10">
+              <div class="m-t-30">
+                  <div class="col-sm-12 new-fleet-box m-b-35 p-b-50">
+                    <ul class="list-unstyled list-inline">
+                    <li>
+                      <span class="ft-14 text-muted">Old Password</span>
+                    </li>
+                    <li>
+                      <div>
+                        <input class="form-control new-txt-box p-lr-10 wid-400" type="password" id="oldPassword" name="oldPassword" ng-model="password.oldPassword"
+                               data-ng-required="true"
+                               ng-change="verifyPassword(form.oldPassword)"
+                               ng-class="{err:form.oldPassword.$invalid && !form.password.$pristine}">
+                        <div class="set-placeholder">
+                          <p ng-if="!passwordVerified && form.oldPassword.$touched && !form.oldPassword.$error.required" class="error-alert">Old Password is wrong</p>
+                          <p ng-if="!form.oldPassword.$pristine && form.oldPassword.$error.required" class="error-alert">Password is required</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list-unstyled list-inline">
+                    <li>
+                      <span class="ft-14 text-muted">New Password</span>
+                    </li>
+                    <li>
+                      <div>
+                        <input class="form-control new-txt-box p-lr-10 wid-400" type="password" id="newPassword" name="newPassword" ng-model="password.newPassword"
+                               data-ng-required="true" ng-class="{err:form.newPassword.$invalid && !form.newPassword.$pristine}">
+                        <div class="set-placeholder">
+                          <p ng-if="!form.newPassword.$pristine && form.newPassword.$error.required" class="error-alert">Password is required</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                    <ul class="list-unstyled list-inline">
+                      <li>
+                        <span class="ft-14 text-muted">Confirm New Password</span>
+                      </li>
+                      <li>
+                        <div>
+                          <input class="form-control new-txt-box p-lr-10 wid-400" type="password" id="confirmNewPassword" name="passwordConfirm" ng-model="password.passwordConfirm"
+                                 ng-change="checkPasswords(form.passwordConfirm)"
+                                 data-ng-required="true" ng-class="{err:form.passwordConfirm.$invalid && !form.passwordConfirm.$pristine}">
+                          <div class="set-placeholder">
+                            <p ng-if="!passwordsMatch && form.passwordConfirm.$touched" class="error-alert">Passwords do not match</p>
+                            <p ng-if="!form.passwordConfirm.$pristine && form.passwordConfirm.$error.required" class="error-alert">Password is required</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+
+            </div>
+            <div class="p-lr-20">
+              <div class="row p-tb-5">
+                <div class="col-sm-12">
+                  <div class="fullwid pull-left">
+                    <div class="pull-right text-right halfwid">
+                      <button class="btn custombtn-default pbtn-tb11-lr20">CANCEL</button>
+                      <button ng-disabled="!passwordVerified || !passwordsMatch" class="btn custom-btn-noshadow pbtn-tb11-lr20" ng-click="updatePassword(password.passwordConfirm)">UPDATE PASSWORD
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        </div>
+    </div>
+</section>
+

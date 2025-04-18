@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/bleConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="BLE Connection State"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_connectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/bleConnection"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/red" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_connection"
+
+        >
+
+        <Button
+            android:id="@+id/blifeCycleBegin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInstructions"
+            android:layout_marginTop="10dp"
+            android:text="Read values"
+            android:textColor="#FE2E9A"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Solar Test"
+            android:textColor="#33b5e5"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="Return the solar status is 1/0. If fixture lights on, it should be 1. If fixture lights off, it should be 0." />
+
+        <TextView
+            android:id="@+id/tvreference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Reference Voltage = "
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="30dp" />
+
+
+        <TextView
+            android:id="@+id/tvsolar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvreference"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Battery Voltage = "
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvdelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvsolar"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Delta = "
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/tvstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvdelta"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="status = "
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="30dp" />
+
+
+        <Button
+            android:id="@+id/bCapTouchNext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:text="NEXT TEST"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

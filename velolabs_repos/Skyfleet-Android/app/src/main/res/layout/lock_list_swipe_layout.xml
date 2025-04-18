@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentRight="true"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="8dp">
+
+<RelativeLayout
+    android:id="@+id/rl_deletelock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toLeftOf="@+id/rl_connnectlock"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingBottom="14dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="14dp">
+
+    <ImageView
+        android:contentDescription="@null"
+        android:id="@+id/iv_deletelock"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:src="@drawable/delete_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_deletelock"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="@string/delete"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/rl_connnectlock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:background="@color/text_hint_color"
+    android:orientation="vertical"
+    android:paddingBottom="13dp"
+    android:paddingLeft="19dp"
+    android:paddingRight="19dp"
+    android:paddingTop="13dp">
+
+    <ImageView
+        android:contentDescription="@null"
+        android:id="@+id/iv_connect"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:src="@drawable/icon_mobile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_connect"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:text="@string/connect"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+</RelativeLayout>
+
+</RelativeLayout>

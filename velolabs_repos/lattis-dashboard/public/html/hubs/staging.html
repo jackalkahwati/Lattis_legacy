@@ -1,0 +1,34 @@
+<section class="animated fadeIn" ng-controller="hubsStagingController">
+  <div class="row" ng-show="loading">
+    <div ng-init="showLoader=true" ng-show="showLoader">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" ng-hide="loading">
+    <div class="panel-body box m-t-20">
+      <div class="row p-b-50">
+        <div class="col-sm-12">
+          <div
+            class="row p-b-10"
+            style="display: flex; justify-content: flex-end"
+          >
+            <div class="col">
+              <a class="btn btn-primary" ui-sref="hubs-add">Add Hub</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <hubs-table class="customtable" hubs="hubs" status="'staging'" list-hubs="listHubs()"></hubs-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

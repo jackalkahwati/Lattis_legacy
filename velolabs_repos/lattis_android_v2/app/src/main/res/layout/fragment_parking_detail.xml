@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/round_parking_detail">
+
+
+    <ImageView
+        android:id="@+id/iv_parking_detail_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toTopOf="@+id/ct_parking_detail_title"
+        custom:layout_constraintBottom_toBottomOf="@+id/ct_parking_detail_title"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/parking_detail_cancel"
+        android:layout_marginBottom="20dp"
+        />
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/ct_parking_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/parking_detail_text"
+        custom:layout_constraintBottom_toTopOf="@+id/iv_parking_img"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:textSize="16dp"
+        android:layout_marginBottom="10dp"
+        custom:typefaceAsset="GothamSSm-Bold.otf"
+        />
+
+    <ImageView
+        android:id="@+id/iv_parking_img_holder"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        custom:layout_constraintBottom_toTopOf="@+id/btn_parking_get_direction"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_parking_image"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_parking_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        custom:layout_constraintBottom_toTopOf="@+id/btn_parking_get_direction"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:scaleType="fitCenter"
+
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/tv_parking_detail_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/parking_detail_text"
+        custom:layout_constraintTop_toTopOf="@+id/iv_parking_img"
+        custom:layout_constraintBottom_toBottomOf="@+id/iv_parking_img"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toStartOf="@+id/iv_parking_img"
+        android:textSize="14dp"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_parking_get_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_parking_get_direction"
+        android:text="@string/parking_get_direction"
+        android:textAllCaps="false"
+        android:textColor="@color/parking_detail_get_direction_text"
+        android:textSize="16dp"
+        android:visibility="visible"
+        style="?android:attr/borderlessButtonStyle"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

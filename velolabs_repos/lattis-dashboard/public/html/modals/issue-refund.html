@@ -1,0 +1,82 @@
+<div class="modal-content">
+  <div class="modal-header bg-HeaderToolbar ">
+      <h3 class="modal-title text-white">Issue Refund</h3>
+  </div>
+  <div class="modal-body p-30">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          In this section, you will be able to fully or partially refund a trip's payment. To perform a full refund, check the checkbox.
+        </p>
+        <form action="post" name="refunds">
+          <div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">
+            <button ng-click="dismissError()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{error}}
+          </div>
+          <div
+            class="form-group"
+            ng-class="{'has-error has-feedback': refunds.$error.max && !refundEntireAmount}"
+          >
+            <label for="" class="control-label">
+              Amount to refund (max {{currencyMap[currency]}}{{maximumRefundable}}).
+            </label>
+            <div class="input-group col-xs-10 col-sm-8 col-md-6">
+              <span class="input-group-addon">{{currencyMap[currency]}}</span>
+              <input
+                class="form-control"
+                aria-label="Amount (to the nearest {{currency}})"
+                aria-describedby="helpBlock"
+                type="number"
+                class="form-control"
+                placeholder="Enter amount to refund"
+                ng-model="refundAmount"
+                max="{{maximumRefundable}}"
+                ng-disabled="refundEntireAmount"
+              >
+              <span class="input-group-addon">.00</span>
+            </div>
+            <span
+              id="helpBlock"
+              ng-show="refunds.$error.max"
+              class="help-block"
+            >
+              The maximum allowable refund amount is {{currencyMap[currency]}}{{maximumRefundable}}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="" class="control-label">
+              Refund entire amount
+            </label>
+            <div class="checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  ng-model="refundEntireAmount"
+                  style="opacity: 1; margin: 4px 0 0;"
+                >
+                Refund Entire Amount
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+      <div class="text-left fullwid m-b-30">
+          <button ng-click="cancelRefund()" class="btn custom-btn bg-HeaderToolbar wid-100"
+                  data-dismiss="modal" ng-disabled="refunding">CANCEL
+          </button>
+          <button
+            class="btn pull-right custom-btn text-uppercase wid-153"
+            ng-click="issueRefund()"
+            ng-disabled="refunding ||
+              !refundEntireAmount && !refundAmount ||
+              refunds.$invalid && !refundEntireAmount ||
+              refunds.$pristine"
+          >
+            {{ refunding ? 'Refunding...' : 'Refund' }}
+          </button>
+      </div>
+  </div>
+</div>

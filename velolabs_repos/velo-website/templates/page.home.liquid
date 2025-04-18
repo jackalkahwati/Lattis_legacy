@@ -1,0 +1,191 @@
+<style>
+  #video-above.home-top-section {
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+#video-above.home-top-section video#background {
+  float: left;
+  margin-top: -70px;
+  width: 100%;
+}
+
+.home-top-section .contentpart {
+  left: 50%;
+  margin-top: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+</style>
+
+{% capture themeSettingsLink %}
+<a href="{{ shop.url }}/admin/themes">{{ 'onboarding.theme_settings_link' | t | downcase }}</a>
+{% endcapture %}
+{% comment %}
+
+
+<div class="home-slideshow-wrapper {{ settings.slideshow-layout }} {{ settings.slideshow-transition }}">
+  <div class="home-slideshow-loader"></div>
+
+  {% assign slideCount = 0 %}
+  {% if settings.show-slide-1 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-2 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-3 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-4 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+  {% if settings.show-slide-5 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+
+  {% if settings.show-slideshow-navigation and slideCount > 1 %}
+  <div class="home-slideshow-navigation home-slideshow-previous icon">&#57352;</div>
+  <div class="home-slideshow-navigation home-slideshow-next icon">&#57353;</div>
+  {% endif %}
+  <div class="home-slideshow">
+
+    {% if settings.show-slide-1 %}
+    <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-left" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-1-image.jpg' | asset_url }});"{% endif %}>
+
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+      <img class="slide-image" alt="{{ settings.slide-1-title | strip_html | escape }}" src="{{ 'slide-1-image.jpg' | asset_url }}">
+      <div class="slide-image-overlay">&nbsp</div>
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+
+      {% if settings.slide-1-title.size > 0 or settings.slide-1-subtitle.size > 0 or settings.slide-1-small-text.size > 0 or settings.slide-1-cta.size > 0 %}
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+      <div class="slide-text {% if settings.slide-1-shadows %}slide-text-use-shadows{% endif %}">
+
+        <div class="half50">
+          <h2>A Gift Worth Waiting For!</h2><p></p>
+          <p class="first-par">Meet Skylock, the world’s first solar-powered smart bike lock that connects to your smartphone to provide keyless entry, theft detection, crash alerts and more.</p><p></p>
+          <p class="second-par">Pre-order Skylock today and save $70!</p><p></p>
+          <span class="price-par"><strike>$249</strike> $179 <span class="na-shipping">+ Free Shipping to North America*</span></span>
+          <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW</a><a class="hidespce">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a class="button videobutton" id="play-button">Watch Video</a>
+          <p class="text-note">*Add $15 for international ground shipping. Additional sales tax may apply. Offer ends 12/27/2015.</p>
+          <p id="link-certificate">Click<a href="/pages/gift-certificate"> here</a>to download the Skylock gift certificate</p>
+        </div>
+      </div>
+      {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+      {% endif %}
+
+    </div>
+    {% endif %}
+  </div>
+</div>
+<div class="column-4 imgpart">
+
+</div>
+{% endcomment %}
+
+
+{% comment %} 
+<video autoplay loop muted id="background" >
+  <source src="{{ '1440x727.m4v' | file_url }}" type="video/mp4" />
+  <source src="{{ '1440x727.webm' | file_url }}" type="video/webm" />
+  <source src="{{ '1440x727.ogv' | file_url }}" type="video/ogg" />
+</video> 
+{% endcomment %}
+
+
+<div class="home-top-section" id="video-above">
+
+  <video autoplay loop muted id="background">
+    <source src="{{ '1440x727.m4v' | file_url }}" type="video/mp4" />
+    <source src="{{ '1440x727.webm' | file_url }}" type="video/webm" />
+    <source src="{{ '1440x727.ogv' | file_url }}" type="video/ogg" />	
+  </video>  
+
+  <div class="mobileheaderimage">
+    <img  src="{{ 'mobCopy.jpg' | asset_url }}">
+    {% comment %} <img  src="{{ 'play_clicked.png' | asset_url }}">{% endcomment %}
+  </div>
+
+  <div class="column-4 contentpart">
+    <div class="home-top-section-wrapper">
+      <p>
+        <span class="sky-lock">SKYLOCK</span>
+      </p>
+
+      <p class="video"><span class="vedio-tagline">The Smartest Bike Lock</span></p>
+
+      {% comment %}     
+      <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock"><span class="cartbutton-icon"></span><span class="pre-order">Pre-Order $179</span></a>
+      <a class="button videobutton" id="play-button"><span class="videobutton-icon"></span><span>Play Video</span></a>
+      {% endcomment %}
+
+      <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">
+        <span class="pre-orderimage"></span>
+      </a>
+      <a class="button videobutton" id="play-button">
+        <span class="videobuttonimag"></span>
+      </a>
+
+      {% comment %}      
+      <span class="price-par"><strike>$249</strike>  $179 <span class="na-shipping">+ Free Shipping to North America*</span></span>
+      <p class="text-note">*Add $15 for international shipping. Additional sales tax may apply. </p>
+      {% endcomment %}
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+{% comment %}
+<img src="{{ 'skylock_box_facing.jpg' | asset_url }}" alt="Skylock bike lock - special edition" />
+{% endcomment %}
+
+
+{% if settings.home-show-hero %}
+{% include 'home-hero' %}
+{% endif %}
+{% include 'home-brands' %}
+
+{% if settings.home-sections-order != blank %}
+{% assign sections = settings.home-sections-order | split: "-" %}
+
+{% for section in sections %}
+{% case section %}
+{% when 'A' %}
+{% include 'home-full-width' %}
+
+
+{% when 'E' %}
+{% include 'home-order-now' %}
+{% when 'F' %}
+{% include 'home-featured-collections' %}
+{% when 'G' %}
+{% include 'home-featured-products' %}
+{% when 'H' %}
+{% include 'home-featured-blog' %}
+{% when 'I' %}
+{% include 'home-as-seen-on' %}
+{% when 'J' %}
+{% include 'home-instagram' %}
+{% endcase %}
+{% endfor %}
+
+{% endif %}
+
+{% include 'home-keyless' %}
+
+{% include 'home-cash-alert' %}
+
+{% include 'home-theft-alert' %}
+
+{% include 'home-share-access' %}
+
+{% include 'home-simple-to-use-gift' %}
+
+{% include 'home-skylock-mount' %}
+
+{% include 'home-images-section' %}
+
+{% include 'home-convinced-gift' %}
+
+{% include 'home-techspec' %}

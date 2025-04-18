@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/rlUserPic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
+        <com.facebook.login.widget.ProfilePictureView
+            android:id="@+id/ivUserPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:id="@+id/icon_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"
+            >
+        </ImageView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_below="@+id/rlUserPic"
+        android:layout_marginTop="11.25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Jesse Becker"
+        android:textColor="#929497"/>
+
+    <TextView
+        android:id="@+id/tvUserProfile"
+        android:layout_below="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="View Account"
+        android:textColor="#3498DB"
+        android:layout_marginBottom="11.475dp"/>
+
+</RelativeLayout>

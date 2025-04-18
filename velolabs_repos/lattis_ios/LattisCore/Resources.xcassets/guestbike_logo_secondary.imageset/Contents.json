@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "guestbike_logo_secondary.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "guestbike_logo_secondary@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "guestbike_logo_secondary@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

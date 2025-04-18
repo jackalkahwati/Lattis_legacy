@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/activity_loading"
+        android:visibility="visible"
+        android:id="@+id/dummy_activity_loading_operation_view"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

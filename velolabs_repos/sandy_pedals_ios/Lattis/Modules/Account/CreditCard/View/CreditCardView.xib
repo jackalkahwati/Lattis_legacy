@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditCardViewController" customModule="Lattis" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CreditCardView" customModule="Lattis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-jc-6jc">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psH-LZ-8YT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBA-mL-w6h">
+                                    <rect key="frame" x="16" y="27" width="343" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="AeR-HF-a5v"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="textChanged:" destination="-1" eventType="editingChanged" id="oZu-6E-BrV"/>
+                                    </connections>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guR-hE-Ttv">
+                                    <rect key="frame" x="16" y="57" width="343" height="1"/>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80392156859999997" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="7TD-G1-G2o"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Exp. Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AUo-BU-it2" customClass="FloatLabelTextField" customModule="Lattis" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="82" width="141.5" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="tN9-YN-Pcr"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEV-si-tXa">
+                                    <rect key="frame" x="16" y="117" width="141.5" height="1"/>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80392156859999997" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="9HA-6O-HYF"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8he-Xy-Ov2" customClass="FloatLabelTextField" customModule="Lattis" customModuleProvider="target">
+                                    <rect key="frame" x="217.5" y="82" width="141.5" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="uH6-2p-0nl"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                            <color key="value" red="0.65490196079999996" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="470-Ez-fyc">
+                                    <rect key="frame" x="217.5" y="116" width="141.5" height="1"/>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80392156859999997" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Ne3-qC-gUc"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="credit_card_number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgy-8D-E56" customClass="Label" customModule="Lattis" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="13" width="64.5" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="0.67450980392156867" green="0.69411764705882351" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="8he-Xy-Ov2" secondAttribute="trailing" constant="16" id="0A3-rS-xzz"/>
+                                <constraint firstAttribute="trailing" secondItem="cBA-mL-w6h" secondAttribute="trailing" constant="16" id="0oG-zZ-Y9c"/>
+                                <constraint firstItem="8he-Xy-Ov2" firstAttribute="centerY" secondItem="AUo-BU-it2" secondAttribute="centerY" id="24a-p6-liD"/>
+                                <constraint firstAttribute="bottom" secondItem="470-Ez-fyc" secondAttribute="bottom" constant="20" id="2R8-ed-7YH"/>
+                                <constraint firstItem="oEV-si-tXa" firstAttribute="trailing" secondItem="AUo-BU-it2" secondAttribute="trailing" id="EJc-c3-K90"/>
+                                <constraint firstItem="AUo-BU-it2" firstAttribute="top" secondItem="cBA-mL-w6h" secondAttribute="bottom" constant="25" id="IgM-Ji-dSr"/>
+                                <constraint firstItem="470-Ez-fyc" firstAttribute="top" secondItem="8he-Xy-Ov2" secondAttribute="bottom" constant="-1" id="JHy-9M-wSu"/>
+                                <constraint firstItem="oEV-si-tXa" firstAttribute="leading" secondItem="AUo-BU-it2" secondAttribute="leading" id="Kax-iE-6c8"/>
+                                <constraint firstItem="470-Ez-fyc" firstAttribute="trailing" secondItem="8he-Xy-Ov2" secondAttribute="trailing" id="NG5-2w-1Sr"/>
+                                <constraint firstItem="oEV-si-tXa" firstAttribute="top" secondItem="AUo-BU-it2" secondAttribute="bottom" id="Nvm-jh-a3Y"/>
+                                <constraint firstItem="guR-hE-Ttv" firstAttribute="top" secondItem="cBA-mL-w6h" secondAttribute="bottom" id="OX0-7D-p9z"/>
+                                <constraint firstItem="cBA-mL-w6h" firstAttribute="leading" secondItem="psH-LZ-8YT" secondAttribute="leading" constant="16" id="T5F-Aq-k6u"/>
+                                <constraint firstItem="8he-Xy-Ov2" firstAttribute="width" secondItem="AUo-BU-it2" secondAttribute="width" id="TUo-8d-fAW"/>
+                                <constraint firstItem="8he-Xy-Ov2" firstAttribute="leading" secondItem="AUo-BU-it2" secondAttribute="trailing" constant="60" id="Wde-d4-L8b"/>
+                                <constraint firstItem="AUo-BU-it2" firstAttribute="leading" secondItem="psH-LZ-8YT" secondAttribute="leading" constant="16" id="Z7e-4h-3HM"/>
+                                <constraint firstItem="guR-hE-Ttv" firstAttribute="trailing" secondItem="cBA-mL-w6h" secondAttribute="trailing" id="bH3-60-Xsz"/>
+                                <constraint firstItem="cgy-8D-E56" firstAttribute="leading" secondItem="cBA-mL-w6h" secondAttribute="leading" id="eSD-SA-Nnm"/>
+                                <constraint firstItem="cBA-mL-w6h" firstAttribute="top" secondItem="cgy-8D-E56" secondAttribute="bottom" constant="2" id="jDE-N9-81E"/>
+                                <constraint firstItem="guR-hE-Ttv" firstAttribute="leading" secondItem="cBA-mL-w6h" secondAttribute="leading" id="ool-qs-PNO"/>
+                                <constraint firstItem="470-Ez-fyc" firstAttribute="leading" secondItem="8he-Xy-Ov2" secondAttribute="leading" id="p81-63-Jr6"/>
+                                <constraint firstItem="cBA-mL-w6h" firstAttribute="top" secondItem="psH-LZ-8YT" secondAttribute="top" constant="27" id="svz-z1-eeY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="psH-LZ-8YT" firstAttribute="leading" secondItem="cG7-jc-6jc" secondAttribute="leading" id="Mi6-cL-aOD"/>
+                        <constraint firstItem="psH-LZ-8YT" firstAttribute="width" secondItem="cG7-jc-6jc" secondAttribute="width" id="U1n-T7-Pz8"/>
+                        <constraint firstAttribute="trailing" secondItem="psH-LZ-8YT" secondAttribute="trailing" id="cb0-0I-oN6"/>
+                        <constraint firstItem="psH-LZ-8YT" firstAttribute="top" secondItem="cG7-jc-6jc" secondAttribute="top" id="gs0-E0-oT3"/>
+                        <constraint firstAttribute="bottom" secondItem="psH-LZ-8YT" secondAttribute="bottom" id="gtH-Xt-jLs"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-Qg-mzc" customClass="Button" customModule="Lattis" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="fVi-ki-w8s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="profile_change_name_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ihR-Qg-mzc" secondAttribute="bottom" id="6ps-KM-sPG"/>
+                <constraint firstAttribute="trailing" secondItem="cG7-jc-6jc" secondAttribute="trailing" id="99w-WO-mak"/>
+                <constraint firstItem="ihR-Qg-mzc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YrL-76-Bzp"/>
+                <constraint firstAttribute="trailing" secondItem="ihR-Qg-mzc" secondAttribute="trailing" id="j63-Dq-1pf"/>
+                <constraint firstItem="cG7-jc-6jc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l5e-yg-fSw"/>
+                <constraint firstItem="cG7-jc-6jc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rMe-ne-Ezv"/>
+                <constraint firstAttribute="bottom" secondItem="cG7-jc-6jc" secondAttribute="bottom" id="z0f-DE-4Jq"/>
+            </constraints>
+            <connections>
+                <outlet property="cvvField" destination="8he-Xy-Ov2" id="xgy-6m-Lc7"/>
+                <outlet property="dateField" destination="AUo-BU-it2" id="eBd-Up-Vuq"/>
+                <outlet property="numberField" destination="cBA-mL-w6h" id="JsU-5f-XZ3"/>
+                <outlet property="saveButton" destination="ihR-Qg-mzc" id="UH7-Pn-24a"/>
+            </connections>
+            <point key="canvasLocation" x="23.5" y="94.5"/>
+        </view>
+    </objects>
+</document>

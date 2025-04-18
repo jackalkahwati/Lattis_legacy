@@ -1,0 +1,31 @@
+*idea
+.vscode/
+node_modules/
+npm-debug.log
+nodemon.json
+dump
+*.zip
+files/points.json
+config-helper.js
+utils/trip-run.js
+utils/query-test.js
+uploads/
+public/libs
+public/bower
+!public/images/favicon.png
+public/stylesheets/less/main.css
+public/stylesheets/less/main.purify.css
+yarn.lock
+public/*.log
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Random files
+files/CSV
+
+#Env
+.env
+.nmprc
+.ebextensions/nmprc.config

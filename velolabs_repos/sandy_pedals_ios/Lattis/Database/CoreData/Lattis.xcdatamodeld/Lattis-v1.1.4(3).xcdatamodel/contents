@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDBike" representedClassName="CDBike" syncable="YES" codeGenerationType="category">
+        <attribute name="bikeId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTrip" inverseName="bike" inverseEntity="CDTrip" syncable="YES"/>
+    </entity>
+    <entity name="CDCreditCard" representedClassName="CDCreditCard" syncable="YES" codeGenerationType="category">
+        <attribute name="cardId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDDirection" representedClassName="CDDirection" syncable="YES" codeGenerationType="category">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="rating" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="CDLock" representedClassName="CDLock" syncable="YES" codeGenerationType="category">
+        <attribute name="lockId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="macId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sharedToUserId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shareId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="usersId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CDPrivateNetwork" representedClassName="CDPrivateNetwork" syncable="YES" codeGenerationType="category">
+        <attribute name="customerName" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fleetId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fleetName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fleetUserId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="privateNetworks" inverseEntity="CDUser" syncable="YES"/>
+    </entity>
+    <entity name="CDTrip" representedClassName="CDTrip" syncable="YES" codeGenerationType="category">
+        <attribute name="bikeId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="creditCardNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creditCardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deposit" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finishedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fleetName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fleetType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="penaltyFees" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="refundCriteria" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="refundCriteriaUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="total" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tripId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="bike" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBike" inverseName="trips" inverseEntity="CDBike" syncable="YES"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDTripStep" inverseName="trip" inverseEntity="CDTripStep" syncable="YES"/>
+    </entity>
+    <entity name="CDTripStep" representedClassName="CDTripStep" syncable="YES" codeGenerationType="category">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lockState" optional="YES" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTrip" inverseName="steps" inverseEntity="CDTrip" syncable="YES"/>
+    </entity>
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES" codeGenerationType="category">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="privateNetworks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDPrivateNetwork" inverseName="user" inverseEntity="CDPrivateNetwork" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDBike" positionX="-54" positionY="45" width="128" height="90"/>
+        <element name="CDCreditCard" positionX="-54" positionY="90" width="128" height="165"/>
+        <element name="CDDirection" positionX="-54" positionY="72" width="128" height="135"/>
+        <element name="CDLock" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="CDPrivateNetwork" positionX="-54" positionY="72" width="128" height="150"/>
+        <element name="CDTrip" positionX="-63" positionY="36" width="128" height="345"/>
+        <element name="CDTripStep" positionX="-36" positionY="63" width="128" height="120"/>
+        <element name="CDUser" positionX="-54" positionY="63" width="128" height="150"/>
+    </elements>
+</model>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sign_up_parent"
+    android:background="@color/sign_up_background">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_company_logo"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/company_logo_black"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto">
+        <!--This is sign in card: start-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cl_sign_in"
+            android:elevation="7dp"
+            android:background="@drawable/sign_up_top_bottom_radius"
+            android:layout_marginTop="20dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:layout_constraintBottom_toTopOf="@+id/cl_sign_up_bottom"
+                android:layout_marginBottom="20dp"
+                android:paddingTop="20dp">
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_error_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:textColor="@color/sign_up_wrong_password"
+                    custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+                    />
+
+                <View
+                    android:id="@+id/divier1_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    custom:layout_constraintBottom_toTopOf="@+id/ct_error_msg"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/sign_up_divider"
+                    />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintBottom_toTopOf="@id/divier1_sign_up"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/cl_password_in_sign_up"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_password_in_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/password"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintStart_toStartOf="parent"
+
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomEditText
+                        custom:layout_constraintStart_toEndOf="@+id/iv_password_in_sign_up"
+                        custom:layout_constraintEnd_toStartOf="@+id/iv_sign_up_password_show"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:hint="@string/password"
+                        android:background="@android:color/transparent"
+                        android:textColorHint="@color/sign_up_hint"
+                        android:id="@+id/et_sign_up_password"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:textSize="16dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:textColor="@color/sign_up_text"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/iv_sign_up_password_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/password_show"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <View
+                    android:id="@+id/divier2_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    custom:layout_constraintBottom_toTopOf="@+id/cl_password_in_sign_up"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/sign_up_divider"
+                    />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintBottom_toTopOf="@id/divier2_sign_up"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/cl_email_in_sign_up"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_email_in_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/email"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintStart_toStartOf="parent"
+
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomEditText
+                        custom:layout_constraintStart_toEndOf="@+id/iv_email_in_sign_up"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/email"
+                        android:textColorHint="@color/sign_up_hint"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/et_sign_up_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/sign_up_text"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <View
+                    android:id="@+id/divier3_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    custom:layout_constraintBottom_toTopOf="@+id/cl_email_in_sign_up"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/sign_up_divider"
+                    />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintBottom_toTopOf="@id/divier3_sign_up"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/cl_last_name_in_sign_up"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_last_name_in_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/user"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintStart_toStartOf="parent"
+
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomEditText
+                        custom:layout_constraintStart_toEndOf="@+id/iv_last_name_in_sign_up"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/last_name"
+                        android:textColorHint="@color/sign_up_hint"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/et_sign_up_last_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/sign_up_text"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/divier4_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    custom:layout_constraintBottom_toTopOf="@+id/cl_last_name_in_sign_up"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/sign_up_divider"
+                    />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintBottom_toTopOf="@id/divier4_sign_up"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/cl_first_name_in_sign_up"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_first_name_in_sign_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/user"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintStart_toStartOf="parent"
+
+                        />
+
+                    <com.lattis.lattis.presentation.customview.CustomEditText
+                        custom:layout_constraintStart_toEndOf="@+id/iv_first_name_in_sign_up"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintBottom_toBottomOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/first_name"
+                        android:textColorHint="@color/sign_up_hint"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/et_sign_up_first_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/sign_up_text"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_sign_in_welcome"
+                    android:text="@string/create_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintBottom_toTopOf="@id/cl_first_name_in_sign_up"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:textColor="@color/sign_up_create_account"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_sign_up_bottom"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent">
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_sign_up_terms_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/welcome_terms_and_privacy_text"
+                    android:textColor="@color/sign_in_terms_policy"
+                    android:textColorLink="@color/sign_in_link_color"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintBottom_toTopOf="@+id/ct_sign_up_terms_policy"
+                    android:layout_marginBottom="10dp"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/cl_already_have_account_sign_in">
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:id="@+id/ct_sign_up_already_have_account"
+                        android:text="@string/already_have_an_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintStart_toStartOf="parent"
+                        android:textSize="14dp"
+                        android:gravity="center"
+                        android:textColor="@color/sign_up_already_have_account"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+                    <com.lattis.lattis.presentation.customview.CustomTextView
+                        android:id="@+id/ct_sign_up_sign_in"
+                        android:text="@string/log_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        custom:layout_constraintStart_toEndOf="@+id/ct_sign_up_already_have_account"
+                        android:textSize="14dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/sign_up_sign_in"
+                        custom:typefaceAsset="GothamSSm-Book.otf"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintBottom_toTopOf="@+id/cl_already_have_account_sign_in"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/cl_sign_up_submit">
+
+                    <com.lattis.lattis.presentation.customview.CustomButton
+                        android:id="@+id/btn_sign_up_submit_unselected"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        custom:layout_constraintStart_toStartOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/submit"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/round_submit_unselected"
+                        android:textColor="@color/sign_up_submit_unselected_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                    <com.lattis.lattis.presentation.customview.CustomButton
+                        android:id="@+id/btn_sign_up_submit_selected"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        custom:layout_constraintStart_toStartOf="parent"
+                        custom:layout_constraintEnd_toEndOf="parent"
+                        custom:layout_constraintTop_toTopOf="parent"
+                        android:visibility="gone"
+                        android:text="@string/submit"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/round_submit_selected"
+                        android:textColor="@color/sign_up_submit_selected_text"
+                        custom:typefaceAsset="GothamSSm-Medium.otf" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/activity_loading" android:id="@+id/sign_up_loading"
+        android:visibility="gone"/>
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

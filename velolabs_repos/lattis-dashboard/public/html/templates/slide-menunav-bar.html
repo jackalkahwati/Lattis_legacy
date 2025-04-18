@@ -1,0 +1,156 @@
+<!--Start slidebar menu navigation-->
+<aside class="aside" ng-controller="menuController">
+    <nav class="navbar topnavbar ng-scope" role="navigation">
+        <!-- START navbar header logo section-->
+        <div class="navbar-header h-70" ng-click="toggle()">
+            <a class="navbar-brand">
+                <div class="brand-logo">
+                    <img class="img-responsive" src="images/Lattis_logo.png" alt="lattis Logo">
+                </div>
+                <div class="brand-logo-collapsed">
+                    <img class="img-responsive m-t-10" src="images/sidebar_Icons/Lattis_small_logo.png"
+                         alt="lattis Logo">
+                </div>
+            </a>
+        </div>
+        <div id="menubar-scroll" style="float: left;width:100%;height: calc(100vh - 100px);"
+             ng-nicescroll nice-option="{autohidemode: true , cursorcolor: 'white', background: 'rgba(0,0,0,0.2)' }"
+             nice-scroll-end="endScroll()">
+            <ul class="nav nav-pills nav-stacked span2">
+                <li><a class="btn" type="submit" ng-class="{menuactive:$state.current.activetab == 'home'}"
+                       ui-sref="lattis-home">Home</a></li>
+                <li ng-show="!fleetList">
+                    <button class="btn" type="submit" ng-disabled="true">Fleets loading...</button>
+                </li>
+                <li ng-if="superUser" ng-show="!!fleetList" class="p-10">
+                    <ul id='fleet-list' class="nav p-lr-10"
+                        style="max-height: 250px;background-color: #425271;padding-left: 15px;">
+                        <li ng-repeat="group in groupKeys track by $index" ng-show="!!fleetList">
+                            <button class="btn collapsed" style="margin: 0 !important;" type="submit" data-toggle="collapse"
+                                    data-target="#fleet{{$index}}" aria-expanded="false">{{group}}<em
+                                    class="fa fa-angle-down rotate-fa" style="position: relative; left:20px;"></em></button>
+                            <ul ng-nicescroll nice-option="{cursorcolor: 'white', background: 'rgba(0,0,0,0.2)' }"
+                                nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"
+                                class="nav collapse nomarg nopadd p-rel" id=fleet{{$index}} role="menu"
+                                aria-labelledby="btn-1">
+                                <li ng-repeat="item in fleetGroup[group]"><a ng-click="sideNavClick(item, group)">{{item.fleet_name}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-if="!superUser" ng-show="!!fleetList" ng-hide="fleetList.length > 1">
+                    <button class="btn">
+                        <span class="ellipsis pull-left" ui-sref="activity-feed">{{selectedFleet}}</span>
+                    </button>
+                </li>
+                <li ng-if="!superUser" ng-hide='fleetList.length === 1' ng-show="!!fleetList">
+                    <button class="btn collapsed" type="submit" data-toggle="collapse" data-target="#facebookuser"
+                            aria-expanded="false">
+                        <span class="ellipsis pull-left">{{selectedFleet}} </span><em class="fa fa-angle-down rotate-fa"></em>
+                    </button>
+                    <ul ng-nicescroll nice-option="{cursorcolor: 'white', background: 'rgba(0,0,0,0.2)', smoothscroll: true}"
+                        nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"  class="nav collapse p-rel"
+                        id="facebookuser" role="menu" aria-labelledby="btn-1">
+                        <li ng-if="fleetList" ng-repeat="item in fleetList | orderBy : ['fleet_name','customer_name']">
+                            <a ng-click="sideNavClick(item)"
+                               ng-class="{menuactive:$state.current.activetab == 'activity-feed'}">
+                                {{item.fleetFullName}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn collapsed" type="submit" ng-disabled="!fleetList" data-toggle="collapse"
+                            data-target="#map123" aria-expanded="false"><span class="ellipsis pull-left">Map </span><em
+                            class="fa fa-angle-down rotate-fa"></em></button>
+                    <ul class="nav collapse" id="map123" role="menu" aria-labelledby="btn-2">
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'live-activity'}"
+                               ui-sref="live-activity">Trip Explorer</a></li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'parking'}"
+                               ui-sref="parking">Parking</a>
+                        </li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'bike-locator'}"
+                               ui-sref="bike-locator">Ride
+                            Locator</a></li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'geofencing'}"
+                                ui-sref="geofencing">Geofencing</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn collapsed" type="submit" ng-disabled="!fleetList"
+                            ng-class="{menuactive:$state.current.activetab == 'addbike'}" data-toggle="collapse"
+                            data-target="#fleetstatus" aria-expanded="false">
+                        <span class="ellipsis pull-left">Fleet Status </span><em
+                            class="fa fa-angle-down rotate-fa"></em></button>
+                    <ul class="nav collapse" id="fleetstatus" role="menu" aria-labelledby="btn-3">
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'live-bikes'}"
+                               ui-sref="live-bikes">Live</a></li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'staged-bikes'}"
+                               ui-sref="staged-bikes">Staging</a>
+                        </li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'out-of-service-bikes'}"
+                               ui-sref="out-of-service-bikes">Out of Service</a></li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'archived-bikes'}"
+                               ui-sref="archived-bikes">Archived</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn collapsed" data-toggle="collapse"
+                            data-target="#hubs" aria-expanded="false">
+                        <span class="ellipsis pull-left">Hubs</span><em
+                            class="fa fa-angle-down rotate-fa"></em></button>
+                    <ul class="nav collapse" id="hubs" role="menu" aria-labelledby="btn-3">
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'live-hubs'}"
+                               ui-sref="hubs-live">Live</a></li>
+                        <li><a ng-class="{menuactive:$state.current.activetab == 'staging-hubs'}"
+                               ui-sref="hubs-staging">Staging</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn" type="submit" ng-disabled="!fleetList"
+                            ng-class="{menuactive:$state.current.activetab == 'member-list'}" ng-click="getLinkUrl()">
+                        Users
+                    </button>
+                </li>
+                
+                <li>
+                    <button class="btn" type="submit" ng-if="paymentActive && !technicianACL" ng-disabled="!fleetList"
+                            ng-class="{menuactive:$state.current.activetab == 'payments'}" ui-sref="payments">Payments
+                    </button>
+                </li>
+                <li>
+                    <button class="btn" type="submit" ng-click="backToMain()" ng-if="!technicianACL"
+                            ng-class="{slidemenuactive:$state.current.activetab == 'reports'}" ui-sref="reports">Reports
+                    </button>
+                </li>
+                <li>
+                    <button class="btn" type="submit" ng-disabled="!fleetList" ng-if="!technicianACL"
+                            ng-class="{slidemenuactive:$state.current.activetab == 'analytics'}" ui-sref="analytics">
+                            Analytics
+                    </button>
+                </li>
+                <li>
+                    <button class="btn" type="submit" ng-disabled="!fleetList"
+                            ng-class="{slidemenuactive:$state.current.activetab == 'profile'}" ui-sref="profile">Profile
+                    </button>
+                </li>
+                <li>
+                  <a href="https://lattis-platform.helpscoutdocs.com/" style="background-color: #425271;">
+                    <button style="margin-left: 1px; margin-top: -7px;" class="btn" type="submit">Help</button>
+                  </a>
+                </li>
+                <li ng-if="superUser">
+                    <button class="btn" type="submit" ng-disabled="!fleetList && adminACL"
+                            ng-class="{slidemenuactive:$state.current.activetab == 'add-customer'}"
+                            ui-sref="add-customer">
+                        Customer onboarding
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Use any element to open the sidenav -->
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+</aside>
+<!--End slidebar menu navigation-->

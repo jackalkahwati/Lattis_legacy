@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "598246578687",
+    "project_id": "ourbike-comunity",
+    "storage_bucket": "ourbike-comunity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598246578687:android:00f3d2d94f166e5d682fca",
+        "android_client_info": {
+          "package_name": "io.bikes.ourbike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ-xkoC2UR1MWbJR73_TjtKi-7SlNEqTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "598246578687-921snlp53j2q6g24k1c0aesm9uec1hkp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.ourbike.bikeshare",
+                "app_store_id": "1569286342"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598246578687:android:034989abaadb8c63682fca",
+        "android_client_info": {
+          "package_name": "io.bikes.ourbike.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ-xkoC2UR1MWbJR73_TjtKi-7SlNEqTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "598246578687-921snlp53j2q6g24k1c0aesm9uec1hkp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.ourbike.bikeshare",
+                "app_store_id": "1569286342"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598246578687:android:101a377eb837dd83682fca",
+        "android_client_info": {
+          "package_name": "io.bikes.ourbike.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ-xkoC2UR1MWbJR73_TjtKi-7SlNEqTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598246578687-ko5h0lagi9f10ck48d3u6rr9dqg2p436.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "598246578687-921snlp53j2q6g24k1c0aesm9uec1hkp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.ourbike.bikeshare",
+                "app_store_id": "1569286342"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/add_lock_bg_1">
+
+    <RelativeLayout
+        android:id="@+id/rlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/addlock_logo_1"/>
+        <TextView
+            android:id="@+id/tvStarted"
+            android:layout_below="@+id/ivLogo"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Let's get started. All you need is a Skylock"/>
+        <TextView
+            android:id="@+id/tvWorry"
+            android:layout_below="@+id/tvStarted"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have one yet? Don't worry,"
+            android:textColor="#9B9B9B" />
+        <TextView
+            android:id="@+id/tvOrder"
+            android:layout_below="@+id/tvWorry"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:clickable="true"
+            android:linksClickable="true"
+            android:text="@string/order_skylock" />
+        <TextView
+            android:id="@+id/tvInternet"
+            android:layout_below="@+id/tvOrder"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setup will require an internet connection to register your Skylock."
+            android:textColor="#FA7373"/>
+
+
+
+
+    </RelativeLayout>
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibNextStep1"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/next_step"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/ivPagination"/>
+    <ImageView
+        android:id="@+id/ivPagination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pagination_addlock_1"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/tvSwipe"
+        />
+    <TextView
+        android:id="@+id/tvSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swipe to go to next step"
+        android:textSize="10dp"
+        android:textColor="#D8D8D8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

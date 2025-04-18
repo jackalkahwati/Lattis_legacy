@@ -1,0 +1,77 @@
+<div id="singup-popup">
+     <div id="singup-popup-scrim"></div>
+     <div class="center">
+          <div class="popup-header">Sign up for Skylock product updates and exclusive offers.</div>
+          <span class="singup-poup-close">x</span>	
+          <div class="popup-container">
+               	{% form 'customer' %}
+                  <div class="popup-row">
+                    	<input class="mailing-list-email" name="contact[email]" type="email" placeholder="Enter Email Address" value="">
+                        <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
+                  </div>
+                  <div class="popup-row last-row">
+                      <button id="singup" type="submit" class="singup-button pull-right">{{ 'general.subscribe' | t }}</button>
+                  </div> 
+            	{% endform %}
+          </div>
+     </div>
+</div>
+<script type="text/javascript">
+  	
+  	jQuery("#singup-popup-scrim,.singup-poup-close").on("click", function() {
+        jQuery("#singup-popup").fadeOut(400);
+    });
+  
+  	function show_signup(){
+    	jQuery("#singup-popup").fadeIn(200);
+      	var windowH = jQuery( window ).height();
+      	var popupH = jQuery("#singup-popup .center").height();
+      	var diff = windowH - popupH;
+      	if(diff > 1){
+          	diff = diff / 2;
+          	jQuery("#singup-popup .center").css('margin-top', diff+'px');
+          	jQuery("#singup-popup .center").css('margin-bottom', diff+'px');
+          	jQuery("#singup-popup .center").css('position', 'fixed');
+        } else {
+          	var scroll = jQuery( window ).scrollTop();
+          	var scrollDiff = popupH - windowH + 30;
+          	jQuery("#singup-popup .center").css('position', 'absolute');
+          	if(scroll >= scrollDiff && popupH != 0){
+            	jQuery( window ).scrollTop(scrollDiff);
+            }
+          	jQuery("#singup-popup .center").css('margin-top', '10px');
+          	jQuery("#singup-popup .center").css('margin-bottom', '10px');
+        }
+  	}
+</script>
+
+
+
+
+
+
+<!-- Google Code for Started Checkout - 30 Days - NEW -->
+<!-- Remarketing tags may not be associated with personally identifiable information or
+placed on pages related to sensitive categories. For instructions on adding this tag and
+more information on the above requirements, read the setup guide:
+google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978103455;
+var google_conversion_label = "6a7sCPyv-mAQn9my0gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt=""
+src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978103455/?
+
+value=1.00&amp;currency_code=USD&amp;label=6a7sCPyv-
+mAQn9my0gM&amp;guid=ON&amp;script=0"/>
+
+</div>
+</noscript>

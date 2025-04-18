@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout_in_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        >
+        <include layout="@layout/view_toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_in_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/map_fragment"
+        tools:context=".presentation.map.locate.LocateVehicleActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/myposition"
+        android:id="@+id/iv_myposition_in_locate_vehicle"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_in_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reposition"
+        android:id="@+id/iv_reposition_in_locate_vehicle"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_in_map"
+        app:layout_constraintEnd_toStartOf="@+id/iv_myposition_in_locate_vehicle"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <include layout="@layout/activity_loading" android:id="@+id/locate_map_loading"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

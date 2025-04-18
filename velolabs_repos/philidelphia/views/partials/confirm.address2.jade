@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 4. What's the apartment/suite # etc [optional]?
+	input(type='text', class='field', name='shipping', ng-model='inputValues.address2' placeholder = 'Input apartment/suite # etc.', value='{{inputValues.address2}}')
+	p(class='invalidField') {{invalidText}}
+	a(ng-click='nextButtonClicked()')
+			button(type='button') Next

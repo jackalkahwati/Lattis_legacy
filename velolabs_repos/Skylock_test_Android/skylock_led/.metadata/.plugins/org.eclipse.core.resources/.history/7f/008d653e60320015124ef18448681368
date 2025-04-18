@@ -1,0 +1,530 @@
+package com.velolabs.skylock_led;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.UUID;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCallback;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattService;
+import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
+
+
+public class MainActivity extends Activity {
+	
+	Button connectNew, disconnect, LED_ON, LED_OFF, LOCK, UNLOCK,scanBluetooth, bLEDState, bBattVolt, bReset;
+	TextView textView1, textView2, tvLEDState, tvBattVolt, tvTemp, tvRssi;
+	Switch swAutoLock;
+	Context context = this;
+	BluetoothDevice Device;
+	BluetoothAdapter myBluetoothAdapter;
+	ArrayAdapter<String> BTArrayAdapter;
+	ListView listView;
+	Dialog dialog;
+	Timer timer;
+	final MainActivity myContext = this;
+	BluetoothGatt mBluetoothGatt;
+	BluetoothManager manager;
+	BluetoothGattService sLED, sLOCK;
+	BluetoothGattCharacteristic cLED_ON, cLED_OFF, cLOCK, cUNLOCK, cLED_STATE, c_TX, c_Testing;
+	
+	private int AUTO_LOCK = 0;
+	private int LOCK_COUNT = 0;
+	private int[] countArray = new int[3];
+		
+	private UUID UUID_TEST_SER = UUID.fromString("d3995e40-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_LED_STATE = UUID.fromString("d3995e41-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_LOCK_STATE = UUID.fromString("d3995e42-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_BAT_VOLT = UUID.fromString("d3995e43-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_TEMP = UUID.fromString("d3995e44-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_RSSI = UUID.fromString("d3995e45-fa57-11e4-ae59-0002a5d5c51b");
+	
+	private UUID UUID_CONFIG_SER = UUID.fromString("d3995e80-fa57-11e4-ae59-0002a5d5c51b");
+	private UUID UUID_RESET = UUID.fromString("d3995e81-fa57-11e4-ae59-0002a5d5c51b");
+	
+	
+	
+	String MacAddress1 = "FB:7D:23:F3:73:B5";
+	String MacAddress2 = "DA:31:F8:C5:1A:F0";
+	int count = 1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        //initializations
+        init();
+        
+        //setOnclick listeners
+        onClickListenerMethod();
+    }
+
+
+    private void init() {
+		// TODO Auto-generated method stub
+    	connectNew = (Button) findViewById(R.id.button1);
+    	disconnect = (Button) findViewById(R.id.button2);
+    	LED_ON = (Button) findViewById(R.id.button3);
+    	LED_OFF = (Button) findViewById(R.id.button4);
+    	LOCK = (Button) findViewById(R.id.button5);
+    	UNLOCK = (Button) findViewById(R.id.button6);
+    	bLEDState = (Button) findViewById(R.id.button9);
+    	bBattVolt = (Button) findViewById(R.id.bBattVolt);
+    	bReset = (Button) findViewById(R.id.bReset);
+    	swAutoLock = (Switch) findViewById(R.id.swAutoLock);
+    	textView1 = (TextView) findViewById(R.id.textView1);
+    	textView2 = (TextView) findViewById(R.id.textView2);
+    	tvLEDState = (TextView) findViewById(R.id.tvLEDState);
+    	tvBattVolt = (TextView) findViewById(R.id.tvBattVolt); 
+    	tvTemp = (TextView) findViewById(R.id.tvTemp); 
+    	tvRssi = (TextView) findViewById(R.id.tvRssi); 
+    	manager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
+    	myBluetoothAdapter = manager.getAdapter();
+    	BTArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+    	
+	      	
+    	
+    }
+    private void onClickListenerMethod() {
+		// TODO Auto-generated method stub
+		connectNew.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			    View view = inflater.inflate(R.layout.bluetooth_list, null);
+		        scanBluetooth = (Button) view.findViewById(R.id.scanBluetooth);
+		        listView = (ListView) view.findViewById(R.id.bluetoothList);
+		        builder.setView(view);
+		        dialog_set();
+				  
+			    dialog = builder.create();
+			    
+			    dialog.getWindow().setGravity(Gravity.BOTTOM);
+			    dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+			    dialog.setCanceledOnTouchOutside(true);
+			    dialog.show();
+			    				
+			}
+
+
+		});
+		
+		//disconnect button - Bluetooth disconnect, textview resets, throws exception when no device is connected
+		disconnect.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				myBluetoothAdapter.stopLeScan(mLeScanCallback);
+				textView2.setText("");
+			    mBluetoothGatt.disconnect();
+			    timer.cancel();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show(); 
+				}
+				
+				
+			}
+		});
+		
+		//LED_ON button - Turns on LED, throws exception when no device is connected
+		LED_ON.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLED_STATE= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_LED_STATE);
+				cLED_STATE.setValue(new byte[] {(byte) 0xFF});
+		   		mBluetoothGatt.writeCharacteristic(cLED_STATE);
+		   		Toast.makeText(getApplicationContext(),"LED Status = ON",
+			  		 		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+		   	}
+		});
+		
+		//LED_OFF button - Turns off LED, throws exception when no device is connected
+		LED_OFF.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLED_STATE= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_LED_STATE);
+				cLED_STATE.setValue(new byte[] {0x00});
+			   	mBluetoothGatt.writeCharacteristic(cLED_STATE);
+	   			Toast.makeText(getApplicationContext(),"LED Status = OFF",
+	   				  		 		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+		   	}
+		});
+		
+		//LOCK button - LOCKS, throws exception when no device is connected
+		LOCK.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				cLOCK= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_LOCK_STATE);
+				cLOCK.setValue(new byte[] {0x01});
+		   		mBluetoothGatt.writeCharacteristic(cLOCK);
+				Toast.makeText(getApplicationContext(),"LOCKED" ,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		//UNLOCK button - UNLOCKS, throws exception when no device is connected
+		UNLOCK.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+				cUNLOCK= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_LOCK_STATE);
+				cUNLOCK.setValue(new byte[] {0x00});
+		   		mBluetoothGatt.writeCharacteristic(cUNLOCK);
+				Toast.makeText(getApplicationContext(),"UNLOCKED" ,
+		           		 Toast.LENGTH_LONG).show();
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		
+		//Reads LED state and displays in textView , throws exception when no device is connected
+		bLEDState.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				BluetoothGattCharacteristic cLED_STATE= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_LED_STATE);
+				mBluetoothGatt.readCharacteristic(cLED_STATE);
+											
+				Integer temp = cLED_STATE.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+				
+				if(temp == 0){
+					tvLEDState.setText("LED is OFF");
+				}else if(temp >= 1) {
+					tvLEDState.setText("LED is ON");
+				}
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),""+e.toString(),
+					        Toast.LENGTH_LONG).show();
+				}
+				
+			}
+		});
+		
+		bBattVolt.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try{
+				BluetoothGattCharacteristic cBattVolt= mBluetoothGatt.getService(UUID_TEST_SER).getCharacteristic(UUID_BAT_VOLT);
+				mBluetoothGatt.readCharacteristic(cBattVolt);
+				if(cBattVolt != null){				
+				Integer temp = cBattVolt.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT16, 0);
+				Integer temp1 = cBattVolt.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 2);
+				Integer temp2 = cBattVolt.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 3);
+				
+				float tempf = (float) temp/1000; 
+				tvBattVolt.setText("BattVolt: "+tempf);
+				tvTemp.setText("Temp: "+temp1);
+				tvRssi.setText("Rssi: "+temp2);
+				}
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),""+e.toString(),
+					        Toast.LENGTH_LONG).show();
+				}
+				
+			}
+		});
+		
+		bReset.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+				BluetoothGattCharacteristic cReset= mBluetoothGatt.getService(UUID_CONFIG_SER).getCharacteristic(UUID_RESET);
+				cReset.setValue(new byte[] {0x00});
+		   		mBluetoothGatt.writeCharacteristic(cReset);
+				
+				} catch(Exception e){
+					Toast.makeText(getApplicationContext(),"No device is connected",
+					        Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		
+		swAutoLock.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		        if (isChecked) {
+		        	AUTO_LOCK = 1;
+		        } else {
+		        	AUTO_LOCK = 0;
+		        }
+		    }
+		});
+		
+		
+	}
+    
+    private List<BluetoothDevice> tmpBtChecker = new ArrayList<BluetoothDevice>();
+    
+	protected void discoverServices() {
+		// TODO Auto-generated method stub
+		int count = 10;
+		while(true){
+		mBluetoothGatt.discoverServices();
+	    count = mBluetoothGatt.getServices().size();
+		if(count >= 4){
+			
+			timer = new Timer();
+    		timer.schedule(new TimerTask()
+    		{
+    		    @Override
+    		    public void run()
+    		    {
+    		    	mBluetoothGatt.readRemoteRssi();
+    		    }
+    		}, 0, 1000);
+    		
+    		
+			
+		break;
+		}
+		}
+		Toast.makeText(getApplicationContext(),"Services Discovered!!! ",
+			   		 Toast.LENGTH_LONG).show();
+	}
+
+
+	protected void bluetoothConnect() {
+		// TODO Auto-generated method stub
+		while(true){
+			mBluetoothGatt = Device.connectGatt(myContext, true, mGattCallback);
+			if(mBluetoothGatt.connect()==true){
+				String temp = Device.getAddress();
+				textView2.setText(""+temp);
+				break;
+			}else{
+				mBluetoothGatt.disconnect();
+			}
+		}
+		
+		
+	}
+	
+
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    
+    protected void dialog_set(){
+		scanBluetooth.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				tmpBtChecker.clear();
+				
+				 if (!myBluetoothAdapter.isEnabled()) {
+			         Intent turnOnIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			         startActivityForResult(turnOnIntent, 1);
+			      }
+				 try {
+				
+				if (myBluetoothAdapter.isDiscovering()) {
+					   // the button is pressed when it discovers, so cancel the discovery
+					   myBluetoothAdapter.cancelDiscovery();
+				   }
+				   else {
+						BTArrayAdapter.clear();
+						tmpBtChecker.clear();
+						//myBluetoothAdapter.startDiscovery();
+						myBluetoothAdapter.startLeScan(mLeScanCallback);
+						//registerReceiver(bReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+												
+					} 
+				
+			      BTArrayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
+			      listView.setAdapter(BTArrayAdapter);
+				 } catch(Exception e){
+					 String temp = e.toString();
+					 Toast.makeText(getApplicationContext(),""+temp,
+					   		 Toast.LENGTH_LONG).show();
+					 
+				 }
+			} 
+		});
+		
+		listView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				myBluetoothAdapter.cancelDiscovery();
+				myBluetoothAdapter.stopLeScan(mLeScanCallback);
+				String[] lines = ((String) listView.getItemAtPosition(position)).split("\\n");
+	    		String line2 = lines[1];
+	    		Toast.makeText(getApplicationContext(),"Connecting to "+line2 ,
+	           		 Toast.LENGTH_LONG).show();
+	    		Device = myBluetoothAdapter.getRemoteDevice(""+line2);
+	    		try{
+	    			bluetoothConnect();
+	    			discoverServices();
+	    		} catch(Exception e){
+	    			Toast.makeText(getApplicationContext(),""+e.toString() ,
+	   	           		 Toast.LENGTH_LONG).show();
+	    		}
+				
+	    		dialog.dismiss();
+			}
+		}); 
+    }
+    
+    private BluetoothAdapter.LeScanCallback mLeScanCallback =
+            new BluetoothAdapter.LeScanCallback() {
+        @Override
+        public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                	if(!tmpBtChecker.contains(device)){
+       	        	tmpBtChecker.add(device);
+                	BTArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+   	        	 	BTArrayAdapter.notifyDataSetChanged();
+                	}
+                }
+            });
+        }
+    };
+    
+    private BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
+
+
+        @Override
+        public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
+
+        }
+
+        @Override
+        public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+
+        }
+
+        @Override
+        public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+
+        }
+
+        @Override
+        public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+
+        }
+
+        @Override
+        public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+
+        }
+
+        @Override
+        public void onReadRemoteRssi(BluetoothGatt gatt, int rssi, int status) {
+        	display(rssi);
+        }
+
+		private void display(final int rssi) {
+			// TODO Auto-generated method stub
+			runOnUiThread(new Runnable() {
+	            @Override
+	            public void run() {
+
+	                //textView2.setText("   "+Device.getAddress()+"\n          Rssi:  "+rssi);
+	                
+	                if(AUTO_LOCK == 1){
+	                	countArray[LOCK_COUNT] = rssi;
+	                	LOCK_COUNT++;
+	                	if(LOCK_COUNT >= 2){
+	                		LOCK_COUNT = 0;
+	                		int meanRssi = (Math.abs(countArray[0]+countArray[1]+countArray[2]))/3;
+	                		textView2.setText("   "+Device.getAddress()+"\n meanRssi:  "+meanRssi);
+	                	}
+	                	
+	                }else{
+                		textView2.setText("   "+Device.getAddress()+"\n          Rssi:  "+rssi);
+                	}
+	            }
+
+	        });
+		}
+    };
+    
+    
+}
+
+

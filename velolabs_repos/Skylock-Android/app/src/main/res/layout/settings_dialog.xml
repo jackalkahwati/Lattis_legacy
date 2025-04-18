@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#6EDF9E">
+
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/arrow_close"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyLock"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llLockName"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rlLockName">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llLockName">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlTheft"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theft Alert Settings"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvTheftTamperings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theft alerts are sent when tampering or vibrations on a lock are detected."
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textAppearance = "?android:attr/textAppearanceSmall"
+                />
+
+            <LinearLayout
+                android:id="@+id/llTheftSensitivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvTheftTamperings"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/ibTheftLow"
+                    android:layout_width="wrap_content"
+                    android:tag="inactive"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/low_light"
+                    android:background="@null"/>
+                <ImageButton
+                    android:id="@+id/ibTheftMed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="active"
+                    android:src="@drawable/med_dark"
+                    android:background="@null"/>
+                <ImageButton
+                    android:id="@+id/ibTheftHigh"
+                    android:layout_width="wrap_content"
+                    android:tag="inactive"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/high_light"
+                    android:background="@null"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_below="@+id/llTheftSensitivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium sensitivity (recommended) is a balance approach to security. Prolonged block motion will trigger an alert."
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:textAppearance = "?android:attr/textAppearanceSmall"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llTheft"
+            android:layout_below="@+id/rlTheft"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#BFBFBF"
+                />
+
+        </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSettingsToggleButtons"
+                android:layout_below="@+id/llTheft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+                        <TextView
+                            android:id="@+id/tvCap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Capacitive Touch Pad"
+                            android:textStyle="bold"/>
+                        <ImageButton
+                            android:id="@+id/ibCap"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="90dp"
+                            android:layout_height="35dp"
+                            android:tag="inactive"
+                            android:src="@drawable/toggle_off"
+                            android:background="@null"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+                        <TextView
+                            android:id="@+id/tvAutoLock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Proximity Lock/Unlock"
+                            android:textStyle="bold"/>
+                        <ImageButton
+                            android:id="@+id/ibAutoLock"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="90dp"
+                            android:layout_height="35dp"
+                            android:tag="inactive"
+                            android:src="@drawable/toggle_off"
+                            android:background="@null"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+                        <TextView
+                            android:id="@+id/tvLowBandwidth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Low Bandwidth Mode"
+                            android:textStyle="bold"/>
+                        <ImageButton
+                            android:id="@+id/ibLowBandwidth"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="90dp"
+                            android:layout_height="35dp"
+                            android:tag="inactive"
+                            android:src="@drawable/toggle_off"
+                            android:background="@null"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llEmergency"
+                android:layout_above="@+id/rlEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#BFBFBF"
+                    />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlSettingsToggleButtons">
+            <ViewSwitcher
+                android:id="@+id/vsEmergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:measureAllChildren="false">
+
+                <RelativeLayout
+                    android:id="@+id/rlEmergency1"
+                    android:layout_below="@+id/llTheft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emergency Pin Code"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A pin code can be set to unlock the lock without a mobile device."
+                        android:layout_marginTop="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        />
+                    <ImageButton
+                        android:id="@+id/ibResetPin"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reset_pin"
+                        android:background="@null"
+                        android:layout_below="@+id/textView"
+                        android:layout_centerHorizontal="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEmergency2"
+                    android:layout_below="@+id/llTheft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emergency Pin Code"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvCapDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enter a new sequence with 4-16* touches."
+                        android:layout_marginTop="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/capPins"
+                        android:layout_below="@+id/tvCapDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <ImageButton
+                            android:id="@+id/ibCapPin1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cap_pins"
+                            android:background="@null"
+                            android:layout_centerHorizontal="true"/>
+
+                        <RelativeLayout
+                            android:id="@+id/rlCapPin2"
+                            android:layout_below="@id/ibCapPin1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp">
+                            <ImageButton
+                                android:id="@+id/ibCapPin2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/cap_pins"
+                                android:background="@null"
+                                />
+                            <ImageButton
+                                android:id="@+id/ibCapPin3"
+                                android:layout_marginLeft="70dp"
+                                android:layout_toRightOf="@id/ibCapPin2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/cap_pins"
+                                android:background="@null"
+                                />
+                        </RelativeLayout>
+
+                        <ImageButton
+                            android:id="@+id/ibCapPin4"
+                            android:layout_below="@id/rlCapPin2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cap_pins"
+                            android:background="@null"
+                            android:layout_centerHorizontal="true"/>
+
+                    </RelativeLayout>
+                    <ImageButton
+                        android:id="@+id/ibSavePin"
+                        android:tag="mode_1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/save_pin"
+                        android:background="@null"
+                        android:layout_below="@+id/capPins"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_below="@+id/ibSavePin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="*4 touches is the weakest, 6 is moderate, 8 is safe, 10 and above is the strongest."/>
+
+                </RelativeLayout>
+
+                </ViewSwitcher>
+            </RelativeLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

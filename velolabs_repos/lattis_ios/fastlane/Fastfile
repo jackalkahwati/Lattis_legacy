@@ -1,0 +1,126 @@
+fastlane_version "2.10.0"
+
+# ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "qwgd-ylyj-aqcc-vrib"
+
+default_platform :ios
+
+platform :ios do
+    
+  lane :icon do
+    appicon(
+      appicon_devices: [:ipad, :iphone, :ios_marketing],
+      appicon_path: "Thrive Ryde/Assets.xcassets",
+      appicon_image_file: "Thrive Ryde/thrive-icon.png"
+    )
+  end
+
+  lane :fabric do |values|
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: values[:app_identifier]
+    )
+#    version = get_version_number(target: ENV["TARGET"])
+#    build = get_build_number(target: ENV["TARGET"])
+#    add_badge(shield: "#{version}-#{build}-orange", dark: true)
+    gym(
+      scheme: values[:scheme],
+      export_method: 'ad-hoc',
+      clean: true,
+      configuration: values[:configuration]
+#      include_symbols: false
+    )
+
+#    emails = 'ravil@lattis.io' # You can list more emails here
+#    groups = nil # You can define groups on the web and reference them here
+    emails = values[:test_email] ? values[:test_email] : 'roger@lattis.io' # You can list more emails here
+    groups = values[:test_email] ? nil : values[:testers] # You can define groups on the web and reference them here
+    changelog = changelog_from_git_commits
+
+    firebase_app_distribution(
+        app: values[:app_id],
+        testers: emails,
+        groups: groups,
+        release_notes: changelog
+    )
+
+    sh("./../scripts/upload-symbols", "-gsp", values[:gsp_path], "-p", "ios", values[:dsym_path])
+    clean_build_artifacts
+    sh("git", "reset", "--hard", "HEAD")
+  end
+  
+  desc "Publish Dev build"
+  lane :dev do |values|
+    values[:app_identifier] = ENV["APP_IDENTIFIER_DEV"]
+    values[:scheme] = ENV["SCHEME"]
+    values[:app_id] = ENV["APP_ID_DEV"]
+    values[:testers] = ENV["TESTERS"]
+    values[:gsp_path] = ENV["GSP_PATH_DEV"]
+    values[:dsym_path] = ENV["DSYM_PATH_DEV"]
+    values[:configuration] = 'Dev'
+    fabric values
+  end
+  
+  desc "Publish Beta build"
+  lane :beta do |values|
+    values[:app_identifier] = ENV["APP_IDENTIFIER_BETA"]
+    values[:scheme] = ENV["SCHEME"]
+    values[:app_id] = ENV["APP_ID_BETA"]
+    values[:testers] = ENV["TESTERS"]
+    values[:gsp_path] = ENV["GSP_PATH_BETA"]
+    values[:dsym_path] = ENV["DSYM_PATH_BETA"]
+    values[:configuration] = 'Beta'
+    fabric values
+  end
+  
+  lane :prod do
+      cert
+      sigh(
+        force: true,
+        app_identifier: ENV["APP_IDENTIFIER"]
+      )
+#      sigh(
+#        force: true,
+#        app_identifier: "io.lattis.www.Lattis.Today"
+#      )
+      gym(
+        scheme: ENV["SCHEME"],
+        configuration: "Release",
+        export_method: 'app-store'
+      )
+      pilot(skip_submission: true, skip_waiting_for_build_processing: true)
+#      slack(
+#        slack_url: "https://hooks.slack.com/services/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",
+#        message: "Lattis successfully uploaded to the TestFlight",
+#        default_payloads: [:git_author],
+#        attachment_properties: {
+#          fields: [
+#            {
+#              title: "Version",
+#              value: "#{build_version} (#{build_number})"
+#            }
+#          ]
+#        }
+#      )
+      sh("./../scripts/upload-symbols", "-gsp", ENV["GSP_PATH"], "-p", "ios", ENV["DSYM_PATH"])
+      clean_build_artifacts
+  end
+
+  desc "Publish Dev, Beta and TestFlight (if prod is true)"
+  lane :deploy do |values|
+    dev
+    beta
+    if values[:prod] === true
+      prod
+    end
+  end
+
+  desc "Create and push a new tag according to version number"
+  lane :release do
+    add_git_tag(
+      tag: "v#{get_version_number}"
+    )
+    push_git_tags
+  end
+end

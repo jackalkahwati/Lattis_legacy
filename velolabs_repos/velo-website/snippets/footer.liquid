@@ -1,0 +1,75 @@
+{% assign borderClass = '' %}
+{% if settings.background-color == settings.footer-background-color %}
+  {% unless settings.body-background-use-image or settings.footer-background-use-image %}
+    {% assign borderClass = 'default' %}
+  {% endunless %}
+{% endif %}
+
+<div class="footer-wrapper {{ borderClass }}">
+  	<footer class="main-footer">
+    	<div class="first-row">
+          	<span><img src="{{ 'logo_footer.png' | asset_url }}" class="logo-footer" /> <p>Skylock by Velo Labs</p></span>  
+      	</div>
+      	<div class="second-row">
+          	<div class="first-column">
+          		<ul>
+                  	<li><a href="/pages/faq">FAQ</a></li>
+                  	<li><a href="https://medium.com/@getskylock" target="_blank">BLOG</a></li>
+                  	<li><a href="https://angel.co/velo-labs/jobs" target="_blank">JOBS</a></li>
+                  	<li><a href="/pages/contact">CONTACT</a></li>
+                </ul>
+          	</div>
+          	<div class="second-column">
+          		{% if settings.display-mailing-list %}
+                  {% include 'mailing-list' %}
+                {% endif %}
+          	</div>
+          	<div class="third-column">
+              	<p>Follow us</p>
+              	{% if settings.footer-show-like %}
+                	<a class="footer-share-icon footer-like" href="//www.facebook.com/getskylock/">&nbsp;</a>
+                {% endif %}
+          		{% if settings.footer-show-tweet %}
+                	<a class="footer-share-icon footer-tweet" href="//twitter.com/getskylock">&nbsp;</a>
+                {% endif %}
+                {% if settings.footer-show-pin %}
+                	<a class="footer-share-icon footer-pin" href="//pinterest.com/pin/create/button/?url={{ shop.url }}&amp;media={{ pinterestImage }}&amp;description={{ shop.name }}" target="_blank">&nbsp;</a>
+                {% endif %}
+                {% if settings.footer-show-plus %}
+                	<a class="footer-share-icon footer-plus" href="//plus.google.com/share?url={{ shop.url }}" target="_blank">{{ 'general.social.google' | t }}</a>
+                {% endif %}
+                {% if settings.footer-show-fancy %}
+                	<a class="footer-share-icon footer-fancy" href="//www.thefancy.com/fancyit?ItemURL={{ shop.url }}&amp;Title={{ shop.name }}" target="_blank">{{ 'general.social.fancy' | t }}</a>
+                {% endif %}
+          	</div>
+      	</div>
+      	<div role="contentinfo" class="copyright footer-module">
+          	<ul>
+              	<li><a href="/pages/privacy-policy">Privacy Policy |</a></li>
+            	<li><a href="/pages/terms-of-use">Terms of Use |</a></li>  
+            	<li><a href="/pages/terms-of-sale">Terms of Sale</a></li>  
+          	</ul>
+          	{% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
+          	<p>{{ 'general.copyright_text_html' | t: year: year }}</p>
+        </div>
+      	{% if settings.footer-show-payment-options %}
+            <div class="payment-options footer-module">
+              	{% if settings.show-diners-club %}      <span class="diners-club">&#58131;</span>       {% endif %}
+              	{% if settings.show-maestro %}          <span class="maestro">&#58130;</span>           {% endif %}
+              	{% if settings.show-interac %}          <span class="interac">&#58119;</span>           {% endif %}
+              	{% if settings.show-visa %}             <span class="visa">&#58113;</span>              {% endif %}
+              	{% if settings.show-mastercard %}       <span class="mastercard">&#58114;</span>        {% endif %}
+              	{% if settings.show-discover %}         <span class="discover">&#58117;</span>          {% endif %}
+              	{% if settings.show-dk %}               <span class="dk">&#58128;</span>                {% endif %}
+              	{% if settings.show-american-express %} <span class="american-express">&#58115;</span>  {% endif %}
+              	{% if settings.show-google-wallet %}    <span class="google-wallet">&#58121;</span>     {% endif %}
+              	{% if settings.show-paypal %}           <span class="paypal">&#58116;</span>            {% endif %}
+              	{% if settings.show-jcb %}              <span class="jcb">&#58129;</span>               {% endif %}
+              	{% if settings.show-cirrus %}           <span class="cirrus">&#58120;</span>            {% endif %}
+              	{% if settings.show-stripe %}           <span class="stripe">&#58118;</span>            {% endif %}
+              	{% if settings.show-bitcoins %}         <span class="bitcoin">&#58132;</span>           {% endif %}
+            </div>
+        {% endif %}
+
+  </footer>
+</div>

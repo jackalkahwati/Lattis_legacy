@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Ellipse",
+        "repositoryURL": "git@github.com:velolabs/ellipse_protocols.git",
+        "state": {
+          "branch": "master",
+          "revision": "f7e93e838d2b16b05e117b053f5c1a7351d899c4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

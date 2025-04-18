@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cc.skylock.skylock.ui.LockSettingsActivity"
+    tools:showIn="@layout/activity_lock_settings">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rl_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_currently_connect"
+                    android:background="#F7F7F8">
+
+                    <TextView
+                        android:id="@+id/tv_header_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:padding="16dp"
+                        android:text="@string/lock_details"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_lockdetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_header"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_lockdetails_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_currently_connect"
+                        android:background="@android:color/white"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_label_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="@string/lock_name"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_lock_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:maxLines="1"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/text_color_accent" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rl_lockdetails_name"
+                        android:background="@color/divider_settings"
+                        android:visibility="visible" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rl_lockdetails_owner"
+                        android:background="@color/divider_settings"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_lockdetails_serialnumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view2"
+                        android:background="@android:color/white"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_label_Serialnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="@string/serial_number"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_Serialnumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rl_lockdetails_serialnumber"
+                        android:background="@color/divider_settings"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_lockdetails_firmware"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view3"
+                        android:background="@android:color/white"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_label_Firmware"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="@string/firmware"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/tv_Firmware"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_marginRight="16dp"
+                                android:layout_weight="1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/text_color_accent" />
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/cv_update_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:visibility="gone"
+                                card_view:cardBackgroundColor="@color/text_color_accent"
+                                card_view:cardCornerRadius="3dp"
+                                card_view:cardElevation="1dp">
+
+                                <TextView
+                                    android:id="@+id/cv_update_Firmware"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:paddingBottom="5dp"
+                                    android:paddingLeft="12dp"
+                                    android:paddingRight="12dp"
+                                    android:paddingTop="5dp"
+                                    android:text="@string/update"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="normal" />
+                            </android.support.v7.widget.CardView>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_lockdetails_owner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:padding="16dp"
+                        android:layout_below="@+id/view1"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:id="@+id/tv_label_registered_owner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="@string/registered_owner"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_registered_owner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:maxLines="1"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/ellipses_text_color" />
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_selection_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_lockdetails"
+                    android:background="#F7F7F8">
+
+                    <TextView
+                        android:id="@+id/tv_header_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:padding="16dp"
+                        android:text="@string/locksetting_theftandcrash_title"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_detection_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_selection_header"
+                    android:text=""
+                    android:padding="16dp"
+                    android:background="@android:color/white"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tv_detection_content"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_theft_detection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view4"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_Theft_detection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/theft_detection"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton_theft"
+                        android:layout_width="52dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/toggle_selector"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_theft_detection"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_theft_detection_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view5"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_Theft_detection_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/theft_detection_settings"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@drawable/resetpwd_textclick_color" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_theft_detection_settings"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_crash_detection_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view6"
+                    android:visibility="visible"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_Crash_detection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/crash_detection"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton_crash"
+                        android:layout_width="52dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/toggle_selector"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn=""
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_crash_detection_settings"
+                    android:background="@color/divider_settings"
+                    android:visibility="invisible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_crash_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view7"
+                    android:background="@android:color/white"
+                    android:visibility="gone"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_Crash_detection_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/crash_detection_settings"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@drawable/resetpwd_textclick_color" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_crash_settings"
+                    android:background="@color/divider_settings"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_device_settings_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view8"
+                    android:background="#F7F7F8">
+
+                    <TextView
+                        android:id="@+id/tv_header_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:padding="16dp"
+                        android:text="@string/locksetting_devicesetting_title"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_proximity_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_device_settings_header"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_proximity_lock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/auto_proximity_lock"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton_proximity_lock"
+                        android:layout_width="52dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/toggle_selector"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_proximity_lock"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_proximity_unlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view9"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_proximity_unlock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/auto_proximity_unlock"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton_proximity_unlock"
+                        android:layout_width="52dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/toggle_selector"
+                        android:checked="false"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn="" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_proximity_unlock"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_pincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view10"
+                    android:background="@android:color/white"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_pincode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/pin_code"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color" />
+
+                    <TextView
+                        android:id="@+id/tv_setpincode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <ImageView
+                        android:id="@+id/iv_image_arrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@null"
+                        android:src="@drawable/icon_share_arrow"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/rl_pincode"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/divider_settings"
+                    android:visibility="visible" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_delete_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/view11"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    card_view:cardBackgroundColor="@color/text_color_accent"
+                    card_view:cardCornerRadius="1dp"
+                    card_view:cardElevation="1dp">
+
+                    <TextView
+                        android:id="@+id/tv_delete_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingTop="16dp"
+                        android:text="@string/delete_lock"
+                        android:textAlignment="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white"
+                        android:textStyle="normal" />
+                </android.support.v7.widget.CardView>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

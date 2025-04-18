@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.lattis.lattis">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera2.full"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+
+    <application
+        android:name="com.lattis.lattis.infrastructure.Lattis"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:exported="true"
+            android:name="com.lattis.lattis.authentication.AccountAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
+
+        <activity
+            android:name="com.lattis.lattis.presentation.authentication.launch.LaunchActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/RemoveAppSplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="updatetrip.service.notification.clicked" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:pathPrefix="/${applinkpath}/android"
+                    android:host="whitelabel.lattis.io" />
+
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.lattis.lattis.presentation.authentication.signin.SignInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.authentication.signup.SignUpActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.lattis.lattis.presentation.authentication.verifycode.EnterSecretCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.ride.EndRideActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.popup.PopUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Translucent"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.popup.edit.PopUpEditActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Translucent"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.ride.RideSummaryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Translucent"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.qrscan.ScanBikeQRCodeActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.qrscan.dummy.DummyLoadingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Translucent"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.profile.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.help.HelpActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.payment.PaymentActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.fleet.PrivateFleetActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.fleet.add.EmailSecretCodeVerificationActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.payment.add.AddPaymentCardActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.search_places.SearchPlacesActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+
+        <activity
+        android:name="com.lattis.lattis.presentation.damage.ReportDamageActivity"
+        android:screenOrientation="portrait"
+            android:exported="false"
+        android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.history.RideHistoryActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.history.detail.RideHistoryDetailActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.authentication.forgotpassword.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.parking.ParkingActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.webview.WebviewActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.reservation.ReservationActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.reservation.edit.ReservationEditActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.membership.MembershipActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.home.activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:label=""
+            android:theme="@style/AppTheme"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity">
+
+        </activity>
+
+
+
+        <activity
+            android:name="com.lattis.lattis.presentation.reservation.ReservationListOrCreateActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <activity
+            android:name="com.lattis.lattis.presentation.payment.add.AddPromotionActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/AppTheme"  />
+
+        <service
+            android:name="com.lattis.lattis.presentation.pushnotification.AppFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.lattis.lattis.utils.localnotification.LocalNotificationBroadcastReceiver"
+            android:exported="true"
+            android:enabled="true"/>
+
+    </application>
+</manifest>

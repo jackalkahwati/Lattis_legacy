@@ -1,0 +1,125 @@
+<section>
+    <div class="panel">
+        <div class="panel-body box p-tb5-lr20 m-t-10">
+            <div class="m-tb-30 pull-left fullwid">
+                <form name='form'>
+                    <div class="row p-b-20">
+                        <div class="col-sm-12 new-fleet-box">
+                            <p class="ft-16 p-b-10 ft-b"> Customer details
+                            </p>
+                            <ul class="list-unstyled list-inline bor-b-hash" style="padding-bottom: 25px;padding-left: 15px;">
+                                <li>
+                                    <span class="ft-14 text-muted">Customer name</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder m-b-30 m-r-10 inline-block">
+                                        <!--<span>First name</span>-->
+                                        <label for="cName" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box inline-block wid-314" id="cName"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="newOperator.cname"
+                                               ng-pattern="/^[a-zA-Z- ]{3,}$/" data-ng-required="true" name="customername"
+                                               ng-class="{err:!form.customername.$valid && !form.customername.$pristine}"
+                                               type="text" ng-blur='validateFields(form.customername)'>
+                                        <p ng-if="!form.customername.$pristine && form.customername.$error.pattern"
+                                           class="error-alert">First name not valid</p>
+                                        <p ng-if="!form.customername.$pristine && form.customername.$error.required"
+                                           class="error-alert">First name is required</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row p-tb-5">
+                        <div class="col-sm-12 ft-b">
+                            <p class="ft-16"> Operator details:
+                            </p>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 new-fleet-box m-b-35 p-b-50">
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Main contact</span>
+                                    </li>
+                                    <li>
+                                        <div class="set-placeholder inline-block m-r-10 m-b-10">
+                                            <span>First name</span>
+                                            <label for="firstname" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box inline-block wid-200" id="firstname"
+                                                   ng-model-options="{ updateOn: 'blur' }" ng-model="newOperator.fname"
+                                                   ng-pattern="/^[a-zA-Z- ]{3,}$/" data-ng-required="true" name="firstname"
+                                                   ng-class="{err:!form.firstname.$valid && !form.firstname.$pristine}"
+                                                   type="text" ng-blur='validateFields(form.firstname)'>
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"
+                                               class="error-alert">First name not valid</p>
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.required"
+                                               class="error-alert">First name is required</p>
+                                        </div>
+                                        <div class="set-placeholder inline-block m-b-10">
+                                            <span>Last name</span>
+                                            <label for="lName" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box inline-block wid-200" id="lName"
+                                                   ng-model-options="{ updateOn: 'blur' }" ng-model="newOperator.lname"
+                                                   ng-class="{err:!form.lastname.$valid && !form.lastname.$pristine}"
+                                                   ng-pattern="/^[a-zA-Z- ]{1,}$/" data-ng-required="true" name="lastname"
+                                                   type="text" ng-blur='validateFields(form.lastname)'>
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"
+                                               class="error-alert">Last name not valid</p>
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.required"
+                                               class="error-alert">Last name is required</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Phone Number</span>
+                                    </li>
+                                    <li>
+                                        <div class="set-placeholder m-b-10">
+                                            <label for="phone" class="required-dot">&#9679;</label>
+                                            <span>Telephone</span>
+                                            <input class="form-control input-phone p-lr-10 new-txt-box inline-block wid-400" id="phone" type='text'
+                                                   phone-input placeholder="(XXX) XXX-XXXX" maxlength="14" data-ng-required="true"
+                                                   ng-model-options="{ updateOn: 'blur' }" ng-model="newOperator.phoneNumber"
+                                                   ng-pattern="/^[\(]\d{3}\)[\ ]\d{3}[\-]\d{4}/" name="phone"
+                                                   ng-class="{err:!form.phone.$valid && !form.phone.$pristine}"
+                                                   ng-blur='validateFields(form.phone)'>
+                                            <p ng-if="!form.phone.$pristine && form.phone.$error.required"
+                                               class="error-alert">Phone number is required</p>
+                                            <p ng-if="form.phone.$error.pattern" class="error-alert">Invalid number</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <span class="ft-14 text-muted">Email Address</span>
+                                    </li>
+                                    <li>
+                                        <div class="set-placeholder">
+                                            <label for="email" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box wid-314" id="email" ng-model="newOperator.email"
+                                                   ng-init="profile.email" data-ng-required="true" ng-blur='validateFields(form.email)'
+                                                   ng-pattern="emailRegexPatterns"
+                                                   name="email" ng-class="{err:!form.email.$valid && !form.email.$pristine}"
+                                                   type="email">
+                                            <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                                               class="error-alert">Email ID not valid</p>
+                                            <p ng-if="!form.email.$pristine && form.email.$error.required"
+                                               class="error-alert">Email ID is required</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="text-right fullwid p-tb-10 bor-tb-hash m-tb-30 m-t-50">
+                                    <button class="btn custom-btn wid-153" ng-click="savecustomer()">ADD A OPERATOR
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

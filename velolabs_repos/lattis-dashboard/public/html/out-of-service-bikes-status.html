@@ -1,0 +1,83 @@
+<section ng-controller="outOfServiceBikesController" class="animated fadeIn">
+    <div class="panel">
+        <div class="panel-body box m-t-20">
+            <div class="pull-left fullwid">
+                <ul class="nav navbar-nav m-tb-10 checkboxcheck ft-12 animated flipInX">
+                    <li class="item text-uppercase">
+                        <button class="btn action_btn text-center" ng-disabled="optionsEnabled"
+                                ng-dialog="../html/modals/send-to-live-options.html"
+                                ng-dialog-controller="liveOptionsDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO LIVE
+                        </button>
+                    </li>
+                    <li class="item text-uppercase m-lr-5">
+                        <button class="btn action_btn text-center" ng-disabled="optionsEnabled"
+                                ng-dialog="../html/modals/send-to-archive.html"
+                                ng-dialog-controller="archiveDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO ARCHIVE
+                        </button>
+                    </li>
+                    <li class="item text-uppercase m-lr-5">
+                        <button class="btn action_btn text-center" ng-disabled="optionsEnabled"
+                                ng-dialog="../html/modals/send-to-staging.html"
+                                ng-dialog-controller="stagingDialogController"
+                                ng-dialog-close-previous>
+                            SEND TO STAGING
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+<!--            <div class="pull-left fullwid">
+                <ul class="nav navbar-nav checkboxcheck ft-12 m-b-10">
+                    <li data-toggle="modal" data-target="#sendToLive"
+                        class="item bg-send-to-archive text-white p-tb10-lr20 wid-153 text-center"
+                        ng-class="liveEnabled?'bg-fleetstatus-enabled':'bg-fleetstatus-disabled'">SEND TO LIVE
+                    </li>
+                    <li class="item text-uppercase bg-send-to-archive p-tb10-lr20 wid-153 text-center text-white m-lr-5"
+                        data-toggle="modal" data-target="#sendToArchive" style="margin-right: 5px"
+                        ng-class="archiveEnabled?'bg-fleetstatus-enabled':'bg-fleetstatus-disabled'">SEND TO ARCHIVES
+                    </li>
+                    <li data-toggle="modal" data-target="#sendToStaging"
+                        class="item text-white p-tb10-lr20 wid-153 text-center"
+                        ng-class="stagingEnabled?'bg-fleetstatus-enabled':'bg-fleetstatus-disabled'">SEND TO STAGING
+                    </li>
+                </ul>
+            </div>-->
+            <div class="fullwid pull-left searchbar" ng-class="{'hidden':showFilterOptions}">
+                <ul class="list-unstyled text-alert-medium">
+                    <li>
+                        <div>
+                            <h6 class="">SEARCH FOR A RIDE</h6>
+                            <div class="input-group pull-left" style="width: 180px;">
+                                <input auto-complete bike="true" source="bikeIdList" single="true"
+                                       class="form-control nobor-rad ng-pristine ng-valid ng-isolate-scope ui-autocomplete-input ng-empty ng-touched"
+                                       autocomplete="off" placeholder="Ride name" ng-model="bikeSearch" id="search"
+                                       aria-describedby="search-addon">
+                                <span ng-click="bikeFilter()" class="input-group-addon nobor-rad fa fa-search bg-white"
+                                      style="display: table-cell;" id="search-addon"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h6 class="">CURRENT STATUS</h6>
+                        <dropdown list="dropdownlist" class="wid-200" filter="statusFilter" selected="colour"
+                                  property="name"
+                                  template="dropdown"></dropdown>
+                    </li>
+                    <li>
+                        <button ng-click="update()" class="btn custom-btn text-uppercase text-white bg-HeaderToolbar">
+                            UPDATE
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <bike-table selectedlist='selectedBikes' numrowitem="showlistitem" class="p-rel customtable m-t-10"
+                        bikefleetdata='filterdData' fleetstatus="outofservice" bikeoption='hideBikeOptions'
+                        filter="filterdata" filteroption='showFilterOptions' header='suspendheader' type="geojson"
+                        checkbox="checkbox2"></bike-table>
+        </div>
+    </div>
+</section>

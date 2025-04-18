@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_weight="100"
+        	    android:text="Firmware Update" />
+
+        	<Button
+        	    android:id="@+id/bFwClose"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="10"
+        	    android:text="X" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:weightSum="300">
+
+        	<Button
+        	    android:id="@+id/bFwReset"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="Reset - bb"
+        	     />
+        	
+        	<Button
+        	    android:id="@+id/bFwVersion"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="version"
+        	     />
+        	
+        	<Button
+        	    android:id="@+id/bTest"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="getFW"
+        	     />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_below="@+id/ll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:weightSum="300">
+        	
+        	<Button
+        	    android:id="@+id/bNotify"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="Notify"
+        	     />
+        	
+        	<TextView
+        	    android:id="@+id/tvNotify"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="Notify"
+        	     />
+	
+        	<Button
+        	    android:id="@+id/bWrite"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="100"
+        	    android:text="write"
+        	     />
+
+    </LinearLayout>
+    
+    
+    
+    
+    
+    
+	
+    
+     
+    
+
+</RelativeLayout>

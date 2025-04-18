@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "319818839743",
+    "project_id": "fin-paddleshare",
+    "storage_bucket": "fin-paddleshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319818839743:android:3809bddbdf180dc313b80a",
+        "android_client_info": {
+          "package_name": "io.bikes.fin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHYSDy2Bhqr7q0yTzc4jianSLcxgWmzbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319818839743-o6dhfmkv8m11npothv5u8du5p97unrtk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.findafin.bikeshare",
+                "app_store_id": "1571325757"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319818839743:android:2438b16a5411021413b80a",
+        "android_client_info": {
+          "package_name": "io.bikes.fin.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHYSDy2Bhqr7q0yTzc4jianSLcxgWmzbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319818839743-o6dhfmkv8m11npothv5u8du5p97unrtk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.findafin.bikeshare",
+                "app_store_id": "1571325757"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319818839743:android:c85fdd5984eba3af13b80a",
+        "android_client_info": {
+          "package_name": "io.bikes.fin.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHYSDy2Bhqr7q0yTzc4jianSLcxgWmzbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319818839743-dfnq11e3h9sflbultcdoghru4433je1k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319818839743-o6dhfmkv8m11npothv5u8du5p97unrtk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.findafin.bikeshare",
+                "app_store_id": "1571325757"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

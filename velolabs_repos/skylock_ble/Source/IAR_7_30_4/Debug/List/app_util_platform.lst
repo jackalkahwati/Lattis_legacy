@@ -1,0 +1,139 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:48
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\VeloLabs\SkyLock
+#        Project\SDK_7_2_0\components\libraries\util\app_util_platform.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock
+#        Project\SDK_7_2_0\components\libraries\util\app_util_platform.c" -D
+#        NRF51 -D BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\app_util_platform.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\app_util_platform.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\SDK_7_2_0\components\libraries\util\app_util_platform.c
+      1          /* Copyright (c) 2014 Nordic Semiconductor. All Rights Reserved.
+      2           *
+      3           * The information contained herein is property of Nordic Semiconductor ASA.
+      4           * Terms and conditions of usage are described in detail in NORDIC
+      5           * SEMICONDUCTOR STANDARD SOFTWARE LICENSE AGREEMENT.
+      6           *
+      7           * Licensees are granted free, non-transferable use of the information. NO
+      8           * WARRANTY of ANY KIND is provided. This heading must NOT be removed from
+      9           * the file.
+     10           *
+     11           */
+     12          
+     13          #include "app_util_platform.h"
+     14          
+
+   \                                 In section .bss, align 4
+     15          static uint32_t m_in_critical_region = 0;
+   \                     m_in_critical_region:
+   \   00000000                      DS8 4
+     16          
+
+   \                                 In section .text, align 2, keep-with-next
+     17          void critical_region_enter(void)
+     18          {
+     19              __disable_irq();    
+   \                     critical_region_enter: (+1)
+   \   00000000   0xB672             CPSID    I
+     20              m_in_critical_region++;    
+   \   00000002   0x....             LDR      R0,??DataTable1
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x1C40             ADDS     R0,R0,#+1
+   \   00000008   0x....             LDR      R1,??DataTable1
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+     21          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          void critical_region_exit(void)
+     24          {
+   \                     critical_region_exit: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+     25              m_in_critical_region--;    
+   \   00000002   0x....             LDR      R0,??DataTable1
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x1E40             SUBS     R0,R0,#+1
+   \   00000008   0x....             LDR      R1,??DataTable1
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+     26              if (m_in_critical_region == 0)
+   \   0000000C   0x....             LDR      R0,??DataTable1
+   \   0000000E   0x6800             LDR      R0,[R0, #+0]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD100             BNE      ??critical_region_exit_0
+     27              {
+     28                  __enable_irq();
+   \   00000014   0xB662             CPSIE    I
+     29              }
+     30          }
+   \                     ??critical_region_exit_0: (+1)
+   \   00000016   0xBD00             POP      {PC}             ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     m_in_critical_region
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   critical_region_enter
+       4   critical_region_exit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      14  critical_region_enter
+      24  critical_region_exit
+       4  m_in_critical_region
+
+ 
+  4 bytes in section .bss
+ 42 bytes in section .text
+ 
+ 42 bytes of CODE memory
+  4 bytes of DATA memory
+
+Errors: none
+Warnings: none

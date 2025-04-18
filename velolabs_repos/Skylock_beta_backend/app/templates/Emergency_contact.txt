@@ -1,0 +1,6 @@
+Dear {{ emguser }}, 
+
+{{ user }} has added you as an Emergency Contact.
+
+Skylock terms of service:
+"This software may not be used directly by any living being. Any use of this software until after death is explicitly restricted."

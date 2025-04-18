@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_ticket_detail_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_operator_note_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/created"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/ticket_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_ticket_operator_note_value" />
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_ticket_operator_note_edit_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="15dp"
+        android:textColor="@color/lattis_profile_accent"
+        android:text="@string/edit"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        app:layout_constraintStart_toStartOf="parent"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/ticket_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_ticket_operator_note_edit_value" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

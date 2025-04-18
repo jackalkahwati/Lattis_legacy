@@ -1,0 +1,24 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/dashboard
+permission:
+  - object: /opt/dashboard
+    owner: dashboard
+    group: dashboard
+    type:
+      - directory
+      - file
+
+hooks:
+  BeforeInstall:
+    - location: codeploy/stop_app.sh
+      runas: dashboard
+  AfterInstall:
+    - location: codeploy/download_app.sh
+      runas: root
+  ApplicationStart:
+    - location: codeploy/start_app.sh
+      timeout: 300
+      runas: dashboard

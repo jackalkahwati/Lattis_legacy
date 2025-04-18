@@ -1,0 +1,513 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:51
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  C:\VeloLabs\SkyLock Project\Source\timers.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock Project\Source\timers.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\timers.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\timers.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\Source\timers.c
+      1          /*
+      2          ** Proprietary Rights Notice
+      3          **
+      4          ** This material contains the valuable properties and trade secrets of:
+      5          **
+      6          **    Velo Labs
+      7          **    San Francisco, CA, USA
+      8          **
+      9          ** All rights reserved. No part of this work may be reproduced, distributed, or
+     10          ** transmitted in any form or by any means, including photocopying, recording,
+     11          ** or other electronic or mechanical methods, without the prior written permission
+     12          ** of Velo Labs.
+     13          **
+     14          ** Copyright (c) 2015, Velo Labs
+     15          ** Contains Confidential and Trade Secret Information
+     16          */
+     17          
+     18          /*
+     19          ** File Name:  timers.c
+     20          **
+     21          ** Purpose:    Routines to manage any timers we are using
+     22          */
+     23          
+     24          #include "master.h"
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_EnableIRQ(IRQn_Type)
+   \                     NVIC_EnableIRQ: (+1)
+   \   00000000   0x2101             MOVS     R1,#+1
+   \   00000002   0x06C0             LSLS     R0,R0,#+27       ;; ZeroExtS R0,R0,#+27,#+27
+   \   00000004   0x0EC0             LSRS     R0,R0,#+27
+   \   00000006   0x4081             LSLS     R1,R1,R0
+   \   00000008   0x....             LDR      R0,??DataTable6  ;; 0xe000e100
+   \   0000000A   0x6001             STR      R1,[R0, #+0]
+   \   0000000C   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_SetPriority(IRQn_Type, uint32_t)
+   \                     NVIC_SetPriority: (+1)
+   \   00000000   0xB5F0             PUSH     {R4-R7,LR}
+   \   00000002   0xB240             SXTB     R0,R0
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD521             BPL      ??NVIC_SetPriority_0
+   \   00000008   0x....             LDR      R3,??DataTable6_1  ;; 0xe000ed1c
+   \   0000000A   0xB240             SXTB     R0,R0
+   \   0000000C   0x0702             LSLS     R2,R0,#+28       ;; ZeroExtS R2,R0,#+28,#+28
+   \   0000000E   0x0F12             LSRS     R2,R2,#+28
+   \   00000010   0x3A08             SUBS     R2,R2,#+8
+   \   00000012   0x0892             LSRS     R2,R2,#+2
+   \   00000014   0x2404             MOVS     R4,#+4
+   \   00000016   0x4362             MULS     R2,R4,R2
+   \   00000018   0x....             LDR      R4,??DataTable6_1  ;; 0xe000ed1c
+   \   0000001A   0xB240             SXTB     R0,R0
+   \   0000001C   0x0705             LSLS     R5,R0,#+28       ;; ZeroExtS R5,R0,#+28,#+28
+   \   0000001E   0x0F2D             LSRS     R5,R5,#+28
+   \   00000020   0x3D08             SUBS     R5,R5,#+8
+   \   00000022   0x08AD             LSRS     R5,R5,#+2
+   \   00000024   0x2604             MOVS     R6,#+4
+   \   00000026   0x4375             MULS     R5,R6,R5
+   \   00000028   0x5964             LDR      R4,[R4, R5]
+   \   0000002A   0x25FF             MOVS     R5,#+255
+   \   0000002C   0x0786             LSLS     R6,R0,#+30       ;; ZeroExtS R6,R0,#+30,#+30
+   \   0000002E   0x0FB6             LSRS     R6,R6,#+30
+   \   00000030   0x2708             MOVS     R7,#+8
+   \   00000032   0x437E             MULS     R6,R7,R6
+   \   00000034   0x40B5             LSLS     R5,R5,R6
+   \   00000036   0x43AC             BICS     R4,R4,R5
+   \   00000038   0x0189             LSLS     R1,R1,#+6
+   \   0000003A   0xB2C9             UXTB     R1,R1
+   \   0000003C   0x0780             LSLS     R0,R0,#+30       ;; ZeroExtS R0,R0,#+30,#+30
+   \   0000003E   0x0F80             LSRS     R0,R0,#+30
+   \   00000040   0x2508             MOVS     R5,#+8
+   \   00000042   0x4368             MULS     R0,R5,R0
+   \   00000044   0x4081             LSLS     R1,R1,R0
+   \   00000046   0x4321             ORRS     R1,R1,R4
+   \   00000048   0x5099             STR      R1,[R3, R2]
+   \   0000004A   0xE01B             B        ??NVIC_SetPriority_1
+   \                     ??NVIC_SetPriority_0: (+1)
+   \   0000004C   0x....             LDR      R2,??DataTable6_2  ;; 0xe000e400
+   \   0000004E   0xB240             SXTB     R0,R0
+   \   00000050   0x0003             MOVS     R3,R0
+   \   00000052   0x089B             LSRS     R3,R3,#+2
+   \   00000054   0x2404             MOVS     R4,#+4
+   \   00000056   0x4363             MULS     R3,R4,R3
+   \   00000058   0x58D2             LDR      R2,[R2, R3]
+   \   0000005A   0x23FF             MOVS     R3,#+255
+   \   0000005C   0x0784             LSLS     R4,R0,#+30       ;; ZeroExtS R4,R0,#+30,#+30
+   \   0000005E   0x0FA4             LSRS     R4,R4,#+30
+   \   00000060   0x2508             MOVS     R5,#+8
+   \   00000062   0x436C             MULS     R4,R5,R4
+   \   00000064   0x40A3             LSLS     R3,R3,R4
+   \   00000066   0x439A             BICS     R2,R2,R3
+   \   00000068   0x0189             LSLS     R1,R1,#+6
+   \   0000006A   0xB2C9             UXTB     R1,R1
+   \   0000006C   0x0783             LSLS     R3,R0,#+30       ;; ZeroExtS R3,R0,#+30,#+30
+   \   0000006E   0x0F9B             LSRS     R3,R3,#+30
+   \   00000070   0x2408             MOVS     R4,#+8
+   \   00000072   0x4363             MULS     R3,R4,R3
+   \   00000074   0x4099             LSLS     R1,R1,R3
+   \   00000076   0x4311             ORRS     R1,R1,R2
+   \   00000078   0x....             LDR      R2,??DataTable6_2  ;; 0xe000e400
+   \   0000007A   0xB240             SXTB     R0,R0
+   \   0000007C   0x0880             LSRS     R0,R0,#+2
+   \   0000007E   0x2304             MOVS     R3,#+4
+   \   00000080   0x4358             MULS     R0,R3,R0
+   \   00000082   0x5011             STR      R1,[R2, R0]
+   \                     ??NVIC_SetPriority_1: (+1)
+   \   00000084   0xBDF0             POP      {R4-R7,PC}       ;; return
+     25          #include "stdio.h"
+     26          #include "hardware.h"
+     27          
+     28          /* Master count of how long we have been alive and running */
+
+   \                                 In section .bss, align 4
+     29          unsigned int   runtimeSeconds;
+   \                     runtimeSeconds:
+   \   00000000                      DS8 4
+     30          
+     31          /*
+     32          ** Timer Setup
+     33          **
+     34          ** Get the basic timer setup done here. Since this device is low power we likely won't keep a timer running
+     35          ** all the time. But we need a timer now and then to help out with certain tasks.
+     36          **
+     37          ** RTC0:
+     38          **    Using this during development to kick out a 1 second interrupt. Good chance this one might go away
+     39          **    in the future.
+     40          **
+     41          ** TIMER2:
+     42          **    Set this guy up to be a timer that counts at a 1 microsecond (usec) rate. This guy should usually be
+     43          **    off, but should be available to be turned on to time things and then disabled again.
+     44          */
+
+   \                                 In section .text, align 2, keep-with-next
+     45          void
+     46          Timer_Setup (void)
+     47          {
+   \                     Timer_Setup: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     48                /*
+     49                ** We are a low power device so don't use SysTick as a timer. Apparently the RTC is a better
+     50                ** system clock source for a battery device.
+     51                **
+     52                ** Avoid rounding, divide the clock by a power of 2 to give us our base tick rate. This works down
+     53                ** to 125 mSec easily which right now that is good enough for what we want to do.
+     54                **
+     55                ** Set the LFCLK to a crystal oscillator and then start the clock.
+     56                */
+     57             NRF_CLOCK->LFCLKSRC = CLOCK_LFCLKSRC_SRC_Xtal;
+   \   00000002   0x2001             MOVS     R0,#+1
+   \   00000004   0x....             LDR      R1,??DataTable6_3  ;; 0x40000518
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+     58             NRF_CLOCK->TASKS_LFCLKSTART = 1;
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0x....             LDR      R1,??DataTable6_4  ;; 0x40000008
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     59             NRF_RTC1->PRESCALER = (CPU_SLOW_CLOCK / 8) - 1;
+   \   0000000E   0x....             LDR      R0,??DataTable6_5  ;; 0xfff
+   \   00000010   0x....             LDR      R1,??DataTable6_6  ;; 0x40011508
+   \   00000012   0x6008             STR      R0,[R1, #+0]
+     60             NRF_RTC1->TASKS_START = 1;
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0x....             LDR      R1,??DataTable6_7  ;; 0x40011000
+   \   00000018   0x6008             STR      R0,[R1, #+0]
+     61             NRF_RTC1->CC[0] = 8;
+   \   0000001A   0x2008             MOVS     R0,#+8
+   \   0000001C   0x....             LDR      R1,??DataTable6_8  ;; 0x40011540
+   \   0000001E   0x6008             STR      R0,[R1, #+0]
+     62             NRF_RTC1->INTENSET = RTC_INTENSET_COMPARE0_Set << RTC_INTENSET_COMPARE0_Pos;
+   \   00000020   0x2080             MOVS     R0,#+128
+   \   00000022   0x0240             LSLS     R0,R0,#+9        ;; #+65536
+   \   00000024   0x....             LDR      R1,??DataTable6_9  ;; 0x40011304
+   \   00000026   0x6008             STR      R0,[R1, #+0]
+     63          
+     64             NVIC_SetPriority(RTC1_IRQn, SKYLOCK_PRIORITY);
+   \   00000028   0x2103             MOVS     R1,#+3
+   \   0000002A   0x2011             MOVS     R0,#+17
+   \   0000002C   0x.... 0x....      BL       NVIC_SetPriority
+     65             NVIC_EnableIRQ(RTC1_IRQn);
+   \   00000030   0x2011             MOVS     R0,#+17
+   \   00000032   0x.... 0x....      BL       NVIC_EnableIRQ
+     66          
+     67                /*
+     68                ** Setup TIMER 2 to a rate of 4 usec. Enable interrupts too, but leave the timer off for now.
+     69                ** Prescaler is set to 4 which should be 16MHz / 2^4, which then should be 1 tick per usec
+     70                **
+     71                ** Note, failed to get timer to work with 24 or 32 bits. Product specification online seems to
+     72                ** indicate there should be 24 bits, but so far I only have seen 16. So we will use 16. Not that
+     73                ** important.
+     74                */
+     75             NRF_TIMER2->MODE = TIMER_MODE_MODE_Timer;
+   \   00000036   0x2000             MOVS     R0,#+0
+   \   00000038   0x....             LDR      R1,??DataTable6_10  ;; 0x4000a504
+   \   0000003A   0x6008             STR      R0,[R1, #+0]
+     76             NRF_TIMER2->BITMODE = TIMER_BITMODE_BITMODE_16Bit;
+   \   0000003C   0x2000             MOVS     R0,#+0
+   \   0000003E   0x....             LDR      R1,??DataTable6_11  ;; 0x4000a508
+   \   00000040   0x6008             STR      R0,[R1, #+0]
+     77             NRF_TIMER2->PRESCALER = 6;
+   \   00000042   0x2006             MOVS     R0,#+6
+   \   00000044   0x....             LDR      R1,??DataTable6_12  ;; 0x4000a510
+   \   00000046   0x6008             STR      R0,[R1, #+0]
+     78             NRF_TIMER2->TASKS_SHUTDOWN = 1;
+   \   00000048   0x2001             MOVS     R0,#+1
+   \   0000004A   0x....             LDR      R1,??DataTable6_13  ;; 0x4000a010
+   \   0000004C   0x6008             STR      R0,[R1, #+0]
+     79          
+     80                /*
+     81                ** Setup handler, but we will only enable interrupts when the user has a case where they
+     82                ** want/need an interrupt.
+     83                */
+     84             NVIC_SetPriority(TIMER2_IRQn, SKYLOCK_PRIORITY);
+   \   0000004E   0x2103             MOVS     R1,#+3
+   \   00000050   0x200A             MOVS     R0,#+10
+   \   00000052   0x.... 0x....      BL       NVIC_SetPriority
+     85             NVIC_EnableIRQ(TIMER2_IRQn);
+   \   00000056   0x200A             MOVS     R0,#+10
+   \   00000058   0x.... 0x....      BL       NVIC_EnableIRQ
+     86          }
+   \   0000005C   0xBD01             POP      {R0,PC}          ;; return
+     87          
+     88          /*
+     89          ** For now we just need a timer that we can poll, so no parameters.
+     90          */
+
+   \                                 In section .text, align 2, keep-with-next
+     91          void
+     92          Timer2_Start (void)
+     93          {
+     94             NRF_TIMER2->TASKS_START = 1;
+   \                     Timer2_Start: (+1)
+   \   00000000   0x2001             MOVS     R0,#+1
+   \   00000002   0x....             LDR      R1,??DataTable6_14  ;; 0x4000a000
+   \   00000004   0x6008             STR      R0,[R1, #+0]
+     95          }
+   \   00000006   0x4770             BX       LR               ;; return
+     96          
+
+   \                                 In section .text, align 2, keep-with-next
+     97          void
+     98          Timer2_Stop (void)
+     99          {
+    100             NRF_TIMER2->TASKS_STOP = 1;
+   \                     Timer2_Stop: (+1)
+   \   00000000   0x2001             MOVS     R0,#+1
+   \   00000002   0x....             LDR      R1,??DataTable6_15  ;; 0x4000a004
+   \   00000004   0x6008             STR      R0,[R1, #+0]
+    101             NRF_TIMER2->TASKS_SHUTDOWN = 1;
+   \   00000006   0x2001             MOVS     R0,#+1
+   \   00000008   0x....             LDR      R1,??DataTable6_13  ;; 0x4000a010
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+    102          }
+   \   0000000C   0x4770             BX       LR               ;; return
+    103          
+
+   \                                 In section .text, align 2, keep-with-next
+    104          uint16_t
+    105          Timer2_Count (void)
+    106          {
+    107             NRF_TIMER2->TASKS_CAPTURE[0] = 1;
+   \                     Timer2_Count: (+1)
+   \   00000000   0x2001             MOVS     R0,#+1
+   \   00000002   0x....             LDR      R1,??DataTable6_16  ;; 0x4000a040
+   \   00000004   0x6008             STR      R0,[R1, #+0]
+    108             return (NRF_TIMER2->CC[0]);
+   \   00000006   0x....             LDR      R0,??DataTable6_17  ;; 0x4000a540
+   \   00000008   0x6800             LDR      R0,[R0, #+0]
+   \   0000000A   0xB280             UXTH     R0,R0
+   \   0000000C   0x4770             BX       LR               ;; return
+    109          }
+    110          
+
+   \                                 In section .text, align 2, keep-with-next
+    111          void
+    112          TIMER2_Handler(void)
+    113          {
+    114             /* We haven't enabled any interrupts yet so nothing to clear yet */
+    115          }
+   \                     TIMER2_Handler: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    116          
+    117          
+    118          /*
+    119          ** Use this as a basic timer for now. Currently set to go off once a second
+    120          */
+
+   \                                 In section .text, align 2, keep-with-next
+    121          void
+    122          RTC1_Handler(void)
+    123          {
+   \                     RTC1_Handler: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    124             runtimeSeconds++;
+   \   00000002   0x....             LDR      R0,??DataTable6_18
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x1C40             ADDS     R0,R0,#+1
+   \   00000008   0x....             LDR      R1,??DataTable6_18
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+    125          
+    126                /* Clear the interrupt */
+    127             NRF_RTC1->EVENTS_COMPARE[0] = 0;
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0x....             LDR      R1,??DataTable6_19  ;; 0x40011140
+   \   00000010   0x6008             STR      R0,[R1, #+0]
+    128          
+    129                /* Reset the counter so we will compare again */
+    130             NRF_RTC1->TASKS_CLEAR = 1;
+   \   00000012   0x2001             MOVS     R0,#+1
+   \   00000014   0x....             LDR      R1,??DataTable6_20  ;; 0x40011008
+   \   00000016   0x6008             STR      R0,[R1, #+0]
+    131          
+    132                /* Temporary for now */
+    133             if (runtimeSeconds > 5)
+   \   00000018   0x....             LDR      R0,??DataTable6_18
+   \   0000001A   0x6800             LDR      R0,[R0, #+0]
+   \   0000001C   0x2806             CMP      R0,#+6
+   \   0000001E   0xD301             BCC      ??RTC1_Handler_0
+    134                RTC1_IRQHandler();
+   \   00000020   0x.... 0x....      BL       RTC1_IRQHandler
+    135          }
+   \                     ??RTC1_Handler_0: (+1)
+   \   00000024   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6:
+   \   00000000   0xE000E100         DC32     0xe000e100
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \   00000000   0xE000ED1C         DC32     0xe000ed1c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \   00000000   0xE000E400         DC32     0xe000e400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \   00000000   0x40000518         DC32     0x40000518
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_4:
+   \   00000000   0x40000008         DC32     0x40000008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_5:
+   \   00000000   0x00000FFF         DC32     0xfff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_6:
+   \   00000000   0x40011508         DC32     0x40011508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_7:
+   \   00000000   0x40011000         DC32     0x40011000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_8:
+   \   00000000   0x40011540         DC32     0x40011540
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_9:
+   \   00000000   0x40011304         DC32     0x40011304
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_10:
+   \   00000000   0x4000A504         DC32     0x4000a504
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_11:
+   \   00000000   0x4000A508         DC32     0x4000a508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_12:
+   \   00000000   0x4000A510         DC32     0x4000a510
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_13:
+   \   00000000   0x4000A010         DC32     0x4000a010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_14:
+   \   00000000   0x4000A000         DC32     0x4000a000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_15:
+   \   00000000   0x4000A004         DC32     0x4000a004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_16:
+   \   00000000   0x4000A040         DC32     0x4000a040
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_17:
+   \   00000000   0x4000A540         DC32     0x4000a540
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_18:
+   \   00000000   0x........         DC32     runtimeSeconds
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_19:
+   \   00000000   0x40011140         DC32     0x40011140
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable6_20:
+   \   00000000   0x40011008         DC32     0x40011008
+    136          
+    137          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   NVIC_EnableIRQ
+      20   NVIC_SetPriority
+       8   RTC1_Handler
+         8   -> RTC1_IRQHandler
+       0   TIMER2_Handler
+       0   Timer2_Count
+       0   Timer2_Start
+       0   Timer2_Stop
+       8   Timer_Setup
+         8   -> NVIC_EnableIRQ
+         8   -> NVIC_SetPriority
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_10
+       4  ??DataTable6_11
+       4  ??DataTable6_12
+       4  ??DataTable6_13
+       4  ??DataTable6_14
+       4  ??DataTable6_15
+       4  ??DataTable6_16
+       4  ??DataTable6_17
+       4  ??DataTable6_18
+       4  ??DataTable6_19
+       4  ??DataTable6_2
+       4  ??DataTable6_20
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+       4  ??DataTable6_7
+       4  ??DataTable6_8
+       4  ??DataTable6_9
+      14  NVIC_EnableIRQ
+     134  NVIC_SetPriority
+      38  RTC1_Handler
+       2  TIMER2_Handler
+      14  Timer2_Count
+       8  Timer2_Start
+      14  Timer2_Stop
+      94  Timer_Setup
+       4  runtimeSeconds
+
+ 
+   4 bytes in section .bss
+ 402 bytes in section .text
+ 
+ 402 bytes of CODE memory
+   4 bytes of DATA memory
+
+Errors: none
+Warnings: 1

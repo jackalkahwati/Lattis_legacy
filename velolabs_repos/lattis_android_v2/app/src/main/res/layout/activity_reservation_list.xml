@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/reservation_list"
+    android:background="@color/reservation_background"
+    tools:context="com.lattis.lattis.presentation.reservation.ReservationListOrCreateActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_reservation_list"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_reservation_list"
+        android:id="@+id/ct_title_in_reservation_list"
+        android:layout_marginLeft="20dp"
+        android:text="@string/reservations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/reservation_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_reservation_list"
+        android:id="@+id/ct_reservation_guide_label"
+        android:text="@string/reservations_empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/reservation_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/rv_in_reservation_list"
+        tools:listitem="@layout/activity_reservation_list_item"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_reservation_list"
+        custom:layout_constraintBottom_toTopOf="@+id/btn_create_reservation_in_reservation_list"
+        />
+
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_create_reservation_in_reservation_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_create_reservation_button"
+        android:padding="10dp"
+        android:text="@string/create_a_reservation"
+        android:textColor="@color/reservation_list_create_reservation_button_text"
+        android:textSize="16dp"
+        android:visibility="visible"
+        style="?android:attr/borderlessButtonStyle"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

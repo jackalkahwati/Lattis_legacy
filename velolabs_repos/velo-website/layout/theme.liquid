@@ -1,0 +1,325 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  
+  <script src="//cdn.optimizely.com/js/1041580530.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="msvalidate.01" content="218430ACC7322FAD19E611976DEA29CB" />
+  
+  
+
+  {% if template == 'index' %}
+    <title>Keyless, electronic, smart bike lock | {{ shop.name }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon"/>
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  {{ content_for_header }}
+
+  {% include 'social-meta' %}
+  <!-- ProxiNova Font CSS -->
+  {{ 'proxima_novablack.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-bold.css' | asset_url | stylesheet_tag }}   
+  {{ 'proximanovacond-light.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanovacond-regular.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanovacond-semibold.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-extrabold.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-light.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-regular.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-semibold.css' | asset_url | stylesheet_tag }}
+  
+  <!-- Theme CSS -->
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+{{ 'custom-master.css' | asset_url | stylesheet_tag }}
+  {% if  page.handle == 'home' %}
+   	{{ 'home.css' | asset_url | stylesheet_tag }}       
+  {% endif %}
+
+<!--[if IE]>
+    {{ 'all-ie-only.css' | asset_url | stylesheet_tag }}
+<![endif]-->
+  
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+
+  {% include 'fonts' %}
+
+  <!-- Store object -->
+  {% include 'theme-options' %}
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  
+  <style type="text/css">
+    {% assign hex2rgb_hex = settings.primary-button-background %}
+    {% include 'hex2rgb' %}
+    .add-to-cart-loader, .home-slideshow-loader, .product-slideshow-loader {
+      border-left:   3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-right:  3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-bottom: 3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-top:    3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .8);
+    }
+    {% assign hex2rgb_hex = settings.primary-button-color %}
+    {% include 'hex2rgb' %}
+    .header-drawer h1, .header-drawer .navigation .primary ul {
+      border-color: {{settings.primary-button-color}};
+      border-color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .3);
+    }
+    {% assign hex2rgb_hex = settings.footer-accent-color %}
+    {% include 'hex2rgb' %}
+    .copyright, .payment-options {
+      color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .5);
+    }
+    .spread-the-word .footer-share-icon {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .7);
+    }
+    .spread-the-word .footer-share-icon:hover {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .9);
+    }
+
+    {% if settings.custom-css != blank %}
+      {{ settings.custom-css }}
+    {% endif %}
+  </style>
+  
+  <!--Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','//connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '556386737811562');
+  fbq('track', 'PageView');
+  
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=556386737811562&ev=PageView&noscript=1"
+  /></noscript>
+  <!--End Facebook Pixel Code-->
+  
+    
+  <!--FuelX Pixel Code -->
+  <script type="text/javascript">
+    fuelAdObj = {
+        bid: "DkYwe7CLWo4zDi2LbXh3Pw%3D%3D",
+        productId: "",
+        orderId: "",
+        orderValue: ""
+    }
+   </script>
+  <script src="//cookie.fuel451.com/tracksa.min.js" type="text/javascript"></script>
+   <!--End FuelX  Pixel Code-->
+
+</head>
+
+
+
+
+<!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/564e1d46c4f9dae5636055f1/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+
+
+
+
+<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+
+  
+  
+  {% include 'header-gift' %}
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MX7G67"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MX7G67');</script>
+<!-- End Google Tag Manager -->
+  <main class="main-content {% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
+
+    {% unless template contains 'index' or fullBleed %}
+      {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+        {% include 'breadcrumbs' %}
+      {% endunless %}
+    {% endunless %}
+
+    {{ content_for_layout }}
+  </main>
+
+  {% include 'footer' %}
+
+  <!-- Scripts -->
+  {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'cart' %}
+
+    {% if settings.show-shipping-calculator %}
+      {{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
+      {{ "/services/javascripts/countries.js" | script_tag }}
+      {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {% endif %}
+
+    {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+  {% endif %}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% if settings.show-currency-switcher %}
+    {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+    {{ "jquery.currencies.js" | asset_url | script_tag }}
+  {% endif %}
+
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
+  {{ 'plugins.js'  | asset_url | script_tag }}
+  {{ 'site.js'  | asset_url | script_tag }}
+  {{ 'skylock_new.js'  | asset_url | script_tag }}
+
+	<script type="text/javascript">
+          jQuery( window ).scroll(function() {
+               	var width = jQuery( window ).width();
+                var scroll = jQuery(window).scrollTop();
+                if(scroll > 10){
+                  if(!jQuery('.main-header-wrapper').hasClass('sticky-header-bg')){
+                    jQuery('.main-header-wrapper').addClass('sticky-header-bg');
+                  }
+                } else {
+                  jQuery('.main-header-wrapper').removeClass('sticky-header-bg');
+                }
+            	var windowH = jQuery( window ).height();
+              	var popupH = jQuery("#order-popup .center").height();
+              	var diff = windowH - popupH;
+            	var scroll = jQuery( window ).scrollTop();
+                var scrollDiff = popupH - windowH + 30;
+                jQuery("#order-popup .center").css('position', 'absolute');
+                if(scroll >= scrollDiff && popupH != 0){
+                  jQuery( window ).scrollTop(scrollDiff);
+                }
+          });
+      	  jQuery( window ).resize(function() {
+            	var windowH = jQuery( window ).height();
+              	var popupH = jQuery("#order-popup .center").height();
+              	var diff = windowH - popupH;
+              	if(diff > 1){
+                  	diff = diff / 2;
+                  	jQuery("#order-popup .center").css('margin-top', diff+'px');
+                  	jQuery("#order-popup .center").css('margin-bottom', diff+'px');
+                  	jQuery("#order-popup .center").css('position', 'fixed');
+                } else {
+                  	var scroll = jQuery( window ).scrollTop();
+                    var scrollDiff = popupH - windowH + 30;
+                    jQuery("#order-popup .center").css('position', 'absolute');
+                    if(scroll >= scrollDiff && popupH != 0){
+                        jQuery( window ).scrollTop(scrollDiff);
+                    }
+                	jQuery("#order-popup .center").css('margin-top', '10px');
+                  	jQuery("#order-popup .center").css('margin-bottom', '10px');
+                }
+          });
+      	  jQuery(".watch-video, #play-button").on("click", function() {
+              show_video();
+          });
+     </script>
+  	{% include 'cart-popup' %}
+
+  
+  <!--Google Code for Remarketing Tag-->
+  <!--
+  Remarketing tags may not be associated with personally identifiable information or placed
+  on pages related to sensitive categories. See more information and instructions on how to
+  setup the tag on: http://google.com/ads/remarketingsetup-->
+
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 978103455;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt=""
+  src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978103455/?
+  value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+  </noscript>
+
+ 
+  
+  
+  
+  <script type="text/javascript">
+    adroll_adv_id = "43S23KILIJABTL56PDEDEI";
+    adroll_pix_id = "OHVVKE5ARJG5BE2AZ3JJQF";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+  
+  
+
+<!--SteelHouse Tracking Pixel Placed on 04/15/2016 (shiva) -->
+<!-- INSTALL ON ALL PAGES OF SITE-->
+<script type="text/javascript">
+(function(){"use strict";var e=null,b="4.0.0",
+n="12525",
+additional="",
+t,r,i;try{t=top.document.referer!==""?encodeURIComponent(top.document.referrer.substring(0,2048)):""}catch(o){t=document.referrer!==null?document.referrer.toString().substring(0,2048):""}try{r=window&&window.top&&document.location&&window.top.location===document.location?document.location:window&&window.top&&window.top.location&&""!==window.top.location?window.top.location:document.location}catch(u){r=document.location}try{i=parent.location.href!==""?encodeURIComponent(parent.location.href.toString().substring(0,2048)):""}catch(a){try{i=r!==null?encodeURIComponent(r.toString().substring(0,2048)):""}catch(f){i=""}}var l,c=document.createElement("script"),h=null,p=document.getElementsByTagName("script"),d=Number(p.length)-1,v=document.getElementsByTagName("script")[d];if(typeof l==="undefined"){l=Math.floor(Math.random()*1e17)}h="dx.steelhousemedia.com/spx?"+"dxver="+b+"&shaid="+n+"&tdr="+t+"&plh="+i+"&cb="+l+additional;c.type="text/javascript";c.src=("https:"===document.location.protocol?"https://":"http://")+h;v.parentNode.insertBefore(c,v)})()
+</script>
+
+  
+<!--criteo-tracking Pixel Placed on 06/29/2016 (shiva) -->
+{% include 'criteo-tracking' %}
+  
+</body>
+</html>

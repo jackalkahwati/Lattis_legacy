@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "954015723015",
+    "project_id": "blade-bikeshare",
+    "storage_bucket": "blade-bikeshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954015723015:android:d04f11fb0ff3c62aec44a2",
+        "android_client_info": {
+          "package_name": "io.bikes.blade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUYxhc2FY_bb-PXNMWf_TY0FpEX4vSMZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "954015723015-shf9n3pk1nhr0bo6qn5dl5t295uc3tgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "me.blade.mobility"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954015723015:android:796157801c26be10ec44a2",
+        "android_client_info": {
+          "package_name": "io.bikes.blade.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUYxhc2FY_bb-PXNMWf_TY0FpEX4vSMZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "954015723015-shf9n3pk1nhr0bo6qn5dl5t295uc3tgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "me.blade.mobility"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954015723015:android:a24030daec11ae01ec44a2",
+        "android_client_info": {
+          "package_name": "io.bikes.blade.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUYxhc2FY_bb-PXNMWf_TY0FpEX4vSMZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954015723015-rafkob6rtvior0u5mpcrortsb6tus7sm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "954015723015-shf9n3pk1nhr0bo6qn5dl5t295uc3tgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "me.blade.mobility"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

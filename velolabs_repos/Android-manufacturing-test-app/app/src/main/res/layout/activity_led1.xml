@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/bleConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="BLE Connection State"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_connectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/bleConnection"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/red" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/capPins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp">
+
+        <ImageButton
+            android:id="@+id/ibCapPin1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:src="@drawable/red"
+            android:tag="off" />
+
+        <RelativeLayout
+            android:id="@+id/rlCapPin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ibCapPin1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp">
+
+            <ImageButton
+                android:id="@+id/ibCapPin4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/red"
+                android:tag="off" />
+
+            <ImageButton
+                android:id="@+id/ibCapPin5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/ibCapPin4"
+                android:background="@null"
+                android:src="@drawable/grey_emergency"
+                android:tag="off" />
+
+            <ImageButton
+                android:id="@+id/ibCapPin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/ibCapPin5"
+                android:background="@null"
+                android:src="@drawable/red"
+                android:tag="off" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/ibCapPin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlCapPin2"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:src="@drawable/red"
+            android:tag="off" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_connection"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:text="LED1 Test"
+            android:textColor="#33b5e5"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/button_ledon"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:text="LED ON"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_ledoff"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_toRightOf="@+id/button_lock"
+                android:layout_weight="1"
+                android:text="LED OFF"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar_load"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+
+        <Button
+            android:id="@+id/bCapTouchNext"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next Test"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:textSize="30sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+DEBUG = True
+#IGNORE_AUTH = True
+
+#4db5f36f6d799af3ee025ff2dc84561855edd00e3d18b166
+#5d7ec6d6e51d24241f3e0b49e0717e0922cc30535054738e
+#4161cbe2fb5fb263d24cdf8e618f0bdd896030d2de377f6f
+#704ce2817854d371c5c56abc78b9c57a8c88825a1c8d0979
+#cc10c223a38b2ea6803d740db6ad1edf701a051eda9d0d84
+#z09L56wv4a6WrXIqcB0WHLkz485Bf7Hv
+#X34f6V08uFalftLWLe3O1RfHvH8195kQ
+#583mrh6XBg0t2bO5ns5ajy931R9Sr6m3
+#kZ@#KMM1G{$|A:.0b`topnp4]'.D)"o57VPMl^o0n9BfXqScO;ji#02.6?8a32:
+#JJeUR47{z'9J7bB.Jm7ZAA38mXSWO'91U9U:@5Jp|2UsAY`#=%u~'Gr/JseMvB)
+#}il1f;Aw14<wo,T1PKeGG/C"kbG[.D9aQM.$sj,zho0i_KRVVC1T(ph47!1J9.2
+#3)d3RC#r08'-)F_K5'6<hfF?k~qBtXuYc97/"jzECn;8W700h'[9Sj6185Gyv8%
+
+#(201) 992-4420
+#+14155992671
+#SID: SK254a1768116e09bb8b560443cf388560
+#SECRET: MHE0CxGC5OQRpdYjhdS8uOj18fW0OBdz
+
+SECRET_KEY = "4db5f36f6d799af3ee025ff2dc84561855edd00e3d18b166"
+SECRET_KEY_AUTH = "5d7ec6d6e51d24241f3e0b49e0717e0922cc30535054738e"
+APP_SETTINGS="config.DevelopmentConfig"
+#SQLALCHEMY_DATABASE_URI="mysql://velolabs:toomanyflies@velolabs.c1a64u1onfsf.us-west-1.rds.amazonaws.com:3306/ellipse" #recent one
+SQLALCHEMY_DATABASE_URI="mysql://root@localhost/skylock_mysql_change"
+#SQLALCHEMY_DATABASE_URI="mysql://root@localhost/ellipse"
+ACCOUNT_SID="ACcfa5178285192224b6376b124eff168d"
+AUTH_TOKEN="35ea4b5b8b40ec6c17fe7a1cbbbf2b4e"
+OTP_SECRET="G6X5YS7VN6PLOGBV"
+TEXT_MESSAGE="+14155992671"
+API_KEY="4161cbe2fb5fb263d24cdf8e618f0bdd896030d2de377f6f"
+GCM_TOKEN="AIzaSyD1UGnXcTUV7huxZV4D3vR6O6ZYmJlmL7U"
+ADMIN="4156767921"
+
+
+print SQLALCHEMY_DATABASE_URI

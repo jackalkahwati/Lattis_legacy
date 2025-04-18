@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    >
+
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SCENARIO TEST"
+        android:id="@+id/textview_label"/>
+
+    <Button
+        android:id="@+id/bStartTest"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START TEST"
+        android:layout_below="@+id/edittext2">
+
+    </Button>
+
+    <Button
+        android:id="@+id/bStopTest"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/bStartTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAUSE"
+        android:layout_below="@+id/edittext2">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/tvLocksUnlocks"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/bStartTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locks/ Unlocks : ">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvLedsOnOff"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tvLocksUnlocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LEDs On/ Off : ">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvConnectDisconnect"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tvLedsOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connects/ Disconnects : ">
+
+    </TextView>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Status : "
+    android:id="@+id/textView_status"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/textview_label"
+    android:layout_margin="2dp"
+    />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext1"
+        android:hint="Enter the time"
+        android:inputType="number"
+        android:layout_below="@+id/textView_status"
+        android:layout_margin="2dp"
+        android:layout_centerHorizontal="true"
+
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext2"
+        android:hint="Enter the count"
+        android:inputType="number"
+        android:layout_below="@+id/edittext1"
+        android:layout_margin="2dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+</RelativeLayout>
+
+<!-- From: file:/Users/alexvijayraj/work/Android/SkylockTestApp/app/src/main/res/layout/scenario.xml -->

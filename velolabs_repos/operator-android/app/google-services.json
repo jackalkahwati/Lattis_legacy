@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "670985681500",
+    "project_id": "lattis-operator",
+    "storage_bucket": "lattis-operator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670985681500:android:4941b9811c714373d3c499",
+        "android_client_info": {
+          "package_name": "io.lattis.operator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8HeiaZRpV61QfoQddwMl1II-fhthEKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "670985681500-0vvmqfpvs01djv8vl2l859oihv4f9erl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.operator.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670985681500:android:c0c475ce42b9c897d3c499",
+        "android_client_info": {
+          "package_name": "io.lattis.operator.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8HeiaZRpV61QfoQddwMl1II-fhthEKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "670985681500-0vvmqfpvs01djv8vl2l859oihv4f9erl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.operator.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670985681500:android:a59394d372e14c9ad3c499",
+        "android_client_info": {
+          "package_name": "io.lattis.operator.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc8HeiaZRpV61QfoQddwMl1II-fhthEKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670985681500-3dc6jl0qcscn1q50m5pippumrdmt8eri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "670985681500-0vvmqfpvs01djv8vl2l859oihv4f9erl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.lattis.operator.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,226 @@
+{
+  "project_info": {
+    "project_number": "557676398673",
+    "project_id": "grin-bikeshare",
+    "storage_bucket": "grin-bikeshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:b505db5ae3bd8d8c789070",
+        "android_client_info": {
+          "package_name": "com.grin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:bbb048eac52f26dc789070",
+        "android_client_info": {
+          "package_name": "com.grin.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:4c66df6844bc3123789070",
+        "android_client_info": {
+          "package_name": "com.grin.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:45345311c0e45a36789070",
+        "android_client_info": {
+          "package_name": "com.grin.santiago"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:67b777cba5c0d098789070",
+        "android_client_info": {
+          "package_name": "com.grin.santiago.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557676398673:android:3e8b30001a5c439c789070",
+        "android_client_info": {
+          "package_name": "com.grin.santiago.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBT3LuZg7c0Qpr0G4y_T5mZWoH93DGowE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557676398673-p1i0nie8hvsmaoftjitsor7vrdphsbqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557676398673-7ukpui4v0rg7m7nnve7972bjq9341896.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ongrin.grin.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ride_summary_parent_container"
+    android:background="@color/ride_summary_semi_transparent_background"
+    >
+
+    <!-- ride summary start-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/cl_ride_summary_main_card"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_ride_summary_parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cl_ride_summary_sub_card"
+            android:paddingTop="32dp"
+            android:background="@color/ride_summary_background"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintStart_toStartOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_next_ride_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_next_ride_summary"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintEnd_toEndOf="parent"
+                custom:layout_constraintStart_toStartOf="parent">
+
+                <com.lattis.lattis.presentation.customview.CustomButton
+                    android:id="@+id/btn_next_ride_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/ride_summary_next_background"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="10dp"
+                    android:text="@string/label_next"
+                    android:textAllCaps="false"
+                    android:textColor="@color/ride_summary_next_text"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    style="?android:attr/borderlessButtonStyle"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <ProgressBar
+                    android:id="@+id/pb_progress_in_ride_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/ride_summary_next_text"
+                    android:progressBackgroundTint="@color/ride_summary_next_text"
+                    android:progressTint="@color/ride_summary_next_text"
+                    android:visibility="gone"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:background="@color/ride_summary_start_background"
+                android:orientation="horizontal"
+                custom:layout_constraintBottom_toTopOf="@+id/cl_next_ride_summary"
+                custom:layout_constraintEnd_toEndOf="parent"
+                custom:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/rate1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    android:id="@+id/rate2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    android:id="@+id/rate3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    android:id="@+id/rate4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    android:id="@+id/rate5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/star" />
+
+            </LinearLayout>
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/tv_ride_summary_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@color/ride_summary_rate_your_trip_background"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="@string/ride_summary_rate_label"
+                android:textAllCaps="false"
+                android:textColor="@color/ride_summary_rate_your_trip_text"
+                android:textSize="16dp"
+                android:visibility="visible"
+                custom:layout_constraintBottom_toTopOf="@+id/ll_stars"
+                custom:layout_constraintEnd_toEndOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <View
+                android:id="@+id/ride_summary_divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/ride_summary_divider"
+                custom:layout_constraintBottom_toTopOf="@+id/tv_ride_summary_rate" />
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ride_summary_total_label"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_summary_total_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_summary_total_label"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <View
+                android:id="@+id/ride_summary_divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/ride_summary_divider"
+                custom:layout_constraintBottom_toTopOf="@+id/ride_summary_total_value" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_taxes_in_ride_summary"
+                custom:layout_constraintBottom_toTopOf="@+id/ride_summary_divider2"
+                tools:listitem="@layout/activity_ride_summary_taxes_item"
+                tools:itemCount="2"
+                android:visibility="gone"
+                />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_membership_discount_label_in_ride_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/membership"
+                android:textColor="@color/confirm_reserve_text"
+                android:textSize="14dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/rv_taxes_in_ride_summary"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_membership_discount_value_in_ride_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/confirm_reserve_text"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ct_membership_discount_label_in_ride_summary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ct_membership_discount_label_in_ride_summary"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_promotion_label_in_ride_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/promo_code"
+                android:textColor="@color/confirm_reserve_text"
+                android:textSize="14dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/ct_membership_discount_label_in_ride_summary"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_promotion_value_in_ride_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/confirm_reserve_text"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ct_promotion_label_in_ride_summary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ct_promotion_label_in_ride_summary"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_parking_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/bike_detail_label_parking_fee"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/ct_promotion_label_in_ride_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_parking_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_summary_parking_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_summary_parking_label"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_unlock_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/unlock_fee"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_parking_label"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_unlock_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_summary_unlock_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_summary_unlock_label"
+                custom:typefaceAsset="GothamSSm-Book.otf" />
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_surcharge_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/surcharge"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_unlock_label"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_surcharge_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_summary_surcharge_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_summary_surcharge_label"
+                custom:typefaceAsset="GothamSSm-Book.otf" />
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_trip_price_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ride_summary_trip_price_label"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_surcharge_label"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_trip_price_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_summary_trip_price_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_summary_trip_price_label"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_trip_summary_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ride_summary_trip_summary_label"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_trip_price_label"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ride_summary_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/ride_summary_text"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/ride_summary_trip_summary_label"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    ride summary end -->
+
+
+        <!-- Black stripe for showing timer : start -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/cl_ride_summary_sub_card"
+            app:layout_constraintBottom_toTopOf="@+id/cl_ride_summary_sub_card"
+            custom:layout_constraintStart_toStartOf="parent"
+            android:elevation="5dp"
+            android:paddingRight="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/round_duration_in_ride_summary"
+            >
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ride_summary_duration_label"
+                android:layout_marginLeft="20dp"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/ride_summary_duration_strip_text"
+                android:background="@drawable/round_booking_timer_in_bike_booked"
+                android:id="@+id/ride_summary_duration_in_strip_label"
+                android:textSize="14dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf"
+                />
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toEndOf="@+id/ride_summary_duration_in_strip_label"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/white_dot_in_ride_summary"
+                android:src="@drawable/round_dot"
+                />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:layout_constraintTop_toTopOf="parent"
+                custom:layout_constraintBottom_toBottomOf="parent"
+                custom:layout_constraintStart_toEndOf="@+id/white_dot_in_ride_summary"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/ride_summary_duration_strip_text"
+                android:id="@+id/ride_summary_duration_in_strip_value"
+                android:textSize="14dp"
+                custom:typefaceAsset="GothamSSm-Bold.otf"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Black stripe for showing timer : end -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/round_ride_summary_parent"
+            android:elevation="0dp"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toTopOf="@id/cl_ride_summary_sub_card"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:clickable="false">
+
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/mapview_in_ride_summary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include layout="@layout/no_internal_layout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

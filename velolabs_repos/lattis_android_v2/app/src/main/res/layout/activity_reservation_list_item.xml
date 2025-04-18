@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/reservation_list_bike_card_vehicles_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/iv_next_in_reservation_list_item"
+        android:src="@drawable/next_arrow"/>
+
+    <include layout="@layout/activity_reservation_bike_card"
+        android:id="@+id/reservation_list_bike_card_vehicles_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_next_in_reservation_list_item"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reservation_list_bike_card_vehicles_item"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/cl_today_other_date_time">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:id="@+id/cl_reservation_list_other_day">
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/ct_other_date_in_reservation_list_item"
+                android:text="Friday 4th Aug"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/reservation_text"
+                app:typefaceAsset="GothamSSm-Medium.otf"
+                />
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/ct_other_time_in_reservation_list_item"
+                android:text="9AM - 5PM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/reservation_text"
+                app:typefaceAsset="GothamSSm-Medium.otf"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:id="@+id/cl_reservation_list_today">
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/ct_up_next_label_in_reservation_list_item"
+                android:text="@string/up_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="@color/reservation_text"
+                app:typefaceAsset="GothamSSm-Medium.otf"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_today_in_reserve_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_today_reservation_list_item"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_up_next_label_in_reservation_list_item"
+                >
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/ct_today_date_in_reservation_list"
+                    android:text="@string/up_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="@color/reservation_list_item_today_text"
+                    app:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/ct_today_timer_in_reservation_list"
+                    android:text="@string/up_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="@color/reservation_list_item_today_text"
+                    app:typefaceAsset="GothamSSm-Medium.otf"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider_in_reservation_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/reservation_list_item_divider"
+        app:layout_constraintTop_toBottomOf="@+id/cl_today_other_date_time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

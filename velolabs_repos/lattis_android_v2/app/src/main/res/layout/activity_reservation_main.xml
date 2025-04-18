@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/payment_card_list"
+    android:background="@color/payment_background"
+    tools:context="com.lattis.lattis.presentation.reservation.ReservationActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_reservation_main"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_reservation_main"
+        android:id="@+id/ct_title_in_reservation_main"
+        android:layout_marginLeft="20dp"
+        android:text="@string/reservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/reservation_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/cl_pickup_in_reservation_main"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_reservation_main">
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/pickup"-->
+<!--            android:id="@+id/iv_pickup_in_reservation_main"-->
+<!--            custom:layout_constraintStart_toStartOf="parent"-->
+<!--            custom:layout_constraintTop_toTopOf="parent"/>-->
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_pickup_in_reservation_main"
+            android:text="@string/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:background="@android:color/transparent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/reservation_text"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_date_time_pickup_in_reservation_main"
+            android:text="@string/select_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:includeFontPadding="false"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/reservation_text"
+            custom:layout_constraintTop_toBottomOf="@+id/ct_pickup_in_reservation_main"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="@+id/ct_date_time_pickup_in_reservation_main"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/iv_next_pickup_in_reservation_main"
+            android:src="@drawable/next_arrow"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            custom:layout_constraintTop_toBottomOf="@id/ct_date_time_pickup_in_reservation_main"
+            android:layout_marginTop="10dp"
+            android:background="@color/reservation_divider"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/cl_return_in_reservation_main"
+        custom:layout_constraintTop_toBottomOf="@+id/cl_pickup_in_reservation_main">
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/icon_return"-->
+<!--            android:id="@+id/iv_return_in_reservation_main"-->
+<!--            custom:layout_constraintStart_toStartOf="parent"-->
+<!--            custom:layout_constraintTop_toTopOf="parent"/>-->
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_return_in_reservation_main"
+            android:text="@string/return_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/reservation_disabled_section"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_date_time_return_in_reservation_main"
+            android:text="@string/select_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/reservation_date_time_label_text"
+            custom:layout_constraintTop_toBottomOf="@+id/ct_return_in_reservation_main"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="@+id/ct_date_time_return_in_reservation_main"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/iv_next_return_in_reservation_main"
+            android:src="@drawable/next_arrow_disabled"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            custom:layout_constraintTop_toBottomOf="@id/ct_date_time_return_in_reservation_main"
+            android:layout_marginTop="10dp"
+            android:background="@color/reservation_divider"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:id="@+id/cl_pricing_options_in_reservation_main"
+        custom:layout_constraintTop_toBottomOf="@+id/cl_return_in_reservation_main">
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_pricing_options_in_reservation_main"
+            android:text="@string/pricing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/reservation_date_time_label_text"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_pricing_options_vehicle_in_reservation_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/select_pricing"
+            android:textColor="@color/reservation_date_time_label_text"
+            android:textSize="16dp"
+            android:includeFontPadding="true"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/ct_pricing_options_in_reservation_main"
+            custom:typefaceAsset="GothamSSm-Book.otf" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="@+id/ct_pricing_options_vehicle_in_reservation_main"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/iv_next_pricing_options_in_reservation_main"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/next_arrow_disabled"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            custom:layout_constraintTop_toBottomOf="@id/ct_pricing_options_vehicle_in_reservation_main"
+            android:layout_marginTop="10dp"
+            android:background="@color/reservation_divider"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/cl_vehicle_in_reservation_main"
+        custom:layout_constraintTop_toBottomOf="@+id/cl_pricing_options_in_reservation_main">
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/vehicle"-->
+<!--            android:id="@+id/iv_vehicle_in_reservation_main"-->
+<!--            custom:layout_constraintStart_toStartOf="parent"-->
+<!--            custom:layout_constraintTop_toTopOf="parent"/>-->
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_vehicle_in_reservation_main"
+            android:text="@string/available_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/reservation_date_time_label_text"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_date_time_vehicle_in_reservation_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/see_available_vehicles"
+            android:textColor="@color/reservation_date_time_label_text"
+            android:textSize="16dp"
+            android:includeFontPadding="false"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_in_reservation_main"
+            custom:typefaceAsset="GothamSSm-Book.otf" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintBottom_toBottomOf="@+id/ct_date_time_vehicle_in_reservation_main"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/iv_next_vehicle_in_reservation_main"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/next_arrow_disabled"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            custom:layout_constraintTop_toBottomOf="@id/ct_date_time_vehicle_in_reservation_main"
+            android:layout_marginTop="10dp"
+            android:background="@color/reservation_divider"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_confirm_unselected_in_reservation_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/confirm"
+        android:textSize="16dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/round_confirm_unselected_reservation"
+        android:textColor="@color/reservation_confirm_unselected_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+</androidx.constraintlayout.widget.ConstraintLayout>

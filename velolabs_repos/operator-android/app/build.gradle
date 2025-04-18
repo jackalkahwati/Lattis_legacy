@@ -1,0 +1,180 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        applicationId "io.lattis.operator"
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.releaseVersionCode
+        versionName Versions.releaseVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue 'string', 'app_name', 'Operator'
+        resValue 'string', 'account_type', 'io.lattis.operator'
+        resValue 'string', 'account_authentication_token_type', 'io.lattis.operator.fullAccess'
+    }
+
+    bundle{
+        language{
+            enableSplit=false
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+//            minifyEnabled true
+//            shrinkResources true
+            buildConfigField 'String', "google_maps_key", googleMapApi
+            resValue 'string', 'google_maps_key', googleMapApi
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField 'String', "google_maps_key", googleMapApi
+            resValue 'string', 'google_maps_key', googleMapApi
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions{
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+        exclude "lib/armeabi/**"
+    }
+
+    flavorDimensions "product", "buildtype"
+
+    productFlavors {
+        operator {
+            dimension "product"
+            applicationId "io.lattis.operator"
+        }
+
+        dev {
+            dimension 'buildtype'
+            applicationIdSuffix ".dev"
+        }
+
+        beta {
+            dimension 'buildtype'
+            applicationIdSuffix ".beta"
+        }
+
+        prod {
+            dimension 'buildtype'
+        }
+    }
+
+
+    applicationVariants.all { variant ->
+
+        def product = variant.productFlavors[0].name
+        def server = variant.productFlavors[1].name
+        def isRelease = variant.buildType.name.equals('release')
+
+        if (product == "operator" && server == "prod" && isRelease) {
+            resValue 'string', 'app_name', 'Lattis Operator'
+            resValue 'string', 'account_type', 'io.lattis.operator'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.operator.fullAccess'
+        } else if (product == "operator" && server == "dev") {
+            resValue 'string', 'app_name', 'Lattis Operator Dev'
+            resValue 'string', 'account_type', 'io.lattis.operator.dev'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.operator.fullAccess.dev'
+        } else if (product == "operator" && server == "beta") {
+            resValue 'string', 'app_name', 'Lattis Operator Beta'
+            resValue 'string', 'account_type', 'io.lattis.operator.beta'
+            resValue 'string', 'account_authentication_token_type', 'io.lattis.operator.fullAccess.beta'
+        }
+    }
+
+}
+
+dependencies {
+
+    // module dependencies
+    implementation project(ProjectModules.data)
+    implementation project(ProjectModules.domain)
+
+    implementation ProjectDependencies.constraintLayout
+    implementation ProjectDependencies.material
+
+    // dagger
+    kapt ProjectDependencies.daggerCompiler
+    implementation ProjectDependencies.daggerSupport
+    implementation ProjectDependencies.daggerAndroid
+    kapt ProjectDependencies.daggerAnnotationProcessor
+
+    // rxjava
+    implementation ProjectDependencies.rxKotlin
+    implementation ProjectDependencies.rxandroid
+
+    // rxbinding
+    implementation ProjectDependencies.rxbinding
+    implementation ProjectDependencies.rxbindingAppCompact
+    implementation ProjectDependencies.rxbindingDesign
+    implementation ProjectDependencies.rxbindingRecycler
+
+    //retrofit
+    implementation ProjectDependencies.rxJava2Adapter
+    implementation ProjectDependencies.appCompact
+    implementation ProjectDependencies.androidx_core
+
+
+    implementation ProjectDependencies.lifecycle
+
+
+    //glide
+    implementation ProjectDependencies.glide
+    kapt ProjectDependencies.glideCompiler
+
+    //zxing
+    implementation ProjectDependencies.zxing
+
+    // permission dispatcher
+    implementation ProjectDependencies.permissionDispatcher
+    kapt ProjectDependencies.permissionDispatcherCompiler
+
+    //android segment
+    implementation ProjectDependencies.androidSegment
+
+    //map
+    implementation ProjectDependencies.googleMap
+    implementation ProjectDependencies.googlePlayCore
+
+    //google map util
+    implementation ProjectDependencies.googleMapUtil
+
+    //ui
+    implementation ProjectDependencies.appCompact
+    implementation ProjectDependencies.material
+    implementation ProjectDependencies.recyclerView
+
+
+    implementation ProjectDependencies.gson
+
+    implementation ProjectDependencies.preference
+
+    implementation (ProjectDependencies.googleLibPlaces){
+        exclude group: "com.github.bumptech.glide"
+    }
+    implementation ProjectDependencies.googlePlayCore
+
+}

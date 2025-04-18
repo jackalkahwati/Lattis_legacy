@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.hugo'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        defaultPublishConfig "debug"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    def compileDependencies = rootProject.ext.compile
+
+    compile compileDependencies.appCompat
+    compile compileDependencies.rxJava
+    compile compileDependencies.rxAndroid
+    compile compileDependencies.playServicesLocation
+}

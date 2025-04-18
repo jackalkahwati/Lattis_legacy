@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 1. What's Your Email?
+	input(type='email',ng-model='inputValues.email', ng-change='checkEmail()' name='email', class='field', placeholder="Input Email", value='{{inputValue.email}}')
+	h3 {{emailErrorText}}
+	a(ui-sref='registration.code', ng-click='submitEmail()', ng-show='showButton')
+		button(type='button') Done!

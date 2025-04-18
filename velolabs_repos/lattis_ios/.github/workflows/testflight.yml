@@ -1,0 +1,247 @@
+
+name: TestFlight
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  setup:
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update bundle
+        run: bundle update
+      - name: Install pods
+        run: LANG=en_US.UTF-8 bundle exec pod install
+
+  lattis:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod
+      
+  hooba:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env hb
+  
+  fin:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env fn
+
+  guestbike:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env gb
+
+  goscoot:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env gs
+
+  sandypedals:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env sp
+
+  wawe:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env ww
+
+  wave:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env wv
+
+  ourbike:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env ob
+
+  mount:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env mt
+
+  grin:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env gr
+
+  bandwagon:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env bw
+
+  monkeydonkey:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env md
+
+  unlimitedbiking:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env ub
+
+  yryde:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env yr
+        
+  blade:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env blade
+
+  pacificrides:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env pr
+        
+  TRIP:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env trip
+        
+  green-riders:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env griders
+    
+  falcosmart:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env falco
+
+  TWR:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env twr
+        
+  velo-transit:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env vt
+    
+  thrive-ryde:
+    needs: setup
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+      - name: Build and Deploy to TestFlight
+        env:
+          APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        run: LANG=en_US.UTF-8 bundle exec fastlane prod --env thrive

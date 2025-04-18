@@ -1,0 +1,4 @@
+
+[submodule "Skylock/SEBLEInterface"]
+	path = Skylock/SEBLEInterface
+	url = https://github.com/velolabs/SEBLEInterface.git

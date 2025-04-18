@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>661907062924-i89qllbsj70ukpsn948mlqm6ff9rd1f8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.661907062924-i89qllbsj70ukpsn948mlqm6ff9rd1f8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBhvxNTYzkCT2m41kp3DSzI5oofKZBuLGQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>661907062924</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>${BUNDLE_IDENTIFIER}</string>
+	<key>PROJECT_ID</key>
+	<string>ellipsefirebase</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ellipsefirebase.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:661907062924:ios:c2cc69b2527d810f</string>
+	<key>DATABASE_URL</key>
+	<string>https://ellipsefirebase.firebaseio.com</string>
+	<key>TRACKING_ID</key>
+	<string>UA-97171698-1</string>
+</dict>
+</plist>

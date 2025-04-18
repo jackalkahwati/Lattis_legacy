@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "1017704945324",
+    "project_id": "thrive-ryde",
+    "storage_bucket": "thrive-ryde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017704945324:android:9dd66ea03bc941972af109",
+        "android_client_info": {
+          "package_name": "io.bikes.thriveryde"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBet9OL0xBFKUigrhG-FGHZCkmFZbY4UWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017704945324:android:0058868dd8735b962af109",
+        "android_client_info": {
+          "package_name": "io.bikes.thriveryde.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBet9OL0xBFKUigrhG-FGHZCkmFZbY4UWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017704945324:android:6033bbbe18d54d692af109",
+        "android_client_info": {
+          "package_name": "io.bikes.thriveryde.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBet9OL0xBFKUigrhG-FGHZCkmFZbY4UWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017704945324-01bjt49v8s0farotkt4fpk0qs2r1eecp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

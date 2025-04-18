@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '10.0'
+
+target 'Lattis O&M' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis O&M
+    pod 'Mapbox-iOS-SDK', '3.6.4'
+    pod 'MapboxGeocoder.swift'
+    pod 'SwiftyTimer'
+    pod 'Oval', :git => 'git@github.com:velolabs/oval_ios.git', :branch => 'develop'
+    pod 'LattisSDK', :git => 'git@github.com:velolabs/lattis_sdk_ios.git', :branch => 'develop'
+#    pod 'LattisSDK', :path => '../Lattis SDK Demo/'
+#    pod 'Oval', :path => '../ios/oval_ios/'
+    pod 'JTMaterialSpinner'
+    pod 'TPKeyboardAvoiding'
+    pod 'PhoneNumberKit', '~> 2.0'
+    pod 'LGSideMenuController'
+    pod 'Tabman', '~> 1.10'
+    pod 'QRCodeReader.swift'#, :git => 'git@github.com:kabanishe23/QRCodeReader.swift.git'
+    pod 'UICircularProgressRing'#, '~> 1.4'
+    pod 'SDWebImage', '~>4.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Crashlytics'
+end
+
+swift_4_frameworks = ['JTMaterialSpinner']
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if swift_4_frameworks.include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '4.2'
+            end
+        end
+    end
+end

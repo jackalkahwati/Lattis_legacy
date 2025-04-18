@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "195375400810",
+    "project_id": "bandwagon-lattis",
+    "storage_bucket": "bandwagon-lattis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195375400810:android:9e2332d0283fab6a2a4713",
+        "android_client_info": {
+          "package_name": "io.bikes.bandwagon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRj-ji1znrBrCUVxj2tkOXvhEim8wPAls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "195375400810-c920b8q0tbmp8ki5hsa9aco82gkao9bv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.scooters.bandwagon",
+                "app_store_id": "1567000326"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195375400810:android:bf422c6372d073a82a4713",
+        "android_client_info": {
+          "package_name": "io.bikes.bandwagon.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRj-ji1znrBrCUVxj2tkOXvhEim8wPAls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "195375400810-c920b8q0tbmp8ki5hsa9aco82gkao9bv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.scooters.bandwagon",
+                "app_store_id": "1567000326"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195375400810:android:c852509f749d330a2a4713",
+        "android_client_info": {
+          "package_name": "io.bikes.bandwagon.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRj-ji1znrBrCUVxj2tkOXvhEim8wPAls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195375400810-s5di78i9bh19jh2br108j4i19rhdpaag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "195375400810-c920b8q0tbmp8ki5hsa9aco82gkao9bv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.scooters.bandwagon",
+                "app_store_id": "1567000326"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

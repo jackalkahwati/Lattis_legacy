@@ -1,0 +1,194 @@
+//logo style
+.logo {
+  height: 36px;
+}
+
+.gray-back{
+  background: #f4f5f6 !important;
+}
+
+.logoimg {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.login_logo {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  z-index: 99999;
+  heigth: 100px;
+  width: 125px;
+}
+
+  .reset-panel-container{
+    background: green;
+  }
+
+.login_panel_container {
+  position: absolute;
+  width: 720px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h3{
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 5px;
+  }
+  #reset-info{
+    color: #4a4a4a;
+  }
+  .login-panel {
+    background-color: white;
+    padding: 35px 75px;
+    height: 465px;
+    .logo{
+      display: block;
+      margin: 5px auto 20px auto;
+      width: 70%;
+      height: 85px;
+    }
+    &.side-panel{
+      background: @colorsteelblue;
+      color: white;
+      position: relative;
+      .side-panel-notice{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 85%;
+        .side-panel-image{
+          display: block;
+          margin: 0 auto;
+        }
+        h6{
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+    }
+    .form_container{
+      form{
+        .form-group{
+          p{
+            cursor: pointer;
+            color: @colorskyblue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.err {
+  border: solid red 1px !important;
+}
+
+.login-panel.fade.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 1;
+}
+
+/* The finishing CSS styles for the enter animation */
+.login-panel.fade.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.login-panel.fade.ng-leave {
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.login-panel.fade.ng-leave.ng-leave-active {
+  opacity: 1;
+}
+
+.slide_bg {
+  -webkit-background-size: inherit;
+  -moz-background-size: inherit;
+  -o-background-size: inherit;
+  background-size: inherit;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  height: 100%;
+  max-height: 100%;
+}
+
+.notification_popup{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  .inner-container{
+    background: @color_notify;
+    padding: 20px;
+    height: 100vh;
+    .text-white;
+    h3{
+      font-family: @font-family_5;
+      padding-bottom: 20px;
+      text-shadow: 0px 0px 1px @color_32;
+      span{
+        .pointer;
+      }
+    }
+    p{
+      .nomarg;
+    }
+  }
+  .list-group{
+    .list-group-item{
+      .noborder;
+      .bor-b-white;
+      background: @color_notify;
+      padding-left: 0px;
+      letter-spacing: 0.5px;
+      .ft-10;
+      margin-bottom : 1px;
+      .nobor-rad;
+    }
+  }
+}
+
+.home-panel{
+  box-shadow: none;
+  .home-title{
+    text-align: center;
+    font-family: @font-family_2;
+    letter-spacing: 0.85px;
+    h1{
+      font-size: 48px;
+      letter-spacing: 0.85px;
+      margin-bottom: 0px;
+    }
+  }
+  .panel-body{
+    font-family: @font-family_2;
+    .bg-skyblue {
+      padding: 10px 15px;
+      min-height: 122px;
+    }
+    .inner-content{
+      background: #F4F5F6;
+      padding: 10px 15px;
+      color: @color_21;
+      min-height: 130px;
+      font-family: ProximanovaReg;
+      h4{
+        .m-b-20; .m-t-10; .text-add-fleet-header;
+      }
+      p{
+        color: @lattiscolor_3;
+      }
+    }
+
+  }
+}

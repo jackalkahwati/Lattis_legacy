@@ -1,0 +1,121 @@
+<section ng-controller="bikeLocatorController" class="animated fadeIn">
+    <div class="fullwid pull-left" style='padding:50px;'>
+        <div class="p-tb-10 ft-14 textlighthash fullwid pull-left">
+                    <span style="width: 70%; float:left">This map shows the location of your entire fleet. Use the filters on the left to see rides of a certain
+                    status, or search by name to locate a specific ride.</span>
+            <div class="input-group gobtn">
+                <input auto-complete single="true" source="bikeNames" id="search" class="form-control"
+                       autocomplete="on"
+                       placeholder="Enter Ride Name" ng-model="selectedBike" aria-describedby="search-addon">
+                <span class="input-group-addon" id="search-addon" ng-click="findBike()">Go</span>
+            </div>
+        </div>
+        <div class="fullwid pull-left p-rel">
+            <div class="show-mapheader">
+                <div class="map-over-box" style="width: 300px;padding: 4px 10px;">
+                    <h6 class='ft-b' style="padding: 0px 7px;">MAP LEGEND
+                        <span class="pull-right ft-14 collapse-link" data-toggle="collapse" data-target="#maplegend" aria-expanded="true">
+                            <i class="fa fa-chevron-up slide_animate"></i>
+                            <i class="fa fa-chevron-down slide_animate"></i>
+                        </span>
+                    </h6>
+                    <div class="collapse" id="maplegend" role="menu" aria-labelledby="btn-10" aria-expanded="true" style="padding:8px 0px;margin-top: 15px;border-top:1px solid #bbb;">
+                        <div class="sans_span_bike_locator">
+                            <img src="../images/bike_in_ride.png">
+                            <span class="legend_name">IN RIDE</span>
+                            <div class="pull-right p-rel">
+                                <label class="switch" style="right:5px;top:5px;">
+                                    <input ng-change="updateData()" ng-model="filter.in_ride" type="checkbox"
+                                           ng-init="filter.in_ride=true">
+                                    <div class="slider round">
+                                        <span class='locator-span'>OFF</span>
+                                        <span class='locator-span'>ON</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sans_span_bike_locator">
+                            <img src="../images/bike_parked.png">
+                            <span class="legend_name">PARKED</span>
+                            <div class="pull-right p-rel m-5">
+                                <label class="switch">
+                                    <input ng-change="updateData()" ng-model="filter.parked" type="checkbox"
+                                           ng-init="filter.parked=true">
+                                    <div class="slider round">
+                                        <span class='locator-span'>OFF</span>
+                                        <span class='locator-span'>ON</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sans_span_bike_locator">
+                            <img src="../images/battery_low.png">
+                            <span class="legend_name">ELLIPSE BATTERY LOW</span>
+                            <div class="pull-right p-rel m-5">
+                                <label class="switch">
+                                    <input ng-change="updateData()" ng-model="filter.ellipse_battery_low" type="checkbox"
+                                           ng-init="filter.ellipse_battery_low=true">
+                                    <div class="slider round">
+                                        <span class='locator-span'>OFF</span>
+                                        <span class='locator-span'>ON</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sans_span_bike_locator">
+                            <img src="../images/damage_reported.png">
+                            <span class="legend_name">DAMAGE REPORTED</span>
+                            <div class="pull-right p-rel m-5">
+                                <label class="switch">
+                                    <input ng-change="updateData()" ng-model="filter.maintenance" type="checkbox"
+                                           ng-init="filter.maintenance=true">
+                                    <div class="slider round">
+                                        <span class='locator-span'>OFF</span>
+                                        <span class='locator-span'>ON</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sans_span_bike_locator">
+                            <img src="../images/bike_reported_stolen.png">
+                            <span class="legend_name">REPORTED STOLEN</span>
+                            <div class="pull-right p-rel m-5">
+                                <label class="switch">
+                                    <input ng-change="updateData()" ng-model="filter.stolen" type="checkbox"
+                                           ng-init="filter.stolen=true">
+                                    <div class="slider round">
+                                        <span class='locator-span'>OFF</span>
+                                        <span class='locator-span'>ON</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-over-box" class="m-t-20" style='width:255px;'>
+                    <h6 class='ft-b inline-block' style='padding-top: 2px;'>SHOW PARKING ZONES
+                    </h6>
+                    <div class="pull-right p-rel" style='margin-top:3px;'>
+                        <label class="switch">
+                            <input type="checkbox" ng-model="parkingToggle" ng-click='getParkingZones()'>
+                            <div class="slider round">
+                                <span class='locator-span'>OFF</span>
+                                <span class='locator-span'>ON</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="map" class="bikelocator_map mapview pull-left m-b-20 bor-b-hash"
+                 ng-class="{test_map:isDamage}"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mapboxgl-ctrl-top-right
+    {
+        right: 20px;
+    }
+</style>

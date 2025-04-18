@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/view_flipper_in_payment">
+        <include layout="@layout/activity_payment_no_card" />
+        <include layout="@layout/activity_payment_card_list"/>
+    </ViewFlipper>
+
+
+
+    <include layout="@layout/activity_loading"
+        android:id="@+id/payment_activity_loading_view"
+        android:visibility="gone"/>
+
+    <include layout="@layout/no_internal_layout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

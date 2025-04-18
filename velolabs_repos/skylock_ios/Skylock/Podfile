@@ -1,0 +1,21 @@
+use_frameworks!
+platform :ios, '9.0'
+
+target 'Ellipse' do
+       pod 'GoogleMaps' 
+       pod 'FBSDKCoreKit'
+       pod 'FBSDKLoginKit'
+       pod 'Firebase'
+       pod 'SwiftyJSON', '>= 3.1.0'
+       source 'https://github.com/CocoaPods/Specs.git'
+       pod 'Localize-Swift', '~> 1.7'
+       pod 'SwiftyTimer'
+       pod 'PhoneNumberKit', '~> 1.2'
+       pod 'TPKeyboardAvoiding'
+       pod 'Fabric'
+       pod 'Crashlytics'
+       pod 'RestService', :git => 'https://github.com/velolabs/RestService.git', :tag => 'v0.2.1'
+       pod 'RestService/Oval', :git => 'https://github.com/velolabs/RestService.git', :tag => 'v0.2.1'
+       pod 'KeychainSwift', '~> 7.0'
+       pod 'Cartography'
+end 

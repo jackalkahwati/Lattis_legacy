@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@color/vehicle_detail_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_done_vehicle_filters"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_change_status_vehicle"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="20dp"
+            >
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_vehicle_name_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_name"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <io.lattis.operator.presentation.customview.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_vehicle_name_filter"
+                app:layout_constraintTop_toBottomOf="@+id/ct_vehicle_name_filters"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:hint="@string/vehicle_name"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:inputType="text|textNoSuggestions"
+                />
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_live_vehicle_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_live"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_vehicle_name_filter"
+                android:layout_marginTop="20dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <include layout="@layout/layout_live_vehicle_filters"
+                android:id="@+id/layout_live_vehicle_filters"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_live_vehicle_filters"/>
+
+
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_staging_vehicle_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_staging"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_live_vehicle_filters"
+                android:layout_marginTop="25dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <include layout="@layout/layout_staging_vehicle_filters"
+                android:id="@+id/layout_staging_vehicle_filters"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_staging_vehicle_filters"/>
+
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_out_of_service_vehicle_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_out_of_service"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_staging_vehicle_filters"
+                android:layout_marginTop="25dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <include layout="@layout/layout_out_of_service_vehicle_filters"
+                android:id="@+id/layout_out_of_service_vehicle_filters"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/ct_out_of_service_vehicle_filters"/>
+
+
+            <io.lattis.operator.presentation.customview.CustomTextView
+                android:id="@+id/ct_maintenance_vehicle_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/under_maintenance"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textColor="@color/vehicle_detail_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_out_of_service_vehicle_filters"
+                android:layout_marginTop="25dp"
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <include layout="@layout/layout_maintenance_vehicle_filters"
+                android:id="@+id/layout_maintenance_vehicle_filters"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/ct_maintenance_vehicle_filters"/>
+
+
+
+            <include layout="@layout/layout_vehicle_battery_filter"
+                android:id="@+id/layout_vehicle_battery_filter_in_fleet_detail_map"
+                app:layout_constraintTop_toBottomOf="@+id/layout_maintenance_vehicle_filters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="5dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </ScrollView>
+
+    <io.lattis.operator.presentation.customview.CustomButton
+        android:id="@+id/btn_done_vehicle_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/done"
+        android:textSize="16dp"
+        android:textAllCaps="false"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/round_create_ticket"
+        android:textColor="@color/create_ticket_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

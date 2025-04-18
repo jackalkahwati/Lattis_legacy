@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "374565184067",
+    "project_id": "wave-co",
+    "storage_bucket": "wave-co.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374565184067:android:e2bbe51634481810d5aaf6",
+        "android_client_info": {
+          "package_name": "io.bikes.wave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD96yZXhmMX_krRfrYixaXi_5WCFjIlQ4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374565184067:android:cb6ea780ecf3208ad5aaf6",
+        "android_client_info": {
+          "package_name": "io.bikes.wave.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD96yZXhmMX_krRfrYixaXi_5WCFjIlQ4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374565184067:android:45e57054472d11add5aaf6",
+        "android_client_info": {
+          "package_name": "io.bikes.wave.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD96yZXhmMX_krRfrYixaXi_5WCFjIlQ4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374565184067-9pjp8deadmav84p5h94h0hh36v369h4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

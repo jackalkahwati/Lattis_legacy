@@ -1,0 +1,15 @@
+{
+    "type": "mysql",
+    "host": "lattis-app-main.c1a64u1onfsf.us-west-1.rds.amazonaws.com",
+    "rhost": "lattis-main-production-v1.c1a64u1onfsf.us-west-1.rds.amazonaws.com",
+    "port": 3306,
+    "username": "lattis_user",
+    "password": "2015lattis_india2015",
+    "database": "lattis_main",
+    "entities": [
+        "app/entities/**/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "app/models"
+    }
+}

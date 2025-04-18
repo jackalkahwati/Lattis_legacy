@@ -1,0 +1,1062 @@
+<div id="activeFleetModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Return Ride to 'Live' status</h4>
+            </div>
+            <div class="modal-body p-30">
+                <p>This action moves this Ride back into ‘Liveʼ status, making the Ride available to reserve.
+                    Only perform this action if the Ride has been physically deployed to a parking spot or
+                    zone where it can be reserved.</p>
+            </div>
+            <div class="modal-footer noborder m-t-20">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-tb-hash m-lr-15">
+                    <button class="btn custom-btn p-tb-10 bg-HeaderToolbar wid-130" data-dismiss="modal">CANCEL</button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase"
+                            ng-click="sendToLive()">RETURN TO 'LIVE' STATUS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="workshopModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Send bike to workshop</h4>
+            </div>
+            <div class="modal-body p-30">
+                <p>This action temporarily moves the bike into ‘Suspended’ status - it will no longer appear
+
+                    available to riders in the Bikeshare app. Once you or your maintenance team has
+
+                    completed the work, and you’ve returned the bike to a rentable location, come back to
+
+                    the Fleet system and return it to the active fleet.</p>
+                <div class="form-group">
+                    <label for="comment">Maintenance category:</label>
+                    <div class="dropdown wid-400">
+                        <span class="fa fa-angle-down fa-lg"
+                              style="position: absolute;right: 8px;top: 8px;background: #f8f8f8;"></span>
+                        <select id="maintStatus" ng-options="item.maintenance_category for item in maintanenceList"
+                                ng-model="modal.maintenanceSelect" ng-change="customerSelected()"
+                                class="form-control  new-dd-box wid-400 p-lr-10">
+                            <option value="">Select a Maintenance Category</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Description:</label>
+                    <textarea ng-model="modal.maintenanceNotes" class="form-control new-txt-box" rows="5"
+                              id="comment"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-tb-hash">
+                    <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL</button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="sendWorkshop()">
+                        SEND BIKE TO WORKSHOP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Permanently delete</h4>
+            </div>
+            <div class="modal-body p-30">
+                <p>This action permanently removes the bike from your fleet.
+                    Youʼll still be able to see all trip and transaction history related to this bike in the archive,
+                    but youʼll no longer be able to rent it out. This action cannot be undone.</p><br><br>
+                <p class="ft-18 ft-b">Are you sure you want to permanently delete the bike?</p><br><br>
+                <div class="modal-footer">
+                    <div class="text-left fullwid m-tb-10 p-tb-10">
+                        <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                        </button>
+                        <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="deleteBike()">
+                            Delete bike
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="exitDescriptionModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Choose an existing bike description</h4>
+            </div>
+            <div class="modal-body p-30">
+
+                <table class="fullwid" style="border-collapse: collapse">
+                    <tr style='border-collapse: collapse;' ng-repeat='desc in bikeDescriptionList track by $index'>
+                        <td class="relative" style="top:20px;width:60px;vertical-align: middle;">
+                            <div>
+                                <input type="radio" name="descriptradio" id="descriptionradio{{$index}}"
+                                       value="{{desc.description}}" ng-model="dataInfo.selectedBikeDescription"
+                                       style="top:20px"/>
+                                <label for="descriptionradio{{$index}}"></label>
+                            </div>
+                        </td>
+                        <td style="padding:10px 0">
+                            <label class="fw-300">Created {{desc.date}}</label>
+                            <div class="p-20 bor-hash" style="background: #F4F5F6;">{{desc.description}}</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="modal-footer">
+                    <div class="text-left fullwid m-tb-10 p-tb-10">
+                        <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                        </button>
+                        <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="selectDesc()">
+                            USE THIS DESCRIPTION
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bikeuploadModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Use previously uploaded photo</h4>
+            </div>
+            <div class="modal-body p-30">
+                <div class="row ">
+                    <div class="col-sm-6 m-b-20" ng-repeat="photo in bikePhotoList track by $index">
+                        <div class="row ">
+                            <div class="col-sm-2">
+                                <div class="radio-aligncenter">
+                                    <input type="radio" name="bikeradio{{$index}}" id="bikeradio{{$index}}"
+                                           value="{{photo.image}}" ng-model="dataInfo.selectedphoto"/>
+                                    <label for="bikeradio{{$index}}"></label></div>
+                            </div>
+                            <div class="col-sm-10">
+                                <label class="fw-300">Created {{photo.date}}</label>
+                                <div class="">
+                                    <img ng-src="{{photo.image}}" class="fullwid p-20 bor-hash">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-left fullwid m-b-30">
+                        <button class="btn custom-btn bg-HeaderToolbar" data-dismiss="modal">CANCEL</button>
+                        <button class="btn pull-right custom-btn text-uppercase" ng-click="selectPhoto()">USE THIS
+                            PHOTO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="addmemberModal1" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-white">MANAGE MEMBERS</h3>
+            </div>
+            <div class="modal-body p-30 ">
+                <p>In this section, you’ll be able to manage your fleet access either through domain or by email
+                    address, or both simultaneously. Individual members can be have their access revoked in the members
+                    page.</p>
+                <form method='post' name="domain.memberform">
+                    <div class="row m-t-30 member-add">
+                        <div class="col-sm-12">
+                            <h3 class="m-t-3 ft-20">Create User List with Domain</h3>
+                            <p class="ft-14">
+                                Anyone with this domain will have access to the private network.
+                            </p>
+                            <div class="row m-tb-10">
+                                <div class="col-sm-8 new-fleet-box nopadd">
+                                    <div class="set-placeholder">
+                                        <input class="form-control new-txt-box" type="text"
+                                               ng-class="{err:!domain.memberform.domain.$valid && !domain.memberform.domain.$pristine}"
+                                               ng-model="domain.id"
+                                               ng-pattern="/^@[-.a-zA-Z0-9]+(\.[-.a-zA-Z0-9]+)*\.([a-zA-Z]{2,})$/"
+                                               data-ng-required="true" name="domain" placeholder="@google.com">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span ng-click="addDomain()"
+                                          class="btn custom-btn ft-12 text-uppercase">ADD
+                                    </span>
+                                </div>
+                            </div>
+                            <!--                            <div ng-init="showStatus=false" ng-if="showStatus" class="row m-tb-10">
+                                                            <div class="col-sm-8 new-fleet-box nopadd">
+                                                                <div class="set-placeholder">
+                                                                    <label>
+                                                                        {{domain.id}} added successfully
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <button class="btn custombtn-default wid-153 ft-12" data-dismiss="modal">REMOVE
+                                                                </button>
+                                                            </div>
+                                                        </div>-->
+                            <div ng-if="domainList.length" class="border-gray relative"
+                                 style="width: 66.6666%;top:-12px;padding:5px;">
+                                <div class="inline-block m-r-10 m-b-3 bg-skyblue" style="border-radius: 50px;"
+                                     ng-repeat="domain in domainList">
+                                    <span class="text-white ft-bold inline-block m-l-15">{{domain.domain_name}}</span>
+                                    <button ng-click="delDomain(domain.domain_id)"
+                                            class="ft-bold relative bg-transp noborder text-steel-blue">x
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 m-t-30">
+                            <h3 class="m-t-3 ft-20">Add User by Email</h3>
+                            <p class="ft-14">
+                                A CSV file upload must include only email addresses. Every email in this list will have
+                                access to the network. If you upload a new file, it will overwrite your last file. <br>
+                                <a style='text-decoration: underline;'
+                                   href="https://s3-us-west-1.amazonaws.com/fleetassets/csv_templates/member_csv.csv"
+                                   download="member_csv.csv">Download template here</a>
+                            </p>
+                            <div class="row m-tb-10">
+                                <div class="col-sm-8 new-fleet-box nopadd">
+                                    <div class="relative new-txt-box p-tb5-lr10">
+                                        <p class="text-gray inline-block nomarg">{{membercsv.name}}</p>
+                                        <img src="../images/paperclip.png" class="pull-right relative"
+                                             style="width:20px;" alt="upload-member-csv">
+                                    </div>
+                                    <p class="m-t-10 text-alert-dark text-right" ng-if="csvFile"><span
+                                            class="pull-left fw-600">{{csvFile}}</span> <a href="{{CSVFile}}"><i
+                                            class="fa fa-download p-r-5"></i></a> <i ng-click="delCsv()"
+                                                                                     class="fa fa-times ft-16"></i></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <fileupload accept=".csv"
+                                                name="UPLOAD" file="membercsv"></fileupload>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="text-left fullwid m-b-30">
+                    <button ng-click="memberCancel()" class="btn custom-btn bg-HeaderToolbar wid-100"
+                            data-dismiss="modal">CANCEL
+                    </button>
+                    <a class="btn pull-right custom-btn text-uppercase wid-153" ng-click="memberNext()">SAVE CHANGES</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="reportModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Report Screen</h4>
+            </div>
+            <div class="modal-body p-30">
+                <div class="row">
+                    <div class="col-sm-12 new-fleet-box">
+                        <h2 class="text-center text-danger">Under Development</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="activePubllicParkingMetersModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Activate public parking meters</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <p>You need to specify at least one parking zone. All parking meters within that zone will be
+                    activated.</p>
+                <div class="fullwid pull-left m-tb-10">
+                    <input type="radio" name="radio" id="geofence1" value="1">
+                    <label for="geofence1">Draw a new geofence around the area I want to add public parking meters
+                        in</label>
+                </div>
+                <div class="fullwid pull-left">
+                    <input type="radio" name="radio" id="geofence2" checked="checked" value="2">
+                    <label for="geofence2">Select some or all of my current parking areas to activate public parking
+                        meters
+                        in</label>
+                </div>
+                <div class="clearfix"></div>
+                <p class="m-t-30">Which parking zones would you like to activate public parking meters in?</p>
+
+                <ul class="list-group">
+                    <li class="list-group-item nopadd noborder">
+                         <span class="checkbox">
+                            <input id="checkboxall" type="checkbox" name="checkbox" ng-model="checkboxall">
+                            <label for="checkboxall"><span class="grey"><span></span></span>All my parking zones</label>
+                    </span>
+                    </li>
+                    <li class="list-group-item nopadd noborder m-l-30"
+                        ng-repeat="itemzone in ['Downtown North','Upper Campus','Lower Campus','Sports Field Area']">
+                        <span class="checkbox">
+                            <input id="checkbox{{$index}}" type="checkbox" name="checkbox" ng-checked="checkboxall">
+                        <label for="checkbox{{$index}}"><span class="grey"><span></span></span> {{itemzone}}</label>
+                    </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-tb-hash">
+                    <button class="btn custombtn-default pbtn-tb11-lr20 wid-130 ft-12" data-dismiss="modal">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                            ng-click="activeParkingMaters()">ACTIVATE PUBLIC PARKING MATERS
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="createTicketModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Create A Ticket</h4>
+            </div>
+            <div class="modal-body cl_grey p-b-15">
+                <div class="row">
+                    <div class="col-sm-12 m-b-10">
+                        <p>Create a ticket for your ﬂeet. Select your ﬂeet and enter the name member name or ride name
+                            which
+                            you’d like to create an alert for.</p>
+                    </div>
+                    <div class="col-sm-12 create-ticket-box bor-t-hash">
+                        <ul class="list-unstyled list-inline m-t-20">
+                            <li>
+                                <span>Search By</span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder inline-block">
+                                    <input type="radio" name="radio" ng-model="search" ng-init="search='bike'"
+                                           id="radio12" value="bike"/>
+                                    <label for="radio12">Bike</label>
+                                </div>
+                                <div class="set-placeholder inline-block">
+                                    <input type="radio" name="radio" ng-model="search" id="radio13" value="member"
+                                           disabled/>
+                                    <label for="radio13">User</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span>Name</span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder inline-block">
+                                    <input class="form-control new-txt-box inline-block" data-ng-required="true"
+                                           name="title" auto-complete bike="true" single="true" source="bikesIdList"
+                                           type="text" ng-model="maintenceticket.title">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-t-20">
+                            <li class="v-t">
+                                <span class="ft-14 text-muted">Photo</span>
+                            </li>
+                            <li class="fileupload">
+                                <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" hasedit="true"
+                                                   haspreview="true" name="Browse..."
+                                                   file="maintenceticket.ticketImage"></custom-Fileupload>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline" style="margin: 10px 0px 5px;">
+                            <li class="v-t">
+                                <span>Category</span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder p-r-10 inline-block">
+                                    <div class="dropdown pull-left">
+                                        <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-240"
+                                                type="button" ng-model="category"
+                                                data-toggle="dropdown">{{category.name}}
+                                        </button>
+                                        <ul class="dropdown-menu dropdownList-modify" style="width:280px;">
+                                            <li ng-repeat="ticketItem in mainTypes"
+                                                ng-click="ticketTypeChanged(ticketItem)"
+                                                ng-class="{'disabled': ticketItem.disabled}"><a href="">{{ticketItem.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li class="v-t">
+                                <span>Notes</span>
+                            </li>
+                            <li>
+                                <div class="form-group set-placeholder inline-block wid-350">
+                                <textarea id="notes" ng-model="maintenceticket.maintenanceNotes"
+                                          class="form-control new-txt-box"
+                                          rows="5"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer noborder m-lr-15">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custom-btn bg-HeaderToolbar wid-130 p-tb-10 ft-12" data-dismiss="modal"
+                            ng-click="ticketCancel()">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn text-uppercase pbtn-tb11-lr20 ft-12"
+                            ng-click="genericTicket()"
+                            ng-disabled="(category.value !== 'service_due' ||
+                            !maintenceticket.title || maintenceticket.maintenanceNotes === '') && (category.value !== 'reported_theft' ||
+                            !maintenceticket.title || maintenceticket.maintenanceNotes === '') && (category.value !== 'damage_reported' ||
+                            !maintenceticket.title || maintenceticket.maintenanceNotes === '' || !maintenceticket.maintenanceNotes)">
+                        Create Ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="maintenanceTicketModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Create A Ticket</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <div class="row">
+                    <div class="col-sm-12 m-b-10">
+                        <p>Create a ticket for your ﬂeet. Select your ﬂeet and enter the name member name or ride name
+                            which
+                            you’d like to create an alert for.</p>
+                    </div>
+                    <div class="col-sm-12 create-ticket-box bor-t-hash">
+                        <ul class="list-unstyled list-inline m-t-20">
+                            <li>
+                                <span>Name </span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder inline-block">
+                                    <input type="text" ng-model="selectedBike[0].bike_name"
+                                           style="padding: 3px 5px;margin-bottom: 7px;" ng-disabled="true"/>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-t-10">
+                            <li class="v-t">
+                                <span class="ft-14 text-muted">Photo</span>
+                            </li>
+                            <li class="fileupload">
+                                <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" hasedit="true"
+                                                   haspreview="true" name="Browse.."
+                                                   file="maintenceticket.damageImage"></custom-Fileupload>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span>Category</span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder inline-block">
+                                    <div class="dropdown pull-left styleSelect">
+                                        <select class="form-control new-dd-box" ng-disabled="true"
+                                                ng-options="ticketType.name for ticketType in mainTypes"
+                                                ng-model="category">
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span>Notes</span>
+                            </li>
+                            <li>
+                                <div class="form-group set-placeholder inline-block wid-350">
+                                <textarea id="maintencenotes" ng-model="maintenceticket.notes"
+                                          class="form-control new-txt-box"
+                                          rows="5"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash m-lr-15">
+                    <button class="btn custom-btn bg-HeaderToolbar p-tb-10 wid-130 ft-12" data-dismiss="modal">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                            ng-click="maintenanceTicket()"
+                            ng-disabled="!maintenceticket.notes || !selectedBike[0].bike_name">
+                        Create Ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="assignTicketModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Assign Ticket</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <div class="row">
+                    <div class="col-sm-12 m-b-10">
+                        <p>Select the dropdown menu to choose which user to assign to this ticket.</p>
+                    </div>
+                    <div class="col-sm-12 create-ticket-box bor-t-hash">
+                        <ul class="list-unstyled list-inline m-t-30">
+                            <li class="assignTicket">
+                                <span>Assigned User</span>
+                            </li>
+                            <li>
+                                <div class="set-placeholder inline-block">
+                                    <div class="dropdown pull-left styleSelect">
+                                        <select class="form-control new-dd-box"
+                                                ng-options="item.full_name for item in operatorData"
+                                                ng-model="dataInfo.operatorModel">
+                                            <option value="" ng-disabled="true">Select an operator</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer noborder m-lr-15">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custom-btn bg-HeaderToolbar pbtn-tb11-lr20 wid-100 ft-12" data-dismiss="modal">
+                        CANCEL
+                    </button>
+                    <button ng-disabled="!dataInfo.operatorModel.operator_id"
+                            class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                            ng-click="assignTicket()">ASSIGN TICKET
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="uploadImageModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Upload your Logo</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <div class="row">
+                    <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" haspreview="true" hasedit="false"
+                                       name="Browse.." file="profileLogo"></custom-Fileupload>
+                </div>
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custombtn-default pbtn-tb11-lr20 wid-130 ft-12" ng-click="cancelLogo()"
+                            data-dismiss="modal">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+                            ng-click="uploadLogo()" data-dismiss="modal">UPLOAD
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addUserModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Add Single Fleet User</h4>
+            </div>
+            <div class="modal-body cl_grey" style="padding: 20px 30px 5px 30px !important">
+                <div class='bor-b-hash'>
+                    <p class='p-b-10 ft-13 table-text'>Primary administrator, users are assigned by the primary, and
+                        they can be assigned to however many fleets the primary chooses with the same access to each
+                        fleet as the primary, the only difference being they cannot add/edit "users"</p>
+                </div>
+                <div class="row" style="padding: 30px 10px;">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <ul class="list-unstyled list-inline m-b-10">
+                            <li class="wid-75">
+                                <span class="ft-13 text-muted">Email</span>
+                            </li>
+                            <li class="wid-160">
+                                <div class="set-placeholder inline-block">
+                                    <input class="form-control new-txt-box inline-block wid-160"
+                                           type="email" ng-model="newuser.email" name="email"
+                                           ng-change="checkOperator()" required autocomplete="off">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-b-10">
+                            <li class="wid-75">
+                                <span class="ft-13 text-muted">First Name</span>
+                            </li>
+                            <li class="wid-160">
+                                <div class="set-placeholder inline-block">
+                                    <input class="form-control new-txt-box inline-block wid-160"
+                                           type="text" ng-model="newuser.first_name" ng-disabled='disableInputs'>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-b-10">
+                            <li class="wid-75">
+                                <span class="ft-13 text-muted">Last Name</span>
+                            </li>
+                            <li class="wid-160">
+                                <div class="set-placeholder inline-block">
+                                    <input class="form-control new-txt-box inline-block wid-160"
+                                           type="text" ng-model="newuser.last_name" ng-disabled='disableInputs'>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-b-10">
+                            <li class="wid-75" style="vertical-align: top;">
+                                <span class="ft-13 text-muted">Access</span>
+                            </li>
+                            <li>
+                                <!--<div class="dropdown styleSelect wid-130"-->
+                                <!--style="width:130px !important; border: 1px solid #ccc;margin-top:0px;">-->
+                                <!--&lt;!&ndash;<span class="fa fa-angle-down fa-lg" style="position: absolute;right: 8px;top: 8px;background: #f8f8f8;"></span>&ndash;&gt;-->
+                                <!--<select id="exeCust"-->
+                                <!--ng-model="newuser.access_staff"-->
+                                <!--ng-init="newuser.access_staff='coordinator'"-->
+                                <!--class="form-control new-dd-box wid-130 p-lr-10"-->
+                                <!--style="width:130px !important;">-->
+                                <!--<option ng-repeat="role in customerList" ng-disabled="role.value=='admin'"-->
+                                <!--value={{role.value}}>-->
+                                <!--{{role.customer_name}}-->
+                                <!--</option>-->
+                                <!--</select>-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle styleSelect text-left p-lr-10 new-dd-box"
+                                                type="button" ng-model="newuser" style="width:160px;margin-top:0px;"
+                                                data-toggle="dropdown">{{newuser.access_staff}}
+                                        </button>
+                                        <ul class="dropdown-menu wid-160 dropdownList-modify" style="min-width:130px;">
+                                            <li ng-click="selectRole(role)" ng-repeat="role in customerList"
+                                                ng-class="{'disabled': role.value == 'admin'}"><a href="">{{role.customer_name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="" ng-init="accessInquiry= false;">
+                                    <i ng-click="accessInquiry = !accessInquiry;"
+                                       class="fa fa-question-circle parking-inquiry pointer"
+                                       style="font-size: 20px;position:absolute;margin-top:-35px;margin-left:165px"></i><br>
+                                    <div ng-show="accessInquiry" class='arrow_box p-10'
+                                         style="position:absolute;margin-left:47px;margin-top:-25px">
+                                        <p class="text-white ft-11 m-b-10-">Fleet Coordinator - Access to the
+                                            Dashboard
+                                            and the O&M App</p>
+                                        <p class="text-white ft-11">Fleet Technician - Limited Access to Dashboard
+                                            and
+                                            the O&M App</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <ul class="list-unstyled list-inline m-b-10 p-rel">
+                            <li style="width: 85px;vertical-align: top;">
+                                <span class="ft-13 text-muted">Fleet Access</span>
+                            </li>
+                            <li class="wid-130 bor-hash" style="padding-right: 2px;">
+                                <select multiple ng-model="newuser.fleets" class="fleetselect">
+                                    <option ng-repeat="item in fleetList" value={{item.fleet_id}}>
+                                        {{item.fleet_name}}
+                                    </option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custom-btn wid-100 bg-HeaderToolbar" data-dismiss="modal"
+                            ng-click="cancelUser()">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn wid-100 text-uppercase"
+                            ng-disabled="(disableInputs || !newuser.first_name || !newuser.last_name ||
+                            !newuser.email || !newuser.access_staff || !newuser.fleets) &&
+                            (!disableInputs || !newuser.access_staff || !newuser.fleets || !mailtrue)"
+                            ng-click="adduser()"> ADD USER
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="issueRefundModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog" form action="">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Issue a refund</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <div class="bor-b-hash">
+                    <p class='p-b-10 ft-13 table-text'>Apply a refund to this transaction. You can choose to refund the
+                        entire transaction or a portion of it. You can also refund the credit card directly or issue it
+                        as credit against future transactions for this rider.</p>
+                </div>
+
+                <div class="m-t-20">
+                    <p class="p-b-10 ft-16 table-text ft-bold">How much would you like to refund?</p>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div>
+                                <span><input type="radio" name="refundAmount" class="pointer" style="display:inline;"><p
+                                        class='m-l-5 ft-12' style="display:inline;">The entire transaction</p></span>
+                                <input type="text" class="wid-120 block" style="margin: 10px auto">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div>
+                                <span><input type="radio" name="refundAmount" class="pointer" style="display:inline;"><p
+                                        class='m-l-5 ft-12'
+                                        style="display:inline;">Portion of the transaction</p></span>
+                                <input type="text" class="wid-120 block" style="margin: 10px auto">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div>
+                                <span><input type="radio" name="refundAmount" class="pointer" style="display:inline;"><p
+                                        class='m-l-5 ft-12' style="display:inline;">Percentage of transaction</p></span>
+                                <span><input type="text" class="wid-100 m-10 inline-block m-r-10"
+                                             style="margin: 10px auto"> % </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="p-b-10 ft-16 table-text ft-bold">How do you want to apply the refund?</p>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <span><input type="radio" name='refundApply' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-12' style="display:inline;">Refund to credit card</p></span>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <span><input type="radio" name='refundApply' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-12' style="display: inline;">Apply credit to the account</p></span>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <input type='checkbox' style="display: block">
+                </div>
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custombtn-default pbtn-tb11-lr20 wid-130 ft-12" data-dismiss="modal">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12">ISSUE A REFUND
+                    </button>
+                    <p class="m-10 pull-right ft-20" style="margin:6px;"><span class="m-r-10">$</span>18.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="chargePenaltyModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <h4 class="modal-title text-white">Charge a penalty</h4>
+            </div>
+            <div class="modal-body p-30 cl_grey">
+                <div class='bor-b-hash'>
+                    <p class='p-b-10 ft-13 table-text'>Select one or more penalty fees to apply to this transaction. If
+                        the nature of the charge is not listed, create an ad hoc penalty charge at the bottom.</p>
+                </div>
+                <div class="m-t-20">
+                    <ul class="list-unstyled h-33">
+                        <li class="pull-left">
+                            <span><input type="radio" name='penaltyType' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-14 ft-bold table-text' style="display:inline;">Ride was not returned (stolen/lost)</p></span>
+                        </li>
+                        <li class='pull-right'>
+                            <input class='wid-100 align-center' type="text">
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled h-33">
+                        <li class="pull-left">
+                            <span><input type="radio" name='penaltyType' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-14 ft-bold table-text'
+                                    style="display:inline;">Wheel damaged</p></span>
+                        </li>
+                        <li class='pull-right'>
+                            <input class='wid-100 align-center' type="text">
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled h-33">
+                        <li class="pull-left">
+                            <span><input type="radio" name='penaltyType' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-14 ft-bold table-text'
+                                    style="display:inline;">Ellipse damaged</p></span>
+                        </li>
+                        <li class='pull-right'>
+                            <input class='wid-100 align-center' type="text">
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled h-33">
+                        <li class="pull-left">
+                            <span><input type="radio" name='penaltyType' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-14 ft-bold table-text'
+                                    style="display:inline;">Other damage</p></span>
+                            <input type="text" class="wid-200 h-33 block m-t-10 m-l-10 ft-11 p-5"
+                                   placeholder="Description for the damage">
+                        </li>
+                        <li class='pull-right'>
+                            <input class='wid-100 align-center' type="text">
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <ul class="list-unstyled h-33">
+                        <li class="pull-left">
+                            <span><input type="radio" name='penaltyType' class="pointer" style="display:inline;"><p
+                                    class='m-l-5 ft-14 ft-bold table-text' style="display:inline;">Create a custom penalty charge</p></span>
+                            <input type="text" class="wid-200 h-33 block m-t-10 m-l-10 ft-11 p-5"
+                                   placeholder="Description for the penalty fee">
+                        </li>
+                        <li class='pull-right'>
+                            <input class='wid-100 align-center' type="text">
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="modal-footer noborder">
+                <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+                    <button class="btn custombtn-default pbtn-tb11-lr20 wid-130 ft-12" data-dismiss="modal">CANCEL
+                    </button>
+                    <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12">CHARGE PENALTY
+                    </button>
+                    <p class="m-10 pull-right ft-20" style="margin:6px;"><span class="m-r-10">$</span>215.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sendToService" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Send to Out of Service</h4>
+            </div>
+            <div class="modal-body p-30">
+                <div class="row m-b-20" style="padding: 40px 0;">
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">Damaged</span>
+                        <input class='pointer' name="outOfServiceType" type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">A member or technician has reported damage.</p>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">Reported Stolen</span>
+                        <input class='pointer' name="outOfServiceType" type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">A member or technician has reported a stolen ride.</p>
+                    </div>
+
+                </div>
+                <div class="row m-b-20" style="padding: 10px 0">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">Maintenance</span>
+                        <input class='pointer' name="outOfServiceType" type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">Ride is scheduled for maintenance</p>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">Reported Crashed</span>
+                        <input class='pointer' name="outOfServiceType" type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">A member or technician has reported a crash.</p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:none;">
+                    <div class="text-left fullwid m-tb-10 p-tb-10">
+                        <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                        </button>
+                        <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="selectDesc()">
+                            NEXT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sendToLive" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Send to Live</h4>
+            </div>
+            <div class="modal-body p-30">
+                <div class="row m-b-20 p-tb10-lr20">
+                    <div class="col-sm-12 m-b-50">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">In Ride</span>
+                        <input class='pointer' name="liveType" type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">Ride is currently being used</p>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <span class="inline-block m-r-20 ft-13" style="color:black;">Parked</span>
+                        <input class='pointer' name='liveType' type="radio" style="display:inline-block">
+                        <p class="ft-12 m-t-10">Ride is parked and available to be reserved</p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:none;">
+                    <div class="text-left fullwid m-tb-10 p-tb-10">
+                        <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                        </button>
+                        <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase" ng-click="selectDesc()">
+                            NEXT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="damageReport" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">Damage report</h4>
+            </div>
+            <div class="modal-body p-30 m-t-15">
+                <p>A member submitted the following damage report</p>
+                <div class="row m-b-20 p-tb-10">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <img ng-src="{{damageData[0].damagePhoto}}" class="img-responsive">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <!--                        <label class="text-bbb fw-200">
+                                                MEMBER
+                                            </label>
+                                                <p class="text-hash">John Smith</p>-->
+                        <label class="text-bbb fw-200">
+                            DATE AND TIME
+                        </label>
+                        <p class="text-hash">{{damageData[0].createdOn}}</p>
+                        <!--                        <label class="text-bbb fw-200">
+                                                    DAMAGE TYPE
+                                                </label>
+                                                <p class="text-hash">Damaged wheel</p>-->
+                        <label class="text-bbb fw-200">
+                            NOTES
+                        </label>
+                        <p class="text-hash">{{damageData[0].damageNotes}}.</p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border:none;">
+                    <div class="text-left fullwid m-tb-10 p-tb-10">
+                        <button class="btn custombtn-default pbtn-tb11-lr20 wid-130" data-dismiss="modal">CANCEL
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="endrideModal" class="modal fade" role="dialog" data-backdrop="false" data-dismiss="modal">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-HeaderToolbar ">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-white">END RIDE</h4>
+            </div>
+            <div class="modal-body p-30">
+                <p class="p-tb-10 bor-b-hash">This is the last know location of your ride.</p>
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 m-t-20">
+                        <div id="endridemap" class="fullwid h-320"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer noborder m-b-20">
+                <div class="pull-left fullwid p-tb-10 bor-tb-hash m-lr-15">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 col-xs-offset-right-1">
+                            <button id="sendLive" class="btn pull-left custom-btn text-uppercase">SEND TO LIVE</button>
+                            <button id="sendStaging" class="btn pull-right custom-btn text-uppercase">SEND TO SERVICE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

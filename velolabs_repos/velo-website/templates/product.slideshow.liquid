@@ -1,0 +1,213 @@
+{% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
+
+<div class="home-slideshow-wrapper {{ settings.product-slideshow-layout }} {{ settings.product-slideshow-transition }}">
+  <div class="home-slideshow-loader"></div>
+
+  {% if settings.show-product-slideshow-navigation and product.images.size > 1 %}
+    <div class="home-slideshow-navigation home-slideshow-previous icon">&#57352;</div>
+    <div class="home-slideshow-navigation home-slideshow-next icon">&#57353;</div>
+  {% endif %}
+
+  {% if settings.show-product-slideshow-pagination and product.images.size > 1 %}
+    <div class="home-slideshow-pagination">
+      {% for image in product.images %}
+        <span data-slide-id="home-slide-{{ forloop.index }}" class="pagination-slide-{{ forloop.index }}"><span></span></span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="home-slideshow">
+    {% for image in product.images %}
+      <div id="home-slide-{{ forloop.index }}" class="home-slide home-slide-{{ forloop.index }}" {% if settings.product-slideshow-layout == 'opening-screen' %}style="background-image: url({{ image | product_img_url: 'master' }});"{% endif %}>
+        <img class="slide-image" alt="{{ image.alt | escape }}" src="{{ image | product_img_url: 'master' }}">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div itemscope itemtype="http://schema.org/Product">
+
+  {% if settings.product-slideshow-layout == 'full-bleed' or settings.product-slideshow-layout == 'opening-screen' or settings.product-slideshow-layout == 'full-width' %}
+    {% include 'breadcrumbs' %}
+  {% endif %}
+
+  <h1 class="page-title" itemprop="name">{{ product.title }}</h1>
+
+  <div class="product-details mobile">
+    {% if settings.product-display-vendor %}
+      <p class="meta vendor">{{ product.vendor }}</p>
+    {% endif %}
+    <p class="product-price">
+      <span class="price">
+        <span class="money">{{ selectedVariant.price | money }}</span>
+
+        {% unless product.variants.size == 1 and product.compare_at_price_min <= selectedVariant.price %}
+          <span class="original money">
+            {% if selectedVariant.compare_at_price > selectedVariant.price %}
+              {{ selectedVariant.compare_at_price | money }}
+            {% endif %}
+          </span>
+        {% endunless %}
+      </span>
+    </p>
+  </div>
+
+  <div class="product-wrap clearfix">
+
+    <div class="product-details">
+      {% if settings.product-display-vendor %}
+        <p class="meta vendor" itemprop="brand">{{ product.vendor }}</p>
+      {% endif %}
+      <p class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <span class="price" itemprop="price">
+          <span class="money">{{ selectedVariant.price | money }}</span>
+
+          {% unless product.variants.size == 1 and product.compare_at_price_min <= selectedVariant.price %}
+            <span class="original money">
+              {% if selectedVariant.compare_at_price > selectedVariant.price %}
+                {{ selectedVariant.compare_at_price | money }}
+              {% endif %}
+            </span>
+          {% endunless %}
+        </span>
+      </p>
+    </div>
+
+    <form class="product-form" action="/cart/add" method="post">
+
+      {% if product.variants.size > 1 %}
+        <div class="product-options">
+          <select name="id" id="product-select" class="product-select">
+            {% for variant in product.variants %}
+              <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      {% else %}
+        <input type="hidden" name="id" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+      {% endif %}
+
+      <div class="input-wrapper product-quantity">
+        <label for="quantity">Quantity</label>
+        <input type="text" name="quantity" id="quantity" value="1" />
+      </div>
+
+      <div class="add-to-cart">
+        {% if product.available %}
+          <div class="product-form-submit-wrap">
+            {% assign addToCartText = 'Add to cart' %}
+            {% if settings.product-add-to-cart-text.size > 0 %}
+              {% assign addToCartText = settings.product-add-to-cart-text %}
+            {% endif %}
+            <input type="submit" value="{{addToCartText}}" />
+            <div class="add-to-cart-loader"></div>
+          </div>
+
+        {% else %}
+          {% assign soldOutText = 'Sold out' %}
+          {% if settings.product-sold-out-text.size > 0 %}
+            {% assign soldOutText = settings.product-sold-out-text %}
+          {% endif %}
+          <input type="button" class="disabled" disabled="disabled" value="{{soldOutText}}" />
+        {% endif %}
+      </div>
+
+    </form>
+    
+    <style>
+      
+      .select-wrapper{
+      
+          width: 50%;
+      }
+      
+    </style>
+
+    {% if product.description.size > 0 %}
+    <div class="product-description rte" itemprop="description">
+      {{ product.description }}
+    </div>
+    {% endif %}
+
+    {% if settings.product-show-info-link-1 or settings.product-show-info-link-2 %}
+    <div class="product-more-info">
+      {% if settings.product-show-info-link-1 %}
+        <p class="product-info-link {{ settings.product-info-link-icon-1 }}">
+          {% if settings.product-info-link-url-1.size > 0 %}<a href="{{ settings.product-info-link-url-1 }}">{% endif %}
+            {{ settings.product-info-link-text-1 }}
+          {% if settings.product-info-link-url-1.size > 0 %}</a>{% endif %}
+        </p>
+      {% endif %}
+
+      {% if settings.product-show-info-link-2 %}
+        <p class="product-info-link {{ settings.product-info-link-icon-2 }}">
+          {% if settings.product-info-link-url-2.size > 0 %}<a href="{{ settings.product-info-link-url-2 }}">{% endif %}
+            {{ settings.product-info-link-text-2 }}
+          {% if settings.product-info-link-url-2.size > 0 %}</a>{% endif %}
+        </p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if settings.product-show-share-buttons %}
+      {% include 'share-buttons' %}
+    {% endif %}
+
+  </div>
+</div><!-- close itemscope -->
+
+{% if settings.product-show-related %}
+
+  {% assign number_of_related_products_to_show = 4 %}
+
+  {% capture number_of_related_products_to_fetch %}
+    {{ number_of_related_products_to_show | plus: 1 }}
+  {% endcapture %}
+
+  {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+      {% assign found_a_collection = false %}
+      {% for c in product.collections %}
+          {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
+              {% assign found_a_collection = true %}
+              {% assign collection = c %}
+          {% endif %}
+      {% endfor %}
+  {% endif %}
+
+  {% if collection.products.size > 1 %}
+    <div class="related-products">
+
+      <h3 class="section-title">
+        {% if settings.product-related-title.size > 0 %}
+          {{ settings.product-related-title }}
+        {% else %}
+          Related products
+        {% endif %}
+      </h3>
+
+      <div class="collection-products">
+      {% assign current_product_found = false %}
+      {% for prod in collection.products limit: number_of_related_products_to_fetch %}
+        {% if prod.title == product.title %}
+          {% assign current_product_found = true %}
+        {% else %}
+          {% unless current_product_found == false and forloop.last %}
+
+              {% include 'product-list-item' %}
+
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+      </div>
+
+    </div>
+  {% endif %}
+
+{% endif %}
+
+<script>
+  // required for splitting variants
+  // see ProductView
+  window.productJSON = {{ product | json }};
+</script>

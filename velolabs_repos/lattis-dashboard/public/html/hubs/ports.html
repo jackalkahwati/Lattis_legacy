@@ -1,0 +1,73 @@
+<section class="customtable">
+  <table class="table hubs-table" style="table-layout: fixed;">
+    <thead>
+      <tr>
+        <th class="text-white" style="padding-left: 0.5em;">Port Number</th>
+        <th class="text-white" style="padding-left: 0.5em;">Status</th>
+        <th class="text-white" style="padding-left: 0.5em;" ng-if="hasVehicle(hub)">Vehicle</th>
+        <th class="text-white" style="padding-left: 0.5em;" ng-if="hub.remoteHubStatus === 'Available'">
+          Actions
+        </th>
+        <th class="text-white" style="padding-left: 0.5em;" ng-if="hub.integration === 'custom'">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="port in hub.ports | orderBy: 'portNumber'" ng-if="hub.ports.length > 0">
+        <td>
+          <span class="content"> {{ port.portNumber }} </span>
+        </td>
+        <td>
+          <span class="content"> {{ isPortAvailable(hub, port) ? "Available": "Unavailable" }} </span>
+          <a style="display: block" ng-if="port.lastUser"
+             ng-click="visitProfile(port.lastUser.user_id)" class="ft-11 ticketactive">{{port.usageMessage}} : {{port.lastUser.first_name}}
+            {{port.lastUser.last_name}}</a>
+        </td>
+        <td ng-if="hasVehicle(hub)">
+          <a ui-sref="bike-details({bikeId: port.bike.bikeId})">{{port.bike.bikeName}}</a>
+        </td>
+        <td ng-if="hub.remoteHubStatus === 'Available'">
+          <span class="content">
+            <button
+              class="btn btn-xs btn-success"
+              ng-if="port.portVehicleUUID || (port.currentPortStatus === 'on_trip' && !port.equipment.vendor === 'ParcelHive')"
+              ng-disabled="!port.portVehicleUUID || unlockingPort === port.portId"
+              ng-click="unlockPort(port)"
+            >
+              {{ unlockingPort === port.portId ? 'Unlocking...' : 'UnLock' }}
+            </button>
+          </span>
+          <span class="content">
+            <button
+              class="btn btn-xs btn-success"
+              ng-if="port.equipment.vendor === 'ParcelHive'"
+              ng-disabled="unlockingPort === port.portId"
+              ng-click="unlockPort(port)"
+            >
+              {{ unlockingPort === port.portId ? 'Unlocking...' : 'UnLock' }}
+            </button>
+          </span>
+          <span class="content" ng-if="hub.type === 'parking_station'">
+            <button
+              class="btn btn-xs btn-info"
+              ng-if="!port.waiting"
+              ng-disabled="!port.hasTrip || !!port.endingTrip"
+              ng-click="endCurrentTrip(port)"
+            >
+              {{ port.endingTrip ? 'Loading...' : 'End Rental' }}
+            </button>
+          </span>
+        </td>
+        <td ng-if="hub.integration === 'custom'">
+          <a class="pointer pull-right pointer" ng-click="gotoPort(port.portUUID)"></a>
+        </td>
+      </tr>
+
+      <tr ng-if="hub.ports.length === 0">
+        <td colspan="3" class="text-center">
+          No ports present for this hub.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

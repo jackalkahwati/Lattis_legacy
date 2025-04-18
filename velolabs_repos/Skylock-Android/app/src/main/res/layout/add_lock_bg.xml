@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<FrameLayout-->
+        <!--android:name="cc.skylock.skylock.ui.fragment.LockStepOne"-->
+        <!--android:id="@+id/fragment_add_lock_steps"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_marginBottom="5dp"/>-->
+
+    <!--<cc.skylock.skylock.ui.fragment.LockStepOneRela-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+    <!--</cc.skylock.skylock.ui.fragment.LockStepOneRela>-->
+    <RelativeLayout
+        android:id="@+id/addlock_step_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_lock_1"/>
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:id="@+id/addlock_step_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_lock_2"/>
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:id="@+id/addlock_step_three"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_lock_3"/>
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:id="@+id/addlock_step_four"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_lock_4"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/addlock_step_five"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_lock_5"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+</RelativeLayout>
+

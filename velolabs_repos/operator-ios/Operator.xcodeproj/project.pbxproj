@@ -1,0 +1,1831 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F10AF2AD25E4EA9500E13BA1 /* OperatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AF29A25E4EA9400E13BA1 /* OperatorApp.swift */; };
+		F10AF2AE25E4EA9500E13BA1 /* OperatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AF29A25E4EA9400E13BA1 /* OperatorApp.swift */; };
+		F10AF2AF25E4EA9500E13BA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AF29B25E4EA9400E13BA1 /* ContentView.swift */; };
+		F10AF2B025E4EA9500E13BA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AF29B25E4EA9400E13BA1 /* ContentView.swift */; };
+		F10AF2B125E4EA9500E13BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10AF29C25E4EA9500E13BA1 /* Assets.xcassets */; };
+		F10AF2B225E4EA9500E13BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10AF29C25E4EA9500E13BA1 /* Assets.xcassets */; };
+		F10C468926AA7D2800E495FD /* VehiclesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468626AA7D2800E495FD /* VehiclesFilterView.swift */; };
+		F10C468A26AA7D2800E495FD /* VehiclesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468626AA7D2800E495FD /* VehiclesFilterView.swift */; };
+		F10C468B26AA7D2800E495FD /* VehiclesStatusFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468726AA7D2800E495FD /* VehiclesStatusFilterView.swift */; };
+		F10C468C26AA7D2800E495FD /* VehiclesStatusFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468726AA7D2800E495FD /* VehiclesStatusFilterView.swift */; };
+		F10C468D26AA7D2800E495FD /* VehiclesFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468826AA7D2800E495FD /* VehiclesFilterViewModel.swift */; };
+		F10C468E26AA7D2800E495FD /* VehiclesFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C468826AA7D2800E495FD /* VehiclesFilterViewModel.swift */; };
+		F1112062272AD33F006CBE4E /* AxaDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1112061272AD33F006CBE4E /* AxaDetailFormView.swift */; };
+		F1112063272AD33F006CBE4E /* AxaDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1112061272AD33F006CBE4E /* AxaDetailFormView.swift */; };
+		F1112065272AD350006CBE4E /* AxaDetailFromViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1112064272AD350006CBE4E /* AxaDetailFromViewModel.swift */; };
+		F1112066272AD350006CBE4E /* AxaDetailFromViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1112064272AD350006CBE4E /* AxaDetailFromViewModel.swift */; };
+		F1218B5925EF9416006B3564 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B5825EF9416006B3564 /* LoadingView.swift */; };
+		F1218B5A25EF9416006B3564 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B5825EF9416006B3564 /* LoadingView.swift */; };
+		F1218B6025EF9ED8006B3564 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B5F25EF9ED8006B3564 /* ViewModifiers.swift */; };
+		F1218B6125EF9ED8006B3564 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B5F25EF9ED8006B3564 /* ViewModifiers.swift */; };
+		F1218B6525EF9F14006B3564 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6425EF9F14006B3564 /* ErrorView.swift */; };
+		F1218B6625EF9F14006B3564 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6425EF9F14006B3564 /* ErrorView.swift */; };
+		F1218B6A25EFAE9D006B3564 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6925EFAE9D006B3564 /* UserSettingsView.swift */; };
+		F1218B6B25EFAE9D006B3564 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6925EFAE9D006B3564 /* UserSettingsView.swift */; };
+		F1218B6F25EFB026006B3564 /* FleetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6E25EFB026006B3564 /* FleetSettingsView.swift */; };
+		F1218B7025EFB026006B3564 /* FleetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218B6E25EFB026006B3564 /* FleetSettingsView.swift */; };
+		F1218BA225F0F561006B3564 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BA125F0F561006B3564 /* SplashView.swift */; };
+		F1218BA325F0F561006B3564 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BA125F0F561006B3564 /* SplashView.swift */; };
+		F1218BAC25F21C6F006B3564 /* FleetsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BAB25F21C6F006B3564 /* FleetsLogicController.swift */; };
+		F1218BAD25F21C6F006B3564 /* FleetsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BAB25F21C6F006B3564 /* FleetsLogicController.swift */; };
+		F1218BB125F22136006B3564 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BB025F22136006B3564 /* Address.swift */; };
+		F1218BB225F22136006B3564 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BB025F22136006B3564 /* Address.swift */; };
+		F1218BC125F252E7006B3564 /* FleetSettingsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BC025F252E7006B3564 /* FleetSettingsLogicController.swift */; };
+		F1218BC225F252E7006B3564 /* FleetSettingsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BC025F252E7006B3564 /* FleetSettingsLogicController.swift */; };
+		F1218BCA25F263A8006B3564 /* TicketsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BC925F263A8006B3564 /* TicketsLogicController.swift */; };
+		F1218BCB25F263A8006B3564 /* TicketsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218BC925F263A8006B3564 /* TicketsLogicController.swift */; };
+		F1218C1D25F76072006B3564 /* TicketDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C1C25F76072006B3564 /* TicketDetailsLogicController.swift */; };
+		F1218C1E25F76072006B3564 /* TicketDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C1C25F76072006B3564 /* TicketDetailsLogicController.swift */; };
+		F1218C2225F7627A006B3564 /* PageViewNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2125F7627A006B3564 /* PageViewNavigationBar.swift */; };
+		F1218C2325F7627A006B3564 /* PageViewNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2125F7627A006B3564 /* PageViewNavigationBar.swift */; };
+		F1218C2925F7687D006B3564 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2825F7687D006B3564 /* FormLabel.swift */; };
+		F1218C2A25F7687D006B3564 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2825F7687D006B3564 /* FormLabel.swift */; };
+		F1218C2E25F768A9006B3564 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2D25F768A9006B3564 /* InfoPage.swift */; };
+		F1218C2F25F768A9006B3564 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C2D25F768A9006B3564 /* InfoPage.swift */; };
+		F1218C3325F76982006B3564 /* VehiclePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C3225F76982006B3564 /* VehiclePageItem.swift */; };
+		F1218C3425F76982006B3564 /* VehiclePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C3225F76982006B3564 /* VehiclePageItem.swift */; };
+		F1218C5325F785FE006B3564 /* TicketPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5225F785FE006B3564 /* TicketPageItem.swift */; };
+		F1218C5425F785FE006B3564 /* TicketPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5225F785FE006B3564 /* TicketPageItem.swift */; };
+		F1218C5825F7879B006B3564 /* MapPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5725F7879B006B3564 /* MapPageItem.swift */; };
+		F1218C5925F7879B006B3564 /* MapPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5725F7879B006B3564 /* MapPageItem.swift */; };
+		F1218C5D25F7D6B1006B3564 /* VehicleDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5C25F7D6B1006B3564 /* VehicleDetailsLogicController.swift */; };
+		F1218C5E25F7D6B1006B3564 /* VehicleDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1218C5C25F7D6B1006B3564 /* VehicleDetailsLogicController.swift */; };
+		F122CBCA25E4F06E009FAC15 /* TabViewNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBC925E4F06E009FAC15 /* TabViewNavigation.swift */; };
+		F122CBCF25E4F25B009FAC15 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBCE25E4F25B009FAC15 /* NavigationItem.swift */; };
+		F122CBD025E4F25B009FAC15 /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBCE25E4F25B009FAC15 /* NavigationItem.swift */; };
+		F122CBD425E4F566009FAC15 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBD325E4F566009FAC15 /* TicketsView.swift */; };
+		F122CBD525E4F566009FAC15 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBD325E4F566009FAC15 /* TicketsView.swift */; };
+		F122CBD925E4F574009FAC15 /* VehiclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBD825E4F574009FAC15 /* VehiclesView.swift */; };
+		F122CBDA25E4F574009FAC15 /* VehiclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBD825E4F574009FAC15 /* VehiclesView.swift */; };
+		F122CBDE25E4F581009FAC15 /* EquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBDD25E4F581009FAC15 /* EquipmentView.swift */; };
+		F122CBDF25E4F581009FAC15 /* EquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122CBDD25E4F581009FAC15 /* EquipmentView.swift */; };
+		F131FDE12609FE11008C3B5D /* QRCodeVuewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDE02609FE11008C3B5D /* QRCodeVuewFinder.swift */; };
+		F131FDE22609FE11008C3B5D /* QRCodeVuewFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDE02609FE11008C3B5D /* QRCodeVuewFinder.swift */; };
+		F131FDE62609FED2008C3B5D /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDE52609FED2008C3B5D /* QRCodeScannerView.swift */; };
+		F131FDE72609FED2008C3B5D /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDE52609FED2008C3B5D /* QRCodeScannerView.swift */; };
+		F131FDEB260A6159008C3B5D /* QRCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDEA260A6159008C3B5D /* QRCodeScannerViewModel.swift */; };
+		F131FDEC260A6159008C3B5D /* QRCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131FDEA260A6159008C3B5D /* QRCodeScannerViewModel.swift */; };
+		F137202A261EE96800838A58 /* PrettyToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1372029261EE96800838A58 /* PrettyToggleButton.swift */; };
+		F137202B261EE96800838A58 /* PrettyToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1372029261EE96800838A58 /* PrettyToggleButton.swift */; };
+		F13720BC261F21BB00838A58 /* VehiclesListMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13720BB261F21BB00838A58 /* VehiclesListMapView.swift */; };
+		F13720BD261F21BB00838A58 /* VehiclesListMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13720BB261F21BB00838A58 /* VehiclesListMapView.swift */; };
+		F146814F2604BEDC00D2FCA1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146814E2604BEDC00D2FCA1 /* EditView.swift */; };
+		F14681502604BEDC00D2FCA1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146814E2604BEDC00D2FCA1 /* EditView.swift */; };
+		F14681542605E35A00D2FCA1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681532605E35A00D2FCA1 /* DateFormatter.swift */; };
+		F14681552605E35A00D2FCA1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681532605E35A00D2FCA1 /* DateFormatter.swift */; };
+		F14681592605F4A900D2FCA1 /* OnboardEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681582605F4A900D2FCA1 /* OnboardEquipmentView.swift */; };
+		F146815A2605F4A900D2FCA1 /* OnboardEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681582605F4A900D2FCA1 /* OnboardEquipmentView.swift */; };
+		F14681722608AD8100D2FCA1 /* VehicleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681712608AD8100D2FCA1 /* VehicleSearchView.swift */; };
+		F14681732608AD8100D2FCA1 /* VehicleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14681712608AD8100D2FCA1 /* VehicleSearchView.swift */; };
+		F146817B2608E9C700D2FCA1 /* CreateTicketLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146817A2608E9C700D2FCA1 /* CreateTicketLogicController.swift */; };
+		F146817C2608E9C700D2FCA1 /* CreateTicketLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146817A2608E9C700D2FCA1 /* CreateTicketLogicController.swift */; };
+		F14D68F8272AA2AC00B8C953 /* AxaDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D68F7272AA2AC00B8C953 /* AxaDevice.swift */; };
+		F14D68FA272AA37500B8C953 /* EllipseDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D68F9272AA37500B8C953 /* EllipseDetailFormViewModel.swift */; };
+		F14D68FB272AA37E00B8C953 /* EllipseDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D68F9272AA37500B8C953 /* EllipseDetailFormViewModel.swift */; };
+		F14E520A260CAB5E007596AA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E5209260CAB5E007596AA /* Environment.swift */; };
+		F14E520B260CAB5E007596AA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14E5209260CAB5E007596AA /* Environment.swift */; };
+		F153692E26429A210074F9F9 /* VehicleMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F153692D26429A210074F9F9 /* VehicleMapItem.swift */; };
+		F153692F26429A210074F9F9 /* VehicleMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F153692D26429A210074F9F9 /* VehicleMapItem.swift */; };
+		F15369312642C1610074F9F9 /* MapWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15369302642C1610074F9F9 /* MapWrapper.swift */; };
+		F15369322642C1610074F9F9 /* MapWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15369302642C1610074F9F9 /* MapWrapper.swift */; };
+		F155E89C260B0E3800F5CDC3 /* QRCodeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E89B260B0E3800F5CDC3 /* QRCodeImageView.swift */; };
+		F155E89D260B0E3800F5CDC3 /* QRCodeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E89B260B0E3800F5CDC3 /* QRCodeImageView.swift */; };
+		F155E8A3260B4B6900F5CDC3 /* VehicleThingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8A2260B4B6900F5CDC3 /* VehicleThingDetailsView.swift */; };
+		F155E8A4260B4B6900F5CDC3 /* VehicleThingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8A2260B4B6900F5CDC3 /* VehicleThingDetailsView.swift */; };
+		F155E8AC260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8AB260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift */; };
+		F155E8AD260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8AB260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift */; };
+		F155E8B1260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8B0260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift */; };
+		F155E8B2260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155E8B0260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift */; };
+		F158F581268475E5008EE45A /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F580268475E5008EE45A /* EmptyListView.swift */; };
+		F158F582268475E5008EE45A /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F580268475E5008EE45A /* EmptyListView.swift */; };
+		F158F592268DF729008EE45A /* VehiclesMapFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F591268DF729008EE45A /* VehiclesMapFilterView.swift */; };
+		F158F593268DF729008EE45A /* VehiclesMapFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F591268DF729008EE45A /* VehiclesMapFilterView.swift */; };
+		F158F595268DF827008EE45A /* VehiclesMapFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F594268DF827008EE45A /* VehiclesMapFilterViewModel.swift */; };
+		F158F596268DF827008EE45A /* VehiclesMapFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F594268DF827008EE45A /* VehiclesMapFilterViewModel.swift */; };
+		F158F598268EBC7B008EE45A /* VehicleStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F597268EBC7B008EE45A /* VehicleStatusViewModel.swift */; };
+		F158F599268EBC7B008EE45A /* VehicleStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158F597268EBC7B008EE45A /* VehicleStatusViewModel.swift */; };
+		F1608DEB25E5023500322016 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DEA25E5023500322016 /* Fleet.swift */; };
+		F1608DEC25E5023500322016 /* Fleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DEA25E5023500322016 /* Fleet.swift */; };
+		F1608DF225E5093200322016 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DF125E5093200322016 /* UserSettings.swift */; };
+		F1608DF325E5093200322016 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DF125E5093200322016 /* UserSettings.swift */; };
+		F1608DF725E50B2D00322016 /* FleetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DF625E50B2D00322016 /* FleetsView.swift */; };
+		F1608DF825E50B2D00322016 /* FleetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DF625E50B2D00322016 /* FleetsView.swift */; };
+		F1608DFC25E50BE200322016 /* FleetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DFB25E50BE200322016 /* FleetItem.swift */; };
+		F1608DFD25E50BE200322016 /* FleetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608DFB25E50BE200322016 /* FleetItem.swift */; };
+		F1608E0125E53A0C00322016 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0025E53A0C00322016 /* Ticket.swift */; };
+		F1608E0225E53A0C00322016 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0025E53A0C00322016 /* Ticket.swift */; };
+		F1608E0625E53A1E00322016 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0525E53A1E00322016 /* Vehicle.swift */; };
+		F1608E0725E53A1E00322016 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0525E53A1E00322016 /* Vehicle.swift */; };
+		F1608E0B25E53D3000322016 /* TicketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0A25E53D3000322016 /* TicketItem.swift */; };
+		F1608E0C25E53D3000322016 /* TicketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1608E0A25E53D3000322016 /* TicketItem.swift */; };
+		F1669AFC25FCB54E0013598F /* JSONStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1669AFB25FCB54E0013598F /* JSONStorage.swift */; };
+		F1669B0125FCB5540013598F /* JSONStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1669AFB25FCB54E0013598F /* JSONStorage.swift */; };
+		F1669BA626033C320013598F /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1669BA526033C320013598F /* SidebarNavigation.swift */; };
+		F1669BA726033C320013598F /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1669BA526033C320013598F /* SidebarNavigation.swift */; };
+		F167B7922625B3280094B013 /* EquipmentPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B7912625B3280094B013 /* EquipmentPageItem.swift */; };
+		F167B7932625B3280094B013 /* EquipmentPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B7912625B3280094B013 /* EquipmentPageItem.swift */; };
+		F167B7972625B3900094B013 /* EquipmentPageLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B7962625B3900094B013 /* EquipmentPageLogicController.swift */; };
+		F167B7982625B3900094B013 /* EquipmentPageLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B7962625B3900094B013 /* EquipmentPageLogicController.swift */; };
+		F167B79C2625C7F70094B013 /* VehicleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B79B2625C7F70094B013 /* VehicleMapView.swift */; };
+		F167B79D2625C7F70094B013 /* VehicleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167B79B2625C7F70094B013 /* VehicleMapView.swift */; };
+		F168723626399963006D531E /* TicketsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723526399963006D531E /* TicketsFilterView.swift */; };
+		F168723726399963006D531E /* TicketsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723526399963006D531E /* TicketsFilterView.swift */; };
+		F168723C263AB8D8006D531E /* VehicleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723B263AB8D8006D531E /* VehicleStatusView.swift */; };
+		F168723D263AB8D8006D531E /* VehicleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723B263AB8D8006D531E /* VehicleStatusView.swift */; };
+		F168723F263AD92C006D531E /* Model+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723E263AD92C006D531E /* Model+UI.swift */; };
+		F1687240263AD92C006D531E /* Model+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168723E263AD92C006D531E /* Model+UI.swift */; };
+		F1752F3925FA1FC500F7D53D /* ThingDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1752F3825FA1FC500F7D53D /* ThingDetailsLogicController.swift */; };
+		F1752F3A25FA1FC500F7D53D /* ThingDetailsLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1752F3825FA1FC500F7D53D /* ThingDetailsLogicController.swift */; };
+		F1763D932681B85F00FB128A /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1763D922681B85F00FB128A /* MailView.swift */; };
+		F1763D942681B85F00FB128A /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1763D922681B85F00FB128A /* MailView.swift */; };
+		F184F5A626A04B3A00CEBA9B /* Analitycs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F184F5A526A04B3A00CEBA9B /* Analitycs.swift */; };
+		F184F5A726A04B3A00CEBA9B /* Analitycs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F184F5A526A04B3A00CEBA9B /* Analitycs.swift */; };
+		F19A9728260DC23600ED0089 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19A9727260DC23600ED0089 /* GoogleService-Info.plist */; };
+		F19B81B2262D6C980040DFB3 /* HTTPStatusCodes in Frameworks */ = {isa = PBXBuildFile; productRef = F19B81B1262D6C980040DFB3 /* HTTPStatusCodes */; };
+		F19B81B9262D6CC80040DFB3 /* QRCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = F19B81B8262D6CC80040DFB3 /* QRCodeView */; };
+		F19B81C7262D6D240040DFB3 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F19B81C6262D6D240040DFB3 /* URLImage */; };
+		F19B83432636A17D0040DFB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F19B83462636A17D0040DFB3 /* Localizable.strings */; };
+		F19B83442636A17D0040DFB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F19B83462636A17D0040DFB3 /* Localizable.strings */; };
+		F19B834E2636F0840040DFB3 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B834D2636F0840040DFB3 /* TagView.swift */; };
+		F19B834F2636F0840040DFB3 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B834D2636F0840040DFB3 /* TagView.swift */; };
+		F1A373F32796927600382BEC /* Wrappers in Frameworks */ = {isa = PBXBuildFile; productRef = F1A373F22796927600382BEC /* Wrappers */; };
+		F1A373F6279692B700382BEC /* EllipseLock in Frameworks */ = {isa = PBXBuildFile; productRef = F1A373F5279692B700382BEC /* EllipseLock */; };
+		F1A373F9279692E000382BEC /* AXALock in Frameworks */ = {isa = PBXBuildFile; productRef = F1A373F8279692E000382BEC /* AXALock */; };
+		F1A7F0782620BB3C002B779A /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7F0772620BB3C002B779A /* QRCode.swift */; };
+		F1A7F0792620BB3C002B779A /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A7F0772620BB3C002B779A /* QRCode.swift */; };
+		F1A9596826776A7D0087B3D8 /* BookingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596726776A7D0087B3D8 /* BookingDetailsView.swift */; };
+		F1A9596926776A7D0087B3D8 /* BookingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596726776A7D0087B3D8 /* BookingDetailsView.swift */; };
+		F1A9596B26776B250087B3D8 /* BookingDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596A26776B250087B3D8 /* BookingDetailsViewModel.swift */; };
+		F1A9596C26776B250087B3D8 /* BookingDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596A26776B250087B3D8 /* BookingDetailsViewModel.swift */; };
+		F1A9596E26776F3B0087B3D8 /* BookingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596D26776F3B0087B3D8 /* BookingListItem.swift */; };
+		F1A9596F26776F3B0087B3D8 /* BookingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9596D26776F3B0087B3D8 /* BookingListItem.swift */; };
+		F1B09D682726BFC90099B48E /* CircleAPI+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B09D672726BFC90099B48E /* CircleAPI+Ellipse.swift */; };
+		F1B09D692726BFC90099B48E /* CircleAPI+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B09D672726BFC90099B48E /* CircleAPI+Ellipse.swift */; };
+		F1B09D6B2726D6AF0099B48E /* EllipseDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B09D6A2726D6AF0099B48E /* EllipseDetailFormView.swift */; };
+		F1B09D6C2726D6AF0099B48E /* EllipseDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B09D6A2726D6AF0099B48E /* EllipseDetailFormView.swift */; };
+		F1B547D62618D088006A2410 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547D52618D088006A2410 /* Trip.swift */; };
+		F1B547D72618D088006A2410 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547D52618D088006A2410 /* Trip.swift */; };
+		F1B547DB2618D90D006A2410 /* TripFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547DA2618D90D006A2410 /* TripFormItem.swift */; };
+		F1B547DC2618D90D006A2410 /* TripFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547DA2618D90D006A2410 /* TripFormItem.swift */; };
+		F1B547E026198230006A2410 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547DF26198230006A2410 /* User.swift */; };
+		F1B547E126198230006A2410 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547DF26198230006A2410 /* User.swift */; };
+		F1B547E6261983FA006A2410 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547E5261983FA006A2410 /* TripDetailsView.swift */; };
+		F1B547E7261983FA006A2410 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547E5261983FA006A2410 /* TripDetailsView.swift */; };
+		F1B547ED2619843E006A2410 /* TripHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547EC2619843E006A2410 /* TripHistoryView.swift */; };
+		F1B547EE2619843E006A2410 /* TripHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547EC2619843E006A2410 /* TripHistoryView.swift */; };
+		F1B547F226198453006A2410 /* TripDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547F126198453006A2410 /* TripDetailsViewModel.swift */; };
+		F1B547F326198453006A2410 /* TripDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547F126198453006A2410 /* TripDetailsViewModel.swift */; };
+		F1B547F726198467006A2410 /* TripHistoryLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547F626198467006A2410 /* TripHistoryLogicController.swift */; };
+		F1B547F826198467006A2410 /* TripHistoryLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B547F626198467006A2410 /* TripHistoryLogicController.swift */; };
+		F1BAEC9227140A9A00355F40 /* EllipseDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BAEC9127140A9A00355F40 /* EllipseDevice.swift */; };
+		F1BAEC9427145FA300355F40 /* OvalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BAEC9327145FA300355F40 /* OvalAPI.swift */; };
+		F1C3B5B2274EC267000208EA /* KisiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B1274EC267000208EA /* KisiDevice.swift */; };
+		F1C3B5B3274EC267000208EA /* KisiDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B1274EC267000208EA /* KisiDevice.swift */; };
+		F1C3B5B5274EC2F5000208EA /* KisiDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B4274EC2F5000208EA /* KisiDetailFormView.swift */; };
+		F1C3B5B6274EC2F5000208EA /* KisiDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B4274EC2F5000208EA /* KisiDetailFormView.swift */; };
+		F1C3B5B8274EC304000208EA /* KisiDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B7274EC304000208EA /* KisiDetailFormViewModel.swift */; };
+		F1C3B5B9274EC304000208EA /* KisiDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5B7274EC304000208EA /* KisiDetailFormViewModel.swift */; };
+		F1C3B5BB274EC8D1000208EA /* CircleAPI+Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5BA274EC8D1000208EA /* CircleAPI+Kisi.swift */; };
+		F1C3B5BC274EC8D1000208EA /* CircleAPI+Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3B5BA274EC8D1000208EA /* CircleAPI+Kisi.swift */; };
+		F1C7C39F25E5427000CB348A /* TicketDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7C39E25E5427000CB348A /* TicketDetailsView.swift */; };
+		F1C7C3A025E5427000CB348A /* TicketDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7C39E25E5427000CB348A /* TicketDetailsView.swift */; };
+		F1CE96BD25ECF253000A23F8 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96BC25ECF253000A23F8 /* Thing.swift */; };
+		F1CE96BE25ECF253000A23F8 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96BC25ECF253000A23F8 /* Thing.swift */; };
+		F1CE96C225ED03A9000A23F8 /* VehiclesLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96C125ED03A9000A23F8 /* VehiclesLogicController.swift */; };
+		F1CE96C325ED03A9000A23F8 /* VehiclesLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96C125ED03A9000A23F8 /* VehiclesLogicController.swift */; };
+		F1CE96CE25ED0529000A23F8 /* VehicleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96CD25ED0529000A23F8 /* VehicleListItem.swift */; };
+		F1CE96CF25ED0529000A23F8 /* VehicleListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96CD25ED0529000A23F8 /* VehicleListItem.swift */; };
+		F1CE96D325ED0622000A23F8 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96D225ED0622000A23F8 /* VehicleDetailsView.swift */; };
+		F1CE96D425ED0622000A23F8 /* VehicleDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96D225ED0622000A23F8 /* VehicleDetailsView.swift */; };
+		F1CE96D825ED267B000A23F8 /* ThingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96D725ED267B000A23F8 /* ThingControlView.swift */; };
+		F1CE96D925ED267B000A23F8 /* ThingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96D725ED267B000A23F8 /* ThingControlView.swift */; };
+		F1CE96DD25ED31A4000A23F8 /* ThingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96DC25ED31A4000A23F8 /* ThingListItem.swift */; };
+		F1CE96DE25ED31A4000A23F8 /* ThingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96DC25ED31A4000A23F8 /* ThingListItem.swift */; };
+		F1CE96E225ED4261000A23F8 /* ThingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96E125ED4261000A23F8 /* ThingDetailView.swift */; };
+		F1CE96E325ED4261000A23F8 /* ThingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96E125ED4261000A23F8 /* ThingDetailView.swift */; };
+		F1CE96E925EE719E000A23F8 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96E825EE719E000A23F8 /* NetworkAgent.swift */; };
+		F1CE96EA25EE719E000A23F8 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96E825EE719E000A23F8 /* NetworkAgent.swift */; };
+		F1CE96EE25EE71DD000A23F8 /* CircleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96ED25EE71DD000A23F8 /* CircleAPI.swift */; };
+		F1CE96EF25EE71DD000A23F8 /* CircleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96ED25EE71DD000A23F8 /* CircleAPI.swift */; };
+		F1CE96F325EE7775000A23F8 /* SignInLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96F225EE7775000A23F8 /* SignInLogicController.swift */; };
+		F1CE96F425EE7775000A23F8 /* SignInLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE96F225EE7775000A23F8 /* SignInLogicController.swift */; };
+		F1D58BDE25E6243000B5C033 /* Stabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58BDD25E6243000B5C033 /* Stabs.swift */; };
+		F1D58BDF25E6243000B5C033 /* Stabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58BDD25E6243000B5C033 /* Stabs.swift */; };
+		F1D58C0A25E6643800B5C033 /* FleetOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C0925E6643800B5C033 /* FleetOperator.swift */; };
+		F1D58C0B25E6643800B5C033 /* FleetOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C0925E6643800B5C033 /* FleetOperator.swift */; };
+		F1D58C0F25E665CC00B5C033 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C0E25E665CC00B5C033 /* SignInView.swift */; };
+		F1D58C1025E665CC00B5C033 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C0E25E665CC00B5C033 /* SignInView.swift */; };
+		F1D58C6C25E7BE1400B5C033 /* CreateTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C6B25E7BE1400B5C033 /* CreateTicketView.swift */; };
+		F1D58C6D25E7BE1400B5C033 /* CreateTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C6B25E7BE1400B5C033 /* CreateTicketView.swift */; };
+		F1D58C9E25E8D89E00B5C033 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C9D25E8D89E00B5C033 /* ButtonStyles.swift */; };
+		F1D58C9F25E8D89E00B5C033 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58C9D25E8D89E00B5C033 /* ButtonStyles.swift */; };
+		F1D58CA325E8DAF800B5C033 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58CA225E8DAF800B5C033 /* Colors.swift */; };
+		F1D58CA425E8DAF800B5C033 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58CA225E8DAF800B5C033 /* Colors.swift */; };
+		F1D58CAB25E8E2E800B5C033 /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D58CAA25E8E2E800B5C033 /* UIColors.swift */; };
+		F1DA0A6D26D8DF02000A585D /* CircleAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA0A6C26D8DF02000A585D /* CircleAPI+User.swift */; };
+		F1DA0A6E26D8DF02000A585D /* CircleAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA0A6C26D8DF02000A585D /* CircleAPI+User.swift */; };
+		F1E28C3A2609126500C28411 /* CreateTicketSelectVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E28C392609126500C28411 /* CreateTicketSelectVehicleView.swift */; };
+		F1E28C3B2609126500C28411 /* CreateTicketSelectVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E28C392609126500C28411 /* CreateTicketSelectVehicleView.swift */; };
+		F1E368FE270F243D00610F05 /* PhysicalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E368FD270F243D00610F05 /* PhysicalDevice.swift */; };
+		F1E368FF270F243D00610F05 /* PhysicalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E368FD270F243D00610F05 /* PhysicalDevice.swift */; };
+		F1E6DDC4272FE74300EC4FD5 /* InversDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC3272FE74300EC4FD5 /* InversDetailFormView.swift */; };
+		F1E6DDC5272FE74300EC4FD5 /* InversDetailFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC3272FE74300EC4FD5 /* InversDetailFormView.swift */; };
+		F1E6DDC7272FE7E100EC4FD5 /* InversDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC6272FE7E100EC4FD5 /* InversDetailFormViewModel.swift */; };
+		F1E6DDC8272FE7E100EC4FD5 /* InversDetailFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC6272FE7E100EC4FD5 /* InversDetailFormViewModel.swift */; };
+		F1E6DDCA272FED0E00EC4FD5 /* InversDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC9272FED0E00EC4FD5 /* InversDevice.swift */; };
+		F1E6DDCB272FED0E00EC4FD5 /* InversDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDC9272FED0E00EC4FD5 /* InversDevice.swift */; };
+		F1E6DDCD272FF0EF00EC4FD5 /* CircleAPI+Invers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDCC272FF0EF00EC4FD5 /* CircleAPI+Invers.swift */; };
+		F1E6DDCE272FF0EF00EC4FD5 /* CircleAPI+Invers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDCC272FF0EF00EC4FD5 /* CircleAPI+Invers.swift */; };
+		F1E6DDDB273CF29F00EC4FD5 /* CustomMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDDA273CF29F00EC4FD5 /* CustomMap.swift */; };
+		F1E6DDDC273CF29F00EC4FD5 /* CustomMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E6DDDA273CF29F00EC4FD5 /* CustomMap.swift */; };
+		F1EB6A1226660660009F3031 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1EB6A1126660660009F3031 /* FirebaseAnalytics */; };
+		F1EB6A1426660660009F3031 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1EB6A1326660660009F3031 /* FirebaseAuth */; };
+		F1EB6A1626660660009F3031 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1EB6A1526660660009F3031 /* FirebaseCrashlytics */; };
+		F1EB6A182666A56F009F3031 /* VehiclesListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB6A172666A56F009F3031 /* VehiclesListMapViewModel.swift */; };
+		F1EB6A192666A56F009F3031 /* VehiclesListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB6A172666A56F009F3031 /* VehiclesListMapViewModel.swift */; };
+		F1EB6A1C2666A5E9009F3031 /* CircleAPI+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB6A1B2666A5E9009F3031 /* CircleAPI+Map.swift */; };
+		F1EB6A1D2666A5E9009F3031 /* CircleAPI+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB6A1B2666A5E9009F3031 /* CircleAPI+Map.swift */; };
+		F1FC11D0266F8381008C94A9 /* Linka.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC11CF266F8381008C94A9 /* Linka.swift */; };
+		F1FC11D1266F8381008C94A9 /* Linka.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC11CF266F8381008C94A9 /* Linka.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F10AF29A25E4EA9400E13BA1 /* OperatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorApp.swift; sourceTree = "<group>"; };
+		F10AF29B25E4EA9400E13BA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F10AF29C25E4EA9500E13BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F10AF2A125E4EA9500E13BA1 /* Operator Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Operator Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10AF2A425E4EA9500E13BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10AF2A925E4EA9500E13BA1 /* Operator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Operator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10AF2AB25E4EA9500E13BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10AF2AC25E4EA9500E13BA1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F10C468626AA7D2800E495FD /* VehiclesFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesFilterView.swift; sourceTree = "<group>"; };
+		F10C468726AA7D2800E495FD /* VehiclesStatusFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesStatusFilterView.swift; sourceTree = "<group>"; };
+		F10C468826AA7D2800E495FD /* VehiclesFilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesFilterViewModel.swift; sourceTree = "<group>"; };
+		F1112061272AD33F006CBE4E /* AxaDetailFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxaDetailFormView.swift; sourceTree = "<group>"; };
+		F1112064272AD350006CBE4E /* AxaDetailFromViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxaDetailFromViewModel.swift; sourceTree = "<group>"; };
+		F1218B5825EF9416006B3564 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F1218B5F25EF9ED8006B3564 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		F1218B6425EF9F14006B3564 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F1218B6925EFAE9D006B3564 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		F1218B6E25EFB026006B3564 /* FleetSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetSettingsView.swift; sourceTree = "<group>"; };
+		F1218BA125F0F561006B3564 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		F1218BAB25F21C6F006B3564 /* FleetsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetsLogicController.swift; sourceTree = "<group>"; };
+		F1218BB025F22136006B3564 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		F1218BC025F252E7006B3564 /* FleetSettingsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetSettingsLogicController.swift; sourceTree = "<group>"; };
+		F1218BC925F263A8006B3564 /* TicketsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsLogicController.swift; sourceTree = "<group>"; };
+		F1218C1C25F76072006B3564 /* TicketDetailsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsLogicController.swift; sourceTree = "<group>"; };
+		F1218C2125F7627A006B3564 /* PageViewNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewNavigationBar.swift; sourceTree = "<group>"; };
+		F1218C2825F7687D006B3564 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
+		F1218C2D25F768A9006B3564 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		F1218C3225F76982006B3564 /* VehiclePageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePageItem.swift; sourceTree = "<group>"; };
+		F1218C5225F785FE006B3564 /* TicketPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPageItem.swift; sourceTree = "<group>"; };
+		F1218C5725F7879B006B3564 /* MapPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageItem.swift; sourceTree = "<group>"; };
+		F1218C5C25F7D6B1006B3564 /* VehicleDetailsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsLogicController.swift; sourceTree = "<group>"; };
+		F122CBC925E4F06E009FAC15 /* TabViewNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewNavigation.swift; sourceTree = "<group>"; };
+		F122CBCE25E4F25B009FAC15 /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
+		F122CBD325E4F566009FAC15 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
+		F122CBD825E4F574009FAC15 /* VehiclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesView.swift; sourceTree = "<group>"; };
+		F122CBDD25E4F581009FAC15 /* EquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentView.swift; sourceTree = "<group>"; };
+		F131FDE02609FE11008C3B5D /* QRCodeVuewFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeVuewFinder.swift; sourceTree = "<group>"; };
+		F131FDE52609FED2008C3B5D /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		F131FDEA260A6159008C3B5D /* QRCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewModel.swift; sourceTree = "<group>"; };
+		F1372029261EE96800838A58 /* PrettyToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyToggleButton.swift; sourceTree = "<group>"; };
+		F13720BB261F21BB00838A58 /* VehiclesListMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListMapView.swift; sourceTree = "<group>"; };
+		F146814E2604BEDC00D2FCA1 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		F14681532605E35A00D2FCA1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		F14681582605F4A900D2FCA1 /* OnboardEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardEquipmentView.swift; sourceTree = "<group>"; };
+		F14681712608AD8100D2FCA1 /* VehicleSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSearchView.swift; sourceTree = "<group>"; };
+		F146817A2608E9C700D2FCA1 /* CreateTicketLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketLogicController.swift; sourceTree = "<group>"; };
+		F14D68F7272AA2AC00B8C953 /* AxaDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxaDevice.swift; sourceTree = "<group>"; };
+		F14D68F9272AA37500B8C953 /* EllipseDetailFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseDetailFormViewModel.swift; sourceTree = "<group>"; };
+		F14E51CE260C9F1B007596AA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		F14E51D1260CA049007596AA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		F14E5209260CAB5E007596AA /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		F153692D26429A210074F9F9 /* VehicleMapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapItem.swift; sourceTree = "<group>"; };
+		F15369302642C1610074F9F9 /* MapWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapper.swift; sourceTree = "<group>"; };
+		F155E89B260B0E3800F5CDC3 /* QRCodeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeImageView.swift; sourceTree = "<group>"; };
+		F155E8A2260B4B6900F5CDC3 /* VehicleThingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleThingDetailsView.swift; sourceTree = "<group>"; };
+		F155E8AB260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTicketsPage.swift; sourceTree = "<group>"; };
+		F155E8B0260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTicketsLogicController.swift; sourceTree = "<group>"; };
+		F158F580268475E5008EE45A /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		F158F591268DF729008EE45A /* VehiclesMapFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesMapFilterView.swift; sourceTree = "<group>"; };
+		F158F594268DF827008EE45A /* VehiclesMapFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesMapFilterViewModel.swift; sourceTree = "<group>"; };
+		F158F597268EBC7B008EE45A /* VehicleStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStatusViewModel.swift; sourceTree = "<group>"; };
+		F1608DEA25E5023500322016 /* Fleet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fleet.swift; sourceTree = "<group>"; };
+		F1608DF125E5093200322016 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		F1608DF625E50B2D00322016 /* FleetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetsView.swift; sourceTree = "<group>"; };
+		F1608DFB25E50BE200322016 /* FleetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetItem.swift; sourceTree = "<group>"; };
+		F1608E0025E53A0C00322016 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		F1608E0525E53A1E00322016 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		F1608E0A25E53D3000322016 /* TicketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketItem.swift; sourceTree = "<group>"; };
+		F1669AFB25FCB54E0013598F /* JSONStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStorage.swift; sourceTree = "<group>"; };
+		F1669BA526033C320013598F /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
+		F167B7912625B3280094B013 /* EquipmentPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentPageItem.swift; sourceTree = "<group>"; };
+		F167B7962625B3900094B013 /* EquipmentPageLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentPageLogicController.swift; sourceTree = "<group>"; };
+		F167B79B2625C7F70094B013 /* VehicleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapView.swift; sourceTree = "<group>"; };
+		F168723526399963006D531E /* TicketsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsFilterView.swift; sourceTree = "<group>"; };
+		F168723B263AB8D8006D531E /* VehicleStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStatusView.swift; sourceTree = "<group>"; };
+		F168723E263AD92C006D531E /* Model+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model+UI.swift"; sourceTree = "<group>"; };
+		F1752F3825FA1FC500F7D53D /* ThingDetailsLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingDetailsLogicController.swift; sourceTree = "<group>"; };
+		F1763D922681B85F00FB128A /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		F184F578269C451400CEBA9B /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		F184F57A269C45B200CEBA9B /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		F184F5A526A04B3A00CEBA9B /* Analitycs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analitycs.swift; sourceTree = "<group>"; };
+		F184F5A826A722AF00CEBA9B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F18A525927629F50001715D2 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+		F19A9727260DC23600ED0089 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F19B83452636A17D0040DFB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F19B834D2636F0840040DFB3 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		F1A7F0772620BB3C002B779A /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		F1A9596726776A7D0087B3D8 /* BookingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsView.swift; sourceTree = "<group>"; };
+		F1A9596A26776B250087B3D8 /* BookingDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsViewModel.swift; sourceTree = "<group>"; };
+		F1A9596D26776F3B0087B3D8 /* BookingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListItem.swift; sourceTree = "<group>"; };
+		F1B09D672726BFC90099B48E /* CircleAPI+Ellipse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleAPI+Ellipse.swift"; sourceTree = "<group>"; };
+		F1B09D6A2726D6AF0099B48E /* EllipseDetailFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseDetailFormView.swift; sourceTree = "<group>"; };
+		F1B547D52618D088006A2410 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		F1B547DA2618D90D006A2410 /* TripFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFormItem.swift; sourceTree = "<group>"; };
+		F1B547DF26198230006A2410 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F1B547E5261983FA006A2410 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
+		F1B547EC2619843E006A2410 /* TripHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryView.swift; sourceTree = "<group>"; };
+		F1B547F126198453006A2410 /* TripDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsViewModel.swift; sourceTree = "<group>"; };
+		F1B547F626198467006A2410 /* TripHistoryLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryLogicController.swift; sourceTree = "<group>"; };
+		F1BAEC9127140A9A00355F40 /* EllipseDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipseDevice.swift; sourceTree = "<group>"; };
+		F1BAEC9327145FA300355F40 /* OvalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalAPI.swift; sourceTree = "<group>"; };
+		F1C3B5B1274EC267000208EA /* KisiDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDevice.swift; sourceTree = "<group>"; };
+		F1C3B5B4274EC2F5000208EA /* KisiDetailFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetailFormView.swift; sourceTree = "<group>"; };
+		F1C3B5B7274EC304000208EA /* KisiDetailFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiDetailFormViewModel.swift; sourceTree = "<group>"; };
+		F1C3B5BA274EC8D1000208EA /* CircleAPI+Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleAPI+Kisi.swift"; sourceTree = "<group>"; };
+		F1C7C39E25E5427000CB348A /* TicketDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsView.swift; sourceTree = "<group>"; };
+		F1CE96BC25ECF253000A23F8 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		F1CE96C125ED03A9000A23F8 /* VehiclesLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesLogicController.swift; sourceTree = "<group>"; };
+		F1CE96CD25ED0529000A23F8 /* VehicleListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListItem.swift; sourceTree = "<group>"; };
+		F1CE96D225ED0622000A23F8 /* VehicleDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsView.swift; sourceTree = "<group>"; };
+		F1CE96D725ED267B000A23F8 /* ThingControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingControlView.swift; sourceTree = "<group>"; };
+		F1CE96DC25ED31A4000A23F8 /* ThingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingListItem.swift; sourceTree = "<group>"; };
+		F1CE96E125ED4261000A23F8 /* ThingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingDetailView.swift; sourceTree = "<group>"; };
+		F1CE96E825EE719E000A23F8 /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
+		F1CE96ED25EE71DD000A23F8 /* CircleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAPI.swift; sourceTree = "<group>"; };
+		F1CE96F225EE7775000A23F8 /* SignInLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLogicController.swift; sourceTree = "<group>"; };
+		F1D58BDD25E6243000B5C033 /* Stabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stabs.swift; sourceTree = "<group>"; };
+		F1D58C0925E6643800B5C033 /* FleetOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetOperator.swift; sourceTree = "<group>"; };
+		F1D58C0E25E665CC00B5C033 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F1D58C6B25E7BE1400B5C033 /* CreateTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketView.swift; sourceTree = "<group>"; };
+		F1D58C9D25E8D89E00B5C033 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		F1D58CA225E8DAF800B5C033 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F1D58CAA25E8E2E800B5C033 /* UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColors.swift; sourceTree = "<group>"; };
+		F1DA0A6C26D8DF02000A585D /* CircleAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleAPI+User.swift"; sourceTree = "<group>"; };
+		F1E28C392609126500C28411 /* CreateTicketSelectVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketSelectVehicleView.swift; sourceTree = "<group>"; };
+		F1E368FD270F243D00610F05 /* PhysicalDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalDevice.swift; sourceTree = "<group>"; };
+		F1E6DDC3272FE74300EC4FD5 /* InversDetailFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InversDetailFormView.swift; sourceTree = "<group>"; };
+		F1E6DDC6272FE7E100EC4FD5 /* InversDetailFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InversDetailFormViewModel.swift; sourceTree = "<group>"; };
+		F1E6DDC9272FED0E00EC4FD5 /* InversDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InversDevice.swift; sourceTree = "<group>"; };
+		F1E6DDCC272FF0EF00EC4FD5 /* CircleAPI+Invers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleAPI+Invers.swift"; sourceTree = "<group>"; };
+		F1E6DDDA273CF29F00EC4FD5 /* CustomMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMap.swift; sourceTree = "<group>"; };
+		F1EB6A172666A56F009F3031 /* VehiclesListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListMapViewModel.swift; sourceTree = "<group>"; };
+		F1EB6A1B2666A5E9009F3031 /* CircleAPI+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircleAPI+Map.swift"; sourceTree = "<group>"; };
+		F1FC11CF266F8381008C94A9 /* Linka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Linka.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F10AF29E25E4EA9500E13BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EB6A1226660660009F3031 /* FirebaseAnalytics in Frameworks */,
+				F19B81B2262D6C980040DFB3 /* HTTPStatusCodes in Frameworks */,
+				F1A373F6279692B700382BEC /* EllipseLock in Frameworks */,
+				F1A373F9279692E000382BEC /* AXALock in Frameworks */,
+				F1A373F32796927600382BEC /* Wrappers in Frameworks */,
+				F19B81C7262D6D240040DFB3 /* URLImage in Frameworks */,
+				F1EB6A1626660660009F3031 /* FirebaseCrashlytics in Frameworks */,
+				F1EB6A1426660660009F3031 /* FirebaseAuth in Frameworks */,
+				F19B81B9262D6CC80040DFB3 /* QRCodeView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10AF2A625E4EA9500E13BA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F10AF29425E4EA9400E13BA1 = {
+			isa = PBXGroup;
+			children = (
+				F184F57A269C45B200CEBA9B /* fastlane */,
+				F184F578269C451400CEBA9B /* .github */,
+				F10AF29925E4EA9400E13BA1 /* Shared */,
+				F10AF2A325E4EA9500E13BA1 /* iOS */,
+				F10AF2AA25E4EA9500E13BA1 /* macOS */,
+				F10AF2A225E4EA9500E13BA1 /* Products */,
+				F1218B9C25F0D2EE006B3564 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F10AF29925E4EA9400E13BA1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F1E6DDD8273CF1DD00EC4FD5 /* Custom */,
+				F1EB6A1A2666A5BA009F3031 /* Network */,
+				F1B547E4261983E5006A2410 /* Trips */,
+				F14E51CD260C9EFF007596AA /* Config */,
+				F1669BA426033BD40013598F /* Navigation */,
+				F1669AFA25FCB5410013598F /* Helpers */,
+				F1D58C9C25E8D87D00B5C033 /* Styles */,
+				F1608DE925E5021B00322016 /* Model */,
+				F122CBCD25E4F233009FAC15 /* Items */,
+				F10AF29A25E4EA9400E13BA1 /* OperatorApp.swift */,
+				F10AF29B25E4EA9400E13BA1 /* ContentView.swift */,
+				F10AF29C25E4EA9500E13BA1 /* Assets.xcassets */,
+				F1608DF125E5093200322016 /* UserSettings.swift */,
+				F1608DF625E50B2D00322016 /* FleetsView.swift */,
+				F1218BAB25F21C6F006B3564 /* FleetsLogicController.swift */,
+				F1D58C0E25E665CC00B5C033 /* SignInView.swift */,
+				F1CE96F225EE7775000A23F8 /* SignInLogicController.swift */,
+				F1218B5825EF9416006B3564 /* LoadingView.swift */,
+				F1218B5F25EF9ED8006B3564 /* ViewModifiers.swift */,
+				F1218B6425EF9F14006B3564 /* ErrorView.swift */,
+				F1218B6925EFAE9D006B3564 /* UserSettingsView.swift */,
+				F1218B6E25EFB026006B3564 /* FleetSettingsView.swift */,
+				F1218BC025F252E7006B3564 /* FleetSettingsLogicController.swift */,
+				F1218BA125F0F561006B3564 /* SplashView.swift */,
+				F19B83462636A17D0040DFB3 /* Localizable.strings */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F10AF2A225E4EA9500E13BA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F10AF2A125E4EA9500E13BA1 /* Operator Dev.app */,
+				F10AF2A925E4EA9500E13BA1 /* Operator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F10AF2A325E4EA9500E13BA1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F1D58CA725E8E2D300B5C033 /* Styles */,
+				F10AF2A425E4EA9500E13BA1 /* Info.plist */,
+				F19A9727260DC23600ED0089 /* GoogleService-Info.plist */,
+				F122CBC925E4F06E009FAC15 /* TabViewNavigation.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F10AF2AA25E4EA9500E13BA1 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F10AF2AB25E4EA9500E13BA1 /* Info.plist */,
+				F10AF2AC25E4EA9500E13BA1 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		F1218B9C25F0D2EE006B3564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F122CBCD25E4F233009FAC15 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				F122CBCE25E4F25B009FAC15 /* NavigationItem.swift */,
+				F1608DFB25E50BE200322016 /* FleetItem.swift */,
+				F1608E0A25E53D3000322016 /* TicketItem.swift */,
+				F1CE96CD25ED0529000A23F8 /* VehicleListItem.swift */,
+				F1CE96DC25ED31A4000A23F8 /* ThingListItem.swift */,
+				F1218C2125F7627A006B3564 /* PageViewNavigationBar.swift */,
+				F1218C2825F7687D006B3564 /* FormLabel.swift */,
+				F1218C2D25F768A9006B3564 /* InfoPage.swift */,
+				F1218C3225F76982006B3564 /* VehiclePageItem.swift */,
+				F1218C5225F785FE006B3564 /* TicketPageItem.swift */,
+				F1218C5725F7879B006B3564 /* MapPageItem.swift */,
+				F146814E2604BEDC00D2FCA1 /* EditView.swift */,
+				F1B547DA2618D90D006A2410 /* TripFormItem.swift */,
+				F1372029261EE96800838A58 /* PrettyToggleButton.swift */,
+				F167B7912625B3280094B013 /* EquipmentPageItem.swift */,
+				F167B7962625B3900094B013 /* EquipmentPageLogicController.swift */,
+				F19B834D2636F0840040DFB3 /* TagView.swift */,
+				F153692D26429A210074F9F9 /* VehicleMapItem.swift */,
+				F15369302642C1610074F9F9 /* MapWrapper.swift */,
+				F1A9596D26776F3B0087B3D8 /* BookingListItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		F13720B1261F200A00838A58 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F13720BB261F21BB00838A58 /* VehiclesListMapView.swift */,
+				F1EB6A172666A56F009F3031 /* VehiclesListMapViewModel.swift */,
+				F158F591268DF729008EE45A /* VehiclesMapFilterView.swift */,
+				F158F594268DF827008EE45A /* VehiclesMapFilterViewModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		F14E51CD260C9EFF007596AA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F14E51CE260C9F1B007596AA /* Development.xcconfig */,
+				F14E51D1260CA049007596AA /* Production.xcconfig */,
+				F18A525927629F50001715D2 /* Local.xcconfig */,
+				F14E5209260CAB5E007596AA /* Environment.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F15280C2260B0A5A0042C657 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				F122CBD325E4F566009FAC15 /* TicketsView.swift */,
+				F1218BC925F263A8006B3564 /* TicketsLogicController.swift */,
+				F1C7C39E25E5427000CB348A /* TicketDetailsView.swift */,
+				F1218C1C25F76072006B3564 /* TicketDetailsLogicController.swift */,
+				F1D58C6B25E7BE1400B5C033 /* CreateTicketView.swift */,
+				F146817A2608E9C700D2FCA1 /* CreateTicketLogicController.swift */,
+				F1E28C392609126500C28411 /* CreateTicketSelectVehicleView.swift */,
+				F168723526399963006D531E /* TicketsFilterView.swift */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
+		F15280C3260B0A840042C657 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				F122CBD825E4F574009FAC15 /* VehiclesView.swift */,
+				F1CE96C125ED03A9000A23F8 /* VehiclesLogicController.swift */,
+				F14681712608AD8100D2FCA1 /* VehicleSearchView.swift */,
+				F1CE96D225ED0622000A23F8 /* VehicleDetailsView.swift */,
+				F1218C5C25F7D6B1006B3564 /* VehicleDetailsLogicController.swift */,
+				F155E8A2260B4B6900F5CDC3 /* VehicleThingDetailsView.swift */,
+				F155E8AB260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift */,
+				F155E8B0260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift */,
+				F167B79B2625C7F70094B013 /* VehicleMapView.swift */,
+				F168723B263AB8D8006D531E /* VehicleStatusView.swift */,
+				F158F597268EBC7B008EE45A /* VehicleStatusViewModel.swift */,
+				F1A9596726776A7D0087B3D8 /* BookingDetailsView.swift */,
+				F1A9596A26776B250087B3D8 /* BookingDetailsViewModel.swift */,
+				F10C468726AA7D2800E495FD /* VehiclesStatusFilterView.swift */,
+				F10C468626AA7D2800E495FD /* VehiclesFilterView.swift */,
+				F10C468826AA7D2800E495FD /* VehiclesFilterViewModel.swift */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		F15280C4260B0ACA0042C657 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				F1BAEC9027140A1900355F40 /* Devices */,
+				F1CE96D725ED267B000A23F8 /* ThingControlView.swift */,
+				F122CBDD25E4F581009FAC15 /* EquipmentView.swift */,
+				F14681582605F4A900D2FCA1 /* OnboardEquipmentView.swift */,
+				F1CE96E125ED4261000A23F8 /* ThingDetailView.swift */,
+				F1752F3825FA1FC500F7D53D /* ThingDetailsLogicController.swift */,
+				F1E368FD270F243D00610F05 /* PhysicalDevice.swift */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		F1608DE925E5021B00322016 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1608DEA25E5023500322016 /* Fleet.swift */,
+				F1608E0025E53A0C00322016 /* Ticket.swift */,
+				F1608E0525E53A1E00322016 /* Vehicle.swift */,
+				F1D58BDD25E6243000B5C033 /* Stabs.swift */,
+				F1D58C0925E6643800B5C033 /* FleetOperator.swift */,
+				F1CE96BC25ECF253000A23F8 /* Thing.swift */,
+				F1FC11CF266F8381008C94A9 /* Linka.swift */,
+				F1218BB025F22136006B3564 /* Address.swift */,
+				F1B547D52618D088006A2410 /* Trip.swift */,
+				F1B547DF26198230006A2410 /* User.swift */,
+				F1A7F0772620BB3C002B779A /* QRCode.swift */,
+				F168723E263AD92C006D531E /* Model+UI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1669AFA25FCB5410013598F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1669AFB25FCB54E0013598F /* JSONStorage.swift */,
+				F14681532605E35A00D2FCA1 /* DateFormatter.swift */,
+				F131FDE02609FE11008C3B5D /* QRCodeVuewFinder.swift */,
+				F131FDE52609FED2008C3B5D /* QRCodeScannerView.swift */,
+				F131FDEA260A6159008C3B5D /* QRCodeScannerViewModel.swift */,
+				F155E89B260B0E3800F5CDC3 /* QRCodeImageView.swift */,
+				F1763D922681B85F00FB128A /* MailView.swift */,
+				F158F580268475E5008EE45A /* EmptyListView.swift */,
+				F184F5A526A04B3A00CEBA9B /* Analitycs.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F1669BA426033BD40013598F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F15280C2260B0A5A0042C657 /* Tickets */,
+				F15280C4260B0ACA0042C657 /* Equipment */,
+				F15280C3260B0A840042C657 /* Vehicles */,
+				F13720B1261F200A00838A58 /* Map */,
+				F1669BA526033C320013598F /* SidebarNavigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F1B547E4261983E5006A2410 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				F1B547E5261983FA006A2410 /* TripDetailsView.swift */,
+				F1B547EC2619843E006A2410 /* TripHistoryView.swift */,
+				F1B547F126198453006A2410 /* TripDetailsViewModel.swift */,
+				F1B547F626198467006A2410 /* TripHistoryLogicController.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		F1BAEC9027140A1900355F40 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				F1BAEC9127140A9A00355F40 /* EllipseDevice.swift */,
+				F1B09D6A2726D6AF0099B48E /* EllipseDetailFormView.swift */,
+				F14D68F9272AA37500B8C953 /* EllipseDetailFormViewModel.swift */,
+				F14D68F7272AA2AC00B8C953 /* AxaDevice.swift */,
+				F1112061272AD33F006CBE4E /* AxaDetailFormView.swift */,
+				F1112064272AD350006CBE4E /* AxaDetailFromViewModel.swift */,
+				F1E6DDC9272FED0E00EC4FD5 /* InversDevice.swift */,
+				F1E6DDC3272FE74300EC4FD5 /* InversDetailFormView.swift */,
+				F1E6DDC6272FE7E100EC4FD5 /* InversDetailFormViewModel.swift */,
+				F1C3B5B1274EC267000208EA /* KisiDevice.swift */,
+				F1C3B5B4274EC2F5000208EA /* KisiDetailFormView.swift */,
+				F1C3B5B7274EC304000208EA /* KisiDetailFormViewModel.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		F1D58C9C25E8D87D00B5C033 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F1D58C9D25E8D89E00B5C033 /* ButtonStyles.swift */,
+				F1D58CA225E8DAF800B5C033 /* Colors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F1D58CA725E8E2D300B5C033 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F1D58CAA25E8E2E800B5C033 /* UIColors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F1E6DDD8273CF1DD00EC4FD5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				F1E6DDD9273CF1E700EC4FD5 /* Map */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		F1E6DDD9273CF1E700EC4FD5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F1E6DDDA273CF29F00EC4FD5 /* CustomMap.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		F1EB6A1A2666A5BA009F3031 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F1CE96E825EE719E000A23F8 /* NetworkAgent.swift */,
+				F1CE96ED25EE71DD000A23F8 /* CircleAPI.swift */,
+				F1EB6A1B2666A5E9009F3031 /* CircleAPI+Map.swift */,
+				F1DA0A6C26D8DF02000A585D /* CircleAPI+User.swift */,
+				F1B09D672726BFC90099B48E /* CircleAPI+Ellipse.swift */,
+				F1E6DDCC272FF0EF00EC4FD5 /* CircleAPI+Invers.swift */,
+				F1C3B5BA274EC8D1000208EA /* CircleAPI+Kisi.swift */,
+				F1BAEC9327145FA300355F40 /* OvalAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F10AF2A025E4EA9500E13BA1 /* Operator (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10AF2B525E4EA9500E13BA1 /* Build configuration list for PBXNativeTarget "Operator (iOS)" */;
+			buildPhases = (
+				F10AF29D25E4EA9500E13BA1 /* Sources */,
+				F10AF29E25E4EA9500E13BA1 /* Frameworks */,
+				F10AF29F25E4EA9500E13BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Operator (iOS)";
+			packageProductDependencies = (
+				F19B81B1262D6C980040DFB3 /* HTTPStatusCodes */,
+				F19B81B8262D6CC80040DFB3 /* QRCodeView */,
+				F19B81C6262D6D240040DFB3 /* URLImage */,
+				F1EB6A1126660660009F3031 /* FirebaseAnalytics */,
+				F1EB6A1326660660009F3031 /* FirebaseAuth */,
+				F1EB6A1526660660009F3031 /* FirebaseCrashlytics */,
+				F1A373F22796927600382BEC /* Wrappers */,
+				F1A373F5279692B700382BEC /* EllipseLock */,
+				F1A373F8279692E000382BEC /* AXALock */,
+			);
+			productName = "Operator (iOS)";
+			productReference = F10AF2A125E4EA9500E13BA1 /* Operator Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F10AF2A825E4EA9500E13BA1 /* Operator (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10AF2B825E4EA9500E13BA1 /* Build configuration list for PBXNativeTarget "Operator (macOS)" */;
+			buildPhases = (
+				F10AF2A525E4EA9500E13BA1 /* Sources */,
+				F10AF2A625E4EA9500E13BA1 /* Frameworks */,
+				F10AF2A725E4EA9500E13BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Operator (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "Operator (macOS)";
+			productReference = F10AF2A925E4EA9500E13BA1 /* Operator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F10AF29525E4EA9400E13BA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F10AF2A025E4EA9500E13BA1 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					F10AF2A825E4EA9500E13BA1 = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F10AF29825E4EA9400E13BA1 /* Build configuration list for PBXProject "Operator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+			);
+			mainGroup = F10AF29425E4EA9400E13BA1;
+			packageReferences = (
+				F19B81B0262D6C980040DFB3 /* XCRemoteSwiftPackageReference "SwiftHTTPStatusCodes" */,
+				F19B81B7262D6CC80040DFB3 /* XCRemoteSwiftPackageReference "QRCodeView" */,
+				F19B81C5262D6D240040DFB3 /* XCRemoteSwiftPackageReference "url-image" */,
+				F1EB6A1026660660009F3031 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F1A373F12796927600382BEC /* XCRemoteSwiftPackageReference "Wrappers" */,
+				F1A373F4279692B700382BEC /* XCRemoteSwiftPackageReference "ellipse_lock_apple" */,
+				F1A373F7279692E000382BEC /* XCRemoteSwiftPackageReference "axalock_ios" */,
+			);
+			productRefGroup = F10AF2A225E4EA9500E13BA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F10AF2A025E4EA9500E13BA1 /* Operator (iOS) */,
+				F10AF2A825E4EA9500E13BA1 /* Operator (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F10AF29F25E4EA9500E13BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10AF2B125E4EA9500E13BA1 /* Assets.xcassets in Resources */,
+				F19B83432636A17D0040DFB3 /* Localizable.strings in Resources */,
+				F19A9728260DC23600ED0089 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10AF2A725E4EA9500E13BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10AF2B225E4EA9500E13BA1 /* Assets.xcassets in Resources */,
+				F19B83442636A17D0040DFB3 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F10AF29D25E4EA9500E13BA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1D58C0F25E665CC00B5C033 /* SignInView.swift in Sources */,
+				F1D58CAB25E8E2E800B5C033 /* UIColors.swift in Sources */,
+				F1112062272AD33F006CBE4E /* AxaDetailFormView.swift in Sources */,
+				F1608E0625E53A1E00322016 /* Vehicle.swift in Sources */,
+				F1DA0A6D26D8DF02000A585D /* CircleAPI+User.swift in Sources */,
+				F167B7972625B3900094B013 /* EquipmentPageLogicController.swift in Sources */,
+				F1B09D682726BFC90099B48E /* CircleAPI+Ellipse.swift in Sources */,
+				F10AF2AF25E4EA9500E13BA1 /* ContentView.swift in Sources */,
+				F1B547ED2619843E006A2410 /* TripHistoryView.swift in Sources */,
+				F168723626399963006D531E /* TicketsFilterView.swift in Sources */,
+				F1C3B5B2274EC267000208EA /* KisiDevice.swift in Sources */,
+				F1E6DDCD272FF0EF00EC4FD5 /* CircleAPI+Invers.swift in Sources */,
+				F168723F263AD92C006D531E /* Model+UI.swift in Sources */,
+				F1112065272AD350006CBE4E /* AxaDetailFromViewModel.swift in Sources */,
+				F158F581268475E5008EE45A /* EmptyListView.swift in Sources */,
+				F1218C2225F7627A006B3564 /* PageViewNavigationBar.swift in Sources */,
+				F14681592605F4A900D2FCA1 /* OnboardEquipmentView.swift in Sources */,
+				F1B547E6261983FA006A2410 /* TripDetailsView.swift in Sources */,
+				F158F592268DF729008EE45A /* VehiclesMapFilterView.swift in Sources */,
+				F10C468926AA7D2800E495FD /* VehiclesFilterView.swift in Sources */,
+				F1EB6A1C2666A5E9009F3031 /* CircleAPI+Map.swift in Sources */,
+				F1A9596B26776B250087B3D8 /* BookingDetailsViewModel.swift in Sources */,
+				F14D68FA272AA37500B8C953 /* EllipseDetailFormViewModel.swift in Sources */,
+				F1218B6A25EFAE9D006B3564 /* UserSettingsView.swift in Sources */,
+				F1218C1D25F76072006B3564 /* TicketDetailsLogicController.swift in Sources */,
+				F167B7922625B3280094B013 /* EquipmentPageItem.swift in Sources */,
+				F1D58BDE25E6243000B5C033 /* Stabs.swift in Sources */,
+				F1608DF725E50B2D00322016 /* FleetsView.swift in Sources */,
+				F1CE96CE25ED0529000A23F8 /* VehicleListItem.swift in Sources */,
+				F1218BAC25F21C6F006B3564 /* FleetsLogicController.swift in Sources */,
+				F184F5A626A04B3A00CEBA9B /* Analitycs.swift in Sources */,
+				F15369312642C1610074F9F9 /* MapWrapper.swift in Sources */,
+				F1EB6A182666A56F009F3031 /* VehiclesListMapViewModel.swift in Sources */,
+				F122CBCA25E4F06E009FAC15 /* TabViewNavigation.swift in Sources */,
+				F1752F3925FA1FC500F7D53D /* ThingDetailsLogicController.swift in Sources */,
+				F1608DFC25E50BE200322016 /* FleetItem.swift in Sources */,
+				F155E8AC260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift in Sources */,
+				F158F595268DF827008EE45A /* VehiclesMapFilterViewModel.swift in Sources */,
+				F1C7C39F25E5427000CB348A /* TicketDetailsView.swift in Sources */,
+				F1CE96D325ED0622000A23F8 /* VehicleDetailsView.swift in Sources */,
+				F10C468D26AA7D2800E495FD /* VehiclesFilterViewModel.swift in Sources */,
+				F1B547F726198467006A2410 /* TripHistoryLogicController.swift in Sources */,
+				F1218C5325F785FE006B3564 /* TicketPageItem.swift in Sources */,
+				F167B79C2625C7F70094B013 /* VehicleMapView.swift in Sources */,
+				F1E28C3A2609126500C28411 /* CreateTicketSelectVehicleView.swift in Sources */,
+				F1E6DDC7272FE7E100EC4FD5 /* InversDetailFormViewModel.swift in Sources */,
+				F155E8A3260B4B6900F5CDC3 /* VehicleThingDetailsView.swift in Sources */,
+				F14681722608AD8100D2FCA1 /* VehicleSearchView.swift in Sources */,
+				F1763D932681B85F00FB128A /* MailView.swift in Sources */,
+				F1B09D6B2726D6AF0099B48E /* EllipseDetailFormView.swift in Sources */,
+				F122CBCF25E4F25B009FAC15 /* NavigationItem.swift in Sources */,
+				F1B547F226198453006A2410 /* TripDetailsViewModel.swift in Sources */,
+				F1E6DDDB273CF29F00EC4FD5 /* CustomMap.swift in Sources */,
+				F1218BB125F22136006B3564 /* Address.swift in Sources */,
+				F1218C3325F76982006B3564 /* VehiclePageItem.swift in Sources */,
+				F1218BA225F0F561006B3564 /* SplashView.swift in Sources */,
+				F1669BA626033C320013598F /* SidebarNavigation.swift in Sources */,
+				F1A9596826776A7D0087B3D8 /* BookingDetailsView.swift in Sources */,
+				F1218C2E25F768A9006B3564 /* InfoPage.swift in Sources */,
+				F1218B6F25EFB026006B3564 /* FleetSettingsView.swift in Sources */,
+				F158F598268EBC7B008EE45A /* VehicleStatusViewModel.swift in Sources */,
+				F1C3B5B5274EC2F5000208EA /* KisiDetailFormView.swift in Sources */,
+				F1E6DDCA272FED0E00EC4FD5 /* InversDevice.swift in Sources */,
+				F153692E26429A210074F9F9 /* VehicleMapItem.swift in Sources */,
+				F122CBD925E4F574009FAC15 /* VehiclesView.swift in Sources */,
+				F1218C5825F7879B006B3564 /* MapPageItem.swift in Sources */,
+				F1D58CA325E8DAF800B5C033 /* Colors.swift in Sources */,
+				F1B547D62618D088006A2410 /* Trip.swift in Sources */,
+				F1608DF225E5093200322016 /* UserSettings.swift in Sources */,
+				F137202A261EE96800838A58 /* PrettyToggleButton.swift in Sources */,
+				F1218B6025EF9ED8006B3564 /* ViewModifiers.swift in Sources */,
+				F1608E0125E53A0C00322016 /* Ticket.swift in Sources */,
+				F19B834E2636F0840040DFB3 /* TagView.swift in Sources */,
+				F1CE96F325EE7775000A23F8 /* SignInLogicController.swift in Sources */,
+				F131FDE12609FE11008C3B5D /* QRCodeVuewFinder.swift in Sources */,
+				F13720BC261F21BB00838A58 /* VehiclesListMapView.swift in Sources */,
+				F168723C263AB8D8006D531E /* VehicleStatusView.swift in Sources */,
+				F10AF2AD25E4EA9500E13BA1 /* OperatorApp.swift in Sources */,
+				F1D58C9E25E8D89E00B5C033 /* ButtonStyles.swift in Sources */,
+				F1D58C6C25E7BE1400B5C033 /* CreateTicketView.swift in Sources */,
+				F1D58C0A25E6643800B5C033 /* FleetOperator.swift in Sources */,
+				F155E89C260B0E3800F5CDC3 /* QRCodeImageView.swift in Sources */,
+				F1E368FE270F243D00610F05 /* PhysicalDevice.swift in Sources */,
+				F1A7F0782620BB3C002B779A /* QRCode.swift in Sources */,
+				F122CBDE25E4F581009FAC15 /* EquipmentView.swift in Sources */,
+				F1A9596E26776F3B0087B3D8 /* BookingListItem.swift in Sources */,
+				F1CE96BD25ECF253000A23F8 /* Thing.swift in Sources */,
+				F131FDEB260A6159008C3B5D /* QRCodeScannerViewModel.swift in Sources */,
+				F1218BC125F252E7006B3564 /* FleetSettingsLogicController.swift in Sources */,
+				F14D68F8272AA2AC00B8C953 /* AxaDevice.swift in Sources */,
+				F131FDE62609FED2008C3B5D /* QRCodeScannerView.swift in Sources */,
+				F1C3B5B8274EC304000208EA /* KisiDetailFormViewModel.swift in Sources */,
+				F1B547E026198230006A2410 /* User.swift in Sources */,
+				F1FC11D0266F8381008C94A9 /* Linka.swift in Sources */,
+				F1608DEB25E5023500322016 /* Fleet.swift in Sources */,
+				F1218B6525EF9F14006B3564 /* ErrorView.swift in Sources */,
+				F1218BCA25F263A8006B3564 /* TicketsLogicController.swift in Sources */,
+				F1CE96E225ED4261000A23F8 /* ThingDetailView.swift in Sources */,
+				F1CE96D825ED267B000A23F8 /* ThingControlView.swift in Sources */,
+				F14E520A260CAB5E007596AA /* Environment.swift in Sources */,
+				F1CE96C225ED03A9000A23F8 /* VehiclesLogicController.swift in Sources */,
+				F1E6DDC4272FE74300EC4FD5 /* InversDetailFormView.swift in Sources */,
+				F1B547DB2618D90D006A2410 /* TripFormItem.swift in Sources */,
+				F146817B2608E9C700D2FCA1 /* CreateTicketLogicController.swift in Sources */,
+				F1CE96E925EE719E000A23F8 /* NetworkAgent.swift in Sources */,
+				F1608E0B25E53D3000322016 /* TicketItem.swift in Sources */,
+				F1BAEC9227140A9A00355F40 /* EllipseDevice.swift in Sources */,
+				F1CE96EE25EE71DD000A23F8 /* CircleAPI.swift in Sources */,
+				F122CBD425E4F566009FAC15 /* TicketsView.swift in Sources */,
+				F1669AFC25FCB54E0013598F /* JSONStorage.swift in Sources */,
+				F14681542605E35A00D2FCA1 /* DateFormatter.swift in Sources */,
+				F155E8B1260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift in Sources */,
+				F1218C5D25F7D6B1006B3564 /* VehicleDetailsLogicController.swift in Sources */,
+				F1BAEC9427145FA300355F40 /* OvalAPI.swift in Sources */,
+				F146814F2604BEDC00D2FCA1 /* EditView.swift in Sources */,
+				F1218C2925F7687D006B3564 /* FormLabel.swift in Sources */,
+				F10C468B26AA7D2800E495FD /* VehiclesStatusFilterView.swift in Sources */,
+				F1218B5925EF9416006B3564 /* LoadingView.swift in Sources */,
+				F1C3B5BB274EC8D1000208EA /* CircleAPI+Kisi.swift in Sources */,
+				F1CE96DD25ED31A4000A23F8 /* ThingListItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10AF2A525E4EA9500E13BA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B547D72618D088006A2410 /* Trip.swift in Sources */,
+				F14681732608AD8100D2FCA1 /* VehicleSearchView.swift in Sources */,
+				F1D58C6D25E7BE1400B5C033 /* CreateTicketView.swift in Sources */,
+				F1C3B5B9274EC304000208EA /* KisiDetailFormViewModel.swift in Sources */,
+				F1D58CA425E8DAF800B5C033 /* Colors.swift in Sources */,
+				F131FDEC260A6159008C3B5D /* QRCodeScannerViewModel.swift in Sources */,
+				F14681552605E35A00D2FCA1 /* DateFormatter.swift in Sources */,
+				F1608E0725E53A1E00322016 /* Vehicle.swift in Sources */,
+				F1608E0225E53A0C00322016 /* Ticket.swift in Sources */,
+				F1FC11D1266F8381008C94A9 /* Linka.swift in Sources */,
+				F1DA0A6E26D8DF02000A585D /* CircleAPI+User.swift in Sources */,
+				F1CE96EF25EE71DD000A23F8 /* CircleAPI.swift in Sources */,
+				F1669BA726033C320013598F /* SidebarNavigation.swift in Sources */,
+				F168723726399963006D531E /* TicketsFilterView.swift in Sources */,
+				F155E8A4260B4B6900F5CDC3 /* VehicleThingDetailsView.swift in Sources */,
+				F167B7982625B3900094B013 /* EquipmentPageLogicController.swift in Sources */,
+				F1CE96D425ED0622000A23F8 /* VehicleDetailsView.swift in Sources */,
+				F1218B6B25EFAE9D006B3564 /* UserSettingsView.swift in Sources */,
+				F1B547F326198453006A2410 /* TripDetailsViewModel.swift in Sources */,
+				F1CE96E325ED4261000A23F8 /* ThingDetailView.swift in Sources */,
+				F184F5A726A04B3A00CEBA9B /* Analitycs.swift in Sources */,
+				F1218C3425F76982006B3564 /* VehiclePageItem.swift in Sources */,
+				F1E6DDC5272FE74300EC4FD5 /* InversDetailFormView.swift in Sources */,
+				F1669B0125FCB5540013598F /* JSONStorage.swift in Sources */,
+				F122CBD025E4F25B009FAC15 /* NavigationItem.swift in Sources */,
+				F167B7932625B3280094B013 /* EquipmentPageItem.swift in Sources */,
+				F14D68FB272AA37E00B8C953 /* EllipseDetailFormViewModel.swift in Sources */,
+				F1EB6A1D2666A5E9009F3031 /* CircleAPI+Map.swift in Sources */,
+				F1B547E7261983FA006A2410 /* TripDetailsView.swift in Sources */,
+				F1C3B5B6274EC2F5000208EA /* KisiDetailFormView.swift in Sources */,
+				F158F596268DF827008EE45A /* VehiclesMapFilterViewModel.swift in Sources */,
+				F131FDE22609FE11008C3B5D /* QRCodeVuewFinder.swift in Sources */,
+				F1608DF825E50B2D00322016 /* FleetsView.swift in Sources */,
+				F1218BC225F252E7006B3564 /* FleetSettingsLogicController.swift in Sources */,
+				F10AF2B025E4EA9500E13BA1 /* ContentView.swift in Sources */,
+				F19B834F2636F0840040DFB3 /* TagView.swift in Sources */,
+				F158F599268EBC7B008EE45A /* VehicleStatusViewModel.swift in Sources */,
+				F1218C5425F785FE006B3564 /* TicketPageItem.swift in Sources */,
+				F1218C5925F7879B006B3564 /* MapPageItem.swift in Sources */,
+				F1E368FF270F243D00610F05 /* PhysicalDevice.swift in Sources */,
+				F1B547DC2618D90D006A2410 /* TripFormItem.swift in Sources */,
+				F1B547E126198230006A2410 /* User.swift in Sources */,
+				F1E6DDDC273CF29F00EC4FD5 /* CustomMap.swift in Sources */,
+				F1A9596C26776B250087B3D8 /* BookingDetailsViewModel.swift in Sources */,
+				F10C468C26AA7D2800E495FD /* VehiclesStatusFilterView.swift in Sources */,
+				F168723D263AB8D8006D531E /* VehicleStatusView.swift in Sources */,
+				F1218B6625EF9F14006B3564 /* ErrorView.swift in Sources */,
+				F1218BAD25F21C6F006B3564 /* FleetsLogicController.swift in Sources */,
+				F1B09D6C2726D6AF0099B48E /* EllipseDetailFormView.swift in Sources */,
+				F1218B7025EFB026006B3564 /* FleetSettingsView.swift in Sources */,
+				F1D58C0B25E6643800B5C033 /* FleetOperator.swift in Sources */,
+				F1D58C1025E665CC00B5C033 /* SignInView.swift in Sources */,
+				F1A9596F26776F3B0087B3D8 /* BookingListItem.swift in Sources */,
+				F1B09D692726BFC90099B48E /* CircleAPI+Ellipse.swift in Sources */,
+				F137202B261EE96800838A58 /* PrettyToggleButton.swift in Sources */,
+				F15369322642C1610074F9F9 /* MapWrapper.swift in Sources */,
+				F122CBDA25E4F574009FAC15 /* VehiclesView.swift in Sources */,
+				F122CBDF25E4F581009FAC15 /* EquipmentView.swift in Sources */,
+				F146817C2608E9C700D2FCA1 /* CreateTicketLogicController.swift in Sources */,
+				F1218C5E25F7D6B1006B3564 /* VehicleDetailsLogicController.swift in Sources */,
+				F1218BA325F0F561006B3564 /* SplashView.swift in Sources */,
+				F1C3B5B3274EC267000208EA /* KisiDevice.swift in Sources */,
+				F1112063272AD33F006CBE4E /* AxaDetailFormView.swift in Sources */,
+				F1D58BDF25E6243000B5C033 /* Stabs.swift in Sources */,
+				F1E6DDCB272FED0E00EC4FD5 /* InversDevice.swift in Sources */,
+				F1D58C9F25E8D89E00B5C033 /* ButtonStyles.swift in Sources */,
+				F167B79D2625C7F70094B013 /* VehicleMapView.swift in Sources */,
+				F14E520B260CAB5E007596AA /* Environment.swift in Sources */,
+				F1218C2325F7627A006B3564 /* PageViewNavigationBar.swift in Sources */,
+				F10C468E26AA7D2800E495FD /* VehiclesFilterViewModel.swift in Sources */,
+				F1CE96BE25ECF253000A23F8 /* Thing.swift in Sources */,
+				F122CBD525E4F566009FAC15 /* TicketsView.swift in Sources */,
+				F158F593268DF729008EE45A /* VehiclesMapFilterView.swift in Sources */,
+				F1A7F0792620BB3C002B779A /* QRCode.swift in Sources */,
+				F10C468A26AA7D2800E495FD /* VehiclesFilterView.swift in Sources */,
+				F1E28C3B2609126500C28411 /* CreateTicketSelectVehicleView.swift in Sources */,
+				F1218BCB25F263A8006B3564 /* TicketsLogicController.swift in Sources */,
+				F1218B5A25EF9416006B3564 /* LoadingView.swift in Sources */,
+				F1218BB225F22136006B3564 /* Address.swift in Sources */,
+				F1CE96C325ED03A9000A23F8 /* VehiclesLogicController.swift in Sources */,
+				F1CE96CF25ED0529000A23F8 /* VehicleListItem.swift in Sources */,
+				F1687240263AD92C006D531E /* Model+UI.swift in Sources */,
+				F1218C2F25F768A9006B3564 /* InfoPage.swift in Sources */,
+				F13720BD261F21BB00838A58 /* VehiclesListMapView.swift in Sources */,
+				F131FDE72609FED2008C3B5D /* QRCodeScannerView.swift in Sources */,
+				F153692F26429A210074F9F9 /* VehicleMapItem.swift in Sources */,
+				F1218C1E25F76072006B3564 /* TicketDetailsLogicController.swift in Sources */,
+				F1B547F826198467006A2410 /* TripHistoryLogicController.swift in Sources */,
+				F1CE96D925ED267B000A23F8 /* ThingControlView.swift in Sources */,
+				F1752F3A25FA1FC500F7D53D /* ThingDetailsLogicController.swift in Sources */,
+				F1608E0C25E53D3000322016 /* TicketItem.swift in Sources */,
+				F1608DF325E5093200322016 /* UserSettings.swift in Sources */,
+				F146815A2605F4A900D2FCA1 /* OnboardEquipmentView.swift in Sources */,
+				F1608DFD25E50BE200322016 /* FleetItem.swift in Sources */,
+				F155E8B2260B55D700F5CDC3 /* VehicleDetailsTicketsLogicController.swift in Sources */,
+				F158F582268475E5008EE45A /* EmptyListView.swift in Sources */,
+				F1C7C3A025E5427000CB348A /* TicketDetailsView.swift in Sources */,
+				F10AF2AE25E4EA9500E13BA1 /* OperatorApp.swift in Sources */,
+				F1CE96F425EE7775000A23F8 /* SignInLogicController.swift in Sources */,
+				F14681502604BEDC00D2FCA1 /* EditView.swift in Sources */,
+				F1608DEC25E5023500322016 /* Fleet.swift in Sources */,
+				F1218B6125EF9ED8006B3564 /* ViewModifiers.swift in Sources */,
+				F155E8AD260B55AF00F5CDC3 /* VehicleDetailsTicketsPage.swift in Sources */,
+				F1CE96EA25EE719E000A23F8 /* NetworkAgent.swift in Sources */,
+				F1218C2A25F7687D006B3564 /* FormLabel.swift in Sources */,
+				F1CE96DE25ED31A4000A23F8 /* ThingListItem.swift in Sources */,
+				F1112066272AD350006CBE4E /* AxaDetailFromViewModel.swift in Sources */,
+				F1B547EE2619843E006A2410 /* TripHistoryView.swift in Sources */,
+				F1C3B5BC274EC8D1000208EA /* CircleAPI+Kisi.swift in Sources */,
+				F1A9596926776A7D0087B3D8 /* BookingDetailsView.swift in Sources */,
+				F1E6DDCE272FF0EF00EC4FD5 /* CircleAPI+Invers.swift in Sources */,
+				F1E6DDC8272FE7E100EC4FD5 /* InversDetailFormViewModel.swift in Sources */,
+				F155E89D260B0E3800F5CDC3 /* QRCodeImageView.swift in Sources */,
+				F1763D942681B85F00FB128A /* MailView.swift in Sources */,
+				F1EB6A192666A56F009F3031 /* VehiclesListMapViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F19B83462636A17D0040DFB3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F19B83452636A17D0040DFB3 /* en */,
+				F184F5A826A722AF00CEBA9B /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F10AF2B325E4EA9500E13BA1 /* Debug (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEV";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug (Development)";
+		};
+		F10AF2B425E4EA9500E13BA1 /* Release (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = "Release (Development)";
+		};
+		F10AF2B625E4EA9500E13BA1 /* Debug (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_MODULE_NAME = Operator;
+				PRODUCT_NAME = "$(APP_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug (Development)";
+		};
+		F10AF2B725E4EA9500E13BA1 /* Release (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_MODULE_NAME = Operator;
+				PRODUCT_NAME = "$(APP_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "io.lattis.operator.dev AdHoc";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (Development)";
+		};
+		F10AF2B925E4EA9500E13BA1 /* Debug (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.Operator;
+				PRODUCT_NAME = Operator;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Debug (Development)";
+		};
+		F10AF2BA25E4EA9500E13BA1 /* Release (Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51CE260C9F1B007596AA /* Development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.Operator;
+				PRODUCT_NAME = Operator;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release (Development)";
+		};
+		F14E51C5260C9D13007596AA /* Debug (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug (Production)";
+		};
+		F14E51C6260C9D13007596AA /* Debug (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_MODULE_NAME = Operator;
+				PRODUCT_NAME = "$(APP_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug (Production)";
+		};
+		F14E51C7260C9D13007596AA /* Debug (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.Operator;
+				PRODUCT_NAME = Operator;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Debug (Production)";
+		};
+		F14E51C8260C9D33007596AA /* Release (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = "Release (Production)";
+		};
+		F14E51C9260C9D33007596AA /* Release (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_MODULE_NAME = Operator;
+				PRODUCT_NAME = "$(APP_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "io.lattis.operator AdHoc";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (Production)";
+		};
+		F14E51CA260C9D33007596AA /* Release (Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14E51D1260CA049007596AA /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.Operator;
+				PRODUCT_NAME = Operator;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release (Production)";
+		};
+		F18A525627629F08001715D2 /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18A525927629F50001715D2 /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEV";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Local;
+		};
+		F18A525727629F08001715D2 /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18A525927629F50001715D2 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_MODULE_NAME = Operator;
+				PRODUCT_NAME = "$(APP_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Local;
+		};
+		F18A525827629F08001715D2 /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18A525927629F50001715D2 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4WD59CZ9Z6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lattis.Operator;
+				PRODUCT_NAME = Operator;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Local;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F10AF29825E4EA9400E13BA1 /* Build configuration list for PBXProject "Operator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10AF2B325E4EA9500E13BA1 /* Debug (Development) */,
+				F18A525627629F08001715D2 /* Local */,
+				F14E51C5260C9D13007596AA /* Debug (Production) */,
+				F10AF2B425E4EA9500E13BA1 /* Release (Development) */,
+				F14E51C8260C9D33007596AA /* Release (Production) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (Production)";
+		};
+		F10AF2B525E4EA9500E13BA1 /* Build configuration list for PBXNativeTarget "Operator (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10AF2B625E4EA9500E13BA1 /* Debug (Development) */,
+				F18A525727629F08001715D2 /* Local */,
+				F14E51C6260C9D13007596AA /* Debug (Production) */,
+				F10AF2B725E4EA9500E13BA1 /* Release (Development) */,
+				F14E51C9260C9D33007596AA /* Release (Production) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (Production)";
+		};
+		F10AF2B825E4EA9500E13BA1 /* Build configuration list for PBXNativeTarget "Operator (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10AF2B925E4EA9500E13BA1 /* Debug (Development) */,
+				F18A525827629F08001715D2 /* Local */,
+				F14E51C7260C9D13007596AA /* Debug (Production) */,
+				F10AF2BA25E4EA9500E13BA1 /* Release (Development) */,
+				F14E51CA260C9D33007596AA /* Release (Production) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (Production)";
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F19B81B0262D6C980040DFB3 /* XCRemoteSwiftPackageReference "SwiftHTTPStatusCodes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:rhodgkins/SwiftHTTPStatusCodes.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.2;
+			};
+		};
+		F19B81B7262D6CC80040DFB3 /* XCRemoteSwiftPackageReference "QRCodeView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:kabanishe23/QRCodeView.git";
+			requirement = {
+				kind = revision;
+				revision = 447c1c4177d9f3e256f63e4687785d3e1f9d90f1;
+			};
+		};
+		F19B81C5262D6D240040DFB3 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+		F1A373F12796927600382BEC /* XCRemoteSwiftPackageReference "Wrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:kabanishe23/Wrappers.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F1A373F4279692B700382BEC /* XCRemoteSwiftPackageReference "ellipse_lock_apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/velolabs/ellipse_lock_apple";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F1A373F7279692E000382BEC /* XCRemoteSwiftPackageReference "axalock_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:velolabs/axalock_ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F1EB6A1026660660009F3031 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F19B81B1262D6C980040DFB3 /* HTTPStatusCodes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F19B81B0262D6C980040DFB3 /* XCRemoteSwiftPackageReference "SwiftHTTPStatusCodes" */;
+			productName = HTTPStatusCodes;
+		};
+		F19B81B8262D6CC80040DFB3 /* QRCodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F19B81B7262D6CC80040DFB3 /* XCRemoteSwiftPackageReference "QRCodeView" */;
+			productName = QRCodeView;
+		};
+		F19B81C6262D6D240040DFB3 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F19B81C5262D6D240040DFB3 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		F1A373F22796927600382BEC /* Wrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1A373F12796927600382BEC /* XCRemoteSwiftPackageReference "Wrappers" */;
+			productName = Wrappers;
+		};
+		F1A373F5279692B700382BEC /* EllipseLock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1A373F4279692B700382BEC /* XCRemoteSwiftPackageReference "ellipse_lock_apple" */;
+			productName = EllipseLock;
+		};
+		F1A373F8279692E000382BEC /* AXALock */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1A373F7279692E000382BEC /* XCRemoteSwiftPackageReference "axalock_ios" */;
+			productName = AXALock;
+		};
+		F1EB6A1126660660009F3031 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1EB6A1026660660009F3031 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F1EB6A1326660660009F3031 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1EB6A1026660660009F3031 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F1EB6A1526660660009F3031 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1EB6A1026660660009F3031 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F10AF29525E4EA9400E13BA1 /* Project object */;
+}

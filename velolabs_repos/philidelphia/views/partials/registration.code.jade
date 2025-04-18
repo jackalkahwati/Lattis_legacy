@@ -1,0 +1,9 @@
+div(class='divider')
+	h2 2. What's Your Code?
+	input(type='text', name='code', ng-model='inputValues.code', ng-change='checkCode()', class='field', placeholder="Hint: It's in the email we sent")
+	h3 {{codeErrorText}}
+	a(ng-click='submitCode()', ng-show='showButton')
+		button(type='button') Done!
+
+
+

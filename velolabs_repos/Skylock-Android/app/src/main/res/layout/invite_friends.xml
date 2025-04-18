@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:descendantFocusability="blocksDescendants"
+    >
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:id="@+id/imageview_invite_friends"
+    android:background="@null"
+    android:src="@drawable/contacts_default"
+    android:layout_centerVertical="true"
+    android:layout_alignParentLeft="true"
+    />
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_marginTop="11.25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/imageview_invite_friends"
+        android:text="Jesse Becker"
+        />
+
+    <ImageButton
+        android:id="@+id/ibTextingToggle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@null"
+        android:tag="inactive"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:src="@drawable/text_icon"/>
+
+</RelativeLayout>
+

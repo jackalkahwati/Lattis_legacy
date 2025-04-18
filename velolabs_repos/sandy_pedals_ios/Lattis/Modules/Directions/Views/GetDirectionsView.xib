@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetDirectionsViewController" customModule="SandyPedals" customModuleProvider="target">
+            <connections>
+                <outlet property="directionsView" destination="iN0-l3-epB" id="TUr-PN-Dev"/>
+                <outlet property="view" destination="iN0-l3-epB" id="1Ty-nJ-chZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GetDirectionsView" customModule="SandyPedals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="directions_to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E2-yk-3EJ" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                    <rect key="frame" x="16" y="22" width="343" height="15.5"/>
+                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="12"/>
+                    <color key="textColor" red="0.65490196078431373" green="0.6588235294117647" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGw-ly-RRo">
+                    <rect key="frame" x="16" y="45.5" width="343" height="44"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="bJC-pw-guA"/>
+                    </constraints>
+                    <color key="textColor" red="0.50196078431372548" green="0.51764705882352935" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="textChanged:" destination="-1" eventType="editingChanged" id="xwA-dG-dLV"/>
+                    </connections>
+                </textField>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44B-Np-1Xw">
+                    <rect key="frame" x="0.0" y="125.5" width="375" height="541.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="search_no_result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="113-us-w13" customClass="Label" customModule="SandyPedals" customModuleProvider="target">
+                            <rect key="frame" x="123.5" y="100" width="128" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="113-us-w13" firstAttribute="top" secondItem="44B-Np-1Xw" secondAttribute="top" constant="100" id="1c3-8s-Ztx"/>
+                        <constraint firstItem="113-us-w13" firstAttribute="centerX" secondItem="44B-Np-1Xw" secondAttribute="centerX" id="24p-06-Unc"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xpc-oC-xUI" customClass="TPKeyboardAvoidingTableView">
+                    <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIj-qe-efw" customClass="Button" customModule="SandyPedals" customModuleProvider="target">
+                    <rect key="frame" x="16" y="89.5" width="159" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="z4q-hU-wa5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="general_current_location">
+                        <color key="titleColor" red="0.64313725489999995" green="0.20392156859999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="currentLocation:" destination="-1" eventType="touchUpInside" id="veu-fr-GGs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="44B-Np-1Xw" secondAttribute="bottom" id="1qv-R0-a5y"/>
+                <constraint firstItem="yIj-qe-efw" firstAttribute="top" secondItem="AGw-ly-RRo" secondAttribute="bottom" id="39g-zB-60k"/>
+                <constraint firstAttribute="trailing" secondItem="8E2-yk-3EJ" secondAttribute="trailing" constant="16" id="K53-tE-mJr"/>
+                <constraint firstAttribute="trailing" secondItem="AGw-ly-RRo" secondAttribute="trailing" constant="16" id="K9N-cK-19W"/>
+                <constraint firstItem="AGw-ly-RRo" firstAttribute="top" secondItem="8E2-yk-3EJ" secondAttribute="bottom" constant="8" id="Ktw-Dy-pXj"/>
+                <constraint firstAttribute="trailing" secondItem="44B-Np-1Xw" secondAttribute="trailing" id="Mew-th-Sua"/>
+                <constraint firstItem="AGw-ly-RRo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Wkk-m8-FoV"/>
+                <constraint firstItem="44B-Np-1Xw" firstAttribute="top" secondItem="AGw-ly-RRo" secondAttribute="bottom" constant="36" id="YOf-bP-uoH"/>
+                <constraint firstItem="44B-Np-1Xw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bGl-kd-t5P"/>
+                <constraint firstItem="yIj-qe-efw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="bSU-8A-2GS"/>
+                <constraint firstItem="8E2-yk-3EJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="dAy-pS-Wy6"/>
+                <constraint firstItem="Xpc-oC-xUI" firstAttribute="top" secondItem="yIj-qe-efw" secondAttribute="bottom" id="fkZ-WF-Oae"/>
+                <constraint firstItem="Xpc-oC-xUI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mwZ-fx-ggh"/>
+                <constraint firstItem="8E2-yk-3EJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="qG2-GT-b5g"/>
+                <constraint firstAttribute="trailing" secondItem="Xpc-oC-xUI" secondAttribute="trailing" id="san-Sl-6ib"/>
+                <constraint firstAttribute="bottom" secondItem="Xpc-oC-xUI" secondAttribute="bottom" id="xPt-ex-IGm"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="currentHeight" destination="z4q-hU-wa5" id="Y4Z-CF-q7o"/>
+                <outlet property="emptyView" destination="44B-Np-1Xw" id="Oj4-mP-rax"/>
+                <outlet property="searchField" destination="AGw-ly-RRo" id="WBz-vu-VSu"/>
+                <outlet property="tableView" destination="Xpc-oC-xUI" id="F1a-Tl-DXY"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

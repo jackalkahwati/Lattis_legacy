@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/white">
+
+    <RelativeLayout
+
+        android:id="@+id/rlProfileHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/ibClose"
+            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/arrow_close_dark"
+            android:background="@null"/>
+        <ImageView
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/skylock_logo"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlLine"
+        android:layout_width="fill_parent"
+        android:layout_height="0.25dp"
+        android:layout_below="@+id/rlProfileHeader"
+        android:background="#BFBFBF">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlLine"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_below="@+id/tvAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Your Facebook account can be used to connect to your lock after losing your phone"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlProfilePic"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlText">
+        <RelativeLayout
+            android:id="@+id/rlUserPic"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+            <com.facebook.login.widget.ProfilePictureView
+                android:id="@+id/ivUserPic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+            <ImageView
+                android:id="@+id/icon_mask"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circle"
+                >
+            </ImageView>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tvUserProfile"
+            android:layout_below="@+id/rlUserPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Change photo"
+            android:textColor="#3498DB"
+            android:layout_marginBottom="11.475dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@+id/rlProfilePic">
+
+        <RelativeLayout
+            android:id="@+id/rlPhone"
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Phone Number"/>
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+ Add Phone Number"
+                android:textColor="#3498DB"
+                android:clickable="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlEC"
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/rlPhone"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvECs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Emergency Contacts"/>
+            <TextView
+                android:id="@+id/tvEC"
+                android:layout_toRightOf="@+id/tvECs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|right"
+                android:text="+ Add Contacts"
+                android:textColor="#3498DB"
+                android:clickable="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/ibLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+
+</RelativeLayout>

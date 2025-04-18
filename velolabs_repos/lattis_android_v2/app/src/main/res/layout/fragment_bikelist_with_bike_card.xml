@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bike_card_parent"
+    android:background="@android:color/transparent">
+
+    <!--This is for showing reserve and scan button: start-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bike_card_bottom_radius"
+        android:id="@+id/cl_reserve_bottom_view"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/ll_scan_in_bike_card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            custom:layout_constraintTop_toTopOf="@id/btn_reserve_in_bike_card"
+            custom:layout_constraintHorizontal_weight="1"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintBottom_toBottomOf="@id/btn_reserve_in_bike_card"
+            custom:layout_constraintEnd_toStartOf="@+id/btn_reserve_in_bike_card"
+            android:background="@drawable/round_scan_button"
+            android:orientation="vertical"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/scan_black" />
+
+
+        </LinearLayout>
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_reserve_in_bike_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reserve"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintHorizontal_weight="1"
+            custom:layout_constraintStart_toEndOf="@+id/ll_scan_in_bike_card"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="8dp"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/round_reserve_button"
+            android:textColor="@color/reserve_button_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--This is for showing reserve and scan button: end-->
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refresh_bike_list_in_bike_card"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_membership_popup_bike_card"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/reposition"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_bike_card_bike_details"
+        android:translationY="20dp"
+        android:visibility="gone"
+        android:paddingTop="10dp"
+        android:id="@+id/cl_membership_popup_bike_card"
+        android:background="@drawable/round_membership_popup_bike_card"
+        >
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="@color/active_ride_connect_to_lock_text"
+            custom:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginBottom="35dp"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            android:text="Velo transit"
+            android:id="@+id/ct_fleet_name_membership_popup_bike_card"/>
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/active_ride_connect_to_lock_text"
+            custom:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="33dp"
+            custom:typefaceAsset="GothamSSm-Bold.otf"
+            android:text="Velo transit"
+            android:id="@+id/ct_fleet_discount_membership_popup_bike_card"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <!--This is bike card: start-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cl_bike_card_bike_details"
+        android:background="@drawable/bike_card_top_radius"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_reserve_bottom_view">
+
+        <View
+            android:layout_width="70dp"
+            android:layout_height="5dp"
+            android:id="@+id/bike_card_list_divider"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/round_slider_drag"/>
+
+
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toBottomOf="@+id/bike_card_list_divider"
+            custom:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/more_info"
+            android:id="@+id/iv_show_in_bike_card"
+            />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toBottomOf="@+id/iv_show_in_bike_card"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ct_bike_type_in_bike_card"
+            android:layout_marginLeft="20dp"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textAllCaps="false"
+            android:textColor="@color/bike_card_header_text"
+            custom:typefaceAsset="GothamSSm-Bold.otf"
+            android:layout_marginTop="20dp" />
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toBottomOf="@+id/ct_bike_type_in_bike_card"
+            app:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintEnd_toStartOf="@+id/iv_bike_image_in_bike_card"
+            android:id="@+id/ct_bike_name_in_bike_card"
+            android:text="Serpent Eagle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/bike_card_header_text"
+            custom:typefaceAsset="GothamSSm-Bold.otf"
+            android:layout_marginTop="3dp" />
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toBottomOf="@+id/ct_bike_name_in_bike_card"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ct_fleet_name_in_bike_card"
+            android:text="Serpent Eagle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="12dp"
+            android:textColor="@color/bike_fleet_company_name"
+            custom:typefaceAsset="GothamSSm-Book.otf"
+            android:layout_marginTop="3dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/ct_fleet_name_in_bike_card"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/cl_bike_battery_or_parking_ports_available"
+            app:layout_constraintStart_toStartOf="parent">
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                app:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/ct_bike_battery_bike_card"
+                android:text="79%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/bike_card_header_text"
+                custom:typefaceAsset="GothamSSm-Bold.otf"
+                android:layout_marginTop="3dp" />
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="9dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/iv_bike_battery_bike_card"
+                android:src="@drawable/ic_battery_75"
+                custom:layout_constraintTop_toTopOf="@+id/ct_bike_battery_bike_card"
+                custom:layout_constraintBottom_toBottomOf="@+id/ct_bike_battery_bike_card"
+                custom:layout_constraintStart_toEndOf="@+id/ct_bike_battery_bike_card"
+                />
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                custom:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/ct_ports_available_bike_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/bike_card_header_text"
+                custom:typefaceAsset="GothamSSm-Bold.otf"
+                android:visibility="gone"
+                android:layout_marginTop="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/iv_bike_image_in_bike_card"
+            custom:layout_constraintTop_toTopOf="@+id/ct_bike_type_in_bike_card"
+            custom:layout_constraintBottom_toBottomOf="@+id/cl_bike_battery_or_parking_ports_available"
+            custom:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            app:layout_constraintTop_toBottomOf="@+id/iv_bike_image_in_bike_card"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ct_rates_in_bike_card"
+            android:text="$1 per 30mins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColor="@color/bike_card_header_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf"
+            android:background="@drawable/bike_card_rates_top_bottom_radius"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--This is bike card: end-->
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="@+id/cl_bike_card_bike_details"
+        app:layout_constraintBottom_toTopOf="@+id/cl_bike_card_bike_details"
+        android:layout_marginBottom="35dp"
+        custom:cardCornerRadius="10dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:id="@+id/iv_fleet_logo_in_bike_card"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--This is slider view: start-->
+    <include layout="@layout/fragment_bikelist_slider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="17dp"
+        custom:layout_constraintBottom_toTopOf="@+id/cl_reserve_bottom_view"
+        custom:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone"
+        />
+    <!--This is slider view: end-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

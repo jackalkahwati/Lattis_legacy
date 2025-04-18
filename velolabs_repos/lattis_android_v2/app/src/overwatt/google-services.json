@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "238343882900",
+    "project_id": "overwatt-2c1c2",
+    "storage_bucket": "overwatt-2c1c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238343882900:android:af7a1e9af986344a49cc81",
+        "android_client_info": {
+          "package_name": "io.bikes.overwatt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsMYhJs6Dp1t_DZzLEthErDW3enEjVsgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238343882900:android:bfec31e68c4433ba49cc81",
+        "android_client_info": {
+          "package_name": "io.bikes.overwatt.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsMYhJs6Dp1t_DZzLEthErDW3enEjVsgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238343882900:android:bea8cd15e32c878449cc81",
+        "android_client_info": {
+          "package_name": "io.bikes.overwatt.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsMYhJs6Dp1t_DZzLEthErDW3enEjVsgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238343882900-prai8e087ihi973ha4r6p080h32na1d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

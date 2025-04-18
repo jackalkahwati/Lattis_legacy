@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <io.bikes.sandypedals.presentation.view.CustomPagerContainer
+            android:id="@+id/pager_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_Reservebike"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="280dp"
+                android:layout_height="135dp"
+                android:layout_gravity="center_horizontal" />
+
+        </io.bikes.sandypedals.presentation.view.CustomPagerContainer>
+
+
+        <io.bikes.sandypedals.presentation.view.CustomButton
+            android:id="@+id/button_Reservebike"
+            style="@style/blueButtonStyle.rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/label_reserve"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_no_bikes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_bikes_not_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="25dp"
+            android:layout_toLeftOf="@+id/iv_no_bike_cancel"
+            android:padding="25dp"
+            android:text="@string/find_ride_warning_available"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black_overlay" />
+
+        <ImageView
+            android:id="@+id/iv_no_bike_cancel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/ic_close_blue" />
+    </RelativeLayout>
+
+    <include layout="@layout/view_check_card_list" />
+
+    <RelativeLayout
+        android:id="@+id/tooltip_view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="-6dp"
+        android:background="#00AFFFFF" />
+
+
+</RelativeLayout>

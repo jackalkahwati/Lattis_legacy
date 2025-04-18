@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/text_hint_color">
+
+        <TextView
+            android:id="@+id/tv_label_currently_connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="16dp"
+            android:text="@string/currently_connected"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#F5F5F5" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_currently_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rl_header"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <com.daimajia.swipe.SwipeLayout xmlns:swipe="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/swipeSelectedLock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            swipe:leftEdgeSwipeOffset="0dp"
+            swipe:rightEdgeSwipeOffset="0dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_tools"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rl_deletelock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/rl_settingslock"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/iv_deletelock"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:contentDescription="@null"
+                        android:padding="4dp"
+                        android:src="@drawable/delete_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_deletelock"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:text="@string/delete"
+                        android:id="@+id/tv_delete"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_settingslock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/text_hint_color"
+                    android:orientation="vertical"
+                    android:paddingBottom="19dp"
+                    android:paddingLeft="19dp"
+                    android:paddingRight="19dp"
+                    android:paddingTop="19dp">
+
+                    <ImageView
+                        android:id="@+id/iv_settings"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:contentDescription="@null"
+                        android:padding="4dp"
+                        android:src="@drawable/settings_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_settings"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/settings"
+                        android:id="@+id/tv_settings"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_lockLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:padding="16dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/tv_lockName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/ellipses_text_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_lockConnet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_lockName"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/text_hint_color"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_overflow"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_overflow" />
+
+
+            </RelativeLayout>
+        </com.daimajia.swipe.SwipeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_previousconnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_currently_connect"
+        android:background="#F7F7F8">
+
+        <TextView
+            android:id="@+id/tv_label_previous_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:text="@string/previous_connections"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/ellipses_text_color" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myEllipsesLockList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_lockunlocklayout"
+        android:layout_below="@+id/rl_previousconnection" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_lockunlocklayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_background_theme"
+        android:clickable="true"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:paddingBottom="12dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="5dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/tv_lockName_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:text="@string/no_ellipse_connected"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#F5F5F5"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_lockstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lockName_bottom"
+                android:layout_marginTop="2dp"
+                android:text="@string/tap_to_unlock"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#F5F5F5"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_lock"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_small_lock" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:visibility="gone">
+
+
+        <ProgressBar
+            style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

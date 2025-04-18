@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cc.skylock.skylock.ui.AlertNotificationActivity"
+    tools:showIn="@layout/activity_alert_notification">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerView_alertSettings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/rl_header_settings"
+        android:divider="@color/divider_settings"
+        android:paddingBottom="60dp" />
+</RelativeLayout>

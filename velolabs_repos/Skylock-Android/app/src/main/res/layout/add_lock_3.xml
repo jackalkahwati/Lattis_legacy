@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/add_lock_bg_3">
+
+    <RelativeLayout
+        android:id="@+id/rlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ivBluetoothProgress"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/tvBluetooth1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Press the middle button on your Skylock."/>
+        <TextView
+            android:id="@+id/tvBluetooth2"
+            android:layout_below="@+id/tvBluetooth1"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wait for the light to start blinking on your Skylock. This means the device is connecting to your phone."
+            android:textColor="#9B9B9B" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivBluetoothProgress"
+        android:layout_above="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bluetooth_progress_1"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/ivPagination">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibPreviousStep3"
+            android:background="@null"
+            android:src="@drawable/previous_step"
+            android:layout_marginEnd="10dp"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibNextStep3"
+            android:background="@null"
+            android:src="@drawable/next_step"
+            />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/ivPagination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/pagination_addlock_3"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/tvSwipe"
+        />
+    <TextView
+        android:id="@+id/tvSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swipe to go back or forward"
+        android:textSize="10dp"
+        android:textColor="#D8D8D8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
+
+

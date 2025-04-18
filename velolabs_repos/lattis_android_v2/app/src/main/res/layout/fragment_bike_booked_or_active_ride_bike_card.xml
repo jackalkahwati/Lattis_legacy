@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_container_in_booked_active_ride_bike_card"
+    android:background="@drawable/bike_card_top_radius">
+
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/more_info"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/iv_show_slider_in_booked_active_ride_bike_card"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintTop_toBottomOf="@+id/iv_show_slider_in_booked_active_ride_bike_card"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/ct_bike_type_in_booked_active_ride_bike_card"
+        android:layout_marginLeft="20dp"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textAllCaps="false"
+        android:textColor="@color/bike_card_header_text"
+        custom:typefaceAsset="GothamSSm-Bold.otf"
+         />
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintTop_toBottomOf="@+id/ct_bike_type_in_booked_active_ride_bike_card"
+        app:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toStartOf="@+id/iv_bike_image_in_booked_active_ride_bike_card"
+        android:id="@+id/ct_bike_name_in_booked_active_ride_bike_card"
+        android:text="Serpent Eagle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/bike_card_header_text"
+        custom:typefaceAsset="GothamSSm-Bold.otf"
+        android:layout_marginTop="3dp" />
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintTop_toBottomOf="@+id/ct_bike_name_in_booked_active_ride_bike_card"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/ct_fleet_name_in_booked_active_ride_bike_card"
+        android:text="Serpent Eagle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="12dp"
+        android:textColor="@color/bike_fleet_company_name"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        android:layout_marginTop="3dp" />
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        app:layout_constraintTop_toBottomOf="@+id/ct_fleet_name_in_booked_active_ride_bike_card"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/ct_bike_battery_in_booked_active_ride_bike_card"
+        android:text="79%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/bike_card_header_text"
+        custom:typefaceAsset="GothamSSm-Bold.otf"
+        android:layout_marginTop="3dp" />
+
+    <ImageView
+        android:id="@+id/iv_bike_battery_in_booked_active_ride_bike_card"
+        android:layout_width="17dp"
+        android:layout_height="8dp"
+        android:layout_marginLeft="3dp"
+        android:src="@drawable/ic_battery_75"
+        custom:layout_constraintBottom_toBottomOf="@+id/ct_bike_battery_in_booked_active_ride_bike_card"
+        custom:layout_constraintStart_toEndOf="@+id/ct_bike_battery_in_booked_active_ride_bike_card"
+        custom:layout_constraintTop_toTopOf="@+id/ct_bike_battery_in_booked_active_ride_bike_card"
+
+        />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/iv_bike_image_in_booked_active_ride_bike_card"
+        custom:layout_constraintTop_toTopOf="@+id/ct_bike_type_in_booked_active_ride_bike_card"
+        custom:layout_constraintBottom_toBottomOf="@+id/iv_bike_battery_in_booked_active_ride_bike_card"
+        custom:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

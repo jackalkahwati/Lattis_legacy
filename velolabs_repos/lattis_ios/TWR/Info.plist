@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleShortVersionString</key>
+	<string>$(APP_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(APP_BUILD)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>camera_access_alert_message</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>location_access_hint</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>location_access_hint</string>
+	<key>NSCameraUsageDescription</key>
+	<string>camera_access_alert_message</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>bluetooth_access_alert_message</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>bluetooth_access_alert_message</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiamVyZW15cmljYXJkIiwiYSI6ImNrMTk4dnJtdjF6aDczcHRrZ250bTh0YmoifQ.nOLWdq-JtlSl62lncP6IpQ</string>
+	<key>OvalApiEndpoint</key>
+	<string>${OVAL_ENDPOINT}</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionAllowsInsecureHTTPLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GothamSSm-XLightItalic.otf</string>
+		<string>GothamSSm-Medium.otf</string>
+		<string>GothamSSm-XLight.otf</string>
+		<string>GothamSSm-Black.otf</string>
+		<string>GothamSSm-Light.otf</string>
+		<string>GothamSSm-Book.otf</string>
+		<string>GothamSSm-Bold.otf</string>
+		<string>GothamSSm-MediumItalic.otf</string>
+		<string>GothamSSm-BookItalic.otf</string>
+		<string>GothamSSm-LightItalic.otf</string>
+		<string>GothamSSm-BoldItalic.otf</string>
+		<string>GothamSSm-BlackItalic.otf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>OVAL_BASE_URL</key>
+	<string>${OVAL_BASE_URL}</string>
+</dict>
+</plist>

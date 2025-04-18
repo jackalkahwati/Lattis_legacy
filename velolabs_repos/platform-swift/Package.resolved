@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "http-client-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:rawillk/http-client-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6f396d99fe8220ab717d1e50324a676af050a477"
+      }
+    }
+  ],
+  "version" : 2
+}

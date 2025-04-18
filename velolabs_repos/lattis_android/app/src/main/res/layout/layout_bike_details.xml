@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_bike_card_details">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="36dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_fleet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_bike_name"
+            android:background="@android:color/transparent"
+            android:text="Castro District"
+            android:gravity="center"
+            android:layout_alignTop="@+id/iv_logo"
+            android:layout_alignBottom="@+id/iv_logo"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#B5B5B5"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <View
+            android:id="@+id/card_greyline1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/iv_logo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#44818181"></View>
+
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_bike_tariff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/card_greyline1"
+            android:layout_marginTop="6dp"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:layout_marginBottom="10dp"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_bike_tariff_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_bike_tariff"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/tv_bike_tariff"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/lattis_accent_color"
+            android:textSize="9dp"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_bike_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_greyline1"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/tv_bike_tariff_description"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#818181"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <ImageView
+            android:id="@+id/card_type_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/tv_bike_tariff"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_card_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/card_type_icon"
+            android:layout_alignBottom="@+id/card_type_icon"
+            android:layout_below="@+id/tv_bike_tariff"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/card_type_icon"
+            android:textAppearance="@style/TextView.Grey.Small"
+            android:textSize="10dp"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="#44818181"></View>
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/ct_bike_terms_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="2"
+        android:text="@string/find_rite_terms_body"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/color_tc_text"
+        android:textSize="11dp"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+</LinearLayout>

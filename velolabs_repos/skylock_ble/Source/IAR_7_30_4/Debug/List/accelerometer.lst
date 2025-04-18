@@ -1,0 +1,830 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:47
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  C:\VeloLabs\SkyLock Project\Source\accelerometer.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock Project\Source\accelerometer.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\accelerometer.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\accelerometer.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\Source\accelerometer.c
+      1          /*
+      2          ** Proprietary Rights Notice
+      3          **
+      4          ** This material contains the valuable properties and trade secrets of:
+      5          **
+      6          **    Velo Labs
+      7          **    San Francisco, CA, USA
+      8          **
+      9          ** All rights reserved. No part of this work may be reproduced, distributed, or
+     10          ** transmitted in any form or by any means, including photocopying, recording,
+     11          ** or other electronic or mechanical methods, without the prior written permission
+     12          ** of Velo Labs.
+     13          **
+     14          ** Copyright (c) 2015, Velo Labs
+     15          ** Contains Confidential and Trade Secret Information
+     16          */
+     17          
+     18          /*
+     19          ** File Name:  accelerometer.c
+     20          **
+     21          ** Purpose:    Routines to manage the accelerometer
+     22          */
+     23          
+     24          #include "master.h"
+     25          #include "stdio.h"
+     26          #include "hardware.h"
+     27          #include "i2c.h"
+     28          #include "utils.h"
+     29          
+     30          #define  MAG_WHO_AM_I      (0x0F)
+     31          
+     32          #define  ACC_DELAY         (5)
+     33          #define  ACC_TIMEOUT       (1000 / ACC_DELAY)
+     34          
+     35          /*
+     36          ** Function to write bytes out the I2C port. Not sure if a return value is really needed
+     37          ** or not. Thinking is if we have an error, then this routine will call I2C_Abort. But I
+     38          ** suppose the caller may want to know and may want to return.
+     39          **
+     40          ** Returns 0 if there is no errors
+     41          ** Returns non-zero if there is a problem writing
+     42          */
+
+   \                                 In section .text, align 2, keep-with-next
+     43          uint8_t
+     44          ACC_Write (uint8_t addr, const uint8_t *data, uint8_t len, uint8_t stop)
+     45          {
+   \                     ACC_Write: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x0015             MOVS     R5,R2
+   \   00000006   0x001F             MOVS     R7,R3
+     46             unsigned int delayLimit;
+     47          
+     48                /* If no data then return an error */
+     49             if (!len)
+   \   00000008   0xB2ED             UXTB     R5,R5
+   \   0000000A   0x2D00             CMP      R5,#+0
+   \   0000000C   0xD101             BNE      ??ACC_Write_0
+     50                return (I2C_ERROR_USAGE);
+   \   0000000E   0x2003             MOVS     R0,#+3
+   \   00000010   0xE051             B        ??ACC_Write_1
+     51          
+     52             NRF_TWI1->EVENTS_TXDSENT = 0;
+   \                     ??ACC_Write_0: (+1)
+   \   00000012   0x2100             MOVS     R1,#+0
+   \   00000014   0x....             LDR      R2,??DataTable2  ;; 0x4000411c
+   \   00000016   0x6011             STR      R1,[R2, #+0]
+     53             NRF_TWI1->ADDRESS = addr;
+   \   00000018   0xB2C0             UXTB     R0,R0
+   \   0000001A   0x....             LDR      R1,??DataTable2_1  ;; 0x40004588
+   \   0000001C   0x6008             STR      R0,[R1, #+0]
+     54             NRF_TWI1->TXD = *data++;
+   \   0000001E   0x7820             LDRB     R0,[R4, #+0]
+   \   00000020   0x....             LDR      R1,??DataTable2_2  ;; 0x4000451c
+   \   00000022   0x6008             STR      R0,[R1, #+0]
+   \   00000024   0x1C64             ADDS     R4,R4,#+1
+     55             NRF_TWI1->TASKS_STARTTX = 1;
+   \   00000026   0x2001             MOVS     R0,#+1
+   \   00000028   0x....             LDR      R1,??DataTable2_3  ;; 0x40004008
+   \   0000002A   0x6008             STR      R0,[R1, #+0]
+   \   0000002C   0xE009             B        ??ACC_Write_2
+     56          
+     57             while (len)
+     58                {
+     59                len--;
+     60          
+     61                   /*
+     62                   ** Setup 2 exit conditions from this loop. A timeout or the most likely reason, we sent the byte.
+     63                   ** We could also search for ERROR but that is not necessary. The timeout will catch both the timeout
+     64                   ** and error condition. We can test for error afterwards though. Just remember to test for error before
+     65                   ** timeout since an error will also be a timeout.
+     66                   */
+     67                delayLimit = 0;
+     68                while ((NRF_TWI1->EVENTS_TXDSENT == 0) && (delayLimit < ACC_TIMEOUT))
+     69                   {
+     70                   UTIL_DelayUsec(ACC_DELAY);
+     71                   delayLimit++;
+     72                   }
+     73          
+     74          //      if (delayLimit > debugMaxI2CWaitTime)
+     75          //         debugMaxI2CWaitTime = delayLimit;
+     76          
+     77                   /*
+     78                   ** Did the TWI device bail out with an error. Is that why we timed out?
+     79                   */
+     80                if (NRF_TWI1->EVENTS_ERROR)
+     81                   {
+     82          //         debugErrorCount++;
+     83          //         I2C_Abort();
+     84                   return (I2C_ERROR_TWI);
+     85                   }
+     86          
+     87                   /*
+     88                   ** If we timeout, call the abort routine to reset the port
+     89                   */
+     90                if (delayLimit >= ACC_TIMEOUT)
+     91                   {
+     92          //         I2C_Abort();
+     93                   return (I2C_ERROR_TIMEOUT);
+     94                   }
+     95          
+     96                NRF_TWI1->EVENTS_TXDSENT = 0;
+   \                     ??ACC_Write_3: (+1)
+   \   0000002E   0x2000             MOVS     R0,#+0
+   \   00000030   0x....             LDR      R1,??DataTable2  ;; 0x4000411c
+   \   00000032   0x6008             STR      R0,[R1, #+0]
+     97          
+     98                if (len)
+   \   00000034   0xB2ED             UXTB     R5,R5
+   \   00000036   0x2D00             CMP      R5,#+0
+   \   00000038   0xD003             BEQ      ??ACC_Write_2
+     99                   NRF_TWI1->TXD = *data++;
+   \   0000003A   0x7820             LDRB     R0,[R4, #+0]
+   \   0000003C   0x....             LDR      R1,??DataTable2_2  ;; 0x4000451c
+   \   0000003E   0x6008             STR      R0,[R1, #+0]
+   \   00000040   0x1C64             ADDS     R4,R4,#+1
+   \                     ??ACC_Write_2: (+1)
+   \   00000042   0xB2ED             UXTB     R5,R5
+   \   00000044   0x2D00             CMP      R5,#+0
+   \   00000046   0xD016             BEQ      ??ACC_Write_4
+   \   00000048   0x1E6D             SUBS     R5,R5,#+1
+   \   0000004A   0x2600             MOVS     R6,#+0
+   \   0000004C   0xE003             B        ??ACC_Write_5
+   \                     ??ACC_Write_6: (+1)
+   \   0000004E   0x2005             MOVS     R0,#+5
+   \   00000050   0x.... 0x....      BL       UTIL_DelayUsec
+   \   00000054   0x1C76             ADDS     R6,R6,#+1
+   \                     ??ACC_Write_5: (+1)
+   \   00000056   0x....             LDR      R0,??DataTable2  ;; 0x4000411c
+   \   00000058   0x6800             LDR      R0,[R0, #+0]
+   \   0000005A   0x2800             CMP      R0,#+0
+   \   0000005C   0xD101             BNE      ??ACC_Write_7
+   \   0000005E   0x2EC8             CMP      R6,#+200
+   \   00000060   0xD3F5             BCC      ??ACC_Write_6
+   \                     ??ACC_Write_7: (+1)
+   \   00000062   0x....             LDR      R0,??DataTable2_4  ;; 0x40004124
+   \   00000064   0x6800             LDR      R0,[R0, #+0]
+   \   00000066   0x2800             CMP      R0,#+0
+   \   00000068   0xD001             BEQ      ??ACC_Write_8
+   \   0000006A   0x2002             MOVS     R0,#+2
+   \   0000006C   0xE023             B        ??ACC_Write_1
+   \                     ??ACC_Write_8: (+1)
+   \   0000006E   0x2EC8             CMP      R6,#+200
+   \   00000070   0xD3DD             BCC      ??ACC_Write_3
+   \   00000072   0x2001             MOVS     R0,#+1
+   \   00000074   0xE01F             B        ??ACC_Write_1
+    100                }
+    101          
+    102                /*
+    103                ** If the user actually wants to do a read they will call us with a write first and in that case
+    104                ** they won't want us to send the STOP. So this parameter provides that option.
+    105                */
+    106             if (stop)
+   \                     ??ACC_Write_4: (+1)
+   \   00000076   0xB2FF             UXTB     R7,R7
+   \   00000078   0x2F00             CMP      R7,#+0
+   \   0000007A   0xD01B             BEQ      ??ACC_Write_9
+    107                {
+    108                NRF_TWI1->EVENTS_STOPPED = 0;
+   \   0000007C   0x2000             MOVS     R0,#+0
+   \   0000007E   0x....             LDR      R1,??DataTable2_5  ;; 0x40004104
+   \   00000080   0x6008             STR      R0,[R1, #+0]
+    109                NRF_TWI1->TASKS_STOP = 1;
+   \   00000082   0x2001             MOVS     R0,#+1
+   \   00000084   0x....             LDR      R1,??DataTable2_6  ;; 0x40004014
+   \   00000086   0x6008             STR      R0,[R1, #+0]
+    110          
+    111                   /* Wait until stop sequence is sent */
+    112                delayLimit = 0;
+   \   00000088   0x2600             MOVS     R6,#+0
+   \   0000008A   0xE003             B        ??ACC_Write_10
+    113                while ((NRF_TWI1->EVENTS_STOPPED == 0) && (delayLimit < ACC_TIMEOUT))
+    114                   {
+    115                   UTIL_DelayUsec(ACC_DELAY);
+   \                     ??ACC_Write_11: (+1)
+   \   0000008C   0x2005             MOVS     R0,#+5
+   \   0000008E   0x.... 0x....      BL       UTIL_DelayUsec
+    116                   delayLimit++;
+   \   00000092   0x1C76             ADDS     R6,R6,#+1
+    117                   }
+   \                     ??ACC_Write_10: (+1)
+   \   00000094   0x....             LDR      R0,??DataTable2_5  ;; 0x40004104
+   \   00000096   0x6800             LDR      R0,[R0, #+0]
+   \   00000098   0x2800             CMP      R0,#+0
+   \   0000009A   0xD101             BNE      ??ACC_Write_12
+   \   0000009C   0x2EC8             CMP      R6,#+200
+   \   0000009E   0xD3F5             BCC      ??ACC_Write_11
+    118          
+    119          //      if (delayLimit > debugMaxI2CStopTime)
+    120          //         debugMaxI2CStopTime = delayLimit;
+    121          
+    122                if (NRF_TWI1->EVENTS_ERROR)
+   \                     ??ACC_Write_12: (+1)
+   \   000000A0   0x....             LDR      R0,??DataTable2_4  ;; 0x40004124
+   \   000000A2   0x6800             LDR      R0,[R0, #+0]
+   \   000000A4   0x2800             CMP      R0,#+0
+   \   000000A6   0xD001             BEQ      ??ACC_Write_13
+    123                   {
+    124          //         debugErrorCount++;
+    125          //         I2C_Abort();
+    126                   return (I2C_ERROR_TWI);
+   \   000000A8   0x2002             MOVS     R0,#+2
+   \   000000AA   0xE004             B        ??ACC_Write_1
+    127                   }
+    128          
+    129                if (delayLimit >= ACC_TIMEOUT)
+   \                     ??ACC_Write_13: (+1)
+   \   000000AC   0x2EC8             CMP      R6,#+200
+   \   000000AE   0xD301             BCC      ??ACC_Write_9
+    130                   {
+    131          //         I2C_Abort();
+    132                   return (I2C_ERROR_TIMEOUT);
+   \   000000B0   0x2001             MOVS     R0,#+1
+   \   000000B2   0xE000             B        ??ACC_Write_1
+    133                   }
+    134                }
+    135          
+    136             return (I2C_ERROR_NONE);
+   \                     ??ACC_Write_9: (+1)
+   \   000000B4   0x2000             MOVS     R0,#+0
+   \                     ??ACC_Write_1: (+1)
+   \   000000B6   0xBDF2             POP      {R1,R4-R7,PC}    ;; return
+    137          }
+    138          
+    139          /*
+    140          ** This function will read a fixed number of bytes back from the specified device.
+    141          **
+    142          ** Returns 0 if there is no errors
+    143          ** Returns non-zero if thre is a problem
+    144          */
+
+   \                                 In section .text, align 2, keep-with-next
+    145          uint8_t
+    146          ACC_Read (uint8_t addr, uint8_t *data, uint8_t len)
+    147          {
+   \                     ACC_Read: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x000C             MOVS     R4,R1
+   \   00000004   0x0015             MOVS     R5,R2
+    148             unsigned int delayLimit;
+    149          
+    150                /* If no data then return an error */
+    151             if (!len)
+   \   00000006   0xB2ED             UXTB     R5,R5
+   \   00000008   0x2D00             CMP      R5,#+0
+   \   0000000A   0xD101             BNE      ??ACC_Read_0
+    152                return (I2C_ERROR_USAGE);
+   \   0000000C   0x2003             MOVS     R0,#+3
+   \   0000000E   0xE069             B        ??ACC_Read_1
+    153          
+    154             NRF_PPI->CHENCLR = PPI_CHENCLR_CH0_Msk;
+   \                     ??ACC_Read_0: (+1)
+   \   00000010   0x2101             MOVS     R1,#+1
+   \   00000012   0x....             LDR      R2,??DataTable2_7  ;; 0x4001f508
+   \   00000014   0x6011             STR      R1,[R2, #+0]
+    155             NRF_TWI1->EVENTS_RXDREADY = 0;
+   \   00000016   0x2100             MOVS     R1,#+0
+   \   00000018   0x....             LDR      R2,??DataTable2_8  ;; 0x40004108
+   \   0000001A   0x6011             STR      R1,[R2, #+0]
+    156             NRF_TWI1->ADDRESS = addr;
+   \   0000001C   0xB2C0             UXTB     R0,R0
+   \   0000001E   0x....             LDR      R1,??DataTable2_1  ;; 0x40004588
+   \   00000020   0x6008             STR      R0,[R1, #+0]
+    157          
+    158             if (len == 1)
+   \   00000022   0xB2ED             UXTB     R5,R5
+   \   00000024   0x2D01             CMP      R5,#+1
+   \   00000026   0xD103             BNE      ??ACC_Read_2
+    159                NRF_PPI->CH[1].TEP = (uint32_t)&NRF_TWI1->TASKS_STOP;
+   \   00000028   0x....             LDR      R0,??DataTable2_6  ;; 0x40004014
+   \   0000002A   0x....             LDR      R1,??DataTable2_9  ;; 0x4001f51c
+   \   0000002C   0x6008             STR      R0,[R1, #+0]
+   \   0000002E   0xE002             B        ??ACC_Read_3
+    160             else
+    161                NRF_PPI->CH[1].TEP = (uint32_t)&NRF_TWI1->TASKS_SUSPEND;
+   \                     ??ACC_Read_2: (+1)
+   \   00000030   0x....             LDR      R0,??DataTable2_10  ;; 0x4000401c
+   \   00000032   0x....             LDR      R1,??DataTable2_9  ;; 0x4001f51c
+   \   00000034   0x6008             STR      R0,[R1, #+0]
+    162          
+    163             NRF_TWI1->EVENTS_STOPPED = 0;
+   \                     ??ACC_Read_3: (+1)
+   \   00000036   0x2000             MOVS     R0,#+0
+   \   00000038   0x....             LDR      R1,??DataTable2_5  ;; 0x40004104
+   \   0000003A   0x6008             STR      R0,[R1, #+0]
+    164             NRF_PPI->CHENSET = PPI_CHENSET_CH0_Msk;
+   \   0000003C   0x2001             MOVS     R0,#+1
+   \   0000003E   0x....             LDR      R1,??DataTable2_11  ;; 0x4001f504
+   \   00000040   0x6008             STR      R0,[R1, #+0]
+    165             NRF_TWI1->TASKS_STARTRX = 1;
+   \   00000042   0x2001             MOVS     R0,#+1
+   \   00000044   0x....             LDR      R1,??DataTable2_12  ;; 0x40004000
+   \   00000046   0x6008             STR      R0,[R1, #+0]
+   \   00000048   0xE013             B        ??ACC_Read_4
+    166          
+    167             while (len)
+    168                {
+    169                   /*
+    170                   ** Setup 2 exit conditions from this loop. A timeout or the most likely reason, we received a byte.
+    171                   ** Note an error from the TWI module could also happen but that will lead to a timeout. So just
+    172                   ** check for a timeout and catch the error afterwards.
+    173                   */
+    174                delayLimit = 0;
+    175                while ((NRF_TWI1->EVENTS_RXDREADY == 0) && (delayLimit < ACC_TIMEOUT))
+    176                   {
+    177                   UTIL_DelayUsec(ACC_DELAY);
+    178                   delayLimit++;
+    179                   }
+    180          
+    181          //      if (delayLimit > debugMaxI2CReadWait)
+    182          //         debugMaxI2CReadWait = delayLimit;
+    183          
+    184                NRF_TWI1->EVENTS_RXDREADY = 0;
+    185          
+    186                   /*
+    187                   ** Search for these errors seperately so we can track them for now.
+    188                   */
+    189                if (NRF_TWI1->EVENTS_ERROR)
+    190                   {
+    191          //         debugErrorCount++;
+    192          //         I2C_Abort();
+    193                   return (I2C_ERROR_TWI);
+    194                   }
+    195          
+    196                   /*
+    197                   ** If we timeout, call the abort routine to reset the port
+    198                   */
+    199                if (delayLimit >= ACC_TIMEOUT)
+    200                   {
+    201          //         I2C_Abort();
+    202                   return (I2C_ERROR_TIMEOUT);
+    203                   }
+    204          
+    205                *data++ = NRF_TWI1->RXD;
+   \                     ??ACC_Read_5: (+1)
+   \   0000004A   0x....             LDR      R0,??DataTable2_13  ;; 0x40004518
+   \   0000004C   0x6800             LDR      R0,[R0, #+0]
+   \   0000004E   0x7020             STRB     R0,[R4, #+0]
+   \   00000050   0x1C64             ADDS     R4,R4,#+1
+    206          
+    207                len--;
+   \   00000052   0x1E6D             SUBS     R5,R5,#+1
+    208          
+    209                if (len == 1)
+   \   00000054   0xB2ED             UXTB     R5,R5
+   \   00000056   0x2D01             CMP      R5,#+1
+   \   00000058   0xD102             BNE      ??ACC_Read_6
+    210                   NRF_PPI->CH[1].TEP = (uint32_t)&NRF_TWI1->TASKS_STOP;
+   \   0000005A   0x....             LDR      R0,??DataTable2_6  ;; 0x40004014
+   \   0000005C   0x....             LDR      R1,??DataTable2_9  ;; 0x4001f51c
+   \   0000005E   0x6008             STR      R0,[R1, #+0]
+    211          
+    212                if (len)
+   \                     ??ACC_Read_6: (+1)
+   \   00000060   0xB2ED             UXTB     R5,R5
+   \   00000062   0x2D00             CMP      R5,#+0
+   \   00000064   0xD005             BEQ      ??ACC_Read_4
+    213                   {
+    214                      /* See twi_hw_master.c and the app note about CPU problem */
+    215                   UTIL_DelayUsec(20);
+   \   00000066   0x2014             MOVS     R0,#+20
+   \   00000068   0x.... 0x....      BL       UTIL_DelayUsec
+    216                   NRF_TWI1->TASKS_RESUME = 1;
+   \   0000006C   0x2001             MOVS     R0,#+1
+   \   0000006E   0x....             LDR      R1,??DataTable2_14  ;; 0x40004020
+   \   00000070   0x6008             STR      R0,[R1, #+0]
+    217                   }
+   \                     ??ACC_Read_4: (+1)
+   \   00000072   0xB2ED             UXTB     R5,R5
+   \   00000074   0x2D00             CMP      R5,#+0
+   \   00000076   0xD018             BEQ      ??ACC_Read_7
+   \   00000078   0x2600             MOVS     R6,#+0
+   \   0000007A   0xE003             B        ??ACC_Read_8
+   \                     ??ACC_Read_9: (+1)
+   \   0000007C   0x2005             MOVS     R0,#+5
+   \   0000007E   0x.... 0x....      BL       UTIL_DelayUsec
+   \   00000082   0x1C76             ADDS     R6,R6,#+1
+   \                     ??ACC_Read_8: (+1)
+   \   00000084   0x....             LDR      R0,??DataTable2_8  ;; 0x40004108
+   \   00000086   0x6800             LDR      R0,[R0, #+0]
+   \   00000088   0x2800             CMP      R0,#+0
+   \   0000008A   0xD101             BNE      ??ACC_Read_10
+   \   0000008C   0x2EC8             CMP      R6,#+200
+   \   0000008E   0xD3F5             BCC      ??ACC_Read_9
+   \                     ??ACC_Read_10: (+1)
+   \   00000090   0x2000             MOVS     R0,#+0
+   \   00000092   0x....             LDR      R1,??DataTable2_8  ;; 0x40004108
+   \   00000094   0x6008             STR      R0,[R1, #+0]
+   \   00000096   0x....             LDR      R0,??DataTable2_4  ;; 0x40004124
+   \   00000098   0x6800             LDR      R0,[R0, #+0]
+   \   0000009A   0x2800             CMP      R0,#+0
+   \   0000009C   0xD001             BEQ      ??ACC_Read_11
+   \   0000009E   0x2002             MOVS     R0,#+2
+   \   000000A0   0xE020             B        ??ACC_Read_1
+   \                     ??ACC_Read_11: (+1)
+   \   000000A2   0x2EC8             CMP      R6,#+200
+   \   000000A4   0xD3D1             BCC      ??ACC_Read_5
+   \   000000A6   0x2001             MOVS     R0,#+1
+   \   000000A8   0xE01C             B        ??ACC_Read_1
+    218                }
+    219          
+    220                /* Wait until stop sequence is done */
+    221             delayLimit = 0;
+   \                     ??ACC_Read_7: (+1)
+   \   000000AA   0x2600             MOVS     R6,#+0
+   \   000000AC   0xE003             B        ??ACC_Read_12
+    222             while ((NRF_TWI1->EVENTS_STOPPED == 0) && (delayLimit < ACC_TIMEOUT))
+    223                {
+    224                UTIL_DelayUsec(ACC_DELAY);
+   \                     ??ACC_Read_13: (+1)
+   \   000000AE   0x2005             MOVS     R0,#+5
+   \   000000B0   0x.... 0x....      BL       UTIL_DelayUsec
+    225                delayLimit++;
+   \   000000B4   0x1C76             ADDS     R6,R6,#+1
+    226                }
+   \                     ??ACC_Read_12: (+1)
+   \   000000B6   0x....             LDR      R0,??DataTable2_5  ;; 0x40004104
+   \   000000B8   0x6800             LDR      R0,[R0, #+0]
+   \   000000BA   0x2800             CMP      R0,#+0
+   \   000000BC   0xD101             BNE      ??ACC_Read_14
+   \   000000BE   0x2EC8             CMP      R6,#+200
+   \   000000C0   0xD3F5             BCC      ??ACC_Read_13
+    227          
+    228          //   if (delayLimit > debugMaxI2CStopTime)
+    229          //      debugMaxI2CStopTime = delayLimit;
+    230          
+    231             if (NRF_TWI1->EVENTS_ERROR)
+   \                     ??ACC_Read_14: (+1)
+   \   000000C2   0x....             LDR      R0,??DataTable2_4  ;; 0x40004124
+   \   000000C4   0x6800             LDR      R0,[R0, #+0]
+   \   000000C6   0x2800             CMP      R0,#+0
+   \   000000C8   0xD001             BEQ      ??ACC_Read_15
+    232                {
+    233          //      debugErrorCount++;
+    234          //      I2C_Abort();
+    235                return (I2C_ERROR_TWI);
+   \   000000CA   0x2002             MOVS     R0,#+2
+   \   000000CC   0xE00A             B        ??ACC_Read_1
+    236                }
+    237          
+    238             if (delayLimit >= ACC_TIMEOUT)
+   \                     ??ACC_Read_15: (+1)
+   \   000000CE   0x2EC8             CMP      R6,#+200
+   \   000000D0   0xD301             BCC      ??ACC_Read_16
+    239                {
+    240          //      I2C_Abort();
+    241                return (I2C_ERROR_TIMEOUT);
+   \   000000D2   0x2001             MOVS     R0,#+1
+   \   000000D4   0xE006             B        ??ACC_Read_1
+    242                }
+    243          
+    244             NRF_TWI1->EVENTS_STOPPED = 0;
+   \                     ??ACC_Read_16: (+1)
+   \   000000D6   0x2000             MOVS     R0,#+0
+   \   000000D8   0x....             LDR      R1,??DataTable2_5  ;; 0x40004104
+   \   000000DA   0x6008             STR      R0,[R1, #+0]
+    245             NRF_PPI->CHENCLR = PPI_CHENCLR_CH0_Msk;
+   \   000000DC   0x2001             MOVS     R0,#+1
+   \   000000DE   0x....             LDR      R1,??DataTable2_7  ;; 0x4001f508
+   \   000000E0   0x6008             STR      R0,[R1, #+0]
+    246          
+    247             return (I2C_ERROR_NONE);
+   \   000000E2   0x2000             MOVS     R0,#+0
+   \                     ??ACC_Read_1: (+1)
+   \   000000E4   0xBD70             POP      {R4-R6,PC}       ;; return
+    248          }
+    249          
+    250          
+    251          /*
+    252          ** For now the Accelerometer is on a 2nd, I2C bus. So just double up the code to support this for now.
+    253          ** On the next board we should get back to only 1 I2C bus.
+    254          */
+
+   \                                 In section .text, align 2, keep-with-next
+    255          void
+    256          Accelerometer_Setup (void)
+    257          {
+   \                     Accelerometer_Setup: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+    258             uint8_t data_byte[6];
+    259          
+    260                /*
+    261                ** Per the nRF51 Reference manual in the TWI section. To get proper signal levels
+    262                ** on SCL and SDA when the TWI interface is off or when it is disabled, these pins
+    263                ** should be configured as GPIO pins with the following settings:
+    264                **    Direction should be Input
+    265                **    Drive strength should be S0D1
+    266                **    Pull-up, not stated but that seems to make the most sense
+    267                **    Connected, not stated but that allows us to query the pin status
+    268                **    Sense disabled, not stated but don't believe this would be needed on these pins
+    269                */
+    270             NRF_GPIO->PIN_CNF[LIS2DH_CLK] =
+    271                      (GPIO_PIN_CNF_DIR_Input      << GPIO_PIN_CNF_DIR_Pos)
+    272                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+    273                    | (GPIO_PIN_CNF_PULL_Pullup    << GPIO_PIN_CNF_PULL_Pos)
+    274                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+    275                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+   \   00000004   0x....             LDR      R0,??DataTable2_15  ;; 0x60c
+   \   00000006   0x....             LDR      R1,??DataTable2_16  ;; 0x50000764
+   \   00000008   0x6008             STR      R0,[R1, #+0]
+    276          
+    277             NRF_GPIO->PIN_CNF[LIS2DH_CS] =
+    278                      (GPIO_PIN_CNF_DIR_Input      << GPIO_PIN_CNF_DIR_Pos)
+    279                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+    280                    | (GPIO_PIN_CNF_PULL_Pullup    << GPIO_PIN_CNF_PULL_Pos)
+    281                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+    282                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+   \   0000000A   0x....             LDR      R0,??DataTable2_15  ;; 0x60c
+   \   0000000C   0x....             LDR      R1,??DataTable2_17  ;; 0x50000760
+   \   0000000E   0x6008             STR      R0,[R1, #+0]
+    283          
+    284                /*
+    285                ** For the current hardware, there is a CS pin that is connected to Pin 13 (LIS2DH_MOSI)
+    286                ** This needs to be tied high for I2C. Also there the I2C address pin which needs to be
+    287                ** driven either high or low and is connected to pin 14 (LIS2DH_MISO).
+    288                */
+    289             NRF_GPIO->PIN_CNF[LIS2DH_MOSI] =
+    290                      (GPIO_PIN_CNF_DIR_Output     << GPIO_PIN_CNF_DIR_Pos)
+    291                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+    292                    | (GPIO_PIN_CNF_PULL_Pullup    << GPIO_PIN_CNF_PULL_Pos)
+    293                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+    294                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+   \   00000010   0x....             LDR      R0,??DataTable2_18  ;; 0x60d
+   \   00000012   0x....             LDR      R1,??DataTable2_19  ;; 0x5000075c
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+    295          
+    296          #if defined(BOARD_NUMBER_1)
+    297             NRF_GPIO->PIN_CNF[LIS2DH_MISO] =
+    298                      (GPIO_PIN_CNF_DIR_Output     << GPIO_PIN_CNF_DIR_Pos)
+    299                    | (GPIO_PIN_CNF_INPUT_Connect  << GPIO_PIN_CNF_INPUT_Pos)
+    300                    | (GPIO_PIN_CNF_PULL_Disabled  << GPIO_PIN_CNF_PULL_Pos)
+    301                    | (GPIO_PIN_CNF_DRIVE_S0D1     << GPIO_PIN_CNF_DRIVE_Pos)
+    302                    | (GPIO_PIN_CNF_SENSE_Disabled << GPIO_PIN_CNF_SENSE_Pos);
+    303          
+    304             NRF_GPIO->OUTCLR = (1UL << LIS2DH_MISO);
+    305          #endif
+    306          
+    307             NRF_GPIO->OUTSET = (1UL << LIS2DH_MOSI);
+   \   00000016   0x2080             MOVS     R0,#+128
+   \   00000018   0x0400             LSLS     R0,R0,#+16       ;; #+8388608
+   \   0000001A   0x....             LDR      R1,??DataTable2_20  ;; 0x50000508
+   \   0000001C   0x6008             STR      R0,[R1, #+0]
+    308          
+    309             NRF_TWI1->EVENTS_RXDREADY = 0;
+   \   0000001E   0x2000             MOVS     R0,#+0
+   \   00000020   0x....             LDR      R1,??DataTable2_8  ;; 0x40004108
+   \   00000022   0x6008             STR      R0,[R1, #+0]
+    310             NRF_TWI1->EVENTS_TXDSENT = 0;
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0x....             LDR      R1,??DataTable2  ;; 0x4000411c
+   \   00000028   0x6008             STR      R0,[R1, #+0]
+    311             NRF_TWI1->PSELSCL = LIS2DH_CLK;
+   \   0000002A   0x2019             MOVS     R0,#+25
+   \   0000002C   0x....             LDR      R1,??DataTable2_21  ;; 0x40004508
+   \   0000002E   0x6008             STR      R0,[R1, #+0]
+    312             NRF_TWI1->PSELSDA = LIS2DH_CS;
+   \   00000030   0x2018             MOVS     R0,#+24
+   \   00000032   0x....             LDR      R1,??DataTable2_22  ;; 0x4000450c
+   \   00000034   0x6008             STR      R0,[R1, #+0]
+    313             NRF_TWI1->FREQUENCY = TWI_FREQUENCY_FREQUENCY_K100 << TWI_FREQUENCY_FREQUENCY_Pos;
+   \   00000036   0x20CC             MOVS     R0,#+204
+   \   00000038   0x0440             LSLS     R0,R0,#+17       ;; #+26738688
+   \   0000003A   0x....             LDR      R1,??DataTable2_23  ;; 0x40004524
+   \   0000003C   0x6008             STR      R0,[R1, #+0]
+    314          
+    315                /* This channel is used during reads, source of action is always BB */
+    316             NRF_PPI->CH[1].EEP = (uint32_t)&NRF_TWI1->EVENTS_BB;
+   \   0000003E   0x....             LDR      R0,??DataTable2_24  ;; 0x40004138
+   \   00000040   0x....             LDR      R1,??DataTable2_25  ;; 0x4001f518
+   \   00000042   0x6008             STR      R0,[R1, #+0]
+    317          
+    318             NRF_TWI1->ENABLE = TWI_ENABLE_ENABLE_Enabled << TWI_ENABLE_ENABLE_Pos;
+   \   00000044   0x2005             MOVS     R0,#+5
+   \   00000046   0x....             LDR      R1,??DataTable2_26  ;; 0x40004500
+   \   00000048   0x6008             STR      R0,[R1, #+0]
+    319          
+    320               /* In case a slave may be stuck, try to flush out bus */
+    321          //   I2C_Abort();
+    322          
+    323          
+    324             data_byte[0] = MAG_WHO_AM_I;
+   \   0000004A   0x200F             MOVS     R0,#+15
+   \   0000004C   0x4669             MOV      R1,SP
+   \   0000004E   0x7008             STRB     R0,[R1, #+0]
+    325             ACC_Write (I2C_ADDR_ACCEL, data_byte, 1, FALSE);
+   \   00000050   0x2300             MOVS     R3,#+0
+   \   00000052   0x2201             MOVS     R2,#+1
+   \   00000054   0x4669             MOV      R1,SP
+   \   00000056   0x2018             MOVS     R0,#+24
+   \   00000058   0x.... 0x....      BL       ACC_Write
+    326             ACC_Read (I2C_ADDR_ACCEL, data_byte, 1);
+   \   0000005C   0x2201             MOVS     R2,#+1
+   \   0000005E   0x4669             MOV      R1,SP
+   \   00000060   0x2018             MOVS     R0,#+24
+   \   00000062   0x.... 0x....      BL       ACC_Read
+    327          }
+   \   00000066   0xBD07             POP      {R0-R2,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x4000411C         DC32     0x4000411c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x40004588         DC32     0x40004588
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x4000451C         DC32     0x4000451c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x40004008         DC32     0x40004008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x40004124         DC32     0x40004124
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \   00000000   0x40004104         DC32     0x40004104
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \   00000000   0x40004014         DC32     0x40004014
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \   00000000   0x4001F508         DC32     0x4001f508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_8:
+   \   00000000   0x40004108         DC32     0x40004108
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_9:
+   \   00000000   0x4001F51C         DC32     0x4001f51c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_10:
+   \   00000000   0x4000401C         DC32     0x4000401c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_11:
+   \   00000000   0x4001F504         DC32     0x4001f504
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_12:
+   \   00000000   0x40004000         DC32     0x40004000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_13:
+   \   00000000   0x40004518         DC32     0x40004518
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_14:
+   \   00000000   0x40004020         DC32     0x40004020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_15:
+   \   00000000   0x0000060C         DC32     0x60c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_16:
+   \   00000000   0x50000764         DC32     0x50000764
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_17:
+   \   00000000   0x50000760         DC32     0x50000760
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_18:
+   \   00000000   0x0000060D         DC32     0x60d
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_19:
+   \   00000000   0x5000075C         DC32     0x5000075c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_20:
+   \   00000000   0x50000508         DC32     0x50000508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_21:
+   \   00000000   0x40004508         DC32     0x40004508
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_22:
+   \   00000000   0x4000450C         DC32     0x4000450c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_23:
+   \   00000000   0x40004524         DC32     0x40004524
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_24:
+   \   00000000   0x40004138         DC32     0x40004138
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_25:
+   \   00000000   0x4001F518         DC32     0x4001f518
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_26:
+   \   00000000   0x40004500         DC32     0x40004500
+    328          
+    329          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   ACC_Read
+        16   -> UTIL_DelayUsec
+      24   ACC_Write
+        24   -> UTIL_DelayUsec
+      16   Accelerometer_Setup
+        16   -> ACC_Read
+        16   -> ACC_Write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_10
+       4  ??DataTable2_11
+       4  ??DataTable2_12
+       4  ??DataTable2_13
+       4  ??DataTable2_14
+       4  ??DataTable2_15
+       4  ??DataTable2_16
+       4  ??DataTable2_17
+       4  ??DataTable2_18
+       4  ??DataTable2_19
+       4  ??DataTable2_2
+       4  ??DataTable2_20
+       4  ??DataTable2_21
+       4  ??DataTable2_22
+       4  ??DataTable2_23
+       4  ??DataTable2_24
+       4  ??DataTable2_25
+       4  ??DataTable2_26
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       4  ??DataTable2_8
+       4  ??DataTable2_9
+     230  ACC_Read
+     184  ACC_Write
+     104  Accelerometer_Setup
+
+ 
+ 626 bytes in section .text
+ 
+ 626 bytes of CODE memory
+
+Errors: none
+Warnings: none

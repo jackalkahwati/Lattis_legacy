@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <View
+        android:id="@+id/divider_in_payment_promotion"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/promotion_divider"
+        custom:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/divider_in_payment_promotion"
+        android:id="@+id/ct_title_in_payment_promotion"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/promotions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/payment_text"
+        custom:typefaceAsset="GothamSSm-Medium.otf"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_payment_promotion"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/activity_payment_promotion_item_list"
+                android:id="@+id/rv_promotions_in_payment_promotion"/>
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_add_promo_code_in_payment_promotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/add_promo_code"
+                android:textColor="@color/promotion_add_promo_code_link_text"
+                android:textSize="16dp"
+                android:layout_marginTop="20dp"
+                custom:layout_constraintTop_toBottomOf="@id/rv_promotions_in_payment_promotion"
+                custom:layout_constraintStart_toStartOf="parent"
+                custom:typefaceAsset="GothamSSm-Light.otf" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

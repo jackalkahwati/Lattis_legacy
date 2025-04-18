@@ -1,0 +1,58 @@
+
+name: Build (Production)
+env:
+  S3_BUCKET_NAME                : "lattis-artifactory"
+  S3_BUCKET_PATH                : "circle/prod/"
+  S3_BUCKET_FULL_PATH           : "s3://lattis-artifactory/circle/prod/"
+  ARTIFACT_NAME                 : "circle_${{ github.sha }}.zip"
+  PARAMETER_STORE_ARTIFACT_NAME : "/devops/ci_cd/circle/production/CIRCLE_ARTIFACT_NAME"
+  CODEPLOY_APP_NAME             : "circle"
+  CODEPLOY_GROUP_NAME           : "circle-prod"
+  
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, circle]
+    steps:         
+      - uses: actions/checkout@v2
+          
+      - name: Build
+        run: swift build --configuration release
+
+      - name: Copy artifact with new name
+        run: cp .build/release/Run circle
+        
+      - name: Zip build folder
+        run: zip -r ${{ env.ARTIFACT_NAME }} circle appspec.yml codeploy circle.sh
+          
+      - name: Upload Files to S3
+        run: aws s3 cp ${{ env.ARTIFACT_NAME }} ${{ env.S3_BUCKET_FULL_PATH }}
+        
+      - name: Update Parameter Store artifact name
+        run: |
+          aws ssm put-parameter --name ${{ env.PARAMETER_STORE_ARTIFACT_NAME }} --value "${{ env.S3_BUCKET_FULL_PATH }}${{ env.ARTIFACT_NAME }}" --type "SecureString" --overwrite
+
+      - name: AWS Create Deployment
+        run: |
+          echo "DEPLOYMENT_ID=$(aws deploy create-deployment --application-name ${{ env.CODEPLOY_APP_NAME }} --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ${{ env.CODEPLOY_GROUP_NAME }} --deployment-group-name ${{ env.CODEPLOY_GROUP_NAME }} --s3-location bucket=${{ env.S3_BUCKET_NAME }},key=${{ env.S3_BUCKET_PATH }}${{ env.ARTIFACT_NAME }},bundleType=zip --file-exists-behavior=OVERWRITE --output text)" >> $GITHUB_ENV
+          echo "Codeploy deployment status ID: ${{ env.DEPLOYMENT_ID }}" 
+
+      - name: AWS Deployment Status
+        run: |
+           echo "Verify Deployment status"
+           bash codeploy/codeploy_validate.sh ${{ env.DEPLOYMENT_ID }}
+
+  clean:
+    needs: build
+    runs-on: [self-hosted, linux, circle]
+    steps:
+      - name: Clean Runner workspace path
+        if: always()
+        run: |
+          echo "Cleaning up previous run"
+          rm -rf "${{ github.workspace }}"
+
+

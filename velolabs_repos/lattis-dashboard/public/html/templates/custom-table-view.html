@@ -1,0 +1,23 @@
+<!--Custom table directive -->
+<table class="table table-condensed tablestyle">
+    <thead>
+    <tr>
+        <th class="text-left" ng-repeat="col in tblHeader">
+            <a ng-click="sortType = '{{col}}'"> {{col}} </a></th>
+        <!--action column -->
+        <th class="">
+            <a ng-click=""> Action </a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in pagedItems[currentPage] | orderBy:sortType | filter:fleetSearch track by $index" min-Value="5"
+        class="fleet-table" ng-click="rowclick($index)">
+        <td ng-repeat="col in tablerows track by $index">{{row[col]}}</td>
+        <td class="text-center"><a ui-sref="myfleet.mapview" class="move-mapview"></a></td>
+    </tr>
+    </tbody>
+</table>
+<!--pagination for custom-table  -->
+<div>
+    <ul uib-pagination total-items="dataview.length" ng-model="currentPage" max-size="10" class="pagination-sm pull-right" boundary-links="true" force-ellipses="true"></ul>
+</div>

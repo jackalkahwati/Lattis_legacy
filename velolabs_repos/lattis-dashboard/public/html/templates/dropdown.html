@@ -1,0 +1,22 @@
+<div class="dropdown-container" id="drop" ng-class="{ show: listVisible }">
+    <div class="dropdown-display" ng-click="show()" ng-class="{ clicked: listVisible }">
+
+        <span class="checkbox">
+             <input id={{list[0]["property"]}} type="checkbox" name="checkbox" ng-model="allSelect"
+                    ng-click="selectAll()">
+                <label for={{list[0]["property"]}}><span class="grey"><span></span></span> Show all</label>
+             </span>
+        <i class="fa fa-sort-down"></i>
+    </div>
+    <div class="dropdown-list">
+        <div>
+            <div ng-repeat="item in list" ng-class="{ selected: isSelected(item) }">
+                <span class="checkbox">
+                    <input id={{item.id}} ng-click="select(item)" type="checkbox" name="checkbox" ng-model=filter[item.id]>
+                    <label for={{item.id}}><span class="grey"><span></span></span>
+                        <div style="width: auto;display: inline-block;text-transform: capitalize;">{{property !== undefined ? item[property] : item}}</div></label>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

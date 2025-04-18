@@ -1,0 +1,30 @@
+<div class="modal-content">
+    <div class="modal-header bg-HeaderToolbar">
+        <h4 class="modal-title text-white">Return Ride to 'Live' status</h4>
+    </div>
+    <div class="modal-body p-30">
+        <p class="p-tb-10 bor-b-hash">This is the last know location of your ride.</p>
+        <div class="row">
+            <div class="m-t-20">
+                <div id="endridemap" class="fullwid h-320"></div>
+            </div>
+        </div>
+        <p>This action moves this Ride back into ‘Liveʼ status, making the Ride available to reserve.
+            Only perform this action if the Ride has been physically deployed to a parking spot or
+            zone where it can be reserved.</p>
+
+        <p ng-if="activeTicket">
+            <span class="live-alert-icon"><img class="h-14" src="../../images/alert_icon.png"></span>
+            This bike is <span ng-if="activeTicket.ticket_category === 'reported_theft'">reported stolen</span>
+            <span ng-if="activeTicket.ticket_category === 'damage_reported'">reported damage</span>.
+            By moving this bike "LIVE" it will resolve that ticket
+        </p>
+        <div class="text-left fullwid m-tb-10 p-tb-10">
+            <button class="btn custom-btn bg-HeaderToolbar p-tb-10 wid-130 ft-12" ng-click="closeModal()">CANCEL
+            </button>
+            <button class="btn pull-right custom-btn p-10 ft-12" ng-click="sendToLive()">
+                RETURN TO 'LIVE' STATUS
+            </button>
+        </div>
+    </div>
+</div>

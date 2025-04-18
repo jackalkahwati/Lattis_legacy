@@ -1,0 +1,5 @@
+<resources>
+    <string name="label_enter_location">Emplacement du casier</string>
+    <string name="bike_detail_label_trip_costs">Coût du stationnement des vélos</string>
+    <string name="iot_hint_locked">Utilisez ce bouton pour déverrouiller la porte pendant la location.</string>
+</resources>

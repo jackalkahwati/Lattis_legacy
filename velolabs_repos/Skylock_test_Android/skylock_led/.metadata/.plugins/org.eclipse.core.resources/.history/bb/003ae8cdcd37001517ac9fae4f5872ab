@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        	<TextView
+        	    
+        	    android:layout_marginLeft="20dp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_weight="100"
+        	    android:text="TX POWER" />
+
+        	<Button
+        	    android:id="@+id/bTxClose"
+        	    style="?android:attr/buttonStyleSmall"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="10"
+        	    android:text="X" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_below="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        >
+
+        	
+        	<Button
+        	    android:id="@+id/bTxRead"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_weight="10"
+        	    android:text="Read Tx Power" />
+
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_below="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="Horizontal"
+        android:weightSum="200">
+
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:id="@+id/tvTXOutput"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Tx Power: " />
+        	
+        	<TextView
+        	    android:layout_marginLeft="20dp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="37dp"
+        	    android:layout_weight="100"
+        	    android:text="Tx Power: " />
+
+    </LinearLayout>
+    
+     <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_below="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:weightSum="200">
+
+        	<EditText
+        	    android:id="@+id/etTX"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_weight="100"
+        	    android:text="" />
+        	<Button
+        	    android:id="@+id/bTX04"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_weight="100"
+        	    android:text="Write-TX" />
+
+    </LinearLayout>
+    
+
+</RelativeLayout>

@@ -1,0 +1,168 @@
+{% assign additionalClasses = '' %}
+{% if settings.header-navigation-location == 'drawer' %}
+  {% assign additionalClasses = 'collapsed-navigation' %}
+{% endif %}
+
+{% assign fullBleed = false %}
+{% if template contains 'index' and settings.home-show-hero == false and settings.show-slideshow and settings.show-slide-1 or settings.show-slide-2 or settings.show-slide-3 or settings.show-slide-4 or settings.show-slide-5 %}
+  {% if settings.slideshow-layout == 'full-bleed' or settings.slideshow-layout == 'opening-screen' %}
+    {% unless settings.home-show-hero %}
+      {% assign fullBleed = true %}
+    {% endunless %}
+  {% endif %}
+{% endif %}
+
+{% if template == 'product.slideshow' %}
+  {% if settings.product-slideshow-layout == 'full-bleed' or settings.product-slideshow-layout == 'opening-screen' %}
+    {% assign fullBleed = true %}
+  {% endif %}
+{% endif %}
+
+{% if fullBleed %}
+  {% assign additionalClasses = additionalClasses | append: ' full-bleed-slideshow' %}
+
+  {% assign fullBleedIndex = false %}
+  {% assign fullBleedProduct = false %}
+
+  {% if template contains "index" %}
+    {% assign fullBleedIndex = true %}
+    {% if settings.header-bleed-colors-override == 'default' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-default-colors' %}
+    {% elsif settings.header-bleed-colors-override == 'light' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-light-colors' %}
+    {% elsif settings.header-bleed-colors-override == 'dark' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-dark-colors' %}
+    {% endif %}
+  {% elsif template contains "product" %}
+    {% assign fullBleedProduct = true %}
+    {% if settings.product-header-bleed-colors == 'default' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-default-colors' %}
+    {% elsif settings.product-header-bleed-colors == 'light' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-light-colors' %}
+    {% elsif settings.product-header-bleed-colors == 'dark' %}
+      {% assign additionalClasses = additionalClasses | append: ' header-bleed-dark-colors' %}
+    {% endif %}
+  {% endif %}
+
+{% endif %}
+
+{% if settings.header-sticky %}
+  {% assign additionalClasses = additionalClasses | append: ' sticky-header' %}
+{% endif %}
+
+{% unless settings.header-navigation-location == 'below-header' %}
+  {% if template contains 'index' %}
+    {% if settings.home-show-hero %}
+      {% if settings.home-hero-background-style == 'color' and settings.home-hero-background-color == settings.header-background-color %}
+        {% assign additionalClasses = additionalClasses | append: ' show-border' %}
+      {% endif %}
+    {% elsif settings.show-slideshow and settings.slideshow-layout == 'content-width' %}
+      {% assign additionalClasses = additionalClasses | append: ' show-border' %}
+    {% endif %}
+  {% else %}
+    {% if settings.background-color == settings.header-background-color %}
+      {% unless settings.body-background-use-image %}
+        {% assign additionalClasses = additionalClasses | append: ' show-border' %}
+      {% endunless %}
+    {% endif %}
+  {% endif %}
+{% endunless %}
+
+<div class="main-header-wrapper {{ additionalClasses }}">
+  <header class="main-header" role="banner">
+
+    <div class="branding">
+      {% if settings.use-logo %}
+        <a class="head_button_no_mobile logo {% if settings.use-retina-logo %}has-retina{% endif %}" href="/">
+
+          {% assign regularLogo = 'logo.png' | asset_url %}
+          {% if fullBleedIndex and settings.home-bleed-use-logo %}
+            {% assign regularLogo = 'bleed-logo.png' | asset_url %}
+          {% elsif fullBleedProduct and settings.product-bleed-use-logo %}
+            {% assign regularLogo = 'product-bleed-logo.png' | asset_url %}
+          {% endif %}
+
+          <img class="logo-regular" alt="{{ shop.name | escape }}" src="{{ regularLogo }}" data-regular="{{ 'logo.png' | asset_url }}">
+
+          {% if settings.use-retina-logo %}
+
+            {% assign retinaLogo = 'logo-retina.png' | asset_url %}
+            {% if fullBleedIndex and settings.home-bleed-use-logo-retina %}
+              {% assign retinaLogo = 'bleed-logo-retina.png' | asset_url %}
+            {% elsif fullBleedProduct and settings.product-bleed-use-logo-retina %}
+              {% assign retinaLogo = 'product-bleed-logo-retina.png' | asset_url %}
+            {% endif %}
+
+            <img class="logo-retina" alt="{{ shop.name | escape }}" src="{{ retinaLogo }}" data-retina="{{ 'logo-retina.png' | asset_url }}">
+          {% endif %}
+        </a>
+      	<h1 class="head_button_mobile"><a href="/">SKYLOCK</a></h1>
+      {% else %}
+        <h1><a href="/">SKYLOCK</a></h1>
+      {% endif %}
+    </div>
+
+    {% if settings.header-show-search %}
+      <form class="header-search-form" action="/search" method="get">
+        <input class="header-search-input" name="q" type="text" placeholder="{{ 'general.search_placeholder' | t }}" value="">
+      </form>
+    {% endif %}
+
+    <div class="header-tools">
+      {% if settings.header-navigation-location == 'header' %}
+        {% include 'navigation' %}
+      {% endif %}
+
+      <div class="header-actions head_button_no_mobile">
+        {% if settings.show-currency-switcher %}
+          <div class="select-wrapper">
+            <div class="selected-currency"></div>
+            <select id="currencies" name="currencies">
+              {% capture codes %},USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK,{% endcapture %}
+              {% assign supported_codes = settings.currency-switcher-supported-currencies | split: ' ' %}
+              <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+              {% for code in supported_codes %}
+                {% if code != shop.currency and codes contains code %}
+                <option value="{{ code }}">{{ code }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        {% endif %}
+        {% if settings.header-show-search %}
+          <span class="header-search-toggle">&#57347;</span>
+        {% endif %}
+        {% if settings.header-show-cart %}
+          <a class="cart-link" href="/cart">&#57346;<span class="cart-count">{{ cart.item_count }}</span></a>
+        {% endif %}
+        {% if settings.header-navigation-location == 'header' or settings.header-navigation-location == 'below-header' %}
+          {% if shop.customer_accounts_enabled %}
+            <a href="/account" class="account-link">&#57348;</a>
+          {% endif %}
+        {% endif %}
+        <!-- <span class="drawer-toggle"></span> -->
+        <a class="button preorder clicked-preorder" href="/products/skylock">PRE-ORDER NOW</a>
+      </div>
+    </div>
+  </header>
+</div>
+<a class="button preorder head_button_mobile clicked-preorder" href="/products/skylock">PRE-ORDER NOW</a>
+{% if settings.header-navigation-location == 'below-header' %}
+  {% unless fullBleed %}
+    <div class="header-navigation {% if settings.header-sticky %} sticky-header{% endif %}">
+      {% include 'navigation' with 'below-header' %}
+    </div>
+  {% endunless %}
+{% endif %}
+
+<div class="header-drawer">
+  <h1><a href="/">{{ shop.name }}</a></h1>
+
+  <span class="drawer-toggle icon">&#57349;</span>
+
+  {% include 'navigation' %}
+
+  {% if shop.customer_accounts_enabled %}
+    <a href="/account" class="drawer-account-link"><span class="icon">&#57351;</span> {{ 'general.my_account' | t }}</a>
+  {% endif %}
+</div>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_toolbar_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_no_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_header_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:text="@string/payment_methods"
+                android:textAppearance="@style/TextView.Grey.Large"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_header_label"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_payment_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:text="@string/qr_code_card_warning"
+                android:textAppearance="@style/TextView.Grey.Medium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_header_label"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/divider_settings" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_card_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_add_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            android:text="@string/add_credit_card"
+            android:textAppearance="@style/TextView.Grey.Medium"
+            android:textColor="@color/lattis_accent_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,579 @@
+<resources>
+<!--    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyBV_3wwnYsxs_1DXBSfMN6LEGRd9AE2Sn8</string>-->
+<!--    <string name="map_box_access_token" templateMergeStrategy="preserve">pk.eyJ1IjoidmVsb2xhYnMiLCJhIjoiY2oxd3JkMjlxMDBjZjJwcXlxb28zMHdidyJ9.-fXYLEjl-xQijIXcvdO56w</string>-->
+    <string name="google_maps_key">AIzaSyC4Lxx7X4I6GQNeN1RlYpnk-7yvFiy-RaE</string>
+    <string name="map_box_access_token" templateMergeStrategy="preserve">pk.eyJ1IjoiamVyZW15cmljYXJkIiwiYSI6ImNrMTk4dnJtdjF6aDczcHRrZ250bTh0YmoifQ.nOLWdq-JtlSl62lncP6IpQ</string>
+    <!-- not used -->
+<!--    <string name="GOOGLE_PLACES_API_KEY" templateMergeStrategy="preserve">AIzaSyBmS3yMsldnuckL2S03Zq5-s7loMtKVSyo</string>-->
+
+    <!-- <string name="fb_app_id">931235146941403</string>-->
+    <!--<string name="fb_app_id">1057259287662727</string>-->
+    <!-- Strings related to login -->
+    <string name="label_show">Show</string>
+    <string name="label_hide">Hide</string>
+    <string name="hint_firstName">First Name</string>
+    <string name="hint_lastName">Last Name</string>
+    <string name="hint_mobilenumber">Mobile number</string>
+    <string name="hint_emailaddress">email@address.com</string>
+    <string name="hint_enter_code">Enter code</string>
+    <string name="label_resend_code">RESEND CODE</string>
+    <string name="error_confirmation_code">Invalid confirmation code</string>
+    <string name="onboarding_forgot_password_button">Forgot Password</string>
+    <string name="onboarding_forgot_password_title">Forgot your password? </string>
+    <string name="label_forgot_password_reset">Reset your password</string>
+    <string name="label_forgot_password_reset_button">Reset Password</string>
+    <string name="label_problem">There was a problem</string>
+    <string name="label_enter_valid_email_address">Please enter a valid email address.</string>
+    <string name="password_must_be">Password must be between 8 - 16 characters long.</string>
+    <string name="please_try_again">Please try again</string>
+    <string name="label_forgot_password_error_title">There was a problem</string>
+    <string name="label_forgot_password_error_sub_title1">No account exists for the requested email address</string>
+
+
+    <string name="alert_forgetpassword_error_title">Password Changing Error</string>
+    <string name="alert_forgetpassword_error_message">Sorry, we are unable to change your password. Please try again.</string>
+    <string name="alert_forgetpassword_success_message">You password has been successfully changed!</string>
+
+
+    <string name="onboarding_forgot_password_subtitle">Enter your email to find your account.</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="onboarding_sign_up_title">Sign up</string>
+    <string name="find_rite_terms_title">TERMS AND CONDITIONS</string>
+    //This will be removed when it will come from bluetooth
+    <string name="action_profile_settings">Profile and Settings</string>
+    <string name="profile_settings">Profile &amp; Settings</string>
+
+    <string name="action_emergency_contacts">Emergency Contacts</string>
+    <string name="action_help">Help</string>
+    <string name="action_login_out">Logout</string>
+    <string name="onboarding_log_in_button">LOG IN</string>
+    <string name="onboarding_log_in_title">Log in</string>
+    <string name="action_next">Next</string>
+    <string name="delete_description">Are you sure you wish to delete your account? Once deleted, all previous history will be lost. This cannot be undone.</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_mobilenumber">Phone number is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="personal_details">PERSONAL INFO</string>
+    <string name="private_network">PRIVATE NETWORK</string>
+    <string name="private_network_content">You don\'t have access to any private networks.</string>
+    <string name="private_network_content_has_fleets">You currently have access to no new private networks.</string>
+    <string name="add_private_network">Add a private network</string>
+    <string name="add_another_private_network">Add another</string>
+    <string name="enter_your_new_phone_number">Enter your new phone number</string>
+    <string name="success">Success</string>
+    <string name="security">SECURITY</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="email">EMAIL</string>
+    <string name="email_lowercase">email</string>
+    <string name="help_info"><![CDATA[<font color=#80848C>For any issues please contact support at </font><font color=#213BBD>%1$s</font>]]></string>
+    <string name="text_verIfication_code">SEND VERIFICATION CODE</string>
+    <string name="onboarding_verify_email">Verify Email</string>
+    <string name="onboarding_verificaiotn_title">We\'ve sent a verification code to the email listed during sign up.</string>
+    <string name="onboarding_verification_subtitle">Please enter the code below</string>
+    <string name="label_verify_email_incorrect_code">Incorrect code. Please try again.</string>
+
+
+    <string name="title_activity_home">Home</string>
+    <string name="change_password">Change password</string>
+    <string name="notification_error_ssl_cert_invalid">SSL error occurred. Would you like to proceed?</string>
+    <string name="action_loginfailed">There was a problem</string>
+    <string name="action_loginfailed_description">The password you have entered is incorrect</string>
+    <string name="action_loginfailed_no_user_exists_description">No account exists for the email address entered</string>
+    <string name="ride_history_penalty_fees">Penalty Fees</string>
+    <string name="report_damage">Report Damage</string>
+    <string name="active_ride_menu_report_damage">REPORT\nDAMAGE</string>
+    <string name="password">Password</string>
+    <string name="submit_code">SUBMIT CODE</string>
+    <string name="submit">SUBMIT</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="label_create_account">Create account</string>
+    <string name="show">SHOW</string>
+    <string name="ok">OK</string>
+    <string name="save">SAVE</string>
+    <string name="notice">Notice</string>
+    <string name="delete_account">Delete account</string>
+    <string name="accept">ACCEPT</string>
+    <string name="decline">DON\'T ACCEPT</string>
+    <string name="termcondition">Terms &amp; condition</string>
+    <string name="onboarding_log_in_question"><![CDATA[<font color=#FFFFFF>Already have an account?</font><font color=#00647C> Sign in</font>]]></string>
+    <string name="password_update_success">You have successfully changed you password</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="incorrect_password">Wrong password</string>
+    <string name="menu_open">open</string>
+    <string name="menu_close">close</string>
+
+    <string name="label_find_a_bike">FIND A BIKE</string>
+    <string name="label_get_direction">GET DIRECTIONS</string>
+    <string name="label_button_find_ride">Find bikes</string>
+    <string name="end_trip_button_text">END MY RIDE</string>
+    <string name="report_theft">REPORT THEFT</string>
+    <string name="report_theft_small">Report Theft</string>
+    <string name="route_to_bike_cancel_cancel">No, keep looking</string>
+    <string name="menu_payment">Payment</string>
+    <string name="menu_history">Ride History</string>
+    <string name="ride_in_progress">RIDE IN PROGRESS</string>
+    <string name="bike_booking_time">TIME</string>
+    <string name="ride_time">00:00</string>
+    <string name="bike_booking_fare">FARE</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="repeat_password">Repeat new password</string>
+    <string name="update_password">UPDATE PASSWORD</string>
+    <string name="add_phone_number">ADD PHONE NUMBER</string>
+    <string name="telephone">TELEPHONE</string>
+    <string name="label_theft_reported_thanks">Thanks for letting us know.</string>
+    <string name="label_theft_reported_no_payment_end_ride">End your ride</string>
+    <string name="label_theft_reported_payment_end_ride">End your ride and pay</string>
+    <string name="label_theft_reported_message">We\'ll be in touch if we need any more information from you</string>
+    <string name="label_theft_reported">Theft has been reported</string>
+    <string name="report_theft_title">You cannot find your ride anywhere?</string>
+    <string name="report_theft_description">Reporting theft will end your ride</string>
+    <string name="route_to_bike_button_start_ride">START RIDE</string>
+    <string name="route_to_bike_start">Starting ride...</string>
+    <string name="route_to_bike_button_connecting">CONNECTING</string>
+    <!--<string name="label_start_ride_access_denied">ACCESS DENIED</string>-->
+    <string name="label_damage_bike_notes">Notes</string>
+    <string name="label_damage_bike_category">Category</string>
+
+    <string name="label_damage_bike_no_photo">No Photo</string>
+    <string name="label_damage_bike_title">Check the details of your damage report and submit it when you\'re ready.</string>
+    <string name="get_parking_route_text">Get directions to this parking spot</string>
+    <string name="label_reserve">RESERVE</string>
+    <string name="active_ride_ending_trip">Ending ride ...</string>
+    <string name="bike_booking_cancelling_loader">Cancelling ride ...</string>
+    <string name="end_ride_checklist_header_label">END MY RIDE</string>
+    <string name="end_ride_checklist_checklist_label">END MY RIDE CHECKLIST</string>
+    <string name="ride_summary_header_label">RIDE SUMMARY</string>
+    <string name="end_ride_checklist_points"><![CDATA[<font color=\'#868686\'>1. Confirm you parked the bike in an authorized area according to the </font> <font color=\'##00AAD1\'>parking instructions</font>.</a> <br> <br> <font color=\'#868686\'>2. Confirm you locked the bike properly using the Ellipse.</font> <br> <font color=\'##00AAD1\'>Help with locking the Ellipse.</font> <br> <br><font color=\'#868686\'>3. Take a photo clearly showing the locked bike.</font><br><font color=\'##00AAD1\'> Show examples.</font>  ]]></string>
+    <string name="end_ride_checklist_line1">Confirm you parked the bike in an authorized area.</string>
+    <string name="end_ride_checklist_line2">Confirm you locked the bike properly.</string>
+    <string name="end_ride_checklist_line3">Take a photo of your locked bike by clicking the button below.</string>
+
+    <string name="label_damage_bike_photo_damage">Photo of damage</string>
+    <string name="label_damage_bike_enter_notes">Tap to enter notes</string>
+    <string name="title_activity_description">DAMAGE DETAILS</string>
+    <string name="title_activity_damage">SUBMIT REPORT</string>
+    <string name="label_describe_the_damage">Describe the damage</string>
+    <string name="label_submit_damage">SUBMIT DAMAGE REPORT</string>
+    <string name="label_save">SAVE</string>
+
+
+    <string name="label_rate_ride">RATE YOUR RIDE</string>
+    <string name="label_rate_ride_duration">Duration</string>
+    <string name="label_cost_ride_free_default">FREE</string>
+    <string name="label_cost_ride_unit">$</string>
+    <string name="label_report_theft">REPORT\nTHEFT</string>
+    <string name="label_reported_theft">THEFT REPORTED</string>
+
+    <string name="ride_details_title">RIDE DETAILS</string>
+
+    <string name="ride_cost_label_lowercase">Ride cost</string>
+    <string name="ride_payment_methods">Payment Methods</string>
+    <string name="ride_cost_status_label">Rides on this network are</string>
+
+    <string name="ride_cost_status">FREE</string>
+
+    <string name="label_bike_name">BIKE NAME</string>
+
+    <string name="label_bike_type">BIKE TYPE</string>
+
+
+
+    <string name="label_bike_charge">CHARGE</string>
+    <string name="route_to_bike_cancel_text">You will not be charged.</string>
+    <string name="route_to_bike_cancel_title">Are you sure you want to cancel?</string>
+    <string name="route_to_bike_cancel_submit">YES, CANCEL MY RIDE</string>
+    <string name="label_cancel_ride_dont_cancel">DONT\'T CANCEL</string>
+    <string name="label_account_settings">ACCOUNT</string>
+    <string name="label_about_bike">About the bike</string>
+    <string name="label_about_ride">ABOUT THE RIDE</string>
+
+    <string name="title_activity_report_bike_theft">ReportTheftActivity</string>
+
+    <string name="label_parking_zones">PARKING ZONES AND SPOTS</string>
+
+    <string name="title_submit_damage_report">SUBMIT REPORT</string>
+
+    <string name="title_submit_damage_report_submitted">SUBMITTED</string>
+
+    <string name="ride_out_of_bound_title">Out of bounds alerts</string>
+    <string name="ride_out_of_button_end">END MY RIDE</string>
+    <string name="active_ride_out_of_zones_action">Find nearby zone</string>
+    <string name="ride_find_nearby_zone">FIND NEARBY ZONE</string>
+
+    <string name="find_ride_warning_available">Apologies, but at this time there are no rides within walking distance. Showing the nearest available…</string>
+    <string name="find_ride_warning_busy">Sorry, there are no bikes available.</string>
+    <string name="find_ride_no_service_subtitle">There are currently no bikes available in your area. We\'re working to bring service here. Follow along @hellolattis</string>
+    <string name="add_private_fleet_label">If you are trying to access a private fleet click here</string>
+    <string name="alert_error_server_subtitle">It looks like there was an error.</string>
+    <string name="alert_error_server_title">WARNING</string>
+    <string name="alert.phone_number.update.error.message">Sorry, we were unable to change your phone number. Please try again.</string>
+    <string name="label_verification_code_text1">We\'ve sent verification code to</string>
+    <string name="label_verification_code_text2">. Please enter it now.</string>
+    <string name="alert_delete_account_error_message">Sorry we were unable to delete your account. Please try again.</string>
+    <string name="enter_code">Enter code</string>
+    <string name="email_description">Enter your new email below. A verification code will be sent to the email entered in order to complete the email update.</string>
+    <string name="send_verification_code">SEND VERIFICATION CODE</string>
+    <string name="change_mail">CHANGE MAIL</string>
+    <string name="add_private_network_title">ADD PRIVATE NETWORK</string>
+    <string name="find_ride_no_service_action">ADD PRIVATE FLEET</string>
+    <string name="validate_email_description">A verification code has been sent to the email entered. Enter that code below to verify </string>
+    <string name="alert.error.title">Error</string>
+    <string name="alert.error.unabletoprocess.title">Unable to process</string>
+    <string name="alert.success.title">Success</string>
+    <string name="alert.important.title">Important</string>
+    <string name="alert.signup.duplicate.error.message">We cannot create a new account with this email.</string>
+    <string name="loading">Loading ....</string>
+    <string name="uploading">Uploading image ....</string>
+
+    <string name="are_you_sure_you_want_to_log_out">Are you sure you want to log out?</string>
+    <string name="cancel">CANCEL</string>
+    <string name="log_out">LOG OUT</string>
+
+    <string name="signup_login_terms_conditions"><![CDATA[<font color=#FFFFFF>By tapping Sign Up, or Log In, I agree to Lattis\'s <a href="https://sandyPedals.io/pages/terms-of-use">
+ Terms of Service </a>, and <a href="https://sandyPedals.io/pages/privacy-policy"> Privacy Policy.</a></font>]]> </string>
+
+    <string name="find_rite_terms_body"><![CDATA[<font color=#818181>By tapping Reserve, I agree to <a href="">Terms and Conditions</a></font>]]></string>
+    <string name="find_rite_terms_body_qr"><![CDATA[<font color=#818181>By tapping the Lock Icon, I agree to <a href="">Terms and Conditions</a></font>]]></string>
+
+
+    <string name="find_ride_no_bluettoth_title">We need your permission</string>
+    <string name="blutooth_pop_subtitle1">\"Lattis\" Needs Access to Bluetooth</string>
+    <string name="blutooth_pop_subtitle2">Lattis requires use of Bluetooth to connect the lock. Make sure your Bluetooth is turned on.</string>
+    <string name="blutooth_pop_will_do">Will do</string>
+
+    <string name="lock_position_error_pop_title">Lock up</string>
+    <string name="lock_position_error_pop_subtitle1">You need to make sure your lock is in the \"locked\" state before you can end your ride </string>
+    <string name="lock_position_error_pop_ok">Ok</string>
+
+
+
+    <string name="log_out_after_end_ride_title">Warning</string>
+    <string name="log_out_after_end_ride_subtitle">You are still in a ride. If you want to log out you first need to end your ride</string>
+    <string name="active_ride_out_of_zones_cancel">End my ride</string>
+    <string name="log_out_after_end_ride_action_cancel">Cancel</string>
+    <string name="start_end_points">Start and end points</string>
+    <string name="pick_up_location">PICK UP LOCATION</string>
+    <string name="your_destination">YOUR DESTINATION</string>
+    <string name="network">Network</string>
+    <string name="location_description">away walk from your current location</string>
+    <string name="fleet_description">Private network, parking zone restrictions</string>
+    <string name="fleet_terms_condition">Terms of Service and Privacy Policy</string>
+    <string name="parking_zones">Parking zones &amp; parking spots</string>
+    <string name="general_popup_title">WARNING</string>
+    <string name="general_popup_subtitle">It looks like there was an eror</string>
+
+
+    <string-array name="damage_category">
+        <item>frame_scratched</item>
+        <item>frame_bent</item>
+        <item>frame_graffiti</item>
+        <item>frame_missing_sticker</item>
+        <item>front_wheel_bent</item>
+        <item>front_wheel_missing</item>
+        <item>back_wheel_bent</item>
+        <item>back_wheel_missing</item>
+        <item>front_tire_low</item>
+        <item>front_tire_flat</item>
+        <item>front_tire_missing</item>
+        <item>back_tire_low</item>
+        <item>back_tire_flat</item>
+        <item>back_tire_missing</item>
+        <item>chain_faulty</item>
+        <item>chain_broken</item>
+        <item>chain_missing</item>
+        <item>seat_damaged</item>
+        <item>seat_missing</item>
+        <item>pedals_damaged</item>
+        <item>pedals_missing</item>
+        <item>handlebars_damaged</item>
+        <item>handlebars_missing</item>
+        <item>spokes_damaged</item>
+        <item>spokes_missing</item>
+        <item>lock_damaged</item>
+        <item>lock_missing</item>
+        <item>damage_category_other</item>
+    </string-array>
+
+    <string-array name="damage_category_name">
+        <item>Frame scratched</item>
+        <item>Frame bent</item>
+        <item>Frame graffiti</item>
+        <item>Frame missing sticker</item>
+        <item>Front wheel bent</item>
+        <item>Front wheel missing</item>
+        <item>Back wheel bent</item>
+        <item>Back wheel missing</item>
+        <item>Front tire low</item>
+        <item>Front tire flat</item>
+        <item>Front tire missing</item>
+        <item>Back tire low</item>
+        <item>Back tire flat</item>
+        <item>Back tire missing</item>
+        <item>Chain faulty</item>
+        <item>Chain broken</item>
+        <item>Chain missing</item>
+        <item>Seat damaged</item>
+        <item>Seat missing</item>
+        <item>Pedals damaged</item>
+        <item>Pedals missing</item>
+        <item>Handlebars damaged</item>
+        <item>Handlebars missing</item>
+        <item>Spokes damaged</item>
+        <item>Spokes missing</item>
+        <item>Lock damaged</item>
+        <item>Lock missing</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="thanks">Thanks</string>
+    <string name="damage_report_success_description">What would you like to do now?</string>
+    <string name="damage_report_success_continue">Continue my ride</string>
+    <string name="damage_report_success_end_my_ride">End my ride</string>
+    <string name="damage_report_success_cancel_booking">Cancel booking</string>
+
+    <string name="damage_report_success_find_bike">End my ride now &amp; find a new bike</string>
+
+    <string name="ellipse_access_denied_error_label">Access denied for this lock, connection failed.</string>
+
+    <string name="active_ride_jamming_title">Warning</string>
+    <string name="lock_jamming_subtitle">Your shackle isn\'t properly inserted.  Please remove and re-insert the shackle into the lock bar.</string>
+
+    <string name="upload_image_failure_title">Failure</string>
+    <string name="upload_image_failure_message">Fail to upload image.</string>
+
+    <string name="end_ride_strip_error_subtitle">There was a problem with your credit card. Pleae re-enter or select a different card.</string>
+    <string name="end_ride_strip_error_action">Update payment details</string>
+
+    <string name="bike_booking_end_ride_title">Notice</string>
+    <string name="ok_title">Ok</string>
+    <string name="bike_out_of_range_connection_error">It looks like you are out of range of the bike. Please move within range and tap the connect button to reconnect.</string>
+
+    <string name="ride_walkthough_skip_label">Skip</string>
+    <string name="ride_walkthough_page1_title_label">How to Unlock</string>
+    <string name="ride_walkthough_page1_subtitle_label">Press the blue lock icon to unlock</string>
+
+    <string name="ride_walkthough_page2_title_label">Pull the lock open</string>
+    <string name="ride_walkthough_page2_subtitle_label">Pull the lockbar and shackle apart</string>
+
+    <string name="ride_walkthough_page3_title_label">Push the lock closed</string>
+    <string name="ride_walkthough_page3_subtitle_label">Make sure the shackle is properly inserted. You\'ll feel a snap when the parts are properly seated.</string>
+
+    <string name="ride_walkthough_page4_title_label">How to Lock</string>
+    <string name="ride_walkthough_page4_subtitle_label">Press the blue lock icon to lock. It\'s that easy.</string>
+
+    <string name="ride_walkthough_page5_title_label">Lock and Stow</string>
+    <string name="ride_walkthough_page5_subtitle_label">When riding, keep the Lock in the locked position. Happy riding!</string>
+    <string name="payment">PAYMENT</string>
+    <string name="payment_methods">PAYMENT METHODS</string>
+    <string name="qr_code_card_warning">Add a credit card to access public networks</string>
+    <string name="add_credit_card">Add credit card</string>
+    <string name="delete_card">Delete card</string>
+    <string name="bt_form_hint_card_number">Card Number</string>
+    <string name="bt_form_hint_expiration">Exp. Date</string>
+    <string name="bt_form_hint_cvv">@string/bt_cvv</string>
+    <string name="bt_form_hint_postal_code">Zip Code</string>
+    <string name="bt_form_hint_country_code">Country Code</string>
+    <string name="bt_form_hint_mobile_number">Mobile Number</string>
+    <string name="add_card">ADD CARD</string>
+    <string name="bt_cvv">CVV</string>
+    <string name="bt_cvc">CVC</string>
+    <string name="bt_cid">CID</string>
+    <string name="bt_cvn">CVN</string>
+
+    <string name="bt_month">Month</string>
+    <string name="bt_year">Year</string>
+
+    <string name="bt_card_number_required">Card number is required</string>
+    <string name="bt_card_number_invalid">Card number is invalid</string>
+    <string name="bt_cvv_required">%s is required</string>
+    <string name="bt_cvv_invalid">%s is invalid</string>
+    <string name="bt_expiration_required">Expiration date is required</string>
+    <string name="bt_expiration_invalid">Expiration date is invalid</string>
+    <string name="bt_postal_code_required">Postal code is required</string>
+    <string name="bt_country_code_required">Country code is required</string>
+    <string name="bt_mobile_number_required">Mobile number is required</string>
+
+
+    <string name="get_current_status_failure_title">Lattis server error</string>
+    <string name="get_current_status_failure_subtitle">Sorry, we cannot connect to Lattis server at this moment.</string>
+    <string name="finding_you_label">Finding you...</string>
+    <string name="find_ride_search">Finding rides...</string>
+
+
+    <string name="label_ride_cost">for</string>
+    <string name="label_ride_exceeding_1">Rides that exceed </string>
+    <string name="label_ride_exceeding_2"> will be charged </string>
+    <string name="label_ride_exceeding_3">per additional</string>
+    <string name="label_ride_deposit">Deposit</string>
+    <string name="label_ride_deposit_info">for</string>
+    <string name="label_ride_deposit_description_1">This network charges a</string>
+    <string name="label_ride_deposit_description_2">deposit. Any damages deemed your responsibility will be debited from this deposit. You will receive
+notification of any such charges. Otherwise, your deposit will be refunded in </string>
+
+
+    <string name="active_ride_out_of_zones_title">OUT OF BOUND</string>
+    <string name="parking_fee_public_out_of_zone_subtitle">You are currently not in an authorized parking spot or zone. If you end your ride here you\'ll incur an upcharge fee of %1$s%2$s.</string>
+
+    <!--<string name="parking_fee_public_out_of_spot_title">Out of parking spot alert</string>-->
+    <string name="parking_fee_public_out_of_spot_subtitle">You are not inside a parking spot. If you end your ride here you\'ll incur an upcharge fee of %1$s%2$s.</string>
+
+
+    <string name="parking_restricted_warning_message">You cannot end ride here. Please enter any parking zone or move to a parking spot.</string>
+
+
+    <string name="parking_fee_public_disciplinary_action_for_zone_subtitle">You are currently not in an authorized parking spot or zone.</string>
+
+
+    <string name="parking_fee_end_ride_title">End Ride</string>
+    <string name="parking_fee_end_ride_subtitle">Are you sure to end ride?</string>
+
+
+    <string name="add_card_loading_name">Saving credit card...</string>
+    <string name="delete_card_loading_name">Deleting credit card...</string>
+
+    <string name="card_already_exist_title">Credit card</string>
+    <string name="card_already_exist_subtitle">This credit card is already registered for your account</string>
+
+    <string name="card_operation_error_title">Error</string>
+    <string name="card_operation_error_action_btn">OK</string>
+    <string name="card_details_error_subtitle">The credit card details you entered seems to be invalid. Please check the numbers and re-enter or try a different card.</string>
+    <string name="card_adding_error_subtitle">Fail to add card at this moment.</string>
+    <string name="card_deleting_error_subtitle">Fail to delete card at this moment.</string>
+    <string name="card_update_error_subtitle">Fail to update card at this moment.</string>
+
+
+    <string name="card_delete_confirmation_title">Deleting credit card</string>
+    <string name="card_delete_confirmation_subtitle">By choosing delete credit card, the credit card will be removed from your account</string>
+    <string name="card_delete_confirmation_actionbtn">Delete</string>
+    <string name="card_primary_loading_name">Setting credit card as primary</string>
+    <string name="add_card_description">A credit card must be registered to access any networks requiring payment</string>
+
+
+    <string name="active_ride_parkings_hint_title">WHERE CAN I PARK</string>
+    <string name="active_ride_parkings_hint_text_1">You can park anywhere within parking zones or at any parking spots</string>
+    <string name="active_ride_parkings_hint_text_2">Zoom out to see parking zones and parking spots</string>
+    <string name="active_ride_parkings_hint_text_no_zones">There are no set parking restrictions on this network. We recommend finding appropriate secure parking such as a bike rack or similar.</string>
+
+    <string name="checking_parking_label">Checking parking zones</string>
+
+
+    <string name="no_trip_history_yet">No trip history yet.</string>
+    <string name="no_trip_history_description">Search for bikes near you and start riding.</string>
+    <string name="metered_charges">Metered charges</string>
+    <string name="outside_parking_zone_surcharge">Outside parking zone surcharge</string>
+    <string name="total">TOTAL</string>
+    <string name="deposit_held_for_days"><![CDATA[<font color=#818181>Deposit</font><font color=#04809D> held for 30 days</font>]]></string>
+    <string name="route_summary">Route summary</string>
+    <string name="find_ride_current_location">Current Location</string>
+    <string name="enter_destination">Enter Destination</string>
+    <string name="recent_destination">Recent destinations</string>
+
+
+    <string name="bike_reservation_en_routed_to_label">EN ROUTE TO</string>
+    <string name="bike_booking_timer_text_payment_2"><![CDATA[<font color=#80848C>You have </font><font color=#FF5A60>%1$s</font> to reach]]></string>
+    <string name="bike_booking_timer_text_payment_1">When timer expires, billing starts.</string>
+    <string name="bike_booking_timer_text_free">When timer expires, the bike will no longer be held for you.</string>
+    <string name="bike_booking_desctiption">Once BEGIN TRIP button is enabled \nTAP and GO!</string>
+
+
+    <string name="bike_reservation_see_bike_info_label">See Ride Info</string>
+    <string name="bike_reservation_billing_starts_in_label">Billing starts in</string>
+    <string name="bike_reservation_reservation_ends_in_label">Reservation ends in</string>
+    <string name="bike_booking_begin_trip">BEGIN TRIP</string>
+    <string name="bike_reservation_time_label">TIME</string>
+    <string name="bike_reservation_fare_label">FARE</string>
+
+
+    <string name="bike_booking_begin_trip_not_connected_title">Why is the \'Begin Trip\' button greyed out?</string>
+    <string name="bike_booking_begin_trip_not_connected_text">You need to be in close proximity of the bike. Please walk towards the bike.</string>
+    <string name="bike_why_begin_trip_grey_out_lock_not_connecting_label">Lock is not connecting</string>
+
+
+    <string name="bike_start_ride_fail_title_label">Start ride error</string>
+    <string name="bike_start_ride_fail_subtitle_label">Sorry, there seems some error in starting the ride.</string>
+
+    <string name="bike_cancel_bike_reservation_fail_title_label">Bike reservation cancel error</string>
+    <string name="bike_cancel_bike_reservation_fail_subtitle_label">Sorry, there seems some error in cancelling your bike reservation.</string>
+
+    <string name="route_to_bike_booked_alert_title">Unavailable</string>
+    <string name="route_to_bike_booked_alert_text">The bike you\'ve selected has already been reserved, please refresh and search again.</string>
+
+    <string name="bike_booking_end_ride_text">Your billing has started. If you end ride now the amount will be billed on your credit card</string>
+    <string name="bike_booking_end_ride_action">End Ride</string>
+
+
+    <string name="find_ride_qr_fail_title">Notice</string>
+    <string name="find_ride_qr_fail_text">We could not read the information on this QR code</string>
+    <string name="find_ride_qr_page_title">SCAN QR CODE</string>
+
+    <string name="general_no_internet_title">Notice</string>
+    <string name="active_ride_no_internet_text">Lattis service requires internet connection. You can still lock and unlock but you won\'t be able to end ride.</string>
+    <string name="general_no_internet_text">Lattis service requires internet connection.</string>
+
+
+    <string name="scan_qr_code_connecting_loading">Connecting ...</string>
+    <string name="scan_qr_code_unlocking_loading">Unlocking ...</string>
+
+
+    <string name="find_ride_qr_tip">Scan your bikes QR code directly.</string>
+    <string name="qr_error_ellipse_not_around">The lock you are trying to connect to is not around</string>
+    <string name="qr_error_ellipse_not_connected">We are currently unable to connect to that bike</string>
+    <string name="qr_error_fleet_access_denied">You do not have access to the fleet that bike belongs to</string>
+    <string name="qr_error_bike_not_live">This bike is currently unavailable</string>
+    <string name="qr_error_bike_is_rent">This bike is being used by another member</string>
+    <string name="qr_error_bike_not_found">This QR code is not linked to any bike on the fleet</string>
+    <string name="qr_error_server">Server error</string>
+    <string name="ellipse_access_denided_title">Notice</string>
+    <string name="ellipse_access_denided_text">We cannot connect to that lock</string>
+    <string name="delete_account_title">DELETE ACCOUNT</string>
+    <string name="delete_account_text">Are you sure you wish to delete your account? Once deleted, all previous history will be lost. However, you can still create a new one.</string>
+    <string name="delete_account_submit">Delete</string>
+    <string name="delete_account_cancel">Cancel</string>
+    <string name="privacy_location_explanation">Lattis needs you permission to use your location in order to display th nearest bikes</string>
+    <string name="privacy_location_submit_button">OK</string>
+    <string name="privacy_location_alert_text">Please allow Lattis to access location. This is required while using the app</string>
+    <string name="privacy_camera">Lattis requires use of your camera to take a picture when you end your ride.</string>
+    <string name="current_location_label">current location</string>
+
+    <string name="tool_tip_reconnection">Tap here to reconnect</string>
+    <string name="tool_tip_unlock">Tap here to unlock</string>
+    <string name="tool_tip_lock">Tap here to lock</string>
+
+
+    <string name="ride_cost">$ 0.00</string>
+    <string name="active_ride_in_ride_with">Riding</string>
+
+    <string name="general_at_label">at</string>
+    <string name="hours">Hours</string>
+    <string name="hour">Hour</string>
+    <string name="min">min</string>
+    <string name="mins">Mins</string>
+    <string name="days">Days</string>
+    <string name="day">Day</string>
+    <string name="weeks">Weeks</string>
+    <string name="months">Months</string>
+
+
+
+    <string name="mandatory_phone_title">Note</string>
+    <string name="mandatory_phone_text">Please add a phone number to your account to use this fleet</string>
+    <string name="mandatory_phone_action">Add phone number</string>
+
+    <string name="general_no_info">N/A</string>
+    <string name="at_label"> at </string>
+
+    <string name="bike_type_e_bike">E-bike</string>
+    <string name="bike_type_regular">Regular</string>
+    <string name="ride_history_over_usage_fees">Excess usage fees</string>
+
+    <string name="app_update_avaliable_title">Lattis app update</string>
+    <string name="app_update_avaliable_text">Please update for the latest fixes and features.</string>
+    <string name="app_update_avaliable_cancel">Later</string>
+    <string name="app_update_avaliable_action">Update now</string>
+
+</resources>

@@ -1,0 +1,6 @@
+framework module Pods_RestService {
+  umbrella header "Pods-RestService-umbrella.h"
+
+  export *
+  module * { export * }
+}

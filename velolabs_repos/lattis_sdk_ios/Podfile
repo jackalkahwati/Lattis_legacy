@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '10.0'
+
+target 'Lattis SDK Demo' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Lattis SDK Demo
+#  pod 'Oval', :git => 'git@github.com:velolabs/oval_ios.git', :branch => 'refactoring'
+  pod 'Oval', :path => '../ios/oval_ios/'
+  pod 'GradientCircularProgress', :git => 'https://github.com/keygx/GradientCircularProgress'
+  pod 'Crashlytics'
+end
+
+target 'LattisSDK' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for LattisSDK
+#  pod 'Oval', :git => 'git@github.com:velolabs/oval_ios.git', :branch => 'refactoring'
+  pod 'Oval', :path => '../ios/oval_ios/'
+  pod 'CryptoSwift'
+  pod 'KeychainSwift'
+end
+

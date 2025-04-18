@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 6. State/Province/Region?
+	input(type='text', class='field', name='citystate', ng-model='inputValues.state', placeholder='Input State/Province/Region', value='{{inputValues.state}}')
+	p(class='invalidField') {{invalidText}}
+	a(ng-click='nextButtonClicked()')
+		button Next

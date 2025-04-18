@@ -1,0 +1,2 @@
+github "SwiftyJSON/SwiftyJSON"
+github "evgenyneu/keychain-swift" ~> 9.0

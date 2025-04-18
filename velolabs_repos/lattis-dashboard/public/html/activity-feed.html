@@ -1,0 +1,83 @@
+<section class="p-rel" ng-controller="activityFeedController">
+    <div class="fullwid p-tb20-lr40 animated fadeIn">
+        <div class="panel">
+            <div class="panel-header clearfix">
+
+                <button class="btn wid-153 l-s ft-12 text-uppercase text-white bg-HeaderToolbar pull-right"
+                        ng-dialog="../html/modals/create-ticket.html" ng-dialog-controller="createTicketModalController"
+                        ng-dialog-close-previous>CREATE TICKET</button>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12 new-fleet-box">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 nopadd">
+                                <cumulative-home class="container-fluid pull-left fullwid"
+                                                 cumulativedata="cummulativehome"></cumulative-home>
+                                <div class="chart-box">
+                                    <div class="bg-alert name-container p-tb15-lr20 text-muted">
+                                        TICKETS
+                                    </div>
+                                    <div ng-nicescroll nice-option="{cursorcolor: '#bbb', cursorwidth: '12px', background: '#F4F5F6', cursorborderradius: '0' }" nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()" class="dashboard-list" style="cursor:initial !important">
+                                        <table class="fullwid">
+                                            <tr class="hover-over-activity-feed" ng-repeat="alert in (alertLists= (alertList | filter: activityFilter))">
+
+                                                <td class='p-tb10-lr20' ng-click="showOptions(alertLists.indexOf(alert))">
+                                                    <!--<p ng-if="alert.category == 'crash_detected'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Crash detected</p>-->
+                                                    <p ng-if="alert.ticket_category == 'reported_theft'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Theft reported</p>
+                                                    <p ng-if="alert.ticket_category == 'damage_reported'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Damage reported</p>
+                                                    <p ng-if="alert.ticket_category == 'service_due'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Maintenance due</p>
+                                                    <p ng-if="alert.ticket_category == 'parking_outside_geofence'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Ride dropped off outside parking zone</p>
+                                                    <p ng-if="alert.ticket_category == 'low_battery'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Battery Low</p>
+                                                    <p ng-if="alert.ticket_category == 'potential_theft'" class="nomarg ft-14 fw-600 " style="font-family: ProximanovaLight;">Potential Theft</p>
+                                                    <span ng-if="alert.ticket_category == 'low_battery'" class="ft-12 text-gray inline-block">{{alert.operator_notes}}<span class="ft-12 text-gray" ng-if="alert.assignee_name"> | Assigned to: {{alert.assignee_name}}</span></span>
+                                                    <span ng-if="alert.ticket_category == 'damage_reported' && alert.operator_id" class="ft-12 text-gray inline-block">{{alert.reported_by_operator_name}} reported damage on {{alert.bike_name}} on {{alert.createdOn}} and ride<span ng-if="alert.bike_ticket_status!=='active'"> has been removed from active fleet</span> <span ng-if="alert.bike_ticket_status==='active'"> is still in active fleet</span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'damage_reported'"> | Assigned to: {{alert.assignee_name}}</span></span>
+                                                    <span ng-if="alert.ticket_category == 'damage_reported' && !alert.operator_id && !alert.trip_id" class="ft-12 text-gray inline-block"><a class="ng-binding" ui-sref="member-profile({userId: {{alert.reported_by_user_id}}})">User</a> reported damage on {{alert.bike_name}} on {{alert.createdOn}} and ride<span ng-if="alert.bike_ticket_status!=='active'"> has been removed from active fleet</span> <span ng-if="alert.bike_ticket_status==='active'"> is still in active fleet</span> <span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'damage_reported'"> | Assigned to: {{alert.assignee_name}}</span></span>
+                                                    <span ng-if="alert.ticket_category == 'damage_reported' && !alert.operator_id && alert.trip_id" class="ft-12 text-gray inline-block"><a class="ng-binding" ui-sref="member-profile({userId: {{alert.reported_by_user_id}}})">User</a> reported damage on {{alert.bike_name}} on {{alert.createdOn}} while on a <a class="ng-binding" ui-sref="trip-details({trip_id: {{alert.trip_id}}})">trip</a> and ride<span ng-if="alert.bike_ticket_status!=='active'"> has been removed from active fleet</span> <span ng-if="alert.bike_ticket_status==='active'"> is still in active fleet</span> <span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'damage_reported'"> | Assigned to: {{alert.assignee_name}}</span></span>
+                                                    <span ng-if="alert.ticket_category == 'service_due'" class="ft-12 text-gray inline-block">{{alert.bike_name}} is due for itʼs standard mechanical service</span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'service_due'"> | Assigned to: {{alert.assignee_name}}</span>
+                                                    <span ng-if="alert.ticket_category == 'reported_theft' && alert.operator_id" class="ft-12 text-gray inline-block">A theft was reported on {{alert.bike_name}} on {{alert.createdOn}} by {{alert.operator_name}}</span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'reported_theft'"> | Assigned to: {{alert.assignee_name}}</span>
+                                                    <span ng-if="alert.ticket_category == 'reported_theft' && !alert.operator_id && !alert.trip_id" class="ft-12 text-gray inline-block">A theft was reported on {{alert.bike_name}} on {{alert.createdOn}} by <a class="ng-binding" ui-sref="member-profile({userId: {{alert.user_id}}})">member</a> during reservation</span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'reported_theft'"> | Assigned to: {{alert.assignee_name}}</span>
+                                                    <span ng-if="alert.ticket_category == 'reported_theft' && !alert.operator_id && alert.trip_id" class="ft-12 text-gray inline-block">A theft was reported on {{alert.bike_name}} on {{alert.createdOn}} by <a class="ng-binding" ui-sref="member-profile({userId: {{alert.user_id}}})">member</a> while on a <a class="ng-binding" ui-sref="trip-details({trip_id: {{alert.trip_id}}})">trip</a></span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'reported_theft'"> | Assigned to: {{alert.assignee_name}}</span>
+                                                    <span ng-if="alert.ticket_category == 'potential_theft'" class="ft-12 text-gray inline-block">A potential theft was reported on {{alert.bike_name}} on {{alert.createdOn}} | Assigned to: {{alert.assignee_name}}</span>
+                                                    <span ng-if="alert.ticket_category == 'parking_outside_geofence'" class="ft-12 text-gray inline-block">{{alert.bike_name}} was dropped off from nearest parking zone on {{alert.createdOn}} by <a class="ng-binding" ui-sref="member-profile({userId: {{alert.user_id}}})">member</a> while on a <a class="ng-binding" ui-sref="trip-details({trip_id: {{alert.trip_id}}})">trip</a></span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.ticket_category == 'parking_outside_geofence'"> | Assigned to: {{alert.assignee_name}}</span>
+                                                    <!--<span ng-if="alert.category == 'crash_detected'" class="ft-12 text-gray inline-block">{{alert.bike_name}} was in a crash today at {{alert.createdOn}}</span><span class="ft-12 text-gray" ng-if="alert.assignee_name && alert.category == 'crash_detected'"> | Assigned to: {{alert.assignee_name}}</span>-->
+                                                </td>
+                                                <td class="text-right">
+                                                    <div ng-if="alert.state">
+                                                        <ul style="border-bottom: none;padding:0 !important;margin-right:10px">
+                                                            <li class="inline-block">
+                                                                <button ng-dialog="../html/modals/assign-ticket.html"
+                                                                        ng-dialog-controller="assignTicketController"
+                                                                        class='ft-10 btn custom-btn text-uppercase
+                                                                        text-white bg-HeaderToolbar wid-130' >
+                                                                    assign ticket</button>
+                                                            </li>
+                                                            <li class="inline-block">
+                                                                <button ng-click="reviewTicket(alert.bike_id)"
+                                                                        class="ft-10 btn custom-btn text-uppercase
+                                                                        text-white bg-skyblue wid-130">review</button>
+                                                            </li>
+                                                            <li class="inline-block">
+                                                                <button ng-click="resolveTicket(alert.ticket_id)"
+                                                                        class="ft-10 btn custom-btn text-uppercase
+                                                                        wid-130 bg-live text-white"
+                                                                        style="background: #6edf9e;">resolve</button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <img ng-click="showOptions($index, alert.ticket_id)"
+                                                         ng-hide ="alert.state" class="pointer h-33 relative m-lr-15"
+                                                         src="../images/activity-icon.png">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

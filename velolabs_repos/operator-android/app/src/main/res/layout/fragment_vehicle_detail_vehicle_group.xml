@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_vehicle_detail_box"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_ride_type_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/ride_type"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_ride_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_vehicle_ride_type_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_vehicle_ride_type_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_ride_type_value" />
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_make_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/make"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_make_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_vehicle_make_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_vehicle_make_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_make_value" />
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_model_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/model"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_model_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintBottom_toBottomOf="@+id/ct_vehicle_model_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ct_vehicle_model_label"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_model_value" />
+
+
+
+    <io.lattis.operator.presentation.customview.CustomTextView
+        android:id="@+id/ct_vehicle_description_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15dp"
+        android:textColor="@color/vehicle_box_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_3"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/vehicle_box_divider"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_description_label" />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/iv_vehicle_group"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

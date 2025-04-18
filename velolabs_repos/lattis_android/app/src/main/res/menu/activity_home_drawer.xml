@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:checked="true"
+            android:title="@string/title_activity_home"
+            android:icon="@drawable/ic_home"/>
+        <item
+            android:id="@+id/profile"
+            android:title="@string/action_profile_settings"
+            android:icon="@drawable/ic_person"
+            />
+
+        <item
+            android:id="@+id/nav_billing"
+            android:title="@string/menu_payment"
+            android:icon="@drawable/ic_bill"
+            />
+        <item
+            android:id="@+id/nav_ride_history"
+            android:title="@string/menu_history"
+            android:icon="@drawable/ic_ride"
+            android:visible="true"
+
+            />
+        <item
+            android:id="@+id/nav_emergencyContacts"
+            android:title="@string/action_emergency_contacts"
+            android:icon="@drawable/ic_ec"
+            android:visible="false"
+
+            />
+
+        <item
+            android:id="@+id/nav_report_damage"
+            android:title="@string/report_damage"
+            android:icon="@drawable/ic_damage"
+            />
+
+        <item
+            android:id="@+id/nav_report_theft"
+            android:title="@string/report_theft_small"
+            android:icon="@drawable/ic_damage"
+            />
+
+    </group>
+
+</menu>

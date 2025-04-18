@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "689553489566",
+    "project_id": "two-wheel-rental",
+    "storage_bucket": "two-wheel-rental.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689553489566:android:318c9a848a3b61b6b8058f",
+        "android_client_info": {
+          "package_name": "io.bikes.twowheelrental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDisGayTAgKX_2h0urJh1pSEo2efHIe9uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689553489566:android:76dd71a069bd0817b8058f",
+        "android_client_info": {
+          "package_name": "io.bikes.twowheelrental.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDisGayTAgKX_2h0urJh1pSEo2efHIe9uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689553489566:android:d815ad076b0a7f4ab8058f",
+        "android_client_info": {
+          "package_name": "io.bikes.twowheelrental.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDisGayTAgKX_2h0urJh1pSEo2efHIe9uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689553489566-cl4kka2e73t1j96qgmqg0hvsgnov1olo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lattis_toolbar_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_validate_email">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/white"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_verificationcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="18dp"
+            android:text="@string/validate_email_description"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/lattis_header_color"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <LinearLayout
+            android:layout_below="@+id/tv_verificationcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.lattis.ellipse.presentation.view.CustomEditText
+                android:id="@+id/et_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lattis_view_loction_bg"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:gravity="center"
+                android:maxLength="6"
+                android:hint="@string/enter_code"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#818181"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomButton
+                android:id="@+id/button_submit"
+                style="@style/blueButtonStyle.rect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/submit_code"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

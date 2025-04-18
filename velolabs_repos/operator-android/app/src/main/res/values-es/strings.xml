@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Loco xml export: Android string resources
+ Project: Lattis Operator
+ Release: Working copy
+ Locale: es, Spanish
+ Exported by: Jignesh Tank
+ Exported at: Wed, 21 Jul 2021 17:06:57 +0530
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="operator">Operadora</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="fleets">Flotas</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="vehicles">Vehículos</string>
+    <string name="tickets">Entradas</string>
+    <string name="map">Mapa</string>
+    <string name="equipment">Equipo</string>
+    <string name="create_ticket">Crear Ticket</string>
+    <string name="ticket">Billete</string>
+    <string name="vehicle">Vehículo</string>
+    <string name="created">Creado</string>
+    <string name="category">Categoría</string>
+    <string name="assign_to">Asignar a:</string>
+    <string name="operator_notes">Notas del operador</string>
+    <string name="add_notes">Agregar notas</string>
+    <string name="notes">Notas</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Ahorrar</string>
+    <string name="edit">Editar</string>
+    <string name="info">Información</string>
+    <string name="name">Nombre</string>
+    <string name="battery_level">Nivel de bateria</string>
+    <string name="qr_code">Código QR</string>
+    <string name="locate">Localizar</string>
+    <string name="trips">Excursiones</string>
+    <string name="status">El estatus</string>
+    <string name="group">Grupo</string>
+    <string name="ride_type">Tipo de vehiculo</string>
+    <string name="make">Marca</string>
+    <string name="model">Modelo</string>
+    <string name="vendor">Vendedora</string>
+    <string name="key">Clave</string>
+    <string name="device_type">Tipo de dispositivo</string>
+    <string name="connection">Conexión</string>
+    <string name="scan_qr_code">Escanear código QR</string>
+    <string name="login">Acceso</string>
+    <string name="warning">Advertencia</string>
+    <string name="filter">Filtrar</string>
+    <string name="search">Buscar</string>
+    <string name="clean">Limpia</string>
+    <string name="select_fleet">Seleccionar flota</string>
+    <string name="vehicle_name">Nombre del vehiculo</string>
+    <string name="status_live">Vivir</string>
+    <string name="status_out_of_service">Fuera de servicio</string>
+    <string name="status_staging">La escenificación</string>
+    <string name="status_any">Alguna</string>
+    <string name="unassigned">Sin asignar</string>
+    <string name="assignee">Cesionaria</string>
+    <string name="change_status">\nCambiar Estado</string>
+    <string name="parking_outside_geofence">Aparcamiento fuera de la geovalla</string>
+    <string name="issue_detected">Problema detectado</string>
+    <string name="damage_reported">Daños reportados</string>
+    <string name="service_due">Servicio debido</string>
+    <string name="reported_theft">Robo denunciado</string>
+    <string name="select_vehicle">Seleccionar vehiculo</string>
+    <string name="online">En línea</string>
+    <string name="offline">Desconectada</string>
+    <string name="status_archive">Archivo</string>
+    <string name="defleet">Eliminar de la flota</string>
+    <string name="equipment_assigned">Equipo asignado</string>
+    <string name="lock_not_assigned">Equipo sin asignar</string>
+    <string name="parked">Aparcado</string>
+    <string name="on_trip">En viaje</string>
+    <string name="damaged">Reportado como dañado</string>
+    <string name="reported_stolen">Reportado como robado</string>
+    <string name="stolen">Robado</string>
+    <string name="under_maintenance">Mantenimiento</string>
+    <string name="total_loss">Pérdida total</string>
+    <string name="collect">Recojo</string>
+    <string name="balancing">Balanceo</string>
+    <string name="reserved">Reservado</string>
+    <string name="transport">Transporte</string>
+    <string name="status_secondary">Secundaria</string>
+    <string name="status_primary">Primaria</string>
+    <string name="security_label">Seguridad</string>
+    <string name="control_label">Control</string>
+    <string name="headlight">Faro</string>
+    <string name="taillight">\nLuz de la cola</string>
+    <string name="unlock_battery_cover">Desbloquear la tapa de la batería</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="flicker">Parpadeo</string>
+    <string name="horn">Bocina</string>
+    <string name="sound">Sonido</string>
+    <string name="refresh">Refrescar</string>
+    <string name="internet_is_required">El servicio requiere conexión a internet</string>
+    <string name="user">Usuario</string>
+    <string name="phone_number">Número de teléfono</string>
+    <string name="date_started">Fecha de inicio</string>
+    <string name="date_ended">Fecha de finalización</string>
+    <string name="duration">Duración</string>
+    <string name="from">Desde</string>
+    <string name="to">Hasta</string>
+    <string name="end_trip">Finalizar viaje</string>
+    <string name="call">Llamada</string>
+    <string name="copy">Copiar</string>
+    <string name="message">Mensaje</string>
+    <string name="no_tickets">Sin boletos</string>
+    <string name="no_vehicles">Sin vehículos</string>
+    <string name="done">Terminado</string>
+    <string name="low_battery">Baja batería</string>
+    <string name="select_all">Seleccionar todos</string>
+    <string name="unselect_all">Deseleccionar todos</string>
+    <string name="send_email">Enviar un correo electrónico</string>
+    <string name="location_access_hint">Permita que la aplicación acceda a la ubicación. Esto es necesario al usar la aplicación</string>
+    <string name="general_btn_ok">Ok</string>
+    <string name="scan">Escanear</string>
+    <string name="_0025_0040_qr_codes">%s Códigos QR</string>
+    <string name="close">Cerca</string>
+    <string name="batch_actions_on_trip">Maneje el vehículo de viaje antes de usar acciones por lotes</string>
+    <string name="clear">Clara</string>
+
+</resources>

@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/payment_card_list"
+    android:background="@color/reservation_background"
+    tools:context="com.lattis.lattis.presentation.reservation.ReservationActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_reservation_confirm"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/sv_bike_info_in_confirm_reserve"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_reservation_confirm"
+        custom:layout_constraintBottom_toTopOf="@+id/ct_bike_book_terms_policy_in_reservation_confirm"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            >
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                app:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/ct_title_in_reservation_confirm"
+                android:layout_marginLeft="20dp"
+                android:text="@string/reservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:textColor="@color/reservation_text"
+                custom:typefaceAsset="GothamSSm-Book.otf"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/cl_pickup_in_reservation_confirm"
+                custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_reservation_confirm">
+
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_pickup_in_reservation_confirm"
+                    android:text="@string/pickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:background="@android:color/transparent"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/reservation_text"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_date_time_pickup_in_reservation_confirm"
+                    android:text="@string/select_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/reservation_text"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_pickup_in_reservation_confirm"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    custom:layout_constraintBottom_toBottomOf="@+id/ct_date_time_pickup_in_reservation_confirm"
+                    android:id="@+id/iv_next_pickup_in_reservation_confirm"
+                    android:src="@drawable/next_arrow"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    custom:layout_constraintTop_toBottomOf="@id/ct_date_time_pickup_in_reservation_confirm"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/reservation_divider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cl_return_in_reservation_confirm"
+                custom:layout_constraintTop_toBottomOf="@+id/cl_pickup_in_reservation_confirm">
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_return_in_reservation_confirm"
+                    android:text="@string/return_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/reservation_text"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_date_time_return_in_reservation_confirm"
+                    android:text="@string/select_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/reservation_text"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_return_in_reservation_confirm"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    custom:layout_constraintBottom_toBottomOf="@+id/ct_date_time_return_in_reservation_confirm"
+                    android:id="@+id/iv_next_return_in_reservation_confirm"
+                    android:src="@drawable/next_arrow"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    custom:layout_constraintTop_toBottomOf="@id/ct_date_time_return_in_reservation_confirm"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/reservation_divider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cl_vehicle_in_reservation_confirm"
+                custom:layout_constraintTop_toBottomOf="@+id/cl_return_in_reservation_confirm">
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_vehicle_in_reservation_confirm"
+                    android:text="@string/vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/reservation_text"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+
+                <include layout="@layout/activity_reservation_bike_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintEnd_toStartOf="@+id/iv_next_vehicle_in_reservation_confirm"
+                    android:id="@+id/activity_reservation_bike_card_in_reservation_confirm"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_vehicle_in_reservation_confirm"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/activity_reservation_bike_card_in_reservation_confirm"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/iv_next_vehicle_in_reservation_confirm"
+                    android:src="@drawable/next_arrow"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    custom:layout_constraintTop_toBottomOf="@id/activity_reservation_bike_card_in_reservation_confirm"
+                    android:background="@color/reservation_divider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:visibility="visible"
+                android:id="@+id/cl_pricing_options_in_confirm_reserve"
+                custom:layout_constraintTop_toBottomOf="@+id/cl_vehicle_in_reservation_confirm">
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_pricing_options_in_confirm_reserve"
+                    android:text="@string/pricing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/reservation_text"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Book.otf"
+                    />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_pricing_options_vehicle_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/select_pricing"
+                    android:textColor="@color/reservation_text"
+                    android:textSize="16dp"
+                    android:includeFontPadding="true"
+                    custom:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_pricing_options_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Book.otf" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:layout_constraintBottom_toBottomOf="@+id/ct_pricing_options_vehicle_in_confirm_reserve"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/iv_next_pricing_options_in_confirm_reserve"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:src="@drawable/next_arrow"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    custom:layout_constraintTop_toBottomOf="@id/ct_pricing_options_vehicle_in_confirm_reserve"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/reservation_divider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <include layout="@layout/activity_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/cl_cost_loading_in_confirm_reserve_1"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="gone"
+                    custom:layout_constraintTop_toBottomOf="@+id/cl_vehicle_in_reservation_confirm" />
+
+
+            <com.lattis.lattis.presentation.customview.CustomTextView
+                android:id="@+id/ct_bike_trip_costs_in_confirm_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/bike_detail_label_trip_costs"
+                android:textColor="@color/confirm_reserve_title"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                custom:layout_constraintTop_toBottomOf="@+id/cl_pricing_options_in_confirm_reserve"
+
+                custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/cl_trip_cost_in_confirm_reserve"
+                android:background="@drawable/round_trip_cost_reservation_confirm"
+                custom:layout_constraintTop_toBottomOf="@+id/ct_bike_trip_costs_in_confirm_reserve"
+                >
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_price_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/bike_detail_label_price"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_price_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_price_in_confirm_reserve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_price_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_preauth_label_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/preauthorization"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_bike_price_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_preauth_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/bike_detail_label_price"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_preauth_label_in_confirm_reserve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_preauth_label_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_preauth_description_in_confirm_reserve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preauthorization_description"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_bike_preauth_value_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Book.otf" />
+
+
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_unlock_price_label_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/unlock_fee"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_preauth_description_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_unlock_price_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_unlock_price_label_in_confirm_reserve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_unlock_price_label_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_surcharge_price_label_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/surcharge"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_unlock_price_label_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_surcharge_price_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_surcharge_price_label_in_confirm_reserve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_surcharge_price_label_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_surcharge_description_in_confirm_reserve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/surcharge_description"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_surcharge_price_label_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Book.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_parking_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/bike_detail_label_parking_fee"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ct_surcharge_description_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_parking_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ct_bike_parking_in_confirm_reserve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ct_bike_parking_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_parking_description_in_confirm_reserve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bike_detail_label_parking_fee_warning"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    custom:layout_constraintTop_toBottomOf="@+id/ct_bike_parking_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Book.otf" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl_payment_confirm_reserve"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/cl_trip_cost_in_confirm_reserve"
+                >
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_payment_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment"
+                    android:textColor="@color/confirm_reserve_text"
+                    android:textSize="14dp"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_add_credit_card_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/add_credit_card"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    custom:layout_constraintEnd_toStartOf="@+id/iv_add_credit_card_in_confirm_reserve"
+                    custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <ImageView
+                    android:id="@+id/iv_add_credit_card_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    custom:layout_constraintTop_toTopOf="parent"
+                    custom:layout_constraintBottom_toBottomOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/next_arrow"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_bike_payment_img_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/card_icon"
+                    android:visibility="visible"
+                    android:layout_marginRight="10dp"
+                    custom:layout_constraintEnd_toStartOf="@+id/ct_bike_payment_value_in_confirm_reserve"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <com.lattis.lattis.presentation.customview.CustomTextView
+                    android:id="@+id/ct_bike_payment_value_in_confirm_reserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/bike_slider_detail_text"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    custom:layout_constraintEnd_toEndOf="parent"
+                    app:typefaceAsset="GothamSSm-Bold.otf" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    custom:layout_constraintTop_toBottomOf="@id/ct_bike_payment_in_confirm_reserve"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/reservation_divider"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/ct_bike_book_terms_policy_in_reservation_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/bike_details_terms_policy"
+        android:textColor="@color/confirm_terms_policy_text"
+        android:textColorLink="@color/confirm_terms_policy_text"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cl_confirm_in_reservation_confirm"
+        />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_confirm_in_reservation_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_confirm_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <com.lattis.lattis.presentation.customview.CustomButton
+            android:id="@+id/btn_confirm_in_confirm_reserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/confirm_button_background"
+            android:clickable="false"
+            android:focusable="false"
+            android:padding="10dp"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/confirm_button_text"
+            android:textSize="16dp"
+            android:visibility="visible"
+            style="?android:attr/borderlessButtonStyle"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+        <ProgressBar
+            android:id="@+id/pb_progress_in_confirm_reserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/confirm_button_text"
+            android:progressBackgroundTint="@color/confirm_button_text"
+            android:progressTint="@color/confirm_button_text"
+            android:visibility="gone"
+            custom:layout_constraintEnd_toEndOf="parent"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:id="@+id/cl_cost_loading_in_confirm_reserve_2"
+        android:background="@color/reservation_background"
+        custom:layout_constraintTop_toBottomOf="@+id/sv_bike_info_in_confirm_reserve"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <include layout="@layout/layout_strict_tc" android:id="@+id/layout_strict_tc_in_reservation_confirm_reserve"
+        android:visibility="gone"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

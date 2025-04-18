@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+
+    >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Directions"
+        android:layout_marginTop="12dp"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/ibClose"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:background="@null"
+        android:src="@drawable/right_nav_drawer_close"
+        android:layout_marginTop="10dp"/>
+
+    <ImageButton
+        android:id="@+id/ibToggleCycling"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:tag="inactive"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/cycling_disable"
+        android:layout_below="@+id/tvTitle"/>
+    <TextView
+        android:id="@+id/tvTotalDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Distance"
+        android:layout_below="@id/ibToggleCycling"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#80ffffff"/>
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:layout_below="@id/tvTotalDistance"
+        android:layout_marginBottom ="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

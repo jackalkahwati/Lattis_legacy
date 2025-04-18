@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:id="@+id/image"
+        android:gravity="left"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/ride_history"
+        />
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="left"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/lattis_menu_color"
+        android:textStyle="bold"
+        android:text="Ride History"
+        android:layout_gravity="center_vertical"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+</LinearLayout>

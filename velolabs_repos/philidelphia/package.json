@@ -1,0 +1,37 @@
+{
+  "name": "philidelphia",
+  "version": "1.0.0",
+  "description": "Ellipse existing cutomer update",
+  "main": "app.js",
+  "bin": "./app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velolabs/philidelphia.git"
+  },
+  "author": "Velolabs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velolabs/philidelphia.git"
+  },
+  "homepage": "https://github.com/velolabs/philidelphia#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "jade": "^1.11.0",
+    "moment": "^2.15.1",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "gulp-less": "^3.1.0",
+    "gulp-watch": "^4.3.8"
+  }
+}

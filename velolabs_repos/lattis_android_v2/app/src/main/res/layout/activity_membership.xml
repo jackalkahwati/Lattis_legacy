@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:measureAllChildren="false"
+        android:id="@+id/view_flipper_in_membership">
+        <include layout="@layout/activity_membership_main_list" />
+        <include layout="@layout/activity_membership_create" />
+        <include layout="@layout/activity_membership_edit" />
+        <include layout="@layout/activity_membership_list" />
+    </ViewFlipper>
+
+
+
+    <include layout="@layout/activity_loading"
+        android:id="@+id/membership_activity_loading_view"
+        android:visibility="gone"/>
+
+    <include layout="@layout/no_internal_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

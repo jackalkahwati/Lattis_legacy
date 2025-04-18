@@ -1,0 +1,45 @@
+PODS:
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - CryptoSwift (1.0.0)
+  - Fabric (1.10.2)
+  - GradientCircularProgress (3.13.0)
+  - KeychainSwift (16.0.1)
+  - Oval (2.1.1)
+
+DEPENDENCIES:
+  - Crashlytics
+  - CryptoSwift
+  - GradientCircularProgress (from `https://github.com/keygx/GradientCircularProgress`)
+  - KeychainSwift
+  - Oval (from `../ios/oval_ios/`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Crashlytics
+    - CryptoSwift
+    - Fabric
+    - KeychainSwift
+
+EXTERNAL SOURCES:
+  GradientCircularProgress:
+    :git: https://github.com/keygx/GradientCircularProgress
+  Oval:
+    :path: "../ios/oval_ios/"
+
+CHECKOUT OPTIONS:
+  GradientCircularProgress:
+    :commit: 9e2dc60d335ee6eb3677bfd9f965f0ade3607f4c
+    :git: https://github.com/keygx/GradientCircularProgress
+
+SPEC CHECKSUMS:
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  GradientCircularProgress: f5a04b862adc1fbafbd21c0ff450ed7d74d1926e
+  KeychainSwift: 4209611373ca4a098e09b1e547eebd87c544dcc4
+  Oval: d1ce7da411461cc78a7d0048e675da0af4da4a70
+
+PODFILE CHECKSUM: 6c5cba31b50c557ce070058d064ac521dba6560a
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    tools:context="io.bikes.sandypedals.presentation.ui.history.TripDetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/view_toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_trips_details" />
+
+    <include layout="@layout/view_loading_fragment" android:id="@+id/trip_details_rl_loading_operation"
+        android:visibility="gone"/>
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

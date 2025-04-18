@@ -1,0 +1,10 @@
+framework module HyLink {
+  umbrella header "HyLink.h"
+
+  export *
+  module * { export * }
+}
+
+module HyLink.Swift {
+    header "HyLink-Swift.h"
+}

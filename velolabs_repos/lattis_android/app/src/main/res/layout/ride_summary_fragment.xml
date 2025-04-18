@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="@android:color/transparent">
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="12 minutes walk"
+        android:textColor="#58A4D4"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:background="@android:color/white"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_duration_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            >
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/durationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_rate_ride_duration"
+                android:textColor="@color/black_overlay"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <com.lattis.ellipse.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/durationLabel"
+                android:text="@string/label_rate_ride_duration"
+                android:textColor="@color/black_overlay"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/border_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/rl_duration_cost"
+            android:background="@color/black_overlay" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/rate_your_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/border_line"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/label_rate_ride"
+            android:textColor="#58A4D4"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rate_your_label"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/rate1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="#07BEBE" />
+
+            <ImageView
+                android:id="@+id/rate2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="#07BEBE" />
+
+            <ImageView
+                android:id="@+id/rate3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="#07BEBE" />
+
+            <ImageView
+                android:id="@+id/rate4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="#07BEBE" />
+
+            <ImageView
+                android:id="@+id/rate5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="#07BEBE" />
+
+        </LinearLayout>
+
+        <com.lattis.ellipse.presentation.view.CustomButton
+            android:id="@+id/button_submit"
+            style="@style/blueButtonStyle.rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_stars"
+            android:layout_margin="16dp"
+            android:text="@string/submit"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,140 @@
+<div class="row" ng-show="loadingPaymentInfo || membershipLoading">
+  <div ng-init="showLoader=true" ng-show="showLoader">
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="!(loadingPaymentInfo || membershipLoading)">
+  <h3>Memberships</h3>
+  <div
+    class="alert alert-danger alert-dismissible"
+    role="alert"
+    ng-if="membershipError"
+  >
+    <button
+      ng-click="dismissMembershipError()"
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{membershipError}}
+  </div>
+  <form
+    name="membershipForm"
+    class="pull-left fullwid m-t-15 m-tb-20"
+    ng-repeat="membership in memberships"
+    style="display: flex; align-items: center"
+  >
+    <fieldset ng-disabled="membership.deactivation_date">
+      <div style="display: flex; flex-basis: 65%">
+        <div style="display: inline-flex; align-items: center; flex-basis: 10%">
+          <p style="margin: 0">Scheme</p>
+        </div>
+        <div style="display: inline-flex; align-items: center; flex-basis: 20%">
+          <span style="margin: 0 0.5rem">{{currencyMap[fleetCurrency]}} </span>
+          <input
+            style="width: 85%"
+            class="inline-block form-control"
+            step="1"
+            style="border: 1px solid #e5e8ed; padding: 4px 10px"
+            ng-model="membership.membership_price"
+            ng-required="true"
+            type="number"
+            name="membership_price"
+            placeholder="Price"
+          />
+        </div>
+        <div style="display: inline-flex; align-items: center; flex-basis: 35%">
+          <span style="margin: 0 0.5rem">Per </span>
+          <select
+            name="payment_frequency"
+            id="payment-frequency"
+            ng-model="membership.payment_frequency"
+            ng-required="true"
+            style="width: 85%"
+            class="inline-block form-control"
+          >
+            <option value="">--Frequency--</option>
+            <option value="monthly">Month</option>
+            <option value="weekly">Week</option>
+            <option value="yearly">Year</option>
+          </select>
+        </div>
+        <div style="display: inline-flex; align-items: center; flex-grow: 1">
+          <span style="margin: 0 0.5rem">For </span>
+          <input
+            style="width: 50%"
+            class="inline-block form-control"
+            step="1"
+            style="border: 1px solid #e5e8ed; padding: 4px 10px"
+            ng-model="membership.membership_incentive"
+            min="0"
+            max="100"
+            ng-required="true"
+            type="number"
+            name="membership_incentive"
+            placeholder="Discount"
+          />
+          <span>% discount </span>
+        </div>
+      </div>
+    </fieldset>
+    <div style="display: flex; flex-grow: 1" class="m-l-15">
+      <button
+        class="btn btn-primary text-uppercase p-lr-20 m-r-10"
+        ng-click="executeMembership(membership, $index)"
+        ng-hide="membership.deactivation_date"
+        ng-disabled="
+                        membershipLoading && loadingIndex === $index ||
+                        membershipForm.$invalid ||
+                        membershipForm.$pristine"
+      >
+        {{ membershipLoading && loadingIndex === $index ?
+        membership.fleet_membership_id ? 'Updating...' : 'Creating...' :
+        membership.fleet_membership_id ? 'Update' : 'Create' }}
+      </button>
+
+      <button
+        class="btn btn-success text-uppercase p-lr-20 m-r-10"
+        ng-click="activateMembership(membership, $index)"
+        ng-show="membership.deactivation_date"
+        ng-disabled="activatingIndex === $index || membershipForm.$invalid"
+      >
+        {{ activating && activatingIndex === $index ? 'Activating...' :
+        'Activate' }}
+      </button>
+
+      <button
+        class="btn btn-danger text-uppercase p-lr-20 m-r-10 pull-right"
+        ng-click="deactivateMembership(membership, $index)"
+        ng-hide="!membership.fleet_membership_id || membership.deactivation_date"
+        ng-disabled="deactivatingIndex === $index || membershipForm.$invalid"
+      >
+        {{ deactivating && deactivatingIndex === $index ? 'Deactivating...' :
+        'Deactivate' }}
+      </button>
+      <!-- <button
+      ng-click="open(membership.taxes,membership.tax_sub_total)"
+      style="background: #545b62;border-color: #4e555b;color: #fff;"
+      class="btn text-uppercase p-lr-20 m-r-10 pull-right"
+      >
+      Show Taxes
+      </button> -->
+    </div>
+  </form>
+  <button
+    class="btn btn-success text-uppercase"
+    ng-click="addMembership()"
+    ng-hide="!canAddMembership()"
+  >
+    Add
+  </button>
+</div>

@@ -1,0 +1,837 @@
+{% layout none %}
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+  
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon"/>
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  {{ content_for_header }}
+
+  {% include 'social-meta' %}
+  <!-- ProxiNova Font CSS -->
+  {{ 'proxima_novablack.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-bold.css' | asset_url | stylesheet_tag }}   
+  {{ 'proximanovacond-light.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanovacond-regular.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanovacond-semibold.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-extrabold.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-light.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-regular.css' | asset_url | stylesheet_tag }}
+  {{ 'proximanova-semibold.css' | asset_url | stylesheet_tag }}
+  
+  <!-- Theme CSS -->
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+  
+
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+
+  {% include 'fonts' %}
+
+  <!-- Store object -->
+  {% include 'theme-options' %}
+
+  <style type="text/css">
+    {% assign hex2rgb_hex = settings.primary-button-background %}
+    {% include 'hex2rgb' %}
+    .add-to-cart-loader, .home-slideshow-loader, .product-slideshow-loader {
+      border-left:   3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-right:  3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-bottom: 3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .15);
+      border-top:    3px solid rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .8);
+    }
+    {% assign hex2rgb_hex = settings.primary-button-color %}
+    {% include 'hex2rgb' %}
+    .header-drawer h1, .header-drawer .navigation .primary ul {
+      border-color: {{settings.primary-button-color}};
+      border-color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .3);
+    }
+    {% assign hex2rgb_hex = settings.footer-accent-color %}
+    {% include 'hex2rgb' %}
+    .copyright, .payment-options {
+      color: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .5);
+    }
+    .spread-the-word .footer-share-icon {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .7);
+    }
+    .spread-the-word .footer-share-icon:hover {
+      background: rgba({{ hex2rgb_r }}, {{ hex2rgb_g }}, {{ hex2rgb_b }}, .9);
+    }
+    {% if settings.custom-css != blank %}
+      {{ settings.custom-css }}
+    {% endif %}
+    .slide-text {
+        left: 80%;
+        max-width: 100%;
+        position: absolute;
+        top: 38%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    .half50 {
+        display: inline-block;
+        margin-right: 5%;
+        max-width: 65%;
+        vertical-align: top;
+        width: auto;
+    }
+    .slide-text h2, .slide-text h3 {
+        font-size: 50px;
+    }
+    .slide-text p {
+        font-size: 25px;
+    }
+    .slide-text .text-note {
+        font-size: 15px;
+        line-height: 25px;
+        margin-top: 5px;
+    }
+    .slide-text p.first-par {
+        margin-bottom: 25px;
+    }
+    .slide-text p.second-par {
+        margin-bottom: 25px;
+    }
+    .button.videobutton {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 18px;
+    }
+    .button.preorder.clicked-preorder.slider-prebutton {
+        font-size: 18px;
+        line-height: 54px;
+    }
+    @media (min-width: 1345px) and (max-width: 1370px) {
+      	.text-aligned-left .slide-text {
+            padding-right: 0%;
+        }  
+      	.text-aligned-left .slide-text {
+            left: 35%;
+        }
+      	.half50 {
+            max-width: 45%;
+        }
+      	.half50.boxImg {
+            width: 30%;
+        }
+      	.slide-text h2, .slide-text h3 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 20px;
+        }
+        .slide-text p {
+            font-size: 27px;
+            line-height: 30px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 20px;
+        }
+      	.button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 45px;
+            width: 180px;
+          	margin: 0;
+        }
+      	.button.videobutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0;
+            text-align: center;
+            width: 185px;
+        }
+      	.slide-text .text-note {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      	.full-bleed .slide-text, .opening-screen .slide-text {
+            padding-top: 115px;
+        }
+    }
+    @media (min-width: 1150px) and (max-width: 1344px) {
+      	.text-aligned-left .slide-text {
+            padding-right: 0%;
+        }  
+      	.text-aligned-left .slide-text {
+            left: 35%;
+        }
+      	.half50 {
+            max-width: 45%;
+        }
+      	.half50.boxImg {
+            width: 30%;
+        }
+      	.slide-text h2, .slide-text h3 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 12px;
+        }
+        .slide-text p {
+            font-size: 22px;
+            line-height: 20px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 12px;
+        }
+      	.button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 45px;
+            width: 180px;
+          	margin: 0;
+        }
+      	.button.videobutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0;
+            text-align: center;
+            width: 185px;
+        }
+      	.slide-text .text-note {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      	.full-bleed .slide-text, .opening-screen .slide-text {
+            padding-top: 115px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1149px) {
+    	.text-aligned-left .slide-text {
+            padding-right: 0%;
+        }  
+      	.text-aligned-left .slide-text {
+            left: 30%;
+        }
+      	.half50 {
+            max-width: 60%;
+        }
+      	.half50.boxImg {
+            width: 25%;
+        }
+      	.slide-text h2, .slide-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 5px;
+        }
+        .slide-text p {
+            font-size: 12px;
+            line-height: 18px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 4px;
+        }
+      	.button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 45px;
+            margin: 0;
+            width: 180px;
+        }
+      	.button.videobutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0;
+            text-align: center;
+            width: 185px;
+        }
+      	.slide-text .text-note {
+          font-size: 12px;
+          line-height: 15px;
+          margin-bottom: 0;
+          margin-top: 10px;
+        }
+      	.full-bleed .slide-text, .opening-screen .slide-text {
+            padding-top: 115px;
+        }
+    }
+    @media (max-width: 767px) and (min-width: 521px) {
+    	.half50 {
+            max-width: 100%;
+        }
+      	.home-slideshow-wrapper .slide-text {
+            top: 20% !important;
+        }
+      	.slide-text p {
+            font-size: 13px;
+            line-height: 13px;
+        }
+      	.slide-text h2, .slide-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 3px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 3px;
+        }
+      	.slide-text .price-par {
+            line-height: 15px;
+            margin-bottom: 5px;
+        }
+      	.button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            height: 35px;
+            line-height: 35px;
+            margin: 0;
+            width: 180px;
+        }
+      	.button.videobutton {
+            font-size: 15px;
+            height: 35px;
+            line-height: 35px;
+            margin: 0;
+            text-align: center;
+            width: 185px;
+          	padding-left: 10px;
+            padding-right: 10px;
+        }
+      	.slide-text .text-note {
+            font-size: 12px;
+            line-height: 12px;
+            margin-bottom: 0;
+            margin-top: 8px;
+        }
+    }
+    @media (min-width: 720px) and (max-width: 767px) {
+    	.home-slideshow-wrapper .slide-text {
+            top: 45% !important;
+        }
+    }
+    @media (max-width: 520px) and (min-width: 320px) {
+    	.slider-prebutton {
+            display: none;
+        } 
+      	.half50 {
+            max-width: 100%;
+        }
+      	.home-slideshow-wrapper .slide-text {
+            top: 3% !important;
+        }
+      	.slide-text p {
+            font-size: 13px;
+            line-height: 13px;
+        }
+      	.slide-text h2, .slide-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 3px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 3px;
+        }
+      	.slide-text .price-par {
+            line-height: 15px;
+            margin-bottom: 5px;
+        }
+      	.button.preorder.clicked-preorder.slider-prebutton {
+            font-size: 15px;
+            height: 40px;
+            line-height: 45px;
+            margin: 0;
+            width: 180px;
+        }
+      	.button.videobutton {
+            font-size: 15px;
+            height: 35px;
+            line-height: 35px;
+            margin: 0;
+            text-align: center;
+            width: 185px;
+          	padding-left: 10px;
+            padding-right: 10px;
+        }
+      	.slide-text .text-note {
+            font-size: 12px;
+            line-height: 12px;
+            margin-bottom: 0;
+            margin-top: 8px;
+        }
+    }
+    @media (max-width: 420px) and (min-width: 320px) {
+		.home-slideshow-wrapper .slide-text {
+        	top: 10px !important;
+    	}
+      	.slide-text h2, .slide-text h3 {
+            font-size: 15px;
+            margin-top: 0;
+          	margin-bottom: 0;
+        }
+      	.slide-text p.first-par {
+            margin-bottom: 5px;
+            line-height: 12px;
+            font-size: 12px;
+        }
+      	.slide-text p.second-par {
+            margin-bottom: 5px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+      	.button.videobutton {
+            font-size: 12px;
+            height: 25px;
+            line-height: 25px;
+            margin: 0;
+            text-align: center;
+            width: 150px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+      	.slide-text>*:last-child {
+            margin: 0;
+        }
+      	.slide-text .text-note {
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 0;
+            margin-top: 0px;
+        }
+    }
+  </style>
+
+</head>
+
+<body class="{% if customer %}customer-logged-in{% endif %} template-index navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+
+  {% include 'header-gift' %}
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MX7G67"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MX7G67');</script>
+<!-- End Google Tag Manager -->
+  <main class="main-content {% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
+
+    {% unless template contains 'index' or fullBleed %}
+      {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+        {% include 'breadcrumbs' %}
+      {% endunless %}
+    {% endunless %}
+
+    {% capture themeSettingsLink %}
+      <a href="{{ shop.url }}/admin/themes">{{ 'onboarding.theme_settings_link' | t | downcase }}</a>
+    {% endcapture %}
+
+    <div class="home-slideshow-wrapper {{ settings.slideshow-layout }} {{ settings.slideshow-transition }}">
+      <div class="home-slideshow-loader"></div>
+
+      {% assign slideCount = 0 %}
+      {% if settings.show-slide-1 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+      {% if settings.show-slide-2 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+      {% if settings.show-slide-3 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+      {% if settings.show-slide-4 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+      {% if settings.show-slide-5 %}{% assign slideCount = slideCount | plus: 1 %}{% endif %}
+
+      {% if settings.show-slideshow-navigation and slideCount > 1 %}
+        <div class="home-slideshow-navigation home-slideshow-previous icon">&#57352;</div>
+        <div class="home-slideshow-navigation home-slideshow-next icon">&#57353;</div>
+      {% endif %}
+
+      {% if settings.show-slideshow-pagination and slideCount > 1 %}
+      <div class="home-slideshow-pagination">
+        {% if settings.show-slide-1 %}<span data-slide-id="home-slide-1" class="pagination-slide-1"><span></span></span>{% endif %}
+        {% if settings.show-slide-2 %}<span data-slide-id="home-slide-2" class="pagination-slide-2"><span></span></span>{% endif %}
+        {% if settings.show-slide-3 %}<span data-slide-id="home-slide-3" class="pagination-slide-3"><span></span></span>{% endif %}
+        {% if settings.show-slide-4 %}<span data-slide-id="home-slide-4" class="pagination-slide-4"><span></span></span>{% endif %}
+        {% if settings.show-slide-5 %}<span data-slide-id="home-slide-5" class="pagination-slide-5"><span></span></span>{% endif %}
+      </div>
+      {% endif %}
+
+      <div class="home-slideshow">
+
+        {% if settings.show-slide-1 %}
+          <div id="home-slide-1" class="home-slide home-slide-1 text-aligned-left" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-1-image.jpg' | asset_url }});"{% endif %}>
+
+            {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+              <img class="slide-image" alt="{{ settings.slide-1-title | strip_html | escape }}" src="{{ 'slide-1-image.jpg' | asset_url }}">
+              <div class="slide-image-overlay">&nbsp</div>
+            {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+
+            {% if settings.slide-1-title.size > 0 or settings.slide-1-subtitle.size > 0 or settings.slide-1-small-text.size > 0 or settings.slide-1-cta.size > 0 %}
+              {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}<a href="{{settings.slide-1-url}}">{% endif %}
+              <div class="slide-text {% if settings.slide-1-shadows %}slide-text-use-shadows{% endif %}">
+                
+                <div class="half50">
+                  <h2>A Gift Worth Waiting For !</h2><p></p>
+                  <p class="first-par">Meet Skylock, the world’s first solar-powered smart bike lock that connects to your smartphone to provide keyless entry, theft detection, crash alerts and more.</p><p></p>
+                  <p class="second-par">Pre-order Skylock today and save $70!</p><p></p>
+                  <span class="price-par"><strike>$249</strike> $179 <span class="na-shipping">+ Free Shipping to North America*</span></span>
+                  <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW</a><a>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  <a class="button videobutton" id="play-button">Watch Video</a>
+                  <p class="text-note">*Add $15 for international ground shipping. Additional sales tax may apply. Offer ends 12/27/2015.</p>
+                
+                </div>
+              </div>
+              {% if settings.slide-1-cta.size == 0 and settings.slide-1-url.size > 0 %}</a>{% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if settings.show-slide-2 %}
+          <div id="home-slide-2" class="home-slide home-slide-2 text-aligned-{{settings.slide-2-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-2-image.jpg' | asset_url }});"{% endif %}>
+
+            {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}<a href="{{settings.slide-2-url}}">{% endif %}
+              <img class="slide-image" alt="{{ settings.slide-2-title | strip_html | escape }}" src="{{ 'slide-2-image.jpg' | asset_url }}">
+              <div class="slide-image-overlay">&nbsp</div>
+            {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}</a>{% endif %}
+
+            {% if settings.slide-2-title.size > 0 or settings.slide-2-subtitle.size > 0 or settings.slide-2-small-text.size > 0 or settings.slide-2-cta.size > 0 %}
+              {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}<a href="{{settings.slide-2-url}}">{% endif %}
+              <div class="slide-text {% if settings.slide-2-shadows %}slide-text-use-shadows{% endif %}">
+                {% if settings.slide-2-title.size > 0 %}
+                  <h2>{{ settings.slide-2-title }}</h2>
+                {% endif %}
+
+                {% if settings.slide-2-subtitle.size > 0 %}
+                  <h3>{{ settings.slide-2-subtitle }}</h3>
+                {% endif %}
+
+                {% if settings.slide-2-small-text.size > 0 %}
+                  <p>{{ settings.slide-2-small-text }}</p>
+                {% endif %}
+
+                {% if settings.slide-2-cta.size > 0 and settings.slide-2-url.size > 0 %}
+                  <a class="button" href="{{ settings.slide-2-url }}">{{ settings.slide-2-cta }}</a>
+                {% endif %}
+                <a class="watch-video" id="play-button1"><img src="{{'icon_play.svg' | asset_url }}" /></a>
+                <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW AT 35% OFF</a>
+                <h6 style="color:white">Offer ends 12/01/2015</h6>
+              </div>
+              {% if settings.slide-2-cta.size == 0 and settings.slide-2-url.size > 0 %}</a>{% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if settings.show-slide-3 %}
+          <div id="home-slide-3" class="home-slide home-slide-3 text-aligned-{{settings.slide-3-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-3-image.jpg' | asset_url }});"{% endif %}>
+
+            {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}<a href="{{settings.slide-3-url}}">{% endif %}
+              <img class="slide-image" alt="{{ settings.slide-3-title | strip_html | escape }}" src="{{ 'slide-3-image.jpg' | asset_url }}">
+              <div class="slide-image-overlay">&nbsp</div>
+            {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}</a>{% endif %}
+
+            {% if settings.slide-3-title.size > 0 or settings.slide-3-subtitle.size > 0 or settings.slide-3-small-text.size > 0 or settings.slide-3-cta.size > 0 %}
+              {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}<a href="{{settings.slide-3-url}}">{% endif %}
+              <div class="slide-text {% if settings.slide-3-shadows %}slide-text-use-shadows{% endif %}">
+                {% if settings.slide-3-title.size > 0 %}
+                  <h2>{{ settings.slide-3-title }}</h2>
+                {% endif %}
+
+                {% if settings.slide-3-subtitle.size > 0 %}
+                  <h3>{{ settings.slide-3-subtitle }}</h3>
+                {% endif %}
+
+                {% if settings.slide-3-small-text.size > 0 %}
+                  <p>{{ settings.slide-3-small-text }}</p>
+                {% endif %}
+
+                {% if settings.slide-3-cta.size > 0 and settings.slide-3-url.size > 0 %}
+                  <a class="button" href="{{ settings.slide-3-url }}">{{ settings.slide-3-cta }}</a>
+                {% endif %}
+                <a class="watch-video" id="play-button3"><img src="{{'icon_play.svg' | asset_url }}" /></a>
+                <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW AT 35% OFF</a>
+                <h6 style="color:white">Offer ends 12/01/2015</h6>
+              </div>
+              {% if settings.slide-3-cta.size == 0 and settings.slide-3-url.size > 0 %}</a>{% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if settings.show-slide-4 %}
+          <div id="home-slide-4" class="home-slide home-slide-4 text-aligned-{{settings.slide-4-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-4-image.jpg' | asset_url }});"{% endif %}>
+
+            {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}<a href="{{settings.slide-4-url}}">{% endif %}
+              <img class="slide-image" alt="{{ settings.slide-4-title | strip_html | escape }}" src="{{ 'slide-4-image.jpg' | asset_url }}">
+              <div class="slide-image-overlay">&nbsp</div>
+            {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}</a>{% endif %}
+
+            {% if settings.slide-4-title.size > 0 or settings.slide-4-subtitle.size > 0 or settings.slide-4-small-text.size > 0 or settings.slide-4-cta.size > 0 %}
+              {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}<a href="{{settings.slide-4-url}}">{% endif %}
+              <div class="slide-text {% if settings.slide-4-shadows %}slide-text-use-shadows{% endif %}">
+                {% if settings.slide-4-title.size > 0 %}
+                  <h2>{{ settings.slide-4-title }}</h2>
+                {% endif %}
+
+                {% if settings.slide-4-subtitle.size > 0 %}
+                  <h3>{{ settings.slide-4-subtitle }}</h3>
+                {% endif %}
+
+                {% if settings.slide-4-small-text.size > 0 %}
+                  <p>{{ settings.slide-4-small-text }}</p>
+                {% endif %}
+
+                {% if settings.slide-4-cta.size > 0 and settings.slide-4-url.size > 0 %}
+                  <a class="button" href="{{ settings.slide-4-url }}">{{ settings.slide-4-cta }}</a>
+                {% endif %}
+                <a class="watch-video" id="play-button4"><img src="{{'icon_play.svg' | asset_url }}" /></a>
+                <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW AT 35% OFF</a>
+                <h6 style="color:white">Offer ends 12/01/2015</h6>
+              </div>
+              {% if settings.slide-4-cta.size == 0 and settings.slide-4-url.size > 0 %}</a>{% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if settings.show-slide-5 %}
+          <div id="home-slide-5" class="home-slide home-slide-5 text-aligned-{{settings.slide-5-text-alignment}}" {% if settings.slideshow-layout == 'opening-screen' %}style="background-image: url({{ 'slide-5-image.jpg' | asset_url }});"{% endif %}>
+
+            {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}<a href="{{settings.slide-5-url}}">{% endif %}
+              <img class="slide-image" alt="{{ settings.slide-5-title | strip_html | escape }}" src="{{ 'slide-5-image.jpg' | asset_url }}">
+              <div class="slide-image-overlay">&nbsp</div>
+            {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}</a>{% endif %}
+
+            {% if settings.slide-5-title.size > 0 or settings.slide-5-subtitle.size > 0 or settings.slide-5-small-text.size > 0 or settings.slide-5-cta.size > 0 %}
+              {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}<a href="{{settings.slide-5-url}}">{% endif %}
+              <div class="slide-text {% if settings.slide-5-shadows %}slide-text-use-shadows{% endif %}">
+                {% if settings.slide-5-title.size > 0 %}
+                  <h2>{{ settings.slide-5-title }}</h2>
+                {% endif %}
+
+                {% if settings.slide-5-subtitle.size > 0 %}
+                  <h3>{{ settings.slide-5-subtitle }}</h3>
+                {% endif %}
+
+                {% if settings.slide-5-small-text.size > 0 %}
+                  <p>{{ settings.slide-5-small-text }}</p>
+                {% endif %}
+
+                {% if settings.slide-5-cta.size > 0 and settings.slide-5-url.size > 0 %}
+                  <a class="button" href="{{ settings.slide-5-url }}">{{ settings.slide-5-cta }}</a>
+                {% endif %}
+                <a class="watch-video" id="play-button5"><img src="{{'icon_play.svg' | asset_url }}" /></a>
+                <a class="button preorder clicked-preorder slider-prebutton" href="/products/skylock">PRE-ORDER NOW AT 35% OFF</a>
+                <h6 style="color:white">Offer ends 12/01/2015</h6>
+              </div>
+              {% if settings.slide-5-cta.size == 0 and settings.slide-5-url.size > 0 %}</a>{% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if settings.home-show-hero %}
+      {% include 'home-hero' %}
+    {% endif %}
+    {% include 'home-brands' %}
+
+    {% if settings.home-sections-order != blank %}
+      {% assign sections = settings.home-sections-order | split: "-" %}
+
+      {% for section in sections %}
+        {% case section %}
+          {% when 'A' %}
+            {% include 'home-full-width' %}
+
+
+          {% when 'E' %}
+            {% include 'home-order-now' %}
+          {% when 'F' %}
+            {% include 'home-featured-collections' %}
+          {% when 'G' %}
+            {% include 'home-featured-products' %}
+          {% when 'H' %}
+            {% include 'home-featured-blog' %}
+          {% when 'I' %}
+            {% include 'home-as-seen-on' %}
+          {% when 'J' %}
+            {% include 'home-instagram' %}
+        {% endcase %}
+      {% endfor %}
+
+    {% endif %}
+
+    {% include 'home-keyless' %}
+
+    {% include 'home-cash-alert' %}
+
+    {% include 'home-theft-alert' %}
+
+    {% include 'home-share-access' %}
+
+    {% include 'home-simple-to-use-gift' %}
+
+    {% include 'home-skylock-mount' %}
+
+    {% include 'home-images-section' %}
+
+    {% include 'home-convinced-gift' %}
+
+    {% include 'home-techspec' %}
+  </main>
+
+  {% include 'footer' %}
+
+  <!-- Scripts -->
+  {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'cart' %}
+
+    {% if settings.show-shipping-calculator %}
+      {{ "jquery.tmpl.min.js" | asset_url | script_tag }}
+      {{ "/services/javascripts/countries.js" | script_tag }}
+      {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {% endif %}
+
+    {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+  {% endif %}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% if settings.show-currency-switcher %}
+    {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+    {{ "jquery.currencies.js" | asset_url | script_tag }}
+  {% endif %}
+
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
+  {{ 'plugins.js'  | asset_url | script_tag }}
+  {{ 'site.js'  | asset_url | script_tag }}
+  {{ 'skylock_new.js'  | asset_url | script_tag }}
+  {% include 'signup-popup' %}
+	<script type="text/javascript">
+          jQuery( window ).scroll(function() {
+               	var width = jQuery( window ).width();
+                var scroll = jQuery(window).scrollTop();
+                if(scroll > 10){
+                  if(!jQuery('.main-header-wrapper').hasClass('sticky-header-bg')){
+                    jQuery('.main-header-wrapper').addClass('sticky-header-bg');
+                  }
+                } else {
+                  jQuery('.main-header-wrapper').removeClass('sticky-header-bg');
+                }
+            	var windowH = jQuery( window ).height();
+              	var popupH = jQuery("#order-popup .center").height();
+              	var diff = windowH - popupH;
+            	var scroll = jQuery( window ).scrollTop();
+                var scrollDiff = popupH - windowH + 30;
+                jQuery("#order-popup .center").css('position', 'absolute');
+                if(scroll >= scrollDiff && popupH != 0){
+                  jQuery( window ).scrollTop(scrollDiff);
+                }
+          });
+      	  jQuery( window ).resize(function() {
+            	var windowH = jQuery( window ).height();
+              	var popupH = jQuery("#order-popup .center").height();
+              	var diff = windowH - popupH;
+              	if(diff > 1){
+                  	diff = diff / 2;
+                  	jQuery("#order-popup .center").css('margin-top', diff+'px');
+                  	jQuery("#order-popup .center").css('margin-bottom', diff+'px');
+                  	jQuery("#order-popup .center").css('position', 'fixed');
+                } else {
+                  	var scroll = jQuery( window ).scrollTop();
+                    var scrollDiff = popupH - windowH + 30;
+                    jQuery("#order-popup .center").css('position', 'absolute');
+                    if(scroll >= scrollDiff && popupH != 0){
+                        jQuery( window ).scrollTop(scrollDiff);
+                    }
+                	jQuery("#order-popup .center").css('margin-top', '10px');
+                  	jQuery("#order-popup .center").css('margin-bottom', '10px');
+                }
+          });
+      	  jQuery(".watch-video, .videobutton").on("click", function() {
+              show_video();
+          });
+      	  var triggered = false;	
+      	  window.onbeforeunload = confirmExit;
+          function confirmExit() {
+            if(triggered){
+              	triggered = false;
+            	show_signup();
+            	return "Sign up for Skylock product updates and exclusive offers.";
+            }
+          }
+     </script>
+  	{% include 'cart-popup' %}
+  
+  <!--Google Code for Remarketing Tag-->
+  <!--
+  Remarketing tags may not be associated with personally identifiable information or placed
+  on pages related to sensitive categories. See more information and instructions on how to
+  setup the tag on: http://google.com/ads/remarketingsetup-->
+
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 978103455;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt=""
+  src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978103455/?
+  value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+  </noscript>
+
+  <!--Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','//connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '556386737811562');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=556386737811562&ev=PageView&noscript=1"
+  /></noscript>
+  <!--End Facebook Pixel Code-->
+  
+  
+</body>
+</html>

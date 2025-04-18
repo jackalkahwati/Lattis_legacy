@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>5390096050-eckg998t07se37udfe5o9kfn24gubnfj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.5390096050-eckg998t07se37udfe5o9kfn24gubnfj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAE5K8zzSdckARzdVDN41V0R0i8OfmLhec</string>
+	<key>GCM_SENDER_ID</key>
+	<string>5390096050</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>eu.hooba.smoovy</string>
+	<key>PROJECT_ID</key>
+	<string>hooba-smoovy</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hooba-smoovy.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:5390096050:ios:6fc9bd0e4b09c095949bab</string>
+</dict>
+</plist>

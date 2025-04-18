@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Backend Test"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/bTest"
+        android:layout_below="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="User A"/>
+    <Button
+        android:id="@+id/bTest1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/bTest"
+        android:text="User B"/>
+    <Button
+        android:id="@+id/bTest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/bTest1"
+        android:text="Share A to B"/>
+
+    <Button
+        android:id="@+id/bTest3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Pull A's Locks"/>
+
+    <Button
+        android:id="@+id/bTest4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest"
+        android:layout_toRightOf="@+id/bTest3"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Pull B's Locks"/>
+
+    <Button
+        android:id="@+id/bTest5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest3"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Revoke Access"/>
+
+    <Button
+        android:id="@+id/bTest6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest3"
+        android:layout_toRightOf="@+id/bTest5"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="get FB Pic"/>
+
+    <ImageView
+        android:id="@+id/ivFBPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest6"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/tvTest"/>
+
+    <TextView
+        android:id="@+id/tvTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bTest5"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Test"/>
+
+
+
+
+</RelativeLayout>

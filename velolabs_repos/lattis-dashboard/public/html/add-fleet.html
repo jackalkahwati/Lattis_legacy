@@ -1,0 +1,378 @@
+<section ng-controller="addFleetController"  >
+    <div class="panel">
+        <div class="panel-heading bg-white p-tb20-lr40">
+            <div class="p-t-20 nomarg bg-white">
+                <span class="ft-20 text-muted v-b" style="font-family:ProximanovaLight;">Add a new fleet</span>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <section class="bor-t-hash p-t-20" ng-show="!customerHide">
+                <form method='post' novalidate ng-submit="submitForm()" name='form'>
+                    <div class="row">
+                        <div class="col-sm-12 new-fleet-box">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="ft-14 text-muted">Is this a {{currentFleet.customer_name}} Fleet?</span>
+                                </li>
+                                <li class="m-b-10 p-t-5">
+                                    <input type="radio" name="radio" ng-model="fleetType" ng-init="fleetType='true'"
+                                           ng-change="fleetChange()" id="radio1" value="true"/>
+                                    <label for="radio1">Yes</label>
+                                    <input type="radio" name="radio" ng-model="fleetType" id="radio2" value="false"
+                                           ng-change="fleetCustomename = ''"/>
+                                    <label for="radio2">No</label>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled list-inline" ng-init="customerType = true;">
+                                <li>
+                                    <span class="ft-14 text-muted">Customer name</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder m-b-10">
+                                        <span>Customer name</span>
+                                        <label for="newCust" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box wid-400" id="newCust"
+                                               ng-model="fleetCustomename" ng-disabled="fleetType ==='true'"
+                                               ng-model-options="{ updateOn: 'blur' }"
+                                               ng-pattern="/^[\w -]*$/" data-ng-required="true"
+                                               customernames
+                                               name="customername"
+                                               ng-class="{err:!form.customername.$valid && !form.customername.$pristine && fleetType !== 'true'}"
+                                               type="text" ng-blur='validateFields(form.customername)'>
+                                        <p ng-if="form.customername.$error.customernames && !form.customername.$pristine && fleetType !== 'true'"
+                                           class="error-alert">
+                                            This customer name is already taken</p>
+                                        <p ng-if="!form.customername.$pristine && form.customername.$error.pattern"
+                                           class="error-alert">Customer name not valid</p>
+                                        <p ng-if="!form.customername.$pristine && form.customername.$error.required"
+                                           class="error-alert">Customer name is required</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="ft-14 text-muted">Fleet name</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder inline-block" style="margin-bottom: 40px;">
+                                        <span>Fleet name</span>
+                                        <label for="fleetname" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box wid-200" id="fleetname" type="text"
+                                               name="fleetname" ng-model-options="{ updateOn: 'blur' }"
+                                               ng-model="fleetName"
+                                               ng-pattern="/^[\w -]*$/" data-ng-required="true" name="fleetname"
+                                               fleetnames
+                                               ng-class="{err:!form.fleetname.$valid && !form.fleetname.$pristine}"
+                                               ng-maxlength="maxFleetNameLength"
+                                               type="text" ng-blur='validateFields(form.fleetname)'>
+                                        <p ng-if="form.fleetname.$error.fleetnames" class="error-alert">
+                                            This fleet name is already taken</p>
+                                        <p ng-if="!form.fleetname.$pristine && form.fleetname.$error.pattern"
+                                           class="error-alert">Fleet name not valid</p>
+                                        <p ng-if="!form.fleetname.$pristine && form.fleetname.$error.required"
+                                           class="error-alert">Fleet name is required</p>
+                                      <p ng-if="form.fleetname.$error.maxlength && form.fleetname.$touched"
+                                         class="error-alert">maximum Fleet name length is {{ maxFleetNameLength }} characters</p>
+                                    </div>
+                                    <div class="set-placeholder wid-204 text-center inline-block">
+                                        <label class="inline-block table-text"> What kind of Fleet</label>
+                                    </div>
+                                    <div class="set-placeholder p-r-10 inline-block">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-194"
+                                                    type="button" ng-model="paymtentType"
+                                                    data-toggle="dropdown">{{paymtentType.type}}
+                                            </button>
+                                            <ul class="dropdown-menu dropdownList-modify wid-194">
+                                                <li><a href="" ng-click="customerSelected(item)"
+                                                       ng-repeat="item in kindOfFleet">{{item.type}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="set-placeholder m-b-30 inline-block">
+                                        <span>City</span>
+                                        <label for="city" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box wid-200" id="city"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="city" type="text"
+                                               ng-pattern="/^[a-zA-Z-' \x7f-\xff]*$/"
+                                               data-ng-required="true" name="city"
+                                               ng-class="{err:!form.city.$valid && !form.city.$pristine}"
+                                               ng-blur='validateFields(form.city)'>
+                                        <p ng-if="!form.city.$pristine && form.city.$error.pattern" class="error-alert">
+                                            City name not valid</p>
+                                        <p ng-if="!form.city.$pristine && form.city.$error.required"
+                                           class="error-alert">City name is required</p>
+                                    </div>
+                                    <br>
+                                    <div class="set-placeholder m-b-10 inline-block">
+                                        <span>State</span>
+                                        <input class="form-control new-txt-box wid-194"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="state" type="text"
+                                               ng-pattern="/^[a-zA-Z-' \x7f-\xff]*$/" name="state"
+                                               ng-class="{err:!form.state.$valid && !form.state.$pristine}"
+                                               ng-blur='validateFields(form.state)'>
+                                    </div>
+                                    <div class="set-placeholder inline-block p-lr-10 m-b-10">
+                                        <span class="m-l-10">Country</span>
+                                        <input class="form-control new-txt-box wid-194"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="country" type="text"
+                                               ng-pattern="/^[a-zA-Z-' \x7f-\xff]*$/" name="country"
+                                               ng-class="{err:!form.country.$valid && !form.country.$pristine}"
+                                               type="text"
+                                               ng-blur='validateFields(form.country)'>
+                                    </div>
+                                    <div class="set-placeholder inline-block m-b-10">
+                                        <span>Zip</span>
+                                        <input class="form-control new-txt-box wid-194"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="zip"
+                                               name="zip" type="text">
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="ft-14 text-muted">Main contact</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder m-b-30 m-r-10 inline-block">
+                                        <span>First name</span>
+                                        <label for="fName" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box inline-block wid-194" id="fName"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="fName"
+                                               ng-pattern="/^[a-zA-Z- ]{3,}$/" data-ng-required="true" name="firstname"
+                                               ng-class="{err:!form.firstname.$valid && !form.firstname.$pristine}"
+                                               type="text" ng-blur='validateFields(form.firstname)'>
+                                        <p ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"
+                                           class="error-alert">First name not valid</p>
+                                        <p ng-if="!form.firstname.$pristine && form.firstname.$error.required"
+                                           class="error-alert">First name is required</p>
+                                    </div>
+                                    <div class="set-placeholder inline-block">
+                                        <span>Last name</span>
+                                        <label for="lName" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box inline-block wid-194" id="lName"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="lName"
+                                               ng-pattern="/^[a-zA-Z- ]{1,}$/" data-ng-required="true" name="lastname"
+                                               ng-class="{err:!form.lastname.$valid && !form.lastname.$pristine}"
+                                               type="text" ng-blur='validateFields(form.lastname)'>
+                                        <p ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"
+                                           class="error-alert">Last name not valid</p>
+                                        <p ng-if="!form.lastname.$pristine && form.lastname.$error.required"
+                                           class="error-alert">Last name is required</p>
+                                    </div>
+                                    <br/>
+                                    <div class="set-placeholder inline-block m-b-30">
+                                        <span>Email</span>
+                                        <label for="email" class="required-dot">&#9679;</label>
+                                        <input class="form-control new-txt-box wid-400" id="email"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-model="email"
+                                               ng-pattern="emailRegexPatterns"
+                                               data-ng-required="true" name="email"
+                                               ng-class="{err:!form.email.$valid && !form.email.$pristine}" type="email"
+                                               ng-blur='validateFields(form.email)'>
+                                        <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                                           class="error-alert">Email ID not valid</p>
+                                        <p ng-if="!form.email.$pristine && form.email.$error.required"
+                                           class="error-alert">Email ID is required</p>
+                                    </div>
+                                    <div class="m-b-10">
+                                      <div class="set-placeholder">
+                                        <span>Telephone</span>
+                                      </div>
+                                      <input  class="form-control input-phone p-lr-10 new-txt-box inline-block wid-400"
+                                             id="pno" type='text' autocomplete="off"
+                                             ng-model-options="{ updateOn: 'blur' }" ng-model="pno" name="phone"
+                                             ng-class="{err:form.phone.$invalid && !form.phone.$pristine}"
+                                             ng-blur='validateFields(form.phone)' ng-intl-tel-input>
+                                      <div class="set-placeholder">
+                                        <p ng-if="form.phone.$invalid && !form.phone.$pristine"  id="error-msg" class="error-alert">Invalid Phone number</p>
+                                      </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="ft-14 text-muted inline-block m-t-10">Time zone</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder m-b-10 inline-block">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-400"
+                                                    type="button" ng-model="selectedZone"
+                                                    data-toggle="dropdown">{{selectedZone.name}}
+                                            </button>
+                                            <ul ng-nicescroll nice-option="{cursorcolor: '#bbb', cursorwidth: '10px', background: '#F4F5F6', cursorborderradius: '0' }" nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"  class="timezone-scroll dropdown-menu dropdownList-modify wid-400" style="max-height: 168px;overflow: auto;">
+                                                <li><a href="" ng-click="zoneSelected(zone)"
+                                                       ng-repeat="zone in timezone" ng-value="zone.value">{{zone.text}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li> <span ng-if="fleetLogoerr && !fleetLogo" class="uploaderr">Logo is required</span></li>
+                            </ul>
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="ft-14 text-muted inline-block m-t-10">Preference</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder p-r-10 inline-block">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-194"
+                                                    type="button" ng-model="distancePreference"
+                                                    data-toggle="dropdown">{{distancePreference}}
+                                            </button>
+                                            <ul class="dropdown-menu dropdownList-modify wid-194">
+                                                <li><a href="" ng-click="selectPreference(distancePreference)"
+                                                    ng-repeat="distancePreference in distancePreferences">{{distancePreference}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled list-inline" ng-if="enableCurrency">
+                                <li>
+                                    <span class="ft-14 text-muted inline-block m-t-10">Currency</span>
+                                </li>
+                                <li>
+                                    <div class="set-placeholder p-r-10 inline-block">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-194"
+                                                    type="button" ng-model="fleetCurrency"
+                                                    data-toggle="dropdown">{{fleetCurrency.code}}
+                                            </button>
+                                            <ul class="dropdown-menu dropdownList-modify wid-194">
+                                                <li><a href="" ng-click="selectCurrency(currency)"
+                                                    ng-repeat="currency in currencies">{{currency.code}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <ul class="list-unstyled list-inline">
+                                <li class="v-t">
+                                    <span class="ft-14 text-muted">Upload fleet logo</span>
+                                </li>
+                                <li class="fileupload p-rel">
+                                    <label ng-if="!fleetLogo" class="required-dot"
+                                           style="z-index: 2;margin-right: 10px;">&#9679;</label>
+                                    <custom-Fileupload accept="image/x-png,image/gif,image/jpeg" hasedit="true"
+                                                       haspreview="true" name="Browse..."
+                                                       file="fleetLogo"></custom-Fileupload>
+                                </li>
+                                <li><span ng-if="fleetLogoerr && !fleetLogo" class="uploaderr">Logo is required</span>
+                                </li>
+                              <span ng-if="imageLarge" style="color: red;">Incorrect size or format. Please select a different file.</span>
+                            </ul>
+                            <div class="text-left fullwid m-tb-10 p-tb-10 bor-tb-hash m-b-35 text-right">
+                                <button class="btn custom-btn wid-130" ng-disabled="form.phone.$invalid || form.fleetname.$error.maxlength">ADD FLEET
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section ng-show="!finished">
+                <div class="well m-t-15 bg-alert noborder nobor-rad">
+                    <span class="ft-16 text-muted"> Finished.</span>
+                    <p class="p-t-10 ft-13">You have successfully added a new fleet. You can manage this fleet any time
+                        through the
+                        <a class="menuactive" ui-sref="myfleetdashboard.manage">customer dashboard </a> in <b>My
+                            fleets.</b></span>
+                    </p>
+                </div>
+                <div class="row p-b-50">
+                    <div class="col-sm-12 new-fleet-box m-t-50">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="m-b-20 ft-smbold text-muted">Add rides to this ﬂeet</h4>
+                                <p class="text-justify h-90 ft-13 textlighthash">Configure your casual rider pricing per
+                                    day, per hour or a diferent billing cycle. And set up auto renewing membership plans
+                                    that customers can subscribe to.</p>
+                                <a ui-sref="order-new-ellipse"
+                                   class="btn custom-btn h-33 fullwid m-tb-10 p-10 ft-10 text-uppercase">ADD RIDES</a>
+                            </div>
+                            <div class="col-sm-3 col-sm-offset-1 ">
+                                <h4 class="m-b-20 ft-smbold text-muted">Conﬁgure parking areas</h4>
+                                <p class="text-justify h-90 ft-13 textlighthash">You can specify that riders must return
+                                    your rides to designated parking hubs only if you like.
+                                    But you’ll need to conﬁgure these hubs ﬁrst</p>
+                                <a ui-sref="order-new-ellipse"
+                                   class="btn custom-btn h-33 fullwid m-tb-10 p-10 ft-10">CONFIGURE PARKING AREAS</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mapboxgl-popup-content {
+        background-color: #4A5060;
+        padding: 13px;
+        text-align: center;
+        font-family: SanFransisco;
+        font-size: 14px;
+        color: #fff;
+        width: 222px;
+        height: 48px;
+        border-radius: 4px;
+    }
+
+    #search-addon {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 47px;
+        height: 33px;
+        text-align: center;
+        padding-top: 7px;
+        z-index: 5;
+        line-height: 1.4;
+    }
+
+    .mapboxgl-ctrl-geocoder {
+        height: 33px;
+        width: 370px;
+        border-radius: 0px;
+    }
+
+    .mapboxgl-ctrl-geocoder input[type='text'] {
+        height: 33px;
+    }
+
+    .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+        -webkit-align-self: center;
+        align-self: center;
+        margin-left: 5px;
+        border-top: none;
+        border-bottom-color: #4A5060;
+    }
+
+    .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+        -webkit-align-self: center;
+        align-self: center;
+        margin-left: 5px;
+        border-bottom: none;
+        border-top-color: #4A5060;
+    }
+
+    .mapboxgl-ctrl-group {
+        display: inline-flex !important;
+        background: white !important;
+        border-radius: 0px !important;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    .mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+        /*display: none;*/
+    }
+
+    .mapboxgl-ctrl-top-right {
+        z-index: 0;
+    }
+</style>

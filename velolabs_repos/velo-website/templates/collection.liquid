@@ -1,0 +1,81 @@
+{% capture collectionDescription %}
+  {% if collection.description != blank and settings.collection-show-description %}
+    <div class="collection-description rte">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+{% endcapture %}
+
+{% if collection.image and settings.collection-show-featured-image %}
+  <div class="page-title collection-header-wrapper" style="background-image: url({{ collection.image.src | collection_img_url: '1024x1024' }});">
+    <div class="collection-header">
+      <h1>{{ collection.title }}</h1>
+      {{ collectionDescription }}
+    </div>
+  </div>
+{% elsif collection.handle == 'all' %}
+  <h1 class="page-title">{{ 'collections.collection.all_products' | t }}</h1>
+  {{ collectionDescription }}
+{% else %}
+  <h1 class="page-title">{{ collection.title }}</h1>
+  {{ collectionDescription }}
+{% endif %}
+
+{% paginate collection.products by settings.collection-products-per-page %}
+
+{% if collection.all_tags.size > 0 and settings.collection-enable-tag-filtering %}
+<div class="collection-tag-selector">
+
+  {% assign fallback = '' %}
+  {% if collection.handle %}
+    {% capture link %}/collections/{{ collection.handle }}{% endcapture %}
+    {% assign fallback = link %}
+  {% elsif collection.products.first.type == collection.title %}
+    {% capture link %}{{ collection.title | url_for_type }}{% endcapture %}
+    {% assign fallback = link %}
+  {% elsif collection.products.first.vendor == collection.title %}
+    {% capture link %}{{ collection.title | url_for_vendor }}{% endcapture %}
+    {% assign fallback = link %}
+  {% endif %}
+
+  <div class="select-wrapper">
+    <div class="selected-text">
+      {% if current_tags %}
+        {{ current_tags.first }}
+      {% else %}
+        {{ 'collections.collection.browse' | t }}
+      {% endif %}
+    </div>
+    <select data-fallback-url="{{ fallback }}">
+      {% if current_tags %}
+        <option name="reset">-- {{ 'collections.collection.clear' | t }} --</option>
+      {% else %}
+        <option name="browse" selected disabled>{{ 'collections.collection.browse' | t }}</option>
+      {% endif %}
+      {% for tag in collection.all_tags %}
+        {% if current_tags contains tag %}
+          <option name="{{ tag | handle }}" selected>{{ tag }}</option>
+        {% else %}
+          <option name="{{ tag | handle }}">{{ tag }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+</div>
+{% endif %}
+
+<div class="collection-products products-per-row-{{settings.collection-products-per-row}}">
+  {% for product in collection.products %}
+    {% include 'product-list-item' %}
+  {% else %}
+    <p class="empty">{{ 'collections.collection.no_products' | t }}</p>
+  {% endfor %}
+</div>
+
+
+{% if paginate.previous or paginate.next %}
+  {% include 'pagination' %}
+{% endif %}
+
+{% endpaginate %}

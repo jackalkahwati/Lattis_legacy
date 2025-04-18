@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="10dp"
+        android:id="@+id/cl_when_parking"
+        android:visibility="gone"
+        android:background="@drawable/round_parking_notice">
+
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_parking_notice_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/where_can_i_park"
+            android:textColor="@color/parking_notice_text"
+            android:textSize="16dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ct_parking_notice_subtitle"
+            custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_parking_notice_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/you_can_park_anywhere"
+            android:textColor="@color/parking_notice_text"
+            android:textSize="14dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            custom:typefaceAsset="GothamSSm-Book.otf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/ct_when_no_parking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:padding="10dp"
+        android:text="@string/no_parking_restrictions"
+        android:textColor="@color/parking_notice_text"
+        android:background="@drawable/round_parking_notice"
+        android:textSize="14dp"
+        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

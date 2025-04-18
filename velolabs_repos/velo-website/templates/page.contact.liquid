@@ -1,0 +1,106 @@
+<h2 class="page-title contact-page"> Questions About Skylock Smart Bike Lock?</h2>
+
+<div id="contact" class="center container">
+  	<p id="contact-body" class="contact-text">
+      Have a question or inquiry? First check out our <a href="http://skylock-2.myshopify.com/pages/faq">FAQ section</a>. No luck with the FAQ?<br />You can contact us directly or fill in the form below:
+  	</p>
+    <div class="contact-icons">
+        <span class="contact-icon">
+            <a href="https://twitter.com/getskylock">
+                <img src="{{'logo-twitter.png' | asset_url }}" />
+              	<span>twitter.com/getskylock</span>
+            </a>
+        </span>
+      	<span class="contact-icon">
+            <a href="https://www.facebook.com/getskylock">
+                <img src="{{'logo-facebook.png' | asset_url }}" />
+              	<span>facebook.com/getskylock</span>
+            </a>
+        </span>
+        <span class="contact-icon">
+            <a href="mailto:support@skylock.cc">
+                <img src="{{'logo-email.png' | asset_url }}" />
+              	<span>support@skylock.cc</span>
+            </a>
+        </span>
+    </div>
+  	<div class="contact-form">
+  		{% form 'contact' %}
+
+          {% if form.posted_successfully? %}
+            <p class="success-message">{{ 'contact.success' | t }}</p>
+          {% endif %}
+
+          {% if form.errors %}
+            <p class="error-message">{{ 'contact.error' | t }}</p>
+          {% endif %}
+
+          {% unless form.posted_successfully? %}
+            <div class="input-wrapper col-6">
+              <label>{{ 'general.name' | t }}</label>
+              <input type="text" placeholder="John Doe" value="" name="contact[name]" class="{% if form.errors contains "author" %}error{% endif %}">
+            </div>
+
+            <div class="input-wrapper col-6 pull-right">
+              <label>{{ 'general.email' | t }}</label>
+              <input type="text" placeholder="john@email.com" value="" name="contact[email]" class="{% if form.errors contains "email" %}error{% endif %}">
+            </div>
+
+            <div class="input-wrapper col-12">
+              <label>{{ 'general.message' | t }}</label>
+              <textarea name="contact[comments]" rows="6" placeholder="Your message here ..." class="{% if form.errors contains "body" %}error{% endif %}"></textarea>
+            </div>
+
+            <div class="input-wrapper submit-button">
+              <input type="submit" value="Send Message">
+            </div>
+          {% endunless %}
+
+        {% endform %}
+  	</div>
+</div>
+
+{% comment %}
+<h1 class="page-title">{{ page.title }}</h1>
+
+<div class="rte">
+  {{ page.content }}
+</div>
+
+<div class="contact-form-wrapper">
+  <h3>{{ 'contact.header' | t }}</h3>
+
+  {% form 'contact' %}
+
+    {% if form.posted_successfully? %}
+      <p class="success-message">{{ 'contact.success' | t }}</p>
+    {% endif %}
+
+    {% if form.errors %}
+      <p class="error-message">{{ 'contact.error' | t }}</p>
+    {% endif %}
+
+    {% unless form.posted_successfully? %}
+      <div class="input-wrapper">
+        <label>{{ 'general.name' | t }}</label>
+        <input type="text" placeholder="{{ 'general.name_placeholder' | t }}" value="" name="contact[name]" class="{% if form.errors contains "author" %}error{% endif %}">
+      </div>
+
+      <div class="input-wrapper">
+        <label>{{ 'general.email' | t }}</label>
+        <input type="text" placeholder="{{ 'general.email_placeholder' | t }}" value="" name="contact[email]" class="{% if form.errors contains "email" %}error{% endif %}">
+      </div>
+
+      <div class="input-wrapper">
+        <label>{{ 'general.message' | t }}</label>
+        <textarea name="contact[comments]" rows="6" class="{% if form.errors contains "body" %}error{% endif %}"></textarea>
+      </div>
+
+      <div class="input-wrapper">
+        <input type="submit" value="{{ 'general.submit' | t }}">
+      </div>
+    {% endunless %}
+
+  {% endform %}
+</div>
+{% endcomment %}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#829CB2</color>
+    <color name="colorPrimaryDark">#30425f</color>
+    <color name="colorAccent">#57D8FF</color>
+    <color name="colorPrimarylightdark">#687c8e</color>
+    <color name="app_background">#3C5377</color>
+    <color name="app_background_theme">#3C5377</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="ellipses_text_color">#9B9B9B</color>
+    <color name="text_hint_color">#A0C8E0</color>
+    <color name="circular_progress_default_progress">#57D8FF</color>
+    <color name="circular_progress_default_title">#FFFFFF</color>
+    <color name="circular_progress_default_subtitle">#FFFFFF</color>
+    <color name="lattis_accent_color">#00AAD1</color>
+    <color name="lattis_ride_in_progress_color">#50E3C2</color>
+    <color name="lattis_dark_color">#00647C</color>
+    <color name="lattis_dark_title_color">#163850</color>
+    <color name="lattis_text_color_blue">#57D8FF</color>
+    <color name="lattis_header_color">#80848C</color>
+    <color name="lattis_toolbar_title">#ACB1BB</color>
+    <color name="lattis_light_grey">#868686</color>
+    <color name="lattis_primary_dark_color">#FFFFFF</color>
+    <color name="lattis_view_border_color">#979797</color>
+    <color name="lattis_view_loction_bg">#f9f9f9</color>
+    <color name="lattis_text_color_grey">#818181</color>
+    <color name="lattis_text_color_grey_dark">#D8D8D8</color>
+    <color name="lattis_toolbar_bg">#F9F9F9</color>
+    <color name="lattis_menu_color">#B3BDC2</color>
+    <color name="lattis_transparent">#80000000</color>
+    <color name="divider_settings">#DDDDDD</color>
+    <color name="color_tc_text">#818181</color>
+    <color name="headerBackground">#eeeeee</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="text_color">#9B9B9B</color>
+    <color name="non_selected_circle_icon">#669B9B9B</color>
+    <color name="lattis_profile_accent">#d2d2d2</color>
+    <color name="alert_background_color">#22000000</color>
+
+    <color name="alert_logout_background">#A0C8E0</color>
+
+    <color name="color_semi_transparent">#CF000000</color>
+    <color name="color_transparent">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="mb_gray">#ffdedede</color>
+    <color name="mb_blue">#ff0099cc</color>
+    <color name="mb_blue_dark">#ff00719b</color>
+    <color name="bt_white">#ffffff</color>
+    <color name="bt_black">#001129</color>
+    <color name="bt_blue">#009bde</color>
+    <color name="bt_light_gray">#6d6d6d</color>
+    <color name="bt_expiration_date_sheet_background_light">#eceff0</color>
+    <color name="bt_expiration_date_sheet_background_dark">#20272b</color>
+    <color name="bt_black_12">#1e000000</color>
+    <color name="bt_white_12">#1effffff</color>
+    <color name="bt_black_38">#61000000</color>
+    <color name="bt_white_38">#61ffffff</color>
+    <color name="bt_black_54">#8a000000</color>
+    <color name="bt_white_54">#8affffff</color>
+    <color name="bt_black_87">#de000000</color>
+    <color name="bt_white_87">#deffffff</color>
+
+    <color name="begin_trip_disable">#B7C1CD</color>
+    <color name="begin_trip_enable">#00AAD1</color>
+
+    <color name="tooltip_background">#525760</color>
+
+    <color name="active_ride_label_color">#00AAD1</color>
+
+    <!--<color name="simpletooltip_background">#525760</color>-->
+    <!--<color name="simpletooltip_text">@android:color/white</color>-->
+    <!--<color name="simpletooltip_arrow">#525760</color>-->
+</resources>

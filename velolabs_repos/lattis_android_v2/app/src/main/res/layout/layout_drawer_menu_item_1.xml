@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/drawer_background"
+    android:paddingTop="25dp"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/image"
+        android:src="@drawable/menu_ride_history"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toEndOf="@+id/image"
+        android:textColor="@color/drawer_item_text"
+        android:textSize="14dp"
+        android:text="Ride History"
+        custom:typefaceAsset="GothamSSm-Book.otf" />
+
+
+
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/cv_reservation_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/reservation_count_text"
+        android:textSize="14dp"
+        android:text="0"
+        android:background="@drawable/round_reservation_count"
+        android:visibility="gone"
+        custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<select class="form-control h-33 m-l-30 pull-left" ng-model="analyticsdata.price_type" required style="width:153px">
+    <option ng-repeat="session in dropdownlist" value="{{session.name}}" style="min-width:153px">{{session.id}}</option>
+</select>
+<div class="pull-left fullwid m-tb-20">
+    <span class="pull-left m-t-7"> Interval </span>
+    <div class="pull-left p-l-30" style="width:260px;" ng-if="analyticsdata.price_type == 'Hours'">
+        <span class="text-hash ft-10">2017</span>
+        <ul class="list-inline">
+            <li ng-class="{'custom-btn' : i.index == $index }" ng-click = "setmonth($index)" style="margin:4px; padding:3px 10px; border-radius: 5px;" ng-repeat="i in months track by $index" class="pointer list-group-item ft-12"><span>{{i.val}}</span></li>
+        </ul>
+    </div>
+
+    <div class="pull-left p-l-30" style="width:260px;" ng-if="analyticsdata.price_type == 'Months'">
+        <div id="time-range" class="wid-204">
+            <div class="sliders_step m-tb-20">
+                <div id="hours-range"></div>
+            </div>
+            <div class="m-t-10"><span class="slider-time bor-hash p-5" style="border-radius: 7px;">10:00 AM</span> <em class="p-lr-10"> to</em> <span style="border-radius: 7px;" class="slider-time2 bor-hash p-5">8:00 PM</span></div>
+        </div>
+    </div>
+
+    <p class="pull-left text-center text-bbb fullwid l-s ft-12">( Max 6 month increments )</p>
+</div>
+

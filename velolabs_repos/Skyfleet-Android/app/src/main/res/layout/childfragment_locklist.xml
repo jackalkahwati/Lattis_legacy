@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_share_lock_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content_failure"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_nolocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/sharing_nolocks_found"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#9c9797" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:visibility="gone">
+
+
+        <ProgressBar
+            style="@android:style/Widget.Holo.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/mProgressBar"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

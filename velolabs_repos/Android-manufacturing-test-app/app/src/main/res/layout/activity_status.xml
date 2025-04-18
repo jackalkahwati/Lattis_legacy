@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/bleConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="BLE Connection State"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/iv_connectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/bleConnection"
+            android:gravity="center_horizontal|center_vertical"
+            android:src="@drawable/red" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Status ="
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#7a7a7a"
+        android:textSize="30dp"
+        android:visibility="gone"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/progressbar_load"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

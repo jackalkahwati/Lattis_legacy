@@ -1,0 +1,1443 @@
+<section>
+    <div class="panel-body box p-t-50">
+        <div class="p-lr-20">
+            <div class="row bor-tb-hash p-tb-5">
+                <div class="col-sm-12">
+                    <div class="fullwid pull-left">
+                        <ul class="nav navbar-nav">
+                            <li ng-repeat="item in inner_menu_Items" class="innertab m-r-5">
+                                <a href="javascript:void(0);" ng-click="$parent.innertab = item.id"
+                                   ng-class="{'inneractivetab':innertab == item.id}">{{item.title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-lr-20">
+            <div class="row" ng-show="innertab === 1">
+                <form name="form" class="pull-left fullwid">
+                    <div class="col-sm-12 new-fleet-box m-b-35 m-t-15 p-b-50">
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span>Fleet Logo</span>
+                            </li>
+                            <li>
+                                <img class="h-53 inline-block" ng-src="{{fleetDetails.logo}}">
+                                <img ng-click="openImageUpload()" class="v-b h-14"
+                                     src="../images/editUpload.png">
+                                <span ng-if="imageLarge" style="color: red;">Incorrect size or format. Please select a different file.</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span>Customer name</span>
+                            </li>
+                            <li class="v-b">
+                                <span class="f-weight-100">{{fleetDetails.customer_name}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline m-t-20">
+                            <li>
+                                <span>Fleet name</span>
+                            </li>
+                            <li class="address-bar">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="set-placeholder m-b-30">
+                                            <span>Fleet name</span>
+                                            <label for="fleet_name" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box" id="fleet_name" name="fleet_name"
+                                                data-ng-required="true" ng-pattern="/^[a-zA-Z-\s\d]{3,}$/"
+                                                ng-class="{err:!form.fleet_name.$valid && !form.fleet_name.$pristine}"
+                                                ng-maxlength="maxFleetNameLength"
+                                                ng-model="fleetDetails.fleet_name" type="text">
+                                            <p ng-if="!form.fleet_name.$pristine && form.fleet_name.$error.pattern"
+                                            class="error-alert">Fleet name not valid</p>
+                                            <p ng-if="form.fleet_name.$error.maxlength && form.fleet_name.$touched"
+                                             class="error-alert">maximum Fleet name length is {{ maxFleetNameLength }} characters</p>
+                                            <p ng-if="!form.fleet_name.$pristine && form.fleet_name.$error.required"
+                                            class="error-alert">Fleet name is required</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="margin-top: -125px">
+                        <p class="profile-hint hint-1">This will be used in the help section of the application</p>
+                        <p class="profile-hint hint-2">This will be used in the help section of the application</p>
+                        <p ng-show="!fleetDetails.disableCurrency" class="profile-hint hint-3">This will be used in the help section of the application</p>
+                        <p ng-show="fleetDetails.disableCurrency" class="profile-hint hint-4">This will be used in the help section of the application</p>
+                        </div>
+                        <ul class="list-unstyled list-inline m-t-20">
+                            <li>
+                                <span>Main contact </span>
+                            </li>
+                            <li class="address-bar">
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="set-placeholder m-b-30">
+                                            <span>First name</span>
+                                            <label for="firstname" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box" id="firstname" name="firstname"
+                                                   data-ng-required="true" ng-pattern="/^[a-zA-Z- ]{3,}$/"
+                                                   ng-class="{err:!form.firstname.$valid && !form.firstname.$pristine}"
+                                                   ng-model="fleetDetails.contact_first_name" type="text">
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"
+                                               class="error-alert">First name not valid</p>
+                                            <p ng-if="!form.firstname.$pristine && form.firstname.$error.required"
+                                               class="error-alert">First name is required</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 p-l-0">
+                                        <div class="set-placeholder inline-block m-b-30">
+                                            <span class="">Last name</span>
+                                            <label for="lastname" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box inline-block" id="lastname"
+                                                   name="lastname"
+                                                   data-ng-required="true" ng-pattern="/^[a-zA-Z- ]{1,}$/"
+                                                   ng-class="{err:!form.lastname.$valid && !form.lastname.$pristine}"
+                                                   type="text"
+                                                   ng-model="fleetDetails.contact_last_name">
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"
+                                               class="error-alert">Last name not valid</p>
+                                            <p ng-if="!form.lastname.$pristine && form.lastname.$error.required"
+                                               class="error-alert">Last name is required</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="set-placeholder m-b-30">
+                                            <span>Email address</span>
+                                            <label for="email" class="required-dot">&#9679;</label>
+                                            <input class="form-control new-txt-box" id="email" data-ng-required="true"
+                                                   ng-pattern="emailRegexPatterns"
+                                                   name="email"
+                                                   ng-class="{err:!form.email.$valid && !form.email.$pristine}"
+                                                   ng-model="fleetDetails.contact_email" type="email">
+                                            <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                                               class="error-alert">Email ID not valid</p>
+                                            <p ng-if="!form.email.$pristine && form.email.$error.required"
+                                               class="error-alert">Email ID is required</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="inline-block m-b-30" style="display: flex;">
+                                      <div class="set-placeholder">
+                                        <span class="">Telephone</span>
+                                      </div>
+                                      <input class="input-phone new-txt-box p-lr-10 wid-400" type="tel" id="phone" name="tel"
+                                        ng-model="fleetDetails.contact_phone" data-ng-required="true">
+                                      <div class="set-placeholder">
+                                        <p ng-if="!phoneNumberIsValid && form.tel.$touched" class="error-alert">Invalid number</p>
+                                        <p ng-if="!form.tel.$pristine && form.tel.$error.required" class="error-alert">Phone is required</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="set-placeholder m-b-10 inline-block">
+                                            <span class="">Timezone</span>
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-400"
+                                                        type="button" ng-model="selectedZone" style="margin-top:0px;"
+                                                        data-toggle="dropdown">{{selectedZone.name}}
+                                                </button>
+                                                <ul id="timezone-scroll" ng-nicescroll nice-option="{cursorcolor: '#bbb', cursorwidth: '10px', background: '#F4F5F6', cursorborderradius: '0' }" nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"  class="dropdown-menu dropdownList-modify wid-400" style="max-height: 168px;overflow: auto;">
+                                                    <li><a href="" ng-click="zoneSelected(zone)"
+                                                           ng-repeat="zone in profileTimezone" ng-value="zone.value">{{zone.text}}</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-if="!fleetDetails.disableCurrency" class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-20 col-lg-12">
+                                        <div class="set-placeholder m-b-10 inline-block">
+                                            <span class="">Currency</span>
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-400"
+                                                        type="button" ng-model="selectedCurrency" style="margin-top:0px;"
+                                                        data-toggle="dropdown">{{selectedCurrency.value}}
+                                                </button>
+                                                <ul id="timezone-scroll"
+                                                    class="dropdown-menu dropdownList-modify wid-400"
+                                                    style="max-height: 168px;overflow-x: hidden;"
+                                                >
+                                                    <li>
+                                                        <a href="" ng-click="currencySelected(currency)"
+                                                           ng-repeat="currency in currencyList" ng-value="zone.value"
+                                                        >
+                                                           {{currency.value}}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-20 col-lg-12">
+                                        <div class="set-placeholder m-b-10 inline-block">
+                                            <span class="">Distance Preference</span>
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-400"
+                                                        type="button" ng-model="distancePreference" style="margin-top:0px;"
+                                                        data-toggle="dropdown">{{distancePreference}}
+                                                </button>
+                                                <ul id="timezone-scroll" ng-nicescroll nice-option="{cursorcolor: '#bbb', cursorwidth: '10px', background: '#F4F5F6', cursorborderradius: '0' }" nice-scroll-top-end="topEndComplete()" nice-scroll-end="endScroll()"  class="dropdown-menu dropdownList-modify wid-400" style="max-height: 168px;overflow: auto;">
+                                                    <li><a href="" ng-click="preferenceSelected(distancePreference)"
+                                                           ng-repeat="distancePreference in distancePreferences">{{distancePreference}}</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-20 col-lg-12">
+                                        <div class="set-placeholder">
+                                            <span class="">Weblink</span>
+                                            <input class="form-control new-txt-box" id="weblink"
+                                                   ng-pattern="/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/"
+                                                   name="weblink"
+                                                   ng-class="{err:!form.weblink.$valid && !form.weblink.$pristine}"
+                                                   ng-model="fleetDetails.contact_web_link" type="text">
+                                            <p ng-if="!form.weblink.$pristine && form.weblink.$error.pattern"
+                                               class="error-alert">Web link not valid</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline" style="margin-top: -15px;">
+                            <li style="margin-top: 20px">
+                              <span>Change Fleet Type</span>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 m-t-20 col-lg-12">
+                                  <div class="set-placeholder m-b-10 inline-block">
+                                    <span class="">Fleet type</span>
+                                    <div class="dropdown">
+                                      <button class="dropdown-toggle styleSelect text-left p-lr-10 nomarg new-dd-box wid-400"
+                                              type="button" ng-model="fleetType" style="margin-top:0px;"
+                                              data-toggle="dropdown">{{fleetType.name}}
+                                      </button>
+                                      <ul class="dropdown-menu dropdownList-modify" style="width:400px;">
+                                        <li><a href="" ng-click="fleetTypeSelected(type)"
+                                               ng-model="fleetType"
+                                               ng-change="fleetTypeSelected(type)"
+                                               ng-repeat="type in fleetTypes" ng-value="type.value">{{type.name}}</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="pull-right text-right">
+                            <button ng-click="fieldChanged === false ? saveProfileSettings() : changeFleetTypeModal()"  class="btn custom-btn"
+                                    ng-disabled="(coordinatorACL || technicianACL || form.tel.$invalid ||
+                                    form.fleet_name.$error.maxlength && form.fleet_name.$touched )">SAVE CHANGES
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div ng-show="innertab === 2" class="row m-t-30 m-b-30">
+                <div class="col-sm-12 new-fleet-box">
+                    <div class="text-alert-dark m-b-35">
+                        Select On Call <br/>
+                        Choose a user from the drop down to modify current on call user.
+                    </div>
+                    <div class="row p-lr-20">
+                        <div class="col-sm-5 bg-alert">
+                            <div class="bor-r-hash" style="margin: 12px 0px 7px; padding: 15px">
+                                <span style="font-size: 11px;color: #6d6d6d;">USER</span>
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle styleSelect text-left p-lr-10 new-dd-box wid-200 nomarg"
+                                            type="button" ng-model="newOnCall"
+                                            data-toggle="dropdown">{{newOnCall.full_name}}
+                                    </button>
+                                    <ul class="dropdown-menu wid-200 dropdownList-modify">
+                                        <li><a href="" ng-repeat="item in operatorData"
+                                               ng-click="userSelectedItem(item)">{{item.full_name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 bg-alert" style="padding: 27px;">
+                            <div class="set-placeholder">
+                                <span>USER ON CALL</span>
+                                <h3>{{onCalloperator[0].full_name}}</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 bg-alert p-30">
+                            <button class="btn custom-btn text-uppercase text-white bg-HeaderToolbar"
+                                    style="margin: 8px 0px;" ng-click="updateOnCall()">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="innertab === 3" class="row m-t-20 m-b-20">
+                <div class="col-sm-12 new-fleet-box p-30">
+                    <div id='user-list'>
+                        <ul class="list-unstyled m-b-20 row profile_color"
+                            ng-repeat='user in operatorData track by $index' ng-if='user.full_name'>
+                            <div ng-if="user.email">
+                              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <li class='inline-block m-r-30 ft-13 ft-b'>{{user.full_name}}</li>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <li class='inline-block m-r-30 ft-13 ft-lighter'>{{user.email}}</li>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <li ng-if="(!adminACL && !normalAdminACL) || user.role === 'Primary administrator'" class='inline-block m-r-30 ft-13 ft-b'>{{user.role}}</li>
+                                <div class="dropdown" ng-if="(adminACL || normalAdminACL) && user.role !== 'Primary administrator'">
+                                    <button class="dropdown-toggle styleSelect text-left p-lr-10 new-dd-box"
+                                            type="button" ng-model="newuser" style="width:160px;margin-top:0px;"
+                                            data-toggle="dropdown">{{user.role}}
+                                    </button>
+                                    <ul class="dropdown-menu wid-160 dropdownList-modify" style="min-width:130px;">
+                                        <li ng-click="updateACL(role, user.operator_id)"
+                                            ng-repeat="role in customerList"
+                                            ng-class="{'disabled': role.value == 'admin'}">
+                                            <a href="">{{role.customer_name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button ng-if="!coordinatorACL && !technicianACL"
+                                    ng-disabled="currentOperator == user.operator_id || (user.acl === 'admin' && normalAdminACL)"
+                                    ng-class="currentOperator == user.operator_id ||
+                                    coordinatorACL ||
+                                    technicianACL ||
+                                    (user.acl === 'admin' && normalAdminACL) ?
+                                    'not-allowed' : 'pointer'"
+                                    class="button-nobg col-xs-3 col-sm-3 col-md-3 col-lg-3"
+                                    ng-click="delUser(user.operator_id)">
+                                <span class='m-r-30 ft-13 text-skyblue '>Delete user <em
+                                        class="m-l-5">x</em></span>
+                            </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 p-rel">
+                    <div class="row bor-t-hash m-t-20 m-lr-15">
+                        <div class="col-sm-12">
+                            <p class="ft-b m-t-30" style="margin-bottom:0;">Add a new user</p>
+                            <p>All users will have the same viewing and editing rights and privileges as the principal
+                                user,
+                                with the exception of being able to see or modify users.</p>
+                            <div class='text-right m-t-20 m-b-30'>
+                                <button ng-dialog="../html/modals/add-users.html"
+                                        ng-dialog-controller="addUserModalController" ng-dialog-close-previous
+                                        ng-disabled="coordinatorACL || technicianACL" class='btn custom-btn wid-100'>ADD
+                                    USER
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-tb-10 p-rel' ng-show='innertab === 4'>
+                <div class="row">
+                    <table class="fullwid">
+                        <thead>
+                        <tr class="bor-b-hash" style="line-height: 3.5em;">
+                            <th class="text-center">
+                                <span>Date</span>
+                            </th>
+                            <th class="text-center">
+                                Make
+                            </th>
+                            <th class="text-center">
+                                Model
+                            </th>
+                            <th class="text-center">
+                                Maintenance Schedule
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="bor-b-hash text-gray" ng-repeat="schedule in fleetSchedule track by $index"
+                            style="line-height: 5em;">
+                            <td class="text-center">
+                                <span>{{schedule.date_created}}</span>
+                            </td>
+                            <td class="text-center">
+                                <span>{{schedule.make}}</span>
+                            </td>
+                            <td class="text-center">
+                                <span>{{schedule.model}}</span>
+                            </td>
+                            <td class="text-center">
+                                <ul class="m-lr-5 nopadd nomarg inline-block">
+                                    <li class="inline-block">
+                                        <input ng-change="distance(fleetSchedule[$index].show_schedule, $index)"
+                                               ng-model="fleetSchedule[$index].show_schedule" type="text"
+                                               style="width:50px; text-align:center; padding:0 5px;min-height: 40px;max-height: 40px;">
+                                    </li>
+                                </ul>
+                                <ul class="m-lr-5 nopadd nomarg inline-block">
+                                    <li class="inline-block">
+                                        {{distancePreference === 'miles' ? 'mi' : 'km'}}
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right fullwid m-tb-10 p-tb-10 m-b-35">
+                        <button class="btn custom-btn ft-12" ng-click="fleetDistanceSave(fleetSchedule)">SAVE
+                            &amp;
+                            CONTINUE
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" ng-show="innertab === 6">
+                <form name="permissionForm" class="pull-left fullwid m-t-15">
+                    <div class="col-sm-12 new-fleet-box m-b-35">
+                                     <div class="row">
+                                        <div class="col-sm-12 m-tb-10">
+                                            <h4 class="ft-proReg">Do you want to make your fleet available 24hrs
+                                                <div class="inline-block p-l-50" ng-init="permissionData.availability='No'">
+                                                    <span class="m-r-10">
+                                                        <input type="radio" id="availability1" ng-click="availabilitySetting()"
+                                                               value="Yes" name="availability" ng-model="permissionData.availability"/>
+                                                    <label for="availability1">Yes</label></span>
+                                                        <span class="m-r-10">
+                                                            <input type="radio" id="availability2" name="availability" value="No"
+                                                                                    ng-click="availabilitySetting()" ng-model="permissionData.availability"/>
+                                                    <label for="availability2">No</label></span>
+                                                </div>
+
+                                            </h4>
+                                        </div>
+                                        
+                                        <div class="col-sm-12 m-b-35" ng-show="permissionData.availability === 'No'">
+                                            <div id="time-range" class="wid-300 p-l-30">
+                                                <p class="ft-12" style="color: #bbb;margin-left: -5px;">Time</p>
+                                                <div class="sliders_step1 m-b-20">
+                                                    <div id="slider-range"></div>
+                                                </div>
+                                                <div class="m-t-10 ft-12 ft-proReg"><span class="slider-time bor-hash p-5"
+                                                                          style="border-radius: 7px;letter-spacing: 0.6px;"></span> {{dayFormat}} &nbsp; to &nbsp; <span
+                                                        style="border-radius: 7px;letter-spacing: 0.6px;" class="slider-time2 bor-hash p-5">10:00</span> {{noonFormat}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-b-3">
+                                        <div class="col-sm-12 m-tb-10">
+                                            <h4 class="ft-proReg">Allow members to end ride outside of parking spot / zone
+                                                <div class="inline-block p-l-50">
+                                                    <div class="">
+                                                <span class="m-r-10">
+                                                    <input type="radio" id="ride1"
+                                                           value="1" name="deposite" ng-model="pricingdata.skip_parking_image"/>
+                                                <label for="ride1">Yes</label></span>
+                                                        <span class="m-r-10"><input type="radio" id="ride2" name="deposite" value="0"
+                                                                                    ng-model="pricingdata.skip_parking_image"/>
+                                                <label for="ride2">No</label></span>
+                                                    </div>
+                                                </div>
+                                            </h4>
+                                            <p class="p-lr-10">Click <span class="menuactive">here </span>to set up penalty fees</p>
+                                        </div>
+
+                                    </div>
+                        <div class="row m-b-35">
+                            <div class="col-sm-12 m-tb-10">
+                                <h4 class="ft-proReg">Add a usage restriction</h4>
+                                <p class="p-lr-10">Members will receive a pop-up prompting them to end their
+                                    ride.</p>
+                            </div>
+                            <div class="col-sm-12 text-left">
+                                <div class="p-tb-10 p-l-30">
+                                    <span class="m-r-10 m-t-3 pull-left">
+                                        <input type="radio" id="restriction1"
+                                               value="Yes" name="restriction" ng-model="pricingdata.restriction"
+                                               ng-click="unlimitedSetting()"/>
+                                    <label for="restriction1">Unlimited usage</label></span>
+                                    <span class="m-r-10 m-t-3 pull-left">
+                                        <input type="radio" id="restriction2" name="restriction" value="No"
+                                               ng-click="unlimitedSetting()" ng-model="pricingdata.restriction"/>
+                                    <label for="restriction2">Maximum individual trip length</label></span>
+
+                                    <input ng-disabled="pricingdata.restriction === 'Yes'" ng-model="restrictionLimit"
+                                           class="text-center m-l-10" type="text" ng-class="{'disabled' : pricingdata.restriction === 'Yes'}"
+                                           style="width:50px; float: left; margin-right: 20px; padding:0 2px;min-height: 28px;max-height: 35px;">
+                                    <span
+                                            class="p-lr-10"> {{pricingdata.restriction}}</span>
+                                    <div class="dropdown inline-block">
+                                        <button class="dropdown-toggle styleSelect text-left p-lr-10 new-dd-box wid-200"
+                                                ng-class="{'disabled' : pricingdata.restriction === 'Yes'}"
+                                                type="button" ng-model="pricingdata.restriction_trip_length" style="margin-top:0px;"
+                                                data-toggle="dropdown" ng-disabled="pricingdata.restriction === 'Yes'">
+                                            {{pricingdata.restriction_trip_length.name}}
+                                        </button>
+                                        <ul class="dropdown-menu wid-200 dropdownList-modify">
+                                            <li><a href="" ng-repeat="session in rideDeposit"
+                                                   ng-click="maxTriplength(session)">{{session.name}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 text-right m-t-30 bor-t-hash">
+                                <button type="button" class="btn custom-btn m-t-10"
+                                        ng-disabled="coordinatorACL || technicianACL" ng-click="savePermission()">SAVE
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="row" ng-show="innertab === 7">
+                <div class="col-sm-12">
+                    <form name="appSettingsForm" class="pull-left fullwid m-t-15 m-lr-15">
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">SHORTEN “END RIDE” FLOW IN LATTIS APP</span>
+                            <span class="p-tb-10 p-l-30">
+                                        <span class="m-r-10">
+                                            <input ng-change="changeSettings()" type="radio" ng-init="pricingdata.shortRide='0'" id="shortRide1"
+                                                value=1 name="shortRide" ng-model="pricingdata.shortRide"/>
+                                        <label for="shortRide1">Yes</label></span>
+                                        <span class="m-r-10">
+                                          <input ng-change="changeSettings()" type="radio" id="shortRide2" name="shortRide" value=0
+                                                                    ng-model="pricingdata.shortRide"/>
+                                        <label for="shortRide2">No</label></span>
+                                    </span>
+                        </div>
+                        <p class="text-hash m-b-30"> This function shortens the end ride process.
+                            Members wonʼt be <br/>
+                            required to take a picture of their locked vehicle, or be required to complete the <br/>
+                            “end ride” checklist. </p>
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">RESERVATION TIME</span>
+                            <input ng-change="changeSettings()" ng-model="pricingdata.startRideTime" class="text-center m-l-10" type="text"
+                                style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                            <span class="p-lr-10"> Mins.</span> <span> (Minimum {{reservation_min}} and Maximum {{reservation_max}} Mins)  </span>
+                        </div>
+                        <p class="text-hash m-b-30">
+                            This is the time alloted from book RESERVATION to START RIDE
+                        </p>
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">GPS TRACKING</span>
+                            <span class="p-tb-10 p-l-30">
+                                        <span class="m-r-10">
+                                            <input ng-change="changeSettings()" type="radio" id="gps1"
+                                                value=1 name="GPS" ng-model="pricingdata.gps"/>
+                                        <label for="gps1">Yes</label></span>
+                                        <span class="m-r-10">
+                                          <input ng-change="changeSettings()" type="radio" id="gps2" name="GPS" value=0
+                                                                    ng-model="pricingdata.gps"/>
+                                        <label for="gps2">No</label></span>
+                                    </span>
+                        </div>
+                        <p class="text-hash m-b-30"> By turning off this feature you have the option to deactivate<br/> GPS
+                            tracking of the RIDER while IN RIDE. The app will still capture<br/> the last
+                            locked location. </p>
+
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">SEND EMAIL ON START TRIP</span>
+                            <span class="p-tb-10 p-l-30">
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="start_trip_email_1" value=1 name="start_trip_email"
+                                    ng-model="pricingdata.start_trip_email"/>
+                                <label for="start_trip_email_1">Yes</label>
+                                </span>
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="start_trip_email_0" name="start_trip_email" value=0 ng-model="pricingdata.start_trip_email"/>
+                                <label for="start_trip_email_0">No</label>
+                                </span>
+                            </span>
+                        </div>
+                            <p class="text-hash m-b-30"> By turning this feature on, a rider will receive an email with a message from the operator when they start a trip </p>
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">PHONE NUMBER</span>
+                            <span class="p-tb-10 p-l-30">
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="require_phone_number_1" value=1 name="require_phone_number"
+                                    ng-model="pricingdata.require_phone_number"/>
+                                <label for="require_phone_number_1">Yes</label>
+                                </span>
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="require_phone_number_0" name="require_phone_number" value=0 ng-model="pricingdata.require_phone_number"/>
+                                <label for="require_phone_number_0">No</label>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="text-hash m-b-30">Enforce phone numbers for any member</p>
+
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">ENFORCE PARKING RULE</span>
+                            <span class="p-tb-10 p-l-30">
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="enforce_parking_rule_yes" value=1 name="parking_area_restriction"
+                                    ng-model="pricingdata.parking_area_restriction"/>
+                                <label for="enforce_parking_rule_yes">Yes</label>
+                                </span>
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="enforce_parking_rule_no" name="parking_area_restriction" value=0 ng-model="pricingdata.parking_area_restriction"/>
+                                <label for="enforce_parking_rule_no">No</label>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="text-hash m-b-30">If you turn this feature ON your members will not be allowed to end their ride until there are either at a parking spot or inside a parking zone.</p>
+
+                        <div class="new-fleet-box m-tb-20">
+                            <span class="ft-proReg fw-600">SMART DOCKING STATIONS</span>
+                            <span class="p-tb-10 p-l-30">
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="smart_docking_stations_yes" value=1 name="smart_docking_stations_enabled"
+                                    ng-model="pricingdata.smart_docking_stations_enabled"/>
+                                <label for="smart_docking_stations_yes">Yes</label>
+                                </span>
+                                <span class="m-r-10">
+                                    <input ng-change="changeSettings()" type="radio" id="smart_docking_stations_no" value=0 name="smart_docking_stations_enabled"
+                                           ng-model="pricingdata.smart_docking_stations_enabled"/>
+                                <label for="smart_docking_stations_no">No</label>
+                                </span>
+                            </span>
+                        </div>
+                        <p class="text-hash m-b-30">Automatically end ride when the vehicle is docked.</p>
+
+                      <div class="new-fleet-box m-tb-20">
+                        <div style="display: flex; align-items: center;">
+                            <span class="ft-proReg fw-600">
+                                {{activatingSettings ? 'LOADING...' : 'ENABLE RESERVATIONS'}}
+                            </span>
+
+                            <fieldset class="p-tb-10 p-l-30" ng-if="!activatingSettings" style="display: inline;">
+                                <span class="m-r-10">
+                                    <input
+                                        ng-click="handleClick(true)"
+                                        type="radio"
+                                        id="enable_reservations_on"
+                                        name="reservations"
+                                        ng-value="{{ true }}"
+                                        ng-model="status.reservationsEnabled"
+                                    />
+                                <label for="enable_reservations_on">On</label>
+                                </span>
+                                <span class="m-r-10">
+                                    <input
+                                        ng-click="handleClick(false)"
+                                        type="radio"
+                                        id="enable_reservations_off"
+                                        name="reservations"
+                                        ng-value="{{ false }}"
+                                        ng-model="status.reservationsEnabled"
+                                    />
+                                <label for="enable_reservations_off">Off</label>
+                                </span>
+                            </fieldset>
+                        </div>
+
+                        <div class="new-fleet-box m-tb-20" ng-if="status.reservationsEnabled" ng-hide="activatingSettings">
+                            <div class="new-fleet-box m-tb-20">
+                                <span class="ft-proReg fw-600">MAXIMUM RENTAL TIME</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.max_reservation_duration.months"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Months.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.max_reservation_duration.days"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Days.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.max_reservation_duration.hours"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Hours.</span>
+                                <span ng-show="reservation_settings.max_reservation_duration.minutes">
+                                    <input ng-change="handleUpdates()" ng-model="reservation_settings.max_reservation_duration.minutes"
+                                        class="text-center m-l-10" type="number" min="0"
+                                        style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                    <span class="p-lr-10"> Minutes.</span>
+                                </span>
+                            </div>
+                            <div class="new-fleet-box m-tb-20">
+                                <span class="ft-proReg fw-600">MINIMUM RENTAL TIME</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.min_reservation_duration.months"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Months.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.min_reservation_duration.days"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Days.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.min_reservation_duration.hours"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Hours.</span>
+                                <span ng-show="!!reservation_settings.min_reservation_duration.minutes">
+                                    <input ng-change="handleUpdates()" ng-model="reservation_settings.min_reservation_duration.minutes"
+                                        class="text-center m-l-10" type="number" min="0"
+                                        style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                    <span class="p-lr-10"> Minutes.</span>
+                                </span>
+                            </div>
+                            <div class="new-fleet-box m-tb-20">
+                                <span class="ft-proReg fw-600">BOOKING WINDOW DURATION</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.booking_window_duration.months"
+                                    class="text-center m-l-10" type="number" max="6" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Months.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.booking_window_duration.days"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Days.</span>
+                                <input ng-change="handleUpdates()" ng-model="reservation_settings.booking_window_duration.hours"
+                                    class="text-center m-l-10" type="number" min="0"
+                                    style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                <span class="p-lr-10"> Hours.</span>
+                                <span ng-show="!!reservation_settings.booking_window_duration.minutes">
+                                    <input ng-change="handleUpdates()" ng-model="reservation_settings.booking_window_duration.minutes"
+                                        class="text-center m-l-10" type="number" min="0"
+                                        style="width:45px; padding:0 2px;min-height: 35px;max-height: 35px;">
+                                    <span class="p-lr-10"> Minutes.</span>
+                                </span>
+                                <p class="text-hash m-b-30">
+                                    Booking window controls how far in future vehicles in this fleet can be booked, which will
+                                    always be between <strong>the current time</strong> and the value put in these fields.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-right m-t-30 bor-t-hash m-b-50">
+                            <button type="button" class="btn custom-btn m-t-10"
+                                    ng-disabled="technicianACL || reservation_min > pricingdata.startRideTime || pricingdata.startRideTime > reservation_max || !changeAppSettings"
+                                    ng-click="saveSettings()">APPLY
+                            </button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="row gx-5" style="padding-left: 20px;">
+          <div ng-repeat="module in moduleConstants" ng-if="integrationTypes.includes(module.type)" ng-show="innertab === 8">
+            <div class="row">
+              <div class="col-md-4" ng-if="!['grow', 'ACTON', 'Teltonika', 'Omni IoT', 'Okai'].includes(module.type)">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module);">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4" ng-if="integrationTypes.includes('ACTON') && module.type === 'ACTON' && hasACTONVehicles">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module);">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4" ng-if="integrationTypes.includes('Omni IoT') && module.type === 'Omni IoT' && hasOmniIoTVehicles">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module);">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4" ng-if="integrationTypes.includes('Teltonika') && module.type === 'Teltonika' && hasTeltonikaVehicles">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module);">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4" ng-if="integrationTypes.includes('Okai') && module.type === 'Okai' && hasOkaiVehicles">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module);">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4" ng-if="integrationTypes.includes('grow') && module.type === 'grow' && hasGrowVehicles">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; max-width: 50%;" ng-click="selectedModule(module); addIntegrations();">
+                  <div>
+                    {{ module.name }}
+                  </div>
+                  <span ng-if="integrationTypes.includes(module.type)" style="font-size: 2rem; color: #008000;">
+                    &check;
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <form name="growDetailsA">
+                  <div style="max-width: 50%" ng-if="integrationTypes.includes('grow') && module.type === 'grow' && hasGrowVehicles">
+                    <div class="col-sm-12">
+                      <div class="row m-t-10 m-b-35">
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group row">
+                            <div class="col-sm-12">
+                              <li class="m-t-5">
+                                <label class="m-r-5 table-text" for="growMaximumSpeed">Maximum Speed(Kms)</label>
+                                <input ng-model="growDetails.growMaximumSpeed" name="growMaximumSpeed" id="growMaximumSpeed" type="number" min="17" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                                <p ng-if="!growDetailsA.growMaximumSpeed.$pristine && (growDetailsA.growMaximumSpeed.$error.min || growDetailsA.growMaximumSpeed.$error.max)"
+                           class="error-alert">Speed should be between 17 and 25</p>
+                              </li>
+                            </div>
+                          </div>
+                          <div class="form-group row m-t-5">
+                            <div class="col-sm-12">
+                            <label class="m-r-5 table-text" for="scooterDriveMode">Drive Mode</label>
+                            <select name="scooterDriveMode" class="form-control new-txt-box" id="scooterDriveMode" style="width: 100%; height: 30px" ng-model="growDetails.scooterDriveMode">
+                              <option value="0">NORMAL(medium accelaration)</option>
+                              <option value="2">SPORT(hight accelaration)</option>
+                            </select>
+                          </div>
+                            </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                            <label class="m-r-5 table-text" for="scooterBrakeMode">Brake Mode</label>
+                            <select name="scooterBrakeMode" ng-model="growDetails.scooterBrakeMode" class="form-control new-txt-box" id="scooterBrakeMode" style="width: 100%; height: 30px">
+                              <option value="">None</option>
+                              <option value="0">feeble</option>
+                              <option value="1">medium</option>
+                              <option value="2">strong</option>
+                          </select>
+                          <div style="margin-top: 10px">
+                            <button type="button" ng-disabled="(!isEdittingGrow && !growDetails.default) || (growDetailsA.growMaximumSpeed.$error.min || growDetailsA.growMaximumSpeed.$error.max) || !growDetailsA.growMaximumSpeed" class="btn custom-btn" ng-click="saveGrowIntegration(growDetails)">APPLY</button>
+                          </div>
+                        </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-8">
+                <div style="max-width: 50%" ng-if="integrationTypes.includes('segway') && module.type === 'segway'">
+                  <div class="col-sm-12">
+                    <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <div class="form-check">
+                              <input type="checkbox" name="controlType" class="form-check-input" ng-model="segwayDetails.controlType" id="controlType" style="opacity: 1;" ng-true-value="1"
+                                     ng-false-value="0">
+                              <label class="form-check-label" for="controlType">Turn ON LED during ride</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <div class="form-check">
+                              <input type="checkbox" name="soundMode" class="form-check-input" ng-model="segwayDetails.soundMode" id="soundMode" style="opacity: 1;" ng-true-value="2"
+                                     ng-false-value="1">
+                              <label class="form-check-label" for="soundMode">Enable sound</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row m-t-5">
+                          <div class="col-sm-12">
+                            <label class="m-r-5 table-text" for="segwaySpeedMode">Speed Mode</label>
+                            <select name="speedMode" class="form-control new-txt-box" id="segwaySpeedMode" style="width: 100%; height: 30px" ng-model="segwayDetails.speedMode">
+                              <option ng-value="1">Low</option>
+                              <option ng-value="2">Medium</option>
+                              <option ng-value="3">High</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <li class="m-t-5">
+                              <label class="m-r-5 table-text" for="segwayMaximumSpeedLimit">Maximum Speed Limit(Km/h)</label>
+                              <input ng-model="segwayDetails.segwayMaximumSpeedLimit" id="segwayMaximumSpeedLimit" type="number" min="6" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            </li>
+                            <p ng-if="!segwayDetails.segwayMaximumSpeedLimit"
+                               class="error-alert">speed limit must be between 6 and 25</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <div style="margin-left: 15px">
+                            <button type="button" ng-disabled="!isEdittingSegway" class="btn custom-btn" ng-click="saveSegwayIntegration(segwayDetails)">APPLY</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                <div style="max-width: 50%" ng-if="(integrationTypes.includes('ACTON') && module.type === 'ACTON' && hasACTONVehicles)">
+                  <div class="col-sm-12">
+                    <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <li class="m-t-5">
+                              <label class="m-r-5 table-text" for="actonMaximumSpeedLimit">Maximum Speed Limit(Km/hh)</label>
+                              <input ng-model="actonDetails.maximumSpeedLimit" id="actonMaximumSpeedLimit" type="number" min="6" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            </li>
+                            <p class="error-alert"  ng-show="actonDetails.maximumSpeedLimit.$invalid" >speed limit must be between 6 and 25</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <div style="margin-left: 15px">
+                            <button type="button" ng-disabled="(!isEdittingACTON && !actonDetails.default) || actonDetails.maximumSpeedLimit.$invalid || !actonDetails.maximumSpeedLimit" class="btn custom-btn" ng-click="saveACTONIntegration(module.type)">APPLY</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                <div style="max-width: 50%" ng-if="integrationTypes.includes('Omni IoT') && module.type === 'Omni IoT' && hasOmniIoTVehicles">
+                  <div class="col-sm-12">
+                    <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <li class="m-t-5">
+                              <label class="m-r-5 table-text" for="actonMaximumSpeedLimit">Maximum Speed Limit(Km/hh)</label>
+                              <input ng-model="omniIoTDetails.maximumSpeedLimit" id="actonMaximumSpeedLimit" type="number" min="6" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            </li>
+                            <p class="error-alert"  ng-show="omniIoTDetails.maximumSpeedLimit.$invalid" >speed limit must be between 6 and 25</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <div style="margin-left: 15px">
+                            <button type="button" ng-disabled="(!isEdittingOmniIoT && !omniIoTDetails.default) || omniIoTDetails.maximumSpeedLimit.$invalid || !omniIoTDetails.maximumSpeedLimit" class="btn custom-btn" ng-click="saveACTONIntegration(module.type)">APPLY</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                <div style="max-width: 50%" ng-if="integrationTypes.includes('Teltonika') && module.type === 'Teltonika' && hasTeltonikaVehicles">
+                  <div class="col-sm-12">
+                    <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <li class="m-t-5">
+                              <label class="m-r-5 table-text" for="actonMaximumSpeedLimit">Maximum Speed Limit(Km/hh)</label>
+                              <input ng-model="teltonikaDetails.maximumSpeedLimit" id="actonMaximumSpeedLimit" type="number" min="6" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            </li>
+                            <p class="error-alert"  ng-show="teltonikaDetails.maximumSpeedLimit.$invalid" >speed limit must be between 6 and 25</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <div style="margin-left: 15px">
+                            <button type="button" ng-disabled="(!teltonikaDetails && !teltonikaDetails.default) || teltonikaDetails.maximumSpeedLimit.$invalid || !teltonikaDetails.maximumSpeedLimit" class="btn custom-btn" ng-click="saveACTONIntegration(module.type)">APPLY</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-8">
+                <div style="max-width: 50%" ng-if="integrationTypes.includes('Okai') && module.type === 'Okai' && hasOkaiVehicles">
+                  <div class="col-sm-12">
+                    <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <li class="m-t-5">
+                              <label class="m-r-5 table-text" for="actonMaximumSpeedLimit">Maximum Speed Limit(Km/hh)</label>
+                              <input ng-model="OkaiDetails.maximumSpeedLimit" id="actonMaximumSpeedLimit" type="number" min="6" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            </li>
+                            <p class="error-alert"  ng-show="OkaiDetails.maximumSpeedLimit.$invalid" >speed limit must be between 6 and 25</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <div style="margin-left: 15px">
+                            <button type="button" ng-disabled="(!OkaiDetails && !OkaiDetails.default) || OkaiDetails.maximumSpeedLimit.$invalid || !OkaiDetails.maximumSpeedLimit" class="btn custom-btn" ng-click="saveACTONIntegration(module.type)">APPLY</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-2 mb-3"/>
+        </div>
+        </div>
+        <div class="row gx-5 overflow-scroll" style="height: 500px; overflow-y: scroll" ng-show="innertab === 8">
+          <div class="col-sm-4">
+            <div class="integrations-button">
+              <button ng-disabled="technicianACL" class="btn custom-btn text-uppercase text-white pull-left m-t-10 ft-12" ng-click="addIntegrations()">
+                <em class="fa fa-plus"></em> Add integrations
+              </button>
+              <div ng-show="showDropDown" class="dropdown-content">
+                <div ng-repeat="module in moduleConstants">
+                  <div class="module-item" ng-click="selectedModule(module)" ng-if="!integrationTypes.includes(module.type) && showModules.includes(module.type)">
+                    {{ module.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div ng-model="growDetails" class="scout-integration-interface row">
+              <form name="growDetailsB">
+                <div class="col-sm-12" ng-if="selectedItem.type === 'grow' && !integrationTypes.includes('grow') && showDropDown">
+                  <span class="ft-proReg fw-600">GROW INTEGRATION:</span>
+                  <div class="row m-t-10 m-b-35">
+                      <div class="col-sm-12 col-xs-12">
+                        <div class="form-group row">
+                        <div class="col-sm-12">
+                          <li class="m-t-5">
+                            <label class="m-r-5 table-text" for="growMaximumSpeed">Maximum Speed(Kms)</label>
+                            <input ng-model="growDetails.growMaximumSpeed" id="growMaximumSpeed" type="number" min="17" max="25" class="form-control new-txt-box" style="width: 100%; text-align:center; padding:0 2px;min-height: 30px;max-height: 30px;">
+                            <p ng-if="!growDetailsB.growMaximumSpeed.$pristine && (growDetailsB.growMaximumSpeed.$error.min || growDetailsB.growMaximumSpeed.$error.max)" class="error-alert">Speed should be between 17 and 25</p>
+                          </li>
+                        </div>
+                      </div>
+                      <div class="form-group row m-t-5">
+                        <div class="col-sm-12">
+                        <label class="m-r-5 table-text" for="scooterDriveMode">Drive Mode</label>
+                        <select name="scooterDriveMode" class="form-control new-txt-box" id="scooterDriveMode" style="width: 100%; height: 30px" ng-model="growDetails.scooterDriveMode">
+                          <option value="">None</option>
+                          <option value="0">NORMAL(medium accelaration)</option>
+                          <option value="2">SPORT(hight accelaration)</option>
+                        </select>
+                      </div>
+                        </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                        <label class="m-r-5 table-text" for="scooterBrakeMode">Brake Mode</label>
+                        <select name="scooterBrakeMode" ng-model="growDetails.scooterBrakeMode" class="form-control new-txt-box" id="scooterBrakeMode" style="width: 100%; height: 30px">
+                          <option value="">None</option>
+                          <option value="0">feeble</option>
+                          <option value="1">medium</option>
+                          <option value="2">strong</option>
+                      </select>
+                      <div style="margin-top: 10px">
+                        <button type="button" class="btn custom-btn" ng-disabled="|| (growDetailsB.growMaximumSpeed.$error.min || growDetailsB.growMaximumSpeed.$error.max)" ng-click="saveGrowIntegration(growDetails)">SUBMIT</button>
+                      </div>
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div ng-hide="integrationTypes.includes('scout') || !selectedItem  || selectedItem.type !== 'scout'" ng-model="scoutDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'scout' && showDropDown)">
+                <span class="ft-proReg fw-600">SCOUT INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Email address</span>
+                        <label for="email_scout" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="email_scout" data-ng-required="true"
+                               ng-pattern="emailRegexPatterns"
+                               name="email_scout"
+                               ng-class="{err:!form.email.$valid && !form.email.$pristine}"
+                               ng-model="scoutDetails.email" type="email">
+                        <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                           class="error-alert">Email ID not valid</p>
+                        <p ng-if="!form.email.$pristine && form.email.$error.required"
+                           class="error-alert">Email ID is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Password</span>
+                        <label for="password_scout" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="password_scout" data-ng-required="true"
+                               name="password_scout"
+                               ng-model="scoutDetails.password" type="password">
+                        <p ng-if="!form.password.$pristine && form.password.$error.required"
+                           class="error-alert">Password is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="signIntoScout(scoutDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">SCOUT LOGIN
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('linka') || !selectedItem  || selectedItem.type !== 'linka'" ng-model="linkaDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'linka' && showDropDown)">
+                <span class="ft-proReg fw-600">LINKA INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Api Key</span>
+                        <label for="key_linka" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="key_linka" data-ng-required="true"
+                               name="key_linka"
+                               ng-model="linkaDetails.apiKey" type="text">
+                        <p ng-if="!form.apiKey.$pristine && form.apiKey.$error.required"
+                           class="error-alert">Api Key is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Secret Key</span>
+                        <label for="password_scout" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="secret_key_linka" data-ng-required="true"
+                               name="secret_key_linka"
+                               ng-model="linkaDetails.secretKey" type="text">
+                        <p ng-if="!form.secretKey.$pristine && form.secretKey.$error.required"
+                           class="error-alert">Secret Key is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="registerLinka(linkaDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">LINKA LOGIN
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('kisi') || !selectedItem  || selectedItem.type !== 'kisi'" ng-model="kisiDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'kisi' && showDropDown)">
+                <span class="ft-proReg fw-600">KISI INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Api Key</span>
+                        <label for="key_kisi" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="key_kisi" data-ng-required="true"
+                               name="key_kisi"
+                               ng-model="kisiDetails.apiKey" type="text">
+                        <p ng-if="!form.apiKey.$pristine && form.apiKey.$error.required"
+                           class="error-alert">Api Key is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="saveKisiAPIKey(kisiDetails)"  class="btn custom-btn" ng-disabled="(coordinatorACL || technicianACL)">SAVE
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('Edge') || !selectedItem  || selectedItem.type !== 'Edge'" ng-model="EdgeDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'Edge' && showDropDown)">
+                <span class="ft-proReg fw-600">EDGE INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Api Key</span>
+                        <label for="key_edge" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="key_edge" data-ng-required="true"
+                               name="key_edge"
+                               ng-model="EdgeDetails.apiKey" type="text">
+                        <p ng-if="!form.apiKey.$pristine && form.apiKey.$error.required"
+                           class="error-alert">Api Key is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="saveEdgeAPIKey(EdgeDetails)"  class="btn custom-btn" ng-disabled="(coordinatorACL || technicianACL)">SAVE
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('ParcelHive') || !selectedItem  || selectedItem.type !== 'ParcelHive'" ng-model="parcelHiveDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'ParcelHive' && showDropDown)">
+                <span class="ft-proReg fw-600">PARCELHIVE INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Access Token</span>
+                        <label for="email_scout" class="scout-required-dot">&#9679;</label>
+                        <textarea class="form-control new-txt-box" id="parcel_token" data-ng-required="true"
+                               name="parcel_token" ng-model="parcelHiveDetails.accessToken" type="text"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="registerIntegration(parcelHiveDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">ADD
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('duckt') || !selectedItem  || selectedItem.type !== 'duckt'" ng-model="integrationDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'duckt' && showDropDown)">
+                <span class="ft-proReg fw-600">DUCKT INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Username</span>
+                        <label for="duckt_email" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="duckt_email" data-ng-required="true"
+                               name="duckt_email"
+                               ng-model="integrationDetails.email" type="text">
+                        <p ng-if="!form.duckt_email.$pristine && form.duckt_email.$error.required"
+                           class="error-alert">Username is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Password</span>
+                        <label for="duckt_password" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="duckt_password" data-ng-required="true"
+                               name="duckt_password"
+                               ng-model="integrationDetails.password" type="text">
+                        <p ng-if="!form.duckt_password.$pristine && form.duckt_password.$error.required"
+                           class="error-alert">Password is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="registerIntegration(integrationDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">REGISTER DUCKT
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('geotab') || !selectedItem || selectedItem.type !== 'geotab'" ng-model="geotabDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'geotab' && showDropDown)">
+                <span class="ft-proReg fw-600">GEOTAB INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>username</span>
+                        <label for="username_geotab" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="username_geotab" data-ng-required="true"
+                               name="username_geotab"
+                               ng-model="geotabDetails.username" type="text">
+                        <p ng-if="!form.username.$pristine && form.username.$error.required"
+                           class="error-alert">username required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>database name</span>
+                        <label for="database_geotab" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="database_geotab" data-ng-required="true"
+                               name="database_geotab"
+                               ng-model="geotabDetails.database" type="text">
+                        <p ng-if="!form.database.$pristine && form.databse.$error.required"
+                           class="error-alert">database name required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>servername</span>
+                        <label for="servername" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="servername" data-ng-required="true"
+                               name="servername"
+                               ng-model="geotabDetails.servername" type="text">
+                        <p ng-if="!form.servername.$pristine && form.servername.$error.required"
+                           class="error-alert">servername required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Password</span>
+                        <label for="password_scout" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="password_geotab" data-ng-required="true"
+                               name="password_geotab"
+                               ng-model="geotabDetails.password" type="password">
+                        <p ng-if="!form.password.$pristine && form.password.$error.required"
+                           class="error-alert">Password is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="authorizeGeotab(geotabDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">GEOTAB AUTHENTICATE
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('sas') || !selectedItem || selectedItem.type !== 'sas'" ng-model="sasDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'sas' && showDropDown)">
+                <span class="ft-proReg fw-600">SAS INTEGRATION:</span>
+                <li class="address-bar">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Client id</span>
+                        <label for="sas_client_id" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="sas_client_id" data-ng-required="true"
+                               name="sas_client_id"
+                               ng-model="sasDetails.clientId" type="text">
+                        <p ng-if="!form.clientId.$pristine && form.clientId.$error.required"
+                           class="error-alert">client id is required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Client key</span>
+                        <label for="sas_client_key" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="sas_client_key" data-ng-required="true"
+                               name="sas_client_id"
+                               ng-model="sasDetails.clientKey" type="text">
+                        <p ng-if="!form.clientKey.$pristine && form.clientKey.$error.required"
+                           class="error-alert">database name required</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="set-placeholder m-b-30">
+                        <span>Oauth domain name</span>
+                        <label for="servername" class="scout-required-dot">&#9679;</label>
+                        <input class="form-control new-txt-box" id="oauth_domain_name" data-ng-required="true"
+                               name="oauth_domain_name"
+                               ng-model="sasDetails.domainName" type="text">
+                        <p ng-if="!form.domainName.$pristine && form.domainName.$error.required"
+                           class="error-alert">domain name is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <div class="pull-right text-right">
+                  <button ng-click="registerIntegration(sasDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">ENABLE SAS INTEGRATION
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div ng-hide="integrationTypes.includes('tapkey') || !selectedItem || selectedItem.type !== 'tapkey'" ng-model="integrationDetails" class="scout-integration-interface row">
+              <div class="col-sm-12" ng-show="(selectedItem.type === 'tapkey' && showDropDown)">
+                <span class="ft-proReg fw-600">TAPKEY INTEGRATION:</span>
+                <div class="pull-right text-right">
+                  <button ng-click="registerIntegration(integrationDetails)"  class="btn custom-btn"
+                          ng-disabled="(coordinatorACL || technicianACL)">CONNECT WITH TAPKEY
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-show="innertab === 9">
+          <div class="row" ng-if='!taxDetails.length'>
+            <p style="font-weight: bold;color:#4A5060;margin-left: 10px;">No Tax rates have been added yet</p>
+          </div>
+          <div class="row mt-2" style="margin-left: 10px;margin-top: 5px;" ng-repeat = "taxes in taxDetails" ng-if="taxDetails.length">
+            <form name="taxEditForm" novalidate>
+              <div class="col-sm-3 col-md-3" ng-show="taxUpdates.editingTaxId === taxes.tax_id">
+                <input class="form-control new-txt-box" type="text" name="tax_name_edit"  ng-init="tax_name_edit = taxes.tax_name" ng-model="tax_name_edit" placeholder="Tax name" required/>
+                <span class="text-danger" ng-show="taxEditForm.tax_name_edit.$touched && taxEditForm.tax_name_edit.$error.required">Tax name is required.</span><br /><br />
+              </div>
+              <div class="col-sm-3 col-md-3" ng-show="taxUpdates.editingTaxId === taxes.tax_id">
+                <input  class="form-control new-txt-box" name="tax_percent_edit" placeholder="Tax percent" type="number" step=".01" ng-init="tax_percent_edit = taxes.tax_percent" ng-model="tax_percent_edit" required />
+                <span class="text-danger" ng-show="taxEditForm.tax_percent_edit.$touched && taxEditForm.tax_percent_edit.$error.required">Tax percent is required.</span><br /><br />
+              </div>
+            </form>
+            <div class="col-sm-2 col-md-2" ng-if="taxUpdates.editingTaxId !== taxes.tax_id">
+              <p class="text-dark" style="font-size: 13px;">{{taxes.tax_name}}</p>
+            </div>
+            <div class="col-sm-3 col-md-3" ng-if="taxUpdates.editingTaxId !== taxes.tax_id">
+              <p class="text-dark" style="font-size: 13px;">{{taxes.tax_percent}}<span>%</span></p>
+            </div>
+            <div class="col-sm-1 col-md-1" >
+              <button class="btn  btn-md" style="background-color: #66b1e3;color: white;" ng-disabled="taxEditForm.$invalid" ng-click="updateTax(taxes.tax_id, false, true, tax_name_edit, tax_percent_edit)">{{taxUpdates.editingTaxId === taxes.tax_id ? 'Save' :'Update'}}</button>
+            </div>
+            <div class="col-sm-2 col-md-2" ng-if="!taxUpdates.editingTaxId || taxUpdates.editingTaxId !== taxes.tax_id">
+              <button class="btn btn-danger btn-md" ng-click='deactivateTax(taxes.tax_id)'>Deactivate</button>
+            </div>
+            <div class="col-sm-1 col-md-1">
+              <button class="btn btn-danger btn-md" ng-if="taxUpdates.editingTaxId === taxes.tax_id"  ng-click="updateTax(taxes.tax_id, true)" ng-disabled="taxEditForm.$invalid">Cancel</button>
+            </div>
+          </div>
+          <hr class="mt-2">
+          <div class="row" ng-if='taxDetails.length<3'>
+            <div class="col-sm-4">
+              <div class="integrations-button">
+                <button ng-disabled="technicianACL" class="btn btn-success  text-capitalize text-white pull-left mt-3 ft-12" style="margin-left: 15px;" ng-click="showTaxField()">
+                  Add New Tax
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div  ng-show="innertab === 9">
+          <div class="row"  style="margin-top: 50px;margin-left: 0px;" ng-show="showNewTaxTextField" ng-if='taxDetails.length<3'>
+            <form name="taxForm" novalidate>
+           <div class="col-sm-3 col-md-3">
+            <input type="text" class="form-control new-txt-box" placeholder="Tax name" ng-model="tax.tax_name" name="tax_name" required maxlength="15"/>
+            <span class="text-danger" ng-show="taxForm.tax_name.$touched && taxForm.tax_name.$error.required">Tax name is required.</span><br /><br />
+           </div>
+           <div class="col-sm-3 col-md-3">
+            <input class="form-control new-txt-box" type="number" step=".01" placeholder="Tax percent" ng-model="tax.tax_percent" placeholder="Tax percent" name="tax_percent" required/>
+            <span class="text-danger" ng-show="taxForm.tax_percent.$touched && taxForm.tax_percent.$error.required">Tax percent is required.</span><br /><br />
+          </div>
+           <div class="col-sm-4 col-md-4">
+            <button  class="btn custom-btn text-capitalize text-white" ng-disabled="taxForm.$invalid" ng-click="saveTax()">
+              Save
+            </button>
+           </div>
+          </form>
+
+          </div>
+        </div>
+
+    </div>
+    </div>
+</section>

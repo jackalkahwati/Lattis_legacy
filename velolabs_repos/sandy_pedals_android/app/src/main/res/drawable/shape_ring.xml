@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:thickness="7dp"
+    android:innerRadius="7dp"
+    android:useLevel="false">
+    <size
+        android:width="30dp"
+        android:height="30dp" />
+    <solid android:color="@color/lattis_accent_color" />
+    </shape>
+

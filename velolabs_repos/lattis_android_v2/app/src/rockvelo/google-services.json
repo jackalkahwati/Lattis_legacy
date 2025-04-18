@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "886853935275",
+    "project_id": "rockvelo",
+    "storage_bucket": "rockvelo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886853935275:android:53cef2174fff59687957ee",
+        "android_client_info": {
+          "package_name": "io.bikes.rockvelo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2wHo5utCktiI8W2xgWQlAJeBBiHje91A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886853935275:android:b2394052d86f06a37957ee",
+        "android_client_info": {
+          "package_name": "io.bikes.rockvelo.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2wHo5utCktiI8W2xgWQlAJeBBiHje91A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886853935275:android:6284957554db892d7957ee",
+        "android_client_info": {
+          "package_name": "io.bikes.rockvelo.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2wHo5utCktiI8W2xgWQlAJeBBiHje91A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886853935275-fakq48ri08drmg79op3hmi0c62g7bkhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

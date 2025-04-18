@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Skylock</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="fb_app_id">931235146941403</string>
+    <string name="order_skylock"><a href="http://www.skylock.cc/">Order a Skylock</a></string>
+    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyBV_3wwnYsxs_1DXBSfMN6LEGRd9AE2Sn8</string>
+<string name="no_device_info">No device is connected</string>
+     <string name="your_string_here">
+        This is an <u>underline</u>.
+    </string>
+</resources>

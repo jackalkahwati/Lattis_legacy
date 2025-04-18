@@ -1,0 +1,47 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new release build to the App Store"
+  lane :release do
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: "io.lattis.operator"
+    )
+    build_app(scheme: "Operator (iOS)")
+    pilot(skip_submission: true, skip_waiting_for_build_processing: true)
+    upload_symbols_to_crashlytics(
+      binary_path: './scripts/upload-symbols'
+    )
+    clean_build_artifacts
+  end
+
+  desc "Push a new Dev build to Firebase"
+  lane :dev do
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: "io.lattis.operator.dev"
+    )
+    build_app(scheme: "Operator (iOS Development)", export_method: "ad-hoc")
+    firebase_app_distribution(app: "1:670985681500:ios:3e753a59fc5b04c8d3c499", groups: "lattis-internal")
+    clean_build_artifacts
+  end
+end

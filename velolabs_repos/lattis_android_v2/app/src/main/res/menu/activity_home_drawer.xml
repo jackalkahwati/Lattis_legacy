@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menu_profile_settings"
+            android:checked="true"
+            android:title="@string/profile_settings_label"
+            android:icon="@drawable/menu_profile_settings"/>
+
+        <item
+            android:id="@+id/menu_payment"
+            android:checked="true"
+            android:title="@string/payment"
+            android:icon="@drawable/ic_home"/>
+        <item
+            android:id="@+id/menu_ride_history"
+            android:title="@string/ride_history"
+            android:icon="@drawable/ic_person"
+            />
+
+        <item
+            android:id="@+id/menu_reservation"
+            android:title="@string/reservations"
+            android:icon="@drawable/ic_person"
+            />
+
+        <item
+            android:id="@+id/menu_private_fleets"
+            android:title="@string/private_fleet"
+            android:icon="@drawable/ic_bill"
+            />
+        <item
+            android:id="@+id/nav_ride_history"
+            android:title="@string/ride_history"
+            android:icon="@drawable/ic_ride"
+            android:visible="true"
+
+            />
+
+        <item
+            android:id="@+id/menu_membership"
+            android:title="@string/memberships"
+            android:icon="@drawable/ic_damage"
+            />
+
+        <item
+            android:id="@+id/menu_report_issue"
+            android:title="@string/report_an_issue"
+            android:icon="@drawable/ic_damage"
+            />
+
+        <item
+            android:id="@+id/menu_help"
+            android:title="@string/help"
+            android:icon="@drawable/ic_damage"
+            />
+
+        <item
+            android:id="@+id/menu_logout"
+            android:title="@string/logout"
+            android:icon="@drawable/ic_damage"
+            />
+
+    </group>
+
+</menu>

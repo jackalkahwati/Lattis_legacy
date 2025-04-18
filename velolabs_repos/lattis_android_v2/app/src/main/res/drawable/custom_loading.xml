@@ -1,0 +1,38 @@
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/progress"
+        >
+        <clip>
+            <scale android:scaleWidth="100%" >
+                <shape>
+                    <corners android:topLeftRadius="10dp" android:bottomLeftRadius="10dp"/>
+                    <solid android:color="@color/lattis_accent_color"/>
+                </shape>
+            </scale>
+        </clip>
+    </item>
+
+
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="10dp"/>
+            <solid android:color="@android:color/transparent"/>
+            <stroke android:color="@color/lattis_accent_color" android:width="3dp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="-5dp"
+        android:left="-5dp"
+        android:right="-5dp"
+        android:top="-5dp">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="6dp"
+                android:color="@color/white" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+</layer-list>

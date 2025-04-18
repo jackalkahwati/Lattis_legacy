@@ -1,0 +1,20 @@
+name: Firebase
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  firebase:
+    runs-on: [self-hosted, deploy-ios]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update bundle
+      run: bundle update
+    - name: Install pods
+      run: LANG=en_US.UTF-8 bundle exec pod install
+    - name: Deploy with fastlane
+      env:
+        APP_STORE_EMAIL: ${{ secrets.APP_STORE_EMAIL }}
+      run: LANG=en_US.UTF-8 bundle exec fastlane deploy

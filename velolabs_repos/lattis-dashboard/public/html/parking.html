@@ -1,0 +1,245 @@
+<section ng-controller="parkingHubsController" class="animated fadeIn">
+    <div class="panel">
+        <div class="panel-heading bg-white box p-t-20 m-b-20">
+            <!--<div id='map-help' class='pull-right'>-->
+            <!--<i class='fa fa-question-circle pull-left'></i>-->
+            <!--<div class='pull-right'>-->
+            <!--<h6>Need Help?</h6>-->
+            <!--<a>Learn about parking</a>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="panel-body box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="map" class="parking_map pull-left" style="position:relative;">
+                        <div class="show-mapheader">
+                            <div ng-class='dropdown_1' class="map-over-box">
+                                <div class="m-tb-10">
+                                    <i id='zone' ng-click="inquiry('zone')"
+                                       class="fa fa-question-circle parking-inquiry"></i>
+                                    MY PARKING ZONES
+                                    <span class="add-geofence_icon" ng-click="shape('zone');">
+                                        <i class="fa fa-plus-circle" ng-hide="shape_showzone"></i>
+                                        <i class="fa fa-minus-circle" ng-show="shape_showzone"></i>
+                                    </span>
+                                    <span class="pull-right" style='margin-top:-5px;margin-right:5px'>
+                                        <label class="switch">
+                                            <input type="checkbox" ng-model="buttonZones" ng-change='getParkingZones(null)'>
+                                            <div class="slider round">
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">OFF</span>
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">ON</span>
+                                            </div>
+                                        </label>
+                                    </span>
+                                </div>
+                                <div ng-show="shape_showzone" class="m-t-20 map_spot_view"
+                                     ng-class="{showani : shape_showzone == true }">
+                                    <h6>CHOOSE SHAPE</h6>
+                                    <div class="">
+                                        <draw-parking-zone map="map"></draw-parking-zone>
+                                    </div>
+                                </div>
+                                <div ng-show='zone_notification' class='model-notification'>
+                                    <p>You can configure parking zones and require members to end their rides within of
+                                        these zones.</p>
+                                </div>
+                                <div ng-show='zone_empty' class='model-notification'>
+                                    <p>Currently, there are no parking zones configured. At least one parking zone is
+                                        required in order to activate</p>
+                                </div>
+                            </div>
+                            <div ng-class='dropdown_2' class="map-over-box" class="m-t-20">
+                                <div class="m-tb-10">
+                                    <i id='spot' ng-click="inquiry('spot')"
+                                       class="fa fa-question-circle parking-inquiry"></i>
+                                    MY PARKING SPOTS
+                                    <span class="add-geofence_icon" ng-click="shape('spot')">
+                                            <i class="fa fa-plus-circle " ng-show="!shape_showspot"></i>
+                                            <i class="fa fa-minus-circle" ng-show="shape_showspot"></i>
+                                    </span>
+                                    <span class="pull-right" style='margin-top:-5px;margin-right:5px'>
+                                        <label class="switch">
+                                            <input type="checkbox" ng-model="buttonSpots" ng-change='getParkingSpots(null)'>
+                                            <div class="slider round">
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">OFF</span>
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">ON</span>
+                                            </div>
+                                        </label>
+                                    </span>
+                                </div>
+                                <div ng-show="shape_showspot" class="m-t-20 map_spot_view"
+                                     ng-class="{showani : shape_showspot == true }">
+                                    <span>Select parking type, then drag and drop on map.</span>
+                                    <div>
+                                        <img ng-src="images/spot1.png" class="map-zones inline-block"
+                                             ng-class="{'maptool_select' : spotselect.spot1 == true}"
+                                             ng-click="parkingMeter()">
+                                        <img ng-src="images/spot2.png" class="map-zones inline-block"
+                                             ng-class="{'maptool_select' : spotselect.spot2 == true}"
+                                             ng-click="sheffieldStand()">
+                                        <img ng-src="images/spot3.png" class="map-zones inline-block"
+                                             ng-class="{'maptool_select' : spotselect.spot3 == true}"
+                                             ng-click="lightningRack()">
+                                        <img ng-src="images/spot4.png" class="map-zones inline-block"
+                                             ng-class="{'maptool_select' : spotselect.spot4 == true}"
+                                             ng-click="parkingSpot()">
+                                    </div>
+                                </div>
+                                <div ng-show='spot_notification' class='model-notification'>
+                                    <p>You can add individual parking spots, such as Ride racks, parking meters, or any
+                                        other authorized spot. You can also authorize offline inventory through a .csv
+                                        file upload</p>
+                                </div>
+                                <div ng-show='spot_empty' class='model-notification'>
+                                    <p>Currently, there are no parking spots configured. At least one parking spots is
+                                        required in order to activate</p>
+                                </div>
+                            </div>
+                            <!-- <div class="map-over-box wid-320" ng-class='dropdown_3'>
+                                <div class="m-tb-10">
+                                    <i id='public' ng-click="inquiry('publicParking')"
+                                       class="fa fa-question-circle parking-inquiry"></i>
+                                    GROUPED PARKING SPOTS
+                                    <span class="add-geofence_icon" ng-click="shape('publicParking');">
+                                            <i class="fa fa-plus-circle" ng-show="!public_showspot"></i>
+                                            <i class="fa fa-minus-circle" ng-show="public_showspot"></i>
+                                    </span>
+                                    <span class="pull-right" style='margin-top:-5px;margin-right:5px'>
+                                        <label class="switch">
+                                            <input ng-model="publicButton" ng-click='showPublicSpots()' type="checkbox">
+                                            <div class="slider round">
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">OFF</span>
+                                                <span class='locator-span parking_margin'
+                                                      style="position:relative;top:-2px;">ON</span>
+                                            </div>
+                                        </label>
+                                    </span>
+                                    <div ng-show='public_notification ' class='model-notification' ng-class="{showani : public_notification == true }">
+                                        <p>If open source parking data is available, this
+                                            feature will allow you to upload that inventory
+                                            in the map. You will be able to edit the
+                                            inventory of parking spots by using parking
+                                            zones.<a class="menuactive pointer" href="https://s3-us-west-1.amazonaws.com/fleetassets/csv_templates/public_parking_spot_template.csv"><u> Download the .CSV template
+                                                here. </u></a></p>
+                                    </div>
+                                    <div ng-show='public_spotempty' class='model-notification' ng-class="{showani : public_showspot == true }">
+                                        &lt;!&ndash;<p>If open source public parking data is available, this feature will pre-populate that inventory in the map. You will be able to edit the inventory of parking spots by using <strong>parking zones</strong></p>&ndash;&gt;
+                                        <p>You must configure at least one <br/>
+                                            parking spots, otherwise all parking
+                                            will be available .</p>
+                                        <div class="fileupload text-center">
+                                            <custom-Fileupload class="inline-block" accept=".csv" hasedit="parkingspot"
+                                                               name="UPLOAD.CSV" file="publicCsv"></custom-Fileupload>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class='map-legend-container p-rel'>
+                            <div class='legend m-t-20' ng-class="toggleshow ? 'animateHeight' : 'zeroHeight' ">
+                                <h6>MAP LEGEND
+                                    <span class="pull-right ft-14" ng-click="shape('toggle')">
+                                            <i class="fa fa-plus " ng-show="!toggleshow"></i>
+                                            <i class="fa fa-chevron-down" ng-show="toggleshow"></i>
+                                    </span>
+                                </h6>
+                                <div class="bor-t-hash p-tb-5" ng-if="toggleshow">
+                                    <div class="fullwid">
+                                        <img src="../images/map_spot11.png" style="padding:5px;height:50px;"> <span>PARKING METERS</span>
+                                    </div>
+                                    <div class="fullwid">
+                                        <img src="../images/map_spot3.png" style="padding:5px;height:50px;"> <span>FENCES</span>
+                                    </div>
+                                    <div class="fullwid">
+                                        <img src="../images/map_spot22.png" style="padding:5px;height:50px"> <span>BIKE RACKS</span>
+                                    </div>
+                                    <div class="fullwid">
+                                        <img src="../images/legend_parking_zone.png" style="padding:5px;height:45px;">
+                                        <span>PARKING ZONE</span>
+                                    </div>
+                                    <div class="fullwid">
+                                        <img src="../images/generic_parking.png" style="padding:5px;height:55px;">
+                                        <span>PUBLIC PARKING SPOT</span>
+                                    </div>
+                                    <div class="fullwid">
+                                        <img src="../images/hubs-parking.png" style="padding:5px;height:55px;">
+                                        <span>PARKING HUBS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="pull-right noborder relative text-white bg-skyblue p-tb10-lr20 m-b-35"
+                            ng-click="saveParking()" ng-if="publicCsv">SAVE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-body box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-parking">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th colspan="3" class="text-center">Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fleet-table" ng-repeat="parking in parkingList">
+                                <td>
+                                    {{parking.name}}
+                                </td>
+                                <td>
+                                    {{parking.type}}
+                                </td>
+                                <td class="text-center">
+                                    <button
+                                        class="btn custom-btn text-uppercase text-white"
+                                        ng-click="handleViewClick(parking)"
+                                        ng-disabled="isEditing()"
+                                    >View</button>
+                                </td>
+                                <td class="text-center">
+                                    <button
+                                        class="btn custom-btn text-uppercase text-white"
+                                        ng-click="handleEditClick(parking)"
+                                        ng-disabled="isEditing()"
+                                    >Edit</button>
+                                </td>
+                                <td class="text-center" ng-hide="parking.hubName">
+                                    <button
+                                        class="btn custom-btn text-uppercase text-white"
+                                        ng-click="handleDeleteClick(parking)"
+                                        ng-disabled="isEditing()"
+                                    >Delete</button>
+                                </td>
+                                <td class="text-center" ng-show="parking.hubName">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .mapboxgl-ctrl-top-left {
+        top: 85px;
+        left: 12px;
+    }
+
+    .mapboxgl-popup-content {
+        width: 400px;
+    }
+</style>

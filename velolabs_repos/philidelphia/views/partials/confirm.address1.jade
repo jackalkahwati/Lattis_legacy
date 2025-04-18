@@ -1,0 +1,6 @@
+div(class='divider')
+	h2 3. What's Your Shipping Address?
+	input(type='text', class='field', name='shipping', ng-model='inputValues.address1' placeholder = 'Address', value='{{inputValues.address1}}')
+	p(class='invalidField') {{invalidText}}
+	a(ng-click='nextButtonClicked()')
+			button(type='button') Next

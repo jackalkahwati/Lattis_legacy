@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularStd-Bold.ttf">
+            <string>CircularStd-Bold</string>
+        </array>
+        <array key="CircularStd-Book.ttf">
+            <string>CircularStd-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TheftAlertView" customModule="Lattis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theft alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eni-dA-gVH">
+                    <rect key="frame" x="16" y="20" width="343" height="30"/>
+                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-el-1ds">
+                    <rect key="frame" x="16" y="67" width="343" height="44"/>
+                    <string key="text">Cancel or confirm as soon as you
+have checked the bike.</string>
+                    <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhZ-Qj-ZbD">
+                    <rect key="frame" x="16" y="132" width="120" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.66666666669999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ofz-LP-fgz"/>
+                        <constraint firstAttribute="width" constant="120" id="kay-Kx-8ig"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="13"/>
+                    <state key="normal" title="CANCEL">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkU-wN-y1L">
+                    <rect key="frame" x="152" y="132" width="207" height="40"/>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.20392156862745098" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="kLs-9c-Vkd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="CircularStd-Bold" family="Circular Std" pointSize="13"/>
+                    <state key="normal" title="CONFIRM THEFT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.78454088184931503" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5Ff-el-1ds" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="AJB-WF-QmG"/>
+                <constraint firstAttribute="trailing" secondItem="5Ff-el-1ds" secondAttribute="trailing" constant="16" id="FPj-bg-841"/>
+                <constraint firstItem="Eni-dA-gVH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FsA-4P-4gV"/>
+                <constraint firstItem="Eni-dA-gVH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="MPK-C0-Gkb"/>
+                <constraint firstItem="5Ff-el-1ds" firstAttribute="top" secondItem="Eni-dA-gVH" secondAttribute="bottom" constant="17" id="NMR-cn-Ac5"/>
+                <constraint firstAttribute="trailing" secondItem="Eni-dA-gVH" secondAttribute="trailing" constant="16" id="OMS-R2-PkO"/>
+                <constraint firstAttribute="trailing" secondItem="lkU-wN-y1L" secondAttribute="trailing" constant="16" id="cUD-a5-B6b"/>
+                <constraint firstItem="lkU-wN-y1L" firstAttribute="leading" secondItem="qhZ-Qj-ZbD" secondAttribute="trailing" constant="16" id="eua-aZ-4wg"/>
+                <constraint firstItem="lkU-wN-y1L" firstAttribute="top" secondItem="5Ff-el-1ds" secondAttribute="bottom" constant="21" id="g9c-DC-9Wa"/>
+                <constraint firstItem="qhZ-Qj-ZbD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="rOU-yr-eDU"/>
+                <constraint firstItem="qhZ-Qj-ZbD" firstAttribute="top" secondItem="5Ff-el-1ds" secondAttribute="bottom" constant="21" id="ygc-Dz-wnx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancelButton" destination="qhZ-Qj-ZbD" id="ssf-Uj-F3T"/>
+                <outlet property="confirmButton" destination="lkU-wN-y1L" id="q8a-aM-XMD"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54"/>
+        </view>
+    </objects>
+</document>

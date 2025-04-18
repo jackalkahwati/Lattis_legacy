@@ -1,0 +1,138 @@
+fastlane_version "2.10.0"
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "wpch-foxo-ocmd-lxol"
+
+default_platform :ios
+
+platform :ios do
+        
+  lane :fabric do |values|
+    cert
+    sigh(
+      adhoc: true,
+      force: true,
+      app_identifier: values[:app_identifier]
+    )
+
+    add_badge(dark: true, shield: "#{get_version_number}-#{get_build_number}-orange")
+    
+    gym(
+      scheme: values[:scheme],
+      export_options: {
+        method: 'ad-hoc',
+        provisioningProfiles: {
+          "io.lattis.Lattis-O-M.Dev" => "io.lattis.Lattis-O-M.Dev AdHoc",
+          "io.lattis.Lattis-O-M.Beta" => "io.lattis.Lattis-O-M.Beta AdHoc"
+        }
+      }
+    )
+
+    emails = values[:test_email] ? values[:test_email] : 'ravil@lattis.io' # You can list more emails here
+    groups = values[:test_email] ? nil : 'lattis-internal' # You can define groups on the web and reference them here
+    changelog = changelog_from_git_commits
+
+    firebase_app_distribution(
+        app: values[:app_id],
+        testers: emails,
+        groups: groups,
+        release_notes: changelog
+    )
+
+    name = values[:scheme]
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "#{name} successfully uploaded to the Crashlitics",
+      default_payloads: [:git_author],
+      attachment_properties: {
+        fields: [
+          {
+            title: "Version",
+            value: "#{get_version_number} (#{get_build_number})"
+          },
+          {
+            title: "Link",
+            value: values[:link]
+          },
+          {
+            title: "Changelog",
+            value: changelog
+          }
+        ]
+      }
+    )
+    sh("./../Pods/FirebaseCrashlytics/upload-symbols", "-gsp", values[:gsp], "-p", "ios", "../Lattis O&M.app.dSYM.zip")
+    clean_build_artifacts
+    sh("git", "reset", "--hard", "HEAD")
+  end
+
+  desc "Publish Dev build"
+  lane :dev do |values|
+    values[:app_identifier] = "io.lattis.Lattis-O-M.Dev"
+    values[:scheme] = "Lattis O&M Dev"
+    values[:link] = "https://appdistribution.firebase.dev/i/Czd1HBZT"
+    values[:app_id] = "1:559285371615:ios:50abf251de71d93e"
+    values[:gsp] = '../Lattis O&M/GoogleService-Info_Dev.plist'
+    fabric values
+  end
+
+  desc "Publish Beta build"
+  lane :beta do |values|
+    values[:app_identifier] = "io.lattis.Lattis-O-M.Beta"
+    values[:scheme] = "Lattis O&M Beta"
+    values[:link] = "https://appdistribution.firebase.dev/i/NVuRjFZj"
+    values[:app_id] = "1:559285371615:ios:3b8e1912489263ea"
+    values[:gsp] = '../Lattis O&M/GoogleService-Info_Beta.plist'
+    fabric values
+  end
+
+  lane :prod do
+    cert
+    sigh(
+      force: true,
+      app_identifier: "io.lattis.Lattis-O-M"
+    )
+    gym(
+      scheme: "Lattis O&M",
+      configuration: "Release",
+      export_options: {
+        method: 'app-store',
+        provisioningProfiles: {
+          "io.lattis.Lattis-O-M" => "io.lattis.Lattis-O-M AppStore"
+        }
+      }
+    )
+    pilot(skip_submission: true, skip_waiting_for_build_processing: true)
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "Lattis O&M successfully uploaded to the TestFlight",
+      default_payloads: [:git_author],
+      attachment_properties: {
+        fields: [
+          {
+            title: "Version",
+            value: "#{get_version_number} (#{get_build_number})"
+          }
+        ]
+      }
+    )
+    sh("./../Pods/FirebaseCrashlytics/upload-symbols", "-gsp", "../Lattis O&M/GoogleService-Info.plist", "-p", "ios", "../Lattis O&M.app.dSYM.zip")
+    clean_build_artifacts
+  end
+
+  desc "Publish Dev, Beta and TestFlight (if prod is true)"
+  lane :deploy do |values|
+    dev
+    beta
+    if values[:prod] === true
+      prod
+    end
+  end
+
+  desc "Create and push a new tag according to version number"
+  lane :release do
+    add_git_tag(
+      tag: "v#{get_version_number}"
+    )
+    push_git_tags
+  end
+end

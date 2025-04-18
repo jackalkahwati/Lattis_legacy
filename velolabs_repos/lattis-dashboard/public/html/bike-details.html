@@ -1,0 +1,674 @@
+<section ng-controller="bikeDetailsMenuController">
+    <div class="panel m-t-20">
+        <div class="panel-heading bg-white box m-b-20">
+            <div class="nomarg bg-white noborder p-t-15">
+                <button ng-click="goback()"
+                        class="btn custom-btn bg-HeaderToolbar wid-153 text-left ft-12"><i
+                        class="fa fa-angle-left p-r-5"></i>BACK TO FLEET
+                </button>
+                <span class="ft-18 v-m m-l-35 ft-proLight">Ride name: {{bikeData.bike_name}}</span>
+                <div class="pull-right">
+                    <ul class="list-unstyled">
+                        <li class="details-status text-statusHighlight ">
+                            <span ng-if="bikeData.status == 'active'">LIVE</span>
+                            <span ng-if="bikeData.status == 'inactive'">STAGING</span>
+                            <span ng-if="bikeData.status == 'suspended'">OUT OF SERVICE</span>
+                            <span ng-if="bikeData.status == 'deleted'">ARCHIVE</span>
+                        </li>
+                        <li class="details-status">
+                            <span ng-if="bikeData.current_status == 'on_trip'">IN RIDE</span>
+                            <span ng-if="bikeData.current_status == 'parked'">
+                                PARKED</span>
+                            <span ng-if="bikeData.current_status == 'reserved'">
+                                RESERVED
+                            </span>
+                            <span ng-if="bikeData.current_status == 'lock_assigned'">ELLIPSE ASSIGNED</span>
+                            <span ng-if="bikeData.current_status == 'controller_assigned'">
+                                {{(bikeData.controllers[0].vendor + ' ' + bikeData.controllers[0].device_type).toUpperCase() + ' ASSIGNED'}}
+                            </span>
+                            <span ng-if="bikeData.current_status == 'lock_not_assigned'">ELLIPSE UNASSIGNED</span>
+                            <span ng-if="bikeData.current_status == 'under_maintenance'">UNDERGOING MAINTENANCE</span>
+                            <span ng-if="bikeData.status == 'suspended' && (bikeData.current_status == 'reported_stolen'
+                            || bikeData.current_status == 'stolen')">REPORTED STOLEN</span>
+                            <span ng-if="bikeData.current_status == 'damaged'">DAMAGE REPORTED</span>
+                            <span ng-if="bikeData.current_status == 'stolen'">STOLEN</span>
+                            <span ng-if="bikeData.current_status == 'defleeted'">DEFLEETED</span>
+                            <span ng-if="bikeData.current_status == 'total_loss'">TOTAL LOSS</span>
+                            <span ng-if="bikeData.current_status == 'balancing'" class="ft-11">BALANCING</span>
+                            <span ng-if="bikeData.current_status == 'transport'" class="ft-11">TRANSPORT</span>
+                            <span ng-if="bikeData.current_status == 'collect'" class="ft-11">COLLECT</span>
+                        </li>
+                        <li ng-if="bikeData.current_status == 'on_trip'" class="details-status">
+                            <button class="btn custom-btn text-uppercase bg-white ft-12 bg-HeaderToolbar"
+                                    ng-click="endrideModal()" data-toggle="modal" data-target="#endrideModal">END RIDE
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-header clearfix">
+                  <button style="margin-top: -30px" class="btn wid-153 l-s ft-12 text-uppercase text-white bg-HeaderToolbar pull-right"
+                          ng-dialog="../html/modals/create-ticket.html" ng-dialog-controller="createTicketModalController"
+                          ng-dialog-close-previous>CREATE TICKET</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <section ng-class="">
+                <div class="nav-center analytics-tab">
+                    <ul class="nav nav-tabs dashtabs" id="navtabs">
+                        <li ng-repeat="bikestatus in bikeFleets"
+                            ng-class="{active: isActiveTab(bikestatus.url), disabled: bikestatus.disabled}">
+                            <a class="pull-right tabl" ng-click="onClickTab(bikestatus)">{{bikestatus.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="ticketForBike.length > 0" style="margin-bottom: 5px" ng-repeat="ticket in ticketForBike | filter : activityFilter track by $index" class="container-fluid">
+                  <div class="row bg-alert">
+                        <div class="col-sm-10">
+                            <h5 ng-if="ticket.ticket_category == 'service_due'"
+                                class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-circle"></em>
+                                MAINTENANCE ALMOST DUE</h5>
+                            <p ng-if="ticket.ticket_category == 'service_due'" class="table-text">This Ride is
+                                due
+                                for a maintenance </p>
+                            <h5 ng-if="ticket.ticket_category == 'reported_theft'"
+                                class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-circle"></em>
+                                THEFT REPORTED</h5>
+                            <h5 ng-if="ticket.ticket_category == 'potential_theft'"
+                                class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-circle"></em>
+                                POTENTIAL THEFT</h5>
+                            <p ng-if="ticket.ticket_category == 'reported_theft'" class="table-text">A theft
+                                has been
+                                reported on {{ticket.createdOn}} <span ng-if="tripData.end_address && tripData.end_address!== '' &&
+                                 ticket.user_id !== null">at {{tripData.end_address}}. </span></p>
+                            <p ng-if="ticket.ticket_category == 'potential_theft'" class="table-text">A potential theft
+                                has been reported on {{ticket.createdOn}}</p>
+                            <h5 ng-if="ticket.ticket_category == 'damage_reported'"
+                                class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-circle"></em>
+                                DAMAGE REPORTED</h5>
+                            <p ng-if="ticket.ticket_category == 'damage_reported'" class="table-text">
+                                <span ui-sref="member-profile({userId: {{ticket.reported_by_user_id}}})" ng-if="ticket.reported_by_user_id">User</span>
+                                <span ng-if="ticket.reported_by_operator_id">{{ticket.reported_by_operator_name}}</span>
+                                reported damage on {{ticket.createdOn}}. </p>
+                            <h5 ng-if="ticket.ticket_category == 'parking_outside_geofence'"
+                                class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-cirppcle"></em>
+                                Ride dropped off outside parking zone</h5>
+                            <p ng-if="ticket.ticket_category == 'parking_outside_geofence'" class="table-text">
+                                {{bikeData.bike_name}} was dropped off from nearest parking zone </p>
+                            <h5 ng-if="ticket.ticket_category == 'low_battery'"
+                              class="text-add-fleet-header p-tb-5 l-s"><em class="fa fa-exclamation-cirppcle"></em>
+                              Low Battery</h5>
+                            <p ng-if="ticket.ticket_category == 'low_battery'" class="table-text">
+                              {{ticket.operator_notes}} </p>
+                            <!--<p class="table-text">This Ride is due for a maintenance in X miles.</p>-->
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <button ng-click="resolveTicket(ticket.ticket_id)"
+                                    class="btn bg-live text-white m-tb-10">Resolve
+                            </button>
+                        </div>
+                        <div class="col-sm-12 m-tb-10" ng-if="ticket.ticket_category == 'damage_reported'">
+                            <button class="btn custom-btn text-uppercase bg-white ft-12 m-r-10 wid-194 bg-HeaderToolbar"
+                                    ng-click="damageReportModal($index)" data-toggle="modal" data-target="#damageReport">SEE
+                                DAMAGE REPORT
+                            </button>
+                            <a ng-if="ticket.reported_by_user_id!=null"
+                               ui-sref="member-profile({userId: {{ticket.reported_by_user_id}}})"
+                               class="btn custom-btn text-uppercase text-white bg-HeaderToolbar ft-12 wid-194 ">CONTACT
+                                MEMBER</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left fullwid m-t-10" ng-hide="hidestage">
+                    <ul class="nav navbar-nav m-tb-10 checkboxcheck ft-12 animated flipInX">
+                        <li class="item text-uppercase m-lr-5">
+                            <button class="btn action_btn text-center"
+                                    ng-dialog="../html/modals/send-to-live-options.html"
+                                    ng-dialog-controller="liveOptionsDialogController"
+                                    ng-disabled="bikeData.current_status == 'lock_not_assigned'" ng-dialog-close-previous>
+                                SEND TO LIVE
+                            </button>
+                        </li>
+                        <li class="item text-uppercase">
+                            <button class="btn action_btn text-center" ng-disabled="serviceEnabled"
+                                    ng-dialog="../html/modals/send-to-service-options.html"
+                                    ng-dialog-controller="serviceDialogController"
+                                    ng-dialog-close-previous>
+                                SEND TO SERVICE
+                            </button>
+                        </li>
+                        <li class="item text-uppercase m-lr-5">
+                            <button class="btn action_btn text-center" ng-dialog-controller="stagingDialogController"
+                                    ng-dialog="../html/modals/send-to-staging.html"
+                                    ng-disabled="bikeData.current_status == 'inactive' ||
+                                     bikeData.current_status == 'lock_not_assigned'" ng-dialog-close-previous>
+                                SEND TO STAGING
+                            </button>
+                        </li>
+                        <li class="item text-uppercase m-lr-5">
+                            <button class="btn action_btn text-center" ng-dialog-controller="archiveDialogController"
+                                    ng-dialog="../html/modals/send-to-archive.html"
+                                    ng-disabled="bikeData.current_status == 'on_trip' ||
+                                     bikeData.current_status == 'lock_not_assigned'" ng-dialog-close-previous>
+                                SEND TO ARCHIVE
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="mainView" class="">
+                    <div ng-include="currentTab"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script type="text/ng-template" id="bikedetails">
+    <section ng-controller="bikeDetailsController">
+        <div class="row">
+            <div style="padding: 30px 0px;" class="col-sm-3">
+                <img class="h-260" ng-src="{{bikeData.pic}}" style="max-width: 100%; object-fit: scale-down"/>
+              <img ng-click="openImageUpload()" class="v-b h-14"
+                   src="../images/editUpload.png">
+              <span ng-if="imageLarge" style="color: red;">Incorrect size or format. Please select a different file.</span>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-12 p-l-30 create-ticket-box adjust-columns">
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">MAKE</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.make}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">MODEL</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.model}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">RIDE TYPE</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.type}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li style="min-width: 152px;">
+                                <span class="fw-300">DESCRIPTION</span>
+                            </li>
+                            <div class="inline-flex">
+                              <li ng-hide="editDescription">
+                                <span class="fw-300">{{bikeData.description}}</span>
+                              </li>
+                              <textarea ng-show="editDescription" ng-model="bikeData.description" ng-value="description"></textarea>
+                              <div class="m-l-5">
+                                <div ng-hide="editDescription">
+                                  <img ng-click="toggleEditDescription()" class="v-b h-14"
+                                       src="../images/editUpload.png">
+                                </div>
+                                <div class="inline-flex" ng-show="editDescription">
+                                 <div class="m-r-10">
+                                   <button class="btn" ng-click="toggleEditDescription('cancel')">cancel</button>
+                                 </div>
+                                  <div>
+                                    <button ng-model="bikeData.description" class="btn btn-primary" ng-click="updateDescription(description)">save</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">DATE ADDED</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.date_created}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">LAST SERVICE DATE</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.last_service_date}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">NEXT SERVICE DUE ({{distancePreference.toUpperCase()}})</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.distanceRemaining}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">TOTAL {{distancePreference === 'miles' ? 'MILEAGE' : 'KILOMETRAGE'}}</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.total_mileage}}</span>
+                            </li>
+                        </ul>
+                        <ul ng-if="bikeData.type=='Electric' || bikeData.type == 'Kick Scooter' || bikeData.type == 'Cart' || bikeData.type == 'Locker' || bikeData.bike_battery_level" class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">BATTERY LEVEL</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{bikeData.bike_battery_level}}</span>
+                            </li>
+                        </ul>
+                        <ul ng-if="isDocked" class="list-unstyled list-inline">
+                            <li>
+                                <span class="fw-300">DOCKED TO</span>
+                            </li>
+                            <li>
+                              <a ng-href="#/port/{{isDocked}}">Port Link</a>
+                            </li>
+                        </ul>
+                        <div class="row p-10">
+                          <div class="col-sm-3">
+                            <span class="fw-300">VEHICLE NAME</span>
+                          </div>
+                          <div class="col-sm-4">
+                            <input ng-change="checkBikeNameLength(form.bikeName)" ng-show="isEditingVehicle"
+                                   ng-maxlength="maxVehicleNameLength" class="fw-300 form-control"
+                                   ng-model="form.bikeName"
+                                   ng-model-options="{ allowInvalid: true }"  type="text"/>
+                            <span ng-hide="isEditingVehicle" class="fw-300">{{ form.bikeName || 'Not set'}}</span>
+                            <p ng-if="isEditingVehicle && showLengthError" class="error-alert">maximum vehicle name length is {{ maxVehicleNameLength }} characters</p>
+                          </div>
+                        </div>
+                        <div class="row p-10">
+                          <div class="col-sm-3">
+                            <span class="fw-300">QR CODE</span>
+                          </div>
+                          <div class="col-sm-4">
+                            <input ng-if="isEditingVehicle" class="fw-300 form-control" ng-model="form.qrCode" type="text" ng-disabled="form.autogenerateQR"/>
+                            <span ng-if="!isEditingVehicle" class="fw-300">{{ form.qrCode || 'Not set'}}</span>
+                          </div>
+                        </div>
+                        <hr ng-if="bikeData.lock_id"/>
+                          <ul ng-if="bikeData.lock_id" class="list-unstyled list-inline">
+                            <li>
+                              <span class="fw-300">LOCK TYPE</span>
+                            </li>
+                            <li>
+                              <span class="fw-300">ELLIPSE</span>
+                            </li>
+                          </ul>
+                          <ul ng-if="bikeData.lock_id" class="list-unstyled list-inline">
+                            <li>
+                              <span class="fw-300">BATTERY LEVEL</span>
+                            </li>
+                            <li>
+                              <span class="fw-300">{{ bikeData.battery_level ? bikeData.battery_level + ' %' : 'N/A' }}</span>
+                            </li>
+                          </ul>
+                          <button
+                            class="btn action_btn m-t-6"
+                            style="width: 150px"
+                            ng-if="bikeData.lock_id"
+                            ng-click="deleteEquipment(bikeData.lock)">REMOVE
+                          </button>
+                        <hr ng-if="bikeData.lock_id"/>
+                        <div ng-show="isEditingVehicle" class="row p-10">
+                          <div ng-if="selectedType=='Grow' || data.selectedQrType.name=='Grow'" style="display: flex; align-items: center; height: 34px;" class="col-sm-3">
+                            <input type="checkbox" name="autogenerateQR" id="autogenerateQR" ng-model="form.autogenerateQR" style="opacity: 1;" class="form-check-input">
+                            <label for="autogenerateQR" class="form-check-label" style="margin-bottom: 0;padding-left: 10px">auto-generated</label>
+                          </div>
+                        </div>
+                      <div>
+                        <button
+                          ng-hide="isEditingVehicle"
+                          class="btn action_btn m-t-6"
+                          ng-click="startEditingVehicle('updating')">{{'EDIT VEHICLE INFO'}}</button>
+                        <button
+                          ng-show="isEditingVehicle"
+                          class="btn action_btn m-t-6"
+                          ng-click="saveVehicleDetails()"
+                          ng-disabled="showLengthError">SAVE</button>
+                        <button
+                          ng-show="isEditingVehicle"
+                          class="btn action_btn m-t-6 m-l-35"
+                          ng-click="stopEditingVehicle()">CANCEL</button>
+                      </div>
+                        <div ng-repeat="ctrl in controllers">
+                          <div ng-show="!isEditingKey || currentCtrlId !== ctrl.controller_id " class="create-ticket-box adjust-columns">
+                              <hr/>
+                              <ul class="list-unstyled list-inline">
+                                <li>
+                                  <span class="fw-300">TYPE</span>
+                                </li>
+                                <li>
+                                  <span style="text-transform: capitalize" class="fw-300">{{ctrl.device_type || 'Not set'}}</span>
+                                </li>
+                              </ul>
+                              <ul class="list-unstyled list-inline">
+                                <li>
+                                  <span class="fw-300" title="Module type for tracker or IoT">MODULE TYPE</span>
+                                </li>
+                                <li>
+                                  <span ng-hide="isEditingKey && ctrl.controller_id === currentCtrlId" class="fw-300">{{ctrl.vendor || 'Not set'}}</span>
+                                </li>
+                              </ul>
+                              <ul class="list-unstyled list-inline">
+                                <li>
+                                  <span class="fw-300">{{ ctrl.keyName || keyName }}</span>
+                                </li>
+                                <li>
+                                  <span class="fw-300">{{ctrl.vendor === 'Manual Lock'? ctrl.metadata.key : ctrl.key || 'Not set'}}</span>
+                                </li>
+                              </ul>
+                          </div>
+                          <div ng-hide="isEditingKey && currentCtrlId === ctrl.controller_id">
+                            <button
+                              class="btn action_btn m-t-6"
+                              ng-if="controllers.length>0"
+                              ng-click="startEditingKey('updating', ctrl)">{{'EDIT KEY'}}</button>
+                            <button
+                              ng-hide="['Sentinel'].includes(ctrl.vendor)"
+                              class="btn action_btn m-t-6"
+                              ng-if="ctrl.device_type === 'iot'"
+                              ng-click="lockVehicle()">{{['ACTON', 'Omni IoT', 'Teltonika', 'Okai'].includes(bikeData.iot_module_type) ? 'STOP AND LOCK': 'LOCK'}}</button>
+                            <button
+                              class="btn action_btn m-t-6"
+                              ng-if="ctrl.device_type === 'iot'"
+                              ng-click="unlockVehicle()">{{ ['ACTON', 'Omni IoT', 'Teltonika', 'Okai'].includes(bikeData.iot_module_type) ? 'START AND UNLOCK': 'UNLOCK'}}</button>
+                            <button
+                              class="btn action_btn m-t-6"
+                              style="width: 150px"
+                              ng-if="ctrl.device_type === 'iot' && ['Segway IoT EU', 'Segway'].includes(ctrl.vendor)"
+                              ng-click="openBatteryCover()">OPEN BATTERY COVER
+                            </button>
+                            <button
+                              class="btn action_btn m-t-6"
+                              style="width: 150px"
+                              ng-click="deleteEquipment(ctrl)">REMOVE
+                            </button>
+                          </div>
+                          <div ng-show="isEditingKey && currentCtrlId === ctrl.controller_id" class="create-ticket-box adjust-columns">
+                                <div ng-if="isEditingKey" class="create-ticket-box adjust-columns">
+                                  <hr/>
+                                  <ul class="list-unstyled list-inline" ng-hide="!!updateOperation">
+                                    <li>
+                                      <span class="fw-300">TYPE</span>
+                                    </li>
+                                    <li>
+                                      <span class="fw-300">{{controllers.length ? controllers[0].device_type : 'Not set'}}</span>
+                                    </li>
+                                  </ul>
+                                  <ul class="list-unstyled list-inline">
+                                    <li>
+                                      <span class="fw-300" title="Module type for tracker or IoT">MODULE TYPE</span>
+                                    </li>
+                                    <li>
+                                      <span class="fw-300">{{ ctrl.vendor || 'Not set'}}</span>
+                                    </li>
+                                  </ul>
+                                  <ul class="list-unstyled list-inline">
+                                    <li>
+                                      <span class="fw-300"> {{ keyName || ctrl.keyName }}</span>
+                                    </li>
+                                    <li>
+<!--                                      ctrl.vendor === 'Manual Lock'? ctrl.metadata.key :-->
+<!--                                      <pre>{{ctrl | json}}</pre>-->
+                                      <input ng-show="(isEditingKey && currentCtrlId === ctrl.controller_id) || isAddingEquipment" class="fw-300" ng-model="ctrl.key" type="text"/>
+<!--                                      <input ng-show="(ctrl.vendor === 'Manual Lock' && (isEditingKey && currentCtrlId === ctrl.controller_id) || isAddingEquipment)" class="fw-300" ng-model="ctrl.metadata.key" type="text"/>-->
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div ng-show="currentCtrlId === ctrl.controller_id">
+                                  <button
+                                    class="btn action_btn m-t-6"
+                                    ng-click="saveKey(ctrl)"
+                                    ng-disabled="!form.iotKey || !form.iotModuleType">SAVE
+                                  </button>
+                                  <button
+                                    class="btn action_btn m-t-6 m-l-35"
+                                    ng-click="stopEditingKey()">CANCEL
+                                  </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div ng-if="isAddingEquipment" class="create-ticket-box adjust-columns">
+                          <hr/>
+                          <ul class="list-unstyled list-inline" ng-hide="!!updateOperation">
+                            <li>
+                                <span class="fw-300">TYPE</span>
+                            </li>
+                            <li>
+                                <span class="fw-300">{{controllers.length ? controllers[0].device_type : 'Not set'}}</span>
+                            </li>
+                          </ul>
+                          <ul class="list-unstyled list-inline">
+                              <li>
+                                  <span class="fw-300" title="Module type for tracker or IoT">MODULE TYPE</span>
+                              </li>
+                              <li>
+                                <span ng-hide="(isEditingKey && currentCtrlId === ctrl.controller_id) || isAddingEquipment" class="fw-300">{{bikeData.iot_module_type || 'Not set'}}</span>
+                                <select ng-if="(isEditingKey && currentCtrlId === ctrl.controller_id) || isAddingEquipment" ng-init="updateModuleType(iotModuleType)" ng-change="updateModuleType(iotModuleType)" name="iotModuleSelect" id="iotModuleSelect" style="width: 100%; height: 30px" ng-model="form.iotModuleType">
+                                  <option value="">None</option>
+                                  <option value="Segway">Segway</option>
+                                  <option value="Segway IoT EU">Segway IoT EU</option>
+                                  <option value="COMODULE Ninebot ES4">COMODOULE Ninebot ES4</option>
+                                  <option value="ACTON">ACTON</option>
+                                  <option value="Nimbelink">Nimbelink</option>
+                                  <option value="AXA">AXA</option>
+                                  <option value="ScoutIOT">Scout IOT</option>
+                                  <option value="Geotab IoT">Geotab</option>
+                                  <option value="Grow">Grow</option>
+                                  <option value="Manual Lock">Manual Lock</option>
+                                  <option value="Linka IoT">Linka</option>
+                                  <option value="Omni">Omni(Lock)</option>
+                                  <option value="Omni IoT">Omni IoT</option>
+                                  <option value="Teltonika">Teltonika</option>
+                                  <option value="Okai">Okai</option>
+                                  <option value="Tap Key">Tapkey</option>
+                                  <option value="Duckt">DuckT</option>
+                                  <option value="Kisi">Kisi</option>
+                                  <option value="Sas">Sas</option>
+                                  <option value="Sentinel">Sentinel</option>
+                                  <option value="dck-mob-e">Greenriders</option>
+                                  <option value="Edge">Edge</option>
+                              </select>
+                              </li>
+                          </ul>
+                          <ul class="list-unstyled list-inline">
+                            <li>
+                              <span class="fw-300"> {{ keyName }}</span>
+                            </li>
+                            <li>
+                              <input ng-show="(isEditingKey && currentCtrlId === ctrl.controller_id) || isAddingEquipment" class="fw-300" ng-model="form.iotKey" type="text"/>
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <button
+                            ng-show="isAddingEquipment"
+                            class="btn action_btn m-t-6"
+                            ng-click="saveKey()"
+                            ng-disabled="!form.iotKey || !form.iotModuleType">SAVE
+                          </button>
+                          <button
+                            ng-show="isAddingEquipment"
+                            class="btn action_btn m-t-6 m-l-35"
+                            ng-click="stopAddingEquipment()">CANCEL
+                          </button>
+                        </div>
+                        <div>
+                          <button
+                            title="Add IoT or Tracker"
+                            ng-if="controllers.length < 2 && !isEditingKey"
+                            class="btn action_btn m-t-6"
+                            ng-click="startAddingEquipment('adding')"
+                          >
+                            ADD EQUIPMENT
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="livestatus">
+    <section ng-controller="bikeLiveStatusController">
+        <div class="container-fluid bor-t-hash">
+            <div class="row ">
+                <div class="col-sm-7 m-tb-30 p-l-0">
+                    <div class="panel quick-display" style="position: relative;">
+                        <div ng-init="showLoader=true" ng-show="showLoader"
+                             style="z-index:999;position: absolute;top: 0;right: 0;bottom: 0;text-align: center;width: 100%;background: rgba(255,255,255,0.8);">
+                            <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+                                <div class="spinner">
+                                    <div class="rect1"></div>
+                                    <div class="rect2"></div>
+                                    <div class="rect3"></div>
+                                    <div class="rect4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="map" class="fullwid h-520"></div>
+                    </div>
+                </div>
+                <div class="col-sm-5 m-tb-30">
+                    <div class="row">
+                        <div class="col-sm-12 create-ticket-box">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">FLEET STATUS</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <span class="fw-300">{{bikeData.real_status}}</span>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.status == 'active' && bikeData.current_status == 'on_trip'"
+                                class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">LAST PICK UP LOCATION</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <span class="fw-300">{{geoCodingResult}} </span>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.current_status == 'parked'" class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">LAST PARKED LOCATION</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <span class="fw-300">{{geoCodingResult}} </span>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.status == 'active' && bikeData.current_status == 'on_trip'"
+                                class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">CURRENT TRIP</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <span class="fw-300">{{tripData.trip_distance}} miles, {{tripData.trip_duration}}</span>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.status == 'active' && bikeData.current_status == 'on_trip'"
+                                class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">CURRENT MEMBER</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <a ui-sref="member-profile({userId: {{tripData.user_id}}})"><span class="fw-300">{{tripData.rider}}</span></a>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.status == 'active' && bikeData.current_status == 'parked'
+                                && tripData.rider" class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">LAST MEMBER</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <a ui-sref="member-profile({userId: {{tripData.user_id}}})"><span class="fw-300">{{tripData.rider}}</span></a>
+                                </li>
+                            </ul>
+                            <ul ng-if="bikeData.status != 'active' && tripData.end_address"
+                                class="list-unstyled list-inline">
+                                <li>
+                                    <span class="fw-300">LAST PARKED LOCATION</span>
+                                </li>
+                                <li class="m-t-6">
+                                    <span class="fw-300">{{tripData.end_address}}, {{tripData.time_created}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</script>
+<script type="text/ng-template" id="activitylog">
+    <section ng-controller="activityLogController" class="fullwid pull-left">
+        <div class="row nomarg rider-searchbar p-lr-15 text-alert-medium" style="background-color: #f4f5f6;">
+            <div class="col-sm-4 col-xs-4" ng-class = "modifidiedWidth ? 'col-md-4' : 'col-md-3'">
+                <h6 class="text-alert-medium">ACTIVITY TYPE</h6>
+                <dropdown list="dropdownlist" filter="statusFilter" property="name"
+                          template="dropdown" style="width:100%;"></dropdown>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <h6 class="text-alert-medium">DATE</h6>
+                <div class="form-group nomarg">
+                    <div class='input-group date bg-white datepicker'>
+                        <input id="datetimepicker1" type='text' style='text-overflow: ellipsis;box-shadow:none;'
+                               class="ft-14 form-control" placeholder="MM/DD/YYYY" ng-model="date1"/>
+                        <span class="input-group-addon">
+                            <span style='top: 2px !important; color: #6f7276'
+                                  class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-3" ng-class = "modifidiedWidth ? 'col-md-3' : 'col-md-4'">
+                <h6 class="text-alert-medium">RIDER INVOLVED</h6>
+                <input class="form-control new-txt-box inline-block h-34" type="text"
+                       placeholder="Rider name or ID">
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <button class="btn custom-btn text-uppercase text-white bg-HeaderToolbar"
+                        ng-click="activityLogUpdate()">UPDATE
+                </button>
+            </div>
+        </div>
+        <div class="fullwid pull-left">
+
+            <bike-table numrowitem="showlistitem" class="p-rel customtable" bikefleetdata='filterdData'
+                        selectedlist='selectedBikes' fleetstatus="activitylog" bikeoption='hideBikeOptions'
+                        filter="filterdData"
+                        filteroption='showFilterOptions' header='activeheader' type="geojson" originaldata='filterdData'
+                        checkbox="checkbox2"></bike-table>
+        </div>
+    </section>
+</script>
+<script type="text/ng-template" id="reservations">
+  <section ng-controller="reservationsController" class="fullwid pull-left">
+    <div class="row nomarg rider-searchbar p-lr-15 text-alert-medium" style="background-color: #f4f5f6;">
+      <div class="col-sm-4 col-xs-4" ng-class = "modifidiedWidth ? 'col-md-4' : 'col-md-3'">
+        <h6 class="text-alert-medium">START DATE</h6>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-3">
+        <h6 class="text-alert-medium">DURATION</h6>
+        </div>
+      </div>
+    <div class="fullwid pull-left">
+
+      <bike-table numrowitem="showlistitem" class="p-rel customtable" reservations='reservationsData'
+                  selectedlist='selectedBikes' fleetstatus="reservations" bikeoption='hideBikeOptions'
+                  filter="reservationsData"
+                  filteroption='showFilterOptions' header='activeheader' type="geojson" originaldata='filterdData'
+                  checkbox="checkbox2"></bike-table>
+    </div>
+  </section>
+</script>

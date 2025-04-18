@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AXALock",
+        "repositoryURL": "git@github.com:velolabs/axalock_ios.git",
+        "state": {
+          "branch": "develop",
+          "revision": "5c9d50a98ef45f31f9f3c3c6b40243a3f11c9dd5",
+          "version": null
+        }
+      },
+      {
+        "package": "Cartography",
+        "repositoryURL": "git@github.com:robb/Cartography.git",
+        "state": {
+          "branch": null,
+          "revision": "b75197ea134f42b5feafb04b526b37eb1a41034b",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "git@github.com:evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "96fb84f45a96630e7583903bd7e08cf095c7a7ef",
+          "version": "19.0.0"
+        }
+      },
+      {
+        "package": "Localize_Swift",
+        "repositoryURL": "git@github.com:marmelroy/Localize-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "f2d0c6d790b8af64ae54377ad93494e8d3e46b17",
+          "version": "3.1.0"
+        }
+      },
+      {
+        "package": "Reachability",
+        "repositoryURL": "git@github.com:ashleymills/Reachability.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "98e968e7b6c1318fb61df23e347bc319761e8acb",
+          "version": "5.0.0"
+        }
+      },
+      {
+        "package": "Wrappers",
+        "repositoryURL": "git@github.com:kabanishe23/Wrappers.git",
+        "state": {
+          "branch": "master",
+          "revision": "929dfd81aedc5e310e29a21dec47856bff910807",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

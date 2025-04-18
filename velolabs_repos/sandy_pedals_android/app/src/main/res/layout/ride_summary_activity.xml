@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/lattis_view_loction_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_header_ride_summary"
+        android:background="@color/white"
+        >
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:padding="20dp"
+            android:text="@string/ride_summary_header_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="25sp"
+            android:background="@color/white"
+            android:textColor="@color/black_overlay"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_header"
+            android:background="@color/black_overlay"
+            />
+
+    </RelativeLayout>
+
+
+
+    <io.bikes.sandypedals.presentation.view.CustomTextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="12 minutes walk"
+        android:textColor="@color/black_overlay"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+        android:layout_below="@+id/rl_header_ride_summary" />
+
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_duration_rate"
+        android:layout_below="@+id/dateTextView"
+        android:clickable="false"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/rl_duration_rate"
+        android:paddingRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/lattis_view_loction_bg"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_duration_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/lattis_view_loction_bg"
+            >
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/durationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_rate_ride_duration"
+                android:textColor="@color/black_overlay"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/durationLabel"
+                android:layout_marginTop="5dp"
+                android:paddingRight="10dp"
+                android:text="@string/label_rate_ride_duration"
+                android:textColor="@color/lattis_header_color"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:textColor="@color/lattis_header_color"
+                android:textSize="50dp"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+            <io.bikes.sandypedals.presentation.view.CustomTextView
+                android:id="@+id/tv_ride_cost_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_ride_cost"
+                android:paddingRight="5dp"
+                android:textColor="@color/lattis_header_color"
+                android:layout_centerVertical="true"
+                android:visibility="visible"
+                android:textSize="15dp"
+                custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+        <ImageView
+            android:id="@+id/border_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/rl_duration_cost"
+            android:layout_marginTop="10dp"
+            android:background="@color/black_overlay" />
+
+        <io.bikes.sandypedals.presentation.view.CustomTextView
+            android:id="@+id/rate_your_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/border_line"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/label_rate_ride"
+            android:textColor="@color/black_overlay"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rate_your_label"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/lattis_view_loction_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/rate1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="@color/lattis_accent_color" />
+
+            <ImageView
+                android:id="@+id/rate2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="@color/lattis_accent_color" />
+
+            <ImageView
+                android:id="@+id/rate3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="@color/lattis_accent_color" />
+
+            <ImageView
+                android:id="@+id/rate4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="@color/lattis_accent_color" />
+
+            <ImageView
+                android:id="@+id/rate5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_unselected_star"
+                android:tint="@color/lattis_accent_color" />
+
+        </LinearLayout>
+
+        <io.bikes.sandypedals.presentation.view.CustomButton
+            android:id="@+id/button_submit"
+            style="@style/blueButtonStyle.rect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_stars"
+            android:layout_margin="16dp"
+            android:text="@string/submit"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</RelativeLayout>

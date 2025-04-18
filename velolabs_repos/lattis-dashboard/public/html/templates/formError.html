@@ -1,0 +1,40 @@
+<div ng-if="!form.country.$pristine && form.country.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Country name is required</p></div>
+
+<div ng-if="!form.customername.$pristine && form.customername.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Customer name is required</p></div>
+<div ng-if="!form.customername.$pristine && form.customername.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Customer name is not valid</p></div>
+
+<div ng-if="!form.fleetname.$pristine && form.fleetname.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Fleet name is required</p></div>
+<div ng-if="!form.fleetname.$pristine && form.fleetname.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Fleet name is not valid</p></div>
+
+
+<div ng-if="form.fleetname.$error.fleetnames"><p><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>This fleet name is already taken!</p></div>
+
+
+
+<div ng-if="!form.zip.$pristine && form.zip.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Zip Code is required</p></div>
+<div ng-if="!form.state.$pristine && form.state.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>State name is required</p></div>
+<div ng-if="!form.city.$pristine && form.city.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>City name is required</p></div>
+<div ng-if="!form.street.$pristine && form.street.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Street name is required</p></div>
+<div ng-if="!form.email.$pristine && form.email.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Email ID is required</p></div>
+<div ng-if="!form.phone.$pristine && form.phone.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Phone number is required</p></div>
+<div ng-if="!form.code.$pristine && form.code.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Country code is required</p></div>
+<div ng-if="!form.lastname.$pristine && form.lastname.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Last name is required</p></div>
+<div ng-if="!form.firstname.$pristine && form.firstname.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i> First name is required</p></div>
+<div ng-if="!form.title.$pristine && form.title.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i></p>Title is required</div>
+<div ng-if="!form.make.$pristine && form.make.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i></p>Bike make is required</div>
+<div ng-if="!form.model.$pristine && form.model.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i></p>Bike model is required</div>
+<div ng-if="!form.description.$pristine && form.description.$error.required"><p ng-message="required"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Bike description is required</p></div>
+<div ng-if="!form.country.$pristine && form.country.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Country name is not valid</p></div>
+<div ng-if="!form.zip.$pristine && form.zip.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Zip Code is not valid</p></div>
+<div ng-if="!form.state.$pristine && form.state.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>State name is not valid</p></div>
+<div ng-if="!form.city.$pristine && form.city.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>City name is not valid</p></div>
+<div ng-if="!form.street.$pristine && form.street.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Street name is not valid</p></div>
+<div ng-if="!form.email.$pristine && form.email.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Email ID is not valid</p></div>
+<div ng-if="!form.phone.$pristine && form.phone.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Phone number is not valid</p></div>
+<div ng-if="!form.code.$pristine && form.code.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Country code is not valid</p></div>
+<div ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Last name is not valid</p></div>
+<div ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i> First name is not valid</p></div>
+<div ng-if="!form.title.$pristine && form.title.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Title is not valid</p></div>
+<div ng-if="!form.make.$pristine && form.make.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Please enter a vaild bike make</p></div>
+<div ng-if="!form.model.$pristine && form.model.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Please enter a vaild bike make</p></div>
+<div ng-if="!form.description.$pristine && form.description.$error.pattern"><p ng-message="pattern"><i class="ft-18 fa fa-exclamation-circle p-r-15"></i>Please enter a vaild bike make</p></div>

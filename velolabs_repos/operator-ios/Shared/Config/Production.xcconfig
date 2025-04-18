@@ -1,0 +1,14 @@
+//
+//  Production.xcconfig
+//  Operator
+//
+//  Created by Ravil Khusainov on 25.03.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ROOT_URL = https:/$()/api.lattis.io
+
+APP_NAME = Operator
+APP_BUNDLE_ID = io.lattis.operator

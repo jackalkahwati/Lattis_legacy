@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/membership_backgroud"
+    tools:context="com.lattis.lattis.presentation.membership.MembershipActivity">
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_close_in_slider"
+        android:id="@+id/iv_close_in_membership_create"
+        />
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/iv_close_in_membership_create"
+        android:id="@+id/ct_title_in_membership_create"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/memberships"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_title_in_membership_create"
+        android:id="@+id/ct_membership_name_in_membership_create"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/your_memberships"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Light.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintTop_toBottomOf="@+id/ct_membership_name_in_membership_create"
+        android:id="@+id/ct_become_membership_in_membership_create"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/become_a_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Light.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_become_membership_in_membership_create"
+        android:id="@+id/ct_join_today_in_membership_create"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/join_today"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Light.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintTop_toBottomOf="@+id/ct_join_today_in_membership_create"
+        android:id="@+id/ct_for_just_in_membership_create"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/membership_price"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Bold.otf"
+        />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        custom:layout_constraintTop_toBottomOf="@+id/ct_for_just_in_membership_create"
+        android:id="@+id/ct_savings_in_membership_create"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/membership_perk"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Light.otf"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_payment_in_membership_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        custom:layout_constraintTop_toBottomOf="@+id/ct_savings_in_membership_create"
+        >
+
+        <ImageView
+            android:id="@+id/iv_card_img_in_membership_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/card_icon"
+            custom:layout_constraintStart_toStartOf="parent"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:id="@+id/ct_credit_card_number_in_membership_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/add_credit_card"
+            android:textColor="@color/bike_slider_detail_text"
+            android:textSize="14dp"
+            custom:layout_constraintTop_toTopOf="parent"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintStart_toEndOf="@+id/iv_card_img_in_membership_create"
+            custom:typefaceAsset="GothamSSm-Bold.otf" />
+
+        <ImageView
+            android:id="@+id/iv_next_credit_card_in_membership_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/next_arrow"
+            custom:layout_constraintBottom_toBottomOf="parent"
+            custom:layout_constraintStart_toEndOf="@+id/ct_credit_card_number_in_membership_create"
+            custom:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_add_credit_card_in_membership_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_add_credit_card"
+        android:padding="10dp"
+        android:text="@string/add_credit_card"
+        android:textColor="@color/membership_round_button_text"
+        android:textSize="16dp"
+        android:visibility="visible"
+        style="?android:attr/borderlessButtonStyle"
+        custom:layout_constraintBottom_toTopOf="@id/ct_terms_condition_in_membership_create"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:textAllCaps="false"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+
+    <com.lattis.lattis.presentation.customview.CustomButton
+        android:id="@+id/btn_confirm_in_membership_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_confirm_button"
+        android:padding="10dp"
+        android:text="@string/confirm"
+        android:textColor="@color/membership_round_button_text"
+        android:textSize="16dp"
+        android:visibility="visible"
+        style="?android:attr/borderlessButtonStyle"
+        custom:layout_constraintBottom_toTopOf="@id/ct_terms_condition_in_membership_create"
+        android:layout_marginLeft="20dp"
+        android:textAllCaps="false"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        custom:typefaceAsset="GothamSSm-Medium.otf" />
+
+    <com.lattis.lattis.presentation.customview.CustomTextView
+        android:id="@+id/ct_terms_condition_in_membership_create"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/bike_details_terms_policy"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="12dp"
+        android:textColor="@color/membership_text"
+        custom:typefaceAsset="GothamSSm-Book.otf"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

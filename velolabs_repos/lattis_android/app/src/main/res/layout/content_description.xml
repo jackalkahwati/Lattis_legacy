@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.lattis.ellipse.presentation.ui.damagebike.DescriptionActivity"
+    tools:showIn="@layout/activity_description">
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/label_describe_the_damage"
+        android:id="@+id/tv_damage_desc"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_text_color_grey"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.lattis.ellipse.presentation.view.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#eaeaea"
+        android:layout_marginTop="16dp"
+        android:gravity="top|left"
+        android:hint="Tap to type"
+        android:textColorHint="@color/lattis_text_color_grey"
+        android:layout_below="@+id/tv_damage_desc"
+        android:id="@+id/et_damage_description"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/lattis_text_color_grey"
+        android:maxLines="25"
+        android:padding="5dp"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        />
+
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/save_btn"
+        style="@style/blueButtonStyle.rect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/label_save"
+        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+</RelativeLayout>

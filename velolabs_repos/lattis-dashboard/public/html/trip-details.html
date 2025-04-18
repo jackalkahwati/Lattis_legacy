@@ -1,0 +1,267 @@
+<section ng-controller="tripDetailsController">
+    <div class="panel">
+        <div class="panel-heading bg-white box" ng-show="!!currentTrip">
+            <div class="p-tb-20 nomarg bg-white noborder ">
+                <a ng-click="goBack()" class="btn custombtn-default text-left ft-12 text-muted"><i
+                        class="fa fa-angle-left p-r-5"></i> BACK TO PROFILE</a>
+                <div class="m-l-35 display-box t-18 p-rel" ng-show="!loadingTripInfo">
+                <span class="ft-20 text-muted v-b">Trip ID:{{currentTrip.trip_id}}</span><br/>
+                <span class="ft-14 text-muted v-b">Ride name:
+                    <a ng-if="currentTrip.bike_id" ng-click="goToBikeDetails()" class="ft-11 pointer ticketactive ng-binding ng-scope">{{bike.bike_name}}</a>
+                    <a ng-if="!currentTrip.bike_id" ng-click="goToPortDetails()" class="ft-11 pointer ticketactive ng-binding ng-scope">{{portData.hubName}}-{{portData.ports[0].portNumber}}</a>
+                </span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" style="margin-bottom:150px" ng-show="!loadingTripInfo && currentTrip">
+        <div class="row" style="margin:10px">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <div class = 'h-300 m-b-20' ng-if="currentTrip.date_created">
+                    <div class = 'bg-lightgray bor-b-hash bor-t-hash m-b-10'>
+                        <p class = 'nomarg p-10 p-lr-15 ft-16 table-text'>TRIP INFORMATION</p>
+                    </div>
+                    <div class = 'p-tb20-lr15'>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Start:</li>
+                            <li class = 'pull-right table-text'>
+                                <span ng-if="currentTrip.date_created === currentTrip.date_endtrip">
+                                    N/A
+                                </span>
+                                <span ng-if="currentTrip.date_created !== currentTrip.date_endtrip">
+                                    {{currentTrip.start_address}} {{currentTrip.start_address && ','}} {{currentTrip.start_time}}
+                                </span>
+
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>End:</li>
+                            <li class = 'pull-right table-text' ng-if="currentTrip.end_address">{{currentTrip.end_address}} {{currentTrip.end_address && ','}} {{currentTrip.end_time}}</li>
+                            <li class = 'pull-right table-text' ng-if="currentTrip" ng-hide="currentTrip.end_address">
+                                <span ng-if="currentTrip.date_created === currentTrip.date_endtrip">
+                                    Cancelled
+                                </span>
+                                <span ng-if="!currentTrip.date_created || currentTrip.date_created !== currentTrip.date_endtrip">
+                                    {{ currentTrip.date_created ? 'Trip in progress' : 'N/A' }}
+                                </span>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Duration:</li>
+                            <li class = 'pull-right table-text'>{{currentTrip.formatted_duration}}</li>
+                        </ul>
+                        <br>
+                        <!-- <ul class="list-unstyled" "> -->
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Violation:</li>
+                            <li ng-if="currentTrip.hasParkingViolation" class = 'pull-right table-text'>Parked outside parking zone <span><img class="h-14" src="../../images/alert_icon.png"></span></li>
+                            <li ng-if="currentTrip.theftReported" class = 'pull-right table-text'>Theft reported <span><img class="h-14" src="../../images/alert_icon.png"></span></li>
+                            <li ng-if="currentTrip && currentTrip.operator_id" class = 'pull-right table-text'>Trip ended by operator</li>
+                            <li
+                                ng-if="currentTrip && !currentTrip.operator_id  && currentTrip.hasParkingViolation === false && currentTrip.theftReported === false"
+                                class="pull-right table-text">N/A
+                            </li>
+                            <br>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Damage:</li>
+                            <li ng-if="currentTrip.damageReported" class = 'pull-right table-text'>Damage reported <span><img class="h-14" src="../../images/alert_icon.png"></span></li>
+                            <li ng-if="currentTrip.damageReported === false" class="pull-right table-text">No damage reported</li>
+                            <br>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Ended by Operator:</li>
+                            <li ng-if="!!currentTrip.ended_by_operator" class="pull-right table-text">True</li>
+                            <li ng-if="!currentTrip.ended_by_operator" class="pull-right table-text">False</li>
+                            <br>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Rating</li>
+                            <li class = 'pull-right' ng-if="currentTrip">
+                                <i class = 'fa text-skyblue' ng-repeat="star in [1, 2, 3, 4, 5] track by $index" ng-class="$index < starRating ? 'fa-star' : 'fa-star-o'"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = 'h-200' ng-if="currentTrip.reservation">
+                    <div class = 'bg-lightgray bor-b-hash bor-t-hash'>
+                        <p class = 'nomarg p-10 p-lr-15 ft-16 table-text'>RESERVATION DETAILS</p>
+                    </div>
+                    <div class = 'p-tb20-lr15'>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Start</li>
+                            <li class = 'pull-right table-text'>
+                                {{formatReservationTime(currentTrip.reservation, currentTrip.reservation.reservation_start)}}
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>End</li>
+                            <li class = 'pull-right table-text'>
+                                {{formatReservationTime(currentTrip.reservation, currentTrip.reservation.reservation_end)}}
+                            </li>
+                        </ul>
+                        <br ng-if="currentTrip.reservation.reservation_terminated">
+                        <ul class="list-unstyled block" ng-if="currentTrip.reservation.reservation_terminated">
+                            <li class = 'pull-left ft-bold table-text'>Terminated</li>
+                            <li class = 'pull-right table-text'>
+                                {{formatReservationTime(currentTrip.reservation, currentTrip.reservation.reservation_terminated)}}
+                                <span ng-if="currentTrip.reservation.termination_reason">
+                                    &mdash; {{currentTrip.reservation.termination_reason}}
+                                </span>
+                            </li>
+                        </ul>
+                        <br ng-if="!currentTrip.reservation.reservation_terminated">
+                        <ul class="list-unstyled block" ng-if="reservationElapsed(currentTrip.reservation)">
+                            <li class = 'pull-left ft-bold table-text'>Terminated</li>
+                            <li class = 'pull-right table-text'>
+                                {{formatReservationTime(currentTrip.reservation, currentTrip.reservation.reservation_end)}}
+                                <span>&mdash; Elapsed</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Reserved Duration</li>
+                            <li class = 'pull-right table-text'>
+                                {{formatReservationDuration(currentTrip.reservation)}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = 'h-260'>
+                    <div class = 'bg-lightgray bor-b-hash bor-t-hash'>
+                        <p class = 'nomarg p-10 p-lr-15 ft-16 table-text'>TRANSACTION DETAILS</p>
+                    </div>
+                    <div class = 'p-tb20-lr15'>
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Payment Id</li>
+                            <li ng-if="currentTrip.transaction_id" class = 'pull-right table-text'>{{currentTrip.transaction_id}}</li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Metered charges</li>
+                            <li ng-if="currentTrip.charge_for_duration && !noPayment" class = 'pull-right table-text'>{{fleetCurrency}}{{currentTrip.charge_for_duration}}</li>
+                            <li ng-if="!noPayment && !currentTrip.charge_for_duration" class = 'pull-right table-text'>{{fleetCurrency}}0.00</li>
+                            <li ng-if="noPayment" class = 'pull-right table-text'>N/A</li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Ride unlock fee</li>
+                            <li ng-if="currentTrip.bike_unlock_fee && !noPayment" class = 'pull-right table-text'>{{fleetCurrency}}{{currentTrip.bike_unlock_fee}}</li>
+                            <li ng-if="!noPayment && !currentTrip.bike_unlock_fee" class = 'pull-right table-text'>{{fleetCurrency}}0.00</li>
+                            <li ng-if="noPayment" class = 'pull-right table-text'>N/A</li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Over usage fees</li>
+                            <li ng-if="currentTrip.over_usage_fees && !noPayment" class = 'pull-right table-text'>{{fleetCurrency}}{{currentTrip.over_usage_fees}}</li>
+                            <li ng-if="!noPayment && !currentTrip.over_usage_fees" class = 'pull-right table-text'>{{fleetCurrency}}0.00</li>
+                            <li ng-if="noPayment" class = 'pull-right table-text'>N/A</li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block">
+                            <li class = 'pull-left ft-bold table-text'>Penalty Fees</li>
+                            <li ng-if="currentTrip.penalty_fees && !noPayment" class = 'pull-right table-text'>{{fleetCurrency}}{{currentTrip.penalty_fees}}</li>
+                            <li ng-if="!noPayment && !currentTrip.penalty_fees" class = 'pull-right table-text'>{{fleetCurrency}}0.00</li>
+                            <li ng-if="noPayment" class = 'pull-right table-text'>N/A</li>
+                        </ul>
+                        <br>
+                        <ul class="list-unstyled block" ng-if="currentTrip.membership_discount > 0">
+                            <li class = 'pull-left ft-bold table-text'>Membership Discount</li>
+                            <li ng-if="currentTrip.membership_discount && !noPayment" class = 'pull-right table-text'><strong>-</strong>{{fleetCurrency}}{{currentTrip.membership_discount}}</li>
+                        </ul>
+                        <br ng-if="currentTrip.membership_discount > 0">
+                        <ul class="list-unstyled block" ng-if="currentTrip.promo_code_discount > 0">
+                            <li class = 'pull-left ft-bold table-text'>Promo Code Discount</li>
+                            <li ng-if="currentTrip.promo_code_discount && !noPayment" class = 'pull-right table-text'><strong>-</strong>{{fleetCurrency}}{{currentTrip.promo_code_discount}}</li>
+                        </ul>
+                        <br ng-if="currentTrip.promo_code_discount > 0">
+                        <ul class="list-unstyled">
+                            <li class = 'pull-left ft-bold table-text'>Refunds applied</li>
+                            <li class = 'pull-right table-text'>
+                                {{ fleetCurrency }}{{ totalRefunded(currentTrip) }}
+                            </li>
+                        </ul>
+                        <br>
+                        <div  ng-if="currentTrip.tax_sub_total" ng-repeat="tax in currentTrip.taxes track by $index">
+                            <ul class="list-unstyled block" ng-style="$index === 0 ? {'margin-bottom': '0px'}:{'margin-bottom': '8px'}">
+                                <li class = 'pull-left ft-bold table-text'>{{tax.name}}<span style="margin-left: 5px;">({{tax.percentage}}%)</span></li>
+                                <li class = 'pull-right table-text'>{{fleetCurrency}}{{tax.amount.toFixed(2)}}</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <ul class="list-unstyled block" ng-if="currentTrip.tax_sub_total!==0" style="margin-top:8px;">
+                            <li class = 'pull-left ft-bold table-text'>Tax Total</li>
+                            <li class = 'pull-right table-text'>{{fleetCurrency}}{{currentTrip.tax_sub_total.toFixed(2)}}</li>
+                        </ul>
+                        <br ng-if="currentTrip.tax_sub_total!==0">
+                        <ul class="list-unstyled" style="margin-top: 2px;">
+                            <li class = 'pull-left ft-bold table-text'>Transaction status</li>
+                            <li ng-if="noPayment" class = 'pull-right table-text'>N/A</li>
+                            <li
+                                ng-if="!noPayment &&
+                                    !currentTrip.transaction_id &&
+                                    !currentTrip.membership_discount &&
+                                    currentTrip.charge_for_duration > 0"
+                                class='pull-right table-text'
+                            >
+                                Failed
+                            </li>
+                            <li
+                                ng-if="!noPayment &&
+                                    (currentTrip.transaction_id ||
+                                     currentTrip.charge_for_duration === 0 ||
+                                     currentTrip.membership_discount > 0)"
+                                class='pull-right table-text'
+                            >
+                                Successful
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled bor-t-hash bor-b-hash h-53 p-rel" style="top:30px">
+                            <li class = 'pull-left ft-bold absolute ft-20' style="top:25%;">TOTAL</li>
+                            <li ng-if="currentTrip.total && !noPayment" class='pull-right absolute ft-18' style="top:25%;right:0%">
+                                {{fleetCurrency}}{{currentTrip.total - (currentTrip.total_refunded || 0)}}
+                            </li>
+                            <li ng-if="!noPayment && !currentTrip.total" class='pull-right absolute ft-18' style="top:25%;right:0%">{{fleetCurrency}}00</li>
+                            <li ng-if="noPayment" class='pull-right absolute ft-18' style="top:25%;right:0%">N/A</li>
+                        </ul>
+                    </div>
+                    <div class="m-t-30" style="text-align: center;">
+                        <button
+                            ng-disabled="!currentTrip.transaction_id"
+                            ng-click="issueRefund()"
+                            class="btn custom-btn pbtn-tb11-lr20 inline-block m-t-10 text-uppercase">
+                            ISSUE REFUND
+                        </button>
+                        <button disabled ="disabled" data-toggle="modal" data-target="#chargePenaltyModal" class="btn custom-btn pbtn-tb11-lr20 inline-block m-t-10">CHARGE PENALTY
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                <div id="map" class="parking_map pull-left" style="position:relative;margin-bottom:100px">
+                </div>
+                <img style="width: 100%" ng-src="{{currentTrip.parking_image}}">
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" ng-show="!loadingTripInfo && !currentTrip">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <h3 class="m-b-20">Error encountered while loading trip details.</h3>
+            <p style="font-size: 16px">This trip may be missing or you may not have permission to view it.</p>
+            <p class="lead">If this is unexpected, please contact support.</p>
+        </div>
+    </div>
+    <div class="row" ng-show="loadingTripInfo">
+        <div ng-init="showLoader=true" ng-show="showLoader">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+            </div>
+        </div>
+    </div>
+</section>

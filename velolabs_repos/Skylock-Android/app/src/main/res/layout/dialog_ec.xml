@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/tvEC1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Contacts"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/tvEC2"
+        android:layout_below="@+id/tvEC1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Strongly recommended"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rlLine"
+        android:layout_width="fill_parent"
+        android:layout_height="0.25dp"
+        android:layout_below="@+id/tvEC2"
+        android:background="#BFBFBF">
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvEC3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/tvEC2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select upto 3 loved ones a Skylock Agent should contact if you're in a crash. You can edit them any time."
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rlECButtons"
+        android:layout_below="@+id/tvEC3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/llEC1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@+id/llEC2"
+
+            >
+            <ImageButton
+                android:id="@+id/ibEC1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:tag="inactive"
+                android:src="@drawable/btn_add_ec"
+                />
+            <TextView
+                android:id="@+id/tvContact1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add new"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llEC2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp" >
+            <ImageButton
+                android:id="@+id/ibEC2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:tag="inactive"
+                android:src="@drawable/btn_add_ec"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:id="@+id/tvContact2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add new"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llEC3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_toRightOf="@+id/llEC2"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            >
+            <ImageButton
+                android:id="@+id/ibEC3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:tag="inactive"
+                android:src="@drawable/btn_add_ec"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:id="@+id/tvContact3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add new"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvEC4"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/rlECButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Skylock will text them shortly to let them know that you selected them"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rlLine1"
+        android:layout_width="fill_parent"
+        android:layout_height="0.25dp"
+        android:layout_below="@+id/tvEC4"
+        android:background="#BFBFBF">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/rlLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp">
+        <ImageButton
+            android:id="@+id/ibDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/dismiss_btn"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="29dp" />
+        <ImageButton
+            android:id="@+id/ibDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/done_btn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="29dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

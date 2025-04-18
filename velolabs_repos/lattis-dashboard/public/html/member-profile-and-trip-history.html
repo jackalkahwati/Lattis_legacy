@@ -1,0 +1,274 @@
+<section class="animated fadeIn" ng-controller="memberHeaderController">
+    <div class="panel">
+        <div class="panel-heading bg-white box ">
+            <div class="p-tb-20 nomarg bg-white noborder ">
+                <button ng-click="gobackMemberList()"
+                        class="btn custombtn-default wid-200 text-left ft-12 text-muted"><i
+                        class="fa fa-angle-left p-r-5"></i>BACK TO ALL USERS</button>
+                <span class="ft-20  text-muted v-b m-l-35">User profile: {{customerdetails.first_name}} {{customerdetails.last_name}}</span>
+            </div>
+        </div>
+        <div class="panel-body box">
+            <div class="row p-b-50">
+                <div class="col-sm-12">
+                    <div class="fullwid pull-left">
+                        <custom-Tab tabitem="ridersinfo" orderbtn="false" currentTab="currenttab"></custom-Tab>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/ng-template" id="ridersProfile">
+    <section class="animated fadeIn" ng-controller="memberProfileController" ng-init="fetchUserData()">
+        <div class="row">
+            <form name="form">
+                <div class="col-sm-12 new-fleet-box m-t-20">
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <span>Customer name</span>
+                        </li>
+                        <li>
+                            <div class="set-placeholder inline-block">
+                                <span>First name</span>
+                                <label for="firstname" class="required-dot">&#9679;</label>
+                                <input class="form-control new-txt-box inline-block wid-285"
+                                       ng-pattern="/^[a-zA-Z- ]{3,}$/" data-ng-required="true" id="firstname"
+                                       name="firstname"
+                                       ng-class="{err:!form.firstname.$valid && !form.firstname.$pristine}" type="text"
+                                       ng-model="customerdetails.first_name" ng-blur='validateFields(form.firstname)'>
+                                <p ng-if="!form.firstname.$pristine && form.firstname.$error.pattern"
+                                   class="error-alert">First name not valid</p>
+                                <p ng-if="!form.firstname.$pristine && form.firstname.$error.required"
+                                   class="error-alert">First name is required</p>
+                            </div>
+                            <div class="set-placeholder inline-block">
+                                <span class="m-lr-10">Last name</span>
+                                <label for="lastname" class="required-dot">&#9679;</label>
+                                <input class="form-control new-txt-box inline-block wid-200 m-l-10" id="lastname"
+                                       ng-pattern="/^[a-zA-Z- ]{1,}$/" data-ng-required="true" name="lastname"
+                                       ng-class="{err:!form.lastname.$valid && !form.lastname.$pristine}" type="text"
+                                       ng-model="customerdetails.last_name" ng-blur='validateFields(form.lastname)'
+                                >
+                                <p ng-if="!form.lastname.$pristine && form.lastname.$error.pattern"
+                                   class="error-alert">Last name not valid</p>
+                                <p ng-if="!form.lastname.$pristine && form.lastname.$error.required"
+                                   class="error-alert">Last name is required</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <span>Telephone</span>
+                        </li>
+                        <li class="m-t-6">
+                            <div class="set-placeholder inline-block">
+                                <span class="m-lr-10">Telephone</span>
+                                <label for="phone" class="required-dot">&#9679;</label>
+                                <input class="form-control new-txt-box inline-block wid-285"
+                                       ng-pattern="/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]{5,15}$/" name="phone" id="phone"
+                                       ng-class="{err:!form.phone.$valid && !form.phone.$pristine}" type="text"
+                                       ng-model="customerdetails.phone_number"
+                                       ng-blur="validateFields(form.phone)"
+                                       ng-disabled="true"
+                                >
+                                <p ng-if="!form.phone.$pristine && form.phone.$error.pattern"
+                                   class="error-alert">Phone number not valid</p>
+                                <p ng-if="!form.phone.$pristine && form.phone.$error.required"
+                                   class="error-alert">Phone number is required</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <span>Email address</span>
+                        </li>
+                        <li>
+                            <div class="set-placeholder inline-block">
+                                <label for="email" class="required-dot m-r-10">&#9679;</label>
+                                <input class="form-control new-txt-box wid-400" ng-model-options="{ updateOn: 'blur' }"
+                                       name="email" id="email"
+                                       ng-pattern="emailRegexPatterns"
+                                       ng-model="customerdetails.email" data-ng-required="true"
+                                       ng-class="{err:!form.email.$valid && !form.email.$pristine}" type="email"
+                                       ng-blur='validateFields(form.email)' ng-disabled="true">
+                                <p ng-if="!form.email.$pristine && form.email.$error.pattern"
+                                   class="error-alert">Email ID not valid</p>
+                                <p ng-if="!form.email.$pristine && form.email.$error.required"
+                                   class="error-alert">Email ID is required</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled list-inline" ng-if="shouldShowAccess">
+                      <li>
+                        <span>Private fleet access email address</span>
+                      </li>
+                      <li>
+                        <div class="set-placeholder inline-block">
+                          <input class="form-control new-txt-box wid-400" ng-model-options="{ updateOn: 'blur' }"
+                                 name="access_email" id="access_email"
+                                 ng-pattern="emailRegexPatterns"
+                                 ng-model="customerdetails.access_email_address" data-ng-required="true"
+                                 ng-class="{err:!form.email.$valid && !form.email.$pristine}" type="email"
+                                 ng-blur='validateFields(form.email)' ng-disabled="true">
+                        </div>
+                      </li>
+                    </ul>
+                    <div ng-if="shouldShowAccess" class="text-left fullwid p-t-20">
+                        <div class="inline-block">
+                            <input type="radio" ng-change="setPrist()" id="radio1" name="access" ng-value=1 ng-model="customerdetails.access"/>
+                            <label for="radio1">Grant Access</label>
+                        </div>
+                        <div class="inline-block">
+                            <input type="radio" ng-change="setPrist()" id="radio2" name="access" ng-value=0 ng-model="customerdetails.access"/>
+                            <label for="radio2">Revoke Access</label>
+                        </div>
+
+                        <div class="inline-block p-rel">
+                            <i ng-click="accessInquiryClick()"
+                               class="fa fa-question-circle parking-inquiry pointer"
+                               style="font-size: 18px;position: relative;left:5px;top: 2px;"></i>
+                            <div ng-show="accessInquiry" class='arrow_box2 p-tb5-lr10'
+                                 style="position:absolute;top:-4px;left: 35px;">
+                                <span class="text-white ft-11 m-b-10-">Revoked Access members will not be able to rent a bike on the network.</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="text-left fullwid m-t-20 p-tb-10 bor-tb-hash">
+                    <button class="btn custom-btn p-tb-10 p-lr-15 ft-12" ng-disabled="technicianACL"
+                            ng-click="saveProfile()">SAVE &amp; CONTINUE
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="ridersTriphistory">
+    <section ng-controller="memberTriphistoryController" class="animated fadeIn p-lr-15">
+        <div class="row bg-hash rider-searchbar p-lr-15">
+            <div class="col-sm-3 col-xs-3 bor-r-hash">
+                <h6 class="trip-text">SEARCH FOR A TRIP</h6>
+                <div class="input-group">
+                    <input auto-complete source="tripIdList" single="true"
+                           class="form-control nobor-rad ng-pristine ng-valid ng-isolate-scope ui-autocomplete-input"
+                           autocomplete="off" placeholder="Trip ID#…" ng-model="tripSearch"
+                           aria-describedby="search-addon">
+                    <span ng-click="tripHistroyFilter()"
+                          class="input-group-addon nobor-rad fa fa-search bg-white pointer" style="display: table-cell;"
+                          id="search-addon"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-3 trip_selection">
+                <h6 class="trip-text">TRIP DATE</h6>
+                <div class="form-group nomarg">
+                    <div class='input-group date' id='riderhistroydate'>
+                        <input type='text' class="form-control" placeholder="MM/DD/YYY" ng-model="date"/>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <h6 class="trip-text">PENALTY TYPE</h6>
+                <dropdown list="penaltytype" class="fullwid" filter="statusFilter" selected="colour" property="name"
+                          template="dropdown"></dropdown>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <button ng-click="membertripupdate()" class="btn custom-btn text-uppercase text-white bg-HeaderToolbar">
+                    UPDATE
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 nopadd">
+                <div class="fullwid pull-left riders-triptable">
+                    <bike-table numrowitem="showlistitem" class="p-rel customtable" bikefleetdata='triphistory'
+                                selectedlist='selectedBikes' fleetstatus="trip-history" bikeoption='hideBikeOptions' filter="showFilterOptions"
+                                filteroption='showFilterOptions' header='triphistoryheader' type="trip-history" 
+                                
+                    ></bike-table>
+                </div>
+            </div>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="membershipSubscriptions">
+    <section ng-controller="membershipSubscriptionsController" class="animated fadeIn p-lr-15">
+        <div class="row customtable">
+            <table class="table table-hover tablestyle membership-subscriptions-table" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th class="text-white">Period</th>
+                        <th class="text-white">Incentive</th>
+                        <th class="text-white">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="subscription in pagedItems" ng-if="subscriptions.length > 0">
+                        <td>{{ formatPeriod(subscription) }}</td>
+                        <td>{{ formatIncentive(subscription) }}</td>
+                        <td style="padding-left: 15px;">{{ computeSubscriptionStatus(subscription) }}</td>
+                    </tr>
+                    <tr ng-if="subscriptions.length === 0">
+                        <td colspan="3" class="text-center">
+                            No membership subscriptions found for this user.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-right" ng-if="subscriptions.length > pagination.itemsPerPage.label">
+                <ul uib-pagination total-items="subscriptions.length" items-per-page="pagination.itemsPerPage.label" ng-model="pagination.currentPage"
+                    ng-click="pageChange(pagination.currentPage)" max-size="4" class="pagination-sm pull-right"
+                    boundary-links="true" force-ellipses="true"></ul>
+                <span class="pull-right m-lr-5 m-t-3 p-tb-20">
+                    Rows per page:
+                    <select class="text-skyblue m-t-3" ng-model="pagination.itemsPerPage" ng-change="setItemsPerPage(pagination.itemsPerPage)"
+                        ng-options="page as page.label for page in pages track by page.value"></select>
+                </span>
+            </div>
+        </div>
+    </section>
+</script>
+
+<script type="text/ng-template" id="userPromotions">
+    <section ng-controller="userPromotionsController" class="animated fadeIn p-lr-15">
+        <div class="row customtable">
+            <table class="table table-hover tablestyle membership-subscriptions-table" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th class="text-white">Promotion Code</th>
+                        <th class="text-white">Incentive</th>
+                        <th class="text-white">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="promotion in pagedItems" ng-if="promotions.length > 0">
+                        <td><code>{{ promotion.promotion_code }}</code></td>
+                        <td>{{ formatIncentive(promotion) }}</td>
+                        <td style="padding-left: 15px;">{{ computeUserPromotionStatus(promotion) }}</td>
+                    </tr>
+                    <tr ng-if="promotions.length === 0">
+                        <td colspan="3" class="text-center">
+                            No redeemed promotions found for this user.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-right" ng-if="promotions.length > pagination.itemsPerPage.label">
+                <ul uib-pagination total-items="promotions.length" items-per-page="pagination.itemsPerPage.label" ng-model="pagination.currentPage"
+                    ng-click="pageChange(pagination.currentPage)" max-size="4" class="pagination-sm pull-right"
+                    boundary-links="true" force-ellipses="true"></ul>
+                <span class="pull-right m-lr-5 m-t-3 p-tb-20">
+                    Rows per page:
+                    <select class="text-skyblue m-t-3" ng-model="pagination.itemsPerPage" ng-change="setItemsPerPage(pagination.itemsPerPage)"
+                        ng-options="page as page.label for page in pages track by page.value"></select>
+                </span>
+            </div>
+        </div>
+    </section>
+</script>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lattis.ellipse.presentation.ui.damagebike.DamageBikeActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
+
+            <include layout="@layout/view_toolbar" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/decoratedBarcodeView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbarlayout"
+            android:layout_above="@+id/rl_connect_book_start_ride"
+            android:layout_centerHorizontal="true"></com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+
+        <com.lattis.ellipse.presentation.view.CustomPagerContainer
+            android:id="@+id/pager_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_connect_book_start_ride"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="300dp"
+                android:layout_height="135dp"
+                android:layout_gravity="center_horizontal" />
+
+        </com.lattis.ellipse.presentation.view.CustomPagerContainer>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_connect_book_start_ride"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:background="#B7C1CD">
+
+            <ImageView
+                android:id="@+id/iv_lock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:padding="12dp"
+                android:src="@drawable/white_lock" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/view_check_card_list" />
+
+    <include layout="@layout/view_loading_fragment"/>
+
+    <include layout="@layout/no_internal_layout"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

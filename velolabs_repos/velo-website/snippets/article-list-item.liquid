@@ -1,0 +1,52 @@
+{% assign index = false %}
+{% if template == 'blog' %}{% assign index = true %}{% endif %}
+
+<article class="blog-post clearfix">
+
+  {% if index %}
+    <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+  {% else %}
+    <h1 class="page-title">{{ article.title }}</h1>
+  {% endif %}
+
+  <div class="post-meta meta">
+    <p class="post-date">{{ article.published_at | date: format: 'short_month' }}</p>
+
+    {% if settings.blog-show-author %}
+      <p class="post-author">{{ 'blogs.article_item.posted_by' | t }}: {{ article.author }}</p>
+    {% endif %}
+
+    {% if article.tags.size > 0 and settings.blog-show-tags %}
+    <p><strong>{{ 'blogs.article_item.filed_under' | t }}</strong>:
+      {% for tag in article.tags %}
+        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if index and article.comments_enabled? and article.comments.size > 0 and settings.blog-show-comment-count %}
+      <p class="post-comment-count"><a href="{{ article.url }}#comments">{{ article.comments_count }} {{ 'blogs.article_item.comment_count' | t: count: article.comments_count }}</a></p>
+    {% endif %}
+
+    {% if index and settings.blog-show-share-buttons %}
+      {% include 'share-buttons' %}
+    {% elsif index == false and settings.post-show-share-buttons %}
+      {% include 'share-buttons' %}
+    {% endif %}
+
+  </div>
+
+  <div class="rte post-content">
+    {% if index %}
+      {% if article.excerpt == blank %}
+        <p>{{ article.content | strip_html | truncatewords: 40 }}</p>
+      {% else %}
+        {{ article.excerpt }}
+      {% endif %}
+      <p class="blog-read-more"><a href="{{ article.url }}">{{ 'blogs.article_item.read_more' | t }}</a></p>
+    {% else %}
+      {{ article.content }}
+    {% endif %}
+  </div>
+
+</article>

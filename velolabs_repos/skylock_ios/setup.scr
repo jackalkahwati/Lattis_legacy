@@ -1,0 +1,5 @@
+# this script should be run after the initial clone from https://github.com/velolabs/skylock_ios.git
+
+git submodule update --init --recursive
+cd Skylock
+pod install 

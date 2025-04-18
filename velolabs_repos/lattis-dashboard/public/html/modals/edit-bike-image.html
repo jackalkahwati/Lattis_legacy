@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header bg-HeaderToolbar ">
+    <h4 class="modal-title text-white">Edit bike image</h4>
+  </div>
+  <div class="modal-body p-30 cl_grey">
+    <div class="row">
+      <bike-image-upload accept="image/x-png,image/gif,image/jpeg" haspreview="true" hasedit="false"
+                         name="Browse.." file="profileLogo"></bike-image-upload>
+    </div>
+  </div>
+  <div class="modal-footer noborder">
+    <div class="text-left fullwid m-tb-10 p-tb-10 bor-t-hash">
+      <button class="btn custombtn-default pbtn-tb11-lr20 wid-130 ft-12" ng-click="cancelLogo()">CANCEL
+      </button>
+      <button class="btn pull-right custom-btn pbtn-tb11-lr20 text-uppercase ft-12"
+              ng-click="saveBikeImage()">SAVE
+      </button>
+    </div>
+  </div>
+</div>

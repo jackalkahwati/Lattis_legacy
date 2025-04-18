@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_id": "skylock-1043",
+    "project_number": "638979384071",
+    "name": "Skylock"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638979384071:android:a70eed940a0e2c29",
+        "client_id": "android:cc.skylock.skylock",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "cc.skylock.skylock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "Нам необходим доступ к камере чтобы вы могли сделать фото транспортного средства";
+"NSPhotoLibraryUsageDescription" = "Нам необходим доступ к альбому чтобы вы могли сделать фото транспортного средства";
+"NSLocationWhenInUseUsageDescription" = "Нам потребуется ваше местоположение чтобы знать где вы начали поездку и в течении всей поездки, чтобы отслеживать транспортное средство, если на нем нет встроенного трекера";
+"NSLocationAlwaysUsageDescription" = "Нам потребуется ваше местоположение чтобы знать где вы начали поездку и в течении всей поездки, чтобы отслеживать транспортное средство, если на нем нет встроенного трекера";
+"NSBluetoothPeripheralUsageDescription" = "Приложению требуется Bluetooth для управления замком. Убедитесь что ваш Bluetooth включен.";
+"NSBluetoothAlwaysUsageDescription" = "Приложению требуется Bluetooth для управления замком. Убедитесь что ваш Bluetooth включен.";

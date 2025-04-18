@@ -1,0 +1,68 @@
+
+<section id="loginContainer"  ng-init="session();" ng-controller="loginController"  loginForm={};" style='background:#f4f5f6;'>
+    <Toasts-Bar content="{errorMessage}" styles="" ng-show="error"></Toasts-Bar>
+    <!--<Toasts-Bar content="{successMessage}" styles="" ng-show="success"></Toasts-Bar>-->
+    <div class="fullwid">
+        <div id="fullheight_slider" class="flexslider slide_bg"></div>
+        <div>
+            <div class='row login_panel_container'>
+
+                <div class="col-md-9 col-sm-9 col-xs-9 login-panel" id="panel1" style='background: white;'>
+                    <img class = "logo" src="/images/lattis_logo_color.png">
+
+                    <div class = 'form_container' ng-class="" ng-show="forgetactive">
+                        <div ng-bind-html="divHtmlVar" style="color:red"></div>
+                        <div ng-show="error" class="min alert alert-danger">{{errorMessage}}</div>
+                        <div ng-show="success" class="alert alert-success">{{successMessage}}</div>
+                        <form class="form" ng-submit="login()">
+                            <div class="form-group">
+                                <label for = "email" style = "width: 100%;"> Email Address
+                                <input id = "email" class="form-control" name="username" ng-model="loginForm.email" style="margin: 5px 0;background:#f4f5f6;border:1px solid #979797;border-radius: 0;">
+                                </label>
+                            </div>
+                            <div class="form-group" style="position:relative">
+                                <label for = "password" style = "width: 100%;"> Password <br>
+                                <p style="position: absolute;top:0;right:0;" id="login_fp" ng-click="forgetActive()">Forgot Password?</p>
+                                <input id = "password" type="password" class="form-control" name="password" ng-model="loginForm.password" style="margin: 5px 0;background:#f4f5f6;border:1px solid #979797; border-radius: 0;">
+                                    <em style="position: absolute;right: 1px;bottom: 11px;padding: 9px;background: #394d65;color: #ffffff" ng-show='isCapsLockOn' class="fa fa-arrow-up" aria-hidden="true"></em>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn custom-btn pull-right nobor-rad fullwid" ng-disabled="disabled" ng-keyup="$event.keyCode == 13 && login()" style="border-radius: 10px; padding: 10px; font-weight: bold">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="form_container" ng-class="" ng-hide="forgetactive">
+                        <div ng-bind-html="divHtmlVar" style="color:red"></div>
+                        <div ng-show="error" class="min alert alert-danger">{{errorMessage}}</div>
+                        <div ng-show="success" class="alert alert-success">{{successMessage}}</div>
+                        <h3 p id = "reset-header">{{resetHeader}}</h3>
+                        <p class = "p-b-20" id = "reset-info">{{resetInfo}}</p>
+                        <p id = "reset-info2">{{resetInfo2}}</p>
+                        <form name="forgetForm" class="form" ng-submit="reset()">
+                            <div class="form-group" ng-hide="email_confirm">
+                                <label for = "email" style = "width: 100%;"> Email Address
+                                <input id = "email" data-ng-required="true"
+                                       ng-pattern="emailRegexPatterns"
+                                       ng-class="{err:!forgetForm.email.$valid && !forgetForm.email.$pristine}"
+                                       class="form-control" name="email" ng-model="loginForm.email" style="margin: 5px 0;background:#f4f5f6;border:1px solid #979797;border-radius: 0;">
+                            </div>
+                            <div class="form-group">
+                                <button ng-disabled="!forgetForm.email.$valid" ng-hide = "email_confirm" type="submit" class="btn custom-btn pull-right nobor-rad fullwid" ng-disabled="disabled" style="border-radius: 10px; padding: 10px; font-weight: bold; margin-bottom: 20px;">Send Reset Link</button>
+                                <span ng-show="email_confirm" ng-click="forgetActive()" class="btn custom-btn pull-right nobor-rad fullwid" style="border-radius: 10px; padding: 10px; font-weight: bold; margin-bottom: 20px;">Return to Login</span>
+                                <p ng-hide="email_confirm" style="text-align:center;font-weight:bold;" ng-click="forgetActive()">Wait, I remember! Take me back.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class = "col-md-3 col-sm-3 col-xs-3 login-panel side-panel"  id="panel2">
+                    <div class = "side-panel-notice">
+                        <img class = "side-panel-image" src="/images/side-panel-question.png">
+                        <h6>No need to ring for service. Our help center is always here for you!</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

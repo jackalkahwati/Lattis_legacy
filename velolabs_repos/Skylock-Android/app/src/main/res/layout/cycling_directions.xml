@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#6EDF9E">
+
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/arrow_left"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cycling Directions"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llLockName"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rlLockName">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlAddLock"
+        android:layout_below="@+id/rlLockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/tvCyclingTitle"
+            android:text="Enter an address"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <AutoCompleteTextView
+            android:layout_below="@+id/tvCyclingTitle"
+            android:layout_centerHorizontal="true"
+            android:hint="Enter Place Here"
+            android:id="@+id/tvAutoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></AutoCompleteTextView>
+
+        <Button
+            android:id="@+id/bGetCyclingDirections"
+            android:layout_below="@+id/tvAutoComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Get Cycling Directions"/>
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

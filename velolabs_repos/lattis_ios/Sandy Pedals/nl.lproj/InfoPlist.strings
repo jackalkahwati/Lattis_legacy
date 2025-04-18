@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  Lattis
+
+  Created by Ravil Khusainov on 3/24/18.
+  Copyright © 2018 Velo Labs. All rights reserved.
+*/
+
+// Keys
+// NSBluetoothPeripheralUsageDescription
+// NSCameraUsageDescription
+// NSPhotoLibraryUsageDescription
+// NSLocationWhenInUseUsageDescription
+
+// !!!: Privacy Requests
+"NSCameraUsageDescription" = "Sandy Pedals vereist het gebruik van uw camera om een foto te maken wanneer je de rit beëindigt.";
+"NSPhotoLibraryUsageDescription" = "Sandy Pedals zal alleen foto's die u kiest uploaden en delen.";
+"privacy_location" = "Druk op \"Sta toe\" om ons toe te laten om uw locatie te bepalen en zo je de dichtste fietsen te kunnen tonen.";
+"privacy_location_alert_title" = "KENNISGEVING";
+"NSLocationWhenInUseUsageDescription" = "Geef Sandy Pedals toegang tot de locatie. Dit is vereist tijdens het gebruik van de app";
+"privacy_location_explanation" = "Kennisgeving";
+"privacy_location_submit_button" = "Sandy Pedals heeft jouw toestemming nodig om jouw locatie te gebruiken om de dichtstbijzijnde fietsen weer te geven.";
+"NSBluetoothPeripheralUsageDescription" = "De Sandy Pedals app gebruikt Bluetooth om te communiceren met het Ellipse Slot.";

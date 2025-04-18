@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bikelist_parent"
+    android:background="@android:color/transparent">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hamburger_in_bike_list"
+        custom:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        custom:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/hamburger"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_search_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        custom:layout_constraintTop_toTopOf="@+id/hamburger_in_bike_list"
+        custom:layout_constraintBottom_toBottomOf="@+id/hamburger_in_bike_list"
+        custom:layout_constraintStart_toEndOf="@+id/hamburger_in_bike_list"
+        custom:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        custom:cardCornerRadius="25dp"
+        android:clickable="true"
+        custom:contentPadding="8dp"
+        custom:cardBackgroundColor="@color/search_bar_background"
+        >
+        <com.lattis.lattis.presentation.customview.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_constraintTop_toTopOf="parent"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:drawablePadding="-20sp"
+            android:drawableLeft="@drawable/search_icon"
+            android:drawableStart="@drawable/search_icon"
+            android:background="@drawable/round_search_edittext"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/search_bar_hint"
+            android:hint="@string/label_enter_location"
+            android:textColor="@color/search_bar_text"
+            custom:typefaceAsset="GothamSSm-Medium.otf"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="5dp"
+        android:visibility="visible"
+        android:measureAllChildren="false"
+        android:id="@+id/view_flipper_in_bike_list">
+
+        <include layout="@layout/fragment_bikelist_with_find_bike_card" />
+        <include layout="@layout/fragment_bikelist_with_bike_card"/>
+        <include layout="@layout/fragment_bikelist_with_confirm_reserve"/>
+        <include layout="@layout/fragment_bikelist_with_hub_bikes"/>
+        <include android:id="@+id/fragment_bikelist_hub_bike" layout="@layout/fragment_bikelist_slider"/>
+    </ViewFlipper>
+
+
+    <include layout="@layout/layout_rental_fare_main"
+        android:visibility="gone"
+        android:id="@+id/layout_rental_fare_in_bikelist"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_end_ride"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <!--<com.lattis.ellipse.presentation.view.CustomTextView-->
+        <!--android:id="@+id/cv_riding_label"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="5dp"-->
+        <!--android:text="@string/active_ride_in_ride_with"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:textColor="@color/lattis_ride_in_progress_color" />-->
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/cv_riding_bike_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/active_ride_in_ride_with"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/active_ride_label_color" />
+
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/cv_connecting_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/route_to_bike_button_connecting"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black_overlay"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/greyline_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cv_riding_bike_label"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/line" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/greyline_popup"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:visibility="visible">
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_ride_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/bike_booking_time"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black_overlay" />
+
+        <com.lattis.ellipse.presentation.view.CustomTextView
+            android:id="@+id/tv_ride_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ride_time_label"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/ride_time"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/lattis_header_color" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_settings_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@null"
+        android:src="@drawable/icon_menu" />
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/tv_ride_cost_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/greyline_popup"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:text="@string/bike_booking_fare"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/black_overlay" />
+
+    <com.lattis.ellipse.presentation.view.CustomTextView
+        android:id="@+id/tv_ride_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_ride_cost_label"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/lattis_header_color" />
+
+
+    <com.lattis.ellipse.presentation.view.CustomButton
+        android:id="@+id/end_ride_btn"
+        style="@style/blueButtonStyle.rect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_ride_cost"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/end_trip_button_text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        custom:typefaceAsset="SanFranciscoDisplay-Regular.otf" />
+
+
+</RelativeLayout>

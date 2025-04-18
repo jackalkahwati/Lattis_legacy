@@ -1,0 +1,263 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SwipeLayout">
+
+
+        <attr name="drag_edge">
+
+            <flag name="left" value="1" />
+
+            <flag name="right" value="2" />
+
+            <flag name="top" value="4" />
+
+            <flag name="bottom" value="8" />
+
+        </attr>
+
+        <attr name="leftEdgeSwipeOffset" format="dimension" />
+
+        <attr name="rightEdgeSwipeOffset" format="dimension" />
+
+        <attr name="topEdgeSwipeOffset" format="dimension" />
+
+        <attr name="bottomEdgeSwipeOffset" format="dimension" />
+
+        <attr name="show_mode" format="enum" />
+
+        <attr name="clickToClose" format="boolean" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+
+        <attr name="cpb_hasShadow" format="boolean" />
+
+        <attr name="cpb_progressColor" format="string" />
+
+        <attr name="cpb_backgroundColor" format="string" />
+
+        <attr name="cpb_title" format="string" />
+
+        <attr name="cpb_titleColor" format="string" />
+
+        <attr name="cpb_subtitle" format="string" />
+
+        <attr name="cpb_subtitleColor" format="string" />
+
+        <attr name="cpb_strokeWidth" format="integer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <!-- Text-->
+        <attr name="cpv_text" format="string" />
+        <attr name="cpv_unit" format="string" />
+        <attr name="cpv_textColor" format="color" />
+        <attr name="cpv_unitColor" format="color" />
+        <attr name="cpv_showUnit" format="boolean" />
+        <attr name="cpv_autoTextColor" format="boolean" />
+        <attr name="cpv_textTypeface" format="string" />
+        <attr name="cpv_unitTypeface" format="string" />
+        <attr name="cpv_decimalFormat" format="string" />
+
+        <!-- Text sizes-->
+        <attr name="cpv_textSize" format="dimension" />
+        <attr name="cpv_unitSize" format="dimension" />
+        <attr name="cpv_textScale" format="float" />
+        <attr name="cpv_unitScale" format="float" />
+        <attr name="cpv_unitToTextScale" format="float" />
+        <attr name="cpv_autoTextSize" format="boolean" />
+
+
+        <!-- Progress Bar -->
+        <attr name="cpv_direction" format="enum">
+            <enum name="CW" value="0" />
+            <enum name="CCW" value="1" />
+        </attr>
+        <attr name="cpv_value" format="float" />
+        <attr name="cpv_maxValue" format="float" />
+        <attr name="cpv_barWidth" format="dimension" />
+        <attr name="cpv_barColor" format="color" />
+        <attr name="cpv_barColor1" format="color" />
+        <attr name="cpv_barColor2" format="color" />
+        <attr name="cpv_barColor3" format="color" />
+        <attr name="cpv_startAngle" format="integer" />
+        <attr name="cpv_barStrokeCap" format="enum">
+            <enum name="Butt" value="0" />
+            <enum name="Round" value="1" />
+            <enum name="Square" value="2" />
+        </attr>
+
+        <!-- Spinner-->
+        <attr name="cpv_spinColor" format="color" />
+        <attr name="cpv_spinSpeed" format="float" />
+        <attr name="cpv_spinBarLength" format="float" />
+        <attr name="cpv_showTextInSpinningMode" format="boolean" />
+
+        <!-- Rim-->
+        <attr name="cpv_rimColor" format="color" />
+        <attr name="cpv_rimWidth" format="dimension" />
+
+        <!-- Contour-->
+        <attr name="cpv_contourColor" format="color" />
+        <attr name="cpv_contourSize" format="dimension" />
+
+        <!-- Background color-->
+        <attr name="cpv_fillColor" format="color" />
+
+        <!-- Seek mode-->
+        <attr name="cpv_seekMode" format="boolean" />
+
+        <!-- Block -->
+        <attr name="cpv_blockCount" format="integer" />
+        <attr name="cpv_blockScale" format="float" />
+
+        <attr name="cpv_textMode" format="enum">
+            <enum name="Text" value="0" />
+            <enum name="Percent" value="1" />
+            <enum name="Value" value="2" />
+        </attr>
+
+        <attr name="cpv_unitPosition" format="enum">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="left_top" value="2" />
+            <enum name="right_top" value="3" />
+            <enum name="left_bottom" value="2" />
+            <enum name="right_bottom" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomTypeFace">
+        <attr name="typefaceAsset" format="string"></attr>
+    </declare-styleable>
+    <declare-styleable name="MySwitch">
+        <!-- Drawable to use as the "thumb" that switches back and forth. -->
+        <attr name="thumb"  format="reference"/>
+        <!-- Drawable to use as the "track" that the switch thumb slides within. -->
+        <attr name="track" format="reference" />
+        <!-- Text to use when the switch is in the checked/"on" state. -->
+        <attr name="textOn" format="reference|string" />
+        <!-- Text to use when the switch is in the unchecked/"off" state. -->
+        <attr name="textOff" format="reference|string" />
+
+        <!-- drawablw to use when the switch is in the checked/"on" state. -->
+        <attr name="drawableOn" format="reference" />
+        <!-- drawablw to use when the switch is in the unchecked/"off" state. -->
+        <attr name="drawableOff" format="reference" />
+
+        <!-- if the switch should operate like iOS UISwitch -->
+        <attr name="pushStyle" format="boolean" />
+        <!-- if text should be drawn on the Thumb or On the track. -->
+        <attr name="textOnThumb" format="boolean" />
+        <!-- if the thumb should be allowed to move more beyond the switch boundaries -->
+        <attr name="thumbExtraMovement" format="dimension" />
+        <!-- Amount of padding on either side of text within the switch thumb. -->
+        <attr name="thumbTextPadding" format="dimension" />
+        <!-- Amount of padding on either side of text within the switch track. -->
+        <attr name="trackTextPadding" format="dimension" />
+        <!-- TextAppearance style for text displayed on the switch thumb. -->
+        <attr name="switchTextAppearanceAttrib" format="reference" />
+        <!-- Minimum width for the switch component -->
+        <attr name="switchMinWidth" format="dimension" />
+        <!-- Minimum height for the switch component -->
+        <attr name="switchMinHeight" format="dimension" />
+        <!-- Minimum space between the switch and caption text -->
+        <attr name="switchPadding" format="dimension" />
+
+        <attr name="orientation" >
+            <!-- the switch moves only on the x-axis(horizontally) -->
+            <enum name="horizontal" value="1" />
+            <!-- the switch moves only on the y-axis(vertically) -->
+            <enum name="vertical" value="0" />
+        </attr>
+
+        <!-- the track drawable will be drawn on top of these background. So if
+             these back grounds were to be visible, the track has to have transparency -->
+        <!-- The background when left side of the switch is visible -->
+        <attr name="leftBackground" format="reference"/>
+
+        <!-- The background when right side of the switch is visible -->
+        <attr name="rightBackground" format="reference"/>
+
+        <!-- We need a mask drawable to mask the background, then draw the track -->
+        <attr name="backgroundMask" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="mySwitchTextAppearanceAttrib">
+        <!-- Text color. -->
+        <attr name="textColor" format="color" />
+        <!-- Size of the text. Recommended dimension type for text is "sp" for scaled-pixels (example: 15sp). -->
+        <attr name="textSize"  format="dimension" />
+        <!-- Style (bold, italic, bolditalic) for the text. -->
+        <attr name="textStyle" >
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+        <!-- Typeface (normal, sans, serif, monospace) for the text. -->
+        <attr name="typeface" format="reference">
+            <enum name="normal" value="0" />
+            <enum name="sans" value="1" />
+            <enum name="serif" value="2" />
+            <enum name="monospace" value="3" />
+        </attr>
+
+    </declare-styleable>
+    <!-- Default style for the Switch widget. -->
+    <attr name="mySwitchStyleAttr" format="reference" />
+
+    <attr name="bt_expiration_date_sheet_background" format="color"/>
+    <attr name="bt_expiration_date_dialog_label" format="color"/>
+    <attr name="bt_expiration_date_dialog_divider" format="color" />
+    <attr name="bt_expiration_date_scrollbar_thumb_vertical" format="color" />
+    <attr name="bt_expiration_date_scrollbar_track_vertical" format="color" />
+    <declare-styleable name="Tooltip">
+        <attr name="cancelable" format="boolean" />
+        <attr name="dismissOnClick" format="boolean" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="arrowHeight" format="dimension" />
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="arrowDrawable" format="reference" />
+        <attr name="margin" format="dimension" />
+        <attr name="textAppearance" format="reference" />
+        <attr name="android:padding" />
+        <attr name="android:text" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="android:textStyle" />
+        <attr name="android:gravity" />
+        <attr name="android:fontFamily" />
+        <attr name="android:typeface" />
+        <attr name="android:lineSpacingExtra" />
+        <attr name="android:lineSpacingMultiplier" />
+    </declare-styleable>
+
+
+</resources>

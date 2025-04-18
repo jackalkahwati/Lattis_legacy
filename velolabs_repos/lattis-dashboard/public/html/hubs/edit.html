@@ -1,0 +1,454 @@
+<section class="container" ng-controller="editHubController">
+  <div class="row" ng-show="loading">
+    <div ng-init="showLoader=true" ng-show="showLoader">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: flex; justify-content: center; min-height: 1200px;" ng-hide="loading">
+    <div class="col-xs-12 col-sm-8">
+      <h2 class="title">Editing Hub: {{ hub.hubName }}</h2>
+      <p class="lead">
+        In this section, you can edit and change the properties of this hub.
+      </p>
+      <form action="post" name="editHubForm">
+        <div
+          class="alert alert-danger alert-dismissible"
+          role="alert"
+          ng-if="error"
+        >
+          <button
+            ng-click="dismissError()"
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{error}}
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubIntegration.$touched && editHubForm.hubIntegration.$invalid}"
+            >
+              <label for="hub-integration" class="control-label">
+                Integration
+              </label>
+              <select
+                aria-label="Hub integration"
+                aria-describedby="helpBlock"
+                type="text"
+                name="hubIntegration"
+                id="hub-integration"
+                class="form-control"
+                ng-model="hub.integration"
+                ng-change="selectedOption()"
+                ng-init="selectedOption()"
+                required
+                ng-disabled="hub.integration==='custom'"
+                ng-options="integration.value as integration.title for integration in integrations"
+              >
+                <option value="" ng-selected="hub.integration===integration.value">--Select an integration platform--</option>
+              </select>
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubIntegration.$error.required && editHubForm.hubIntegration.$touched"
+                class="help-block"
+              >
+                The hub integration is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubType.$touched && editHubForm.hubType.$invalid}"
+            >
+              <label for="hub-type" class="control-label">Type</label>
+              <select
+                class="form-control"
+                aria-label="Hub type"
+                aria-describedby="helpBlock"
+                type="text"
+                class="form-control"
+                ng-model="hub.type"
+                required
+                id="hub-type"
+                name="hubType"
+                ng-options="type.value as type.title for type in types"
+              >
+                <option value="">--Set the Hub type--</option>
+              </select>
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubType.$error.required && editHubForm.hubType.$touched"
+                class="help-block"
+              >
+                The hub type is required.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" ng-if="hub.integration.value !== 'kuhmute'">
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubMake.$touched && editHubForm.hubMake.$invalid}"
+            >
+              <label for="hub-make" class="control-label">Make</label>
+              <input
+                class="form-control"
+                aria-label="Hub make"
+                aria-describedby="helpBlock"
+                type="text"
+                class="form-control"
+                placeholder="Enter hub make"
+                ng-model="hub.make"
+                required
+                id="hub-make"
+                name="hubMake"
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubMake.$error.required && editHubForm.hubMake.$touched"
+                class="help-block"
+              >
+                The hub make is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubModel.$touched && editHubForm.hubModel.$invalid}"
+            >
+              <label for="hub-model" class="control-label">Model</label>
+              <input
+                class="form-control"
+                aria-label="Hub model"
+                aria-describedby="helpBlock"
+                type="text"
+                class="form-control"
+                placeholder="Enter hub model"
+                ng-model="hub.model"
+                required
+                id="hub-model"
+                name="hubModel"
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubModel.$error.required && editHubForm.hubModel.$touched"
+                class="help-block"
+              >
+                The hub model is required.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div ng-show="showDuckTFields || hub.integration === 'custom'" class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubLatitude.$touched && editHubForm.hubLatitude.$invalid}"
+            >
+              <label for="hub-latitude" class="control-label">Latitude</label>
+              <input
+                class="form-control"
+                aria-label="Hub's latitude"
+                aria-describedby="helpBlock"
+                type="text"
+                placeholder="Enter hub's latitude"
+                ng-model="hub.latitude"
+                id="hub-latitude"
+                name="hubLatitude"
+                required
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubLatitude.$error.required && editHubForm.hubLatitude.$touched"
+                class="help-block"
+              >
+                The hub's latitude is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubLongitude.$touched && editHubForm.hubLongitude.$invalid}"
+            >
+              <label for="hub-longitude" class="control-label">Longitude</label>
+              <input
+                class="form-control"
+                aria-label="Hub longitude"
+                aria-describedby="helpBlock"
+                type="text"
+                placeholder="Enter hub's longitude"
+                ng-model="hub.longitude"
+                id="hub-longitude"
+                name="hubLongitude"
+                required
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubLongitude.$error.required && editHubForm.hubLongitude.$touched"
+                class="help-block"
+              >
+                The hub longitude is required.
+              </span>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubName.$touched && editHubForm.hubName.$invalid}"
+            >
+              <label for="hub-name" class="control-label">Name</label>
+              <input
+                class="form-control"
+                aria-label="Hub name"
+                aria-describedby="helpBlock"
+                type="text"
+                class="form-control"
+                placeholder="Enter hub's name"
+                ng-model="hub.hubName"
+                id="hub-name"
+                name="hubName"
+                required
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubName.$error.required && editHubForm.hubName.$touched"
+                class="help-block"
+              >
+                The hub Name is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.closedOrOpen.$touched && editHubForm.closedOrOpen.$invalid}"
+            >
+              <label for="hub-closedOrOpen" class="control-label">
+                Setup
+              </label>
+              <select
+                ng-disabled="['kuhmute', 'duckt'].includes(hub.integration)"
+                aria-label="Hub Enclosure Type"
+                aria-describedby="helpBlock"
+                type="text"
+                name="closedOrOpen"
+                id="hub-closedOrOpen"
+                class="form-control"
+                ng-model="hub.enclosureType"
+                required
+                ng-options="enclosure.value as enclosure.title for enclosure in enclosureTypes"
+              >
+                <option value="" ng-selected="hub.enclosureType === enclosure.value">--Select Enclosure Type--</option>
+              </select>
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.closedOrOpen.$error.required && editHubForm.closedOrOpen.$touched"
+                class="help-block"
+              >
+                The hub closed/open type is required.
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="col-xs-12 col-sm-6 form-group"
+            ng-class="{'has-error has-feedback': addHubForm.hubEquipmentType.$touched && addHubForm.hubEquipmentType.$invalid}"
+            ng-if="hub.integration === 'custom' && hub.enclosureType === 'closed'">
+          <label for="hub-spots" class="control-label">Equipment Type</label>
+          <select
+            class="form-control"
+            aria-label="Equipment Type"
+            aria-describedby="helpBlock"
+            type="text"
+            class="form-control"
+            ng-model="hub.equipmentType"
+            id="equipmentType"
+            name="equipmentType"
+            ng-options="type.value as type.title for type in equipmentTypes">
+            <option value="" ng-selected="hub.equipmentType===type.value">--Set the Hub Equipment Type--</option>
+          </select>
+          </div>
+
+          <div
+            class="col-xs-12 col-sm-6 form-group"
+            ng-class="{'has-error has-feedback': addHubForm.equipmentKey.$touched && addHubForm.equipmentKey.$invalid}"
+            ng-if="hub.integration === 'custom' && hub.enclosureType === 'closed'">
+            <label for="hub-spots" class="control-label">Equipment Key</label>
+            <input
+              class="form-control"
+              aria-label="Equipment Key"
+              aria-describedby="helpBlock"
+              class="form-control"
+              placeholder="Enter the equipment key to add to this hub"
+              ng-model="hub.equipmentKey"
+              id="hub-equipment-key"
+              name="equipmentKey"
+            />
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.hubSpots.$touched && editHubForm.hubSpots.$invalid}"
+              ng-if="!['kuhmute', 'duckt'].includes(hub.integration)"
+            >
+              <label for="hub-spots" class="control-label">Number of Spots</label>
+              <input
+                class="form-control"
+                aria-label="Hub spots"
+                aria-describedby="helpBlock"
+                ng-disabled="hub.integration === 'custom'"
+                type="number"
+                class="form-control"
+                placeholder="Enter the number of spots in this hub"
+                ng-model="hub.number_of_spots"
+                required
+                id="hub-spots"
+                name="hubSpots"
+                min="0"
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubSpots.$error.required && editHubForm.hubSpots.$touched"
+                class="help-block"
+              >
+                The hub spots is required.
+              </span>
+            </div>
+          </div>
+
+          <div ng-show="hub.type !== 'docking_station'" class="col-xs-12 col-sm-6">
+            <div
+              class="form-group"
+              ng-class="{'has-error has-feedback': editHubForm.qrCode.$touched && editHubForm.qrCode.$invalid}"
+            >
+              <label for="hub-spots" class="control-label">QR Code</label>
+              <input
+                class="form-control"
+                aria-label="Hub QR Code"
+                aria-describedby="helpBlock"
+                class="form-control"
+                placeholder="Enter the hub QR code"
+                ng-model="hub.qrCode"
+                required
+                id="qrCode"
+                name="qrCode"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="form-group"
+          ng-class="{'has-error has-feedback': editHubForm.hubDescription.$touched && editHubForm.hubDescription.$invalid}"
+        >
+          <label for="hub-description" class="control-label">
+            Description
+          </label>
+          <textarea
+            class="form-control"
+            aria-label="Hub description"
+            aria-describedby="helpBlock"
+            type="text"
+            class="form-control"
+            placeholder="Enter hub description"
+            ng-model="hub.description"
+            required
+            id="hub-description"
+            name="hubDescription"
+            rows="3"
+          ></textarea>
+          <span
+            id="helpBlock"
+            ng-show="editHubForm.hubDescription.$error.required && editHubForm.hubDescription.$touched"
+            class="help-block"
+          >
+            The hub description is required.
+          </span>
+        </div>
+
+        <div
+          class="form-group row"
+          ng-class="{'has-error has-feedback': editHubForm.hubImage.$touched && editHubForm.hubImage.$invalid}"
+        >
+          <div class="col-xs-12">
+            <label class="control-label">Image</label>
+          </div>
+
+          <div class="row" style="display: flex; align-items: center;">
+            <div class="col-xs-12 col-sm-6">
+              <img ng-src="{{ hub.image }}" alt="" class="h-260" />
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <label for="hub-image" class="control-label">Change Image</label>
+              <input
+                class="form-control"
+                aria-label="Hub image"
+                aria-describedby="helpBlock"
+                type="file"
+                accept="image/x-png,image/gif,image/jpeg"
+                class="form-control"
+                placeholder="Enter hub image"
+                required
+                id="hub-image"
+                name="hubImage"
+                simple-file-select
+                file-upload="fileUpload(file)"
+                max-size="10"
+              />
+              <span
+                id="helpBlock"
+                ng-show="editHubForm.hubImage.$error.required && editHubForm.hubImage.$touched"
+                class="help-block"
+              >
+                The hub image is required.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="form-group"
+          style="display: flex; justify-content: space-between"
+        >
+          <button
+            type="submit"
+            class="btn btn-primary"
+            ng-disabled="editHubForm.$pristine || editingHub"
+            ng-click="editHub($event)"
+          >
+            {{ editingHub ? 'Updating...' : 'Update' }}
+          </button>
+          <button
+            ng-disabled="editingHub"
+            type="reset"
+            class="btn btn-danger"
+            ng-click="goBack()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        16/Apr/2015  21:19:51
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  C:\VeloLabs\SkyLock Project\Source\utils.c
+#    Command line =  
+#        "C:\VeloLabs\SkyLock Project\Source\utils.c" -D NRF51 -D
+#        BLE_STACK_SUPPORT_REQD -lCN "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\List\" -o "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\Debug\Obj\" --no_cse --no_unroll --no_inline
+#        --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug
+#        --endian=little --cpu=Cortex-M0 -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0_2\arm\INC\c\DLib_Config_Normal.h" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\" -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\include\ARMFiles\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\drivers_nrf\hal\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\s110\headers\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\toolchain\" -I
+#        "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\softdevice\common\softdevice_handler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\util\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\scheduler\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\libraries\timer\"
+#        -I "C:\VeloLabs\SkyLock
+#        Project\Source\IAR_7_30_4\..\..\SDK_7_2_0\components\ble\common\" -Ol
+#    List file    =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\List\utils.lst
+#    Object file  =  
+#        C:\VeloLabs\SkyLock Project\Source\IAR_7_30_4\Debug\Obj\utils.o
+#
+###############################################################################
+
+C:\VeloLabs\SkyLock Project\Source\utils.c
+      1          /*
+      2          ** Proprietary Rights Notice
+      3          **
+      4          ** This material contains the valuable properties and trade secrets of:
+      5          **
+      6          **    Velo Labs
+      7          **    San Francisco, CA, USA
+      8          **
+      9          ** All rights reserved. No part of this work may be reproduced, distributed, or
+     10          ** transmitted in any form or by any means, including photocopying, recording,
+     11          ** or other electronic or mechanical methods, without the prior written permission
+     12          ** of Velo Labs.
+     13          **
+     14          ** Copyright (c) 2015, Velo Labs
+     15          ** Contains Confidential and Trade Secret Information
+     16          */
+     17          
+     18          /*
+     19          ** File Name:  utils.c
+     20          **
+     21          ** Purpose:    Simple and miscellaneous support functions.
+     22          */
+     23          
+     24          #include "master.h"
+     25          #include "stdio.h"
+     26          #include "hardware.h"
+     27          #include "utils.h"
+     28          
+     29          /*
+     30          ** Provide a temporary buffer that can be used anywhere at task level. Since there is only one task, if we aren't in
+     31          ** an interrupt routine then it is safe to use (more or less).
+     32          */
+
+   \                                 In section .bss, align 4
+     33          uint8_t  UTIL_tmpBuffer[UTIL_TEMP_BUFFER_SIZE];
+   \                     UTIL_tmpBuffer:
+   \   00000000                      DS8 128
+     34          
+     35          /*
+     36          ** Normally like to do this with a timer, but for a lower power device it is better to just figure out a little
+     37          ** loop that is roughly correct. Bigger delays can use a timer and can be more accurate then.
+     38          **
+     39          ** Right now there is only a 16MHz clock. If that changes, then add some conditional compiler code or something
+     40          ** to deal with more than one clock. But for now that is not necessary.
+     41          **
+     42          ** Measured the following routine when called from a routine that sets a GPIO low, calls this routine, and sets GPIO high.
+     43          **    5 usec call resulted in delay of 6.3 usec
+     44          **    100 usec call resulted in delay of 100 usec
+     45          */
+
+   \                                 In section .text, align 4, keep-with-next
+     46          void
+     47          UTIL_DelayUsec (unsigned int usec)
+     48          {
+   \                     UTIL_DelayUsec: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xE00B             B        ??UTIL_DelayUsec_0
+     49             while (usec)
+     50                {
+     51                asm ("NOP");
+   \                     ??UTIL_DelayUsec_1: (+1)
+   \   00000004   0xBF00             NOP
+     52                asm ("NOP");
+   \   00000006   0xBF00             NOP
+     53                asm ("NOP");
+   \   00000008   0xBF00             NOP
+     54                asm ("NOP");
+   \   0000000A   0xBF00             NOP
+     55                asm ("NOP");
+   \   0000000C   0xBF00             NOP
+     56                asm ("NOP");
+   \   0000000E   0xBF00             NOP
+     57                asm ("NOP");
+   \   00000010   0xBF00             NOP
+     58                asm ("NOP");
+   \   00000012   0xBF00             NOP
+     59                asm ("NOP");
+   \   00000014   0xBF00             NOP
+     60                asm ("NOP");
+   \   00000016   0xBF00             NOP
+     61                asm ("NOP");
+   \   00000018   0xBF00             NOP
+     62          
+     63                usec--;
+   \   0000001A   0x1E40             SUBS     R0,R0,#+1
+     64                }
+   \                     ??UTIL_DelayUsec_0: (+1)
+   \   0000001C   0x2800             CMP      R0,#+0
+   \   0000001E   0xD1F1             BNE      ??UTIL_DelayUsec_1
+     65          }
+   \   00000020   0xBD00             POP      {PC}             ;; return
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   UTIL_DelayUsec
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      34  UTIL_DelayUsec
+     128  UTIL_tmpBuffer
+
+ 
+ 128 bytes in section .bss
+  34 bytes in section .text
+ 
+  34 bytes of CODE memory
+ 128 bytes of DATA memory
+
+Errors: none
+Warnings: none
