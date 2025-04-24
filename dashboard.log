@@ -1,0 +1,16 @@
+
+> lattis-dashboard@0.0.1 start
+> NODE_ENV=development LATTIS_DASHBOARD_MODE=development LATTIS_DASHBOARD_PORT=3000 LATTIS_DASHBOARD_LOG_PATH=./logs OVAL_URL=http://localhost:4000 JWT_SECRET=myverysecuresecretkey1234567890X LATTIS_USERS_DB_USERNAME=admin LATTIS_USERS_DB_PASSWORD=secret LATTIS_USERS_DB_NAME=lattis_users LATTIS_USERS_DB_HOST=localhost LATTIS_MAIN_DB_USERNAME=admin LATTIS_MAIN_DB_PASSWORD=secret LATTIS_MAIN_DB_NAME=lattis_main LATTIS_MAIN_DB_HOST=localhost node bin/index.js
+
+Sentry DSN not configured. Error tracking will be disabled. Using dummy Sentry object.
+Firebase service account file not found; push notifications disabled
+[32minfo[39m: Skipping DB connectivity check in development mode {"metadata":{"service":"lattis-dashboard","timestamp":"2025-04-24T04:41:28.945Z"}}
+[32minfo[39m: Server listening on port 3000 {"metadata":{"service":"lattis-dashboard","timestamp":"2025-04-24T04:41:28.947Z"}}
+(node:71837) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+info: ::1 - - [24/Apr/2025:04:46:00 +0000] "POST /api/user/login HTTP/1.1" - - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15" {"timestamp":"2025-04-24T04:46:00.150Z"}
+info: ::1 - - [24/Apr/2025:04:46:36 +0000] "POST /api/user/login HTTP/1.1" - - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15" {"timestamp":"2025-04-24T04:46:36.226Z"}

@@ -35,6 +35,26 @@ const comparePassword = async (password, hash) => {
   return bcrypt.compare(password, hash)
 }
 
+// Demo operators for stub DB mode
+const DEMO_OPERATORS = [
+  {
+    operator_id: 1,
+    first_name: 'Andre',
+    last_name: 'Green',
+    phone_number: '5555555550',
+    email: 'andre@lattis.io',
+    acl: 'admin'
+  },
+  {
+    operator_id: 2,
+    first_name: 'Jeremy',
+    last_name: 'Ricard',
+    phone_number: '5555555551',
+    email: 'jeremy@lattis.io',
+    acl: 'admin'
+  }
+]
+
 /**
  * Update operator details
  * @param {Object} columnsToUpdate - Values to update
@@ -338,6 +358,14 @@ const changePasswordInternally = async (data) => {
  */
 const authenticate = async (credentials) => {
   try {
+    if (process.env.USE_STUB_DB === '1' || process.env.NODE_ENV === 'development') {
+      const user = DEMO_OPERATORS.find(u => u.email === credentials.email && credentials.password === u.first_name.toLowerCase())
+      if (!user) {
+        throw errors.authenticationError('Invalid credentials')
+      }
+      return user
+    }
+
     const operator = await getOperator({ email: credentials.email })
     if (!operator) {
       throw errors.authenticationError('Invalid credentials')
